@@ -1,0 +1,61 @@
+
+Normal compile (to executable):
+gcc XXX.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+
+Cheerp compile (to JS):
+/Applications/cheerp/bin/clang -target cheerp XXX.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_XXX.js -O3
+
+Cheerp compile (to WASM):
+/Applications/cheerp/bin/clang -target cheerp XXX.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_XXX.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_XXX_loader.js
+
+============================
+
+gcc mips/mips.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp mips/mips.c -o chs_mips.js -O3
+/Applications/cheerp/bin/clang -target cheerp mips/mips.c -o chs_mips.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_mips_loader.js
+
+gcc motion/mpeg2.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp motion/mpeg2.c -o chs_motion.js -O3
+/Applications/cheerp/bin/clang -target cheerp motion/mpeg2.c -o chs_motion.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_motion_loader.js
+
+/**** HAS ERROR: JPEG ****/
+gcc jpeg/main.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp jpeg/main.c -o chs_jpeg.js -O3
+/Applications/cheerp/bin/clang -target cheerp jpeg/main.c -o chs_jpeg.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_jpeg_loader.js
+
+gcc gsm/gsm.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp gsm/gsm.c -o chs_gsm.js -O3
+/Applications/cheerp/bin/clang -target cheerp gsm/gsm.c -o chs_gsm.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_gsm_loader.js
+
+gcc adpcm/adpcm.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp adpcm/adpcm.c -o chs_adpcm.js -O3
+/Applications/cheerp/bin/clang -target cheerp adpcm/adpcm.c -o chs_adpcm.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_adpcm_loader.js
+
+gcc aes/aes.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp aes/aes.c -o chs_aes.js -O3
+/Applications/cheerp/bin/clang -target cheerp aes/aes.c -o chs_aes.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_aes_loader.js
+
+gcc blowfish/bf.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp blowfish/bf.c -o chs_blowfish.js -O3
+/Applications/cheerp/bin/clang -target cheerp blowfish/bf.c -o chs_blowfish.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_blowfish_loader.js
+
+gcc sha/sha_driver.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp sha/sha_driver.c -o chs_sha.js -O3
+/Applications/cheerp/bin/clang -target cheerp sha/sha_driver.c -o chs_sha.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_sha_loader.js
+
+gcc dfadd/dfadd.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp dfadd/dfadd.c -o chs_dfadd.js -O3
+/Applications/cheerp/bin/clang -target cheerp dfadd/dfadd.c -o chs_dfadd.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_dfadd_loader.js
+
+gcc dfmul/dfmul.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp dfmul/dfmul.c -o chs_dfmul.js -O3
+/Applications/cheerp/bin/clang -target cheerp dfmul/dfmul.c -o chs_dfmul.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_dfmul_loader.js
+
+gcc dfdiv/dfdiv.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp dfdiv/dfdiv.c -o chs_dfdiv.js -O3
+/Applications/cheerp/bin/clang -target cheerp dfdiv/dfdiv.c -o chs_dfdiv.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_dfdiv_loader.js
+
+gcc dfsin/dfsin.c -o test -O3
+/Applications/cheerp/bin/clang -target cheerp dfsin/dfsin.c -o chs_dfsin.js -O3
+/Applications/cheerp/bin/clang -target cheerp dfsin/dfsin.c -o chs_dfsin.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=chs_dfsin_loader.js
+
