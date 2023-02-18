@@ -1,0 +1,155 @@
+
+Normal compile (to executable):
+gcc XXX.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+
+Cheerp compile (to JS):
+  Before compile, in utilities/polybench.c line 603: 
+  data type of force data type conversion of malloc 
+  change to double/float/int based on comments
+/Applications/cheerp/bin/clang -target cheerp XXX.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_XXX.js -O3
+
+Cheerp compile (to WASM):
+  Before compile, in utilities/polybench.c line 603: 
+  data type of force data type conversion of malloc 
+  change to double/float/int based on comments
+/Applications/cheerp/bin/clang -target cheerp XXX.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_XXX.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_XXX_loader.js
+
+=======double==============
+
+gcc linear-algebra/blas/gemm/gemm.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/gemm/gemm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_gemm.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/gemm/gemm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_gemm.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_gemm_loader.js
+
+gcc linear-algebra/blas/gemver/gemver.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/gemver/gemver.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_gemver.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/gemver/gemver.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_gemver.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_gemver_loader.js
+
+gcc linear-algebra/blas/gesummv/gesummv.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/gesummv/gesummv.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_gesummv.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/gesummv/gesummv.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_gesummv.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_gesummv_loader.js
+
+gcc linear-algebra/blas/symm/symm.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/symm/symm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_symm.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/symm/symm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_symm.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_symm_loader.js
+
+gcc linear-algebra/blas/syr2k/syr2k.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/syr2k/syr2k.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_syr2k.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/syr2k/syr2k.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_syr2k.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_syr2k_loader.js
+
+gcc linear-algebra/blas/syrk/syrk.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/syrk/syrk.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_syrk.js -O3 -DMEDIUM_DATASET
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/syrk/syrk.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_syrk.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_syrk_loader.js -DMEDIUM_DATASET
+
+gcc linear-algebra/blas/trmm/trmm.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/trmm/trmm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_trmm.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/blas/trmm/trmm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_trmm.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_trmm_loader.js
+
+gcc linear-algebra/kernels/2mm/2mm.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/2mm/2mm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_2mm.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/2mm/2mm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_2mm.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_2mm_loader.js
+
+gcc linear-algebra/kernels/3mm/3mm.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/3mm/3mm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_3mm.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/3mm/3mm.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_3mm.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_3mm_loader.js
+
+gcc linear-algebra/kernels/atax/atax.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/atax/atax.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_atax.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/atax/atax.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_atax.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_atax_loader.js
+
+gcc linear-algebra/kernels/bicg/bicg.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/bicg/bicg.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_bicg.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/bicg/bicg.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_bicg.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_bicg_loader.js
+
+gcc linear-algebra/kernels/doitgen/doitgen.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/doitgen/doitgen.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_doitgen.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/doitgen/doitgen.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_doitgen.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_doitgen_loader.js
+
+gcc linear-algebra/kernels/mvt/mvt.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/mvt/mvt.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_mvt.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/kernels/mvt/mvt.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_mvt.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_mvt_loader.js
+
+gcc linear-algebra/solvers/cholesky/cholesky.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/cholesky/cholesky.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_cholesky.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/cholesky/cholesky.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_cholesky.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_cholesky_loader.js
+
+gcc linear-algebra/solvers/durbin/durbin.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/durbin/durbin.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_durbin.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/durbin/durbin.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_durbin.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_durbin_loader.js
+
+gcc linear-algebra/solvers/gramschmidt/gramschmidt.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/gramschmidt/gramschmidt.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_gramschmidt.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/gramschmidt/gramschmidt.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_gramschmidt.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_gramschmidt_loader.js
+
+gcc linear-algebra/solvers/lu/lu.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/lu/lu.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_lu.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/lu/lu.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_lu.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_lu_loader.js
+
+gcc linear-algebra/solvers/ludcmp/ludcmp.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/ludcmp/ludcmp.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_ludcmp.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/ludcmp/ludcmp.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_ludcmp.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_ludcmp_loader.js
+
+gcc linear-algebra/solvers/trisolv/trisolv.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/trisolv/trisolv.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_trisolv.js -O3
+/Applications/cheerp/bin/clang -target cheerp linear-algebra/solvers/trisolv/trisolv.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_trisolv.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_trisolv_loader.js
+
+gcc datamining/correlation/correlation.c utilities/polybench.c -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3 -I utilities
+/Applications/cheerp/bin/clang -target cheerp datamining/correlation/correlation.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_correlation.js -O3
+/Applications/cheerp/bin/clang -target cheerp datamining/correlation/correlation.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_correlation.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_correlation_loader.js
+
+gcc datamining/covariance/covariance.c utilities/polybench.c -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3 -I utilities
+/Applications/cheerp/bin/clang -target cheerp datamining/covariance/covariance.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_covariance.js -O3
+/Applications/cheerp/bin/clang -target cheerp datamining/covariance/covariance.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_covariance.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_covariance_loader.js
+
+gcc stencils/adi/adi.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/adi/adi.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_adi.js -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/adi/adi.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_adi.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_adi_loader.js
+
+gcc stencils/fdtd-2d/fdtd-2d.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/fdtd-2d/fdtd-2d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_fdtd-2d.js -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/fdtd-2d/fdtd-2d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_fdtd-2d.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_fdtd-2d_loader.js
+
+gcc stencils/heat-3d/heat-3d.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/heat-3d/heat-3d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_heat-3d.js -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/heat-3d/heat-3d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_heat-3d.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_heat-3d_loader.js
+
+gcc stencils/jacobi-1d/jacobi-1d.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/jacobi-1d/jacobi-1d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_jacobi-1d.js -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/jacobi-1d/jacobi-1d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_jacobi-1d.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_jacobi-1d_loader.js
+
+gcc stencils/jacobi-2d/jacobi-2d.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/jacobi-2d/jacobi-2d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_jacobi-2d.js -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/jacobi-2d/jacobi-2d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_jacobi-2d.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_jacobi-2d_loader.js
+
+gcc stencils/seidel-2d/seidel-2d.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/seidel-2d/seidel-2d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_seidel-2d.js -O3
+/Applications/cheerp/bin/clang -target cheerp stencils/seidel-2d/seidel-2d.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_seidel-2d.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_seidel-2d_loader.js
+
+-customized-
+
+gcc customized/overhead/overhead.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp customized/overhead/overhead.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_overhead.js -O3
+/Applications/cheerp/bin/clang -target cheerp customized/overhead/overhead.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_overhead.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_overhead_loader.js
+
+-!customized-
+=================float=======
+
+gcc medley/deriche/deriche.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp medley/deriche/deriche.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_deriche.js -O3
+/Applications/cheerp/bin/clang -target cheerp medley/deriche/deriche.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_deriche.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_deriche_loader.js 
+
+==========int================
+
+gcc medley/floyd-warshall/floyd-warshall.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp medley/floyd-warshall/floyd-warshall.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_floyd-warshall.js -O3
+/Applications/cheerp/bin/clang -target cheerp medley/floyd-warshall/floyd-warshall.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_floyd-warshall.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_floyd-warshall_loader.js
+
+gcc medley/nussinov/nussinov.c utilities/polybench.c -I utilities -o test -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -O3
+/Applications/cheerp/bin/clang -target cheerp medley/nussinov/nussinov.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_nussinov.js -O3
+/Applications/cheerp/bin/clang -target cheerp medley/nussinov/nussinov.c utilities/polybench.c -I utilities -DPOLYBENCH_TIME -DMEDIUM_DATASET -w -o pbc_nussinov.wasm -O3 -cheerp-mode=wasm -cheerp-wasm-loader=pbc_nussinov_loader.js
+
+
+
+
+
+
+
