@@ -10,6 +10,6 @@ If you want to add extra Emscripten flags, modify `em_flags`.
 - Execute `em_compile.py`. 
 #### Appendix A: A small tool that allows you to run Wasm locally on your browser
 - In the `small-tools` folder, copy `run-wasm-compatible-SimpleHTTPServer.py` and `test.html` to the folder containing Wasm and their JS loaders. 
-Execute the python file, then you should be able to run Wasm by visiting `localhost:8000/test.html`. 
+Execute the python file, then you should be able to run Wasm by visiting `localhost:8000/test.html` in the browser. 
 Remember to modify `test.html` to change the program you want to execute.
 
