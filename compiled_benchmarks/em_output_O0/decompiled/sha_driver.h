@@ -6,6 +6,10 @@
 
 #include "wasm-rt.h"
 
+#if defined(WASM_RT_ENABLE_SIMD)
+#include "simde/wasm/simd128.h"
+#endif
+
 /* TODO(binji): only use stdint.h types in header */
 #ifndef WASM_RT_CORE_TYPES_DEFINED
 #define WASM_RT_CORE_TYPES_DEFINED
@@ -19,6 +23,11 @@ typedef uint64_t u64;
 typedef int64_t s64;
 typedef float f32;
 typedef double f64;
+
+#if defined(WASM_RT_ENABLE_SIMD)
+typedef simde_v128_t v128;
+#endif
+
 #endif
 
 #ifdef __cplusplus
@@ -39,9 +48,9 @@ typedef struct Z_sha_driver_instance_t {
   wasm_rt_funcref_table_t w2c___indirect_function_table;
 } Z_sha_driver_instance_t;
 
-void Z_sha_driver_init_module(void);
 void Z_sha_driver_instantiate(Z_sha_driver_instance_t*, struct Z_env_instance_t*, struct Z_wasi_snapshot_preview1_instance_t*);
 void Z_sha_driver_free(Z_sha_driver_instance_t*);
+wasm_rt_func_type_t Z_sha_driver_get_func_type(uint32_t param_count, uint32_t result_count, ...);
 
 /* import: 'env' 'emscripten_date_now' */
 f64 Z_envZ_emscripten_date_now(struct Z_env_instance_t*);
