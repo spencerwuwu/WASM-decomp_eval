@@ -1,18 +1,28 @@
 #!/usr/bin/env sh
 
-WASM2C=$1
+DECOMPILER=$1
 DIR="decompiled"
 
-if [[ -z "$WASM2C" && -z $(which wasm2c) ]]; then
-  echo "Error: cannot find 'wasm2c'"
+if [[ -z "$DECOMPILER" ]]; then
+  DECOMPILER="wasm2c"
+fi
+
+if [[ -z "$(which $DECOMPILER)" ]]; then
+  echo "Error: cannot find '$DECOMPILER'"
   exit 1
 fi
 
-if [ ! -d "$DIR" ]; then
+if [[ ! -d "$DIR" ]]; then
   mkdir $DIR
 fi
 
+NAME=$(basename $DECOMPILER)
+
 # Ex. 'mylib.wasm' is decompiled to 'decompiled/mylib.c'
 for file in *.wasm; do
-  $WASM2C $file -o "$DIR/$(basename $file .wasm).c"
+  if [[ "$NAME" = "wasm2c" ]]; then
+    $DECOMPILER $file -o "$DIR/$(basename $file .wasm).c"
+  elif [[ "$NAME" = "w2c2" ]]; then
+    $DECOMPILER $file "$DIR/$(basename $file .wasm).c"
+  fi
 done

@@ -4,8 +4,8 @@ LIB = ../../../lib
 WASM_RT_IMPL = ../../../lib/wasm-rt-impl.c
 POLYBENCHC = ../../../emscripten_compile/polybench-c-4.2.1-beta/utilities/polybench.c
 
-2mm: test.c 2mm.c $(WASM_RT_IMPL)
-	$(CC) $^ -o $@
+test: test.c atax.c $(WASM_RT_IMPL)
+	$(CC) -I $(LIB) $^ -o $@
 
 %.o: %.c
 	$(CC) -I $(LIB) -c $^
