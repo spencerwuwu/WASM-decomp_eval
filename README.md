@@ -13,3 +13,9 @@ If you want to add extra Emscripten flags, modify `em_flags`.
 Execute the python file, then you should be able to run Wasm by visiting `localhost:8000/test.html` in the browser. 
 Remember to modify `test.html` to change the program you want to execute.
 
+## Install clang python binding
+'''
+$ sudo apt-get install libclang-dev
+$ pip3 install clang
+# Then edit cindex.py to the correct libclang version under /lib/x86_64-linux-gnu/
+'''

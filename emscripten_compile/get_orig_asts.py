@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import sys
 import os
-from clang.cindex import Index
 
 pbcPath = 'polybench-c-4.2.1-beta/'
 pbcSourceFilesWithPath = ['medley/floyd-warshall/floyd-warshall.c',
@@ -56,9 +55,19 @@ pbc_flags_type3 = 'polybench-c-4.2.1-beta/utilities/polybench_type3.c -I polyben
 
 chs_flags = ''
 output_prefix = '-o '
-output_folder = '../decompiled_asts/orig_asts/'
+output_folder = '../asts/orig_asts/'
 pbc_polybenchc_path = 'polybench-c-4.2.1-beta/utilities/polybench.c'
 
+
+from subprocess import Popen, PIPE, STDOUT
+
+def my_popen(cmd):
+    print(" +", cmd)
+    try:
+        process = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE)
+        ret, err = process.communicate()
+    except subprocess.CalledProcessError as e:
+        print(e.output)
 
 
 def pbcCompile():
@@ -77,12 +86,13 @@ def pbcCompile():
             pbc_flags = pbc_flags_type3
         curr = pbcSourceFilesWithPath[i]
         fileName = curr.split('/')[-1][:-2]
-        # print('Compiling ' + fileName)
-        command = "clang -emit-ast " + pbcPath + curr + " " + pbc_flags 
-        print(command)
+
         print('Compiling', fileName)
+        command = "clang -emit-ast " + pbcPath + curr + " " + pbc_flags 
+        my_popen(command)
+        command = "mv %s.ast %s" % (fileName, output_folder)
+        my_popen(command)
         print()
-        #os.system(command)
 
 
 def chsCompile():
@@ -90,13 +100,13 @@ def chsCompile():
     for i in range(len(chsSourceFilesWithPath)):
         curr = chsSourceFilesWithPath[i]
         fileName = curr.split('/')[-1][:-2]
-        # print('Compiling ' + fileName)
-        command = "clang -emit-ast " + chsPath + curr + ' ' + chs_flags
-        print(command)
-        print('Compiling', fileName)
-        print()
-        #os.system(command)
 
+        print('Compiling', fileName)
+        command = "clang -emit-ast " + chsPath + curr + ' ' + chs_flags
+        my_popen(command)
+        command = "mv %s.ast %s" % (fileName, output_folder)
+        my_popen(command)
+        print()
 
 if __name__ == '__main__':
     if not os.path.exists(output_folder):
