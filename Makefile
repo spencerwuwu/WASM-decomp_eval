@@ -4,16 +4,16 @@ OPT_LEVEL = -O0
 
 CHSTONE_SRCS := \
 	adpcm/adpcm.c \
-    aes/aes.c \
-    blowfish/bf.c \
-    dfadd/dfadd.c \
-    dfdiv/dfdiv.c \
-    dfmul/dfmul.c \
-    dfsin/dfsin.c \
-    gsm/gsm.c \
-    mips/mips.c \
-    motion/mpeg2.c \
-    sha/sha_driver.c
+	aes/aes.c \
+	blowfish/bf.c \
+	dfadd/dfadd.c \
+	dfdiv/dfdiv.c \
+	dfmul/dfmul.c \
+	dfsin/dfsin.c \
+	gsm/gsm.c \
+	mips/mips.c \
+	motion/mpeg2.c \
+	sha/sha_driver.c
 
 PBC_SRCS := \
 	medley/floyd-warshall/floyd-warshall.c \
