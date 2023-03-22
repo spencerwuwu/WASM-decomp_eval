@@ -3,6 +3,8 @@
 import argparse
 import logging
 
+# from pycparser import c_ast, c_parser, parse_file
+
 
 def main():
     args = parse_arguments()
@@ -14,6 +16,8 @@ def main():
 
     logging.warning("Program not implemented yet, output is a mock")
     print("(1,2,3)")
+    # abc = calculate_abc_metric(args.PROGRAM_SOURCE_CODE_FILE)
+    # print(abc)
 
 
 def parse_arguments():
@@ -34,6 +38,10 @@ def parse_arguments():
     )
     arguments = parser.parse_args()
     return arguments
+
+
+# def calculate_abc_metric(src_file):
+#    ast = parse_file(src_file, use_cpp=True, cpp_path="gcc")
 
 
 def configure_logger(log_level):

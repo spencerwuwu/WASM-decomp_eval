@@ -15,7 +15,9 @@ def main():
     else:
         configure_logger(logging.INFO)
 
-    metrics = calculate_program_metrics(args.PROGRAM_SOURCE_CODE_FILE)
+    program_source_code_path = Path(args.PROGRAM_SOURCE_CODE_FILE).absolute()
+
+    metrics = calculate_program_metrics(program_source_code_path)
     print(json.dumps(metrics, indent=2))
 
 
@@ -39,24 +41,24 @@ def parse_arguments():
     return arguments
 
 
-def calculate_program_metrics(src_file):
-    loc = int(run_metric_program(f"python3 calculate_lines_of_code.py {src_file}"))
-    abc = run_metric_program(f"python3 calculate_abc_software_metric.py {src_file}")
+def calculate_program_metrics(src_path):
+    loc = int(run_metric_program(f"python3 calculate_lines_of_code.py {src_path}"))
+    abc = run_metric_program(f"python3 calculate_abc_software_metric.py {src_path}")
     max_nesting_depth = int(
-        run_metric_program(f"python3 calculate_maximum_nesting_depth.py {src_file}")
+        run_metric_program(f"python3 calculate_maximum_nesting_depth.py {src_path}")
     )
     halstead_complexity_difficulty_measure = float(
         run_metric_program(
-            f"python3 calculate_halstead_complexity_difficulty_measure.py {src_file}"
+            f"python3 calculate_halstead_complexity_difficulty_measure.py {src_path}"
         )
     )
     mccabe_cyclomatic_complexity = int(
         run_metric_program(
-            f"python3 calculate_mccabe_cyclomatic_complexity.py {src_file}"
+            f"python3 calculate_mccabe_cyclomatic_complexity.py {src_path}"
         )
     )
     kafuras_information_flow = int(
-        run_metric_program(f"python3 calculate_kafuras_information_flow.py {src_file}")
+        run_metric_program(f"python3 calculate_kafuras_information_flow.py {src_path}")
     )
 
     metrics = {
@@ -71,10 +73,12 @@ def calculate_program_metrics(src_file):
 
 
 def run_metric_program(command):
-    metrics_dir = Path(__file__).absolute().parent
+    metric_calculators_dir = Path(__file__).absolute().parent / "metric_calculators"
 
     return (
-        subprocess.run(command, shell=True, capture_output=True, cwd=metrics_dir)
+        subprocess.run(
+            command, shell=True, capture_output=True, cwd=metric_calculators_dir
+        )
         .stdout.decode()
         .rstrip()
     )
