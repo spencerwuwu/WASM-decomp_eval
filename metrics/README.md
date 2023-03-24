@@ -39,9 +39,9 @@ gcc -E example_source_code.c > example_source_code_preprocessed.c
 TODO:
 - [x] Implement calculate_lines_of_code.py
 - [ ] Figure out how to parse C code (maybe using [pycparser](https://github.com/eliben/pycparser))
-- [ ] Implement calculate_abc_software_metric.py
-- [ ] Implement calculate_halstead_complexity_difficulty_measure.py
-- [ ] Implement calculate_kafuras_information_flow.py
-- [ ] Implement calculate_lines_of_code.py
-- [ ] Implement calculate_maximum_nesting_depth.py
-- [ ] Implement calculate_mccabe_cyclomatic_complexity.py
+- [ ] Implement (or add already implemented project for-) calculate_abc_software_metric.py
+- [ ] Implement (or add already implemented project for-) calculate_halstead_complexity_difficulty_measure.py
+- [ ] Implement (or add already implemented project for-) calculate_kafuras_information_flow.py
+- [ ] Implement (or add already implemented project for-) calculate_lines_of_code.py
+- [ ] Implement (or add already implemented project for-) calculate_maximum_nesting_depth.py
+- [ ] Implement (or add already implemented project for-) calculate_mccabe_cyclomatic_complexity.py
