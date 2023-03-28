@@ -31,6 +31,20 @@ Example output:
 }
 ```
 
+## Usage (Docker)
+
+```bash
+# build
+docker build -t metrics .
+
+# run
+docker run metrics python3 calculate_program_metrics.py example_source_code.c
+
+# run (interactive):
+docker run -it metrics /bin/bash
+python3 calculate_program_metrics.py example_source_code.c
+```
+
 ## Code formatting
 
 [black](https://github.com/psf/black)

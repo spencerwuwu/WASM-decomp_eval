@@ -10,6 +10,8 @@ output_dir = Path(__file__).absolute().parent.parent / "output" / "cccc"
 def run(source_code_file):
     command = f"cccc {source_code_file} --outdir={output_dir}"
 
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     # remove old output files
     for file in os.scandir(output_dir):
         # throws error if subdirectories exist

@@ -77,7 +77,11 @@ def run_metric_program(command):
 
     return (
         subprocess.run(
-            command, shell=True, capture_output=True, cwd=metric_calculators_dir
+            command,
+            shell=True,
+            capture_output=True,
+            cwd=metric_calculators_dir,
+            check=True,
         )
         .stdout.decode()
         .rstrip()
