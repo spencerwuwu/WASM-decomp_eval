@@ -16,23 +16,21 @@ python3 -m pip install -r requirements.txt
 
 ```bash
 # build
+cd metrics
 docker build -t metrics .
 
 # run
-docker run metrics python3 calculate_program_metrics.py example_source_code.c
-
-# run (interactive):
-docker run -it metrics /bin/bash
-python3 calculate_program_metrics.py example_source_code.c
+cd ../emscripten_compile/CHStone_v1.11_150204/aes
+docker run -v $(pwd):/input_files metrics python3 calculate_program_metrics.py aes.c
 ```
 
 Example output:
 
 ```json
 {
-  "Lines of code": 9,
-  "Halstead complexity difficulty measure": 8.272727272727273,
-  "McCabe cyclomatic complexity": 2,
+  "Lines of code": 64,
+  "Halstead complexity difficulty measure": 23.330479452054796,
+  "McCabe cyclomatic complexity": 5,
   "Kafura's information flow": 0
 }
 ```

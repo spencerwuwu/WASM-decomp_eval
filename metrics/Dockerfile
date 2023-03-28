@@ -21,6 +21,11 @@ RUN python3 -m pip install -r requirements.txt
 # development/debugging within the container
 RUN apt-get install -y less
 
+# The project scripts will use this environment variable
+# to determine if they're running in a docker container
+# or not
+ENV IN_DOCKER=True
+
 # Install metrics project
 COPY . .
 

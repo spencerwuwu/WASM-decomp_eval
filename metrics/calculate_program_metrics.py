@@ -5,6 +5,7 @@ import logging
 from pathlib import Path
 import subprocess
 import json
+import os
 
 
 def main():
@@ -15,7 +16,18 @@ def main():
     else:
         configure_logger(logging.INFO)
 
-    program_source_code_path = Path(args.PROGRAM_SOURCE_CODE_FILE).absolute()
+    if os.environ["IN_DOCKER"] == "True":
+        input_files_dir = Path("/input_files")
+        input_files_dir.mkdir(exist_ok=True)
+
+        program_source_code_path = input_files_dir / args.PROGRAM_SOURCE_CODE_FILE
+    else:
+        program_source_code_path = Path(args.PROGRAM_SOURCE_CODE_FILE).absolute()
+
+    if not program_source_code_path.exists():
+        raise RuntimeError(f"File {program_source_code_path} not found")
+
+    print(program_source_code_path)
 
     metrics = calculate_program_metrics(program_source_code_path)
     print(json.dumps(metrics, indent=2))

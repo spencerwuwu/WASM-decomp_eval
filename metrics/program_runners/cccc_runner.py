@@ -24,6 +24,7 @@ def run(source_code_file):
         capture_output=False,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.STDOUT,
+        check=True,
     )
 
     return getOutput()
