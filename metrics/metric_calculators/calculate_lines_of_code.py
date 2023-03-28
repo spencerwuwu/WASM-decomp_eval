@@ -3,6 +3,13 @@
 import argparse
 import logging
 from pathlib import Path
+import sys
+
+# add program_runner dir to import runner libraries
+program_runners_path = Path(__file__).absolute().parent.parent / "program_runners"
+sys.path.append(str(program_runners_path))
+
+import cccc_runner
 
 
 def main():
@@ -13,8 +20,12 @@ def main():
     else:
         configure_logger(logging.INFO)
 
-    num_lines = get_number_of_lines(args.PROGRAM_SOURCE_CODE_FILE)
-    print(num_lines)
+    output = cccc_runner.run(args.PROGRAM_SOURCE_CODE_FILE)
+
+    project_summary = output.find("project_summary")
+    loc = project_summary.find("lines_of_code").attrib["value"]
+
+    print(str(loc))
 
 
 def parse_arguments():
