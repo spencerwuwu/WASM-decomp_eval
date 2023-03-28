@@ -2,6 +2,14 @@
 
 import argparse
 import logging
+from pathlib import Path
+import sys
+
+# add program_runner dir to import runner libraries
+program_runners_path = Path(__file__).absolute().parent.parent / "program_runners"
+sys.path.append(str(program_runners_path))
+
+import cccc_runner
 
 
 def main():
@@ -12,8 +20,12 @@ def main():
     else:
         configure_logger(logging.INFO)
 
-    logging.warning("Program not implemented yet, output is a mock")
-    print("4238")
+    output = cccc_runner.run(args.PROGRAM_SOURCE_CODE_FILE)
+
+    project_summary = output.find("project_summary")
+    information_flow = project_summary.find("IF4").attrib["value"]
+
+    print(str(information_flow))
 
 
 def parse_arguments():

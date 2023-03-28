@@ -26,23 +26,21 @@ docker run -it metrics /bin/bash
 python3 calculate_program_metrics.py example_source_code.c
 ```
 
-## Usage (without Docker, requires manual installation of dependencies)
-
-```bash
-python3 calculate_program_metrics.py example_source_code.c
-```
-
 Example output:
 
 ```json
 {
-    "Lines of code": 7,
-    "ABC software metric": "(1,2,3)",
-    "Maximum nesting depth": 1,
-    "Halstead complexity difficulty measure": 5.27,
-    "McCabe cyclomatic complexity": 4,
-    "Kafura's information flow": 4238
+  "Lines of code": 9,
+  "Halstead complexity difficulty measure": 8.272727272727273,
+  "McCabe cyclomatic complexity": 2,
+  "Kafura's information flow": 0
 }
+```
+
+## Usage (without Docker, requires manual installation of dependencies)
+
+```bash
+python3 calculate_program_metrics.py example_source_code.c
 ```
 
 ## Code formatting
@@ -59,10 +57,6 @@ gcc -E example_source_code.c > example_source_code_preprocessed.c
 TODO:
 
 -   [x] Implement calculate_lines_of_code.py
--   [ ] Figure out how to parse C code (maybe using [pycparser](https://github.com/eliben/pycparser))
--   [ ] Implement calculate_abc_software_metric.py
--   [ ] Implement calculate_halstead_complexity_difficulty_measure.py
--   [ ] Implement calculate_kafuras_information_flow.py
--   [ ] Implement calculate_lines_of_code.py
--   [ ] Implement calculate_maximum_nesting_depth.py
+-   [x] Implement calculate_halstead_complexity_difficulty_measure.py
+-   [x] Implement calculate_kafuras_information_flow.py
 -   [x] Implement calculate_mccabe_cyclomatic_complexity.py

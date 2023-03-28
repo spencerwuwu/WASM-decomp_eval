@@ -43,10 +43,6 @@ def parse_arguments():
 
 def calculate_program_metrics(src_path):
     loc = int(run_metric_program(f"python3 calculate_lines_of_code.py {src_path}"))
-    abc = run_metric_program(f"python3 calculate_abc_software_metric.py {src_path}")
-    max_nesting_depth = int(
-        run_metric_program(f"python3 calculate_maximum_nesting_depth.py {src_path}")
-    )
     halstead_complexity_difficulty_measure = float(
         run_metric_program(
             f"python3 calculate_halstead_complexity_difficulty_measure.py {src_path}"
@@ -63,8 +59,6 @@ def calculate_program_metrics(src_path):
 
     metrics = {
         "Lines of code": loc,
-        "ABC software metric": abc,
-        "Maximum nesting depth": max_nesting_depth,
         "Halstead complexity difficulty measure": halstead_complexity_difficulty_measure,
         "McCabe cyclomatic complexity": mccabe_cyclomatic_complexity,
         "Kafura's information flow": kafuras_information_flow,
