@@ -53,7 +53,6 @@ gcc -E example_source_code.c > example_source_code_preprocessed.c
 ```
 
 TODO:
-
 -   [x] Implement calculate_lines_of_code.py
 -   [x] Implement calculate_halstead_complexity_difficulty_measure.py
 -   [x] Implement calculate_kafuras_information_flow.py
