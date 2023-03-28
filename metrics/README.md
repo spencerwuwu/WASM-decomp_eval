@@ -12,7 +12,21 @@ python3 -m pip install -r requirements.txt
 
 1. C and C++ Code Counter: [Install Instructions](https://github.com/sarnold/cccc)
 
-## Usage
+## Usage (Docker)
+
+```bash
+# build
+docker build -t metrics .
+
+# run
+docker run metrics python3 calculate_program_metrics.py example_source_code.c
+
+# run (interactive):
+docker run -it metrics /bin/bash
+python3 calculate_program_metrics.py example_source_code.c
+```
+
+## Usage (without Docker, requires manual installation of dependencies)
 
 ```bash
 python3 calculate_program_metrics.py example_source_code.c
@@ -29,20 +43,6 @@ Example output:
     "McCabe cyclomatic complexity": 4,
     "Kafura's information flow": 4238
 }
-```
-
-## Usage (Docker)
-
-```bash
-# build
-docker build -t metrics .
-
-# run
-docker run metrics python3 calculate_program_metrics.py example_source_code.c
-
-# run (interactive):
-docker run -it metrics /bin/bash
-python3 calculate_program_metrics.py example_source_code.c
 ```
 
 ## Code formatting

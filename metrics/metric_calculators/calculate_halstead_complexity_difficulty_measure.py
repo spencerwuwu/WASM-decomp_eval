@@ -2,6 +2,15 @@
 
 import argparse
 import logging
+from pathlib import Path
+import sys
+import json
+
+# add halstead dir to import halstead module
+halstead_path = Path(__file__).absolute().parent / "halstead_helpers"
+sys.path.append(str(halstead_path))
+
+import halstead
 
 
 def main():
@@ -12,8 +21,9 @@ def main():
     else:
         configure_logger(logging.INFO)
 
-    logging.warning("Program not implemented yet, output is a mock")
-    print("5.27")
+    result = halstead.manageFile(args.PROGRAM_SOURCE_CODE_FILE)
+    # print(json.dumps(result, indent=2))
+    print(result["difficulty"])
 
 
 def parse_arguments():

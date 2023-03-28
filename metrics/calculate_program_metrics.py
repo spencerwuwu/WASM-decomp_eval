@@ -75,17 +75,24 @@ def calculate_program_metrics(src_path):
 def run_metric_program(command):
     metric_calculators_dir = Path(__file__).absolute().parent / "metric_calculators"
 
-    return (
-        subprocess.run(
-            command,
-            shell=True,
-            capture_output=True,
-            cwd=metric_calculators_dir,
-            check=True,
+    try:
+        results = (
+            subprocess.run(
+                command,
+                shell=True,
+                capture_output=True,
+                cwd=metric_calculators_dir,
+                check=True,
+            )
+            .stdout.decode()
+            .rstrip()
         )
-        .stdout.decode()
-        .rstrip()
-    )
+    except subprocess.CalledProcessError as e:
+        logging.error(e)
+        logging.error(f"stdout:\n{e.stdout.decode()}")
+        logging.error(f"stderr:\n{e.stderr.decode()}")
+        raise
+    return results
 
 
 def get_number_of_lines(source_code_file):
