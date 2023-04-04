@@ -56,3 +56,9 @@ dkms.conf
 
 # Native binary
 /target
+
+# VSCode files
+.vscode
+
+# Python cache
+__pycache__
