@@ -1,0 +1,11 @@
+0:printf
+1:gettimeofday
+2:__wasm_call_ctors
+3:__wasm_apply_data_relocs
+4:local_memcpy
+5:BF_set_key
+6:BF_encrypt
+7:BF_cfb64_encrypt
+8:blowfish_main
+9:submain
+10:rtclock

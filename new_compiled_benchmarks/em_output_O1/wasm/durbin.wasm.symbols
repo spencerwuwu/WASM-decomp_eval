@@ -1,0 +1,11 @@
+0:memcpy
+1:fwrite
+2:fiprintf
+3:fputc
+4:__small_fprintf
+5:free
+6:legalimport$polybench_alloc_data
+7:__wasm_call_ctors
+8:__wasm_apply_data_relocs
+9:submain
+10:legalfunc$polybench_alloc_data
