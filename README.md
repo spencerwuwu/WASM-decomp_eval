@@ -1,10 +1,16 @@
 # CS699_DeWasm
 
+## Requirements
+Lastest version of emcc and w2c2, wabt.   
+Otherwise, things may not work.
+
+- emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.34 (57b21b8fdcbe3ebb523178b79465254668eab408)
+- wabt e8c7e0dfb4e04544727d11fb987839f1dbf616f2
+- w2c2 63969fbbe6bc3c38dd9be7c1130bac6533651836
+
 ### 1. Benchmark compilation: C -> Wasm with Emscripten
 Precompiled files available in `compiled_benchmarks/em_output_OX` (OX is the optimization level, currently support O0, O1, O2, and O3)
 #### Compile using the script
-- Make sure your Emscripten version is 3.1.31  
-- Download `emscripten_compile` folder
 - Open `em_compile.py`. Your desired optimization level is the value of `opt_level` (may update the argument version later). 
 If you want to add extra Emscripten flags, modify `em_flags`.
 - Execute `em_compile.py`. 

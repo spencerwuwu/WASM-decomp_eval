@@ -4,14 +4,17 @@ import sys
 import os
 from subprocess import Popen, PIPE
 
-logging.basicConfig(level=logging.WARNING)
-log = logging.getLogger("do_decompile_wasm.py")
-
 OPTIMIZE_LEVELS = ["0", "1", "2"]
 
+W2C2 = "/home/weicheng/Documents/CS699_WASM/w2c2/build/w2c2/w2c2"
+WASM2C = "/home/weicheng/Documents/CS699_WASM/wabt/build/wasm2c"
+
 BLACKLIST = [
-        "em_output_O1/wasm/gsm.wasm",
+        #"em_output_O1/wasm/gsm.wasm",
         ]
+
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger("do_decompile_wasm.py")
 
 """
 "   External process call
@@ -32,31 +35,23 @@ def run_cmd(cmd):
 
 
 def _decompile_w2c2(wasm, out_f):
-    log.info("Handling %s" % wasm)
-    run_cmd("w2c2 %s %s" % (wasm, out_f))
+    log.info("Handling w2c2 %s" % wasm)
+    run_cmd("%s %s %s" % (W2C2, wasm, out_f))
 
 
 def _decompile_wasm2c(wasm, c_f, out_f, out_dir):
-    log.info("Handling %s" % wasm)
-    run_cmd("cd %s; wasm2c ../../%s -o %s" % (out_dir, wasm, c_f))
+    log.info("Handling wasm2c %s" % wasm)
+    run_cmd("cd %s; %s ../../%s -o %s" % (out_dir, WASM2C, wasm, c_f))
 
     with open(out_f, "r") as fd:
         lines = list(fd.readlines())
 
-    inserted = False
-    has_include = False
     fd =  open(out_f, "w")
+    filename = c_f.replace(".c", "")
     for line in lines:
-        if not inserted:
-            if line.startswith("#include") or line.startswith("\n"):
-                has_include = True
-                fd.write(line)
-            else:
-                if has_include:
-                    fd.write("// Patched line:\nWASM_RT_THREAD_LOCAL uint32_t wasm_rt_call_stack_depth = 0;\n")
-                    inserted = True
-                else:
-                    fd.write(line)
+        if line == "#include \"%s.h\"\n" % filename:
+            fd.write(line)
+            fd.write("// Patched line:\nWASM_RT_THREAD_LOCAL uint32_t wasm_rt_call_stack_depth = 0;\n")
         else:
             fd.write(line)
     fd.close()
