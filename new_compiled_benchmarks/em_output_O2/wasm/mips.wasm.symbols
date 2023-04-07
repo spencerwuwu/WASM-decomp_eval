@@ -1,0 +1,8 @@
+0:gettimeofday
+1:iprintf
+2:memset
+3:memcpy
+4:__small_printf
+5:__wasm_call_ctors
+6:__wasm_apply_data_relocs
+7:submain

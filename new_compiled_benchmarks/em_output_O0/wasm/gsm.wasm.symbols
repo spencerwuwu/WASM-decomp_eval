@@ -1,0 +1,17 @@
+0:printf
+1:gettimeofday
+2:__wasm_call_ctors
+3:__wasm_apply_data_relocs
+4:gsm_add
+5:gsm_mult
+6:gsm_mult_r
+7:gsm_abs
+8:gsm_norm
+9:gsm_div
+10:Autocorrelation
+11:Reflection_coefficients
+12:Transformation_to_Log_Area_Ratios
+13:Quantization_and_coding
+14:Gsm_LPC_Analysis
+15:submain
+16:rtclock

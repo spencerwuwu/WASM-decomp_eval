@@ -1,0 +1,13 @@
+0:strcmp
+1:free
+2:expf
+3:powf
+4:fprintf
+5:legalimport$polybench_alloc_data
+6:__wasm_call_ctors
+7:__wasm_apply_data_relocs
+8:submain
+9:init_array
+10:kernel_deriche
+11:print_array
+12:legalfunc$polybench_alloc_data

@@ -191,100 +191,100 @@ int getint(char *prompt)
 }
 
 
-int main(int argc, char *argv[])
-{
-#if ! SLOWER
-	double start_time, end_time; // , speed;
-#endif
-#if ! defined size
- 	int size = getint("Enter length of random mRNA sequence (2200 is average for human mRNA): ");  // Average (human) mRNA length is 2200; there's one that's 5000, though
-#endif
-
-        int i, j, k=-1;
-	MAX_N_DECLS();
-	char *options;
-#if VERBOSE
-#if CHECK_DEPENDENCES
-	options = " [DV]";
-#else
-	options = " [V]";
-#endif
-#else
-#if CHECK_DEPENDENCES
-	options = " [D]";
-#else
-	options = "";
-#endif
-#endif
-
-	printf("Running Nussinov RNA algorithm%s for sequence of length %d, random data with seed %d.\n",
-	       options, size, SEED);
-
-	if (size > MAX_SIZE) {
-		fprintf(stderr, "size (%d) < MAX_SIZE (%d)\n", MAX_SIZE, size);
-		exit(1);
-	}
-
-	/* seed it with a constant so we can check/compare the results */
-	srand(SEED);
-	for (i = 0; i < size; i++)
-		seq[i] = rand() % 4;
-	
-#if ! SLOWER
-	start_time = cur_time();
-#endif
-
-// "OPTION 1"
-#pragma scop
-	for (i = size-1; i >= 0; i--) {
-		for (j=i+1; j<size; j++) {
-#if VERBOSE
-			fprintf(VERBOSE_OUT, "i, j, k = %d, %d, %d\n", i, j, k); /* outer k is -1 to indicate no k */
-#endif
-			MAX_N_START(i, j);
-#if FOUR_WAY_MAX_WITH_REDUNDANCY
-			if (j-1>=0)   MAX_N(i, j, N(i, j-1));
-			if (i+1<size) MAX_N(i, j, N(i+1, j));
-#endif
-			if (j-1>=0 && i+1<size) {
-			  if (i<j-1) MAX_N(i, j, N(i+1, j-1)+match(seq[i], seq[j]));  /* don't allow adjacent elements to bond */
-			  else       MAX_N(i, j, N(i+1, j-1));
-			}
-
-			{
-			int k;  /* local k to allow N macro to look at k and get -1 above and real k here */
-			for (k=i+ZERO_IF_NO_REDUNDANCY; k<j; k++) {
-#if VERBOSE
-				fprintf(VERBOSE_OUT, "i, j, k = %d, %d, %d\n", i, j, k);
-#endif
-				MAX_N(i, j, N(i, k)+N(k+1, j));
-			}
-			} /* end of local k */
-			MAX_N_END(i, j);
-		}
-	}
-#pragma endscop
-
-#if !SLOWER
-	end_time = cur_time();
-	printf("done.\nTime elapsed: %fs\n", end_time-start_time);
-#endif
-	printf("N(0, size-1) = %d\n", N(0, size-1));
-
-	if (size <= PRINT_SIZE) {
-		for (i=0; i<size; i++)
-			printf("%3s ", base_print[seq[i]]);
-		printf("\n");
-		for(i = 0; i < size; i++) {
-			for(j = 0; j < size; j++) printf("%3d ", debug_N(i, j));
-			printf("\n");
-		}
-	}
-
-	eassert(k == -1);
-
-	return 0;
-}
+// int main(int argc, char *argv[])
+// {
+// #if ! SLOWER
+// 	double start_time, end_time; // , speed;
+// #endif
+// #if ! defined size
+//  	int size = getint("Enter length of random mRNA sequence (2200 is average for human mRNA): ");  // Average (human) mRNA length is 2200; there's one that's 5000, though
+// #endif
+// 
+//         int i, j, k=-1;
+// 	MAX_N_DECLS();
+// 	char *options;
+// #if VERBOSE
+// #if CHECK_DEPENDENCES
+// 	options = " [DV]";
+// #else
+// 	options = " [V]";
+// #endif
+// #else
+// #if CHECK_DEPENDENCES
+// 	options = " [D]";
+// #else
+// 	options = "";
+// #endif
+// #endif
+// 
+// 	printf("Running Nussinov RNA algorithm%s for sequence of length %d, random data with seed %d.\n",
+// 	       options, size, SEED);
+// 
+// 	if (size > MAX_SIZE) {
+// 		fprintf(stderr, "size (%d) < MAX_SIZE (%d)\n", MAX_SIZE, size);
+// 		exit(1);
+// 	}
+// 
+// 	/* seed it with a constant so we can check/compare the results */
+// 	srand(SEED);
+// 	for (i = 0; i < size; i++)
+// 		seq[i] = rand() % 4;
+// 	
+// #if ! SLOWER
+// 	start_time = cur_time();
+// #endif
+// 
+// // "OPTION 1"
+// #pragma scop
+// 	for (i = size-1; i >= 0; i--) {
+// 		for (j=i+1; j<size; j++) {
+// #if VERBOSE
+// 			fprintf(VERBOSE_OUT, "i, j, k = %d, %d, %d\n", i, j, k); /* outer k is -1 to indicate no k */
+// #endif
+// 			MAX_N_START(i, j);
+// #if FOUR_WAY_MAX_WITH_REDUNDANCY
+// 			if (j-1>=0)   MAX_N(i, j, N(i, j-1));
+// 			if (i+1<size) MAX_N(i, j, N(i+1, j));
+// #endif
+// 			if (j-1>=0 && i+1<size) {
+// 			  if (i<j-1) MAX_N(i, j, N(i+1, j-1)+match(seq[i], seq[j]));  /* don't allow adjacent elements to bond */
+// 			  else       MAX_N(i, j, N(i+1, j-1));
+// 			}
+// 
+// 			{
+// 			int k;  /* local k to allow N macro to look at k and get -1 above and real k here */
+// 			for (k=i+ZERO_IF_NO_REDUNDANCY; k<j; k++) {
+// #if VERBOSE
+// 				fprintf(VERBOSE_OUT, "i, j, k = %d, %d, %d\n", i, j, k);
+// #endif
+// 				MAX_N(i, j, N(i, k)+N(k+1, j));
+// 			}
+// 			} /* end of local k */
+// 			MAX_N_END(i, j);
+// 		}
+// 	}
+// #pragma endscop
+// 
+// #if !SLOWER
+// 	end_time = cur_time();
+// 	printf("done.\nTime elapsed: %fs\n", end_time-start_time);
+// #endif
+// 	printf("N(0, size-1) = %d\n", N(0, size-1));
+// 
+// 	if (size <= PRINT_SIZE) {
+// 		for (i=0; i<size; i++)
+// 			printf("%3s ", base_print[seq[i]]);
+// 		printf("\n");
+// 		for(i = 0; i < size; i++) {
+// 			for(j = 0; j < size; j++) printf("%3d ", debug_N(i, j));
+// 			printf("\n");
+// 		}
+// 	}
+// 
+// 	eassert(k == -1);
+// 
+// 	return 0;
+// }
 
 /*
 

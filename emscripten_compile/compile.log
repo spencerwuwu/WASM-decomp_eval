@@ -1,0 +1,101 @@
+tools.filelock:DEBUG: Attempting to acquire lock 274908334832 on /tmp/emscripten_temp/emscripten.lock
+tools.filelock:DEBUG: Lock 274908334832 acquired on /tmp/emscripten_temp/emscripten.lock
+emcc:WARNING: invocation: /docker_shared/emsdk/upstream/emscripten/emcc.py -s WASM=1 -s SIDE_MODULE=1 -g3 --emit-symbol-map CHStone_v1.11_150204/aes/aes.c -O0 -o em_output_O0/wasm/aes.wasm (in /docker_shared/cs699_webassembly/emscripten_compile)
+profiler:DEBUG: block "parse arguments" took 0.002 seconds
+shared:DEBUG: successfully executed /docker_shared/emsdk/upstream/bin/clang --version
+shared:DEBUG: sanity file up-to-date: /docker_shared/emsdk/upstream/emscripten/cache/sanity.txt
+shared:DEBUG: successfully executed /docker_shared/emsdk/node/14.18.2_64bit/bin/node --version
+shared:DEBUG: successfully executed /docker_shared/emsdk/upstream/bin/clang -print-targets
+shared:INFO: (Emscripten: Running sanity checks)
+shared:DEBUG: successfully executed /docker_shared/emsdk/node/14.18.2_64bit/bin/node -e console.log("hello")
+profiler:DEBUG: block "check_node" took 0.523 seconds
+profiler:DEBUG: block "sanity LLVM" took 0.003 seconds
+profiler:DEBUG: block "check_sanity" took 1.032 seconds
+profiler:DEBUG: block "setup" took 0.001 seconds
+profiler:DEBUG: block "ensure_sysroot" took 0.000 seconds
+emcc:DEBUG: compiling source file: CHStone_v1.11_150204/aes/aes.c
+shared:DEBUG: successfully executed /docker_shared/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fPIC -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration --sysroot=/docker_shared/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/fakesdl -Xclang -iwithsysroot/include/compat -g3 -O0 CHStone_v1.11_150204/aes/aes.c -c -o /tmp/emscripten_temp/aes_0.o
+profiler:DEBUG: block "compile inputs" took 0.948 seconds
+profiler:DEBUG: block "linker_setup" took 0.003 seconds
+profiler:DEBUG: block "calculate linker inputs" took 0.016 seconds
+profiler:DEBUG: block "calculate system libraries" took 0.000 seconds
+emcc:DEBUG: linking: ['/tmp/emscripten_temp/aes_0.o', '-L/docker_shared/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/pic']
+shared:DEBUG: successfully executed /docker_shared/emsdk/upstream/bin/wasm-ld -o em_output_O0/wasm/aes.wasm --whole-archive /tmp/emscripten_temp/aes_0.o -L/docker_shared/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/pic --no-whole-archive -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/emscripten_temp/tmpgwps29wu.undefined --import-memory --export-dynamic --export-if-defined=main --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export-if-defined=__wasm_apply_data_relocs --export-if-defined=fflush --export=__wasm_call_ctors --experimental-pic -shared --stack-first
+profiler:DEBUG: block "link" took 0.247 seconds
+emcc:DEBUG: emscript
+building:DEBUG: saving debug copy /tmp/emscripten_temp/emcc-0-base.wasm
+extract_metadata:DEBUG: no start/stop symbols found for section: em_asm
+extract_metadata:DEBUG: no start/stop symbols found for section: em_lib_deps
+shared:DEBUG: successfully executed /docker_shared/emsdk/upstream/bin/wasm-opt --version
+shared:DEBUG: successfully executed /docker_shared/emsdk/upstream/bin/wasm-emscripten-finalize -g --dyncalls-i64 --pass-arg=legalize-js-interface-export-originals --side-module --dwarf em_output_O0/wasm/aes.wasm -o em_output_O0/wasm/aes.wasm --detect-features
+building:DEBUG: saving debug copy /tmp/emscripten_temp/emcc-1-wasm-emscripten-finalize.wasm
+emscripten:DEBUG: Metadata: {'asmConsts': {},
+ 'emJsFuncTypes': {},
+ 'emJsFuncs': {},
+ 'exports': ['__wasm_call_ctors',
+             '__wasm_apply_data_relocs',
+             'encrypt',
+             'KeySchedule',
+             'AddRoundKey',
+             'ByteSub_ShiftRow',
+             'MixColumn_AddRoundKey',
+             'SubByte',
+             'decrypt',
+             'InversShiftRow_ByteSub',
+             'AddRoundKey_InversMixColumn',
+             'aes_main',
+             'submain'],
+ 'features': ['--enable-mutable-globals', '--enable-sign-ext'],
+ 'imports': ['printf',
+             'gettimeofday',
+             '__stack_pointer',
+             '__memory_base',
+             '__table_base',
+             'round_val',
+             'nb',
+             'main_result',
+             'word',
+             'Rcon0',
+             'Sbox',
+             'invSbox',
+             'statemt',
+             'key',
+             'startTimer',
+             'endTimer'],
+ 'invokeFuncs': [],
+ 'jsDeps': [],
+ 'mainReadsParams': False,
+ 'namedGlobals': {'Rcon0': '128',
+                  'Sbox': '256',
+                  'endTimer': '4552',
+                  'invSbox': '1280',
+                  'key': '4416',
+                  'main_result': '2360',
+                  'nb': '2356',
+                  'round_val': '2352',
+                  'startTimer': '4544',
+                  'statemt': '4288',
+                  'type': '4560',
+                  'word': '2368'}}
+profiler:DEBUG: block "get_metadata" took 0.410 seconds
+building:DEBUG: saving debug copy /tmp/emscripten_temp/emcc-2-post_finalize.wasm
+emscripten:DEBUG: very limited syscalls () so disabling full filesystem support
+emscripten:DEBUG: emscript: skipping remaining js glue generation
+emcc:DEBUG: (not saving intermediate original because not generating JS)
+profiler:DEBUG: block "emscript" took 0.440 seconds
+emcc:DEBUG: using binaryen
+shared:DEBUG: successfully executed /docker_shared/emsdk/upstream/bin/llvm-objcopy em_output_O0/wasm/aes.wasm em_output_O0/wasm/aes.wasm --remove-section=producers
+building:DEBUG: saving debug copy /tmp/emscripten_temp/emcc-3-strip.wasm
+profiler:DEBUG: block "strip_producers" took 0.140 seconds
+building:DEBUG: handle_final_wasm_symbols
+shared:DEBUG: successfully executed /docker_shared/emsdk/upstream/bin/wasm-opt --print-function-map --quiet em_output_O0/wasm/aes.wasm --mvp-features --enable-mutable-globals --enable-sign-ext
+emcc:DEBUG: (not saving intermediate symbolmap because not generating JS)
+building:DEBUG: saving debug copy /tmp/emscripten_temp/emcc-4-symbolmap.wasm
+profiler:DEBUG: block "handle_final_symbols" took 0.194 seconds
+profiler:DEBUG: block "binaryen" took 0.343 seconds
+profiler:DEBUG: block "post_link" took 0.787 seconds
+emcc:DEBUG: total time: 3.06 seconds
+profiler:DEBUG: block "main" took 3.062 seconds
+not cleaning up temp files since in debug-save mode, see them in /tmp/emscripten_temp
+tools.filelock:DEBUG: Attempting to release lock 274908334832 on /tmp/emscripten_temp/emscripten.lock
+tools.filelock:DEBUG: Lock 274908334832 released on /tmp/emscripten_temp/emscripten.lock
