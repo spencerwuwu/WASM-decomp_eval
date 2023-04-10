@@ -1,6 +1,24 @@
 #!/usr/bin/env python3
+import logging
 import sys
 from clang.cindex import *
+
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger("compare_ast.py")
+
+CLIBS = [
+        "strcmp",
+        "malloc",
+        "free",
+        "calloc",
+        "printf",
+        "strcmp",
+
+        "gettimeofday",
+        "rtclock",
+        "print_array",
+        "submain",
+        ]
 
 
 class TreeNode():
@@ -29,8 +47,7 @@ def dfs_build_tree(cursor, cur_level=0):
     # Remove parameters for function
     if cursor.kind == CursorKind.PARM_DECL:
         return None
-
-    print(" " * cur_level + "|-", cursor.kind, cursor.spelling, cursor.displayname)
+    # print(" " * cur_level + "|-", cursor.kind, cursor.spelling, cursor.displayname)
 
     cur_node = TreeNode(cursor)
 
@@ -56,7 +73,8 @@ def check_only_def(cursor):
 
 def create_ast_tree(translation_unit):
     print('Translation unit:', translation_unit.spelling)
-    function_trees = []
+    file_prefix = str
+    function_trees = {}
 
     for top_node in translation_unit.cursor.get_children():
         # Remove included functions
@@ -76,25 +94,96 @@ def create_ast_tree(translation_unit):
         if check_only_def(top_node):
             continue
 
+        # Remoe __wasm* and CLIBS
+        func_name = top_node.displayname.split("(")[0]
+        if func_name.startswith("__wasm"):
+            continue
+        for clib in CLIBS:
+            if func_name in clib:
+                continue
+
         node = dfs_build_tree(top_node)
-        function_trees.append(node)
+        function_trees[func_name] = node
+        print(func_name)
     return function_trees
+
+
+def _map_symbol_to_w2c2(symbols, tree_dict, filename):
+    for symbol in symbols:
+        target = "%s_%s" % (filename, symbol)
+        if target not in tree_dict:
+            log.error("Cannot find %s in ast!" % target)
+        dfs_print_tree(tree_dict[target])
+    # TODO
+    return None
+
+
+
+def _map_symbol_to_wasm2c(symbols, tree_dict, filename):
+    # TODO
+    return None
+
+    
+
+def map_roots_to_symbol(symbols, tree_dict, filename, type="w2c2"):
+    if type == "w2c2":
+        return _map_symbol_to_w2c2(symbols, tree_dict, filename)
+    else:
+        return _map_symbol_to_wasm2c(symbols, tree_dict, filename)
+
+
+
+
+def read_symbol_file(symbol_file):
+    with open(symbol_file, "r") as fd:
+        lines = fd.read().split("\n")
+    symbols = []
+    for line in lines:
+        if len(line) == 0:
+            continue
+        symbol = line.split(":")[-1]
+        if symbol.startswith("__wasm"):
+            continue
+        matched = False
+        for clib in CLIBS:
+            if clib in symbol:
+                matched = True
+                break
+        if matched:
+            continue
+        symbols.append(symbol)
+    return symbols
+
+
+def main():
+    base_dir = "new_compiled_benchmarks/em_output_O0/"
+    symbol_file = base_dir + "symbols/aes.wasm.symbols"
+    orig_ast   =  base_dir + "ast_x86/aes.ast"
+    w2c2_ast   =  base_dir + "ast_w2c2/aes.ast"
+    wasm2c_ast =  base_dir + "ast_wasm2c/aes.ast"
+    filename = "aes"
+
+    symbols = read_symbol_file(symbol_file)
+    
+
+    orig_t_unit = TranslationUnit.from_ast_file(orig_ast)
+    orig_tree_dict = create_ast_tree(orig_t_unit)
+
+    # for root in orig_tree_dict.values():
+    #     dfs_print_tree(root)
+    #     print()
+
+    w2c2_t_unit = TranslationUnit.from_ast_file(w2c2_ast)
+    w2c2_tree_dict = create_ast_tree(w2c2_t_unit)
+
+    print("============= +++++++ =============")
+    print(symbols)
+    # for root in decom_trees.values():
+    #     dfs_print_tree(root)
+    #     print()
+    map_roots_to_symbol(symbols, w2c2_tree_dict, filename, "w2c2")
 
 
 
 if __name__ == '__main__':
-    orig_t_unit = Index.create().read("asts/orig_asts/aes.ast")
-    decom_t_unit = Index.create().read("asts/em_output_O0/aes.ast")
-
-    orig_trees = create_ast_tree(orig_t_unit)
-    decom_trees = create_ast_tree(decom_t_unit)
-    exit(0)
-
-    for root in orig_trees:
-        dfs_print_tree(root)
-        print()
-
-    print("============= +++++++ =============")
-    for root in decom_trees:
-        dfs_print_tree(root)
-        print()
+    main()

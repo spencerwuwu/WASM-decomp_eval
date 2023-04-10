@@ -1,5 +1,17 @@
 # CS699_DeWasm
 
+## AST similarity progress
+### Workflow
+- Parse symbol file 
+    - (filter functions to match onces)
+- Parse pre-generated ast files to Nodes
+    - (slightly filter out functions to build node)
+- Map symbol to corresponding function in asts
+    - Orig file: Current approach does not include all functions seen in symbol file (TODO)
+    - w2c2/wasm: Map name -> Check if only one function call in these function -> map these functions to original symbol (Currently at w2c2)
+
+- Compare tree smilarities.
+
 ## Requirements
 Lastest version of emcc and w2c2, wabt.   
 Otherwise, things may not work.
