@@ -16,7 +16,7 @@ for WASMDIR in "${WASM_DIRS[@]}"; do
 		fi
 	done
 	for cfile in "$WASMDIR/d_wasm2c/"*.c; do
-		clang -c $cfile -I decompiler_lib/ -o /dev/null -Wno- -mbmi2
+		clang -c $cfile -I decompiler_lib/ -o /dev/null -Wno-
 		status=$?
 		if [[ $status != "0" ]]; then
 			echo "+++"

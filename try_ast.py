@@ -1,7 +1,6 @@
 import sys
 from clang.cindex import *
 
-
 class TreeNode():
     def __init__(self, cursor=None):
         if cursor is None:
@@ -80,11 +79,10 @@ def check_only_def(cursor):
 
 
 
-index = Index.create()
-filename = "target.c"
+filename = "2mm.c"
 
-translation_unit = index.parse("target.c")
-#translation_unit = index.read("saved_ast.txt")
+translation_unit = TranslationUnit.from_ast_file("new_compiled_benchmarks/em_output_O0/ast_wasm2c/PL_2mm.ast")
+translation_unit = TranslationUnit.from_ast_file("new_compiled_benchmarks/em_output_O0/ast_x86/PL_2mm.ast")
 
 
 def create_ast_tree(translation_unit):
