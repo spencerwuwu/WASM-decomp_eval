@@ -9,6 +9,7 @@ import os
 
 
 def main():
+    in_docker = os.getenv("IN_DOCKER") == "True"
     args = parse_arguments()
 
     if args.verbose:
@@ -16,20 +17,34 @@ def main():
     else:
         configure_logger(logging.INFO)
 
-    if os.environ["IN_DOCKER"] == "True":
-        input_files_dir = Path("/input_files")
-        input_files_dir.mkdir(exist_ok=True)
+    source_code_paths = []
 
-        program_source_code_path = input_files_dir / args.PROGRAM_SOURCE_CODE_FILE
-    else:
-        program_source_code_path = Path(args.PROGRAM_SOURCE_CODE_FILE).absolute()
+    if in_docker:
+        docker_input_files_dir = Path("/input_files")
+        docker_input_files_dir.mkdir(exist_ok=True)
 
-    if not program_source_code_path.exists():
-        raise RuntimeError(f"File {program_source_code_path} not found")
+    if args.file:
+        if in_docker:
+            source_code_path = docker_input_files_dir / args.file
+        else:
+            source_code_path = Path(args.file).expanduser().absolute()
+        source_code_paths.append(source_code_path)
 
-    print(program_source_code_path)
+    if args.directory:
+        if in_docker:
+            dir_ = docker_input_files_dir
+        else:
+            dir_ = Path(args.directory).expanduser().absolute()
+        for file_ in os.listdir(dir_):
+            file_path = dir_ / file_
+            if file_path.suffix == ".c":
+                source_code_paths.append(file_path)
 
-    metrics = calculate_program_metrics(program_source_code_path)
+    source_code_paths.sort()
+    metrics = dict()
+    for sc_path in source_code_paths:
+        logging.info(f"Calculating metrics for {sc_path.name}")
+        metrics[sc_path.name] = calculate_program_metrics(sc_path)
     print(json.dumps(metrics, indent=2))
 
 
@@ -37,11 +52,18 @@ def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.description = (
         "Reads PROGRAM_SOURCE_CODE_FILE and outputs a "
-        + "JSON string containing various metrics of the program"
+        + "JSON string containing various metrics of the program. "
+        + "NOTE: If you're running the program in docker, -d "
+        + "must be your current working directory "
+        + "(or the directory of -f)."
     )
     parser.add_argument(
-        "PROGRAM_SOURCE_CODE_FILE",
-        help="A file containing the source code to be analyzed",
+        "-f",
+        "--file",
+        help="Calculates metrics on a single C source code file.",
+    )
+    parser.add_argument(
+        "-d", "--directory", help="Calculates metrics on all .c files in directory"
     )
     parser.add_argument(
         "-v",
@@ -50,6 +72,24 @@ def parse_arguments():
         help="Enables printing of debug statements",
     )
     arguments = parser.parse_args()
+
+    if arguments.file is None and arguments.directory is None:
+        raise RuntimeError(
+            "File or directory must be specified (with -f or -d flag). See -h flag for usage instructions"
+        )
+    if arguments.file and arguments.directory:
+        raise RuntimeError(
+            "The flag -f can not be used in conjunction with the flag -d"
+        )
+    # if arguments.file:
+    #     resolved_file_path = Path(arguments.file).expanduser().absolute()
+    #     if not resolved_file_path.exists():
+    #         raise ValueError(f"The file {resolved_file_path} does not exist.")
+    # if arguments.directory:
+    #     resolved_directory_path = Path(arguments.directory).expanduser().absolute()
+    #     if not resolved_directory_path.exists():
+    #         raise ValueError(f"The directory {resolved_directory_path} does not exist.")
+
     return arguments
 
 
