@@ -40,8 +40,10 @@ def main():
             if file_path.suffix == ".c":
                 source_code_paths.append(file_path)
 
+    source_code_paths.sort()
     metrics = dict()
     for sc_path in source_code_paths:
+        logging.info(f"Calculating metrics for {sc_path.name}")
         metrics[sc_path.name] = calculate_program_metrics(sc_path)
     print(json.dumps(metrics, indent=2))
 
