@@ -25,19 +25,21 @@ def main():
         ),
     }
 
-    plot_loc(data)
+    for metric in [
+        "Lines of code",
+        "Halstead complexity difficulty measure",
+        "McCabe cyclomatic complexity",
+        "Maximum Nesting Depth",
+    ]:
+        plot_metric(metric, data)
 
 
-def plot_loc(data):
+def plot_metric(metric, data):
     plot_data = dict()
 
     for dataset in data.keys():
-        average, pstdev = get_attribute_statistics_for_dataset(
-            "Lines of code", dataset, data
-        )
+        average, pstdev = get_metric_statistics_for_dataset(metric, dataset, data)
         plot_data[dataset] = {"average": average, "pstdev": pstdev}
-
-    # print(json.dumps(plot_data, indent=2))
 
     bar_width = 0.25
     fig = plt.subplots()
@@ -59,9 +61,9 @@ def plot_loc(data):
     plt.bar(br1, w2c2_averages, color="b", width=bar_width, label="w2c2")
     plt.bar(br2, wasm2c_averages, color="g", width=bar_width, label="wasm2c")
 
-    plt.title("Average LoC", fontweight="bold", fontsize=15)
+    plt.title(f"Average {metric}", fontweight="bold", fontsize=15)
     plt.xlabel("Optimization level", fontweight="bold", fontsize=10)
-    plt.ylabel("Lines of Code", fontweight="bold", fontsize=10)
+    plt.ylabel(metric, fontweight="bold", fontsize=10)
     plt.xticks(
         [r + bar_width for r in range(len(w2c2_averages))], ["-O0", "-O1", "-O2"]
     )
@@ -75,17 +77,17 @@ def plot_loc(data):
     )
 
     plt.legend()
-    plt.show()
+    plt.savefig(f"average_{metric.replace(' ', '_').lower()}.png")
 
 
-def get_attribute_statistics_for_dataset(attribute, dataset, data):
+def get_metric_statistics_for_dataset(metric, dataset, data):
     dataset_metrics = data[dataset]
-    attribute_values = []
+    metric_values = []
     for file_, file_metrics in dataset_metrics.items():
-        attribute_values.append(file_metrics[attribute])
+        metric_values.append(file_metrics[metric])
 
-    average = statistics.mean(attribute_values)
-    pstdev = statistics.pstdev(attribute_values)  # population standard deviation
+    average = statistics.mean(metric_values)
+    pstdev = statistics.pstdev(metric_values)  # population standard deviation
 
     return average, pstdev
 
