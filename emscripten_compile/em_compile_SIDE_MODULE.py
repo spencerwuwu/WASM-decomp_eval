@@ -90,7 +90,7 @@ def pbcCompile():
         print('Compiling WASM', curr)
         os.system(command)
 
-        command = compiler + ' ' + c_flags + ' ' + pbcPath + curr + ' ' + pbc_flags + ' ' + opt_level \
+        command = c_compiler + ' ' + c_flags + ' ' + pbcPath + curr + ' ' + pbc_flags + ' ' + opt_level \
                   + ' ' + output_prefix + c_output_folder + fileName + '.o'
         #print(command)
         print('Compiling x86', curr)
