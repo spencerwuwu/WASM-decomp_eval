@@ -31,10 +31,11 @@ def main():
         "McCabe cyclomatic complexity",
         "Maximum Nesting Depth",
     ]:
-        plot_metric(metric, data)
+        plot_metric_averages(metric, data)
+        plot_average_metric_changes(metric, data)
 
 
-def plot_metric(metric, data):
+def plot_metric_averages(metric, data):
     plot_data = dict()
 
     for dataset in data.keys():
@@ -78,6 +79,11 @@ def plot_metric(metric, data):
 
     plt.legend()
     plt.savefig(f"average_{metric.replace(' ', '_').lower()}.png")
+
+
+def plot_average_metric_changes(metric, data):
+    # TODO: implement
+    pass
 
 
 def get_metric_statistics_for_dataset(metric, dataset, data):
