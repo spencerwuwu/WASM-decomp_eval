@@ -1,1 +1,2 @@
-pycparser>=2.21
+libclang>=16.0.0
+

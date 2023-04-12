@@ -109,11 +109,16 @@ def calculate_program_metrics(src_path):
         run_metric_program(f"python3 calculate_kafuras_information_flow.py {src_path}")
     )
 
+    maximum_nesting_depth = int(
+        run_metric_program(f"python3 calculate_maximum_nesting_depth.py {src_path}")
+    )
+
     metrics = {
         "Lines of code": loc,
         "Halstead complexity difficulty measure": halstead_complexity_difficulty_measure,
         "McCabe cyclomatic complexity": mccabe_cyclomatic_complexity,
         "Kafura's information flow": kafuras_information_flow,
+        "Maximum nesting depth": maximum_nesting_depth,
     }
     return metrics
 
