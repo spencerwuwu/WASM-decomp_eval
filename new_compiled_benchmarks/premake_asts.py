@@ -21,6 +21,6 @@ for wasm in WASM_DIRS:
             if os.path.exists(out_f):
                 continue
 
-            t_unit = TranslationUnit.from_source(src_dir+c_file, ["-I decompiler_lib/"])
+            t_unit = TranslationUnit.from_source(src_dir+c_file, ["-Idecompiler_lib/"])
             t_unit.save(out_f)
             print("Generated:", out_f)
