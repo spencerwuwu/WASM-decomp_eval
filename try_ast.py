@@ -79,10 +79,8 @@ def check_only_def(cursor):
 
 
 
-filename = "2mm.c"
-
-translation_unit = TranslationUnit.from_ast_file("new_compiled_benchmarks/em_output_O0/ast_wasm2c/PL_2mm.ast")
-translation_unit = TranslationUnit.from_ast_file("new_compiled_benchmarks/em_output_O0/ast_x86/PL_2mm.ast")
+#translation_unit = TranslationUnit.from_ast_file("new_compiled_benchmarks/em_output_O0/ast_wasm2c/aes.ast")
+translation_unit = TranslationUnit.from_ast_file("new_compiled_benchmarks/em_output_O0/ast_x86/aes.ast")
 
 
 def create_ast_tree(translation_unit):
@@ -91,27 +89,28 @@ def create_ast_tree(translation_unit):
 
     for top_node in translation_unit.cursor.get_children():
         # Remove included functions
-        node_location = top_node.location.file
-        if node_location is not None and\
-                filename not in str(node_location):
-            continue
+        # node_location = top_node.location.file
+        # if node_location is not None and\
+        #         translation_unit.spelling not in str(node_location):
+        #     continue
 
         node_kind = top_node.type.kind
-        if node_kind == TypeKind.RECORD or\
-                node_kind == TypeKind.TYPEDEF or\
-                node_kind == TypeKind.FUNCTIONNOPROTO:
-            continue
+        # if node_kind == TypeKind.RECORD or\
+        #         node_kind == TypeKind.TYPEDEF or\
+        #         node_kind == TypeKind.FUNCTIONNOPROTO:
+        #     continue
         
         if node_kind != TypeKind.FUNCTIONPROTO:
             continue
         if check_only_def(top_node):
             continue
-
+        
         node = dfs_build_tree(top_node)
         function_trees.append(node)
+        print(top_node.displayname)
     return function_trees
 
 
 function_trees = create_ast_tree(translation_unit)
-for root in function_trees:
-    dfs_print_tree(root)
+# for root in function_trees:
+#     dfs_print_tree(root)
