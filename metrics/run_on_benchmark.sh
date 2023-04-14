@@ -5,7 +5,7 @@ set -x
 
 rm -rf /tmp/chstone_src
 mkdir /tmp/chstone_src
-find ~/cs699_webassembly/emscripten_compile/CHStone_v1.11_150204 | grep '.c$' | xargs -I {} cp {} /tmp/chstone_src/
+find ~/cs699_webassembly/emscripten_compile | grep '.c$' | xargs -I {} cp {} /tmp/chstone_src/
 cd /tmp/chstone_src
 docker run -v $(pwd):/input_files metrics python3 calculate_program_metrics.py -d . > ~/cs699_webassembly/metrics/results/original_src.json
 
