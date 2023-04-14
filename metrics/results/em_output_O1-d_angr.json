@@ -1,0 +1,275 @@
+{
+  "PL_2mm.c": {
+    "Lines of code": 239,
+    "Halstead complexity difficulty measure": 67.7124183006536,
+    "McCabe cyclomatic complexity": 24,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "PL_3mm.c": {
+    "Lines of code": 275,
+    "Halstead complexity difficulty measure": 72.1341463414634,
+    "McCabe cyclomatic complexity": 27,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "adi.c": {
+    "Lines of code": 320,
+    "Halstead complexity difficulty measure": 106.91666666666667,
+    "McCabe cyclomatic complexity": 29,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 5
+  },
+  "adpcm.c": {
+    "Lines of code": 1250,
+    "Halstead complexity difficulty measure": 259.8301486199576,
+    "McCabe cyclomatic complexity": 468,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 2
+  },
+  "aes.c": {
+    "Lines of code": 854,
+    "Halstead complexity difficulty measure": 381.21457489878543,
+    "McCabe cyclomatic complexity": 346,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 3
+  },
+  "atax.c": {
+    "Lines of code": 165,
+    "Halstead complexity difficulty measure": 59.07575757575758,
+    "McCabe cyclomatic complexity": 16,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 3
+  },
+  "bf.c": {
+    "Lines of code": 480,
+    "Halstead complexity difficulty measure": 134.26771653543307,
+    "McCabe cyclomatic complexity": 43,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "bicg.c": {
+    "Lines of code": 164,
+    "Halstead complexity difficulty measure": 67.66666666666666,
+    "McCabe cyclomatic complexity": 18,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 3
+  },
+  "cholesky.c": {
+    "Lines of code": 227,
+    "Halstead complexity difficulty measure": 74.18918918918918,
+    "McCabe cyclomatic complexity": 25,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 5
+  },
+  "correlation.c": {
+    "Lines of code": 239,
+    "Halstead complexity difficulty measure": 80.9,
+    "McCabe cyclomatic complexity": 22,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "covariance.c": {
+    "Lines of code": 171,
+    "Halstead complexity difficulty measure": 64.96491228070175,
+    "McCabe cyclomatic complexity": 19,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "dfadd.c": {
+    "Lines of code": 545,
+    "Halstead complexity difficulty measure": 255.04864864864865,
+    "McCabe cyclomatic complexity": 201,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 6
+  },
+  "dfdiv.c": {
+    "Lines of code": 169,
+    "Halstead complexity difficulty measure": 74.01739130434783,
+    "McCabe cyclomatic complexity": 24,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 2
+  },
+  "dfmul.c": {
+    "Lines of code": 151,
+    "Halstead complexity difficulty measure": 68.16822429906543,
+    "McCabe cyclomatic complexity": 21,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 2
+  },
+  "dfsin.c": {
+    "Lines of code": 689,
+    "Halstead complexity difficulty measure": 259.8545454545455,
+    "McCabe cyclomatic complexity": 252,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 6
+  },
+  "doitgen.c": {
+    "Lines of code": 277,
+    "Halstead complexity difficulty measure": 81.41843971631205,
+    "McCabe cyclomatic complexity": 33,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 7
+  },
+  "durbin.c": {
+    "Lines of code": 118,
+    "Halstead complexity difficulty measure": 57.31603773584906,
+    "McCabe cyclomatic complexity": 15,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 3
+  },
+  "fdtd-2d.c": {
+    "Lines of code": 281,
+    "Halstead complexity difficulty measure": 89.8562091503268,
+    "McCabe cyclomatic complexity": 31,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "floyd-warshall.c": {
+    "Lines of code": 91,
+    "Halstead complexity difficulty measure": 50.42168674698795,
+    "McCabe cyclomatic complexity": 19,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "gemm.c": {
+    "Lines of code": 183,
+    "Halstead complexity difficulty measure": 62.257575757575765,
+    "McCabe cyclomatic complexity": 20,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "gemver.c": {
+    "Lines of code": 254,
+    "Halstead complexity difficulty measure": 83.30434782608695,
+    "McCabe cyclomatic complexity": 18,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 3
+  },
+  "gesummv.c": {
+    "Lines of code": 135,
+    "Halstead complexity difficulty measure": 71.30841121495328,
+    "McCabe cyclomatic complexity": 13,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 3
+  },
+  "gramschmidt.c": {
+    "Lines of code": 214,
+    "Halstead complexity difficulty measure": 72.82462686567165,
+    "McCabe cyclomatic complexity": 24,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "gsm.c": {
+    "Lines of code": 771,
+    "Halstead complexity difficulty measure": 212.21052631578948,
+    "McCabe cyclomatic complexity": 158,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 5
+  },
+  "heat-3d.c": {
+    "Lines of code": 180,
+    "Halstead complexity difficulty measure": 86.82089552238806,
+    "McCabe cyclomatic complexity": 21,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 5
+  },
+  "jacobi-1d.c": {
+    "Lines of code": 119,
+    "Halstead complexity difficulty measure": 60.407407407407405,
+    "McCabe cyclomatic complexity": 13,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 3
+  },
+  "jacobi-2d.c": {
+    "Lines of code": 144,
+    "Halstead complexity difficulty measure": 78.07207207207207,
+    "McCabe cyclomatic complexity": 17,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "lu.c": {
+    "Lines of code": 218,
+    "Halstead complexity difficulty measure": 76.15185185185184,
+    "McCabe cyclomatic complexity": 27,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 5
+  },
+  "ludcmp.c": {
+    "Lines of code": 309,
+    "Halstead complexity difficulty measure": 94.16265060240964,
+    "McCabe cyclomatic complexity": 34,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 5
+  },
+  "mips.c": {
+    "Lines of code": 412,
+    "Halstead complexity difficulty measure": 86.66793893129771,
+    "McCabe cyclomatic complexity": 28,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 6
+  },
+  "mpeg2.c": {
+    "Lines of code": 1429,
+    "Halstead complexity difficulty measure": 319.24463519313304,
+    "McCabe cyclomatic complexity": 153,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 8
+  },
+  "mvt.c": {
+    "Lines of code": 174,
+    "Halstead complexity difficulty measure": 79.42056074766356,
+    "McCabe cyclomatic complexity": 20,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 3
+  },
+  "nussinov.c": {
+    "Lines of code": 138,
+    "Halstead complexity difficulty measure": 64.07264957264958,
+    "McCabe cyclomatic complexity": 26,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 5
+  },
+  "seidel-2d.c": {
+    "Lines of code": 116,
+    "Halstead complexity difficulty measure": 69.16000000000001,
+    "McCabe cyclomatic complexity": 15,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "sha_driver.c": {
+    "Lines of code": 514,
+    "Halstead complexity difficulty measure": 143.23076923076923,
+    "McCabe cyclomatic complexity": 59,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 3
+  },
+  "symm.c": {
+    "Lines of code": 183,
+    "Halstead complexity difficulty measure": 67.84615384615384,
+    "McCabe cyclomatic complexity": 19,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "syr2k.c": {
+    "Lines of code": 172,
+    "Halstead complexity difficulty measure": 64.93846153846154,
+    "McCabe cyclomatic complexity": 18,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "syrk.c": {
+    "Lines of code": 152,
+    "Halstead complexity difficulty measure": 59.111111111111114,
+    "McCabe cyclomatic complexity": 18,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  },
+  "trmm.c": {
+    "Lines of code": 154,
+    "Halstead complexity difficulty measure": 56.0,
+    "McCabe cyclomatic complexity": 18,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 4
+  }
+}
