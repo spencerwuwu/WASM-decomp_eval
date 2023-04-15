@@ -57,7 +57,7 @@ void print_array(int n,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_durbin(int n,
 		   DATA_TYPE POLYBENCH_1D(r,N,n),
 		   DATA_TYPE POLYBENCH_1D(y,N,n))

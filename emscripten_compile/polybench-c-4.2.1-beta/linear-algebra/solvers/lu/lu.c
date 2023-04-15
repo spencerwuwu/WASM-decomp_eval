@@ -80,7 +80,7 @@ void print_array(int n,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_lu(int n,
 	       DATA_TYPE POLYBENCH_2D(A,N,N,n,n))
 {

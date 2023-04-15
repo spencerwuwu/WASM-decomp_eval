@@ -1,11 +1,11 @@
-0:strcmp
-1:free
-2:fprintf
+0:fprintf
+1:strcmp
+2:free
 3:legalimport$polybench_alloc_data
 4:__wasm_call_ctors
 5:__wasm_apply_data_relocs
-6:submain
-7:init_array
+6:init_array
+7:print_array
 8:kernel_atax
-9:print_array
+9:submain
 10:legalfunc$polybench_alloc_data

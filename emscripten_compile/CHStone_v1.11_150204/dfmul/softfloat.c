@@ -117,7 +117,8 @@ extractFloat64Sign (float64 a)
 | `zSigPtr', respectively.
 *----------------------------------------------------------------------------*/
 
-static void
+//static 
+    void
 normalizeFloat64Subnormal (bits64 aSig, int16 * zExpPtr, bits64 * zSigPtr)
 {
   int8 shiftCount;
@@ -169,7 +170,8 @@ packFloat64 (flag zSign, int16 zExp, bits64 zSig)
 | Binary Floating-Point Arithmetic.
 *----------------------------------------------------------------------------*/
 
-static float64
+//static 
+    float64
 roundAndPackFloat64 (flag zSign, int16 zExp, bits64 zSig)
 {
   int8 roundingMode;

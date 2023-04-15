@@ -4,8 +4,8 @@
 3:legalimport$polybench_alloc_data
 4:__wasm_call_ctors
 5:__wasm_apply_data_relocs
-6:submain
-7:init_array
-8:kernel_gesummv
+6:kernel_gesummv
+7:submain
+8:init_array
 9:print_array
 10:legalfunc$polybench_alloc_data

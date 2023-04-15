@@ -21,6 +21,7 @@ CLIBS = [
         "gettimeofday",
         "rtclock",
         "print_array",
+        "init_array",
         "submain",
         ]
 
@@ -134,7 +135,7 @@ def _map_symbol_to_orig(symbols, tree_dict, filename):
 def _map_symbol_to_w2c2(symbols, tree_dict, filename):
     symbol_map = []
     for symbol in symbols:
-        target = "%s_%s" % (filename, symbol)
+        target = "%s_%s" % (filename, symbol.replace("_", "X5"))
         if target not in tree_dict:
             log.error(f'Cannot find {target} in d_w2c2/{filename}')
             continue
@@ -149,8 +150,11 @@ def _map_symbol_to_wasm2c(symbols, tree_dict, filename):
     for symbol in symbols:
         target = "w2c_%s_%s_0" % (filename, symbol)
         if target not in tree_dict:
-            log.error(f'Cannot find {target} in d_wasm2c/{filename}')
-            continue
+            # imported symbols don't have sufix 0
+            target = "w2c_%s_%s" % (filename, symbol)
+            if target not in tree_dict:
+                log.error(f'Cannot find {target} in d_wasm2c/{filename}')
+                continue
         symbol_map.append((symbol, target))
         log.debug("  %s -> %s" % (symbol, target))
     return symbol_map
