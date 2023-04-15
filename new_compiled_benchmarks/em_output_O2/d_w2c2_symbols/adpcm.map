@@ -1,0 +1,12 @@
+abs:f7
+encode:f8
+upzero:f9
+filtez:f10
+filtep:f11
+quantl:f12
+logscl:f13
+scalel:f14
+uppol2:f15
+uppol1:f16
+logsch:f17
+decode:f18

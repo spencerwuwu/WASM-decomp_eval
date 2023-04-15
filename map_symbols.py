@@ -135,10 +135,14 @@ def _map_symbol_to_orig(symbols, tree_dict, filename):
 def _map_symbol_to_w2c2(symbols, tree_dict, filename):
     symbol_map = []
     for symbol in symbols:
-        target = "%s_%s" % (filename, symbol.replace("_", "X5"))
+        if filename.startswith("PL"):
+            filename = filename.replace("PL_", "PL")
+        target = "%s_%s" % (filename, symbol)
         if target not in tree_dict:
-            log.error(f'Cannot find {target} in d_w2c2/{filename}')
-            continue
+            if target not in tree_dict:
+                target = "%s_%s" % (filename, symbol.replace("_", "X5"))
+                log.error(f'Cannot find {target} in d_w2c2/{filename}')
+                continue
         next_callee = find_first_callee(tree_dict[target])
         log.debug("  %s -> %s" % (symbol, next_callee))
         symbol_map.append((symbol, next_callee))
@@ -148,6 +152,8 @@ def _map_symbol_to_w2c2(symbols, tree_dict, filename):
 def _map_symbol_to_wasm2c(symbols, tree_dict, filename):
     symbol_map = []
     for symbol in symbols:
+        if filename.startswith("PL"):
+            filename = filename.replace("PL_", "PL__")
         target = "w2c_%s_%s_0" % (filename, symbol)
         if target not in tree_dict:
             # imported symbols don't have sufix 0
@@ -247,7 +253,7 @@ def process(base_dir, filename):
 
 
 def main():
-    WASM_DIRS = ["em_output_O0", "em_output_O1", "em_output_O2"]
+    WASM_DIRS = ["em_output_O1", "em_output_O2"]
     for wasm_dir in WASM_DIRS:
         base_dir = f'new_compiled_benchmarks/{wasm_dir}/'
         for target in os.listdir(f'{base_dir}/ast_x86'):
@@ -256,7 +262,6 @@ def main():
             process(base_dir, filename)
             log.info(f'Done {wasm_dir} {filename}')
             log.info(f'===========================\n\n')
-        break
 
 
 if __name__ == '__main__':

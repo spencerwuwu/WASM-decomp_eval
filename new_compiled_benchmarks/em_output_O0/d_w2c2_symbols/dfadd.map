@@ -1,0 +1,14 @@
+shift64RightJamming:f24
+float_raise:f6
+float64_is_nan:f25
+float64_is_signaling_nan:f26
+extractFloat64Frac:f27
+extractFloat64Exp:f28
+extractFloat64Sign:f29
+packFloat64:f30
+roundAndPackFloat64:f31
+normalizeRoundAndPackFloat64:f32
+addFloat64Sigs:f33
+subFloat64Sigs:f34
+float64_add:f35
+ullong_to_double:f36

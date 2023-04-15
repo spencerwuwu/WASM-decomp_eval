@@ -3,7 +3,7 @@ import os
 import sys
 from clang.cindex import TranslationUnit
 
-opt_level = '-O2'
+opt_level = '-O0'
 c_flags_str  = ' -g3 ' 
 c_flags_str += '-fignore-exceptions -fPIC -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -Werror=implicit-function-declaration --sysroot=$(dirname $(which emcc))/cache/sysroot -Xclang -iwithsysroot/include/fakesdl -Xclang -iwithsysroot/include/compat '
 c_flags = c_flags_str.split()
@@ -57,9 +57,9 @@ chsSourceFilesWithPath = [
                           "dfmul/dfmul.c",
                           "dfsin/dfsin.c",
                           "gsm/gsm.c",
-                          "mips/mips.c",
                           "motion/mpeg2.c",
                           "sha/sha_driver.c"
+                          #"mips/mips.c",
                           ]
 
 

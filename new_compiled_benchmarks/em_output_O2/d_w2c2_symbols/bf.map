@@ -1,0 +1,4 @@
+local_memcpy:f6
+BF_set_key:f7
+BF_encrypt:f8
+BF_cfb64_encrypt:f9
