@@ -1,0 +1,82 @@
+#ifndef shadriver_H
+#define shadriver_H
+
+#include "w2c2_base.h"
+
+typedef struct shadriverInstance {
+wasmMemory*env__memory;
+U32*env_____stack_pointer;
+U32*env_____memory_base;
+U32*env_____table_base;
+U32*GOTX2Emem__sha_info_data;
+U32*GOTX2Emem__sha_info_digest;
+U32*GOTX2Emem__sha_info_count_lo;
+U32*GOTX2Emem__sha_info_count_hi;
+U32*GOTX2Emem__in_i;
+U32*GOTX2Emem__indata;
+U32*GOTX2Emem__startTimer;
+U32*GOTX2Emem__outData;
+U32*GOTX2Emem__endTimer;
+U32 g12;
+U32 g13;
+U32 g14;
+U32 g15;
+U32 g16;
+U32 g17;
+U32 g18;
+U32 g19;
+U32 g20;
+} shadriverInstance;
+
+U32 env__printf(struct shadriverInstance*,U32,U32);
+
+U32 env__gettimeofday(struct shadriverInstance*,U32,U32);
+
+void f2(shadriverInstance*);
+
+void f3(shadriverInstance*);
+
+void f4(shadriverInstance*,U32,U32,U32,U32);
+
+void f5(shadriverInstance*,U32,U32,U32);
+
+void f6(shadriverInstance*);
+
+void f7(shadriverInstance*);
+
+void f8(shadriverInstance*,U32,U32);
+
+void f9(shadriverInstance*);
+
+void f10(shadriverInstance*);
+
+U32 f11(shadriverInstance*);
+
+F64 f12(shadriverInstance*);
+
+void shadriver____wasm_call_ctors(shadriverInstance*i);
+
+void shadriver____wasm_apply_data_relocs(shadriverInstance*i);
+
+void shadriver_local_memset(shadriverInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
+void shadriver_local_memcpy(shadriverInstance*i,U32 l0,U32 l1,U32 l2);
+
+void shadriver_sha_transform(shadriverInstance*i);
+
+void shadriver_sha_init(shadriverInstance*i);
+
+void shadriver_sha_update(shadriverInstance*i,U32 l0,U32 l1);
+
+void shadriver_sha_final(shadriverInstance*i);
+
+void shadriver_sha_stream(shadriverInstance*i);
+
+U32 shadriver_submain(shadriverInstance*i);
+
+void shadriverInstantiate(shadriverInstance* instance, void* resolve(const char* module, const char* name));
+
+void shadriverFreeInstance(shadriverInstance* instance);
+
+#endif /* shadriver_H */
+

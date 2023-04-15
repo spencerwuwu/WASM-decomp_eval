@@ -6,8 +6,7 @@ from subprocess import Popen, PIPE
 
 OPTIMIZE_LEVELS = ["0", "1", "2"]
 
-#W2C2 = "/home/weicheng/Documents/CS699_WASM/w2c2/build/w2c2/w2c2"
-W2C2 = "/docker_shared/w2c2/w2c2/build/w2c2"
+W2C2 = "/home/weicheng/Documents/CS699_WASM/w2c2/build/w2c2/w2c2"
 WASM2C = "/home/weicheng/Documents/CS699_WASM/wabt/build/wasm2c"
 
 BLACKLIST = [
@@ -99,8 +98,8 @@ def try_decompile():
 
 
 if __name__ == '__main__':
-    try_decompile()
-    # for o in OPTIMIZE_LEVELS:
-    #     base_dir = "em_output_O%s/" % o
-    #     decompile_wasm(base_dir)
+    # try_decompile()
+    for o in OPTIMIZE_LEVELS:
+        base_dir = "em_output_O%s/" % o
+        decompile_wasm(base_dir)
     
