@@ -81,14 +81,6 @@ def parse_arguments():
         raise RuntimeError(
             "The flag -f can not be used in conjunction with the flag -d"
         )
-    # if arguments.file:
-    #     resolved_file_path = Path(arguments.file).expanduser().absolute()
-    #     if not resolved_file_path.exists():
-    #         raise ValueError(f"The file {resolved_file_path} does not exist.")
-    # if arguments.directory:
-    #     resolved_directory_path = Path(arguments.directory).expanduser().absolute()
-    #     if not resolved_directory_path.exists():
-    #         raise ValueError(f"The directory {resolved_directory_path} does not exist.")
 
     return arguments
 

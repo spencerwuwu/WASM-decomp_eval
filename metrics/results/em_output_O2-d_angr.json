@@ -1,0 +1,9 @@
+{
+  "nussinov.c": {
+    "Lines of code": 185,
+    "Halstead complexity difficulty measure": 72.32484076433121,
+    "McCabe cyclomatic complexity": 37,
+    "Kafura's information flow": 0,
+    "Maximum nesting depth": 6
+  }
+}

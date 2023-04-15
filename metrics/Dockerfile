@@ -28,16 +28,3 @@ ENV IN_DOCKER=True
 
 # Install metrics project
 COPY . .
-
-# This will make more stuff accessible with apt-get
-# example: python3-pip
-# RUN apt-get install -y software-properties-common && \
-#     add-apt-repository universe
-
-# Install some essentials
-# RUN apt-get install sudo && \
-#     apt-get install -y git && \
-#     apt-get install -y python3-pip python-pip && \
-#     apt-get install -y python-dev python3-dev && \
-#     apt-get install -y build-essential libssl-dev libffi-dev
-
