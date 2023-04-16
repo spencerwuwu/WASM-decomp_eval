@@ -135,8 +135,10 @@ def _map_symbol_to_orig(symbols, tree_dict, filename):
 def _map_symbol_to_w2c2(symbols, tree_dict, filename):
     symbol_map = []
     for symbol in symbols:
-        if filename.startswith("PL"):
-            filename = filename.replace("PL_", "PL")
+        if "_" in filename:
+            filename = filename.replace("_", "")
+        if "-" in filename:
+            filename = filename.replace("-", "")
         target = "%s_%s" % (filename, symbol)
         if target not in tree_dict:
             if target not in tree_dict:
@@ -152,8 +154,10 @@ def _map_symbol_to_w2c2(symbols, tree_dict, filename):
 def _map_symbol_to_wasm2c(symbols, tree_dict, filename):
     symbol_map = []
     for symbol in symbols:
-        if filename.startswith("PL"):
-            filename = filename.replace("PL_", "PL__")
+        if "_" in filename:
+            filename = filename.replace("_", "__")
+        if "-" in filename:
+            filename = filename.replace("-", "0x2D")
         target = "w2c_%s_%s_0" % (filename, symbol)
         if target not in tree_dict:
             # imported symbols don't have sufix 0
@@ -253,7 +257,7 @@ def process(base_dir, filename):
 
 
 def main():
-    WASM_DIRS = ["em_output_O1", "em_output_O2"]
+    WASM_DIRS = ["em_output_O0", "em_output_O1", "em_output_O2"]
     for wasm_dir in WASM_DIRS:
         base_dir = f'new_compiled_benchmarks/{wasm_dir}/'
         for target in os.listdir(f'{base_dir}/ast_x86'):

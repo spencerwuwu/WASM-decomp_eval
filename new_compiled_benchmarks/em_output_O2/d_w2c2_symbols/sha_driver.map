@@ -1,0 +1,3 @@
+local_memset:f6
+local_memcpy:f7
+sha_update:f10
