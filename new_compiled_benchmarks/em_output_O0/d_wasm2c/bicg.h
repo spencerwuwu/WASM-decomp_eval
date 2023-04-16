@@ -81,6 +81,9 @@ void w2c_bicg_0x5F_wasm_call_ctors(w2c_bicg*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_bicg_0x5F_wasm_apply_data_relocs(w2c_bicg*);
 
+/* export: 'kernel_bicg' */
+void w2c_bicg_kernel_bicg(w2c_bicg*, u32, u32, u32, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_bicg_submain(w2c_bicg*, u32, u32);
 

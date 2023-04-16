@@ -1,8 +1,53 @@
+int kernel_cholesky(unsigned int a0, unsigned long a1)
+{
+    unsigned int v0;  // [bp-0x24]
+    unsigned int v1;  // [bp-0x20]
+    unsigned int v2;  // [bp-0x1c]
+    uint128_t v4;  // xmm2
+    uint128_t v5;  // xmm1
+    uint128_t v6;  // xmm1
+    uint128_t v7;  // xmm0
+    uint128_t v8;  // xmm2
+    uint128_t v9;  // xmm1
+
+    for (v2 = 0; v2 < a0; v2 += 1)
+    {
+        for (v1 = 0; v1 < v2; v1 += 1)
+        {
+            for (v0 = 0; v0 < v1; v0 += 1)
+            {
+                v4 = 0;
+                *((unsigned long long *)&v4) = *((long long *)(a1 + v1 * 16000 + v0 * 8));
+                v5 = 0;
+                *((unsigned long long *)&v5) = *((long long *)(a1 + v2 * 16000 + v1 * 8));
+                STORE(addr=((rsi<8> + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x3e80<64>)) + (Conv(32->s64, Load(addr=stack_base-32, size=4, endness=Iend_LE)) * 0x8<64>)), data=Conv(128->64, ((Conv(64->128, (Load(addr=((rsi<8> + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x3e80<64>)) + (Conv(32->s64, Load(addr=stack_base-36, size=4, endness=Iend_LE)) * 0x8<64>)), size=8, endness=Iend_LE) ^ 0x8000000000000000<64>)) * xmm2<16>) + xmm1<16>)), size=8, endness=Iend_LE, guard=None)
+            }
+            v6 = 0;
+            *((unsigned long long *)&v6) = *((long long *)(a1 + v1 * 16000 + v1 * 8));
+            v7 = 0;
+            *((unsigned long long *)&v7) = *((long long *)(a1 + v2 * 16000 + v1 * 8));
+            *((unsigned long long *)&v7) = v7 / v6;
+            *((unsigned long long *)(a1 + v2 * 16000 + v1 * 8)) = v7;
+        }
+        for (v0 = 0; v0 < v2; v0 += 1)
+        {
+            v8 = 0;
+            *((unsigned long long *)&v8) = *((long long *)(a1 + v2 * 16000 + v0 * 8));
+            v9 = 0;
+            *((unsigned long long *)&v9) = *((long long *)(a1 + v2 * 16000 + v2 * 8));
+            STORE(addr=((rsi<8> + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x3e80<64>)) + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x8<64>)), data=Conv(128->64, ((Conv(64->128, (Load(addr=((rsi<8> + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x3e80<64>)) + (Conv(32->s64, Load(addr=stack_base-36, size=4, endness=Iend_LE)) * 0x8<64>)), size=8, endness=Iend_LE) ^ 0x8000000000000000<64>)) * xmm2<16>) + xmm1<16>)), size=8, endness=Iend_LE, guard=None)
+        }
+        sqrt(*((long long *)(a1 + v2 * 16000 + v2 * 8)));
+        *((long long *)(a1 + v2 * 16000 + v2 * 8)) = *((long long *)(a1 + v2 * 16000 + v2 * 8));
+    }
+    return;
+}
+
 extern char .L.str;
 
 long long submain(unsigned int a0, unsigned long long *a1)
 {
-    void* v0;  // [bp-0x28]
+    unsigned long v0;  // [bp-0x28]
     unsigned int v1;  // [bp-0x1c]
 
     v1 = 2000;
@@ -95,51 +140,6 @@ int init_array(unsigned int a0, unsigned long a1)
         }
     }
     free(v0);
-    return;
-}
-
-int kernel_cholesky(unsigned int a0, unsigned long a1)
-{
-    unsigned int v0;  // [bp-0x24]
-    unsigned int v1;  // [bp-0x20]
-    unsigned int v2;  // [bp-0x1c]
-    uint128_t v4;  // xmm2
-    uint128_t v5;  // xmm1
-    uint128_t v6;  // xmm1
-    uint128_t v7;  // xmm0
-    uint128_t v8;  // xmm2
-    uint128_t v9;  // xmm1
-
-    for (v2 = 0; v2 < a0; v2 += 1)
-    {
-        for (v1 = 0; v1 < v2; v1 += 1)
-        {
-            for (v0 = 0; v0 < v1; v0 += 1)
-            {
-                v4 = 0;
-                *((unsigned long long *)&v4) = *((long long *)(a1 + v1 * 16000 + v0 * 8));
-                v5 = 0;
-                *((unsigned long long *)&v5) = *((long long *)(a1 + v2 * 16000 + v1 * 8));
-                STORE(addr=((rsi<8> + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x3e80<64>)) + (Conv(32->s64, Load(addr=stack_base-32, size=4, endness=Iend_LE)) * 0x8<64>)), data=Conv(128->64, ((Conv(64->128, (Load(addr=((rsi<8> + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x3e80<64>)) + (Conv(32->s64, Load(addr=stack_base-36, size=4, endness=Iend_LE)) * 0x8<64>)), size=8, endness=Iend_LE) ^ 0x8000000000000000<64>)) * xmm2<16>) + xmm1<16>)), size=8, endness=Iend_LE, guard=None)
-            }
-            v6 = 0;
-            *((unsigned long long *)&v6) = *((long long *)(a1 + v1 * 16000 + v1 * 8));
-            v7 = 0;
-            *((unsigned long long *)&v7) = *((long long *)(a1 + v2 * 16000 + v1 * 8));
-            *((unsigned long long *)&v7) = v7 / v6;
-            *((unsigned long long *)(a1 + v2 * 16000 + v1 * 8)) = v7;
-        }
-        for (v0 = 0; v0 < v2; v0 += 1)
-        {
-            v8 = 0;
-            *((unsigned long long *)&v8) = *((long long *)(a1 + v2 * 16000 + v0 * 8));
-            v9 = 0;
-            *((unsigned long long *)&v9) = *((long long *)(a1 + v2 * 16000 + v2 * 8));
-            STORE(addr=((rsi<8> + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x3e80<64>)) + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x8<64>)), data=Conv(128->64, ((Conv(64->128, (Load(addr=((rsi<8> + (Conv(32->s64, Load(addr=stack_base-28, size=4, endness=Iend_LE)) * 0x3e80<64>)) + (Conv(32->s64, Load(addr=stack_base-36, size=4, endness=Iend_LE)) * 0x8<64>)), size=8, endness=Iend_LE) ^ 0x8000000000000000<64>)) * xmm2<16>) + xmm1<16>)), size=8, endness=Iend_LE, guard=None)
-        }
-        sqrt(*((long long *)(a1 + v2 * 16000 + v2 * 8)));
-        *((long long *)(a1 + v2 * 16000 + v2 * 8)) = *((long long *)(a1 + v2 * 16000 + v2 * 8));
-    }
     return;
 }
 

@@ -90,6 +90,9 @@ void w2c_lu_0x5F_wasm_call_ctors(w2c_lu*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_lu_0x5F_wasm_apply_data_relocs(w2c_lu*);
 
+/* export: 'kernel_lu' */
+void w2c_lu_kernel_lu(w2c_lu*, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_lu_submain(w2c_lu*, u32, u32);
 

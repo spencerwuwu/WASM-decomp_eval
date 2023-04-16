@@ -7,6 +7,7 @@ typedef unsigned long    qword;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
+typedef unsigned int    undefined4;
 typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
@@ -54,35 +55,37 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x81)));
-
-typedef pointer pointer __((offset(0x1c7)));
+typedef pointer pointer __((offset(0x997)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x63c)));
+typedef pointer pointer __((offset(0x5f7)));
 
-typedef pointer pointer __((offset(0x5be)));
+typedef pointer pointer __((offset(0x44f)));
 
-typedef pointer pointer __((offset(0x56f)));
+typedef pointer pointer __((offset(0xa6c)));
 
-typedef pointer pointer __((offset(0x580)));
+typedef pointer pointer __((offset(0x9b0)));
 
-typedef pointer pointer __((offset(0x31)));
+typedef pointer pointer __((offset(0x99f)));
 
-typedef pointer pointer __((offset(0x567)));
+typedef pointer pointer __((offset(0x9ee)));
+
+typedef pointer pointer __((offset(0xa3c)));
+
+typedef pointer pointer __((offset(0x4b1)));
 
 typedef pointer pointer __((offset(0x28)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x1f)));
+typedef pointer pointer __((offset(0x461)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x60c)));
+typedef pointer pointer __((offset(0x430)));
 
 typedef void _IO_lock_t;
 
@@ -231,6 +234,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_jacobi_2d(int param_1,int param_2,long param_3,long param_4);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

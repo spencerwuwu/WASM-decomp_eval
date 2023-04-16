@@ -84,6 +84,9 @@ void w2c_trisolv_0x5F_wasm_call_ctors(w2c_trisolv*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_trisolv_0x5F_wasm_apply_data_relocs(w2c_trisolv*);
 
+/* export: 'kernel_trisolv' */
+void w2c_trisolv_kernel_trisolv(w2c_trisolv*, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_trisolv_submain(w2c_trisolv*, u32, u32);
 

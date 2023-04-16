@@ -54,47 +54,49 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x1fb)));
+typedef pointer pointer __((offset(0xf6)));
 
-typedef pointer pointer __((offset(0x56)));
+typedef pointer pointer __((offset(0x2bc)));
 
-typedef pointer pointer __((offset(0x2c1)));
-
-typedef pointer pointer __((offset(0x20)));
-
-typedef pointer pointer __((offset(0x1eb)));
-
-typedef pointer pointer __((offset(0x25b)));
+typedef pointer pointer __((offset(0xc0)));
 
 typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x13d)));
+typedef pointer pointer __((offset(0x319)));
 
-typedef pointer pointer __((offset(0x279)));
+typedef pointer pointer __((offset(0x11c)));
 
-typedef pointer pointer __((offset(0x44)));
+typedef pointer pointer __((offset(0xe4)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
 
+typedef pointer pointer __((offset(0x2fb)));
+
+typedef pointer pointer __((offset(0x108)));
+
+typedef pointer pointer __((offset(0x28b)));
+
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x68)));
+typedef pointer pointer __((offset(0x2a3)));
 
-typedef pointer pointer __((offset(0x1f3)));
+typedef pointer pointer __((offset(0x29b)));
+
+typedef pointer pointer __((offset(0xd2)));
+
+typedef pointer pointer __((offset(0x1dd)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x20b)));
+typedef pointer pointer __((offset(0x293)));
 
-typedef pointer pointer __((offset(0x203)));
+typedef pointer pointer __((offset(0x361)));
 
-typedef pointer pointer __((offset(0x7c)));
+typedef pointer pointer __((offset(0xa0)));
 
-typedef pointer pointer __((offset(0x32)));
-
-typedef pointer pointer __((offset(0x21c)));
+typedef pointer pointer __((offset(0x2ab)));
 
 typedef void _IO_lock_t;
 
@@ -243,6 +245,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_gesummv(double param_1,double param_2,uint param_3,long param_4,long param_5,long param_6,long param_7,long param_8);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

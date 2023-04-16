@@ -55,73 +55,91 @@ U32 f15(dfsinInstance*,U64);
 
 U32 f16(dfsinInstance*,U64);
 
-U64 f17(dfsinInstance*,U32,U32,U64);
+void f17(dfsinInstance*,U64,U32,U32);
 
-U64 f18(dfsinInstance*,U32);
+U64 f18(dfsinInstance*,U32,U32,U64);
 
-U64 f19(dfsinInstance*,U64,U64);
+U64 f19(dfsinInstance*,U32,U32,U64);
 
 U64 f20(dfsinInstance*,U32,U32,U64);
 
-U64 f21(dfsinInstance*,U64,U64);
+U64 f21(dfsinInstance*,U32);
 
-U64 f22(dfsinInstance*,U64,U64);
+U64 f22(dfsinInstance*,U64,U64,U32);
 
-U32 f23(dfsinInstance*,U64,U64);
+U64 f23(dfsinInstance*,U64,U64,U32);
 
-U32 f24(dfsinInstance*,U64,U64);
+U64 f24(dfsinInstance*,U64,U64);
 
-U64 f25(dfsinInstance*,U64);
+U64 f25(dfsinInstance*,U64,U64);
 
-U64 f26(dfsinInstance*,U64);
+U64 f26(dfsinInstance*,U64,U64);
 
-U64 f27(dfsinInstance*,U64);
+U32 f27(dfsinInstance*,U64,U64);
 
-F64 f28(dfsinInstance*,U64);
+U32 f28(dfsinInstance*,U64,U64);
 
-U32 f29(dfsinInstance*);
+U64 f29(dfsinInstance*,U64);
 
-void f30(dfsinInstance*,U32,U32,U32,U32);
+U64 f30(dfsinInstance*,U64);
 
-void f31(dfsinInstance*,U32,U32,U32,U32,U32,U32,U32);
+U64 f31(dfsinInstance*,U64);
 
-void f32(dfsinInstance*,U32,U32,U32,U32,U32,U32,U32,U32,U32,U32);
+F64 f32(dfsinInstance*,U64);
 
-void f33(dfsinInstance*,U32,U32,U32,U32,U32,U32,U32,U32,U32,U32);
+U32 f33(dfsinInstance*);
 
-void f34(dfsinInstance*,U32,U32,U32,U32,U32,U32);
+void f34(dfsinInstance*,U32,U32,U32,U32);
 
-U32 f35(dfsinInstance*,U32,U32);
+void f35(dfsinInstance*,U32,U32,U32,U32,U32,U32,U32);
 
-U32 f36(dfsinInstance*,U32,U32);
+void f36(dfsinInstance*,U32,U32,U32,U32,U32,U32,U32,U32,U32,U32);
 
-U32 f37(dfsinInstance*,U32,U32);
+void f37(dfsinInstance*,U32,U32,U32,U32,U32,U32,U32,U32,U32,U32);
 
-U32 f38(dfsinInstance*,U32,U32);
+void f38(dfsinInstance*,U32,U32,U32,U32,U32,U32);
 
 U32 f39(dfsinInstance*,U32,U32);
 
-U32 f40(dfsinInstance*,U32,U32,U32,U32);
+U32 f40(dfsinInstance*,U32,U32);
 
-U32 f41(dfsinInstance*,U32);
+U32 f41(dfsinInstance*,U32,U32);
 
-U32 f42(dfsinInstance*,U32,U32,U32,U32);
+U32 f42(dfsinInstance*,U32,U32);
 
-U32 f43(dfsinInstance*,U32,U32,U32,U32);
+U32 f43(dfsinInstance*,U32,U32);
 
-U32 f44(dfsinInstance*,U32,U32,U32,U32);
+void f44(dfsinInstance*,U32,U32,U32,U32);
 
 U32 f45(dfsinInstance*,U32,U32,U32,U32);
 
 U32 f46(dfsinInstance*,U32,U32,U32,U32);
 
-U32 f47(dfsinInstance*,U32,U32);
+U32 f47(dfsinInstance*,U32,U32,U32,U32);
 
-U32 f48(dfsinInstance*,U32,U32);
+U32 f48(dfsinInstance*,U32);
 
-U32 f49(dfsinInstance*,U32,U32);
+U32 f49(dfsinInstance*,U32,U32,U32,U32,U32);
 
-F64 f50(dfsinInstance*,U32,U32);
+U32 f50(dfsinInstance*,U32,U32,U32,U32,U32);
+
+U32 f51(dfsinInstance*,U32,U32,U32,U32);
+
+U32 f52(dfsinInstance*,U32,U32,U32,U32);
+
+U32 f53(dfsinInstance*,U32,U32,U32,U32);
+
+U32 f54(dfsinInstance*,U32,U32,U32,U32);
+
+U32 f55(dfsinInstance*,U32,U32,U32,U32);
+
+U32 f56(dfsinInstance*,U32,U32);
+
+U32 f57(dfsinInstance*,U32,U32);
+
+U32 f58(dfsinInstance*,U32,U32);
+
+F64 f59(dfsinInstance*,U32,U32);
 
 void dfsin____wasm_call_ctors(dfsinInstance*i);
 
@@ -149,9 +167,19 @@ U32 dfsin_extractFloat64Exp(dfsinInstance*i,U32 l0,U32 l1);
 
 U32 dfsin_extractFloat64Sign(dfsinInstance*i,U32 l0,U32 l1);
 
+void dfsin_normalizeFloat64Subnormal(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
 U32 dfsin_packFloat64(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
+U32 dfsin_roundAndPackFloat64(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
+U32 dfsin_normalizeRoundAndPackFloat64(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
 U32 dfsin_int32_to_float64(dfsinInstance*i,U32 l0);
+
+U32 dfsin_addFloat64Sigs(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4);
+
+U32 dfsin_subFloat64Sigs(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4);
 
 U32 dfsin_float64_add(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
@@ -193,9 +221,19 @@ U32 dfsin_origX24extractFloat64Exp(dfsinInstance*i,U64 l0);
 
 U32 dfsin_origX24extractFloat64Sign(dfsinInstance*i,U64 l0);
 
+void dfsin_origX24normalizeFloat64Subnormal(dfsinInstance*i,U64 l0,U32 l1,U32 l2);
+
 U64 dfsin_origX24packFloat64(dfsinInstance*i,U32 l0,U32 l1,U64 l2);
 
+U64 dfsin_origX24roundAndPackFloat64(dfsinInstance*i,U32 l0,U32 l1,U64 l2);
+
+U64 dfsin_origX24normalizeRoundAndPackFloat64(dfsinInstance*i,U32 l0,U32 l1,U64 l2);
+
 U64 dfsin_origX24int32_to_float64(dfsinInstance*i,U32 l0);
+
+U64 dfsin_origX24addFloat64Sigs(dfsinInstance*i,U64 l0,U64 l1,U32 l2);
+
+U64 dfsin_origX24subFloat64Sigs(dfsinInstance*i,U64 l0,U64 l1,U32 l2);
 
 U64 dfsin_origX24float64_add(dfsinInstance*i,U64 l0,U64 l1);
 

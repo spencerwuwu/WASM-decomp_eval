@@ -60,7 +60,7 @@ void print_array(int n,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_jacobi_1d(int tsteps,
 			    int n,
 			    DATA_TYPE POLYBENCH_1D(A,N,n),

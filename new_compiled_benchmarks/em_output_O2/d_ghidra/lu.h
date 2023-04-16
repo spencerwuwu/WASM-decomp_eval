@@ -57,31 +57,35 @@ typedef unsigned short    word;
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x48c)));
+typedef pointer pointer __((offset(0x200)));
 
-typedef pointer pointer __((offset(0x687)));
+typedef pointer pointer __((offset(0x947)));
 
-typedef pointer pointer __((offset(0x747)));
+typedef pointer pointer __((offset(0x917)));
 
-typedef pointer pointer __((offset(0x676)));
+typedef pointer pointer __((offset(0x887)));
 
-typedef pointer pointer __((offset(0x6c5)));
+typedef pointer pointer __((offset(0x270)));
 
 typedef pointer pointer __((offset(0x28)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x70)));
+typedef pointer pointer __((offset(0x39f)));
 
-typedef pointer pointer __((offset(0x717)));
+typedef pointer pointer __((offset(0x688)));
 
-typedef pointer pointer __((offset(0x488)));
+typedef pointer pointer __((offset(0x8c5)));
+
+typedef pointer pointer __((offset(0x876)));
+
+typedef pointer pointer __((offset(0x68c)));
+
+typedef pointer pointer __((offset(0x226)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
-
-typedef pointer pointer __((offset(0x19f)));
 
 typedef void _IO_lock_t;
 
@@ -230,6 +234,7 @@ struct Elf64_Ehdr {
 
 
 
+void kernel_lu(uint param_1,long param_2);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void * memset(void * __s, int __c, size_t __n);

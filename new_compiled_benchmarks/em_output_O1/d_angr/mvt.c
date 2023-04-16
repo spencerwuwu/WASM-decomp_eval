@@ -1,10 +1,72 @@
+long long kernel_mvt(unsigned int a0, unsigned long long a1, unsigned long long a2, void* a3, void* a4, unsigned long a5)
+{
+    unsigned long v1;  // rdi
+    unsigned long long v2;  // r10
+    uint128_t v3;  // xmm0
+    void* v4;  // r11
+    uint128_t v5;  // xmm1
+    uint128_t v6;  // xmm1
+    unsigned long long v7;  // rcx
+    uint128_t v8;  // xmm0
+    void* v9;  // rsi
+    uint128_t v10;  // xmm1
+    uint128_t v11;  // xmm1
+
+    if ((unsigned int)v1 > 0)
+    {
+        v2 = 0;
+        do
+        {
+            v3 = 0;
+            *((unsigned long long *)&v3) = *((long long *)(a1 + v2 * 8));
+            v4 = 0;
+            do
+            {
+                v5 = 0;
+                *((unsigned long long *)&v5) = *((long long *)(v2 * 16000 + a5 + v4 * 8));
+                xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=(rcx<8> + (r11<8> * 0x8<64>)), size=8, endness=Iend_LE)))
+                v3 += v6;
+                *((unsigned long long *)(a1 + v2 * 8)) = v3;
+                v4 += 1;
+            }
+            while (v4 != v1);
+            v2 = 1;
+        }
+        while (v1 != 1);
+    }
+    if ((unsigned int)v1 > 0)
+    {
+        v7 = 0;
+        do
+        {
+            v8 = 0;
+            *((unsigned long long *)&v8) = *((long long *)(a2 + v7 * 8));
+            v9 = 0;
+            do
+            {
+                v10 = 0;
+                *((unsigned long long *)&v10) = *((long long *)(v9 * 16000 + a5 + v7 * 8));
+                xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=(r8<8> + (rsi<8> * 0x8<64>)), size=8, endness=Iend_LE)))
+                v8 += v11;
+                *((unsigned long long *)(a2 + v7 * 8)) = v8;
+                v9 += 1;
+            }
+            while (v9 != v1);
+            v7 = 1;
+        }
+        while (v1 != 1);
+        return v1;
+    }
+    return v1;
+}
+
 extern char .L.str.3;
 extern char .L.str.7;
 extern char got.stderr;
 
 long long submain(unsigned int a0, unsigned long a1)
 {
-    char **v0;  // [bp-0x38], Other Possible Types: unsigned long, void*
+    unsigned long v0;  // [bp-0x38], Other Possible Types: void*, char **
     unsigned long v2;  // rax
     void* v4;  // rbx
     unsigned long long v5;  // r14

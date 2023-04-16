@@ -55,49 +55,53 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
+typedef pointer pointer __((offset(0x2bc)));
+
+typedef pointer pointer __((offset(0x43a)));
+
 typedef pointer pointer __((offset(0x43)));
 
-typedef pointer pointer __((offset(0x4a)));
+typedef pointer pointer __((offset(0x4de)));
 
-typedef pointer pointer __((offset(0x24)));
+typedef pointer pointer __((offset(0x57c)));
 
-typedef pointer pointer __((offset(0x27a)));
-
-typedef pointer pointer __((offset(0x282)));
-
-typedef pointer pointer __((offset(0xfc)));
-
-typedef pointer pointer __((offset(0x270)));
-
-typedef pointer pointer __((offset(0x3bc)));
+typedef pointer pointer __((offset(0x490)));
 
 typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x72)));
+typedef pointer pointer __((offset(0x315)));
+
+typedef pointer pointer __((offset(0x1e4)));
+
+typedef pointer pointer __((offset(0x20a)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x155)));
+typedef pointer pointer __((offset(0x430)));
 
-typedef pointer pointer __((offset(0x3ec)));
-
-typedef pointer pointer __((offset(0x368)));
+typedef pointer pointer __((offset(0x1f6)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x36)));
+typedef pointer pointer __((offset(0x5ac)));
 
-typedef pointer pointer __((offset(0x350)));
+typedef pointer pointer __((offset(0x1c0)));
 
-typedef pointer pointer __((offset(0x31e)));
+typedef pointer pointer __((offset(0x9a)));
+
+typedef pointer pointer __((offset(0x232)));
+
+typedef pointer pointer __((offset(0x510)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x293)));
+typedef pointer pointer __((offset(0x442)));
 
-typedef pointer pointer __((offset(0x2d0)));
+typedef pointer pointer __((offset(0x528)));
+
+typedef pointer pointer __((offset(0x453)));
 
 typedef void _IO_lock_t;
 
@@ -246,10 +250,11 @@ struct Elf64_Ehdr {
 
 
 
+void kernel_gramschmidt(uint param_1,uint param_2,long param_3,long param_4,long param_5);
 undefined8 submain(int param_1,char **param_2);
+double sqrt(double __x);
 undefined polybench_alloc_data();
 void * memset(void * __s, int __c, size_t __n);
-double sqrt(double __x);
 void free(void * __ptr);
 size_t fwrite(void * __ptr, size_t __size, size_t __n, FILE * __s);
 int fprintf(FILE * __stream, char * __format, ...);

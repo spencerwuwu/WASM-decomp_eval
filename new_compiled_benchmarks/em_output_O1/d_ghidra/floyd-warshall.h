@@ -54,15 +54,11 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x1a4)));
+typedef pointer pointer __((offset(0x2a5)));
 
-typedef pointer pointer __((offset(0x100)));
+typedef pointer pointer __((offset(0x1d8)));
 
-typedef pointer pointer __((offset(0x225)));
-
-typedef pointer pointer __((offset(0x158)));
-
-typedef pointer pointer __((offset(0x1f5)));
+typedef pointer pointer __((offset(0x80)));
 
 typedef pointer pointer __((offset(0x40)));
 
@@ -70,15 +66,21 @@ typedef pointer pointer __((offset(0x26)));
 
 typedef pointer pointer __((offset(0x2b)));
 
+typedef pointer pointer __((offset(0x1e9)));
+
 typedef pointer pointer __((offset(0x2f)));
 
-typedef pointer pointer __((offset(0x169)));
+typedef pointer pointer __((offset(0x180)));
 
-typedef pointer pointer __((offset(0x1f)));
+typedef pointer pointer __((offset(0x275)));
+
+typedef pointer pointer __((offset(0x224)));
+
+typedef pointer pointer __((offset(0x9f)));
 
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x32)));
+typedef pointer pointer __((offset(0xb2)));
 
 typedef void _IO_lock_t;
 
@@ -227,6 +229,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_floyd_warshall(uint param_1,long param_2);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

@@ -23,11 +23,11 @@ void f4(seidel2dInstance*);
 
 void f5(seidel2dInstance*);
 
-U32 f6(seidel2dInstance*,U32,U32);
+void f6(seidel2dInstance*,U32,U32,U32);
 
-void f7(seidel2dInstance*,U32,U32);
+U32 f7(seidel2dInstance*,U32,U32);
 
-void f8(seidel2dInstance*,U32,U32,U32);
+void f8(seidel2dInstance*,U32,U32);
 
 void f9(seidel2dInstance*,U32,U32);
 
@@ -36,6 +36,8 @@ U32 f10(seidel2dInstance*,U64,U32);
 void seidel2d____wasm_call_ctors(seidel2dInstance*i);
 
 void seidel2d____wasm_apply_data_relocs(seidel2dInstance*i);
+
+void seidel2d_kernel_seidel_2d(seidel2dInstance*i,U32 l0,U32 l1,U32 l2);
 
 U32 seidel2d_submain(seidel2dInstance*i,U32 l0,U32 l1);
 

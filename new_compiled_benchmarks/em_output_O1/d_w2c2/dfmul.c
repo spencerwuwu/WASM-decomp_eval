@@ -190,7 +190,81 @@ L0:;
 return si0;
 }
 
-U64 f14(dfmulInstance*i,U32 l0,U32 l1,U64 l2) {
+void f14(dfmulInstance*i,U64 l0,U32 l1,U32 l2) {
+U32 l3=0;
+U32 l4=0;
+U32 l5=0;
+U32 l6=0;
+U32 si0,si1,si2,si3,si4,si5,si6;
+U64 sj1,sj2,sj3,sj4,sj5,sj6;
+si0=l2;
+sj1=l0;
+si2=(*i->env_____memory_base);
+si3=528U;
+si2+=si3;
+sj3=l0;
+sj4=l0;
+sj5=32ULL;
+sj4>>=(sj5&63);
+sj5=l0;
+sj6=4294967296ULL;
+si5=sj5 < sj6;
+l3=si5;
+sj3=si5?sj3:sj4;
+si3=(U32)(sj3);
+l4=si3;
+si4=16U;
+si3<<=(si4&31);
+si4=l4;
+si5=l4;
+si6=65536U;
+si5=si5 < si6;
+l5=si5;
+si3=si5?si3:si4;
+l4=si3;
+si4=8U;
+si3<<=(si4&31);
+si4=l4;
+si5=l4;
+si6=16777216U;
+si5=si5 < si6;
+l6=si5;
+si3=si5?si3:si4;
+si4=22U;
+si3>>=(si4&31);
+si4=1020U;
+si3&=si4;
+si2+=si3;
+si2=i32_load(i->env__memory,(U64)si2);
+si3=l5;
+si4=4U;
+si3<<=(si4&31);
+l4=si3;
+si4=8U;
+si3|=si4;
+si4=l4;
+si5=l6;
+si3=si5?si3:si4;
+si4=l3;
+si5=5U;
+si4<<=(si5&31);
+si3|=si4;
+si2+=si3;
+l4=si2;
+si3=-11U;
+si2+=si3;
+sj2=(U64)(si2);
+sj1<<=(sj2&63);
+i64_store(i->env__memory,(U64)si0,sj1);
+si0=l1;
+si1=12U;
+si2=l4;
+si1-=si2;
+i32_store(i->env__memory,(U64)si0,si1);
+L0:;
+}
+
+U64 f15(dfmulInstance*i,U32 l0,U32 l1,U64 l2) {
 U32 si0,si1;
 U64 sj0,sj1,sj2;
 si0=l0;
@@ -208,19 +282,268 @@ L0:;
 return sj0;
 }
 
-U64 f15(dfmulInstance*i,U64 l0,U64 l1) {
-U64 l2=0;
-U64 l3=0;
+U64 f16(dfmulInstance*i,U32 l0,U32 l1,U64 l2) {
+U32 l3=0;
 U64 l4=0;
 U64 l5=0;
 U32 l6=0;
+U32 l7=0;
+U32 si0,si1,si2,si3;
+U64 sj0,sj1,sj2,sj3;
+si0=(*i->GOTX2Emem__float_rounding_mode);
+si0=i32_load(i->env__memory,(U64)si0);
+l3=si0;
+if(si0){
+goto L2;
+}
+sj0=0ULL;
+l4=sj0;
+sj0=512ULL;
+l5=sj0;
+goto L1;
+L2:;
+si0=l3;
+si1=1U;
+si0=si0 != si1;
+if(si0){
+goto L3;
+}
+sj0=-1ULL;
+l4=sj0;
+sj0=0ULL;
+l5=sj0;
+goto L1;
+L3:;
+si0=l0;
+si0=!(si0);
+if(si0){
+goto L4;
+}
+sj0=-1ULL;
+sj1=0ULL;
+si2=l3;
+si3=2U;
+si2=si2 == si3;
+l6=si2;
+sj0=si2?sj0:sj1;
+l4=sj0;
+sj0=0ULL;
+sj1=1023ULL;
+si2=l6;
+sj0=si2?sj0:sj1;
+l5=sj0;
+goto L1;
+L4:;
+sj0=-1ULL;
+sj1=0ULL;
+si2=l3;
+si3=3U;
+si2=si2 == si3;
+l6=si2;
+sj0=si2?sj0:sj1;
+l4=sj0;
+sj0=0ULL;
+sj1=1023ULL;
+si2=l6;
+sj0=si2?sj0:sj1;
+l5=sj0;
+L1:;
+sj0=l5;
+l5=sj0;
+sj0=l4;
+l4=sj0;
+sj0=l2;
+si0=(U32)(sj0);
+si1=1023U;
+si0&=si1;
+l6=si0;
+si0=l1;
+si1=65535U;
+si0&=si1;
+si1=2045U;
+si0=si0 < si1;
+if(si0){
+goto L6;
+}
+si0=l1;
+si1=2045U;
+si0=(U32)((I32)si0>(I32)si1);
+if(si0){
+goto L8;
+}
+si0=l1;
+si1=2045U;
+si0=si0 != si1;
+if(si0){
+goto L7;
+}
+sj0=l5;
+sj1=l2;
+sj0+=sj1;
+sj1=-1ULL;
+si0=(U64)((I64)sj0>(I64)sj1);
+if(si0){
+goto L7;
+}
+L8:;
+si0=(*i->GOTX2Emem__float_exception_flags);
+l1=si0;
+si1=l1;
+si1=i32_load(i->env__memory,(U64)si1);
+si2=9U;
+si1|=si2;
+i32_store(i->env__memory,(U64)si0,si1);
+sj0=l4;
+si1=l0;
+sj1=(U64)(si1);
+sj2=63ULL;
+sj1<<=(sj2&63);
+sj0+=sj1;
+sj1=9218868437227405312ULL;
+sj0+=sj1;
+goto L0;
+L7:;
+si0=l1;
+si1=-1U;
+si0=(U32)((I32)si0>(I32)si1);
+if(si0){
+goto L6;
+}
+si0=l1;
+si1=-63U;
+si0=(U32)((I32)si0<(I32)si1);
+if(si0){
+goto L10;
+}
+sj0=l2;
+si1=0U;
+si2=l1;
+si1-=si2;
+sj1=(U64)(si1);
+sj0>>=(sj1&63);
+sj1=l2;
+si2=l1;
+si3=63U;
+si2&=si3;
+sj2=(U64)(si2);
+sj1<<=(sj2&63);
+sj2=0ULL;
+si1=sj1 != sj2;
+sj1=(U64)(si1);
+sj0|=sj1;
+l2=sj0;
+goto L9;
+L10:;
+sj0=l2;
+sj1=0ULL;
+si0=sj0 != sj1;
+sj0=(U64)(si0);
+l2=sj0;
+L9:;
+sj0=l2;
+l2=sj0;
+si0=(U32)(sj0);
+si1=1023U;
+si0&=si1;
+l6=si0;
+if(si0){
+goto L11;
+}
+sj0=l2;
+l2=sj0;
+si0=0U;
+l1=si0;
+si0=0U;
+l6=si0;
+goto L5;
+L11:;
+si0=(*i->GOTX2Emem__float_exception_flags);
+l1=si0;
+si1=l1;
+si1=i32_load(i->env__memory,(U64)si1);
+si2=4U;
+si1|=si2;
+i32_store(i->env__memory,(U64)si0,si1);
+sj0=l2;
+l2=sj0;
+si0=0U;
+l1=si0;
+si0=l6;
+l6=si0;
+goto L5;
+L6:;
+sj0=l2;
+l2=sj0;
+si0=l1;
+l1=si0;
+si0=l6;
+l6=si0;
+L5:;
+si0=l1;
+l1=si0;
+sj0=l2;
+l2=sj0;
+si0=l6;
+l6=si0;
+si0=!(si0);
+if(si0){
+goto L12;
+}
+si0=(*i->GOTX2Emem__float_exception_flags);
+l7=si0;
+si1=l7;
+si1=i32_load(i->env__memory,(U64)si1);
+si2=1U;
+si1|=si2;
+i32_store(i->env__memory,(U64)si0,si1);
+L12:;
+sj0=l2;
+sj1=l5;
+sj0+=sj1;
+sj1=10ULL;
+sj0>>=(sj1&63);
+si1=l3;
+si1=!(si1);
+si2=l6;
+si3=512U;
+si2=si2 == si3;
+si1&=si2;
+sj1=(U64)(si1);
+sj2=-1ULL;
+sj1^=sj2;
+sj0&=sj1;
+l2=sj0;
+si1=l0;
+sj1=(U64)(si1);
+sj2=63ULL;
+sj1<<=(sj2&63);
+sj0|=sj1;
+sj1=0ULL;
+si2=l1;
+sj2=(U64)(si2);
+sj3=52ULL;
+sj2<<=(sj3&63);
+sj3=l2;
+si3=!(sj3);
+sj1=si3?sj1:sj2;
+sj0+=sj1;
+L0:;
+return sj0;
+}
+
+U64 f17(dfmulInstance*i,U64 l0,U64 l1) {
+U64 l2=0;
+U64 l3=0;
+U64 l4=0;
+U32 l5=0;
+U64 l6=0;
 U64 l7=0;
 U32 l8=0;
 U32 l9=0;
 U32 l10=0;
 U32 l11=0;
 U32 si0,si1,si2,si3,si4,si5;
-U64 sj0,sj1,sj2,sj3,sj4,sj5;
+U64 sj0,sj1,sj2,sj3,sj4,sj5,sj6,sj7;
 sj0=l1;
 sj1=4503599627370495ULL;
 sj0&=sj1;
@@ -230,17 +553,17 @@ sj1=4503599627370495ULL;
 sj0&=sj1;
 l3=sj0;
 sj0=l1;
-sj1=l0;
-sj0^=sj1;
-l4=sj0;
-sj0=l1;
 sj1=52ULL;
 sj0>>=(sj1&63);
-l5=sj0;
+l4=sj0;
 si0=(U32)(sj0);
 si1=2047U;
 si0&=si1;
-l6=si0;
+l5=si0;
+sj0=l1;
+sj1=l0;
+sj0^=sj1;
+l6=sj0;
 sj0=l0;
 sj1=52ULL;
 sj0>>=(sj1&63);
@@ -265,7 +588,7 @@ si0=!(sj0);
 if(si0){
 goto L2;
 }
-si0=l6;
+si0=l5;
 si1=2047U;
 si0=si0 != si1;
 if(si0){
@@ -283,7 +606,7 @@ sj1&=sj2;
 sj2=0ULL;
 si1=sj1 != sj2;
 si0&=si1;
-l6=si0;
+l5=si0;
 sj0=l0;
 sj1=9221120237041090560ULL;
 sj0&=sj1;
@@ -299,7 +622,7 @@ l8=si0;
 if(si0){
 goto L5;
 }
-si0=l6;
+si0=l5;
 si0=!(si0);
 if(si0){
 goto L4;
@@ -331,11 +654,11 @@ si4=sj4 < sj5;
 sj2=si4?sj2:sj3;
 si3=l8;
 sj1=si3?sj1:sj2;
-si2=l6;
+si2=l5;
 sj0=si2?sj0:sj1;
 goto L0;
 L2:;
-sj0=l5;
+sj0=l4;
 sj1=2047ULL;
 sj0&=sj1;
 sj1=l2;
@@ -346,8 +669,8 @@ if(si0){
 goto L6;
 }
 si0=(*i->GOTX2Emem__float_exception_flags);
-l6=si0;
-si1=l6;
+l5=si0;
+si1=l5;
 si1=i32_load(i->env__memory,(U64)si1);
 si2=16U;
 si1|=si2;
@@ -355,14 +678,14 @@ i32_store(i->env__memory,(U64)si0,si1);
 sj0=9223372036854775807ULL;
 goto L0;
 L6:;
-sj0=l4;
+sj0=l6;
 sj1=-9223372036854775808ULL;
 sj0&=sj1;
 sj1=9218868437227405312ULL;
 sj0|=sj1;
 goto L0;
 L1:;
-si0=l6;
+si0=l5;
 si1=2047U;
 si0=si0 != si1;
 if(si0){
@@ -384,7 +707,7 @@ sj1&=sj2;
 sj2=0ULL;
 si1=sj1 != sj2;
 si0&=si1;
-l6=si0;
+l5=si0;
 sj0=l0;
 sj1=9221120237041090560ULL;
 sj0&=sj1;
@@ -400,7 +723,7 @@ l8=si0;
 if(si0){
 goto L10;
 }
-si0=l6;
+si0=l5;
 si0=!(si0);
 if(si0){
 goto L9;
@@ -432,7 +755,7 @@ si4=sj4 < sj5;
 sj2=si4?sj2:sj3;
 si3=l8;
 sj1=si3?sj1:sj2;
-si2=l6;
+si2=l5;
 sj0=si2?sj0:sj1;
 goto L0;
 L8:;
@@ -447,8 +770,8 @@ if(si0){
 goto L11;
 }
 si0=(*i->GOTX2Emem__float_exception_flags);
-l6=si0;
-si1=l6;
+l5=si0;
+si1=l5;
 si1=i32_load(i->env__memory,(U64)si1);
 si2=16U;
 si1|=si2;
@@ -456,7 +779,7 @@ i32_store(i->env__memory,(U64)si0,si1);
 sj0=9223372036854775807ULL;
 goto L0;
 L11:;
-sj0=l4;
+sj0=l6;
 sj1=-9223372036854775808ULL;
 sj0&=sj1;
 sj1=9218868437227405312ULL;
@@ -480,7 +803,7 @@ si0=sj0 != sj1;
 if(si0){
 goto L14;
 }
-sj0=l4;
+sj0=l6;
 sj1=-9223372036854775808ULL;
 sj0&=sj1;
 goto L0;
@@ -552,13 +875,13 @@ si0=l8;
 l8=si0;
 sj0=l0;
 l0=sj0;
-si0=l6;
+si0=l5;
 si0=!(si0);
 if(si0){
 goto L16;
 }
-si0=l6;
-l9=si0;
+si0=l5;
+l5=si0;
 sj0=l2;
 l1=sj0;
 goto L15;
@@ -569,7 +892,7 @@ si0=sj0 != sj1;
 if(si0){
 goto L17;
 }
-sj0=l4;
+sj0=l6;
 sj1=-9223372036854775808ULL;
 sj0&=sj1;
 goto L0;
@@ -588,20 +911,20 @@ si4=sj4 < sj5;
 l9=si4;
 sj2=si4?sj2:sj3;
 si2=(U32)(sj2);
-l6=si2;
+l5=si2;
 si3=16U;
 si2<<=(si3&31);
-si3=l6;
-si4=l6;
+si3=l5;
+si4=l5;
 si5=65536U;
 si4=si4 < si5;
 l10=si4;
 si2=si4?si2:si3;
-l6=si2;
+l5=si2;
 si3=8U;
 si2<<=(si3&31);
-si3=l6;
-si4=l6;
+si3=l5;
+si4=l5;
 si5=16777216U;
 si4=si4 < si5;
 l11=si4;
@@ -615,10 +938,10 @@ si1=i32_load(i->env__memory,(U64)si1);
 si2=l10;
 si3=4U;
 si2<<=(si3&31);
-l6=si2;
+l5=si2;
 si3=8U;
 si2|=si3;
-si3=l6;
+si3=l5;
 si4=l11;
 si2=si4?si2:si3;
 si3=l9;
@@ -626,335 +949,104 @@ si4=5U;
 si3<<=(si4&31);
 si2|=si3;
 si1+=si2;
-l6=si1;
+l9=si1;
 si0-=si1;
-l9=si0;
+l5=si0;
 sj0=l2;
-si1=l6;
+si1=l9;
 si2=-11U;
 si1+=si2;
 sj1=(U64)(si1);
 sj0<<=(sj1&63);
 l1=sj0;
 L15:;
-sj0=l1;
-sj1=11ULL;
-sj0<<=(sj1&63);
-l1=sj0;
-sj1=-9223372036854775808ULL;
-sj0|=sj1;
-l3=sj0;
-sj1=32ULL;
+sj0=l6;
+sj1=63ULL;
 sj0>>=(sj1&63);
-l2=sj0;
-sj1=l0;
-sj2=10ULL;
-sj1<<=(sj2&63);
-l0=sj1;
-sj2=4294966272ULL;
-sj1&=sj2;
-sj0*=sj1;
-l5=sj0;
-sj1=l1;
-sj2=4294965248ULL;
-sj1&=sj2;
-sj2=l0;
-sj3=4611686018427387904ULL;
-sj2|=sj3;
-l0=sj2;
-sj3=32ULL;
-sj2>>=(sj3&63);
-l7=sj2;
-sj1*=sj2;
-sj0+=sj1;
-l1=sj0;
-sj1=32ULL;
-sj0>>=(sj1&63);
-sj1=l2;
-sj2=l7;
-sj1*=sj2;
-sj0+=sj1;
-sj1=l1;
-sj2=l5;
-si1=sj1 < sj2;
-sj1=(U64)(si1);
-sj2=32ULL;
-sj1<<=(sj2&63);
-sj0+=sj1;
-sj1=l3;
-sj2=l0;
-sj1*=sj2;
-l0=sj1;
-sj2=l1;
-sj3=32ULL;
-sj2<<=(sj3&63);
-si1=sj1 < sj2;
-sj1=(U64)(si1);
-sj0+=sj1;
-sj1=l0;
-sj2=0ULL;
-si1=sj1 != sj2;
-sj1=(U64)(si1);
-sj0|=sj1;
-l1=sj0;
-sj1=1ULL;
-sj0<<=(sj1&63);
-l0=sj0;
-sj1=l1;
-sj2=l0;
-sj3=-1ULL;
-si2=(U64)((I64)sj2>(I64)sj3);
-l6=si2;
-sj0=si2?sj0:sj1;
-l1=sj0;
-si0=l9;
-si1=l8;
-si0+=si1;
-si1=-1024U;
-si2=-1023U;
-si3=l6;
-si1=si3?si1:si2;
-si0+=si1;
-l6=si0;
-si0=(*i->GOTX2Emem__float_rounding_mode);
-si0=i32_load(i->env__memory,(U64)si0);
-l8=si0;
-if(si0){
-goto L19;
-}
-sj0=0ULL;
-l0=sj0;
-sj0=512ULL;
-l3=sj0;
-goto L18;
-L19:;
-sj0=-1ULL;
-l0=sj0;
-sj0=0ULL;
-l3=sj0;
-si0=l8;
-si1=1U;
-si0=si0 == si1;
-if(si0){
-goto L18;
-}
-sj0=l4;
-sj1=-1ULL;
-si0=(U64)((I64)sj0>(I64)sj1);
-if(si0){
-goto L20;
-}
-sj0=-1ULL;
-sj1=0ULL;
-si2=l8;
-si3=2U;
-si2=si2 == si3;
-l9=si2;
-sj0=si2?sj0:sj1;
-l0=sj0;
-sj0=0ULL;
-sj1=1023ULL;
-si2=l9;
-sj0=si2?sj0:sj1;
-l3=sj0;
-goto L18;
-L20:;
-sj0=-1ULL;
-sj1=0ULL;
-si2=l8;
-si3=3U;
-si2=si2 == si3;
-l9=si2;
-sj0=si2?sj0:sj1;
-l0=sj0;
-sj0=0ULL;
-sj1=1023ULL;
-si2=l9;
-sj0=si2?sj0:sj1;
-l3=sj0;
-L18:;
-sj0=l3;
-l3=sj0;
-sj0=l0;
-l0=sj0;
-sj0=l1;
 si0=(U32)(sj0);
-si1=1023U;
-si0&=si1;
-l9=si0;
-si0=l6;
-si1=65535U;
-si0&=si1;
-si1=2045U;
-si0=si0 < si1;
-if(si0){
-goto L22;
-}
-si0=l6;
-si1=2045U;
-si0=(U32)((I32)si0>(I32)si1);
-if(si0){
-goto L24;
-}
-si0=l6;
-si1=2045U;
-si0=si0 != si1;
-if(si0){
-goto L23;
-}
-sj0=l3;
-sj1=l1;
-sj0+=sj1;
-sj1=-1ULL;
-si0=(U64)((I64)sj0>(I64)sj1);
-if(si0){
-goto L23;
-}
-L24:;
-si0=(*i->GOTX2Emem__float_exception_flags);
-l6=si0;
-si1=l6;
-si1=i32_load(i->env__memory,(U64)si1);
-si2=9U;
-si1|=si2;
-i32_store(i->env__memory,(U64)si0,si1);
-sj0=l0;
-sj1=l4;
-sj2=-9223372036854775808ULL;
-sj1&=sj2;
-sj0+=sj1;
-sj1=9218868437227405312ULL;
-sj0+=sj1;
-goto L0;
-L23:;
-si0=l6;
-si1=-1U;
-si0=(U32)((I32)si0>(I32)si1);
-if(si0){
-goto L22;
-}
-si0=l6;
-si1=-63U;
-si0=(U32)((I32)si0<(I32)si1);
-if(si0){
-goto L26;
-}
-sj0=l1;
-si1=0U;
-si2=l6;
-si1-=si2;
-sj1=(U64)(si1);
-sj0>>=(sj1&63);
-sj1=l1;
-si2=l6;
-si3=63U;
-si2&=si3;
-sj2=(U64)(si2);
-sj1<<=(sj2&63);
-sj2=0ULL;
-si1=sj1 != sj2;
-sj1=(U64)(si1);
-sj0|=sj1;
-l1=sj0;
-goto L25;
-L26:;
-sj0=l1;
-sj1=0ULL;
-si0=sj0 != sj1;
-sj0=(U64)(si0);
-l1=sj0;
-L25:;
-sj0=l1;
-l1=sj0;
-si0=(U32)(sj0);
-si1=1023U;
-si0&=si1;
-l9=si0;
-if(si0){
-goto L27;
-}
-sj0=l1;
-l1=sj0;
-si0=0U;
-l6=si0;
-si0=0U;
-l9=si0;
-goto L21;
-L27:;
-si0=(*i->GOTX2Emem__float_exception_flags);
-l6=si0;
-si1=l6;
-si1=i32_load(i->env__memory,(U64)si1);
-si2=4U;
-si1|=si2;
-i32_store(i->env__memory,(U64)si0,si1);
-sj0=l1;
-l1=sj0;
-si0=0U;
-l6=si0;
-si0=l9;
-l9=si0;
-goto L21;
-L22:;
-sj0=l1;
-l1=sj0;
-si0=l6;
-l6=si0;
-si0=l9;
-l9=si0;
-L21:;
-si0=l6;
-l6=si0;
-sj0=l1;
-l1=sj0;
-si0=l9;
-l9=si0;
-si0=!(si0);
-if(si0){
-goto L28;
-}
-si0=(*i->GOTX2Emem__float_exception_flags);
-l10=si0;
-si1=l10;
-si1=i32_load(i->env__memory,(U64)si1);
-si2=1U;
-si1|=si2;
-i32_store(i->env__memory,(U64)si0,si1);
-L28:;
-sj0=l1;
-sj1=l3;
-sj0+=sj1;
-sj1=10ULL;
-sj0>>=(sj1&63);
-si1=l8;
-si1=!(si1);
-si2=l9;
-si3=512U;
-si2=si2 == si3;
-si1&=si2;
-sj1=(U64)(si1);
-sj2=-1ULL;
-sj1^=sj2;
-sj0&=sj1;
-l1=sj0;
-sj1=l4;
-sj2=-9223372036854775808ULL;
-sj1&=sj2;
-sj0|=sj1;
-sj1=0ULL;
-si2=l6;
-sj2=(U64)(si2);
-sj3=52ULL;
-sj2<<=(sj3&63);
+si1=l5;
+si2=l8;
+si1+=si2;
+si2=-1024U;
+si3=-1023U;
+sj4=l1;
+sj5=11ULL;
+sj4<<=(sj5&63);
+l1=sj4;
+sj5=-9223372036854775808ULL;
+sj4|=sj5;
+l3=sj4;
+sj5=32ULL;
+sj4>>=(sj5&63);
+l2=sj4;
+sj5=l0;
+sj6=10ULL;
+sj5<<=(sj6&63);
+l0=sj5;
+sj6=4294966272ULL;
+sj5&=sj6;
+sj4*=sj5;
+l6=sj4;
+sj5=l1;
+sj6=4294965248ULL;
+sj5&=sj6;
+sj6=l0;
+sj7=4611686018427387904ULL;
+sj6|=sj7;
+l0=sj6;
+sj7=32ULL;
+sj6>>=(sj7&63);
+l4=sj6;
+sj5*=sj6;
+sj4+=sj5;
+l1=sj4;
+sj5=32ULL;
+sj4>>=(sj5&63);
+sj5=l2;
+sj6=l4;
+sj5*=sj6;
+sj4+=sj5;
+sj5=l1;
+sj6=l6;
+si5=sj5 < sj6;
+sj5=(U64)(si5);
+sj6=32ULL;
+sj5<<=(sj6&63);
+sj4+=sj5;
+sj5=l3;
+sj6=l0;
+sj5*=sj6;
+l0=sj5;
+sj6=l1;
+sj7=32ULL;
+sj6<<=(sj7&63);
+si5=sj5 < sj6;
+sj5=(U64)(si5);
+sj4+=sj5;
+sj5=l0;
+sj6=0ULL;
+si5=sj5 != sj6;
+sj5=(U64)(si5);
+sj4|=sj5;
+l1=sj4;
+sj5=1ULL;
+sj4<<=(sj5&63);
+l0=sj4;
+sj5=-1ULL;
+si4=(U64)((I64)sj4>(I64)sj5);
+l5=si4;
+si2=si4?si2:si3;
+si1+=si2;
+sj2=l0;
 sj3=l1;
-si3=!(sj3);
-sj1=si3?sj1:sj2;
-sj0+=sj1;
+si4=l5;
+sj2=si4?sj2:sj3;
+sj0=f16(i,si0,si1,sj2);
 L0:;
 return sj0;
 }
 
-F64 f16(dfmulInstance*i,U64 l0) {
+F64 f18(dfmulInstance*i,U64 l0) {
 F64 l1=0;
 F64 sd0;
 sd0=l1;
@@ -962,7 +1054,7 @@ L0:;
 return sd0;
 }
 
-U32 f17(dfmulInstance*i) {
+U32 f19(dfmulInstance*i) {
 U32 l0=0;
 U32 l1=0;
 U64 l2=0;
@@ -1042,7 +1134,7 @@ si3=l1;
 si2+=si3;
 sj2=i64_load(i->env__memory,(U64)si2);
 sj3=l5;
-sj2=f15(i,sj2,sj3);
+sj2=f17(i,sj2,sj3);
 si1=sj1 != sj2;
 si0+=si1;
 l6=si0;
@@ -1116,7 +1208,7 @@ L0:;
 return si0;
 }
 
-void f18(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3) {
+void f20(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3) {
 U32 si0,si1,si2;
 U64 sj0,sj1,sj2;
 si0=l0;
@@ -1132,7 +1224,7 @@ f6(i,sj0,si1,si2);
 L0:;
 }
 
-void f19(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5) {
+void f21(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5) {
 U32 si0,si1,si2,si3;
 U64 sj0,sj1,sj2,sj3;
 si0=l0;
@@ -1155,7 +1247,7 @@ f7(i,sj0,sj1,si2,si3);
 L0:;
 }
 
-U32 f20(dfmulInstance*i,U32 l0,U32 l1) {
+U32 f22(dfmulInstance*i,U32 l0,U32 l1) {
 U32 si0,si1;
 U64 sj0,sj1,sj2;
 si0=l0;
@@ -1170,7 +1262,7 @@ L0:;
 return si0;
 }
 
-U32 f21(dfmulInstance*i,U32 l0,U32 l1) {
+U32 f23(dfmulInstance*i,U32 l0,U32 l1) {
 U32 si0,si1;
 U64 sj0,sj1,sj2;
 si0=l0;
@@ -1185,7 +1277,7 @@ L0:;
 return si0;
 }
 
-U32 f22(dfmulInstance*i,U32 l0,U32 l1) {
+U32 f24(dfmulInstance*i,U32 l0,U32 l1) {
 U64 l2=0;
 U32 si0,si1;
 U64 sj0,sj1,sj2;
@@ -1209,7 +1301,7 @@ L0:;
 return si0;
 }
 
-U32 f23(dfmulInstance*i,U32 l0,U32 l1) {
+U32 f25(dfmulInstance*i,U32 l0,U32 l1) {
 U32 si0,si1;
 U64 sj0,sj1,sj2;
 si0=l0;
@@ -1224,7 +1316,7 @@ L0:;
 return si0;
 }
 
-U32 f24(dfmulInstance*i,U32 l0,U32 l1) {
+U32 f26(dfmulInstance*i,U32 l0,U32 l1) {
 U32 si0,si1;
 U64 sj0,sj1,sj2;
 si0=l0;
@@ -1239,7 +1331,23 @@ L0:;
 return si0;
 }
 
-U32 f25(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3) {
+void f27(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3) {
+U32 si0,si1,si2;
+U64 sj0,sj1,sj2;
+si0=l0;
+sj0=(U64)(si0);
+si1=l1;
+sj1=(U64)(si1);
+sj2=32ULL;
+sj1<<=(sj2&63);
+sj0|=sj1;
+si1=l2;
+si2=l3;
+f14(i,sj0,si1,si2);
+L0:;
+}
+
+U32 f28(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3) {
 U64 l4=0;
 U32 si0,si1,si2,si3;
 U64 sj0,sj1,sj2,sj3,sj4;
@@ -1252,7 +1360,7 @@ sj3=(U64)(si3);
 sj4=32ULL;
 sj3<<=(sj4&63);
 sj2|=sj3;
-sj0=f14(i,si0,si1,sj2);
+sj0=f15(i,si0,si1,sj2);
 l4=sj0;
 sj0=l4;
 sj1=32ULL;
@@ -1265,7 +1373,33 @@ L0:;
 return si0;
 }
 
-U32 f26(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3) {
+U32 f29(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3) {
+U64 l4=0;
+U32 si0,si1,si2,si3;
+U64 sj0,sj1,sj2,sj3,sj4;
+si0=l0;
+si1=l1;
+si2=l2;
+sj2=(U64)(si2);
+si3=l3;
+sj3=(U64)(si3);
+sj4=32ULL;
+sj3<<=(sj4&63);
+sj2|=sj3;
+sj0=f16(i,si0,si1,sj2);
+l4=sj0;
+sj0=l4;
+sj1=32ULL;
+sj0>>=(sj1&63);
+si0=(U32)(sj0);
+env__setTempRet0(i,si0);
+sj0=l4;
+si0=(U32)(sj0);
+L0:;
+return si0;
+}
+
+U32 f30(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3) {
 U64 l4=0;
 U32 si0,si1,si2;
 U64 sj0,sj1,sj2,sj3;
@@ -1283,7 +1417,7 @@ sj2=(U64)(si2);
 sj3=32ULL;
 sj2<<=(sj3&63);
 sj1|=sj2;
-sj0=f15(i,sj0,sj1);
+sj0=f17(i,sj0,sj1);
 l4=sj0;
 sj0=l4;
 sj1=32ULL;
@@ -1296,7 +1430,7 @@ L0:;
 return si0;
 }
 
-F64 f27(dfmulInstance*i,U32 l0,U32 l1) {
+F64 f31(dfmulInstance*i,U32 l0,U32 l1) {
 U32 si0,si1;
 U64 sj0,sj1,sj2;
 F64 sd0;
@@ -1307,7 +1441,7 @@ sj1=(U64)(si1);
 sj2=32ULL;
 sj1<<=(sj2&63);
 sj0|=sj1;
-sd0=f16(i,sj0);
+sd0=f18(i,sj0);
 L0:;
 return sd0;
 }
@@ -1350,11 +1484,11 @@ f5(i);
 }
 
 void dfmul_shift64RightJamming(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3){
-f18(i,l0,l1,l2,l3);
+f20(i,l0,l1,l2,l3);
 }
 
 void dfmul_mul64To128(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5){
-f19(i,l0,l1,l2,l3,l4,l5);
+f21(i,l0,l1,l2,l3,l4,l5);
 }
 
 void dfmul_float_raise(dfmulInstance*i,U32 l0){
@@ -1362,39 +1496,47 @@ f8(i,l0);
 }
 
 U32 dfmul_float64_is_nan(dfmulInstance*i,U32 l0,U32 l1){
-return f20(i,l0,l1);
-}
-
-U32 dfmul_float64_is_signaling_nan(dfmulInstance*i,U32 l0,U32 l1){
-return f21(i,l0,l1);
-}
-
-U32 dfmul_extractFloat64Frac(dfmulInstance*i,U32 l0,U32 l1){
 return f22(i,l0,l1);
 }
 
-U32 dfmul_extractFloat64Exp(dfmulInstance*i,U32 l0,U32 l1){
+U32 dfmul_float64_is_signaling_nan(dfmulInstance*i,U32 l0,U32 l1){
 return f23(i,l0,l1);
 }
 
-U32 dfmul_extractFloat64Sign(dfmulInstance*i,U32 l0,U32 l1){
+U32 dfmul_extractFloat64Frac(dfmulInstance*i,U32 l0,U32 l1){
 return f24(i,l0,l1);
 }
 
+U32 dfmul_extractFloat64Exp(dfmulInstance*i,U32 l0,U32 l1){
+return f25(i,l0,l1);
+}
+
+U32 dfmul_extractFloat64Sign(dfmulInstance*i,U32 l0,U32 l1){
+return f26(i,l0,l1);
+}
+
+void dfmul_normalizeFloat64Subnormal(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3){
+f27(i,l0,l1,l2,l3);
+}
+
 U32 dfmul_packFloat64(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3){
-return f25(i,l0,l1,l2,l3);
+return f28(i,l0,l1,l2,l3);
+}
+
+U32 dfmul_roundAndPackFloat64(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3){
+return f29(i,l0,l1,l2,l3);
 }
 
 U32 dfmul_float64_mul(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3){
-return f26(i,l0,l1,l2,l3);
+return f30(i,l0,l1,l2,l3);
 }
 
 F64 dfmul_ullong_to_double(dfmulInstance*i,U32 l0,U32 l1){
-return f27(i,l0,l1);
+return f31(i,l0,l1);
 }
 
 U32 dfmul_submain(dfmulInstance*i){
-return f17(i);
+return f19(i);
 }
 
 void dfmul_origX24shift64RightJamming(dfmulInstance*i,U64 l0,U32 l1,U32 l2){
@@ -1425,16 +1567,24 @@ U32 dfmul_origX24extractFloat64Sign(dfmulInstance*i,U64 l0){
 return f13(i,l0);
 }
 
+void dfmul_origX24normalizeFloat64Subnormal(dfmulInstance*i,U64 l0,U32 l1,U32 l2){
+f14(i,l0,l1,l2);
+}
+
 U64 dfmul_origX24packFloat64(dfmulInstance*i,U32 l0,U32 l1,U64 l2){
-return f14(i,l0,l1,l2);
+return f15(i,l0,l1,l2);
+}
+
+U64 dfmul_origX24roundAndPackFloat64(dfmulInstance*i,U32 l0,U32 l1,U64 l2){
+return f16(i,l0,l1,l2);
 }
 
 U64 dfmul_origX24float64_mul(dfmulInstance*i,U64 l0,U64 l1){
-return f15(i,l0,l1);
+return f17(i,l0,l1);
 }
 
 F64 dfmul_origX24ullong_to_double(dfmulInstance*i,U64 l0){
-return f16(i,l0);
+return f18(i,l0);
 }
 
 void dfmulInstantiate(dfmulInstance* i, void* resolve(const char* module, const char* name)) {

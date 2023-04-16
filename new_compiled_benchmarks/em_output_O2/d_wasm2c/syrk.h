@@ -84,6 +84,9 @@ void w2c_syrk_0x5F_wasm_call_ctors(w2c_syrk*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_syrk_0x5F_wasm_apply_data_relocs(w2c_syrk*);
 
+/* export: 'kernel_syrk' */
+void w2c_syrk_kernel_syrk(w2c_syrk*, u32, u32, f64, f64, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_syrk_submain(w2c_syrk*, u32, u32);
 

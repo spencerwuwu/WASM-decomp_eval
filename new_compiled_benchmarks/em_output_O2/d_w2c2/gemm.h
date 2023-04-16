@@ -26,13 +26,17 @@ void f6(gemmInstance*);
 
 void f7(gemmInstance*);
 
-U32 f8(gemmInstance*,U32,U32);
+void f8(gemmInstance*,U32,U32,U32,F64,F64,U32,U32,U32);
 
-U32 f9(gemmInstance*,U64,U32);
+U32 f9(gemmInstance*,U32,U32);
+
+U32 f10(gemmInstance*,U64,U32);
 
 void gemm____wasm_call_ctors(gemmInstance*i);
 
 void gemm____wasm_apply_data_relocs(gemmInstance*i);
+
+void gemm_kernel_gemm(gemmInstance*i,U32 l0,U32 l1,U32 l2,F64 l3,F64 l4,U32 l5,U32 l6,U32 l7);
 
 U32 gemm_submain(gemmInstance*i,U32 l0,U32 l1);
 

@@ -29,13 +29,17 @@ void f7(choleskyInstance*);
 
 void f8(choleskyInstance*);
 
-U32 f9(choleskyInstance*,U32,U32);
+void f9(choleskyInstance*,U32,U32);
 
-U32 f10(choleskyInstance*,U64,U32);
+U32 f10(choleskyInstance*,U32,U32);
+
+U32 f11(choleskyInstance*,U64,U32);
 
 void cholesky____wasm_call_ctors(choleskyInstance*i);
 
 void cholesky____wasm_apply_data_relocs(choleskyInstance*i);
+
+void cholesky_kernel_cholesky(choleskyInstance*i,U32 l0,U32 l1);
 
 U32 cholesky_submain(choleskyInstance*i,U32 l0,U32 l1);
 

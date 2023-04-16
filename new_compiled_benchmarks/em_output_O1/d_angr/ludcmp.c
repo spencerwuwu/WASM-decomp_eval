@@ -1,312 +1,354 @@
+int kernel_ludcmp(unsigned int a0, void* a1, void* a2, void* a3, void* a4)
+{
+    unsigned long long v1;  // rdi
+    void* v2;  // rax
+    unsigned long long v3;  // r9
+    uint128_t v4;  // xmm1
+    uint128_t v5;  // xmm1
+    void* v6;  // rbx
+    uint128_t v7;  // xmm0
+    unsigned long v8;  // cc_ndep
+    void* v9;  // r10
+    unsigned long long v10;  // r10
+    uint128_t v11;  // xmm0
+    unsigned long long v12;  // cc_op
+    void* v13;  // rbx
+    uint128_t v14;  // xmm1
+    uint128_t v15;  // xmm1
+    unsigned long v16;  // cc_ndep
+    unsigned long long v17;  // cc_op
+    unsigned long v18;  // cc_ndep
+    unsigned long v19;  // cc_ndep
+    void* v20;  // r9
+    uint128_t v21;  // xmm0
+    unsigned long long v22;  // cc_op
+    void* v23;  // r10
+    uint128_t v24;  // xmm1
+    uint128_t v25;  // xmm1
+    unsigned long v26;  // cc_ndep
+    unsigned long long v27;  // cc_op
+    unsigned long v28;  // cc_ndep
+    unsigned long long v29;  // cc_op
+    void* v30;  // cc_dep1
+    void* v31;  // cc_dep2
+    void* v32;  // r11
+    unsigned long v33;  // cc_ndep
+    void* v34;  // r10
+    uint128_t v35;  // xmm1
+    uint128_t v36;  // xmm1
+    unsigned long v37;  // cc_ndep
+    uint128_t v38;  // xmm0
+    unsigned long long v39;  // cc_op
+    void* v40;  // cc_dep1
+    unsigned long long v41;  // cc_dep2
+    void* v42;  // r9
+
+    v2 = v1;
+    if ((unsigned int)v1 > 0)
+    {
+        v3 = 0;
+        do
+        {
+            v10 = v3;
+            if (v3 != 0)
+            {
+                v9 = 0;
+                do
+                {
+                    v7 = 0;
+                    *((unsigned long long *)&v7) = *((long long *)((char *)a1 + 0x8 * v9));
+                    if (v9 != 0)
+                    {
+                        v6 = 0;
+                        do
+                        {
+                            v4 = 0;
+                            *((unsigned long long *)&v4) = *((long long *)((char *)a1 + 0x8 * v6));
+                            xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=((rbx<8> * 0x3e80<64>) + rsi<8>), size=8, endness=Iend_LE)))
+                            v7 -= v5;
+                            v6 += 1;
+                        }
+                        while (v6 != 0);
+                    }
+                    xmm0lq<8> = Conv(128->64, (xmm0<16> / Conv(64->128, Load(addr=(((r10<8> * 0x3e80<64>) + rsi<8>) + (r10<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+                    *((unsigned long long *)((char *)a1 + 0x8 * v9)) = v7;
+                    v8 = (v9 * 16000 + a1 <= v9 * 16000? 1 : 0);
+                    v9 += 1;
+                }
+                while (v9 != 0);
+                v10 = 0;
+            }
+            do
+            {
+                v11 = 0;
+                *((unsigned long long *)&v11) = *((long long *)&((char *)a1)[16000 * v3 + 8 * v10]);
+                v12 = 20;
+                if (v3 != 0)
+                {
+                    v13 = 0;
+                    do
+                    {
+                        v14 = 0;
+                        *((unsigned long long *)&v14) = *((long long *)((char *)a1 + 0x8 * v13));
+                        xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=((rbx<8> * 0x3e80<64>) + rsi<8>), size=8, endness=Iend_LE)))
+                        v11 -= v15;
+                        v16 = (v13 * 16000 + a1 <= v13 * 16000? 1 : 0);
+                        v13 += 1;
+                        v17 = 8;
+                    }
+                    while (v13 != 0);
+                }
+                *((unsigned long long *)&((char *)a1)[8 * v10]) = v11;
+                v18 = [D] amd64g_calculate_rflags_c(cc_op<8>, 0x0<64>, 0x0<64>, cc_ndep<8>);
+                v10 += 1;
+            }
+            while (v10 != v1);
+            v19 = v10 < v1;
+            v3 = 1;
+        }
+        while (v1 != 1);
+    }
+    if ((unsigned int)v1 > 0)
+    {
+        v20 = 0;
+        do
+        {
+            v21 = 0;
+            *((unsigned long long *)&v21) = *((long long *)((char *)a2 + 0x8 * v20));
+            v22 = 20;
+            if (v20 != 0)
+            {
+                v23 = 0;
+                do
+                {
+                    v24 = 0;
+                    *((unsigned long long *)&v24) = *((long long *)((char *)a1 + 0x8 * v23));
+                    xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=(r8<8> + (r10<8> * 0x8<64>)), size=8, endness=Iend_LE)))
+                    v21 -= v25;
+                    v26 = (0 * 16000 + a1 <= 0 * 16000? 1 : 0);
+                    v23 += 1;
+                    v27 = 8;
+                }
+                while (v23 != 0);
+            }
+            *((unsigned long long *)((char *)a4 + 0x8 * v20)) = v21;
+            v28 = [D] amd64g_calculate_rflags_c(cc_op<8>, 0x0<64>, 0x0<64>, cc_ndep<8>);
+            v20 += 1;
+        }
+        while (v20 != v1);
+    }
+    v29 = 19;
+    v30 = v1;
+    v31 = 0;
+    if ((unsigned int)v1 > 0)
+    {
+        v42 = v1;
+        do
+        {
+            v32 = v42;
+            v33 = [D] amd64g_calculate_rflags_c(cc_op<8>, cc_dep1<8>, cc_dep2<8>, cc_ndep<8>);
+            v42 -= 1;
+            v34 = v42;
+            v38 = 0;
+            *((unsigned long long *)&v38) = *((long long *)((char *)a4 + 0x8 * v42));
+            if (v2 < v1)
+            {
+                do
+                {
+                    v35 = 0;
+                    *((unsigned long long *)&v35) = *((long long *)(0x3e80 * v34 + (char *)a1 + 0x8 * v32));
+                    xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=(rcx<8> + (r11<8> * 0x8<64>)), size=8, endness=Iend_LE)))
+                    v38 -= v36;
+                    v37 = (v34 * 16000 + a1 <= v34 * 16000? 1 : 0);
+                    v32 += 1;
+                }
+                while ((unsigned int)v32 != (unsigned int)v1);
+            }
+            xmm0lq<8> = Conv(128->64, (xmm0<16> / Conv(64->128, Load(addr=(((r10<8> * 0x3e80<64>) + rsi<8>) + (r10<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+            *((unsigned long long *)((char *)a3 + 0x8 * v34)) = v38;
+            v39 = 8;
+            v40 = v2;
+            v41 = 1;
+            v2 -= 1;
+        }
+        while (v40 > 1);
+        return;
+    }
+    return;
+}
+
 extern char .L.str.3;
 extern char got.stderr;
 
 long long submain(unsigned int a0, unsigned long a1)
 {
-    unsigned long long v0;  // [bp-0x50]
-    unsigned int v1;  // [bp-0x44]
-    char **v2;  // [bp-0x40]
-    unsigned long long v3;  // [bp-0x38]
-    void* v5;  // rbx
-    unsigned long long v8;  // r12
-    int v9;  // xmm3
-    int v10;  // xmm0
-    int v11;  // xmm1
-    unsigned long long v12;  // rcx
-    int v13;  // xmm2
-    unsigned long long v14;  // rax
-    int v16;  // xmm1
-    unsigned long long v17;  // rbp
-    void* v18;  // rax
-    uint128_t v19;  // xmm0
-    unsigned long long v20;  // r14
-    int v22;  // xmm1
-    int v23;  // xmm3
-    unsigned long long v24;  // r13
-    void* v25;  // rax
-    void* v26;  // r13
-    unsigned long long v29;  // r15
-    unsigned long long v30;  // rcx
-    unsigned long long v31;  // rdx
-    unsigned long long *v32;  // rsi
-    void* v33;  // rdi
-    uint128_t v34;  // xmm0
-    void* v35;  // rax
-    unsigned long long v36;  // rbp
-    unsigned long long v37;  // r14
-    void* v38;  // rdx
-    uint128_t v39;  // xmm0
-    void* v40;  // rdi
-    uint128_t v41;  // xmm1
-    uint128_t v42;  // xmm1
-    unsigned long v43;  // cc_ndep
-    unsigned long long v44;  // cc_op
-    void* v45;  // rdi
-    uint128_t v46;  // xmm1
-    uint128_t v47;  // xmm1
-    uint128_t v48;  // xmm0
-    unsigned long v49;  // cc_ndep
-    unsigned long long v50;  // cc_op
-    unsigned long v51;  // cc_ndep
-    unsigned long long v52;  // rdx
-    unsigned long v53;  // cc_ndep
-    unsigned long long v54;  // rcx
-    uint128_t v55;  // xmm0
-    unsigned long long v56;  // cc_op
-    unsigned long long v57;  // rcx
-    uint128_t v58;  // xmm1
-    uint128_t v59;  // xmm1
-    unsigned long v60;  // cc_ndep
-    unsigned long long v61;  // cc_op
-    unsigned long v62;  // cc_ndep
-    unsigned long long v63;  // rax
-    unsigned long long v64;  // rax
-    uint128_t v65;  // xmm0
-    unsigned long long v66;  // rcx
-    uint128_t v67;  // xmm1
-    uint128_t v68;  // xmm1
-    unsigned long long v69;  // rdx
-    void* v71;  // r14
+    unsigned int v0;  // [bp-0x54]
+    void* v1;  // [bp-0x50]
+    char **v2;  // [bp-0x48]
+    void* v3;  // [bp-0x40]
+    void* v4;  // [bp-0x38]
+    void* v6;  // rbx
+    int v10;  // xmm3
+    int v11;  // xmm0
+    int v12;  // xmm1
+    unsigned long long v13;  // rcx
+    uint128_t v14;  // xmm2
+    void* v15;  // rdx
+    int v17;  // xmm1
+    unsigned long long v18;  // r12
+    void* v19;  // rax
+    uint128_t v20;  // xmm0
+    unsigned long long v21;  // r15
+    int v23;  // xmm1
+    int v24;  // xmm3
+    unsigned long long v25;  // r13
+    void* v26;  // rax
+    void* v27;  // r13
+    void* v31;  // r15
+    void* v32;  // r12
+    unsigned long long v33;  // rcx
+    unsigned long long v34;  // rdx
+    unsigned long long *v35;  // rsi
+    void* v36;  // rdi
+    uint128_t v37;  // xmm0
+    unsigned long long v38;  // rax
+    void* v39;  // rax
+    unsigned long long v40;  // rbp
+    void* v41;  // r14
+    void* v44;  // r14
 
     v2 = a1;
-    v1 = a0;
-    v5 = polybench_alloc_data(0x3d0900, 0x8);
-    v8 = polybench_alloc_data(0x7d0, 0x8);
-    v20 = 0;
-    v9 = 0;
-    *((unsigned long long *)&v9) = 0x409f400000000000;
+    v0 = a0;
+    v6 = polybench_alloc_data(0x3d0900, 0x8);
+    v21 = 0;
     v10 = 0;
-    *((unsigned long long *)&v10) = 0x3fe0000000000000;
+    *((unsigned long long *)&v10) = 0x409f400000000000;
     v11 = 0;
-    *((unsigned long long *)&v11) = 0x4010000000000000;
-    v14 = 0;
+    *((unsigned long long *)&v11) = 0x3fe0000000000000;
+    v12 = 0;
+    *((unsigned long long *)&v12) = 0x4010000000000000;
+    v15 = 0;
     do
     {
-        *((long long *)(v0 + v14 * 8)) = 0;
-        *((long long *)(v8 + v14 * 8)) = 0;
-        v12 = v14 + 1;
-        v13 = 0;
-        *((unsigned long long *)&v13) = v14 + 1;
-        *((unsigned long long *)&v13) = (unsigned long long)(v13 / v9 * v10 + v11);
-        *((unsigned long long *)(v3 + v14 * 8)) = (unsigned long long)v13;
-        v14 += 1;
+        *((long long *)((char *)v3 + 0x8 * v15)) = 0;
+        *((long long *)((char *)v1 + 0x8 * v15)) = 0;
+        v13 = v15 + 1;
+        v14 = 0;
+        *((unsigned long long *)&v14) = v15 + 1;
+        *((unsigned long long *)&v14) = (unsigned long long)(v14 / v10 * v11 + v12);
+        *((unsigned long long *)((char *)v4 + 0x8 * v15)) = v14;
+        v15 += 1;
     }
-    while (v12 != 2000);
-    v0 = polybench_alloc_data(0x7d0, 0x8);
+    while (v13 != 2000);
+    *((int *)&v1) = polybench_alloc_data(0x7d0, 0x8);
     v3 = polybench_alloc_data(0x7d0, 0x8);
-    v16 = 0;
-    *((unsigned long long *)&v16) = 0x3ff0000000000000;
+    v4 = polybench_alloc_data(0x7d0, 0x8);
+    v17 = 0;
+    *((unsigned long long *)&v17) = 0x3ff0000000000000;
     do
     {
-        v17 = v20;
-        v18 = 0;
+        v18 = v21;
+        v19 = 0;
         do
         {
-            v19 = 0;
-            *((unsigned long long *)&v19) = 0 - (unsigned int)v18;
-            *((unsigned long long *)&v19) = (unsigned long long)(v19 / v9 + v16);
-            *((unsigned long long *)(&((char *)v5)[16000 * v17] + 0x8 * v18)) = v19;
-            v18 += 1;
+            v20 = 0;
+            *((unsigned long long *)&v20) = 0 - (unsigned int)v19;
+            *((unsigned long long *)&v20) = (unsigned long long)(v20 / v10 + v17);
+            *((unsigned long long *)(&((char *)v6)[16000 * v18] + 0x8 * v19)) = v20;
+            v19 += 1;
         }
-        while (v18 != 1);
-        v20 = 1;
-        memset(0 * 16008 + 8 + v5, 0x0, 0x3e78);
-        v22 = 0;
-        *((unsigned long long *)&v22) = 0x3ff0000000000000;
+        while (v19 != 1);
+        v21 = 1;
+        memset(0 * 16008 + 8 + v6, 0x0, 0x3e78);
         v23 = 0;
-        *((unsigned long long *)&v23) = 0x409f400000000000;
-        *((long long *)v5) = 0x3ff0000000000000;
-        v24 = 2;
+        *((unsigned long long *)&v23) = 0x3ff0000000000000;
+        v24 = 0;
+        *((unsigned long long *)&v24) = 0x409f400000000000;
+        *((long long *)v6) = 0x3ff0000000000000;
+        v25 = 2;
     }
     while (true);
-    (unsigned int)v25 = polybench_alloc_data(0x3d0900, 0x8);
-    v26 = v25;
-    memset(v25, 0x0, 0x1e84800);
-    v29 = v3;
+    (unsigned int)v26 = polybench_alloc_data(0x3d0900, 0x8);
+    v27 = v26;
+    memset(v26, 0x0, 0x1e84800);
+    v31 = v4;
+    v32 = v3;
     do
     {
-        v30 = 0;
+        v33 = 0;
         do
         {
-            v31 = v30 * 16000;
-            v32 = v5 + v30 * 16000;
-            v33 = 0;
+            v34 = v33 * 16000;
+            v35 = v6 + v33 * 16000 + 0 * 8;
+            v36 = 0;
             do
             {
-                v34 = 0;
-                *((unsigned long long *)&v34) = *(v32);
+                v37 = 0;
+                *((unsigned long long *)&v37) = *(v35);
                 xmm0lq<8> = Conv(128->64, ((xmm0<16> * Conv(64->128, Load(addr=((rdi<8> * 0x3e80<64>) + rbx<8>), size=8, endness=Iend_LE))) + Conv(64->128, Load(addr=((rdx<8> + r13<8>) + (rdi<8> * 0x8<64>)), size=8, endness=Iend_LE))))
-                *((unsigned long long *)(&((char *)v26)[v31] + 0x8 * v33)) = v34;
-                v33 += 1;
+                *((unsigned long long *)(&((char *)v27)[v34] + 0x8 * v36)) = v37;
+                v36 += 1;
             }
-            while (v33 != 2000);
-            v30 = 1;
+            while (v36 != 2000);
+            v33 = 1;
         }
         while (true);
+        v38 = 1;
     }
     while (true);
     do
     {
-        v35 = 0;
+        v39 = 0;
         do
         {
-            *((long long *)((char *)v5 + 0x8 * v35)) = *((long long *)((char *)v26 + 0x8 * v35));
-            v35 += 1;
+            *((long long *)((char *)v6 + 0x8 * v39)) = *((long long *)((char *)v27 + 0x8 * v39));
+            v39 += 1;
         }
-        while (v35 != 2000);
-        v36 = 1;
+        while (v39 != 2000);
+        v40 = 1;
     }
     while (true);
-    free(v26);
-    v63 = 0;
-    v54 = 0;
-    v37 = v0;
-    do
-    {
-        if (v54 != 0)
-        {
-            v38 = 0;
-            do
-            {
-                v39 = 0;
-                *((unsigned long long *)&v39) = *((long long *)((char *)v5 + 0x8 * v38));
-                if (v38 != 0)
-                {
-                    v40 = 0;
-                    do
-                    {
-                        v41 = 0;
-                        *((unsigned long long *)&v41) = *((long long *)((char *)v5 + 0x8 * v40));
-                        xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=((rdi<8> * 0x3e80<64>) + rbx<8>), size=8, endness=Iend_LE)))
-                        v39 -= v42;
-                        v40 += 1;
-                    }
-                    while (v40 != 0);
-                }
-                xmm0lq<8> = Conv(128->64, (xmm0<16> / Conv(64->128, Load(addr=(((rdx<8> * 0x3e80<64>) + rbx<8>) + (rdx<8> * 0x8<64>)), size=8, endness=Iend_LE))))
-                *((unsigned long long *)((char *)v5 + 0x8 * v38)) = v39;
-                v43 = (v38 * 16000 + v5 <= v38 * 16000? 1 : 0);
-                v38 += 1;
-            }
-            while (v38 != 0);
-        }
-        v52 = v54;
-        do
-        {
-            v48 = 0;
-            *((unsigned long long *)&v48) = *((long long *)&((char *)v5)[16000 * v54 + 8 * v52]);
-            v44 = 20;
-            if (v54 != 0)
-            {
-                v45 = 0;
-                do
-                {
-                    v46 = 0;
-                    *((unsigned long long *)&v46) = *((long long *)((char *)v5 + 0x8 * v45));
-                    xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=((rdi<8> * 0x3e80<64>) + rbx<8>), size=8, endness=Iend_LE)))
-                    v48 -= v47;
-                    v49 = (v45 * 16000 + v5 <= v45 * 16000? 1 : 0);
-                    v45 += 1;
-                    v50 = 8;
-                }
-                while (v45 != 0);
-            }
-            *((unsigned long long *)&((char *)v5)[8 * v52]) = v48;
-            v51 = [D] amd64g_calculate_rflags_c(cc_op<8>, 0x0<64>, 0x0<64>, cc_ndep<8>);
-            v52 += 1;
-        }
-        while (v52 != 2000);
-        v53 = 2000 < 2000;
-        v54 = 1;
-    }
-    while (true);
-    do
-    {
-        v55 = 0;
-        *((unsigned long long *)&v55) = *((long long *)(v3 + v63 * 8));
-        v56 = 20;
-        if (v63 != 0)
-        {
-            v57 = 0;
-            do
-            {
-                v58 = 0;
-                *((unsigned long long *)&v58) = *((long long *)&((char *)v5)[8 * v57]);
-                xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=(r12<8> + (rcx<8> * 0x8<64>)), size=8, endness=Iend_LE)))
-                v55 -= v59;
-                v60 = (0 * 16000 + v5 <= 0 * 16000? 1 : 0);
-                v57 += 1;
-                v61 = 8;
-            }
-            while (v57 != 0);
-        }
-        *((unsigned long long *)(v8 + v63 * 8)) = v55;
-        v62 = [D] amd64g_calculate_rflags_c(cc_op<8>, 0x0<64>, 0x0<64>, cc_ndep<8>);
-        v63 += 1;
-    }
-    while (v63 != 2000);
-    v64 = 1999;
-    do
-    {
-        v65 = 0;
-        *((unsigned long long *)&v65) = *((long long *)(v8 + v64 * 8));
-        v66 = v64;
-        if (v64 <= 1998)
-        {
-            do
-            {
-                v67 = 0;
-                *((unsigned long long *)&v67) = *((long long *)&((char *)v5)[31984008 + 8 * v66]);
-                xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=((Load(addr=stack_base-80, size=8, endness=Iend_LE) + (rcx<8> * 0x8<64>)) + 0x8<64>), size=8, endness=Iend_LE)))
-                v69 = v66 + 1;
-                v65 -= v68;
-                v66 += 1;
-            }
-            while (v69 != 1999);
-        }
-        xmm0lq<8> = Conv(128->64, (xmm0<16> / Conv(64->128, Load(addr=(((rax<8> * 0x3e80<64>) + rbx<8>) + (rax<8> * 0x8<64>)), size=8, endness=Iend_LE))))
-        *((unsigned long long *)(v0 + v64 * 8)) = v65;
-        v64 -= 1;
-    }
-    while (v64 >= 1);
-    if (v1 >= 43)
+    free(v27);
+    v41 = v1;
+    kernel_ludcmp(0x7d0, v6, v4, v3, v1);
+    if (v0 >= 43)
     {
         if (*(*(v2)) != 0)
         {
-            free(v5);
-            free(v29);
-            free(v37);
-            free(v8);
+            free(v6);
+            free(v31);
+            free(v32);
+            free(v41);
             return 0;
         }
         fwrite("==BEGIN DUMP_ARRAYS==\n", 0x16, 0x1, *((long long *)got.stderr));
-        v71 = 0;
+        v44 = 0;
         fprintf(*((long long *)got.stderr), "begin dump: %s", &.L.str.3);
         while (true)
         {
-            if (((unsigned int)v71 * 3435973837 >> 2 | (unsigned int)v71 * 3435973837 << 30) <= 214748364)
+            if (((unsigned int)v44 * 3435973837 >> 2 | (unsigned int)v44 * 3435973837 << 30) <= 214748364)
             {
                 fputc(0xa, *((long long *)got.stderr));
             }
             fprintf(*((long long *)got.stderr), "%0.2lf ");
-            v71 += 1;
-            if (v71 == 2000)
+            v44 += 1;
+            if (v44 == 2000)
             {
                 break;
             }
         }
         fprintf(*((long long *)got.stderr), "\nend   dump: %s\n", &.L.str.3);
         fwrite("==END   DUMP_ARRAYS==\n", 0x16, 0x1, *((long long *)got.stderr));
-        free(v5);
-        free(v29);
-        free(v37);
-        free(v8);
+        free(v6);
+        free(v31);
+        free(v32);
+        free(v41);
         return 0;
     }
-    free(v5);
-    free(v29);
-    free(v37);
-    free(v8);
+    free(v6);
+    free(v31);
+    free(v32);
+    free(v41);
     return 0;
 }
 

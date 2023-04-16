@@ -1,86 +1,3 @@
-extern char .L.str;
-
-long long submain(unsigned int a0, unsigned long long *a1)
-{
-    unsigned long long v0;  // [bp-0x88]
-    unsigned long long v1;  // [bp-0x80]
-    unsigned long long v2;  // [bp-0x78]
-    unsigned long long v3;  // [bp-0x70]
-    void* v4;  // [bp-0x68]
-    void* v5;  // [bp-0x60]
-    void* v6;  // [bp-0x58]
-    void* v7;  // [bp-0x50]
-    void* v8;  // [bp-0x48]
-    char v9;  // [bp-0x40]
-    char v10;  // [bp-0x38]
-    unsigned int v11;  // [bp-0x30]
-    unsigned int v12;  // [bp-0x2c]
-    unsigned int v13;  // [bp-0x28]
-    unsigned int v14;  // [bp-0x24]
-    unsigned int v15;  // [bp-0x14]
-    void* v19;  // rdi
-    void* v20;  // rdi
-    void* v21;  // rdi
-    void* v22;  // rdi
-
-    v15 = a0;
-    v14 = 800;
-    v13 = 900;
-    v12 = 1100;
-    v11 = 1200;
-    v8 = polybench_alloc_data(0xafc80, 0x8);
-    v7 = polybench_alloc_data(0xd6d80, 0x8);
-    v6 = polybench_alloc_data(0xf1b30, 0x8);
-    v5 = polybench_alloc_data(0x107ac0, 0x8);
-    v4 = polybench_alloc_data(0xea600, 0x8);
-    v0 = v7;
-    v1 = v6;
-    v2 = v5;
-    v3 = v4;
-    init_array(v14, v13, v12, v11, &v10, &v9, v0, v1, v2, v3);
-    v0 = v6;
-    v1 = v5;
-    v2 = v4;
-    kernel_2mm(v14, v13, v12, v11, v8, v7, v0, v1, v2);
-    if (v15 > 42)
-    {
-        if (strcmp(*(a1), &.L.str) == 0)
-        {
-            print_array(v14, v11, v4);
-            free(v8);
-            v19 = v7;
-            free(rdi<8>);
-            v20 = v6;
-            free(rdi<8>);
-            v21 = v5;
-            free(rdi<8>);
-            v22 = v4;
-            free(rdi<8>);
-            return 0;
-        }
-        free(v8);
-        v19 = v7;
-        free(rdi<8>);
-        v20 = v6;
-        free(rdi<8>);
-        v21 = v5;
-        free(rdi<8>);
-        v22 = v4;
-        free(rdi<8>);
-        return 0;
-    }
-    free(v8);
-    v19 = v7;
-    free(rdi<8>);
-    v20 = v6;
-    free(rdi<8>);
-    v21 = v5;
-    free(rdi<8>);
-    v22 = v4;
-    free(rdi<8>);
-    return 0;
-}
-
 int init_array(unsigned int a0, unsigned int a1, unsigned int a2, unsigned int a3, unsigned long long *a4, unsigned long long *a5, unsigned long v3, unsigned long a6, unsigned long a7, unsigned long a8)
 {
     unsigned int v0;  // [bp-0x30]
@@ -126,6 +43,34 @@ int init_array(unsigned int a0, unsigned int a1, unsigned int a2, unsigned int a
         }
     }
     return v1;
+}
+
+extern char .L.str.2;
+extern char got.stderr;
+
+int print_array(unsigned int a0, unsigned int a1, unsigned long a2)
+{
+    unsigned int v0;  // [bp-0x20]
+    unsigned int v1;  // [bp-0x1c]
+    unsigned long v2;  // [bp-0x18]
+
+    v2 = a2;
+    fprintf(*((long long *)got.stderr), "==BEGIN DUMP_ARRAYS==\n");
+    fprintf(*((long long *)got.stderr), "begin dump: %s", &.L.str.2);
+    for (v1 = 0; v1 < a0; v1 += 1)
+    {
+        for (v0 = 0; v0 < a1; v0 += 1)
+        {
+            if ((a0 * v1 + v0 >> 31 CONCAT a0 * v1 + v0) /m 20 >> 32 == 0)
+            {
+                fprintf(*((long long *)got.stderr), "\n");
+            }
+            fprintf(*((long long *)got.stderr), "%0.2lf ");
+        }
+    }
+    fprintf(*((long long *)got.stderr), "\nend   dump: %s\n", &.L.str.2);
+    fprintf(*((long long *)got.stderr), "==END   DUMP_ARRAYS==\n");
+    return;
 }
 
 int kernel_2mm(unsigned int a0, unsigned int a1, unsigned int a2, unsigned int a3, unsigned long a4, unsigned long a5, unsigned long v5, unsigned long a6, unsigned long a7)
@@ -189,31 +134,86 @@ int kernel_2mm(unsigned int a0, unsigned int a1, unsigned int a2, unsigned int a
     return;
 }
 
-extern char .L.str.3;
-extern char got.stderr;
+extern char .L.str.7;
 
-int print_array(unsigned int a0, unsigned int a1, unsigned long a2)
+long long submain(unsigned int a0, unsigned long long *a1)
 {
-    unsigned int v0;  // [bp-0x20]
-    unsigned int v1;  // [bp-0x1c]
-    unsigned long v2;  // [bp-0x18]
+    unsigned int v0;  // [bp-0x88]
+    unsigned int v1;  // [bp-0x80]
+    unsigned int v2;  // [bp-0x78]
+    unsigned int v3;  // [bp-0x70]
+    unsigned long v4;  // [bp-0x68]
+    unsigned long v5;  // [bp-0x60]
+    unsigned long v6;  // [bp-0x58]
+    unsigned long v7;  // [bp-0x50]
+    unsigned long v8;  // [bp-0x48]
+    char v9;  // [bp-0x40]
+    char v10;  // [bp-0x38]
+    unsigned int v11;  // [bp-0x30]
+    unsigned int v12;  // [bp-0x2c]
+    unsigned int v13;  // [bp-0x28]
+    unsigned int v14;  // [bp-0x24]
+    unsigned int v15;  // [bp-0x14]
+    void* v20;  // rdi
+    void* v21;  // rdi
+    void* v23;  // rdi
+    void* v24;  // rdi
 
-    v2 = a2;
-    fprintf(*((long long *)got.stderr), "==BEGIN DUMP_ARRAYS==\n");
-    fprintf(*((long long *)got.stderr), "begin dump: %s", &.L.str.3);
-    for (v1 = 0; v1 < a0; v1 += 1)
+    v15 = a0;
+    v14 = 800;
+    v13 = 900;
+    v12 = 1100;
+    v11 = 1200;
+    v8 = polybench_alloc_data(0xafc80, 0x8);
+    v7 = polybench_alloc_data(0xd6d80, 0x8);
+    v6 = polybench_alloc_data(0xf1b30, 0x8);
+    v5 = polybench_alloc_data(0x107ac0, 0x8);
+    v4 = polybench_alloc_data(0xea600, 0x8);
+    *((unsigned long *)&v0) = v7;
+    *((unsigned long *)&v1) = v6;
+    *((unsigned long *)&v2) = v5;
+    *((unsigned long *)&v3) = v4;
+    init_array(v14, v13, v12, v11, &v10, &v9, *((long long *)&v0), *((long long *)&v1), *((long long *)&v2), *((long long *)&v3));
+    *((unsigned long *)&v0) = v6;
+    *((unsigned long *)&v1) = v5;
+    *((unsigned long *)&v2) = v4;
+    kernel_2mm(v14, v13, v12, v11, v8, v7, *((long long *)&v0), *((long long *)&v1), *((long long *)&v2));
+    if (v15 > 42)
     {
-        for (v0 = 0; v0 < a1; v0 += 1)
+        if (strcmp(*(a1), &.L.str.7) == 0)
         {
-            if ((a0 * v1 + v0 >> 31 CONCAT a0 * v1 + v0) /m 20 >> 32 == 0)
-            {
-                fprintf(*((long long *)got.stderr), "\n");
-            }
-            fprintf(*((long long *)got.stderr), "%0.2lf ");
+            print_array(v14, v11, v4);
+            free(v8);
+            v20 = v7;
+            free(rdi<8>);
+            v21 = v6;
+            free(rdi<8>);
+            v23 = v5;
+            free(rdi<8>);
+            v24 = v4;
+            free(rdi<8>);
+            return 0;
         }
+        free(v8);
+        v20 = v7;
+        free(rdi<8>);
+        v21 = v6;
+        free(rdi<8>);
+        v23 = v5;
+        free(rdi<8>);
+        v24 = v4;
+        free(rdi<8>);
+        return 0;
     }
-    fprintf(*((long long *)got.stderr), "\nend   dump: %s\n", &.L.str.3);
-    fprintf(*((long long *)got.stderr), "==END   DUMP_ARRAYS==\n");
-    return;
+    free(v8);
+    v20 = v7;
+    free(rdi<8>);
+    v21 = v6;
+    free(rdi<8>);
+    v23 = v5;
+    free(rdi<8>);
+    v24 = v4;
+    free(rdi<8>);
+    return 0;
 }
 

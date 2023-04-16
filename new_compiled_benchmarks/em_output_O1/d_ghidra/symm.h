@@ -54,39 +54,41 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x2bc)));
+typedef pointer pointer __((offset(0x141)));
 
-typedef pointer pointer __((offset(0x41)));
+typedef pointer pointer __((offset(0x3bb)));
 
-typedef pointer pointer __((offset(0x43)));
+typedef pointer pointer __((offset(0x12f)));
 
-typedef pointer pointer __((offset(0x2a3)));
-
-typedef pointer pointer __((offset(0x29b)));
-
-typedef pointer pointer __((offset(0x31)));
+typedef pointer pointer __((offset(0x3cc)));
 
 typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x26)));
+typedef pointer pointer __((offset(0x3b3)));
 
-typedef pointer pointer __((offset(0x1f)));
-
-typedef pointer pointer __((offset(0x382)));
-
-typedef pointer pointer __((offset(0x2ab)));
-
-typedef pointer pointer __((offset(0x69)));
+typedef pointer pointer __((offset(0x3ab)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x197)));
+typedef pointer pointer __((offset(0x110)));
 
-typedef pointer pointer __((offset(0x34e)));
+typedef pointer pointer __((offset(0x40d)));
 
-typedef pointer pointer __((offset(0x2fd)));
+typedef pointer pointer __((offset(0x41)));
+
+typedef pointer pointer __((offset(0x2a7)));
+
+typedef pointer pointer __((offset(0x492)));
+
+typedef pointer pointer __((offset(0x45e)));
+
+typedef pointer pointer __((offset(0x179)));
+
+typedef pointer pointer __((offset(0x26)));
+
+typedef pointer pointer __((offset(0x153)));
 
 typedef void _IO_lock_t;
 
@@ -140,14 +142,6 @@ struct _IO_marker {
 
 typedef struct _IO_FILE FILE;
 
-typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
-
-struct Elf64_Rela {
-    qword r_offset; // location to apply the relocation action
-    qword r_info; // the symbol table index and the type of relocation
-    qword r_addend; // a constant addend used to compute the relocatable field value
-};
-
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
@@ -195,6 +189,14 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
+
+struct Elf64_Rela {
+    qword r_offset; // location to apply the relocation action
+    qword r_info; // the symbol table index and the type of relocation
+    qword r_addend; // a constant addend used to compute the relocatable field value
+};
+
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
 
 struct Elf64_Ehdr {
@@ -235,6 +237,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_symm(double param_1,double param_2,uint param_3,uint param_4,long param_5,long param_6,long param_7);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

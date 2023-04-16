@@ -1,6 +1,0 @@
-0:printf
-1:gettimeofday
-2:__wasm_call_ctors
-3:__wasm_apply_data_relocs
-4:submain
-5:rtclock

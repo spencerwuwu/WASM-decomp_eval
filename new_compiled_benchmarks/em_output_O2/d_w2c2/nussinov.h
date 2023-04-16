@@ -26,13 +26,17 @@ void f6(nussinovInstance*);
 
 void f7(nussinovInstance*);
 
-U32 f8(nussinovInstance*,U32,U32);
+void f8(nussinovInstance*,U32,U32,U32);
 
-U32 f9(nussinovInstance*,U64,U32);
+U32 f9(nussinovInstance*,U32,U32);
+
+U32 f10(nussinovInstance*,U64,U32);
 
 void nussinov____wasm_call_ctors(nussinovInstance*i);
 
 void nussinov____wasm_apply_data_relocs(nussinovInstance*i);
+
+void nussinov_kernel_nussinov(nussinovInstance*i,U32 l0,U32 l1,U32 l2);
 
 U32 nussinov_submain(nussinovInstance*i,U32 l0,U32 l1);
 

@@ -80,7 +80,7 @@ void print_array(int n,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_gemver(int n,
 		   DATA_TYPE alpha,
 		   DATA_TYPE beta,

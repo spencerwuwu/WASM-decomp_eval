@@ -59,11 +59,13 @@ typedef pointer pointer __((offset(0x2e0)));
 
 typedef pointer pointer __((offset(0x240)));
 
-typedef pointer pointer __((offset(0x370)));
+typedef pointer pointer __((offset(0xa40)));
+
+typedef pointer pointer __((offset(0x630)));
 
 typedef pointer pointer __((offset(0xcb0)));
 
-typedef pointer pointer __((offset(0xb70)));
+typedef pointer pointer __((offset(0xbb0)));
 
 typedef pointer pointer __((offset(0x90)));
 
@@ -73,27 +75,25 @@ typedef pointer pointer __((offset(0x320)));
 
 typedef pointer pointer __((offset(0x300)));
 
-typedef pointer pointer __((offset(0x780)));
-
-typedef pointer pointer __((offset(0x7d0)));
-
 typedef pointer pointer __((offset(0x7)));
-
-typedef pointer pointer __((offset(0xba0)));
 
 typedef pointer pointer __((offset(0x260)));
 
-typedef pointer pointer __((offset(0x940)));
-
 typedef pointer pointer __((offset(0xd20)));
 
-typedef pointer pointer __((offset(0xb50)));
+typedef pointer pointer __((offset(0x3f0)));
 
-typedef pointer pointer __((offset(0x690)));
+typedef pointer pointer __((offset(0x420)));
 
-typedef pointer pointer __((offset(0xc50)));
+typedef pointer pointer __((offset(0xbd0)));
+
+typedef pointer pointer __((offset(0x390)));
+
+typedef pointer pointer __((offset(0xc00)));
 
 typedef pointer pointer __((offset(0x210)));
+
+typedef pointer pointer __((offset(0x950)));
 
 typedef pointer pointer __((offset(0x340)));
 
@@ -174,6 +174,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
+
+struct Elf64_Sym {
+    dword st_name;
+    byte st_info;
+    byte st_other;
+    word st_shndx;
+    qword st_value;
+    qword st_size;
+};
+
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
 
 struct Elf64_Ehdr {
@@ -200,17 +211,6 @@ struct Elf64_Ehdr {
     word e_shstrndx;
 };
 
-typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
-
-struct Elf64_Sym {
-    dword st_name;
-    byte st_info;
-    byte st_other;
-    word st_shndx;
-    qword st_value;
-    qword st_size;
-};
-
 
 
 
@@ -224,15 +224,15 @@ bool float64_is_signaling_nan(ulong param_1);
 ulong extractFloat64Frac(ulong param_1);
 ulong extractFloat64Exp(ulong param_1);
 ulong extractFloat64Sign(ulong param_1);
+void normalizeFloat64Subnormal(long param_1,int *param_2,long *param_3);
+int countLeadingZeros64(ulong param_1);
 long packFloat64(int param_1,int param_2,long param_3);
+long roundAndPackFloat64(int param_1,uint param_2,ulong param_3);
 undefined8 float64_div(undefined8 param_1,undefined8 param_2);
 ulong propagateFloat64NaN(ulong param_1,ulong param_2);
-void normalizeFloat64Subnormal(long param_1,int *param_2,long *param_3);
 ulong estimateDiv128To64(ulong param_1,undefined8 param_2,ulong param_3);
-long roundAndPackFloat64(int param_1,uint param_2,ulong param_3);
 undefined8 ullong_to_double(void);
 int submain(void);
-int countLeadingZeros64(ulong param_1);
 int countLeadingZeros32(uint param_1);
 double rtclock(void);
 int printf(char * __format, ...);

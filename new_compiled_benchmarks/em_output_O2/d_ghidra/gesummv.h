@@ -54,47 +54,49 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x56)));
+typedef pointer pointer __((offset(0x40b)));
 
-typedef pointer pointer __((offset(0x3cb)));
+typedef pointer pointer __((offset(0xf6)));
 
-typedef pointer pointer __((offset(0x20)));
+typedef pointer pointer __((offset(0xc0)));
 
-typedef pointer pointer __((offset(0x373)));
+typedef pointer pointer __((offset(0x489)));
+
+typedef pointer pointer __((offset(0x346)));
 
 typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x35b)));
+typedef pointer pointer __((offset(0x403)));
 
-typedef pointer pointer __((offset(0x44)));
+typedef pointer pointer __((offset(0xe4)));
 
-typedef pointer pointer __((offset(0x363)));
+typedef pointer pointer __((offset(0x41b)));
 
 typedef pointer pointer __((offset(0x30)));
 
+typedef pointer pointer __((offset(0x413)));
+
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0xb2)));
+typedef pointer pointer __((offset(0x108)));
 
-typedef pointer pointer __((offset(0x38c)));
-
-typedef pointer pointer __((offset(0x36b)));
-
-typedef pointer pointer __((offset(0x3e9)));
+typedef pointer pointer __((offset(0x42c)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x37b)));
+typedef pointer pointer __((offset(0x46b)));
 
-typedef pointer pointer __((offset(0x68)));
+typedef pointer pointer __((offset(0x3fb)));
 
-typedef pointer pointer __((offset(0x435)));
+typedef pointer pointer __((offset(0x152)));
+
+typedef pointer pointer __((offset(0xd2)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x2a6)));
+typedef pointer pointer __((offset(0xa0)));
 
-typedef pointer pointer __((offset(0x32)));
+typedef pointer pointer __((offset(0x4d5)));
 
 typedef void _IO_lock_t;
 
@@ -203,17 +205,6 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
-typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
-
-struct Elf64_Sym {
-    dword st_name;
-    byte st_info;
-    byte st_other;
-    word st_shndx;
-    qword st_value;
-    qword st_size;
-};
-
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
 
 struct Elf64_Ehdr {
@@ -240,9 +231,21 @@ struct Elf64_Ehdr {
     word e_shstrndx;
 };
 
+typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
+
+struct Elf64_Sym {
+    dword st_name;
+    byte st_info;
+    byte st_other;
+    word st_shndx;
+    qword st_value;
+    qword st_size;
+};
 
 
 
+
+void kernel_gesummv(double param_1,double param_2,uint param_3,long param_4,long param_5,long param_6,long param_7,long param_8);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

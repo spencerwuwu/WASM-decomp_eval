@@ -2,63 +2,6 @@
 
 
 
-undefined8 submain(int param_1,char **param_2)
-
-{
-  int iVar1;
-  void *__ptr;
-  void *__ptr_00;
-  void *__ptr_01;
-  void *__ptr_02;
-  undefined4 local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  char **local_18;
-  int local_c;
-  
-  local_1c = 0x1000;
-  local_20 = 0x870;
-  local_18 = param_2;
-  local_c = param_1;
-  __ptr = (void *)polybench_alloc_data(0x870000,4);
-  __ptr_00 = (void *)polybench_alloc_data(0x870000,4);
-  __ptr_01 = (void *)polybench_alloc_data(0x870000,4);
-  __ptr_02 = (void *)polybench_alloc_data(0x870000,4);
-  init_array(local_1c,local_20,&local_24,__ptr,__ptr_00);
-  kernel_deriche(local_24,local_1c,local_20,__ptr,__ptr_00,__ptr_01,__ptr_02);
-  if (0x2a < local_c) {
-    iVar1 = strcmp(*local_18,"");
-    if (iVar1 == 0) {
-      print_array(local_1c,local_20,__ptr_00);
-    }
-  }
-  free(__ptr);
-  free(__ptr_00);
-  free(__ptr_01);
-  free(__ptr_02);
-  return 0;
-}
-
-
-
-void init_array(int param_1,int param_2,undefined4 *param_3,long param_4)
-
-{
-  int local_30;
-  int local_2c;
-  
-  *param_3 = 0x3e800000;
-  for (local_2c = 0; local_2c < param_1; local_2c = local_2c + 1) {
-    for (local_30 = 0; local_30 < param_2; local_30 = local_30 + 1) {
-      *(float *)(param_4 + (long)local_2c * 0x21c0 + (long)local_30 * 4) =
-           (float)((local_2c * 0x139 + local_30 * 0x3df) % 0x10000) / 65535.0;
-    }
-  }
-  return;
-}
-
-
-
 void kernel_deriche(float param_1,int param_2,int param_3,long param_4,long param_5,long param_6,
                    long param_7)
 
@@ -166,6 +109,63 @@ void kernel_deriche(float param_1,int param_2,int param_3,long param_4,long para
       *(float *)(param_5 + (long)local_3c * 0x21c0 + (long)local_40 * 4) =
            (*(float *)(param_6 + (long)local_3c * 0x21c0 + (long)local_40 * 4) +
            *(float *)(param_7 + (long)local_3c * 0x21c0 + (long)local_40 * 4)) * 1.0;
+    }
+  }
+  return;
+}
+
+
+
+undefined8 submain(int param_1,char **param_2)
+
+{
+  int iVar1;
+  void *__ptr;
+  void *__ptr_00;
+  void *__ptr_01;
+  void *__ptr_02;
+  undefined4 local_24;
+  undefined4 local_20;
+  undefined4 local_1c;
+  char **local_18;
+  int local_c;
+  
+  local_1c = 0x1000;
+  local_20 = 0x870;
+  local_18 = param_2;
+  local_c = param_1;
+  __ptr = (void *)polybench_alloc_data(0x870000,4);
+  __ptr_00 = (void *)polybench_alloc_data(0x870000,4);
+  __ptr_01 = (void *)polybench_alloc_data(0x870000,4);
+  __ptr_02 = (void *)polybench_alloc_data(0x870000,4);
+  init_array(local_1c,local_20,&local_24,__ptr,__ptr_00);
+  kernel_deriche(local_24,local_1c,local_20,__ptr,__ptr_00,__ptr_01,__ptr_02);
+  if (0x2a < local_c) {
+    iVar1 = strcmp(*local_18,"");
+    if (iVar1 == 0) {
+      print_array(local_1c,local_20,__ptr_00);
+    }
+  }
+  free(__ptr);
+  free(__ptr_00);
+  free(__ptr_01);
+  free(__ptr_02);
+  return 0;
+}
+
+
+
+void init_array(int param_1,int param_2,undefined4 *param_3,long param_4)
+
+{
+  int local_30;
+  int local_2c;
+  
+  *param_3 = 0x3e800000;
+  for (local_2c = 0; local_2c < param_1; local_2c = local_2c + 1) {
+    for (local_30 = 0; local_30 < param_2; local_30 = local_30 + 1) {
+      *(float *)(param_4 + (long)local_2c * 0x21c0 + (long)local_30 * 4) =
+           (float)((local_2c * 0x139 + local_30 * 0x3df) % 0x10000) / 65535.0;
     }
   }
   return;

@@ -7,6 +7,7 @@ typedef unsigned long    qword;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
+typedef unsigned int    undefined4;
 typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
@@ -54,29 +55,33 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
+typedef pointer pointer __((offset(0x39c)));
+
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x31b)));
+typedef pointer pointer __((offset(0x35e)));
 
-typedef pointer pointer __((offset(0x3ff)));
+typedef pointer pointer __((offset(0x338)));
 
-typedef pointer pointer __((offset(0x359)));
+typedef pointer pointer __((offset(0x34d)));
 
-typedef pointer pointer __((offset(0x38)));
+typedef pointer pointer __((offset(0x407)));
+
+typedef pointer pointer __((offset(0x291)));
+
+typedef pointer pointer __((offset(0x260)));
 
 typedef pointer pointer __((offset(0x28)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0xe5)));
+typedef pointer pointer __((offset(0x2c7)));
 
-typedef pointer pointer __((offset(0x67)));
-
-typedef pointer pointer __((offset(0x3c8)));
+typedef pointer pointer __((offset(0x27f)));
 
 typedef pointer pointer __((offset(0x30)));
 
-typedef pointer pointer __((offset(0x30a)));
+typedef pointer pointer __((offset(0x43e)));
 
 typedef pointer pointer __((offset(0x17)));
 
@@ -227,6 +232,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_heat_3d(undefined8 param_1,int param_2,long param_3,long param_4);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

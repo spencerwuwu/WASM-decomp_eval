@@ -10,7 +10,123 @@ void f8(bicgInstance*i) {
 L0:;
 }
 
-U32 f9(bicgInstance*i,U32 l0,U32 l1) {
+void f9(bicgInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5,U32 l6) {
+U32 l7=0;
+U32 l8=0;
+U32 l9=0;
+U32 l10=0;
+U32 l11=0;
+U32 l12=0;
+U32 l13=0;
+U32 l14=0;
+U32 si0,si1,si2,si3,si4;
+U64 sj1;
+F64 sd1,sd2;
+si0=l0;
+si1=0U;
+si0=(U32)((I32)si0>(I32)si1);
+if(si0){
+si0=l3;
+si1=0U;
+si2=l0;
+si3=3U;
+si2<<=(si3&31);
+si0=env__memset(i,si0,si1,si2);
+}
+L1:;
+si0=l1;
+si1=0U;
+si0=(U32)((I32)si0>(I32)si1);
+if(si0){
+si0=l0;
+si1=0U;
+si0=(U32)((I32)si0<=(I32)si1);
+l11=si0;
+L3:;
+{
+si0=l4;
+si1=l8;
+si2=3U;
+si1<<=(si2&31);
+l7=si1;
+si0+=si1;
+l9=si0;
+sj1=0ULL;
+i64_store(i->env__memory,(U64)si0,sj1);
+si0=l11;
+si0=!(si0);
+if(si0){
+si0=l6;
+si1=l7;
+si0+=si1;
+l12=si0;
+si0=0U;
+l7=si0;
+L5:;
+{
+si0=l3;
+si1=l7;
+si2=3U;
+si1<<=(si2&31);
+l10=si1;
+si0+=si1;
+l13=si0;
+si1=l12;
+sd1=f64_load(i->env__memory,(U64)si1);
+si2=l2;
+si3=l8;
+si4=15200U;
+si3*=si4;
+si2+=si3;
+si3=l10;
+si2+=si3;
+l14=si2;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1*=sd2;
+si2=l13;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l9;
+si1=l14;
+sd1=f64_load(i->env__memory,(U64)si1);
+si2=l5;
+si3=l10;
+si2+=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1*=sd2;
+si2=l9;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l7;
+si1=1U;
+si0+=si1;
+l7=si0;
+si1=l0;
+si0=si0 != si1;
+if(si0){
+goto L5;
+}
+}
+}
+L4:;
+si0=l8;
+si1=1U;
+si0+=si1;
+l8=si0;
+si1=l1;
+si0=si0 != si1;
+if(si0){
+goto L3;
+}
+}
+}
+L2:;
+L0:;
+}
+
+U32 f10(bicgInstance*i,U32 l0,U32 l1) {
 U32 l2=0;
 U32 l3=0;
 U32 l4=0;
@@ -34,23 +150,23 @@ l4=si0;
 (*i->env_____stack_pointer)=si0;
 sj0=3990000ULL;
 si1=8U;
-si0=f10(i,sj0,si1);
+si0=f11(i,sj0,si1);
 l8=si0;
 sj0=1900ULL;
 si1=8U;
-si0=f10(i,sj0,si1);
+si0=f11(i,sj0,si1);
 l9=si0;
 sj0=2100ULL;
 si1=8U;
-si0=f10(i,sj0,si1);
+si0=f11(i,sj0,si1);
 l10=si0;
 sj0=1900ULL;
 si1=8U;
-si0=f10(i,sj0,si1);
+si0=f11(i,sj0,si1);
 l6=si0;
 sj0=2100ULL;
 si1=8U;
-si0=f10(i,sj0,si1);
+si0=f11(i,sj0,si1);
 l11=si0;
 L1:;
 {
@@ -419,7 +535,7 @@ L0:;
 return si0;
 }
 
-U32 f10(bicgInstance*i,U64 l0,U32 l1) {
+U32 f11(bicgInstance*i,U64 l0,U32 l1) {
 U32 si0,si1,si2;
 U64 sj0,sj1,sj2;
 sj0=l0;
@@ -454,8 +570,12 @@ void bicg____wasm_apply_data_relocs(bicgInstance*i){
 f8(i);
 }
 
+void bicg_kernel_bicg(bicgInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5,U32 l6){
+f9(i,l0,l1,l2,l3,l4,l5,l6);
+}
+
 U32 bicg_submain(bicgInstance*i,U32 l0,U32 l1){
-return f9(i,l0,l1);
+return f10(i,l0,l1);
 }
 
 void bicgInstantiate(bicgInstance* i, void* resolve(const char* module, const char* name)) {

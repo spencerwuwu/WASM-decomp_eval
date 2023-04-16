@@ -53,9 +53,9 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x4b0)));
+typedef pointer pointer __((offset(0x700)));
 
-typedef pointer pointer __((offset(0x400)));
+typedef pointer pointer __((offset(0x630)));
 
 typedef pointer pointer __((offset(0x90)));
 
@@ -63,13 +63,13 @@ typedef pointer pointer __((offset(0x7)));
 
 typedef pointer pointer __((offset(0x180)));
 
-typedef pointer pointer __((offset(0x2c0)));
-
-typedef pointer pointer __((offset(0x390)));
-
-typedef pointer pointer __((offset(0x1f0)));
+typedef pointer pointer __((offset(0x770)));
 
 typedef pointer pointer __((offset(0x820)));
+
+typedef pointer pointer __((offset(0x560)));
+
+typedef pointer pointer __((offset(0x4f0)));
 
 typedef struct timeval timeval, *Ptimeval;
 
@@ -188,12 +188,12 @@ struct Elf64_Ehdr {
 
 void local_memset(undefined4 *param_1,undefined4 param_2,int param_3,int param_4);
 void local_memcpy(undefined4 *param_1,undefined4 *param_2,int param_3);
+void sha_transform(void);
 void sha_init(void);
 void sha_update(long param_1,uint param_2);
 void sha_final(void);
 void sha_stream(void);
 int submain(void);
-void sha_transform(void);
 double rtclock(void);
 int printf(char * __format, ...);
 int gettimeofday(timeval * __tv, __timezone_ptr_t __tz);

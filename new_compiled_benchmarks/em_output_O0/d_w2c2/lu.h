@@ -23,9 +23,9 @@ void f4(luInstance*);
 
 void f5(luInstance*);
 
-U32 f6(luInstance*,U32,U32);
+void f6(luInstance*,U32,U32);
 
-void f7(luInstance*,U32,U32);
+U32 f7(luInstance*,U32,U32);
 
 void f8(luInstance*,U32,U32);
 
@@ -36,6 +36,8 @@ U32 f10(luInstance*,U64,U32);
 void lu____wasm_call_ctors(luInstance*i);
 
 void lu____wasm_apply_data_relocs(luInstance*i);
+
+void lu_kernel_lu(luInstance*i,U32 l0,U32 l1);
 
 U32 lu_submain(luInstance*i,U32 l0,U32 l1);
 

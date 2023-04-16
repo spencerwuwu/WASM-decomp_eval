@@ -57,15 +57,15 @@ typedef unsigned short    word;
 
 typedef pointer pointer __((offset(0x33)));
 
-typedef pointer pointer __((offset(0xb0)));
-
 typedef pointer pointer __((offset(0x29)));
 
 typedef pointer pointer __((offset(0x27)));
 
-typedef pointer pointer __((offset(0x100)));
+typedef pointer pointer __((offset(0x2a0)));
 
 typedef pointer pointer __((offset(0x18)));
+
+typedef pointer pointer __((offset(0x350)));
 
 typedef pointer pointer __((offset(0x3a0)));
 
@@ -222,9 +222,9 @@ struct Elf64_Sym {
 
 
 
+void kernel_durbin(int param_1,ulong *param_2,ulong *param_3);
 undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,long param_2);
-void kernel_durbin(int param_1,ulong *param_2,ulong *param_3);
 void print_array(void);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);

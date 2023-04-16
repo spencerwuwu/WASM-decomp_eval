@@ -26,13 +26,17 @@ void f6(covarianceInstance*);
 
 void f7(covarianceInstance*);
 
-U32 f8(covarianceInstance*,U32,U32);
+void f8(covarianceInstance*,U32,U32,F64,U32,U32,U32);
 
-U32 f9(covarianceInstance*,U64,U32);
+U32 f9(covarianceInstance*,U32,U32);
+
+U32 f10(covarianceInstance*,U64,U32);
 
 void covariance____wasm_call_ctors(covarianceInstance*i);
 
 void covariance____wasm_apply_data_relocs(covarianceInstance*i);
+
+void covariance_kernel_covariance(covarianceInstance*i,U32 l0,U32 l1,F64 l2,U32 l3,U32 l4,U32 l5);
 
 U32 covariance_submain(covarianceInstance*i,U32 l0,U32 l1);
 

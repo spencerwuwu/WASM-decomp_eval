@@ -7,10 +7,10 @@ typedef struct shadriverInstance {
 wasmMemory*env__memory;
 U32*env_____stack_pointer;
 U32*env_____memory_base;
+U32*GOTX2Emem__sha_info_data;
 U32*GOTX2Emem__sha_info_digest;
 U32*GOTX2Emem__sha_info_count_lo;
 U32*GOTX2Emem__sha_info_count_hi;
-U32*GOTX2Emem__sha_info_data;
 U32*GOTX2Emem__indata;
 U32*GOTX2Emem__startTimer;
 U32*GOTX2Emem__endTimer;
@@ -43,9 +43,9 @@ void f7(shadriverInstance*,U32,U32,U32);
 
 void f8(shadriverInstance*);
 
-void f9(shadriverInstance*,U32,U32);
+void f9(shadriverInstance*);
 
-void f10(shadriverInstance*);
+void f10(shadriverInstance*,U32,U32);
 
 void f11(shadriverInstance*);
 
@@ -60,6 +60,8 @@ void shadriver____wasm_apply_data_relocs(shadriverInstance*i);
 void shadriver_local_memset(shadriverInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
 void shadriver_local_memcpy(shadriverInstance*i,U32 l0,U32 l1,U32 l2);
+
+void shadriver_sha_transform(shadriverInstance*i);
 
 void shadriver_sha_init(shadriverInstance*i);
 

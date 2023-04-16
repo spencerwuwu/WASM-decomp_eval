@@ -226,7 +226,7 @@ int BF_cfb64_encrypt(unsigned long a0, unsigned long long a1, unsigned long long
     unsigned long v7;  // [bp-0x50], Other Possible Types: void*
     unsigned long v8;  // [bp-0x48], Other Possible Types: void*
     unsigned long v9;  // [bp-0x40], Other Possible Types: void*
-    unsigned long long v10;  // [bp-0x18], Other Possible Types: unsigned long
+    unsigned long v10;  // [bp-0x18], Other Possible Types: unsigned long long
     char *v11;  // [bp-0x10], Other Possible Types: unsigned long
     unsigned long long v13;  // rax
     char *v15;  // rax

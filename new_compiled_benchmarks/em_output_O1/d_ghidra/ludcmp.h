@@ -55,45 +55,49 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x481)));
+typedef pointer pointer __((offset(0x385)));
 
-typedef pointer pointer __((offset(0x479)));
+typedef pointer pointer __((offset(0x206)));
 
-typedef pointer pointer __((offset(0x2a2)));
-
-typedef pointer pointer __((offset(0x4a)));
-
-typedef pointer pointer __((offset(0x489)));
-
-typedef pointer pointer __((offset(0x54c)));
-
-typedef pointer pointer __((offset(0x508)));
-
-typedef pointer pointer __((offset(0x38)));
+typedef pointer pointer __((offset(0x23c)));
 
 typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x4e0)));
+typedef pointer pointer __((offset(0x533)));
+
+typedef pointer pointer __((offset(0x4c6)));
+
+typedef pointer pointer __((offset(0x4be)));
+
+typedef pointer pointer __((offset(0x4b6)));
+
+typedef pointer pointer __((offset(0x1e0)));
 
 typedef pointer pointer __((offset(0x30)));
 
+typedef pointer pointer __((offset(0x4d7)));
+
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x1ae)));
+typedef pointer pointer __((offset(0x4ae)));
 
-typedef pointer pointer __((offset(0x4a2)));
+typedef pointer pointer __((offset(0x515)));
+
+typedef pointer pointer __((offset(0x477)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x5c)));
+typedef pointer pointer __((offset(0x259)));
+
+typedef pointer pointer __((offset(0x22a)));
+
+typedef pointer pointer __((offset(0x492)));
+
+typedef pointer pointer __((offset(0x218)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x297)));
-
-typedef pointer pointer __((offset(0x491)));
-
-typedef pointer pointer __((offset(0x7c)));
+typedef pointer pointer __((offset(0x577)));
 
 typedef void _IO_lock_t;
 
@@ -202,6 +206,17 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
+typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
+
+struct Elf64_Sym {
+    dword st_name;
+    byte st_info;
+    byte st_other;
+    word st_shndx;
+    qword st_value;
+    qword st_size;
+};
+
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
 
 struct Elf64_Ehdr {
@@ -228,20 +243,10 @@ struct Elf64_Ehdr {
     word e_shstrndx;
 };
 
-typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
-
-struct Elf64_Sym {
-    dword st_name;
-    byte st_info;
-    byte st_other;
-    word st_shndx;
-    qword st_value;
-    qword st_size;
-};
 
 
 
-
+void kernel_ludcmp(uint param_1,long param_2,long param_3,long param_4,long param_5);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void * memset(void * __s, int __c, size_t __n);

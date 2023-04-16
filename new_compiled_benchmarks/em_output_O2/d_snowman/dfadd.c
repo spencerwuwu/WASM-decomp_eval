@@ -1,23 +1,25 @@
 
-uint176_t g58c = 0x4c00000000258b4c;
+uint176_t g7ec = 0x4c00000000258b4c;
 
 void a_input(int64_t rdi, int32_t esi);
 
-int64_t fun_5ad(int64_t rdi, int64_t rsi);
+int64_t fun_805();
 
-int32_t fun_5ce();
+int64_t fun_839();
 
-void fun_5e2(int32_t* rdi, int32_t* rsi);
+int32_t fun_847();
 
-void fun_61f(int64_t rdi, int64_t rsi);
+void fun_85b(int32_t* rdi, int32_t* rsi);
 
-void fun_560(int32_t* rdi, int32_t* rsi) {
+void fun_898(int64_t rdi, int64_t rsi);
+
+void fun_7c0(int32_t* rdi, int32_t* rsi) {
     void* rsp3;
-    int64_t* r15_4;
-    int64_t* r12_5;
+    uint64_t* r15_4;
+    uint64_t* r12_5;
     int64_t rbp6;
-    int64_t rdi7;
-    int64_t rsi8;
+    uint64_t rdx7;
+    uint64_t rax8;
     int32_t* rdi9;
     int32_t* rsi10;
     int32_t eax11;
@@ -29,26 +31,31 @@ void fun_560(int32_t* rdi, int32_t* rsi) {
     __asm__("mulsd xmm1, [rip+0x0]");
     __asm__("addsd xmm1, xmm0");
     *rdi = *rsi;
-    r15_4 = *reinterpret_cast<int64_t**>(&g58c);
-    r12_5 = *reinterpret_cast<int64_t**>(reinterpret_cast<int64_t>(&g58c) + 7);
+    r15_4 = *reinterpret_cast<uint64_t**>(&g7ec);
+    r12_5 = *reinterpret_cast<uint64_t**>(reinterpret_cast<int64_t>(&g7ec) + 7);
     *reinterpret_cast<int32_t*>(&rbp6) = reinterpret_cast<int32_t>(a_input);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp6) + 4) = reinterpret_cast<int32_t>(a_input);
     do {
-        rdi7 = r15_4[rbp6];
-        rsi8 = r12_5[rbp6];
-        fun_5ad(rdi7, rsi8);
-        rsp3 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp3) - 8 + 8);
+        rdx7 = r15_4[rbp6] >> 63;
+        rax8 = r12_5[rbp6] >> 63;
+        if (*reinterpret_cast<int32_t*>(&rdx7) != *reinterpret_cast<int32_t*>(&rax8)) {
+            fun_805();
+            rsp3 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp3) - 8 + 8);
+        } else {
+            fun_839();
+            rsp3 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp3) - 8 + 8);
+        }
         ++rbp6;
     } while (rbp6 != 46);
     rdi9 = reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(rsp3) + 8);
     *reinterpret_cast<int32_t*>(&rsi10) = reinterpret_cast<int32_t>(a_input);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi10) + 4) = reinterpret_cast<int32_t>(a_input);
-    eax11 = fun_5ce();
+    eax11 = fun_847();
     if (eax11 != a_input) {
-        rdi9 = reinterpret_cast<int32_t*>(0x5d9);
+        rdi9 = reinterpret_cast<int32_t*>(0x852);
         *reinterpret_cast<int32_t*>(&rsi10) = eax11;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi10) + 4) = reinterpret_cast<int32_t>(a_input);
-        fun_5e2(0x5d9, rsi10);
+        fun_85b(0x852, rsi10);
     }
     __asm__("xorps xmm1, xmm1");
     __asm__("cvtsi2sd xmm1, qword [rsp+0x8]");
@@ -58,60 +65,45 @@ void fun_560(int32_t* rdi, int32_t* rsi) {
     __asm__("addsd xmm0, xmm1");
     *rdi9 = *rsi10;
     __asm__("subsd xmm0, [r14]");
-    fun_61f(0x618, rsi10 + 1);
+    fun_898(0x891, rsi10 + 1);
     goto v12;
 }
 
-int64_t fun_5ad(int64_t rdi, int64_t rsi) {
-    int64_t rbp3;
-    int64_t rdi4;
-    int64_t* r15_5;
-    int64_t rsi6;
-    int64_t* r12_7;
-    int32_t* rdi8;
-    int32_t* rsi9;
-    int32_t eax10;
-    int64_t v11;
+int64_t fun_839() {
+    void* rsp1;
+    int64_t rbp2;
+    uint64_t rdx3;
+    uint64_t* r15_4;
+    uint64_t rax5;
+    uint64_t* r12_6;
+    int32_t* rdi7;
+    int32_t* rsi8;
+    int32_t eax9;
+    int64_t v10;
 
-    while (++rbp3, rbp3 != 46) {
-        rdi4 = r15_5[rbp3];
-        rsi6 = r12_7[rbp3];
-        fun_5ad(rdi4, rsi6);
+    while (1) {
+        rsp1 = __zero_stack_offset();
+        while (++rbp2, rbp2 != 46) {
+            rdx3 = r15_4[rbp2] >> 63;
+            rax5 = r12_6[rbp2] >> 63;
+            if (*reinterpret_cast<int32_t*>(&rdx3) == *reinterpret_cast<int32_t*>(&rax5)) 
+                goto addr_834_4;
+            fun_805();
+            rsp1 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp1) - 8 + 8);
+        }
+        break;
+        addr_834_4:
+        fun_839();
     }
-    rdi8 = reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(__zero_stack_offset()) + 8);
-    *reinterpret_cast<int32_t*>(&rsi9) = reinterpret_cast<int32_t>(a_input);
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi9) + 4) = reinterpret_cast<int32_t>(a_input);
-    eax10 = fun_5ce();
-    if (eax10 != a_input) {
-        rdi8 = reinterpret_cast<int32_t*>(0x5d9);
-        *reinterpret_cast<int32_t*>(&rsi9) = eax10;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi9) + 4) = reinterpret_cast<int32_t>(a_input);
-        fun_5e2(0x5d9, rsi9);
-    }
-    __asm__("xorps xmm1, xmm1");
-    __asm__("cvtsi2sd xmm1, qword [rsp+0x8]");
-    __asm__("xorps xmm0, xmm0");
-    __asm__("cvtsi2sd xmm0, dword [rsp+0x10]");
-    __asm__("mulsd xmm0, [rip+0x0]");
-    __asm__("addsd xmm0, xmm1");
-    *rdi8 = *rsi9;
-    __asm__("subsd xmm0, [r14]");
-    fun_61f(0x618, rsi9 + 1);
-    goto v11;
-}
-
-int32_t g5d9 = 0xc031c689;
-
-int32_t fun_5ce() {
-    int32_t eax1;
-    int32_t* rsi2;
-    int32_t eax3;
-    int64_t v4;
-
-    if (eax1 != a_input) {
-        *reinterpret_cast<int32_t*>(&rsi2) = eax3;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi2) + 4) = reinterpret_cast<int32_t>(a_input);
-        fun_5e2(0x5d9, rsi2);
+    rdi7 = reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(rsp1) + 8);
+    *reinterpret_cast<int32_t*>(&rsi8) = reinterpret_cast<int32_t>(a_input);
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi8) + 4) = reinterpret_cast<int32_t>(a_input);
+    eax9 = fun_847();
+    if (eax9 != a_input) {
+        rdi7 = reinterpret_cast<int32_t*>(0x852);
+        *reinterpret_cast<int32_t*>(&rsi8) = eax9;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi8) + 4) = reinterpret_cast<int32_t>(a_input);
+        fun_85b(0x852, rsi8);
     }
     __asm__("xorps xmm1, xmm1");
     __asm__("cvtsi2sd xmm1, qword [rsp+0x8]");
@@ -119,13 +111,13 @@ int32_t fun_5ce() {
     __asm__("cvtsi2sd xmm0, dword [rsp+0x10]");
     __asm__("mulsd xmm0, [rip+0x0]");
     __asm__("addsd xmm0, xmm1");
-    g5d9 = *rsi2;
+    *rdi7 = *rsi8;
     __asm__("subsd xmm0, [r14]");
-    fun_61f(0x618, rsi2 + 1);
-    goto v4;
+    fun_898(0x891, rsi8 + 1);
+    goto v10;
 }
 
-void fun_5e2(int32_t* rdi, int32_t* rsi) {
+void fun_85b(int32_t* rdi, int32_t* rsi) {
     int64_t v3;
 
     __asm__("xorps xmm1, xmm1");
@@ -136,26 +128,93 @@ void fun_5e2(int32_t* rdi, int32_t* rsi) {
     __asm__("addsd xmm0, xmm1");
     *rdi = *rsi;
     __asm__("subsd xmm0, [r14]");
-    fun_61f(0x618, rsi + 1);
+    fun_898(0x891, rsi + 1);
     goto v3;
 }
 
-void fun_61f(int64_t rdi, int64_t rsi) {
+void fun_898(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
     goto v3;
 }
 
-void fun_54c(int32_t* rdi) {
+int64_t fun_805() {
+    int64_t rbp1;
+    uint64_t rdx2;
+    uint64_t* r15_3;
+    uint64_t rax4;
+    uint64_t* r12_5;
+    int32_t* rdi6;
+    int32_t* rsi7;
+    int32_t eax8;
+    int64_t v9;
+
+    while (++rbp1, rbp1 != 46) {
+        rdx2 = r15_3[rbp1] >> 63;
+        rax4 = r12_5[rbp1] >> 63;
+        if (*reinterpret_cast<int32_t*>(&rdx2) != *reinterpret_cast<int32_t*>(&rax4)) {
+            fun_805();
+        } else {
+            fun_839();
+        }
+    }
+    rdi6 = reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(__zero_stack_offset()) + 8);
+    *reinterpret_cast<int32_t*>(&rsi7) = reinterpret_cast<int32_t>(a_input);
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi7) + 4) = reinterpret_cast<int32_t>(a_input);
+    eax8 = fun_847();
+    if (eax8 != a_input) {
+        rdi6 = reinterpret_cast<int32_t*>(0x852);
+        *reinterpret_cast<int32_t*>(&rsi7) = eax8;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi7) + 4) = reinterpret_cast<int32_t>(a_input);
+        fun_85b(0x852, rsi7);
+    }
+    __asm__("xorps xmm1, xmm1");
+    __asm__("cvtsi2sd xmm1, qword [rsp+0x8]");
+    __asm__("xorps xmm0, xmm0");
+    __asm__("cvtsi2sd xmm0, dword [rsp+0x10]");
+    __asm__("mulsd xmm0, [rip+0x0]");
+    __asm__("addsd xmm0, xmm1");
+    *rdi6 = *rsi7;
+    __asm__("subsd xmm0, [r14]");
+    fun_898(0x891, rsi7 + 1);
+    goto v9;
+}
+
+int32_t g852 = 0xc031c689;
+
+int32_t fun_847() {
+    int32_t eax1;
+    int32_t* rsi2;
+    int32_t eax3;
+    int64_t v4;
+
+    if (eax1 != a_input) {
+        *reinterpret_cast<int32_t*>(&rsi2) = eax3;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi2) + 4) = reinterpret_cast<int32_t>(a_input);
+        fun_85b(0x852, rsi2);
+    }
+    __asm__("xorps xmm1, xmm1");
+    __asm__("cvtsi2sd xmm1, qword [rsp+0x8]");
+    __asm__("xorps xmm0, xmm0");
+    __asm__("cvtsi2sd xmm0, dword [rsp+0x10]");
+    __asm__("mulsd xmm0, [rip+0x0]");
+    __asm__("addsd xmm0, xmm1");
+    g852 = *rsi2;
+    __asm__("subsd xmm0, [r14]");
+    fun_898(0x891, rsi2 + 1);
+    goto v4;
+}
+
+void fun_7ac(int32_t* rdi) {
     void* rsp2;
     int32_t eax3;
     int32_t* rsi4;
     int32_t eax5;
-    int64_t* r15_6;
-    int64_t* r12_7;
+    uint64_t* r15_6;
+    uint64_t* r12_7;
     int64_t rbp8;
-    int64_t rdi9;
-    int64_t rsi10;
+    uint64_t rdx9;
+    uint64_t rax10;
     int32_t* rdi11;
     int32_t* rsi12;
     int32_t eax13;
@@ -163,10 +222,10 @@ void fun_54c(int32_t* rdi) {
 
     rsp2 = __zero_stack_offset();
     if (eax3 != a_input) {
-        rdi = reinterpret_cast<int32_t*>(0x557);
+        rdi = reinterpret_cast<int32_t*>(0x7b7);
         *reinterpret_cast<int32_t*>(&rsi4) = eax5;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi4) + 4) = reinterpret_cast<int32_t>(a_input);
-        fun_560(0x557, rsi4);
+        fun_7c0(0x7b7, rsi4);
         rsp2 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp2) - 8 + 8);
     }
     __asm__("cvtsi2sd xmm0, qword [rsp+0x8]");
@@ -174,26 +233,31 @@ void fun_54c(int32_t* rdi) {
     __asm__("mulsd xmm1, [rip+0x0]");
     __asm__("addsd xmm1, xmm0");
     *rdi = *rsi4;
-    r15_6 = *reinterpret_cast<int64_t**>(&g58c);
-    r12_7 = *reinterpret_cast<int64_t**>(reinterpret_cast<int64_t>(&g58c) + 7);
+    r15_6 = *reinterpret_cast<uint64_t**>(&g7ec);
+    r12_7 = *reinterpret_cast<uint64_t**>(reinterpret_cast<int64_t>(&g7ec) + 7);
     *reinterpret_cast<int32_t*>(&rbp8) = reinterpret_cast<int32_t>(a_input);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp8) + 4) = reinterpret_cast<int32_t>(a_input);
     do {
-        rdi9 = r15_6[rbp8];
-        rsi10 = r12_7[rbp8];
-        fun_5ad(rdi9, rsi10);
-        rsp2 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp2) - 8 + 8);
+        rdx9 = r15_6[rbp8] >> 63;
+        rax10 = r12_7[rbp8] >> 63;
+        if (*reinterpret_cast<int32_t*>(&rdx9) != *reinterpret_cast<int32_t*>(&rax10)) {
+            fun_805();
+            rsp2 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp2) - 8 + 8);
+        } else {
+            fun_839();
+            rsp2 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp2) - 8 + 8);
+        }
         ++rbp8;
     } while (rbp8 != 46);
     rdi11 = reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(rsp2) + 8);
     *reinterpret_cast<int32_t*>(&rsi12) = reinterpret_cast<int32_t>(a_input);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi12) + 4) = reinterpret_cast<int32_t>(a_input);
-    eax13 = fun_5ce();
+    eax13 = fun_847();
     if (eax13 != a_input) {
-        rdi11 = reinterpret_cast<int32_t*>(0x5d9);
+        rdi11 = reinterpret_cast<int32_t*>(0x852);
         *reinterpret_cast<int32_t*>(&rsi12) = eax13;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi12) + 4) = reinterpret_cast<int32_t>(a_input);
-        fun_5e2(0x5d9, rsi12);
+        fun_85b(0x852, rsi12);
     }
     __asm__("xorps xmm1, xmm1");
     __asm__("cvtsi2sd xmm1, qword [rsp+0x8]");
@@ -203,7 +267,7 @@ void fun_54c(int32_t* rdi) {
     __asm__("addsd xmm0, xmm1");
     *rdi11 = *rsi12;
     __asm__("subsd xmm0, [r14]");
-    fun_61f(0x618, rsi12 + 1);
+    fun_898(0x891, rsi12 + 1);
     goto v14;
 }
 
@@ -214,397 +278,375 @@ void a_input(int64_t rdi, int32_t esi) {
     }
 }
 
-void fun_184() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
+void fun_18c() {
+    int32_t* r10_1;
+    int32_t r9d2;
 
-    __asm__("rol byte [rax], cl");
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *r10_1 = r9d2;
 }
 
-unsigned char* g1fe = reinterpret_cast<unsigned char*>(0x49c1ff4810088041);
+unsigned char* g34d = reinterpret_cast<unsigned char*>(0x49c0ff4810088041);
 
-void fun_1b0(uint64_t rdi, uint64_t rsi) {
-    int1_t less_or_equal3;
-    unsigned char* r8_4;
-    int64_t v5;
+void fun_248(uint64_t rdi, int32_t esi, int64_t rdx, int64_t rcx, uint32_t r8d, int64_t r9, int64_t a7) {
+    int64_t rcx8;
+    uint1_t zf9;
+    int32_t eax10;
+    uint32_t r10d11;
+    int1_t cf12;
+    int64_t r10_13;
+    uint64_t rsi14;
+    uint64_t rax15;
+    uint32_t eax16;
+    uint64_t r9_17;
+    uint64_t r11_18;
+    uint32_t r8d19;
+    uint32_t esi20;
+    uint1_t zf21;
+    uint32_t r8d22;
+    unsigned char cl23;
+    unsigned char* r8_24;
+    uint64_t rcx25;
+    uint32_t ecx26;
+    uint32_t ecx27;
+    uint64_t rcx28;
+    uint32_t ecx29;
+    uint64_t rax30;
+    uint32_t ecx31;
+    uint64_t rcx32;
 
-    if (!less_or_equal3) {
-        addr_1fb_2:
-        *r8_4 = reinterpret_cast<unsigned char>(*r8_4 | 16);
-        goto addr_202_3;
-    } else {
-        *reinterpret_cast<unsigned char*>(&rdi) = reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rsi << 13 == a_input))) & static_cast<unsigned char>(reinterpret_cast<uint1_t>((rdi & rsi) == 0x7ff0000000000000)));
-        if (a_input || *reinterpret_cast<unsigned char*>(&rdi) != a_input) {
-            r8_4 = g1fe;
-            goto addr_1fb_2;
+    rcx8 = rcx - 1;
+    if (!(reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rcx8 == a_input)) & zf9)) {
+        eax10 = static_cast<int32_t>(r9 + 8);
+    }
+    r10d11 = r8d << 8;
+    cf12 = r8d < 0x1000000;
+    if (!cf12) {
+        r10d11 = r8d;
+    }
+    if (!cf12) {
+        eax10 = *reinterpret_cast<int32_t*>(&r9);
+    }
+    *reinterpret_cast<uint32_t*>(&r10_13) = r10d11 >> 24;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&r10_13) + 4) = reinterpret_cast<int32_t>(a_input);
+    *reinterpret_cast<uint32_t*>(&rsi14) = esi - ((reinterpret_cast<uint32_t>(-*reinterpret_cast<int32_t*>(&rcx8)) | 31) + eax10 + *reinterpret_cast<int32_t*>(0x26f + r10_13 * 4));
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi14) + 4) = reinterpret_cast<int32_t>(a_input);
+    rax15 = rdi >> 52;
+    eax16 = *reinterpret_cast<uint32_t*>(&rax15) & 0x7ff;
+    r9_17 = rdi << 9 & 0x1ffffffffffffe00;
+    r11_18 = rsi14 << 9 & 0x1ffffffffffffe00;
+    r8d19 = eax16 - reinterpret_cast<uint32_t>(a_input);
+    if (reinterpret_cast<int32_t>(eax16) <= reinterpret_cast<int32_t>(a_input)) {
+        if (reinterpret_cast<int32_t>(r8d19) < reinterpret_cast<int32_t>(a_input)) {
+            if (1) {
+                esi20 = reinterpret_cast<uint32_t>(a_input);
+                zf21 = reinterpret_cast<uint1_t>(eax16 == a_input);
+                *reinterpret_cast<unsigned char*>(&esi20) = zf21;
+                if (!zf21) {
+                    r9_17 = r9_17 | 0x2000000000000000;
+                }
+                r8d22 = r8d19 + esi20;
+                if (r8d22 != a_input) 
+                    goto addr_475_14;
+            } else {
+                if (!reinterpret_cast<int1_t>(r11_18 == a_input)) {
+                    addr_2ef_16:
+                    cl23 = reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rdi << 13 == a_input))) & static_cast<unsigned char>(reinterpret_cast<uint1_t>((rdi & 0x7ff8000000000000) == 0x7ff0000000000000)));
+                    if (!reinterpret_cast<int1_t>(cl23 == a_input) || !1) {
+                        r8_24 = g34d;
+                        *r8_24 = reinterpret_cast<unsigned char>(*r8_24 | 16);
+                        goto addr_351_18;
+                    }
+                } else {
+                    goto addr_447_20;
+                }
+            }
         } else {
-            addr_202_3:
-            if (rsi + rsi < 0xffe0000000000001) {
+            if (eax16 == a_input) {
+                addr_436_22:
+                goto addr_447_20;
+            } else {
+                if (eax16 != 0x7ff) {
+                    goto addr_429_25;
+                } else {
+                    if (!reinterpret_cast<int1_t>((r11_18 | r9_17) == a_input)) 
+                        goto addr_2ef_16;
+                    goto addr_447_20;
+                }
             }
         }
+    } else {
+        if (eax16 != 0x7ff) {
+            if (!1) {
+                r11_18 = r11_18 | 0x2000000000000000;
+                goto addr_3e1_31;
+            }
+            --r8d19;
+            if (r8d19 == a_input) {
+                addr_411_33:
+                r9_17 = (r9_17 | 0x2000000000000000) + r11_18;
+                if (reinterpret_cast<int64_t>(r9_17 + r9_17) < reinterpret_cast<int64_t>(a_input)) {
+                    goto addr_427_35;
+                }
+            } else {
+                addr_3e1_31:
+                if (r8d19 > 63) {
+                    *reinterpret_cast<int32_t*>(&rcx25) = reinterpret_cast<int32_t>(a_input);
+                    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx25) + 4) = reinterpret_cast<int32_t>(a_input);
+                    *reinterpret_cast<unsigned char*>(&rcx25) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(r11_18 == a_input));
+                    goto addr_40e_37;
+                } else {
+                    ecx26 = r8d19;
+                    *reinterpret_cast<signed char*>(&r8d19) = -*reinterpret_cast<signed char*>(&r8d19);
+                    ecx27 = r8d19;
+                    *reinterpret_cast<int32_t*>(&rcx28) = reinterpret_cast<int32_t>(a_input);
+                    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx28) + 4) = reinterpret_cast<int32_t>(a_input);
+                    *reinterpret_cast<unsigned char*>(&rcx28) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(r11_18 << *reinterpret_cast<unsigned char*>(&ecx27) == a_input));
+                    rcx25 = rcx28 | r11_18 >> *reinterpret_cast<signed char*>(&ecx26);
+                    goto addr_40e_37;
+                }
+            }
+        } else {
+            if (r9_17 == a_input) 
+                goto addr_447_20; else 
+                goto addr_2ef_16;
+        }
+    }
+    addr_499_40:
+    goto addr_411_33;
+    addr_475_14:
+    ecx29 = -r8d22;
+    if (ecx29 > 63) {
+        *reinterpret_cast<int32_t*>(&rax30) = reinterpret_cast<int32_t>(a_input);
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax30) + 4) = reinterpret_cast<int32_t>(a_input);
+        *reinterpret_cast<unsigned char*>(&rax30) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(r9_17 == a_input));
+        r9_17 = rax30;
+        goto addr_411_33;
+    } else {
+        ecx31 = r8d22;
+        *reinterpret_cast<int32_t*>(&rcx32) = reinterpret_cast<int32_t>(a_input);
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx32) + 4) = reinterpret_cast<int32_t>(a_input);
+        *reinterpret_cast<unsigned char*>(&rcx32) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(r9_17 << *reinterpret_cast<unsigned char*>(&ecx31) == a_input));
+        r9_17 = rcx32 | r9_17 >> *reinterpret_cast<signed char*>(&ecx29);
+        goto addr_499_40;
+    }
+    addr_351_18:
+    if (rsi14 + rsi14 < 0xffe0000000000001) {
+    }
+    if (!reinterpret_cast<int1_t>(cl23 == a_input)) {
     }
     if (a_input) {
     }
-    if (!reinterpret_cast<int1_t>(*reinterpret_cast<unsigned char*>(&rdi) == a_input)) {
-    }
-    goto v5;
+    addr_447_20:
+    goto a7;
+    addr_429_25:
+    goto addr_436_22;
+    addr_427_35:
+    goto addr_429_25;
+    addr_40e_37:
+    r11_18 = rcx25;
+    goto addr_411_33;
 }
 
-uint32_t* g639 = reinterpret_cast<uint32_t*>(0xff831174ff85398b);
+void fun_191() {
+}
 
-uint32_t* g6ce = reinterpret_cast<uint32_t*>(0x4c01c98341098b45);
+unsigned char* g580 = reinterpret_cast<unsigned char*>(0x49c0ff4810088041);
 
-unsigned char* g6a1 = reinterpret_cast<unsigned char*>(0x483fe0c148090a80);
+int32_t* g683 = reinterpret_cast<int32_t*>(0xffffffffffffb948);
 
-uint32_t* g6dc = reinterpret_cast<uint32_t*>(0x4cc93102eb0a8945);
+unsigned char* g5eb = reinterpret_cast<unsigned char*>(0xc98545c6eb100880);
 
-uint32_t* g750 = reinterpret_cast<uint32_t*>(0x3104c983410e8b44);
-
-void fun_237(int32_t edi) {
-    int1_t sf2;
-    int32_t r10d3;
-    int32_t ecx4;
-    uint1_t zf5;
-    int32_t r8d6;
-    uint64_t r11_7;
+uint64_t subFloat64Sigs(uint64_t rdi, uint64_t rsi, int32_t edx) {
+    uint64_t rbx4;
+    uint32_t ebx5;
+    uint64_t r9_6;
+    uint32_t r9d7;
     uint64_t r11_8;
-    uint64_t rbx9;
-    int32_t r9d10;
-    int32_t r9d11;
-    int32_t r8d12;
-    int32_t r10d13;
-    uint32_t ecx14;
-    uint64_t rax15;
-    int32_t r10d16;
-    int32_t ecx17;
-    uint64_t rcx18;
-    int32_t r10d19;
-    uint64_t r11_20;
-    uint64_t rbx21;
-    uint64_t rdx22;
-    int32_t eax23;
-    uint64_t rdx24;
-    int1_t sf25;
-    int32_t r8d26;
-    int64_t rdx27;
-    int64_t v28;
-    int32_t r8d29;
-    int64_t v30;
-    int32_t r8d31;
-    int64_t rsi32;
-    uint32_t* rcx33;
-    uint32_t edi34;
-    uint64_t r8_35;
-    int1_t zf36;
-    uint32_t ecx37;
-    uint32_t* r9_38;
-    uint32_t r9d39;
-    unsigned char* rdx40;
-    int64_t v41;
-    int64_t r8_42;
-    int64_t v43;
-    uint32_t* r10_44;
-    uint32_t ecx45;
-    uint64_t rcx46;
-    int32_t ecx47;
-    uint64_t rcx48;
-    uint32_t* rsi49;
-    uint64_t r11_50;
-    uint64_t rdx51;
-    uint64_t rdx52;
-    uint64_t r11_53;
-    int64_t v54;
-
-    if (sf2) {
-        if (r10d3 != 0x7ff) {
-            ecx4 = reinterpret_cast<int32_t>(a_input);
-            zf5 = reinterpret_cast<uint1_t>(r8d6 == a_input);
-            *reinterpret_cast<unsigned char*>(&ecx4) = zf5;
-            if (!zf5) {
-                r11_7 = r11_8 | rbx9;
-            }
-            r9d10 = r9d11 + ecx4;
-            if (r9d10 == a_input) {
-                r8d12 = r10d13;
-            } else {
-                ecx14 = reinterpret_cast<uint32_t>(-r9d10);
-                if (ecx14 > 63) {
-                    *reinterpret_cast<int32_t*>(&rax15) = reinterpret_cast<int32_t>(a_input);
-                    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax15) + 4) = reinterpret_cast<int32_t>(a_input);
-                    *reinterpret_cast<unsigned char*>(&rax15) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(r11_7 == a_input));
-                    r11_7 = rax15;
-                    r8d12 = r10d16;
-                } else {
-                    ecx17 = r9d10;
-                    *reinterpret_cast<int32_t*>(&rcx18) = reinterpret_cast<int32_t>(a_input);
-                    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx18) + 4) = reinterpret_cast<int32_t>(a_input);
-                    *reinterpret_cast<unsigned char*>(&rcx18) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(r11_7 << *reinterpret_cast<unsigned char*>(&ecx17) == a_input));
-                    r11_7 = rcx18 | r11_7 >> *reinterpret_cast<signed char*>(&ecx14);
-                    r8d12 = r10d19;
-                }
-            }
-            r11_20 = (r11_7 | rbx21) + rdx22;
-            eax23 = reinterpret_cast<int32_t>(a_input);
-            rdx24 = r11_20 + r11_20;
-            sf25 = reinterpret_cast<int64_t>(rdx24) < reinterpret_cast<int64_t>(a_input);
-            *reinterpret_cast<unsigned char*>(&eax23) = reinterpret_cast<uint1_t>(!sf25);
-            if (sf25) {
-                rdx24 = r11_20;
-            }
-            r8d26 = r8d12 - eax23;
-        } else {
-            if (reinterpret_cast<int1_t>(rdx27 == a_input)) {
-                goto v28;
-            }
-        }
-    } else {
-        if (r8d29 == a_input) {
-            goto v30;
-        }
-        if (r8d31 != 0x7ff) 
-            goto addr_3b1_18; else 
-            goto addr_24f_19;
-    }
-    addr_352_20:
-    *reinterpret_cast<int32_t*>(&rsi32) = r8d26;
-    rcx33 = g639;
-    edi34 = *rcx33;
-    if (edi34 == a_input) {
-        *reinterpret_cast<int32_t*>(&r8_35) = 0x200;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&r8_35) + 4) = reinterpret_cast<int32_t>(a_input);
-    } else {
-        if (edi34 != 1) {
-            if (edi == a_input) {
-                zf36 = edi34 == 3;
-            } else {
-                zf36 = edi34 == 2;
-            }
-            *reinterpret_cast<int32_t*>(&r8_35) = 0x3ff;
-            *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&r8_35) + 4) = reinterpret_cast<int32_t>(a_input);
-            if (zf36) {
-                r8_35 = reinterpret_cast<uint64_t>(a_input);
-            }
-        } else {
-            *reinterpret_cast<int32_t*>(&r8_35) = reinterpret_cast<int32_t>(a_input);
-            *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&r8_35) + 4) = reinterpret_cast<int32_t>(a_input);
-        }
-    }
-    if (static_cast<uint32_t>(*reinterpret_cast<uint16_t*>(&rsi32)) < 0x7fd) {
-        addr_6bd_32:
-        ecx37 = *reinterpret_cast<uint32_t*>(&rdx24) & 0x3ff;
-        if (ecx37 == a_input) {
-            ecx37 = reinterpret_cast<uint32_t>(a_input);
-        } else {
-            r9_38 = g6ce;
-            r9d39 = *r9_38;
-            goto addr_6d1_35;
-        }
-    } else {
-        if (*reinterpret_cast<int32_t*>(&rsi32) > 0x7fd || *reinterpret_cast<int32_t*>(&rsi32) == 0x7fd && reinterpret_cast<int64_t>(r8_35 + rdx24) < reinterpret_cast<int64_t>(a_input)) {
-            rdx40 = g6a1;
-            *rdx40 = reinterpret_cast<unsigned char>(*rdx40 | 9);
-            goto v41;
-        }
-        if (*reinterpret_cast<int32_t*>(&rsi32) < reinterpret_cast<int32_t>(a_input)) 
-            goto addr_715_39; else 
-            goto addr_6bd_32;
-    }
-    addr_6e3_40:
-    *reinterpret_cast<int32_t*>(&r8_42) = reinterpret_cast<int32_t>(a_input);
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&r8_42) + 4) = reinterpret_cast<int32_t>(a_input);
-    *reinterpret_cast<unsigned char*>(&r8_42) = reinterpret_cast<uint1_t>((edi34 | ecx37 ^ 0x200) == a_input);
-    if ((reinterpret_cast<uint64_t>(~r8_42) & rdx24 + r8_35 >> 10) == a_input) {
-    }
-    goto v43;
-    addr_6d1_35:
-    r10_44 = g6dc;
-    *r10_44 = r9d39 | 1;
-    goto addr_6e3_40;
-    addr_715_39:
-    ecx45 = reinterpret_cast<uint32_t>(-*reinterpret_cast<int32_t*>(&rsi32));
-    if (ecx45 > 63) {
-        *reinterpret_cast<uint32_t*>(&rcx46) = reinterpret_cast<uint32_t>(a_input);
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx46) + 4) = reinterpret_cast<int32_t>(a_input);
-        *reinterpret_cast<unsigned char*>(&rcx46) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rdx24 == a_input));
-    } else {
-        ecx47 = *reinterpret_cast<int32_t*>(&rsi32);
-        *reinterpret_cast<int32_t*>(&rcx48) = reinterpret_cast<int32_t>(a_input);
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx48) + 4) = reinterpret_cast<int32_t>(a_input);
-        *reinterpret_cast<unsigned char*>(&rcx48) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rdx24 << *reinterpret_cast<unsigned char*>(&ecx47) == a_input));
-        rcx46 = rcx48 | rdx24 >> *reinterpret_cast<signed char*>(&ecx45);
-    }
-    rdx24 = rcx46;
-    ecx37 = *reinterpret_cast<uint32_t*>(&rcx46) & 0x3ff;
-    if (ecx37 != a_input) 
-        goto addr_749_46;
-    ecx37 = reinterpret_cast<uint32_t>(a_input);
-    goto addr_6e3_40;
-    addr_749_46:
-    rsi49 = g750;
-    r9d39 = *rsi49 | 4;
-    goto addr_6d1_35;
-    addr_3b1_18:
-    rdx24 = (r11_50 | 0x4000000000000000) + rdx51;
-    goto addr_352_20;
-    addr_24f_19:
-    if (reinterpret_cast<int1_t>((rdx52 | r11_53) == a_input)) {
-        goto v54;
-    }
-}
-
-unsigned char* g282 = reinterpret_cast<unsigned char*>(0xb848100880);
-
-void fun_25a(int32_t edi) {
-    int1_t sf2;
-    int32_t r10d3;
-    uint64_t rax4;
-    uint64_t r11_5;
-    uint64_t rbx6;
-    int32_t ecx7;
-    uint1_t zf8;
-    int32_t r8d9;
-    uint64_t r11_10;
-    int32_t r9d11;
-    int32_t r9d12;
-    uint32_t ecx13;
-    uint64_t rcx14;
-    int32_t ecx15;
+    uint64_t rax9;
+    uint32_t r8d10;
+    uint64_t rsi11;
+    uint32_t ecx12;
+    uint1_t zf13;
+    uint32_t r8d14;
+    uint32_t ecx15;
     uint64_t rcx16;
-    uint64_t rdx17;
-    uint64_t rdx18;
-    uint64_t rbx19;
-    uint64_t r11_20;
-    int64_t rdx21;
-    int64_t v22;
-    int32_t r8d23;
-    int32_t r8d24;
-    uint64_t rdx25;
-    uint64_t r11_26;
-    unsigned char* rax27;
-    uint64_t rdx28;
-    uint64_t r11_29;
-    uint64_t rdx30;
-    uint64_t rax31;
-    uint32_t esi32;
-    int1_t cf33;
-    uint64_t rdx34;
-    uint64_t r11_35;
-    int64_t v36;
-    int64_t r11_37;
-    int64_t rdx38;
+    uint32_t ecx17;
+    uint64_t rcx18;
+    unsigned char cl19;
+    unsigned char dl20;
+    unsigned char* r8_21;
+    uint64_t rdx22;
+    uint64_t rax23;
+    int32_t* rax24;
+    unsigned char* rax25;
+    uint64_t rcx26;
+    uint32_t ecx27;
+    uint32_t ecx28;
+    uint64_t rcx29;
+    uint64_t r8_30;
+    uint64_t rdi31;
+    uint64_t rax32;
+    uint64_t rsi33;
+    uint32_t edi34;
+    int1_t cf35;
 
-    if (sf2) {
-        if (r10d3 != 0x7ff) {
-            rax4 = r11_5 | rbx6;
-            ecx7 = reinterpret_cast<int32_t>(a_input);
-            zf8 = reinterpret_cast<uint1_t>(r8d9 == a_input);
-            *reinterpret_cast<unsigned char*>(&ecx7) = zf8;
-            if (zf8) {
-                rax4 = r11_10;
-            }
-            r9d11 = r9d12 + ecx7;
-            if (r9d11 != a_input) {
-                ecx13 = reinterpret_cast<uint32_t>(-r9d11);
-                if (ecx13 > 63) {
-                    *reinterpret_cast<int32_t*>(&rcx14) = reinterpret_cast<int32_t>(a_input);
-                    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx14) + 4) = reinterpret_cast<int32_t>(a_input);
-                    *reinterpret_cast<unsigned char*>(&rcx14) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rax4 == a_input));
-                } else {
-                    ecx15 = r9d11;
-                    *reinterpret_cast<int32_t*>(&rcx16) = reinterpret_cast<int32_t>(a_input);
-                    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx16) + 4) = reinterpret_cast<int32_t>(a_input);
-                    *reinterpret_cast<unsigned char*>(&rcx16) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rax4 << *reinterpret_cast<unsigned char*>(&ecx15) == a_input));
-                    rcx14 = rcx16 | rax4 >> *reinterpret_cast<signed char*>(&ecx13);
+    rbx4 = rdi >> 52;
+    ebx5 = *reinterpret_cast<uint32_t*>(&rbx4) & 0x7ff;
+    r9_6 = rsi >> 52;
+    r9d7 = *reinterpret_cast<uint32_t*>(&r9_6) & 0x7ff;
+    r11_8 = rdi << 10 & 0x3ffffffffffffc00;
+    rax9 = rsi << 10 & 0x3ffffffffffffc00;
+    r8d10 = ebx5 - r9d7;
+    if (reinterpret_cast<int32_t>(ebx5) <= reinterpret_cast<int32_t>(r9d7)) {
+        if (reinterpret_cast<int32_t>(r8d10) < reinterpret_cast<int32_t>(a_input)) {
+            if (r9d7 != 0x7ff) {
+                rsi11 = r11_8 | 0x4000000000000000;
+                ecx12 = reinterpret_cast<uint32_t>(a_input);
+                zf13 = reinterpret_cast<uint1_t>(ebx5 == a_input);
+                *reinterpret_cast<unsigned char*>(&ecx12) = zf13;
+                if (zf13) {
+                    rsi11 = r11_8;
                 }
-                rax4 = rcx14;
-            }
-            rdx17 = rdx18 | rbx19;
-            r11_20 = rax4;
-        } else {
-            if (!reinterpret_cast<int1_t>(rdx21 == a_input)) 
-                goto 0x19e;
-            goto v22;
-        }
-    } else {
-        if (r8d23 != a_input) {
-            if (r8d24 == 0x7ff) {
-                if (!reinterpret_cast<int1_t>((rdx25 | r11_26) == a_input)) 
-                    goto 0x19e;
-                rax27 = g282;
-                *rax27 = reinterpret_cast<unsigned char>(*rax27 | 16);
-            }
-        }
-        if (rdx28 >= r11_29) 
-            goto addr_3e5_19; else 
-            goto addr_3d7_20;
-    }
-    rdx30 = rdx17 - r11_20;
-    addr_4af_22:
-    rax31 = rdx30 >> 32;
-    if (rax31 == a_input) {
-        *reinterpret_cast<uint32_t*>(&rax31) = *reinterpret_cast<uint32_t*>(&rdx30);
-    }
-    esi32 = *reinterpret_cast<uint32_t*>(&rax31) << 16;
-    if (*reinterpret_cast<uint32_t*>(&rax31) >= 0x10000) {
-        esi32 = *reinterpret_cast<uint32_t*>(&rax31);
-    }
-    cf33 = esi32 < 0x1000000;
-    if (!cf33) {
-    }
-    if (!cf33) {
-    }
-    goto 0x630;
-    addr_3e5_19:
-    if (rdx34 <= r11_35) {
-        goto v36;
-    }
-    addr_3d7_20:
-    rdx30 = reinterpret_cast<uint64_t>(r11_37 - rdx38);
-    goto addr_4af_22;
-}
-
-void fun_302() {
-    uint32_t r9d1;
-    int32_t r9d2;
-
-    r9d1 = reinterpret_cast<uint32_t>(r9d2 - 1);
-    if (r9d1 == a_input) 
-        goto 0x33a;
-    if (r9d1 <= 63) {
-        goto 0x33a;
-    }
-}
-
-void ullong_to_double() {
-    return;
-}
-
-void fun_294() {
-    int32_t r10d1;
-    uint32_t r9d2;
-    int32_t r9d3;
-
-    if (r10d1 == a_input) {
-        r9d2 = reinterpret_cast<uint32_t>(r9d3 - 1);
-        if (r9d2 == a_input) {
-            addr_393_3:
-            goto 0x3d7;
-        } else {
-            addr_360_4:
-            if (r9d2 > 63) {
-                goto addr_393_3;
+                r8d14 = r8d10 + ecx12;
+                if (r8d14 != a_input) {
+                    ecx15 = -r8d14;
+                    if (ecx15 > 63) {
+                        *reinterpret_cast<int32_t*>(&rcx16) = reinterpret_cast<int32_t>(a_input);
+                        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx16) + 4) = reinterpret_cast<int32_t>(a_input);
+                        *reinterpret_cast<unsigned char*>(&rcx16) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rsi11 == a_input));
+                    } else {
+                        ecx17 = r8d14;
+                        *reinterpret_cast<int32_t*>(&rcx18) = reinterpret_cast<int32_t>(a_input);
+                        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx18) + 4) = reinterpret_cast<int32_t>(a_input);
+                        *reinterpret_cast<unsigned char*>(&rcx18) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rsi11 << *reinterpret_cast<unsigned char*>(&ecx17) == a_input));
+                        rcx16 = rcx18 | rsi11 >> *reinterpret_cast<signed char*>(&ecx15);
+                    }
+                    rsi11 = rcx16;
+                }
+                rax9 = rax9 | 0x4000000000000000;
+                r11_8 = rsi11;
+                goto addr_6e8_12;
             } else {
-                goto addr_393_3;
+                if (!reinterpret_cast<int1_t>(rax9 == a_input)) {
+                    addr_522_14:
+                    cl19 = reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rdi << 13 == a_input))) & static_cast<unsigned char>(reinterpret_cast<uint1_t>((rdi & 0x7ff8000000000000) == 0x7ff0000000000000)));
+                    dl20 = reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rsi << 13 == a_input))) & static_cast<unsigned char>(reinterpret_cast<uint1_t>((0x7ff8000000000000 & rsi) == 0x7ff0000000000000)));
+                    if (!reinterpret_cast<int1_t>(cl19 == a_input) || dl20 != a_input) {
+                        r8_21 = g580;
+                        *r8_21 = reinterpret_cast<unsigned char>(*r8_21 | 16);
+                    }
+                } else {
+                    *reinterpret_cast<int32_t*>(&rdx22) = ~edx;
+                    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdx22) + 4) = reinterpret_cast<int32_t>(a_input);
+                    rdi = 0x7ff0000000000000 | rdx22 << 63;
+                    goto addr_5b6_17;
+                }
+            }
+        } else {
+            if (ebx5 == a_input) {
+                goto addr_66a_20;
+            }
+            if (ebx5 != 0x7ff) {
+                addr_66a_20:
+                if (rax9 >= r11_8) {
+                    if (rax9 > r11_8) {
+                        addr_6e8_12:
+                        rax23 = rax9 - r11_8;
+                        goto addr_6ee_23;
+                    } else {
+                        rax24 = g683;
+                        *reinterpret_cast<int32_t*>(&rdi) = reinterpret_cast<int32_t>(a_input);
+                        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi) + 4) = reinterpret_cast<int32_t>(a_input);
+                        if (*rax24 == 3) {
+                            rdi = 0x8000000000000000;
+                        }
+                        goto addr_5b6_17;
+                    }
+                } else {
+                    addr_66f_27:
+                    rax23 = r11_8 - rax9;
+                    goto addr_6ee_23;
+                }
+            } else {
+                if (!reinterpret_cast<int1_t>((rax9 | r11_8) == a_input)) 
+                    goto addr_522_14;
+                rdi = 0x7fffffffffffffff;
+                rax25 = g5eb;
+                *rax25 = reinterpret_cast<unsigned char>(*rax25 | 16);
+                goto addr_5b6_17;
             }
         }
     } else {
-        goto addr_360_4;
+        if (ebx5 != 0x7ff) {
+            if (r9d7 == a_input) {
+                --r8d10;
+                if (r8d10 == a_input) {
+                    addr_65a_33:
+                    r11_8 = r11_8 | 0x4000000000000000;
+                    goto addr_66f_27;
+                } else {
+                    addr_62a_34:
+                    if (r8d10 > 63) {
+                        *reinterpret_cast<int32_t*>(&rcx26) = reinterpret_cast<int32_t>(a_input);
+                        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx26) + 4) = reinterpret_cast<int32_t>(a_input);
+                        *reinterpret_cast<unsigned char*>(&rcx26) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rax9 == a_input));
+                    } else {
+                        ecx27 = r8d10;
+                        *reinterpret_cast<signed char*>(&r8d10) = -*reinterpret_cast<signed char*>(&r8d10);
+                        ecx28 = r8d10;
+                        *reinterpret_cast<int32_t*>(&rcx29) = reinterpret_cast<int32_t>(a_input);
+                        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx29) + 4) = reinterpret_cast<int32_t>(a_input);
+                        *reinterpret_cast<unsigned char*>(&rcx29) = reinterpret_cast<uint1_t>(!reinterpret_cast<int1_t>(rax9 << *reinterpret_cast<unsigned char*>(&ecx28) == a_input));
+                        rcx26 = rcx29 | rax9 >> *reinterpret_cast<signed char*>(&ecx27);
+                    }
+                }
+                rax9 = rcx26;
+                goto addr_65a_33;
+            } else {
+                rax9 = rax9 | 0x4000000000000000;
+                goto addr_62a_34;
+            }
+        } else {
+            if (r11_8 == a_input) 
+                goto addr_5b6_17; else 
+                goto addr_522_14;
+        }
     }
+    r8_30 = rsi | 0x8000000000000;
+    rdi31 = rdi | 0x8000000000000;
+    rax32 = r8_30;
+    if (rsi + rsi < 0xffe0000000000001) {
+        rax32 = rdi31;
+    }
+    if (!reinterpret_cast<int1_t>(cl19 == a_input)) {
+        rax32 = rdi31;
+    }
+    if (!reinterpret_cast<int1_t>(dl20 == a_input)) {
+        rax32 = r8_30;
+    }
+    rdi = rax32;
+    addr_5b6_17:
+    return rdi;
+    addr_6ee_23:
+    rsi33 = rax23 >> 32;
+    if (rsi33 == a_input) {
+        *reinterpret_cast<uint32_t*>(&rsi33) = *reinterpret_cast<uint32_t*>(&rax23);
+    }
+    edi34 = *reinterpret_cast<uint32_t*>(&rsi33) << 16;
+    if (*reinterpret_cast<uint32_t*>(&rsi33) >= 0x10000) {
+        edi34 = *reinterpret_cast<uint32_t*>(&rsi33);
+    }
+    cf35 = edi34 < 0x1000000;
+    if (!cf35) {
+    }
+    if (!cf35) {
+    }
+    if (!a_input) {
+    }
+    return a_input;
 }
 
 void submain() {
-    fun_54c(reinterpret_cast<int64_t>(__zero_stack_offset()) - 8 - 8 - 8 - 8 - 8 - 8 - 24 + 8);
+    fun_7ac(reinterpret_cast<int64_t>(__zero_stack_offset()) - 8 - 8 - 8 - 8 - 8 - 8 - 24 + 8);
 }
 

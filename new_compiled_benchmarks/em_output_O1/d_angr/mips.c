@@ -10,7 +10,7 @@ extern char submain;
 
 long long submain()
 {
-    unsigned int v0;  // [bp-0x1c8], Other Possible Types: uint128_t, int
+    unsigned int v0;  // [bp-0x1c8], Other Possible Types: int, uint128_t
     uint128_t v1;  // [bp-0x1b8]
     uint128_t v2;  // [bp-0x1a8]
     uint128_t v3;  // [bp-0x198]
@@ -38,7 +38,7 @@ long long submain()
     unsigned long long v28;  // cc_op
     unsigned long v29;  // cc_dep1
     void* v30;  // cc_dep2
-    unsigned long v31;  // r13
+    unsigned int *v31;  // r13
     unsigned long long v32;  // cc_op
     unsigned long v33;  // cc_dep1
     unsigned long long v34;  // cc_dep2
@@ -185,14 +185,14 @@ long long submain()
                 switch (v26 & 63)
                 {
                 case 0:
-                    v113 = (unsigned int)v0;
+                    v113 = (int)v0;
                 case 2:
                     v53 = (((char)v112 & 31) != 0? 35 : 4);
                     v54 = (((char)v112 & 31) != 0? (int)v0 >> ((char)v112 & 31) : cc_dep1<8>);
                     v55 = (((char)v112 & 31) != 0? (int)v0 >> (((char)v112 & 31) - 1 & 31) : &g_400490);
                     *((unsigned int *)&v113) = (int)v0 >> ((char)v112 & 31);
                 case 4:
-                    v113 = (unsigned int)v0;
+                    v113 = (int)v0;
                     v112 = (char)v0;
                     v114 = (((char)v112 & 31) != 0? 31 : 4);
                     v115 = (((char)v112 & 31) != 0? v113 << ((char)v112 & 31) : cc_dep1<8>);
@@ -204,7 +204,7 @@ long long submain()
                     v66 = (((char)v0 & 31) != 0? (int)v0 >> (((char)v0 & 31) - 1 & 31) : &g_400490);
                     *((unsigned int *)&v113) = (int)v0 >> ((char)v0 & 31);
                 case 8:
-                    v113 = (unsigned int)v0;
+                    v113 = (int)v0;
                     break;
                 case 16:
                     v0 = (unsigned int)v24;
@@ -214,8 +214,8 @@ long long submain()
                     v117 = (int)v0;
                     v118 = (int)v0;
                 case 25:
-                    v117 = (unsigned int)v0;
-                    v118 = (unsigned int)v0;
+                    v117 = (int)v0;
+                    v118 = (int)v0;
                     v15 = v117 * v118;
                     v119 = 36;
                     v120 = v15 / 0x100000000;
@@ -223,14 +223,13 @@ long long submain()
                     *((unsigned int *)&v24) = (unsigned int)v15 / 0x100000000;
                 case 33:
                     v67 = 3;
-                    v68 = (unsigned int)v0;
-                    v69 = (unsigned int)v0;
+                    v68 = (int)v0;
+                    v69 = (int)v0;
                     *((unsigned int *)&v113) = (int)v0 + (int)v0;
-                    v0 = v113;
                 case 35:
                     v50 = 7;
-                    v51 = (unsigned int)v0;
-                    v52 = (unsigned int)v0;
+                    v51 = (int)v0;
+                    v52 = (int)v0;
                     *((unsigned int *)&v112) = (int)v0 - (int)v0;
                 case 36:
                     v70 = 19;
@@ -244,22 +243,21 @@ long long submain()
                     *((unsigned int *)&v113) = (int)v0 | (int)v0;
                 case 38:
                     v99 = v26;
-                    *((unsigned int *)&v113) = v0;
+                    *((unsigned int *)&v113) = (int)v0;
                 case 42:
-                    v60 = (unsigned int)v0;
+                    v60 = (int)v0;
                     v26 = 0;
                     v61 = 7;
                     v62 = v60;
-                    v63 = (unsigned int)v0;
+                    v63 = (int)v0;
                     *((char *)&v26) = (unsigned int)v60 < (int)v0;
-                    v0 = v26;
-                    v113 = v27;
-                    break;
                 case 43:
                     v26 = 0;
                     v57 = 7;
-                    v58 = (unsigned int)v0;
-                    v59 = (unsigned int)v0;
+                    v58 = (int)v0;
+                    v59 = (int)v0;
+                    *((char *)&v26) = [D] amd64g_calculate_condition(0x2<64>, 0x7<64>, cc_dep1<8>, cc_dep2<8>, cc_ndep<8>);
+                    v0 = v26;
                 }
                 if ((v26 & 63) <= 43)
                 {
@@ -268,9 +266,9 @@ long long submain()
                     v40 = v26 / 0x10000 & 31;
                     v26 = v26 / 0x200000 & 31;
                     v41 = 4;
-                    v42 = *((int *)&((char *)&g_400490)[4 * v31]);
+                    v42 = *((int *)((char *)&g_400490 + 0x4 * v31));
                     v43 = &g_400490;
-                    v44 = *((int *)&((char *)&g_400490)[4 * v31]) + (char *)&g_400490;
+                    v44 = *((int *)((char *)&g_400490 + 0x4 * v31)) + (char *)&g_400490;
                 }
             }
             else
@@ -285,45 +283,45 @@ long long submain()
                 {
                 case 0:
                     v88 = 7;
-                    v89 = (unsigned int)v0;
+                    v89 = (int)v0;
                     v90 = 0;
                 case 3:
                     v79 = 7;
-                    v80 = (unsigned int)v0;
-                    v81 = (unsigned int)v0;
-                case 4:
-                    v76 = 7;
-                    v77 = (unsigned int)v0;
-                    v78 = (unsigned int)v0;
-                    if ((int)v0 != (int)v0)
+                    v80 = (int)v0;
+                    v81 = (int)v0;
+                    if ((int)v0 == (int)v0)
                     {
                         v113 = (char *)&submain + 4 * *((long long *)(got.imem + ((unsigned int)v112 / 4 & 63) * 8));
                         break;
                     }
+                case 4:
+                    v76 = 7;
+                    v77 = (int)v0;
+                    v78 = (int)v0;
                 case 8:
                     v106 = 3;
                     v107 = (unsigned short)v26;
-                    v108 = (unsigned int)v0;
+                    v108 = (int)v0;
                     *((unsigned int *)&v113) = (unsigned short)v26 + (int)v0;
                 case 9:
                     v95 = *((long long *)(got.imem + ((unsigned int)v112 / 4 & 63) * 8));
                     v26 = 0;
                     v96 = 7;
-                    v97 = (unsigned int)v0;
+                    v97 = (int)v0;
                     v98 = v95;
                     *((char *)&v26) = (int)v0 < (unsigned int)v95;
                 case 10:
                     v91 = *((long long *)(got.imem + ((unsigned int)v112 / 4 & 63) * 8));
                     v26 = 0;
                     v92 = 7;
-                    v93 = (unsigned int)v0;
+                    v93 = (int)v0;
                     v94 = v91;
-                    *((char *)&v26) = [D] amd64g_calculate_condition(0x2<64>, 0x7<64>, cc_dep1<8>, cc_dep2<8>, cc_ndep<8>);
                 case 11:
                     v103 = 19;
-                    v104 = (unsigned short)v0 & v26;
+                    v104 = (short)v0 & v26;
                     v105 = 0;
-                    *((unsigned int *)&v112) = (unsigned short)v0 & v26;
+                    *((unsigned int *)&v112) = (short)v0 & v26;
+                    v0 = v112;
                 case 12:
                     v109 = 19;
                     v110 = (unsigned short)v26 | (int)v0;
@@ -336,6 +334,9 @@ long long submain()
                     v124 = (unsigned int)v113 ^ (int)v0;
                     v125 = 0;
                     *((unsigned int *)&v113) = (unsigned int)v113 ^ (int)v0;
+                    v0 = v113;
+                    v113 = v27;
+                    break;
                 case 14:
                     v82 = 31;
                     v83 = v26 * 0x10000;
@@ -346,12 +347,11 @@ long long submain()
                     v101 = (unsigned int)((int)v0 + v26 >> 2) & 63;
                     v102 = 0;
                     *((unsigned int *)&v112) = v12;
-                    v0 = v112;
                 case 42:
                     v85 = 19;
                     v86 = (unsigned int)((int)v0 + v26 >> 2) & 63;
                     v87 = 0;
-                    v12 = v0;
+                    v12 = (int)v0;
                 }
                 if ((unsigned int)v36 <= 42)
                 {
@@ -364,7 +364,7 @@ long long submain()
                 }
             }
         }
-        if ((unsigned int)(*((long long *)(got.imem + (((unsigned int)(v112 >> 2) & 63) << 3))) >> 26) == 2 || (unsigned int)(*((long long *)&((char *)v23)[8 * ((unsigned int)(v112 >> 2) & 63)]) >> 26) == 3)
+        if ((unsigned int)(*((long long *)&((char *)v23)[8 * ((unsigned int)(v112 >> 2) & 63)]) >> 26) == 3 || (unsigned int)(*((long long *)(got.imem + (((unsigned int)(v112 >> 2) & 63) << 3))) >> 26) == 2)
         {
             v28 = 19;
             v29 = v26 * 4 & 268435452;

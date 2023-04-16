@@ -55,35 +55,37 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x2f9)));
+typedef pointer pointer __((offset(0x53d)));
 
-typedef pointer pointer __((offset(0x41)));
+typedef pointer pointer __((offset(0x5a3)));
 
-typedef pointer pointer __((offset(0x29)));
-
-typedef pointer pointer __((offset(0x30d)));
-
-typedef pointer pointer __((offset(0x3bb)));
-
-typedef pointer pointer __((offset(0xd8)));
-
-typedef pointer pointer __((offset(0x34b)));
-
-typedef pointer pointer __((offset(0x373)));
-
-typedef pointer pointer __((offset(0x3b)));
+typedef pointer pointer __((offset(0x230)));
 
 typedef pointer pointer __((offset(0x28)));
-
-typedef pointer pointer __((offset(0x26)));
-
-typedef pointer pointer __((offset(0x70)));
-
-typedef pointer pointer __((offset(0x2f1)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
+
+typedef pointer pointer __((offset(0x308)));
+
+typedef pointer pointer __((offset(0x41)));
+
+typedef pointer pointer __((offset(0x5eb)));
+
+typedef pointer pointer __((offset(0x259)));
+
+typedef pointer pointer __((offset(0x2a0)));
+
+typedef pointer pointer __((offset(0x521)));
+
+typedef pointer pointer __((offset(0x529)));
+
+typedef pointer pointer __((offset(0x26b)));
+
+typedef pointer pointer __((offset(0x26)));
+
+typedef pointer pointer __((offset(0x57b)));
 
 typedef void _IO_lock_t;
 
@@ -192,17 +194,6 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
-typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
-
-struct Elf64_Sym {
-    dword st_name;
-    byte st_info;
-    byte st_other;
-    word st_shndx;
-    qword st_value;
-    qword st_size;
-};
-
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
 
 struct Elf64_Ehdr {
@@ -229,12 +220,24 @@ struct Elf64_Ehdr {
     word e_shstrndx;
 };
 
+typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
+
+struct Elf64_Sym {
+    dword st_name;
+    byte st_info;
+    byte st_other;
+    word st_shndx;
+    qword st_value;
+    qword st_size;
+};
 
 
 
+
+void kernel_durbin(int param_1,ulong *param_2,ulong *param_3);
 undefined8 submain(int param_1,char **param_2);
-undefined polybench_alloc_data();
 void * memcpy(void * __dest, void * __src, size_t __n);
+undefined polybench_alloc_data();
 void free(void * __ptr);
 size_t fwrite(void * __ptr, size_t __size, size_t __n, FILE * __s);
 int fprintf(FILE * __stream, char * __format, ...);

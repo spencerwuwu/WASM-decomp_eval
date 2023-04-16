@@ -1,60 +1,3 @@
-extern char .L.str;
-
-long long submain(unsigned int a0, unsigned long long *a1)
-{
-    void* v0;  // [bp-0x40]
-    void* v1;  // [bp-0x38]
-    void* v2;  // [bp-0x30]
-    void* v3;  // [bp-0x28]
-    unsigned int v4;  // [bp-0x20]
-    unsigned int v5;  // [bp-0x1c]
-    unsigned int v6;  // [bp-0xc]
-    void* v9;  // rdi
-    void* v10;  // rdi
-    void* v11;  // rdi
-
-    v6 = a0;
-    v5 = 1900;
-    v4 = 2100;
-    v3 = polybench_alloc_data(0x3ce1f0, 0x8);
-    v2 = polybench_alloc_data(0x834, 0x8);
-    v1 = polybench_alloc_data(0x834, 0x8);
-    v0 = polybench_alloc_data(0x76c, 0x8);
-    init_array(v5, v4, v3, v2);
-    kernel_atax(v5, v4, v3, v2, v1, v0);
-    if (v6 > 42)
-    {
-        if (strcmp(*(a1), &.L.str) == 0)
-        {
-            print_array(v4, v1);
-            free(v3);
-            v9 = v2;
-            free(rdi<8>);
-            v10 = v1;
-            free(rdi<8>);
-            v11 = v0;
-            free(rdi<8>);
-            return 0;
-        }
-        free(v3);
-        v9 = v2;
-        free(rdi<8>);
-        v10 = v1;
-        free(rdi<8>);
-        v11 = v0;
-        free(rdi<8>);
-        return 0;
-    }
-    free(v3);
-    v9 = v2;
-    free(rdi<8>);
-    v10 = v1;
-    free(rdi<8>);
-    v11 = v0;
-    free(rdi<8>);
-    return 0;
-}
-
 int init_array(unsigned int a0, unsigned int a1, unsigned long a2, unsigned long long *a3)
 {
     unsigned int v0;  // [bp-0x28]
@@ -125,5 +68,62 @@ int kernel_atax(unsigned int a0, unsigned int a1, unsigned long a2, unsigned lon
         }
     }
     return;
+}
+
+extern char .L.str.7;
+
+long long submain(unsigned int a0, unsigned long long *a1)
+{
+    void* v0;  // [bp-0x40]
+    void* v1;  // [bp-0x38]
+    void* v2;  // [bp-0x30]
+    unsigned long v3;  // [bp-0x28]
+    unsigned int v4;  // [bp-0x20]
+    unsigned int v5;  // [bp-0x1c]
+    unsigned int v6;  // [bp-0xc]
+    void* v11;  // rdi
+    void* v12;  // rdi
+    void* v13;  // rdi
+
+    v6 = a0;
+    v5 = 1900;
+    v4 = 2100;
+    v3 = polybench_alloc_data(0x3ce1f0, 0x8);
+    v2 = polybench_alloc_data(0x834, 0x8);
+    v1 = polybench_alloc_data(0x834, 0x8);
+    v0 = polybench_alloc_data(0x76c, 0x8);
+    init_array(v5, v4, v3, v2);
+    kernel_atax(v5, v4, v3, v2, v1, v0);
+    if (v6 > 42)
+    {
+        if (strcmp(*(a1), &.L.str.7) == 0)
+        {
+            print_array(v4, v1);
+            free(v3);
+            v11 = v2;
+            free(rdi<8>);
+            v12 = v1;
+            free(rdi<8>);
+            v13 = v0;
+            free(rdi<8>);
+            return 0;
+        }
+        free(v3);
+        v11 = v2;
+        free(rdi<8>);
+        v12 = v1;
+        free(rdi<8>);
+        v13 = v0;
+        free(rdi<8>);
+        return 0;
+    }
+    free(v3);
+    v11 = v2;
+    free(rdi<8>);
+    v12 = v1;
+    free(rdi<8>);
+    v13 = v0;
+    free(rdi<8>);
+    return 0;
 }
 

@@ -109,9 +109,139 @@ long long extractFloat64Sign(unsigned long a0)
     return a0 / 0x8000000000000000;
 }
 
+extern char countLeadingZeros32.countLeadingZerosHigh;
+
+long long normalizeFloat64Subnormal(unsigned int a0, unsigned int *a1, unsigned long long *a2)
+{
+    void* v1;  // rax
+    unsigned long long v2;  // rdi
+    void* v3;  // r9
+    unsigned int v4;  // r10d
+    unsigned long long v5;  // rdi
+
+    v1 = 0;
+    *((char *)&v1) = v2 >> 32 == 0;
+    v3 = 0;
+    *((char *)&v3) = (v2 >> 32 == 0? (unsigned int)v2 : (unsigned int)(v2 >> 32)) < 0x10000;
+    *((unsigned int *)&v3) = (unsigned int)v3 * 16;
+    v4 = ...;
+    v5 = ...;
+    *(a2) = v5;
+    *(a1) = 12 - v4;
+    return 12 - v4;
+}
+
 long long packFloat64(unsigned long long a0, unsigned long long a1, unsigned long a2)
 {
     return a0 * 0x8000000000000000 + a2 + a1 * 0x10000000000000;
+}
+
+extern char got.float_exception_flags;
+extern char got.float_rounding_mode;
+
+long long roundAndPackFloat64(unsigned int a0, unsigned int a1, unsigned int a2, unsigned long a3, unsigned long a4, unsigned long a5, unsigned short v0)
+{
+    unsigned long long v1;  // r8
+    unsigned long long v2;  // rcx
+    void* v3;  // rcx
+    unsigned long long v4;  // cc_dep2
+    void* v5;  // rdx
+    unsigned int v6;  // r9
+    unsigned long v7;  // rsi
+    unsigned long long v8;  // rcx
+    void* v11;  // rcx
+    void* v12;  // rcx
+    unsigned long long v13;  // rdx
+    void* v14;  // rcx
+    void* v15;  // rcx
+
+    if (!(*((int *)got.float_rounding_mode) != 0))
+    {
+        v1 = 0x200;
+        v2 = 0;
+    }
+    else if (*((int *)got.float_rounding_mode) == 1)
+    {
+        v2 = -1;
+        v1 = 0;
+    }
+    else
+    {
+        v3 = 0;
+        if ((unsigned int)a0 != 0)
+        {
+            v4 = 2;
+        }
+        else
+        {
+            v4 = 3;
+        }
+        *((char *)&v3) = *((int *)got.float_rounding_mode) == v4;
+        v1 = (*((int *)got.float_rounding_mode) == v4? 0 : 1023);
+        v2 = 0 - v3;
+    }
+    v6 = (unsigned int)v5 & 1023;
+    if ((unsigned short)a1 >= 2045)
+    {
+        if ((unsigned int)v7 <= 2045)
+        {
+            if (v7 == 2045 && (char)[D] amd64g_calculate_condition(0x8<64>, 0x4<64>, r8<8>, rdx<8>, cc_ndep<8>))
+            {
+                *((char *)*((long long *)&got.float_exception_flags)) = *((char *)*((long long *)&got.float_exception_flags)) | 9;
+                v8 = v2 + a0 * 0x8000000000000000;
+                return 0x7ff0000000000000 + v8;
+            }
+            if ((!((char)[D] amd64g_calculate_condition(0x8<64>, 0x4<64>, r8<8>, rdx<8>, cc_ndep<8>)) || v7 != 2045) && (unsigned int)v7 < 0)
+            {
+                if ((unsigned int)v7 >= -63)
+                {
+                    v11 = 0;
+                    *((char *)&v11) = v5 << ((char)v7 & 63) != 0;
+                    v12 = v11 | v5 >> (0 - (char)v7 & 63);
+                }
+                else
+                {
+                    v12 = 0;
+                    *((char *)&v12) = v5 != 0;
+                }
+                v5 = v12;
+                v6 = (unsigned int)v12 & 1023;
+                if (((unsigned short)(unsigned int)v12 & 1023) != 0)
+                {
+                    *((char *)*((long long *)&got.float_exception_flags)) = *((char *)*((long long *)&got.float_exception_flags)) | 4;
+                }
+                else
+                {
+                    v6 = 0;
+                }
+            }
+        }
+        else
+        {
+            *((char *)*((long long *)&got.float_exception_flags)) = *((char *)*((long long *)&got.float_exception_flags)) | 9;
+            v8 = v2 + a0 * 0x8000000000000000;
+            return 0x7ff0000000000000 + v8;
+        }
+    }
+    if ((unsigned short)a1 < 2045 || (unsigned int)v7 <= 2045 && !((char)[D] amd64g_calculate_condition(0x8<64>, 0x4<64>, r8<8>, rdx<8>, cc_ndep<8>)) || (unsigned int)v7 <= 2045 && v7 != 2045)
+    {
+        if (v6 != 0)
+        {
+            *((char *)*((long long *)&got.float_exception_flags)) = *((char *)*((long long *)&got.float_exception_flags)) | 1;
+            v13 = v5 + v1 >> 10;
+            v6 ^= 0x200;
+            v14 = 0;
+            *((char *)&v14) = *((int *)got.float_rounding_mode) == 0 && v6 == 0;
+            v15 = !(v14) & v13;
+            return (a0 * 0x8000000000000000 | v15) + (v15 == 0? v15 : 0);
+        }
+        v13 = v5 + v1 >> 10;
+        v6 ^= 0x200;
+        v14 = 0;
+        *((char *)&v14) = *((int *)got.float_rounding_mode) == 0 && v6 == 0;
+        v15 = !(v14) & v13;
+        return (a0 * 0x8000000000000000 | v15) + (v15 == 0? v15 : 0);
+    }
 }
 
 long long ullong_to_double()
@@ -127,7 +257,7 @@ extern char got.endTimer;
 extern char got.startTimer;
 extern char got.z_output;
 
-long long submain()
+long long submain(unsigned long a0, unsigned long a1, unsigned short a2)
 {
     char v0;  // [bp-0x40]
     unsigned int v1;  // [bp-0x38]
@@ -157,7 +287,7 @@ long long submain()
     v12 = 0;
     while (true)
     {
-        v10 = float64_div(*((long long *)(got.a_input + (v12 << 3))), *((long long *)(got.b_input + (v12 << 3)))) != *((long long *)(got.z_output + (v12 << 3)));
+        v10 = float64_div(*((long long *)(got.a_input + (v12 << 3))), *((long long *)(got.b_input + (v12 << 3))), a2) != *((long long *)(got.z_output + (v12 << 3)));
         v3 += rcx<8>;
         v12 += 1;
         if (v12 == 22)

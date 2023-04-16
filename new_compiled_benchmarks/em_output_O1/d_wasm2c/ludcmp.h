@@ -90,6 +90,9 @@ void w2c_ludcmp_0x5F_wasm_call_ctors(w2c_ludcmp*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_ludcmp_0x5F_wasm_apply_data_relocs(w2c_ludcmp*);
 
+/* export: 'kernel_ludcmp' */
+void w2c_ludcmp_kernel_ludcmp(w2c_ludcmp*, u32, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_ludcmp_submain(w2c_ludcmp*, u32, u32);
 

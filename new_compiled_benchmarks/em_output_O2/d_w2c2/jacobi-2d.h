@@ -26,13 +26,17 @@ void f6(jacobi2dInstance*);
 
 void f7(jacobi2dInstance*);
 
-U32 f8(jacobi2dInstance*,U32,U32);
+void f8(jacobi2dInstance*,U32,U32,U32,U32);
 
-U32 f9(jacobi2dInstance*,U64,U32);
+U32 f9(jacobi2dInstance*,U32,U32);
+
+U32 f10(jacobi2dInstance*,U64,U32);
 
 void jacobi2d____wasm_call_ctors(jacobi2dInstance*i);
 
 void jacobi2d____wasm_apply_data_relocs(jacobi2dInstance*i);
+
+void jacobi2d_kernel_jacobi_2d(jacobi2dInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
 U32 jacobi2d_submain(jacobi2dInstance*i,U32 l0,U32 l1);
 

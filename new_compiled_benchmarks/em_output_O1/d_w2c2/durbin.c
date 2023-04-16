@@ -10,7 +10,203 @@ void f8(durbinInstance*i) {
 L0:;
 }
 
-U32 f9(durbinInstance*i,U32 l0,U32 l1) {
+void f9(durbinInstance*i,U32 l0,U32 l1,U32 l2) {
+U32 l3=0;
+U32 l4=0;
+U32 l5=0;
+F64 l6=0;
+F64 l7=0;
+F64 l8=0;
+F64 l9=0;
+U32 l10=0;
+U32 l11=0;
+U32 l12=0;
+U32 l13=0;
+U32 si0,si1,si2,si3,si4,si5;
+F64 sd0,sd1,sd2;
+si0=(*i->env_____stack_pointer);
+si1=16000U;
+si0-=si1;
+l3=si0;
+(*i->env_____stack_pointer)=si0;
+si0=l2;
+si1=l1;
+sd1=f64_load(i->env__memory,(U64)si1);
+sd1=-(sd1);
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l0;
+si1=2U;
+si0=(U32)((I32)si0<(I32)si1);
+if(si0){
+goto L1;
+}
+si0=l0;
+si1=-2U;
+si0+=si1;
+l4=si0;
+si0=0U;
+l5=si0;
+si0=1U;
+l0=si0;
+sd0=1;
+l6=sd0;
+si0=l1;
+sd0=f64_load(i->env__memory,(U64)si0);
+sd0=-(sd0);
+l7=sd0;
+L2:;
+{
+sd0=l6;
+l8=sd0;
+si0=l0;
+l0=si0;
+sd0=1;
+sd1=l7;
+l7=sd1;
+sd2=l7;
+sd1*=sd2;
+sd0-=sd1;
+l9=sd0;
+si0=l5;
+l10=si0;
+si1=3U;
+si0<<=(si1&31);
+si1=8U;
+si0+=si1;
+l11=si0;
+si0=0U;
+l12=si0;
+sd0=0;
+l7=sd0;
+L3:;
+{
+si0=l12;
+l5=si0;
+si1=1U;
+si0+=si1;
+l13=si0;
+l12=si0;
+si0=l1;
+si1=l0;
+si2=l5;
+si3=-1U;
+si2^=si3;
+si1+=si2;
+si2=3U;
+si1<<=(si2&31);
+si0+=si1;
+sd0=f64_load(i->env__memory,(U64)si0);
+si1=l2;
+si2=l5;
+si3=3U;
+si2<<=(si3&31);
+si1+=si2;
+sd1=f64_load(i->env__memory,(U64)si1);
+sd0*=sd1;
+sd1=l7;
+sd0+=sd1;
+l6=sd0;
+l7=sd0;
+si0=l13;
+si1=l0;
+si0=si0 != si1;
+if(si0){
+goto L3;
+}
+}
+sd0=l6;
+si1=l1;
+si2=l0;
+si3=3U;
+si2<<=(si3&31);
+l13=si2;
+si1+=si2;
+sd1=f64_load(i->env__memory,(U64)si1);
+sd0+=sd1;
+sd0=-(sd0);
+sd1=l9;
+sd2=l8;
+sd1*=sd2;
+l6=sd1;
+sd0/=sd1;
+l7=sd0;
+si0=0U;
+l5=si0;
+L4:;
+{
+si0=l3;
+si1=l5;
+l5=si1;
+si2=3U;
+si1<<=(si2&31);
+l12=si1;
+si0+=si1;
+sd1=l7;
+si2=l2;
+si3=l0;
+si4=l5;
+si5=-1U;
+si4^=si5;
+si3+=si4;
+si4=3U;
+si3<<=(si4&31);
+si2+=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1*=sd2;
+si2=l2;
+si3=l12;
+si2+=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l5;
+si1=1U;
+si0+=si1;
+l12=si0;
+l5=si0;
+si0=l12;
+si1=l0;
+si0=si0 != si1;
+if(si0){
+goto L4;
+}
+}
+si0=l2;
+si1=l3;
+si2=l11;
+si0=env__memcpy(i,si0,si1,si2);
+si1=l13;
+si0+=si1;
+sd1=l7;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l10;
+si1=1U;
+si0+=si1;
+l5=si0;
+si0=l0;
+si1=1U;
+si0+=si1;
+l0=si0;
+sd0=l6;
+l6=sd0;
+sd0=l7;
+l7=sd0;
+si0=l10;
+si1=l4;
+si0=si0 != si1;
+if(si0){
+goto L2;
+}
+}
+L1:;
+si0=l3;
+si1=16000U;
+si0+=si1;
+(*i->env_____stack_pointer)=si0;
+L0:;
+}
+
+U32 f10(durbinInstance*i,U32 l0,U32 l1) {
 U32 l2=0;
 U32 l3=0;
 U32 l4=0;
@@ -35,11 +231,11 @@ l2=si0;
 (*i->env_____stack_pointer)=si0;
 sj0=2000ULL;
 si1=8U;
-si0=f10(i,sj0,si1);
+si0=f11(i,sj0,si1);
 l3=si0;
 sj0=2000ULL;
 si1=8U;
-si0=f10(i,sj0,si1);
+si0=f11(i,sj0,si1);
 l4=si0;
 si0=0U;
 l5=si0;
@@ -209,7 +405,7 @@ si2=l11;
 si3=8U;
 si2+=si3;
 si0=env__memcpy(i,si0,si1,si2);
-l11=si0;
+l14=si0;
 si1=l15;
 si0+=si1;
 sd1=l8;
@@ -217,7 +413,6 @@ f64_store(i->env__memory,(U64)si0,sd1);
 si0=l10;
 si1=1U;
 si0+=si1;
-l14=si0;
 l6=si0;
 si0=l5;
 si1=1U;
@@ -227,8 +422,8 @@ sd0=l7;
 l7=sd0;
 sd0=l8;
 l8=sd0;
-si0=l14;
-si1=1999U;
+si0=l10;
+si1=1998U;
 si0=si0 != si1;
 if(si0){
 goto L2;
@@ -285,7 +480,7 @@ si1=l6;
 si0=env__fputc(i,si0,si1);
 L7:;
 si0=l2;
-si1=l11;
+si1=l14;
 si2=l5;
 si3=3U;
 si2<<=(si3&31);
@@ -334,7 +529,7 @@ si0=env__fwrite(i,si0,si1,si2,si3);
 L5:;
 si0=l3;
 env__free(i,si0);
-si0=l11;
+si0=l14;
 env__free(i,si0);
 si0=l2;
 si1=16048U;
@@ -345,7 +540,7 @@ L0:;
 return si0;
 }
 
-U32 f10(durbinInstance*i,U64 l0,U32 l1) {
+U32 f11(durbinInstance*i,U64 l0,U32 l1) {
 U32 si0,si1,si2;
 U64 sj0,sj1,sj2;
 sj0=l0;
@@ -381,8 +576,12 @@ void durbin____wasm_apply_data_relocs(durbinInstance*i){
 f8(i);
 }
 
+void durbin_kernel_durbin(durbinInstance*i,U32 l0,U32 l1,U32 l2){
+f9(i,l0,l1,l2);
+}
+
 U32 durbin_submain(durbinInstance*i,U32 l0,U32 l1){
-return f9(i,l0,l1);
+return f10(i,l0,l1);
 }
 
 void durbinInstantiate(durbinInstance* i, void* resolve(const char* module, const char* name)) {

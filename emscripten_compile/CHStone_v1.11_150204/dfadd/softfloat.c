@@ -151,7 +151,8 @@ packFloat64 (flag zSign, int16 zExp, bits64 zSig)
 | Binary Floating-Point Arithmetic.
 *----------------------------------------------------------------------------*/
 
-static float64
+// static 
+    float64
 roundAndPackFloat64 (flag zSign, int16 zExp, bits64 zSig)
 {
   int8 roundingMode;
@@ -222,7 +223,8 @@ roundAndPackFloat64 (flag zSign, int16 zExp, bits64 zSig)
 | floating-point exponent.
 *----------------------------------------------------------------------------*/
 
-static float64
+// static 
+float64
 normalizeRoundAndPackFloat64 (flag zSign, int16 zExp, bits64 zSig)
 {
   int8 shiftCount;
@@ -240,7 +242,8 @@ normalizeRoundAndPackFloat64 (flag zSign, int16 zExp, bits64 zSig)
 | Floating-Point Arithmetic.
 *----------------------------------------------------------------------------*/
 
-static float64
+// static 
+    float64
 addFloat64Sigs (float64 a, float64 b, flag zSign)
 {
   int16 aExp, bExp, zExp;
@@ -321,7 +324,8 @@ roundAndPack:
 | Standard for Binary Floating-Point Arithmetic.
 *----------------------------------------------------------------------------*/
 
-static float64
+// static 
+    float64
 subFloat64Sigs (float64 a, float64 b, flag zSign)
 {
   int16 aExp, bExp, zExp;

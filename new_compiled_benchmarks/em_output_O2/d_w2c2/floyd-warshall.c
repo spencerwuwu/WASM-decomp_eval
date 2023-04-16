@@ -10,7 +10,183 @@ void f6(floydwarshallInstance*i) {
 L0:;
 }
 
-U32 f7(floydwarshallInstance*i,U32 l0,U32 l1) {
+void f7(floydwarshallInstance*i,U32 l0,U32 l1) {
+U32 l2=0;
+U32 l3=0;
+U32 l4=0;
+U32 l5=0;
+U32 l6=0;
+U32 l7=0;
+U32 l8=0;
+U32 l9=0;
+U32 l10=0;
+U32 l11=0;
+U32 l12=0;
+U32 l13=0;
+U32 si0,si1,si2,si3,si4;
+si0=l0;
+si1=0U;
+si0=(U32)((I32)si0>(I32)si1);
+if(si0){
+si0=l0;
+si1=-2U;
+si0&=si1;
+l10=si0;
+si0=l0;
+si1=1U;
+si0&=si1;
+l11=si0;
+L2:;
+{
+si0=0U;
+l6=si0;
+L3:;
+{
+si0=l1;
+si1=l6;
+si2=11200U;
+si1*=si2;
+si0+=si1;
+l7=si0;
+si1=l5;
+si2=2U;
+si1<<=(si2&31);
+si0+=si1;
+l8=si0;
+si0=0U;
+l3=si0;
+si0=0U;
+l9=si0;
+si0=l0;
+si1=1U;
+si0=si0 != si1;
+if(si0){
+L5:;
+{
+si0=l7;
+si1=l3;
+si2=2U;
+si1<<=(si2&31);
+l2=si1;
+si0+=si1;
+l4=si0;
+si1=l4;
+si1=i32_load(i->env__memory,(U64)si1);
+l4=si1;
+si2=l1;
+si3=l5;
+si4=11200U;
+si3*=si4;
+si2+=si3;
+l12=si2;
+si3=l2;
+si2+=si3;
+si2=i32_load(i->env__memory,(U64)si2);
+si3=l8;
+si3=i32_load(i->env__memory,(U64)si3);
+si2+=si3;
+l13=si2;
+si3=l4;
+si4=l13;
+si3=(U32)((I32)si3<(I32)si4);
+si1=si3?si1:si2;
+i32_store(i->env__memory,(U64)si0,si1);
+si0=l7;
+si1=l2;
+si2=4U;
+si1|=si2;
+l2=si1;
+si0+=si1;
+l4=si0;
+si1=l4;
+si1=i32_load(i->env__memory,(U64)si1);
+l4=si1;
+si2=l2;
+si3=l12;
+si2+=si3;
+si2=i32_load(i->env__memory,(U64)si2);
+si3=l8;
+si3=i32_load(i->env__memory,(U64)si3);
+si2+=si3;
+l2=si2;
+si3=l2;
+si4=l4;
+si3=(U32)((I32)si3>(I32)si4);
+si1=si3?si1:si2;
+i32_store(i->env__memory,(U64)si0,si1);
+si0=l3;
+si1=2U;
+si0+=si1;
+l3=si0;
+si0=l9;
+si1=2U;
+si0+=si1;
+l9=si0;
+si1=l10;
+si0=si0 != si1;
+if(si0){
+goto L5;
+}
+}
+}
+L4:;
+si0=l11;
+if(si0){
+si0=l7;
+si1=l3;
+si2=2U;
+si1<<=(si2&31);
+l3=si1;
+si0+=si1;
+l2=si0;
+si1=l2;
+si1=i32_load(i->env__memory,(U64)si1);
+l2=si1;
+si2=l1;
+si3=l5;
+si4=11200U;
+si3*=si4;
+si2+=si3;
+si3=l3;
+si2+=si3;
+si2=i32_load(i->env__memory,(U64)si2);
+si3=l8;
+si3=i32_load(i->env__memory,(U64)si3);
+si2+=si3;
+l3=si2;
+si3=l2;
+si4=l3;
+si3=(U32)((I32)si3<(I32)si4);
+si1=si3?si1:si2;
+i32_store(i->env__memory,(U64)si0,si1);
+}
+L6:;
+si0=l6;
+si1=1U;
+si0+=si1;
+l6=si0;
+si1=l0;
+si0=si0 != si1;
+if(si0){
+goto L3;
+}
+}
+si0=l5;
+si1=1U;
+si0+=si1;
+l5=si0;
+si1=l0;
+si0=si0 != si1;
+if(si0){
+goto L2;
+}
+}
+}
+L1:;
+L0:;
+}
+
+U32 f8(floydwarshallInstance*i,U32 l0,U32 l1) {
 U32 l2=0;
 U32 l3=0;
 U32 l4=0;
@@ -31,7 +207,7 @@ l5=si0;
 (*i->env_____stack_pointer)=si0;
 sj0=7840000ULL;
 si1=4U;
-si0=f8(i,sj0,si1);
+si0=f9(i,sj0,si1);
 l7=si0;
 L1:;
 {
@@ -324,7 +500,7 @@ L0:;
 return si0;
 }
 
-U32 f8(floydwarshallInstance*i,U64 l0,U32 l1) {
+U32 f9(floydwarshallInstance*i,U64 l0,U32 l1) {
 U32 si0,si1,si2;
 U64 sj0,sj1,sj2;
 sj0=l0;
@@ -359,8 +535,12 @@ void floydwarshall____wasm_apply_data_relocs(floydwarshallInstance*i){
 f6(i);
 }
 
+void floydwarshall_kernel_floyd_warshall(floydwarshallInstance*i,U32 l0,U32 l1){
+f7(i,l0,l1);
+}
+
 U32 floydwarshall_submain(floydwarshallInstance*i,U32 l0,U32 l1){
-return f7(i,l0,l1);
+return f8(i,l0,l1);
 }
 
 void floydwarshallInstantiate(floydwarshallInstance* i, void* resolve(const char* module, const char* name)) {

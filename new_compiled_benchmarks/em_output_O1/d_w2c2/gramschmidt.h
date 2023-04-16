@@ -29,13 +29,17 @@ void f7(gramschmidtInstance*);
 
 void f8(gramschmidtInstance*);
 
-U32 f9(gramschmidtInstance*,U32,U32);
+void f9(gramschmidtInstance*,U32,U32,U32,U32,U32);
 
-U32 f10(gramschmidtInstance*,U64,U32);
+U32 f10(gramschmidtInstance*,U32,U32);
+
+U32 f11(gramschmidtInstance*,U64,U32);
 
 void gramschmidt____wasm_call_ctors(gramschmidtInstance*i);
 
 void gramschmidt____wasm_apply_data_relocs(gramschmidtInstance*i);
+
+void gramschmidt_kernel_gramschmidt(gramschmidtInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4);
 
 U32 gramschmidt_submain(gramschmidtInstance*i,U32 l0,U32 l1);
 

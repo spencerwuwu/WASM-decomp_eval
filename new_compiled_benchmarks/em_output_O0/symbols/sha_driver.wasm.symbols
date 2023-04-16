@@ -4,9 +4,9 @@
 3:__wasm_apply_data_relocs
 4:local_memset
 5:local_memcpy
-6:sha_init
-7:sha_update
-8:sha_transform
+6:sha_transform
+7:sha_init
+8:sha_update
 9:sha_final
 10:sha_stream
 11:submain

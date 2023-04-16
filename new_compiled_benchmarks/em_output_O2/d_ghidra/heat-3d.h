@@ -57,27 +57,31 @@ typedef unsigned short    word;
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x87f)));
+typedef pointer pointer __((offset(0x6b2)));
 
-typedef pointer pointer __((offset(0x204)));
+typedef pointer pointer __((offset(0x662)));
 
-typedef pointer pointer __((offset(0x789)));
+typedef pointer pointer __((offset(0x676)));
 
-typedef pointer pointer __((offset(0x848)));
+typedef pointer pointer __((offset(0x823)));
 
-typedef pointer pointer __((offset(0x7d8)));
+typedef pointer pointer __((offset(0x83a)));
 
-typedef pointer pointer __((offset(0x79a)));
-
-typedef pointer pointer __((offset(0x38)));
+typedef pointer pointer __((offset(0x889)));
 
 typedef pointer pointer __((offset(0x28)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x74)));
+typedef pointer pointer __((offset(0x8f6)));
+
+typedef pointer pointer __((offset(0x84b)));
+
+typedef pointer pointer __((offset(0x640)));
 
 typedef pointer pointer __((offset(0x30)));
+
+typedef pointer pointer __((offset(0x92d)));
 
 typedef pointer pointer __((offset(0x17)));
 
@@ -228,6 +232,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_heat_3d(undefined8 param_1,int param_2,long param_3,long param_4);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

@@ -56,7 +56,7 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x1b0)));
+typedef pointer pointer __((offset(0x540)));
 
 typedef pointer pointer __((offset(0x2e)));
 
@@ -66,13 +66,13 @@ typedef pointer pointer __((offset(0x2c)));
 
 typedef pointer pointer __((offset(0x47)));
 
-typedef pointer pointer __((offset(0x100)));
-
 typedef pointer pointer __((offset(0x5f0)));
 
 typedef pointer pointer __((offset(0x18)));
 
 typedef pointer pointer __((offset(0x36)));
+
+typedef pointer pointer __((offset(0x440)));
 
 typedef pointer pointer __((offset(0x1)));
 
@@ -223,13 +223,13 @@ struct Elf64_Ehdr {
 
 
 
+void kernel_correlation(double param_1,int param_2,int param_3,long param_4,long param_5,long param_6,long param_7);
 undefined8 submain(int param_1,char **param_2);
 void init_array(undefined8 param_1,undefined8 param_2,undefined8 *param_3,long param_4);
-void kernel_correlation(double param_1,int param_2,int param_3,long param_4,long param_5,long param_6,long param_7);
 void print_array(void);
+double sqrt(double __x);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);
 void free(void * __ptr);
-double sqrt(double __x);
 int fprintf(FILE * __stream, char * __format, ...);
 

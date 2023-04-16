@@ -54,33 +54,37 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x213)));
+typedef pointer pointer __((offset(0x156)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x257)));
+typedef pointer pointer __((offset(0x18e)));
 
-typedef pointer pointer __((offset(0x19a)));
+typedef pointer pointer __((offset(0x168)));
 
-typedef pointer pointer __((offset(0x3d)));
+typedef pointer pointer __((offset(0x387)));
 
-typedef pointer pointer __((offset(0x5e)));
+typedef pointer pointer __((offset(0x16d)));
 
-typedef pointer pointer __((offset(0x192)));
+typedef pointer pointer __((offset(0x343)));
 
-typedef pointer pointer __((offset(0x38)));
+typedef pointer pointer __((offset(0x2de)));
+
+typedef pointer pointer __((offset(0x130)));
 
 typedef pointer pointer __((offset(0x28)));
 
+typedef pointer pointer __((offset(0x2c2)));
+
 typedef pointer pointer __((offset(0x26)));
+
+typedef pointer pointer __((offset(0x31c)));
+
+typedef pointer pointer __((offset(0x2ca)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
-
-typedef pointer pointer __((offset(0x1ec)));
-
-typedef pointer pointer __((offset(0x1ae)));
 
 typedef void _IO_lock_t;
 
@@ -189,6 +193,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
+
+struct Elf64_Sym {
+    dword st_name;
+    byte st_info;
+    byte st_other;
+    word st_shndx;
+    qword st_value;
+    qword st_size;
+};
+
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
 
 struct Elf64_Ehdr {
@@ -215,23 +230,13 @@ struct Elf64_Ehdr {
     word e_shstrndx;
 };
 
-typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
-
-struct Elf64_Sym {
-    dword st_name;
-    byte st_info;
-    byte st_other;
-    word st_shndx;
-    qword st_value;
-    qword st_size;
-};
 
 
 
-
+void kernel_durbin(int param_1,ulong *param_2,ulong *param_3);
 undefined8 submain(int param_1,char **param_2);
-undefined polybench_alloc_data();
 void * memcpy(void * __dest, void * __src, size_t __n);
+undefined polybench_alloc_data();
 void free(void * __ptr);
 size_t fwrite(void * __ptr, size_t __size, size_t __n, FILE * __s);
 int fprintf(FILE * __stream, char * __format, ...);

@@ -7,6 +7,7 @@ typedef unsigned long    qword;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
+typedef unsigned int    undefined4;
 typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
@@ -54,47 +55,53 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x372)));
+typedef pointer pointer __((offset(0x6c2)));
 
-typedef pointer pointer __((offset(0x47)));
+typedef pointer pointer __((offset(0x7f4)));
 
-typedef pointer pointer __((offset(0x362)));
+typedef pointer pointer __((offset(0x4a8)));
 
-typedef pointer pointer __((offset(0x36a)));
+typedef pointer pointer __((offset(0x80c)));
 
-typedef pointer pointer __((offset(0x82)));
-
-typedef pointer pointer __((offset(0x59)));
+typedef pointer pointer __((offset(0x282)));
 
 typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x23)));
+typedef pointer pointer __((offset(0x7ec)));
+
+typedef pointer pointer __((offset(0x440)));
+
+typedef pointer pointer __((offset(0x2a4)));
+
+typedef pointer pointer __((offset(0x205)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x35)));
+typedef pointer pointer __((offset(0x7fc)));
 
-typedef pointer pointer __((offset(0x242)));
+typedef pointer pointer __((offset(0x472)));
 
-typedef pointer pointer __((offset(0x393)));
+typedef pointer pointer __((offset(0x1b0)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x6b)));
+typedef pointer pointer __((offset(0x460)));
 
-typedef pointer pointer __((offset(0x473)));
+typedef pointer pointer __((offset(0x4c2)));
 
-typedef pointer pointer __((offset(0x43b)));
+typedef pointer pointer __((offset(0x496)));
+
+typedef pointer pointer __((offset(0x804)));
+
+typedef pointer pointer __((offset(0x814)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x37a)));
+typedef pointer pointer __((offset(0x484)));
 
-typedef pointer pointer __((offset(0x3d3)));
-
-typedef pointer pointer __((offset(0x382)));
+typedef pointer pointer __((offset(0x2d0)));
 
 typedef void _IO_lock_t;
 
@@ -243,10 +250,13 @@ struct Elf64_Ehdr {
 
 
 
+void init_array(uint param_1,uint param_2,uint param_3,uint param_4,undefined8 *param_5,undefined8 *param_6,long param_7,long param_8,long param_9,long param_10);
+void print_array(uint param_1,uint param_2,long param_3);
+void kernel_2mm(double param_1,double param_2,uint param_3,uint param_4,uint param_5,uint param_6,long param_7_00,long param_8_00,long param_7,long param_8,long param_9);
 undefined8 submain(int param_1,char **param_2);
-undefined polybench_alloc_data();
-void free(void * __ptr);
 size_t fwrite(void * __ptr, size_t __size, size_t __n, FILE * __s);
 int fprintf(FILE * __stream, char * __format, ...);
 int fputc(int __c, FILE * __stream);
+undefined polybench_alloc_data();
+void free(void * __ptr);
 

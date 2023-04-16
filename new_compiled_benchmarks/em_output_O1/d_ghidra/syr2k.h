@@ -54,39 +54,41 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x267)));
+typedef pointer pointer __((offset(0x131)));
 
-typedef pointer pointer __((offset(0x62)));
+typedef pointer pointer __((offset(0x357)));
 
-typedef pointer pointer __((offset(0x41)));
+typedef pointer pointer __((offset(0x282)));
 
-typedef pointer pointer __((offset(0x257)));
+typedef pointer pointer __((offset(0x367)));
 
-typedef pointer pointer __((offset(0x43)));
-
-typedef pointer pointer __((offset(0x278)));
-
-typedef pointer pointer __((offset(0x25f)));
-
-typedef pointer pointer __((offset(0x31)));
-
-typedef pointer pointer __((offset(0x182)));
+typedef pointer pointer __((offset(0x40e)));
 
 typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x26)));
-
-typedef pointer pointer __((offset(0x1f)));
-
-typedef pointer pointer __((offset(0x30e)));
+typedef pointer pointer __((offset(0x11f)));
 
 typedef pointer pointer __((offset(0x30)));
 
-typedef pointer pointer __((offset(0x2b9)));
-
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x342)));
+typedef pointer pointer __((offset(0x41)));
+
+typedef pointer pointer __((offset(0x162)));
+
+typedef pointer pointer __((offset(0x35f)));
+
+typedef pointer pointer __((offset(0x100)));
+
+typedef pointer pointer __((offset(0x378)));
+
+typedef pointer pointer __((offset(0x26)));
+
+typedef pointer pointer __((offset(0x3b9)));
+
+typedef pointer pointer __((offset(0x442)));
+
+typedef pointer pointer __((offset(0x143)));
 
 typedef void _IO_lock_t;
 
@@ -235,6 +237,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_syr2k(double param_1,double param_2,uint param_3,uint param_4,long param_5,long param_6,long param_7);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

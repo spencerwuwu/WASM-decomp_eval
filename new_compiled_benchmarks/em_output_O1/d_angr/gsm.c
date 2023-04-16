@@ -61,7 +61,7 @@ long long gsm_norm(unsigned long long a0)
         }
         a0 = !(a0);
     }
-    if (a0 >= 0 || a0 >= -1073741823)
+    if (a0 >= -1073741823 || a0 >= 0)
     {
         v1 = a0 / 0x10000;
         if ((unsigned short)(a0 >> 16) != 0)
@@ -359,7 +359,7 @@ int Autocorrelation(void* a0, unsigned long a1)
 
 extern char got.bitoff;
 
-int Reflection_coefficients(void* a0, void* a1)
+int Reflection_coefficients(void* a0, uint128_t *a1)
 {
     int tmp_37;  // tmp #37
     unsigned short v0;  // [bp-0x88], Other Possible Types: uint128_t
@@ -367,13 +367,14 @@ int Reflection_coefficients(void* a0, void* a1)
     int tmp_27;  // tmp #27
     int tmp_135;  // tmp #135
     int tmp_4;  // tmp #4
-    int v1;  // [bp-0x86], Other Possible Types: unsigned short
+    unsigned short v1;  // [bp-0x86], Other Possible Types: int
     unsigned short v2;  // [bp-0x78]
     unsigned short v3;  // [bp-0x68]
     unsigned long v4;  // [bp-0x66]
     unsigned long v5;  // [bp-0x60]
     unsigned short v6;  // [bp-0x58]
-    unsigned short v8;  // [bp-0x46], Other Possible Types: unsigned long
+    unsigned short v7;  // [bp-0x48]
+    unsigned long v8;  // [bp-0x46], Other Possible Types: unsigned short
     unsigned long v9;  // [bp-0x40]
     unsigned long long v11;  // rax
     void* v12;  // rcx
@@ -517,14 +518,14 @@ int Reflection_coefficients(void* a0, void* a1)
                     v34 = 1;
                     do
                     {
-                        *((unsigned int *)&v28) = (unsigned short)v8;
-                        *((unsigned int *)&v24) = (short)v1;
-                        v35 = ((unsigned int)v24 != -0x8000? (unsigned int)((unsigned int)v24 * (unsigned short)v8 + 0x4000 >> 15) : ((unsigned short)v8 == -0x8000? 32767 : (unsigned int)((unsigned int)v24 * (unsigned short)v8 + 0x4000 >> 15)));
-                        v36 = ((unsigned int)v24 != -0x8000? (unsigned int)((unsigned int)v24 * (short)v1 + 0x4000 >> 15) : ((short)v1 == -0x8000? 32767 : (unsigned int)((unsigned int)v24 * (short)v1 + 0x4000 >> 15)));
-                        *((unsigned short *)&v28) = (short)v8 + (unsigned short)v36;
+                        *((unsigned int *)&v28) = v7;
+                        *((unsigned int *)&v24) = *((short *)&((char *)&v0)[4]);
+                        v35 = ((unsigned int)v24 != -0x8000? (unsigned int)((unsigned int)v24 * v7 + 0x4000 >> 15) : (v7 == -0x8000? 32767 : (unsigned int)((unsigned int)v24 * v7 + 0x4000 >> 15)));
+                        v36 = ((unsigned int)v24 != -0x8000? (unsigned int)((unsigned int)v24 * *((short *)&((char *)&v0)[4]) + 0x4000 >> 15) : (*((short *)&((char *)&v0)[4]) == -0x8000? 32767 : (unsigned int)((unsigned int)v24 * *((short *)&((char *)&v0)[4]) + 0x4000 >> 15)));
+                        *((unsigned short *)&v28) = v7 + (unsigned short)v36;
                         *((unsigned short *)&v28) = ((char)[D] amd64g_calculate_condition(0x0<64>, 0x2<64>, Conv(16->64, Load(addr=((stack_base-48 + (r11<8> << 0x1<8>)) - 0x18<64>), size=2, endness=Iend_LE)), Conv(16->64, r13w<2>), cc_ndep<8>)? ... : rbx<8>);
                         v37 = ...;
-                        *((unsigned short *)&v24) = (short)v1 + (unsigned short)v35;
+                        *((unsigned short *)&v24) = *((short *)&((char *)&v0)[4]) + (unsigned short)v35;
                         *((unsigned short *)&v24) = ((char)[D] amd64g_calculate_condition(0x0<64>, 0x2<64>, Conv(16->64, Load(addr=((stack_base-48 + (r11<8> << 0x1<8>)) - 0x56<64>), size=2, endness=Iend_LE)), Conv(16->64, r15w<2>), cc_ndep<8>)? (unsigned int)*((unsigned long long *)&v37) : r14<8>);
                         v1 = v24;
                         v8 = v28;
@@ -561,7 +562,7 @@ int Reflection_coefficients(void* a0, void* a1)
         }
         return;
     }
-    *((int128_t *)a1) = 0;
+    *(a1) = 0;
     return;
 }
 

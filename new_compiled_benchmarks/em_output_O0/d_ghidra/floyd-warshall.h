@@ -64,11 +64,11 @@ typedef pointer pointer __((offset(0x2c)));
 
 typedef pointer pointer __((offset(0x43)));
 
-typedef pointer pointer __((offset(0x90)));
-
 typedef pointer pointer __((offset(0x18)));
 
-typedef pointer pointer __((offset(0x180)));
+typedef pointer pointer __((offset(0x1d0)));
+
+typedef pointer pointer __((offset(0x140)));
 
 typedef pointer pointer __((offset(0x2c0)));
 
@@ -223,9 +223,9 @@ struct Elf64_Sym {
 
 
 
+void kernel_floyd_warshall(int param_1,long param_2);
 undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,long param_2);
-void kernel_floyd_warshall(int param_1,long param_2);
 void print_array(void);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);

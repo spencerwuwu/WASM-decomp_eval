@@ -1,3 +1,77 @@
+long long kernel_bicg(unsigned int a0, unsigned int a1, unsigned long long a2, void* a3, void* a4, void* a5, unsigned long long *v2)
+{
+    unsigned long v0;  // [bp-0x38]
+    unsigned int v1;  // [bp-0x34]
+    unsigned long long v3;  // rax
+    void* v4;  // r15
+    unsigned long long v5;  // r12
+    unsigned long v6;  // rdi
+    unsigned long long v7;  // rbp
+    unsigned long v8;  // r13
+    unsigned long v9;  // rsi
+    void* v11;  // rdx
+    unsigned long long v12;  // cc_op
+    unsigned long long v13;  // cc_dep1
+    void* v14;  // cc_dep2
+    void* v15;  // rsi
+    uint128_t v16;  // xmm0
+    uint128_t v17;  // xmm0
+    unsigned long v18;  // cc_ndep
+    unsigned long long v19;  // cc_op
+    void* v20;  // cc_dep1
+    unsigned long long v21;  // cc_dep2
+    unsigned long v22;  // cc_ndep
+
+    v0 = v3;
+    v4 = a3;
+    v5 = a2;
+    v7 = v6;
+    v8 = v6;
+    if ((unsigned int)v6 > 0)
+    {
+        v1 = v9;
+        v3 = memset(a3, 0x0, v6 * 8);
+        a1 = v1;
+    }
+    if ((unsigned int)a1 > 0)
+    {
+        v11 = 0;
+        do
+        {
+            *((long long *)((char *)a4 + 0x8 * v11)) = 0;
+            v12 = 19;
+            v13 = v7;
+            v14 = 0;
+            if ((unsigned int)v7 > 0)
+            {
+                v15 = 0;
+                do
+                {
+                    v16 = 0;
+                    *((unsigned long long *)&v16) = *(v2);
+                    xmm0lq<8> = Conv(128->64, ((xmm0<16> * Conv(64->128, Load(addr=(((0x0<64> * 0x3b60<64>) + r12<8>) + (rsi<8> * 0x8<64>)), size=8, endness=Iend_LE))) + Conv(64->128, Load(addr=(r15<8> + (rsi<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+                    *((unsigned long long *)((char *)v4 + 0x8 * v15)) = v16;
+                    v17 = 0;
+                    *((unsigned long long *)&v17) = *((long long *)(0 * 15200 + v5 + v15 * 8));
+                    xmm0lq<8> = Conv(128->64, ((xmm0<16> * Conv(64->128, Load(addr=(r9<8> + (rsi<8> * 0x8<64>)), size=8, endness=Iend_LE))) + Conv(64->128, Load(addr=r8<8>, size=8, endness=Iend_LE))))
+                    *((unsigned long long *)a4) = v17;
+                    v18 = (0 * 15200 + v5 <= 0 * 15200? 1 : 0);
+                    v15 += 1;
+                    v19 = 8;
+                    v20 = v15;
+                    v21 = v8;
+                }
+                while (v15 != v8);
+            }
+            v22 = [D] amd64g_calculate_rflags_c(cc_op<8>, cc_dep1<8>, cc_dep2<8>, cc_ndep<8>);
+            v11 += 1;
+        }
+        while (v11 != a1);
+        return v2;
+    }
+    return v3;
+}
+
 extern char .L.str.3;
 extern char .L.str.7;
 extern char got.stderr;

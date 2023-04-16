@@ -21,6 +21,7 @@ CLIBS = [
         "gettimeofday",
         "rtclock",
         "print_array",
+        "init_array",
         "submain",
         ]
 
@@ -134,10 +135,16 @@ def _map_symbol_to_orig(symbols, tree_dict, filename):
 def _map_symbol_to_w2c2(symbols, tree_dict, filename):
     symbol_map = []
     for symbol in symbols:
+        if "_" in filename:
+            filename = filename.replace("_", "")
+        if "-" in filename:
+            filename = filename.replace("-", "")
         target = "%s_%s" % (filename, symbol)
         if target not in tree_dict:
-            log.error(f'Cannot find {target} in d_w2c2/{filename}')
-            continue
+            if target not in tree_dict:
+                target = "%s_%s" % (filename, symbol.replace("_", "X5"))
+                log.error(f'Cannot find {target} in d_w2c2/{filename}')
+                continue
         next_callee = find_first_callee(tree_dict[target])
         log.debug("  %s -> %s" % (symbol, next_callee))
         symbol_map.append((symbol, next_callee))
@@ -147,10 +154,17 @@ def _map_symbol_to_w2c2(symbols, tree_dict, filename):
 def _map_symbol_to_wasm2c(symbols, tree_dict, filename):
     symbol_map = []
     for symbol in symbols:
+        if "_" in filename:
+            filename = filename.replace("_", "__")
+        if "-" in filename:
+            filename = filename.replace("-", "0x2D")
         target = "w2c_%s_%s_0" % (filename, symbol)
         if target not in tree_dict:
-            log.error(f'Cannot find {target} in d_wasm2c/{filename}')
-            continue
+            # imported symbols don't have sufix 0
+            target = "w2c_%s_%s" % (filename, symbol)
+            if target not in tree_dict:
+                log.error(f'Cannot find {target} in d_wasm2c/{filename}')
+                continue
         symbol_map.append((symbol, target))
         log.debug("  %s -> %s" % (symbol, target))
     return symbol_map
@@ -252,7 +266,6 @@ def main():
             process(base_dir, filename)
             log.info(f'Done {wasm_dir} {filename}')
             log.info(f'===========================\n\n')
-        break
 
 
 if __name__ == '__main__':

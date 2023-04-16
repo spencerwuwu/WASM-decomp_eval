@@ -55,33 +55,35 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x39)));
-
 typedef pointer pointer __((offset(0x41)));
+
+typedef pointer pointer __((offset(0x164)));
 
 typedef pointer pointer __((offset(0x2c)));
 
-typedef pointer pointer __((offset(0x22)));
+typedef pointer pointer __((offset(0x16b)));
 
-typedef pointer pointer __((offset(0x230)));
+typedef pointer pointer __((offset(0x1e1)));
 
-typedef pointer pointer __((offset(0x73)));
+typedef pointer pointer __((offset(0x152)));
 
-typedef pointer pointer __((offset(0x34)));
+typedef pointer pointer __((offset(0x2b0)));
 
-typedef pointer pointer __((offset(0x18b)));
+typedef pointer pointer __((offset(0x1ac)));
 
-typedef pointer pointer __((offset(0x270)));
+typedef pointer pointer __((offset(0x130)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x17a)));
+typedef pointer pointer __((offset(0x279)));
+
+typedef pointer pointer __((offset(0x1c1)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x172)));
+typedef pointer pointer __((offset(0x21c)));
 
 typedef pointer pointer __((offset(0x1cb)));
 
@@ -232,6 +234,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_nussinov(int param_1,long param_2,long param_3);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void * memset(void * __s, int __c, size_t __n);

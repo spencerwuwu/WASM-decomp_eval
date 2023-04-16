@@ -1,4 +1,4 @@
-long long kernel_doitgen(unsigned int a0, unsigned int a1, unsigned long long a2, unsigned long a3, unsigned long a4, unsigned long long a5)
+long long kernel_doitgen(unsigned int a0, unsigned long long a1, unsigned int a2, unsigned long a3, unsigned long a4, unsigned long long a5)
 {
     unsigned long v1;  // rdi
     void* v2;  // r11, Other Possible Types: unsigned long long

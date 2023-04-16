@@ -2,43 +2,6 @@
 
 
 
-undefined8 submain(int param_1,char **param_2)
-
-{
-  int iVar1;
-  void *__ptr;
-  void *__ptr_00;
-  
-  __ptr = (void *)polybench_alloc_data(2000,8);
-  __ptr_00 = (void *)polybench_alloc_data(2000,8);
-  init_array(2000,__ptr);
-  kernel_durbin(2000,__ptr,__ptr_00);
-  if (0x2a < param_1) {
-    iVar1 = strcmp(*param_2,"");
-    if (iVar1 == 0) {
-      print_array(2000,__ptr_00);
-    }
-  }
-  free(__ptr);
-  free(__ptr_00);
-  return 0;
-}
-
-
-
-void init_array(int param_1,long param_2)
-
-{
-  int local_1c;
-  
-  for (local_1c = 0; local_1c < param_1; local_1c = local_1c + 1) {
-    *(double *)(param_2 + (long)local_1c * 8) = (double)((param_1 + 1) - local_1c);
-  }
-  return;
-}
-
-
-
 void kernel_durbin(int param_1,ulong *param_2,ulong *param_3)
 
 {
@@ -70,6 +33,43 @@ void kernel_durbin(int param_1,ulong *param_2,ulong *param_3)
       param_3[local_3ec4] = (ulong)adStack_3ea8[local_3ec4];
     }
     param_3[local_3ec8] = (ulong)local_3eb0;
+  }
+  return;
+}
+
+
+
+undefined8 submain(int param_1,char **param_2)
+
+{
+  int iVar1;
+  void *__ptr;
+  void *__ptr_00;
+  
+  __ptr = (void *)polybench_alloc_data(2000,8);
+  __ptr_00 = (void *)polybench_alloc_data(2000,8);
+  init_array(2000,__ptr);
+  kernel_durbin(2000,__ptr,__ptr_00);
+  if (0x2a < param_1) {
+    iVar1 = strcmp(*param_2,"");
+    if (iVar1 == 0) {
+      print_array(2000,__ptr_00);
+    }
+  }
+  free(__ptr);
+  free(__ptr_00);
+  return 0;
+}
+
+
+
+void init_array(int param_1,long param_2)
+
+{
+  int local_1c;
+  
+  for (local_1c = 0; local_1c < param_1; local_1c = local_1c + 1) {
+    *(double *)(param_2 + (long)local_1c * 8) = (double)((param_1 + 1) - local_1c);
   }
   return;
 }

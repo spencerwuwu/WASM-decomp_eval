@@ -1,3 +1,73 @@
+long long kernel_syr2k(unsigned int a0, unsigned int a1, unsigned long a2, unsigned long a3, unsigned long a4)
+{
+    unsigned long v1;  // rdi
+    void* v3;  // r10
+    unsigned long v4;  // rax
+    void* v5;  // rbx
+    void* v6;  // r11
+    uint128_t v7;  // xmm2
+    int v8;  // xmm1
+    unsigned long v9;  // rsi
+    unsigned long long v10;  // rbx
+    unsigned long long *v11;  // r14
+    unsigned long long *v12;  // r15
+    void* v13;  // r12
+    uint128_t v14;  // xmm2
+    uint128_t v15;  // xmm3
+    int v16;  // xmm0
+    uint128_t v17;  // xmm3
+    unsigned long long v18;  // r10
+    unsigned long long v19;  // r9
+
+    if ((unsigned int)v1 > 0)
+    {
+        v3 = 0;
+        do
+        {
+            v5 = 0;
+            do
+            {
+                v6 = v3 * 9600 + a2;
+                v7 = 0;
+                *((unsigned long long *)&v7) = *((long long *)(v3 * 9600 + a2 + v5 * 8));
+                *((unsigned long long *)&v7) = (unsigned long long)(v7 * v8);
+                *((unsigned long long *)(v3 * 9600 + a2 + v5 * 8)) = v7;
+                v5 += 1;
+            }
+            while (v5 != 1);
+            if ((unsigned int)v9 > 0)
+            {
+                v10 = 0;
+                do
+                {
+                    v11 = a4 + 0 * 8000 + v10 * 8;
+                    v12 = 0 * 8000 + a3 + v10 * 8;
+                    v13 = 0;
+                    do
+                    {
+                        v14 = 0;
+                        *((unsigned long long *)&v14) = *((long long *)(a3 + v13 * 8000 + v10 * 8));
+                        v15 = 0;
+                        *((unsigned long long *)&v15) = *((long long *)(v13 * 8000 + a4 + v10 * 8));
+                        xmm3<16> = ((xmm3<16> * xmm0<16>) * Conv(64->128, Load(addr=r15<8>, size=8, endness=Iend_LE)))
+                        xmm2lq<8> = Conv(128->64, ((((xmm2<16> * xmm0<16>) * Conv(64->128, Load(addr=r14<8>, size=8, endness=Iend_LE))) + xmm3<16>) + Conv(64->128, Load(addr=(r11<8> + (r12<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+                        *((unsigned long long *)((char *)v6 + 0x8 * v13)) = v14;
+                        v13 += 1;
+                    }
+                    while (v13 != 1);
+                    v10 = 1;
+                }
+                while (v9 != 1);
+            }
+            v18 = 1;
+            v19 = 2;
+        }
+        while (v1 != 1);
+        return v1;
+    }
+    return v4;
+}
+
 extern char .L.str.3;
 extern char got.stderr;
 

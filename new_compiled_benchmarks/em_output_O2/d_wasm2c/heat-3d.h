@@ -84,6 +84,9 @@ void w2c_heat0x2D3d_0x5F_wasm_call_ctors(w2c_heat0x2D3d*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_heat0x2D3d_0x5F_wasm_apply_data_relocs(w2c_heat0x2D3d*);
 
+/* export: 'kernel_heat_3d' */
+void w2c_heat0x2D3d_kernel_heat_3d(w2c_heat0x2D3d*, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_heat0x2D3d_submain(w2c_heat0x2D3d*, u32, u32);
 

@@ -2,6 +2,48 @@
 
 
 
+void kernel_durbin(int param_1,ulong *param_2,ulong *param_3)
+
+{
+  ulong uVar1;
+  ulong uVar2;
+  ulong uVar3;
+  double dVar4;
+  double dVar5;
+  double dVar6;
+  double local_3eb8 [2001];
+  
+  *param_3 = *param_2 ^ 0x8000000000000000;
+  if (1 < param_1) {
+    dVar4 = (double)(*param_2 ^ 0x8000000000000000);
+    dVar6 = 1.0;
+    uVar3 = 1;
+    uVar2 = 0;
+    do {
+      dVar5 = 0.0;
+      uVar1 = 0;
+      do {
+        dVar5 = dVar5 + (double)param_2[~uVar1 + uVar3] * (double)param_3[uVar1];
+        uVar1 = uVar1 + 1;
+      } while (uVar1 != uVar3);
+      dVar6 = dVar6 * (1.0 - dVar4 * dVar4);
+      dVar4 = (double)((ulong)(dVar5 + (double)param_2[uVar3]) ^ 0x8000000000000000) / dVar6;
+      uVar1 = 0;
+      do {
+        local_3eb8[uVar1] = (double)param_3[~uVar1 + uVar3] * dVar4 + (double)param_3[uVar1];
+        uVar1 = uVar1 + 1;
+      } while (uVar1 != uVar3);
+      memcpy(param_3,local_3eb8,uVar2 * 8 + 8);
+      param_3[uVar3] = (ulong)dVar4;
+      uVar3 = uVar3 + 1;
+      uVar2 = uVar2 + 1;
+    } while (uVar2 != param_1 - 1);
+  }
+  return;
+}
+
+
+
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined8 submain(int param_1,char **param_2)
@@ -46,12 +88,12 @@ undefined8 submain(int param_1,char **param_2)
     } while (uVar2 != uVar3);
     memcpy(__dest,local_3eb8,lVar1 * 8 + 8);
     __dest[uVar3] = (ulong)dVar5;
-    __stream = _DAT_d93d8d48388b4c;
+    __stream = _DAT_f13d8d48388b4c;
     uVar3 = uVar3 + 1;
     lVar1 = lVar1 + 1;
   } while (lVar1 != 1999);
   if ((0x2a < param_1) && (**param_2 == '\0')) {
-    fwrite(_L_str_1,0x16,1,_DAT_d93d8d48388b4c);
+    fwrite(_L_str_1,0x16,1,_DAT_f13d8d48388b4c);
     lVar1 = 0;
     fprintf(__stream,"begin dump: %s",&_L_str_3);
     do {

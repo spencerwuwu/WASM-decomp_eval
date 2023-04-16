@@ -2,6 +2,118 @@
 
 
 
+void kernel_syr2k(double param_1,double param_2,uint param_3,uint param_4,long param_5,long param_6,
+                 long param_7)
+
+{
+  double *pdVar1;
+  double *pdVar2;
+  long lVar3;
+  double *pdVar4;
+  double dVar5;
+  double dVar6;
+  ulong uVar7;
+  ulong uVar8;
+  long lVar9;
+  ulong uVar10;
+  ulong uVar11;
+  ulong uVar12;
+  long lVar13;
+  ulong uVar14;
+  ulong uVar15;
+  bool bVar16;
+  bool bVar17;
+  
+  if (0 < (int)param_3) {
+    uVar12 = 1;
+    uVar7 = 0;
+    do {
+      uVar10 = uVar7 * 0x2580 + param_5;
+      if (3 < uVar12) {
+        uVar8 = uVar12 & 0x7ffffffffffffffc;
+        uVar11 = 0;
+        do {
+          pdVar1 = (double *)(uVar10 + uVar11 * 8);
+          pdVar2 = (double *)(uVar10 + 0x10 + uVar11 * 8);
+          dVar5 = pdVar2[1];
+          *(undefined (*) [16])(uVar10 + uVar11 * 8) =
+               CONCAT88(pdVar1[1] * param_2,*pdVar1 * param_2);
+          *(undefined (*) [16])(uVar10 + 0x10 + uVar11 * 8) =
+               CONCAT88(dVar5 * param_2,*pdVar2 * param_2);
+          uVar11 = uVar11 + 4;
+          if (uVar11 == uVar8) goto joined_r0x001000da;
+        } while( true );
+      }
+      uVar8 = 0;
+      do {
+        *(double *)(uVar10 + uVar8 * 8) = *(double *)(uVar10 + uVar8 * 8) * param_2;
+        uVar8 = uVar8 + 1;
+joined_r0x001000da:
+      } while (uVar12 != uVar8);
+      if (0 < (int)param_4) {
+        lVar13 = uVar7 * 8000;
+        uVar8 = uVar7 * 0x2588 + param_5 + 8;
+        uVar11 = 0;
+        do {
+          pdVar1 = (double *)(param_7 + lVar13 + uVar11 * 8);
+          pdVar2 = (double *)(param_6 + lVar13 + uVar11 * 8);
+          if (uVar12 < 8) {
+            uVar14 = 0;
+          }
+          else {
+            lVar9 = lVar13 + uVar11 * 8;
+            lVar3 = lVar13 + 8 + uVar11 * 8;
+            bVar16 = uVar10 < (ulong)(lVar3 + param_6);
+            bVar17 = uVar10 < (ulong)(param_7 + lVar3);
+            if (((bVar16 && (ulong)(lVar9 + param_6) < uVar8) ||
+                (bVar16 && param_6 + uVar11 * 8 < uVar8)) ||
+               (param_7 + uVar11 * 8 < uVar8 && bVar17)) {
+              uVar14 = 0;
+            }
+            else {
+              uVar14 = 0;
+              if (!bVar17 || uVar8 <= (ulong)(param_7 + lVar9)) {
+                dVar5 = *pdVar1;
+                dVar6 = *pdVar2;
+                uVar15 = 0;
+                do {
+                  lVar9 = (uVar15 | 1) * 8000;
+                  pdVar4 = (double *)(uVar10 + uVar15 * 8);
+                  *(undefined (*) [16])(uVar10 + uVar15 * 8) =
+                       CONCAT88(pdVar4[1] +
+                                *(double *)(lVar9 + param_7 + uVar11 * 8) * param_1 * dVar6 +
+                                *(double *)(param_6 + lVar9 + uVar11 * 8) * param_1 * dVar5,
+                                *pdVar4 + *(double *)(uVar15 * 8000 + param_7 + uVar11 * 8) *
+                                          param_1 * dVar6 +
+                                          *(double *)(param_6 + uVar15 * 8000 + uVar11 * 8) *
+                                          param_1 * dVar5);
+                  uVar15 = uVar15 + 2;
+                  uVar14 = uVar12 & 0x7ffffffffffffffe;
+                  if (uVar15 == (uVar12 & 0x7ffffffffffffffe)) goto joined_r0x0010028c;
+                } while( true );
+              }
+            }
+          }
+          do {
+            *(double *)(uVar10 + uVar14 * 8) =
+                 *(double *)(param_6 + uVar14 * 8000 + uVar11 * 8) * param_1 * *pdVar1 +
+                 *(double *)(uVar14 * 8000 + param_7 + uVar11 * 8) * param_1 * *pdVar2 +
+                 *(double *)(uVar10 + uVar14 * 8);
+            uVar14 = uVar14 + 1;
+joined_r0x0010028c:
+          } while (uVar12 != uVar14);
+          uVar11 = uVar11 + 1;
+        } while (uVar11 != param_4);
+      }
+      uVar7 = uVar7 + 1;
+      uVar12 = uVar12 + 1;
+    } while (uVar7 != param_3);
+  }
+  return;
+}
+
+
+
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined8 submain(int param_1,char **param_2)
@@ -39,8 +151,8 @@ undefined8 submain(int param_1,char **param_2)
   __ptr = (void *)polybench_alloc_data(0x15f900,8);
   __ptr_00 = (void *)polybench_alloc_data(1200000,8);
   __ptr_01 = (void *)polybench_alloc_data(1200000,8);
-  auVar6 = __LCPI0_7;
-  auVar23 = __LCPI0_3;
+  auVar6 = __LCPI1_7;
+  auVar23 = __LCPI1_3;
   lVar11 = 0;
   uVar7 = 0;
   do {
@@ -74,7 +186,7 @@ undefined8 submain(int param_1,char **param_2)
         uVar16 = uVar16 + 2;
       } while (lVar14 != 1000);
     }
-    auVar20 = __LCPI0_11;
+    auVar20 = __LCPI1_11;
     uVar7 = uVar7 + 1;
   } while (uVar7 != 0x4b0);
   lVar12 = 0;
@@ -109,18 +221,18 @@ undefined8 submain(int param_1,char **param_2)
         *(undefined (*) [16])((long)pvVar13 + uVar17 * 8 + 0x10) = CONCAT88(dVar5 * 1.2,dVar4 * 1.2)
         ;
         uVar17 = uVar17 + 4;
-        if (uVar17 == uVar16) goto joined_r0x001003ee;
+        if (uVar17 == uVar16) goto joined_r0x001006de;
       } while( true );
     }
     uVar16 = 0;
     do {
       *(double *)((long)pvVar13 + uVar16 * 8) = *(double *)((long)pvVar13 + uVar16 * 8) * 1.2;
       uVar16 = uVar16 + 1;
-joined_r0x001003ee:
+joined_r0x001006de:
     } while (uVar7 != uVar16);
-                    // WARNING: Read-only address (ram,0x00100750) is written
-                    // WARNING: Read-only address (ram,0x00100790) is written
-                    // WARNING: Read-only address (ram,0x001007b0) is written
+                    // WARNING: Read-only address (ram,0x00100a40) is written
+                    // WARNING: Read-only address (ram,0x00100a80) is written
+                    // WARNING: Read-only address (ram,0x00100aa0) is written
     pvVar8 = (void *)((long)__ptr + lVar12 * 0x2588 + 8);
     lVar14 = 0;
     do {
@@ -159,7 +271,7 @@ joined_r0x001003ee:
               uVar17 = uVar17 + 2;
               uVar16 = uVar7 & 0x7ffffffffffffffe;
               __s = _DAT_1cc3d8d48188b48;
-              if (uVar17 == (uVar7 & 0x7ffffffffffffffe)) goto joined_r0x001005de;
+              if (uVar17 == (uVar7 & 0x7ffffffffffffffe)) goto joined_r0x001008ce;
             } while( true );
           }
         }
@@ -171,7 +283,7 @@ joined_r0x001003ee:
              *(double *)((long)pvVar13 + uVar16 * 8);
         uVar16 = uVar16 + 1;
         __s = _DAT_1cc3d8d48188b48;
-joined_r0x001005de:
+joined_r0x001008ce:
         _DAT_1cc3d8d48188b48 = __s;
       } while (uVar7 != uVar16);
       lVar14 = lVar14 + 1;

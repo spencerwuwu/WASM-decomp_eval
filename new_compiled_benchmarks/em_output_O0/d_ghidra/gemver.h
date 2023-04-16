@@ -65,13 +65,13 @@ typedef pointer pointer __((offset(0x660)));
 
 typedef pointer pointer __((offset(0x18)));
 
+typedef pointer pointer __((offset(0x480)));
+
+typedef pointer pointer __((offset(0x270)));
+
 typedef pointer pointer __((offset(0x2b)));
 
-typedef pointer pointer __((offset(0x3f0)));
-
 typedef pointer pointer __((offset(0x44)));
-
-typedef pointer pointer __((offset(0x210)));
 
 typedef pointer pointer __((offset(0x1)));
 
@@ -222,9 +222,9 @@ struct Elf64_Sym {
 
 
 
+void kernel_gemver(double param_1,double param_2,int param_3,long param_4,long param_5,long param_6,long param_7_00,long param_8_00,long param_7,long param_8,long param_9,long param_10);
 undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,undefined8 *param_2,undefined8 *param_3,long param_4,long param_5,long param_6,long param_7,long param_8,long param_9,long param_10,long param_11,long param_12);
-void kernel_gemver(double param_1,double param_2,int param_3,long param_4,long param_5,long param_6,long param_7_00,long param_8_00,long param_7,long param_8,long param_9,long param_10);
 void print_array(void);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);

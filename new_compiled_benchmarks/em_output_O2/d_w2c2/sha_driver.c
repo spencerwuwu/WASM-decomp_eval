@@ -166,171 +166,6 @@ L0:;
 
 void f8(shadriverInstance*i) {
 U32 l0=0;
-U32 si0,si1;
-U64 sj1;
-si0=(*i->GOTX2Emem__sha_info_digest);
-l0=si0;
-si1=-1009589776U;
-i32_store(i->env__memory,(U64)si0+16U,si1);
-si0=l0;
-sj1=1167088121787636990ULL;
-i64_store(i->env__memory,(U64)si0+8U,sj1);
-si0=l0;
-sj1=-1167088121787636991ULL;
-i64_store(i->env__memory,(U64)si0,sj1);
-si0=(*i->GOTX2Emem__sha_info_count_lo);
-si1=0U;
-i32_store(i->env__memory,(U64)si0,si1);
-si0=(*i->GOTX2Emem__sha_info_count_hi);
-si1=0U;
-i32_store(i->env__memory,(U64)si0,si1);
-L0:;
-}
-
-void f9(shadriverInstance*i,U32 l0,U32 l1) {
-U32 l2=0;
-U32 l3=0;
-U32 l4=0;
-U32 l5=0;
-U32 si0,si1,si2,si3,si4;
-si0=(*i->GOTX2Emem__sha_info_count_lo);
-l2=si0;
-si1=l2;
-si1=i32_load(i->env__memory,(U64)si1);
-l2=si1;
-si2=l1;
-si3=3U;
-si2<<=(si3&31);
-l3=si2;
-si1+=si2;
-i32_store(i->env__memory,(U64)si0,si1);
-si0=(*i->GOTX2Emem__sha_info_count_hi);
-l4=si0;
-si1=l4;
-si1=i32_load(i->env__memory,(U64)si1);
-si2=l3;
-si3=l2;
-si4=-1U;
-si3^=si4;
-si2=si2 > si3;
-si1+=si2;
-si2=l1;
-si3=29U;
-si2>>=(si3&31);
-si1+=si2;
-i32_store(i->env__memory,(U64)si0,si1);
-si0=l1;
-si1=64U;
-si0=(U32)((I32)si0<(I32)si1);
-if(si0){
-si0=l1;
-l3=si0;
-goto L1;
-}
-L2:;
-L3:;
-{
-si0=(*i->GOTX2Emem__sha_info_data);
-l2=si0;
-si0=16U;
-l4=si0;
-si0=l0;
-l3=si0;
-L4:;
-{
-si0=l2;
-si1=l3;
-si1=i32_load(i->env__memory,(U64)si1);
-i32_store(i->env__memory,(U64)si0,si1);
-si0=l2;
-si1=l3;
-si1=i32_load(i->env__memory,(U64)si1+4U);
-i32_store(i->env__memory,(U64)si0+4U,si1);
-si0=l2;
-si1=8U;
-si0+=si1;
-l2=si0;
-si0=l3;
-si1=8U;
-si0+=si1;
-l3=si0;
-si0=l4;
-si1=2U;
-si0=si0 != si1;
-l5=si0;
-si0=l4;
-si1=2U;
-si0-=si1;
-l4=si0;
-si0=l5;
-if(si0){
-goto L4;
-}
-}
-si0=l0;
-si1=-64U;
-si0-=si1;
-l0=si0;
-si0=l1;
-si1=127U;
-si0=(U32)((I32)si0>(I32)si1);
-l2=si0;
-f10(i);
-si0=l1;
-si1=-64U;
-si0+=si1;
-l3=si0;
-l1=si0;
-si0=l2;
-if(si0){
-goto L3;
-}
-}
-L1:;
-si0=l3;
-si1=4U;
-si0=(U32)((I32)si0>=(I32)si1);
-if(si0){
-si0=l3;
-si1=2U;
-si0>>=(si1&31);
-l2=si0;
-si0=(*i->GOTX2Emem__sha_info_data);
-l3=si0;
-L6:;
-{
-si0=l3;
-si1=l0;
-si1=i32_load(i->env__memory,(U64)si1);
-i32_store(i->env__memory,(U64)si0,si1);
-si0=l3;
-si1=4U;
-si0+=si1;
-l3=si0;
-si0=l0;
-si1=4U;
-si0+=si1;
-l0=si0;
-si0=l2;
-si1=1U;
-si0=si0 > si1;
-l4=si0;
-si0=l2;
-si1=1U;
-si0-=si1;
-l2=si0;
-si0=l4;
-if(si0){
-goto L6;
-}
-}
-}
-L5:;
-L0:;
-}
-
-void f10(shadriverInstance*i) {
-U32 l0=0;
 U32 l1=0;
 U32 l2=0;
 U32 l3=0;
@@ -678,6 +513,171 @@ si0+=si1;
 L0:;
 }
 
+void f9(shadriverInstance*i) {
+U32 l0=0;
+U32 si0,si1;
+U64 sj1;
+si0=(*i->GOTX2Emem__sha_info_digest);
+l0=si0;
+si1=-1009589776U;
+i32_store(i->env__memory,(U64)si0+16U,si1);
+si0=l0;
+sj1=1167088121787636990ULL;
+i64_store(i->env__memory,(U64)si0+8U,sj1);
+si0=l0;
+sj1=-1167088121787636991ULL;
+i64_store(i->env__memory,(U64)si0,sj1);
+si0=(*i->GOTX2Emem__sha_info_count_lo);
+si1=0U;
+i32_store(i->env__memory,(U64)si0,si1);
+si0=(*i->GOTX2Emem__sha_info_count_hi);
+si1=0U;
+i32_store(i->env__memory,(U64)si0,si1);
+L0:;
+}
+
+void f10(shadriverInstance*i,U32 l0,U32 l1) {
+U32 l2=0;
+U32 l3=0;
+U32 l4=0;
+U32 l5=0;
+U32 si0,si1,si2,si3,si4;
+si0=(*i->GOTX2Emem__sha_info_count_lo);
+l2=si0;
+si1=l2;
+si1=i32_load(i->env__memory,(U64)si1);
+l2=si1;
+si2=l1;
+si3=3U;
+si2<<=(si3&31);
+l3=si2;
+si1+=si2;
+i32_store(i->env__memory,(U64)si0,si1);
+si0=(*i->GOTX2Emem__sha_info_count_hi);
+l4=si0;
+si1=l4;
+si1=i32_load(i->env__memory,(U64)si1);
+si2=l3;
+si3=l2;
+si4=-1U;
+si3^=si4;
+si2=si2 > si3;
+si1+=si2;
+si2=l1;
+si3=29U;
+si2>>=(si3&31);
+si1+=si2;
+i32_store(i->env__memory,(U64)si0,si1);
+si0=l1;
+si1=64U;
+si0=(U32)((I32)si0<(I32)si1);
+if(si0){
+si0=l1;
+l3=si0;
+goto L1;
+}
+L2:;
+L3:;
+{
+si0=(*i->GOTX2Emem__sha_info_data);
+l2=si0;
+si0=16U;
+l4=si0;
+si0=l0;
+l3=si0;
+L4:;
+{
+si0=l2;
+si1=l3;
+si1=i32_load(i->env__memory,(U64)si1);
+i32_store(i->env__memory,(U64)si0,si1);
+si0=l2;
+si1=l3;
+si1=i32_load(i->env__memory,(U64)si1+4U);
+i32_store(i->env__memory,(U64)si0+4U,si1);
+si0=l2;
+si1=8U;
+si0+=si1;
+l2=si0;
+si0=l3;
+si1=8U;
+si0+=si1;
+l3=si0;
+si0=l4;
+si1=2U;
+si0=si0 != si1;
+l5=si0;
+si0=l4;
+si1=2U;
+si0-=si1;
+l4=si0;
+si0=l5;
+if(si0){
+goto L4;
+}
+}
+si0=l0;
+si1=-64U;
+si0-=si1;
+l0=si0;
+si0=l1;
+si1=127U;
+si0=(U32)((I32)si0>(I32)si1);
+l2=si0;
+f8(i);
+si0=l1;
+si1=-64U;
+si0+=si1;
+l3=si0;
+l1=si0;
+si0=l2;
+if(si0){
+goto L3;
+}
+}
+L1:;
+si0=l3;
+si1=4U;
+si0=(U32)((I32)si0>=(I32)si1);
+if(si0){
+si0=l3;
+si1=2U;
+si0>>=(si1&31);
+l2=si0;
+si0=(*i->GOTX2Emem__sha_info_data);
+l3=si0;
+L6:;
+{
+si0=l3;
+si1=l0;
+si1=i32_load(i->env__memory,(U64)si1);
+i32_store(i->env__memory,(U64)si0,si1);
+si0=l3;
+si1=4U;
+si0+=si1;
+l3=si0;
+si0=l0;
+si1=4U;
+si0+=si1;
+l0=si0;
+si0=l2;
+si1=1U;
+si0=si0 > si1;
+l4=si0;
+si0=l2;
+si1=1U;
+si0-=si1;
+l2=si0;
+si0=l4;
+if(si0){
+goto L6;
+}
+}
+}
+L5:;
+L0:;
+}
+
 void f11(shadriverInstance*i) {
 U32 l0=0;
 U32 l1=0;
@@ -725,7 +725,7 @@ si1=0U;
 i32_store(i->env__memory,(U64)si0,si1);
 }
 L3:;
-f10(i);
+f8(i);
 si0=(*i->GOTX2Emem__sha_info_data);
 l0=si0;
 sj1=0ULL;
@@ -777,7 +777,7 @@ i32_store(i->env__memory,(U64)si0+60U,si1);
 si0=l0;
 si1=l3;
 i32_store(i->env__memory,(U64)si0+56U,si1);
-f10(i);
+f8(i);
 L0:;
 }
 
@@ -809,12 +809,12 @@ i32_store(i->env__memory,(U64)si0,si1);
 si0=(*i->GOTX2Emem__indata);
 l2=si0;
 si1=8192U;
-f9(i,si0,si1);
+f10(i,si0,si1);
 si0=l2;
 si1=-8192U;
 si0-=si1;
 si1=8192U;
-f9(i,si0,si1);
+f10(i,si0,si1);
 si0=(*i->GOTX2Emem__sha_info_data);
 si1=l0;
 si1=i32_load(i->env__memory,(U64)si1);
@@ -855,7 +855,7 @@ si1=0U;
 i32_store(i->env__memory,(U64)si0,si1);
 }
 L3:;
-f10(i);
+f8(i);
 si0=(*i->GOTX2Emem__sha_info_data);
 l0=si0;
 sj1=0ULL;
@@ -907,7 +907,7 @@ i32_store(i->env__memory,(U64)si0+60U,si1);
 si0=l0;
 si1=l1;
 i32_store(i->env__memory,(U64)si0+56U,si1);
-f10(i);
+f8(i);
 L0:;
 }
 
@@ -1052,9 +1052,9 @@ const U8 d0[]={
 
 static void shadriverInitGlobals(shadriverInstance* i) {
 i->g9=16464U;
-i->g10=16484U;
-i->g11=16488U;
-i->g12=16496U;
+i->g10=16528U;
+i->g11=16548U;
+i->g12=16552U;
 i->g13=0U;
 i->g14=16560U;
 i->g15=16568U;
@@ -1067,10 +1067,10 @@ if (resolve == NULL) { return; }
 i->env__memory=(wasmMemory*)resolve("env", "memory");
 i->env_____stack_pointer=(U32*)resolve("env", "__stack_pointer");
 i->env_____memory_base=(U32*)resolve("env", "__memory_base");
+i->GOTX2Emem__sha_info_data=(U32*)resolve("GOT.mem", "sha_info_data");
 i->GOTX2Emem__sha_info_digest=(U32*)resolve("GOT.mem", "sha_info_digest");
 i->GOTX2Emem__sha_info_count_lo=(U32*)resolve("GOT.mem", "sha_info_count_lo");
 i->GOTX2Emem__sha_info_count_hi=(U32*)resolve("GOT.mem", "sha_info_count_hi");
-i->GOTX2Emem__sha_info_data=(U32*)resolve("GOT.mem", "sha_info_data");
 i->GOTX2Emem__indata=(U32*)resolve("GOT.mem", "indata");
 i->GOTX2Emem__startTimer=(U32*)resolve("GOT.mem", "startTimer");
 i->GOTX2Emem__endTimer=(U32*)resolve("GOT.mem", "endTimer");
@@ -1092,12 +1092,16 @@ void shadriver_local_memcpy(shadriverInstance*i,U32 l0,U32 l1,U32 l2){
 f7(i,l0,l1,l2);
 }
 
-void shadriver_sha_init(shadriverInstance*i){
+void shadriver_sha_transform(shadriverInstance*i){
 f8(i);
 }
 
+void shadriver_sha_init(shadriverInstance*i){
+f9(i);
+}
+
 void shadriver_sha_update(shadriverInstance*i,U32 l0,U32 l1){
-f9(i,l0,l1);
+f10(i,l0,l1);
 }
 
 void shadriver_sha_final(shadriverInstance*i){

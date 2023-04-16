@@ -7,6 +7,7 @@ typedef unsigned long    qword;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
+typedef unsigned int    undefined4;
 typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
@@ -54,43 +55,49 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x56)));
+typedef pointer pointer __((offset(0x41e)));
 
-typedef pointer pointer __((offset(0x6d)));
+typedef pointer pointer __((offset(0x90)));
 
-typedef pointer pointer __((offset(0x20)));
+typedef pointer pointer __((offset(0x282)));
+
+typedef pointer pointer __((offset(0xdb)));
+
+typedef pointer pointer __((offset(0x270)));
+
+typedef pointer pointer __((offset(0x103)));
+
+typedef pointer pointer __((offset(0x40e)));
 
 typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x44)));
+typedef pointer pointer __((offset(0x3fe)));
+
+typedef pointer pointer __((offset(0x250)));
+
+typedef pointer pointer __((offset(0x356)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x1b0)));
+typedef pointer pointer __((offset(0x2bd)));
 
-typedef pointer pointer __((offset(0x1a8)));
-
-typedef pointer pointer __((offset(0x217)));
+typedef pointer pointer __((offset(0x406)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x198)));
+typedef pointer pointer __((offset(0x294)));
 
-typedef pointer pointer __((offset(0xfa)));
+typedef pointer pointer __((offset(0x416)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x1fe)));
+typedef pointer pointer __((offset(0x2a6)));
 
-typedef pointer pointer __((offset(0x1c1)));
+typedef pointer pointer __((offset(0x170)));
 
-typedef pointer pointer __((offset(0x1a0)));
-
-typedef pointer pointer __((offset(0x32)));
-
-typedef pointer pointer __((offset(0x25a)));
+typedef pointer pointer __((offset(0x143)));
 
 typedef void _IO_lock_t;
 
@@ -199,6 +206,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
+
+struct Elf64_Sym {
+    dword st_name;
+    byte st_info;
+    byte st_other;
+    word st_shndx;
+    qword st_value;
+    qword st_size;
+};
+
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
 
 struct Elf64_Ehdr {
@@ -225,25 +243,17 @@ struct Elf64_Ehdr {
     word e_shstrndx;
 };
 
-typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
-
-struct Elf64_Sym {
-    dword st_name;
-    byte st_info;
-    byte st_other;
-    word st_shndx;
-    qword st_value;
-    qword st_size;
-};
 
 
 
-
+void init_array(uint param_1,uint param_2,long param_3,long param_4);
+void print_array(uint param_1,long param_2);
+void kernel_atax(uint param_1,uint param_2,long param_3,long param_4,void *param_5,long param_6);
 undefined8 submain(int param_1,char **param_2);
-undefined polybench_alloc_data();
-void * memset(void * __s, int __c, size_t __n);
-void free(void * __ptr);
 size_t fwrite(void * __ptr, size_t __size, size_t __n, FILE * __s);
 int fprintf(FILE * __stream, char * __format, ...);
 int fputc(int __c, FILE * __stream);
+void * memset(void * __s, int __c, size_t __n);
+undefined polybench_alloc_data();
+void free(void * __ptr);
 

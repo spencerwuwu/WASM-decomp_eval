@@ -27,13 +27,25 @@ void f6(PL2mmInstance*);
 
 void f7(PL2mmInstance*);
 
-U32 f8(PL2mmInstance*,U32,U32);
+void f8(PL2mmInstance*,U32,U32,U32,U32,U32,U32,U32,U32,U32,U32);
 
-U32 f9(PL2mmInstance*,U64,U32);
+void f9(PL2mmInstance*,U32,U32,U32);
+
+void f10(PL2mmInstance*,U32,U32,U32,U32,F64,F64,U32,U32,U32,U32,U32);
+
+U32 f11(PL2mmInstance*,U32,U32);
+
+U32 f12(PL2mmInstance*,U64,U32);
 
 void PL2mm____wasm_call_ctors(PL2mmInstance*i);
 
 void PL2mm____wasm_apply_data_relocs(PL2mmInstance*i);
+
+void PL2mm_init_array(PL2mmInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5,U32 l6,U32 l7,U32 l8,U32 l9);
+
+void PL2mm_print_array(PL2mmInstance*i,U32 l0,U32 l1,U32 l2);
+
+void PL2mm_kernel_2mm(PL2mmInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,F64 l4,F64 l5,U32 l6,U32 l7,U32 l8,U32 l9,U32 l10);
 
 U32 PL2mm_submain(PL2mmInstance*i,U32 l0,U32 l1);
 

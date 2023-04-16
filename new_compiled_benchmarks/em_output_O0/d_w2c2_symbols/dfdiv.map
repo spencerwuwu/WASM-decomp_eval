@@ -8,6 +8,8 @@ float64_is_signaling_nan:f31
 extractFloat64Frac:f32
 extractFloat64Exp:f33
 extractFloat64Sign:f34
-packFloat64:f35
-float64_div:f36
-ullong_to_double:f37
+normalizeFloat64Subnormal:f35
+packFloat64:f36
+roundAndPackFloat64:f37
+float64_div:f38
+ullong_to_double:f39

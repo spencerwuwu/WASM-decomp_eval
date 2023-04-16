@@ -26,13 +26,17 @@ void f6(syrkInstance*);
 
 void f7(syrkInstance*);
 
-U32 f8(syrkInstance*,U32,U32);
+void f8(syrkInstance*,U32,U32,F64,F64,U32,U32);
 
-U32 f9(syrkInstance*,U64,U32);
+U32 f9(syrkInstance*,U32,U32);
+
+U32 f10(syrkInstance*,U64,U32);
 
 void syrk____wasm_call_ctors(syrkInstance*i);
 
 void syrk____wasm_apply_data_relocs(syrkInstance*i);
+
+void syrk_kernel_syrk(syrkInstance*i,U32 l0,U32 l1,F64 l2,F64 l3,U32 l4,U32 l5);
 
 U32 syrk_submain(syrkInstance*i,U32 l0,U32 l1);
 

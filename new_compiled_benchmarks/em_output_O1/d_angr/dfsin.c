@@ -109,342 +109,31 @@ long long extractFloat64Sign(unsigned long a0)
     return a0 / 0x8000000000000000;
 }
 
+extern char countLeadingZeros32.countLeadingZerosHigh;
+
+long long normalizeFloat64Subnormal(unsigned int a0, unsigned int *a1, unsigned long long *a2)
+{
+    void* v1;  // rax
+    unsigned long long v2;  // rdi
+    void* v3;  // r9
+    unsigned int v4;  // r10d
+    unsigned long long v5;  // rdi
+
+    v1 = 0;
+    *((char *)&v1) = v2 >> 32 == 0;
+    v3 = 0;
+    *((char *)&v3) = (v2 >> 32 == 0? (unsigned int)v2 : (unsigned int)(v2 >> 32)) < 0x10000;
+    *((unsigned int *)&v3) = (unsigned int)v3 * 16;
+    v4 = ...;
+    v5 = ...;
+    *(a2) = v5;
+    *(a1) = 12 - v4;
+    return 12 - v4;
+}
+
 long long packFloat64(unsigned long long a0, unsigned long long a1, unsigned long a2)
 {
     return a0 * 0x8000000000000000 + a2 + a1 * 0x10000000000000;
-}
-
-extern char countLeadingZeros32.countLeadingZerosHigh;
-
-long long int32_to_float64(unsigned int a0)
-{
-    int tmp_115;  // tmp #115
-    int tmp_128;  // tmp #128
-    int tmp_141;  // tmp #141
-    unsigned long v1;  // rdi
-    void* v2;  // rdi
-    char v3;  // cl
-    unsigned long v5;  // rax
-
-    if ((unsigned int)v1 != 0)
-    {
-        tmp_115 = v1 / 0x80000000;
-        tmp_128 = ((unsigned int)(0 - v1) < 0? (unsigned int)v1 : 0 - (unsigned int)v1);
-        tmp_141 = ((unsigned int)(0 - v1) < 0? (unsigned int)v1 : 0 - (unsigned int)v1);
-        v2 = 0;
-        *((char *)&v2) = (unsigned int)tmp_128 < 0x10000;
-        *((unsigned int *)&v2) = (unsigned int)v2 * 16;
-        v3 = (0x1000000 <= (0x10000 <= (unsigned int)tmp_128? (unsigned int)tmp_128 : (unsigned int)(tmp_141 << 16))? (unsigned int)v2 : (unsigned int)(v2 + 8)) + *((int *)&((char *)&countLeadingZeros32.countLeadingZerosHigh)[4 * ((0x1000000 <= (0x10000 <= (unsigned int)tmp_128? (unsigned int)tmp_128 : (unsigned int)(tmp_141 << 16))? (0x10000 <= (unsigned int)tmp_128? (unsigned int)tmp_128 : (unsigned int)(tmp_141 << 16)) : (unsigned int)((0x10000 <= (unsigned int)tmp_128? (unsigned int)tmp_128 : (unsigned int)(tmp_141 << 16)) << 8)) >> 24)]);
-        v5 = ...;
-        return v5;
-    }
-    return 0;
-}
-
-extern char countLeadingZeros32.countLeadingZerosHigh;
-extern char got.float_exception_flags;
-extern char got.float_rounding_mode;
-
-int float64_add(unsigned long long a0, unsigned long long a1, unsigned short a2)
-{
-    char v0;  // [bp+0x0]
-    unsigned int v2;  // eax
-    unsigned long long v3;  // r8
-    unsigned int v4;  // r10
-    unsigned long long v5;  // r9
-    unsigned long long v7;  // rsi
-    unsigned long v8;  // rdx
-    unsigned long long v10;  // r9
-    unsigned long long v11;  // rdx
-    unsigned long long v12;  // r11
-    void* v13;  // rcx
-    void* v14;  // rsi
-    unsigned long long v16;  // r9
-    void* v17;  // rsi
-    unsigned long long v19;  // r9
-    unsigned long long v20;  // r11
-    void* v21;  // rcx
-    unsigned long long v22;  // r8
-    void* v23;  // rcx
-    void* v24;  // rsi
-    unsigned long long v26;  // r9
-    void* v28;  // rcx
-    unsigned long v29;  // rdx
-    void* v30;  // rsi
-    void* v31;  // rcx
-    void* v32;  // rcx
-    unsigned long v33;  // rdi
-    void* v34;  // rcx
-    unsigned long long v35;  // rdx
-    void* v36;  // rdi
-    unsigned long long v37;  // rdx
-    unsigned int v38;  // eax
-    unsigned int v39;  // ecx
-    void* v40;  // r8
-    void* v41;  // r8
-    unsigned long long v42;  // r9
-    unsigned long long v43;  // rcx
-    unsigned long long v45;  // rdx
-    unsigned long long v46;  // r8
-    unsigned long long v47;  // rsi
-    unsigned int v49;  // eax
-
-    v2 = (unsigned int)a0 / 0x8000000000000000;
-    v3 = (unsigned int)a0 / 0x10000000000000 & 2047;
-    v4 = (unsigned int)a1 / 0x10000000000000 & 2047;
-    v5 = ((unsigned int)a0 / 0x10000000000000 & 2047) - ((unsigned int)a1 / 0x10000000000000 & 2047);
-    if ((unsigned int)(a0 >> 63) == (unsigned int)(a1 >> 63))
-    {
-        v12 = a0 * 0x200 & 0x1ffffffffffffe00;
-        v11 = a1 * 0x200 & 0x1ffffffffffffe00;
-        if ((unsigned int)v5 > 0)
-        {
-            if (((unsigned short)(a0 >> 52) & 2047) != 2047)
-            {
-                v7 = 0;
-                *((char *)&v7) = v4 == 0;
-                v8 = (v4 != 0? a1 * 0x200 & 0x1ffffffffffffe00 | 0x2000000000000000 : rdx<8>);
-                v10 = v5 - v7;
-                if ((unsigned int)v5 != (unsigned int)v7)
-                {
-                    *((unsigned int *)&a0) = (unsigned int)a0 / 0x8000000000000000;
-                    roundAndPackFloat64(rdi<4>, r8<8>, rdx<4>, a1 * 0x200 & 0x1ffffffffffffe00 | 0x2000000000000000, r8<8>, r9<8>, *((short *)stack_base));
-                    return (unsigned int)a0 / 0x8000000000000000;
-                }
-                v20 = (a0 * 0x200 & 0x1ffffffffffffe00 | 0x2000000000000000) + rdx<8>;
-                v21 = 0;
-                *((char *)&v21) = [D] amd64g_calculate_condition(0x9<64>, 0x4<64>, r11<8>, r11<8>, cc_ndep<8>);
-                *((unsigned int *)&v8) = ((char)[D] amd64g_calculate_condition(0x8<64>, 0x4<64>, r11<8>, r11<8>, cc_ndep<8>)? v20 : v20 << 1);
-                v22 = ((unsigned int)a0 / 0x10000000000000 & 2047) - v21;
-                *((unsigned int *)&a0) = (unsigned int)a0 / 0x8000000000000000;
-                *((unsigned int *)&v7) = r8<8>;
-                roundAndPackFloat64(a0, v7, v8, v21, v22, v10, *((short *)&v0));
-                return roundAndPackFloat64(a0, v7, v8, v21, v22, v10, *((short *)&v0));
-            }
-        }
-        else
-        {
-            if (v5 >= 0)
-            {
-                if (((unsigned short)(a0 >> 52) & 2047) != 0)
-                {
-                    if (((unsigned short)(a0 >> 52) & 2047) != 2047)
-                    {
-                        *((unsigned int *)&v11) = (a0 * 0x200 & 0x1ffffffffffffe00 | 0x4000000000000000) + (a1 * 0x200 & 0x1ffffffffffffe00);
-                        *((unsigned int *)&a0) = (unsigned int)a0 / 0x8000000000000000;
-                        *((unsigned int *)&v7) = r8<8>;
-                        roundAndPackFloat64(a0, v7, v11, 0x4000000000000000, v3, v5, *((short *)&v0));
-                        return roundAndPackFloat64(a0, v7, v11, 0x4000000000000000, v3, v5, *((short *)&v0));
-                    }
-                    if (((unsigned short)(a0 >> 52) & 2047) == 2047 && (a0 << 9 & 0x1ffffffffffffe00) == 0 && (a1 << 9 & 0x1ffffffffffffe00) == 0)
-                    {
-                        return a0;
-                    }
-                }
-                else
-                {
-                    *((unsigned int *)&a0) = a0 & 0x8000000000000000 | (a1 * 0x200 & 0x1ffffffffffffe00) + (a0 * 0x200 & 0x1ffffffffffffe00) >> 9;
-                    return a0;
-                }
-            }
-            else
-            {
-                if (!(((unsigned short)(a1 >> 52) & 2047) == 2047))
-                {
-                    v17 = 0;
-                    *((char *)&v17) = (unsigned int)v3 == 0;
-                    v19 = v5 + v17;
-                    if (!((unsigned int)(v5 + v17) == 0))
-                    {
-                        *((unsigned int *)&a0) = (unsigned int)a0 / 0x8000000000000000;
-                        roundAndPackFloat64(rdi<4>, r8<8>, a1 * 0x200 & 0x1ffffffffffffe00, rcx<8>, r8<8>, r9<8>, *((short *)stack_base));
-                        return (unsigned int)a0 / 0x8000000000000000;
-                    }
-                    v20 = (((unsigned int)v3 != 0? a0 << 9 & 0x1ffffffffffffe00 | 0x2000000000000000 : a0 << 9 & 0x1ffffffffffffe00) | 0x2000000000000000) + rdx<8>;
-                    v21 = 0;
-                    *((char *)&v21) = [D] amd64g_calculate_condition(0x9<64>, 0x4<64>, r11<8>, r11<8>, cc_ndep<8>);
-                    *((unsigned int *)&v8) = ((char)[D] amd64g_calculate_condition(0x8<64>, 0x4<64>, r11<8>, r11<8>, cc_ndep<8>)? v20 : v20 << 1);
-                    v22 = v4 - v21;
-                    *((unsigned int *)&a0) = (unsigned int)a0 / 0x8000000000000000;
-                    roundAndPackFloat64(rdi<4>, r8<8>, rdx<4>, rcx<8>, r8<8>, r9<8>, *((short *)stack_base));
-                    return (unsigned int)a0 / 0x8000000000000000;
-                }
-                else if ((a1 << 9 & 0x1ffffffffffffe00) == 0)
-                {
-                    *((unsigned int *)&a0) = a0 & 0x8000000000000000 | 0x7ff0000000000000;
-                    return a0;
-                }
-            }
-        }
-    }
-    else
-    {
-        v12 = a0 * 0x400 & 0x3ffffffffffffc00;
-        v11 = a1 * 0x400 & 0x3ffffffffffffc00;
-        if ((unsigned int)v5 > 0)
-        {
-            if (((unsigned short)(a0 >> 52) & 2047) != 2047)
-            {
-                v13 = 0;
-                *((char *)&v13) = v4 == 0;
-                v14 = (v4 == 0? a1 << 10 & 0x3ffffffffffffc00 : a1 << 10 & 0x3ffffffffffffc00 | 0x4000000000000000);
-                v16 = v5 - v13;
-                if ((unsigned int)v5 != (unsigned int)v13)
-                {
-                    if ((unsigned int)v16 <= 63)
-                    {
-                        v29 = (v4 == 0? v11 : v11 | 0x4000000000000000) >> ((char)v16 & 63);
-                        *((char *)&v16) = 0 - (char)v16;
-                        v30 = v14 << ((char)v16 & 63);
-                        v31 = 0;
-                        *((char *)&v31) = v30 != 0;
-                        v28 = v31 | v29;
-                    }
-                    else
-                    {
-                        v28 = 0;
-                        *((char *)&v28) = v14 != 0;
-                    }
-                    v14 = v28;
-                }
-                v4 = (unsigned int)a0 / 0x10000000000000 & 2047;
-                v35 = (a0 * 0x400 & 0x3ffffffffffffc00 | 0x4000000000000000) - v14;
-                v39 = 0;
-                *((char *)&v39) = [D] amd64g_calculate_condition(0x5<64>, 0x24<64>, Shr(rdx<8>, 0x20<8>), Shr(rdx<8>, 0x1f<8>), cc_ndep<8>);
-                v40 = 0;
-                *((char *)&v40) = (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) < 0x10000;
-                v41 = v40 * 16;
-                v42 = (0x1000000 <= (0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16))? (0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16)) : (unsigned int)((0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16)) << 8)) >> 24;
-                v43 = ...;
-                *((unsigned int *)&v35) = rdx<8> << ((char)v43 & 63);
-                roundAndPackFloat64(eax<4>, !((unsigned int)v43) + v4, rdx<4>, rcx<8>, r8<8>, r9<8>, *((short *)stack_base));
-                return (unsigned int)a0 / 0x8000000000000000;
-            }
-        }
-        else
-        {
-            if (v5 >= 0)
-            {
-                if (((unsigned short)(a0 >> 52) & 2047) != 0)
-                {
-                    if ((a1 << 10 & 0x3ffffffffffffc00) == 0 && ((unsigned short)(a0 >> 52) & 2047) == 2047 && (a0 << 10 & 0x3ffffffffffffc00) == 0)
-                    {
-                        *((char *)*((long long *)&got.float_exception_flags)) = *((char *)*((long long *)&got.float_exception_flags)) | 16;
-                        return -1;
-                    }
-                }
-                else
-                {
-                    *((unsigned int *)&v3) = 1;
-                    v4 = 1;
-                }
-                if (((unsigned short)(a0 >> 52) & 2047) == 0 || ((unsigned short)(a0 >> 52) & 2047) != 2047)
-                {
-                    if ((a1 << 10 & 0x3ffffffffffffc00) < (a0 << 10 & 0x3ffffffffffffc00))
-                    {
-                        v4 = v3;
-                        v35 = (a0 * 0x400 & 0x3ffffffffffffc00) - v11;
-                        v39 = 0;
-                        *((char *)&v39) = [D] amd64g_calculate_condition(0x5<64>, 0x24<64>, Shr(rdx<8>, 0x20<8>), Shr(rdx<8>, 0x1f<8>), cc_ndep<8>);
-                        v40 = 0;
-                        *((char *)&v40) = (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) < 0x10000;
-                        v41 = v40 * 16;
-                        v42 = (0x1000000 <= (0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16))? (0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16)) : (unsigned int)((0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16)) << 8)) >> 24;
-                        v43 = ...;
-                        *((unsigned int *)&v35) = rdx<8> << ((char)v43 & 63);
-                        *((unsigned int *)&a1) = !((unsigned int)v43) + v4;
-                        *((unsigned int *)&a0) = (unsigned int)a0 / 0x8000000000000000;
-                        roundAndPackFloat64(a0, v7, v8, v21, v22, v10, *((short *)&v0));
-                        return roundAndPackFloat64(a0, v7, v8, v21, v22, v10, *((short *)&v0));
-                    }
-                    if ((char)[D] amd64g_calculate_condition(0x6<64>, 0x8<64>, And((rsi<8> << 0xa<8>), 0x3ffffffffffffc00<64>), And((rdi<8> << 0xa<8>), 0x3ffffffffffffc00<64>), cc_ndep<8>))
-                    {
-                        v36 = 0;
-                        *((char *)&v36) = *((int *)got.float_rounding_mode) == 3;
-                        *((unsigned int *)&v36) = (unsigned int)v36 * 0x8000000000000000;
-                        return a0;
-                    }
-                    v37 = rdx<8> - v12;
-                    v38 = v2 ^ 1;
-                    v39 = 0;
-                    *((char *)&v39) = [D] amd64g_calculate_condition(0x5<64>, 0x24<64>, Shr(rdx<8>, 0x20<8>), Shr(rdx<8>, 0x1f<8>), cc_ndep<8>);
-                    v40 = 0;
-                    *((char *)&v40) = (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) < 0x10000;
-                    v41 = v40 * 16;
-                    v42 = (0x1000000 <= (0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16))? (0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16)) : (unsigned int)((0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16)) << 8)) >> 24;
-                    v43 = ...;
-                    *((unsigned int *)&v35) = rdx<8> << ((char)v43 & 63);
-                    *((unsigned int *)&a1) = !((unsigned int)v43) + v4;
-                    roundAndPackFloat64(eax<4>, a1, v35, v43, v41, v42, *((short *)&v0));
-                    return roundAndPackFloat64(a0, v7, v8, v21, v22, v10, *((short *)&v0));
-                }
-            }
-            else if (!(((unsigned short)(a1 >> 52) & 2047) == 2047))
-            {
-                v23 = 0;
-                *((char *)&v23) = (unsigned int)v3 == 0;
-                v24 = ((unsigned int)v3 == 0? a0 << 10 & 0x3ffffffffffffc00 : a0 << 10 & 0x3ffffffffffffc00 | 0x4000000000000000);
-                v26 = v5 + v23;
-                if (!((unsigned int)(v5 + v23) == 0))
-                {
-                    if ((unsigned int)v26 >= -63)
-                    {
-                        v33 = ((unsigned int)v3 == 0? a0 << 10 & 0x3ffffffffffffc00 : a0 << 10 & 0x3ffffffffffffc00 | 0x4000000000000000) >> ((char)(0 - (unsigned int)v26) & 63);
-                        v34 = 0;
-                        *((char *)&v34) = ((unsigned int)v3 == 0? v12 : v12 | 0x4000000000000000) << ((char)v26 & 63) != 0;
-                        v32 = v34 | v33;
-                    }
-                    else
-                    {
-                        v32 = 0;
-                        *((char *)&v32) = ((unsigned int)v3 == 0? a0 << 10 & 0x3ffffffffffffc00 : a0 << 10 & 0x3ffffffffffffc00 | 0x4000000000000000) != 0;
-                    }
-                    v24 = v32;
-                }
-                v45 = v11 | 0x4000000000000000;
-                v37 = rdx<8> - v24;
-                v38 = v2 ^ 1;
-                v39 = 0;
-                *((char *)&v39) = [D] amd64g_calculate_condition(0x5<64>, 0x24<64>, Shr(rdx<8>, 0x20<8>), Shr(rdx<8>, 0x1f<8>), cc_ndep<8>);
-                v40 = 0;
-                *((char *)&v40) = (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) < 0x10000;
-                v41 = v40 * 16;
-                v42 = (0x1000000 <= (0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16))? (0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16)) : (unsigned int)((0x10000 <= (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32)? (rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) : (unsigned int)((rdx<8> >> 32 == 0? rdx<8> : rdx<8> >> 32) << 16)) << 8)) >> 24;
-                v43 = ...;
-                *((unsigned int *)&v35) = rdx<8> << ((char)v43 & 63);
-                roundAndPackFloat64(eax<4>, !((unsigned int)v43) + r10<8>, rdx<4>, rcx<8>, r8<8>, r9<8>, *((short *)stack_base));
-                return v49;
-            }
-            else if ((a1 << 10 & 0x3ffffffffffffc00) == 0)
-            {
-                *((unsigned int *)&a0) = 0x7ff0000000000000 | !((unsigned int)a0 / 0x8000000000000000) * 0x8000000000000000;
-                return a0;
-            }
-        }
-    }
-    if (((unsigned short)(a0 >> 52) & 2047) == 2047 && (unsigned int)v5 > 0 && v12 == 0)
-    {
-        return a0;
-    }
-    if (v5 < 0 && (unsigned int)v5 <= 0 && (unsigned int)(a0 >> 63) == (unsigned int)(a1 >> 63) && ((unsigned short)(a1 >> 52) & 2047) == 2047 && (a1 << 9 & 0x1ffffffffffffe00) != 0 || ((unsigned short)(a0 >> 52) & 2047) == 2047 && (unsigned int)v5 <= 0 && (unsigned int)(a0 >> 63) == (unsigned int)(a1 >> 63) && v5 >= 0 && ((unsigned short)(a0 >> 52) & 2047) != 0 && !((a1 << 9 & 0x1ffffffffffffe00) == 0 && (a0 << 9 & 0x1ffffffffffffe00) == 0) || v5 < 0 && (unsigned int)v5 <= 0 && ((unsigned short)(a1 >> 52) & 2047) == 2047 && (unsigned int)(a0 >> 63) != (unsigned int)(a1 >> 63) && (a1 << 10 & 0x3ffffffffffffc00) != 0 || ((unsigned short)(a0 >> 52) & 2047) == 2047 && (unsigned int)v5 <= 0 && v5 >= 0 && (unsigned int)(a0 >> 63) != (unsigned int)(a1 >> 63) && ((unsigned short)(a0 >> 52) & 2047) != 0 && !((a1 << 10 & 0x3ffffffffffffc00) == 0 && (a0 << 10 & 0x3ffffffffffffc00) == 0) || ((unsigned short)(a0 >> 52) & 2047) == 2047 && (unsigned int)v5 > 0 && v12 != 0)
-    {
-        *((char *)&v11) = (char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (0x7ff8000000000000 & a1) == 0x7ff0000000000000;
-        if (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) == 0 && ((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (0x7ff8000000000000 & a1) == 0x7ff0000000000000) == 0)
-        {
-            v46 = a1 | 0x8000000000000;
-            v47 = a1 * 2;
-            *((unsigned int *)&a0) = ((char)v11 != 0? v46 : (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rdi<8>, 0xd<8>), Shl(rdi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) != 0? rdi<8> | 0x8000000000000 : (v47 < -9007199254740991? rdi<8> | 0x8000000000000 : v46)));
-            return a0;
-        }
-        if (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (0x7ff8000000000000 & a1) == 0x7ff0000000000000) != 0 || ((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) != 0)
-        {
-            *((char *)*((long long *)&got.float_exception_flags)) = *((char *)*((long long *)&got.float_exception_flags)) | 16;
-            v46 = a1 | 0x8000000000000;
-            v47 = a1 * 2;
-            *((unsigned int *)&a0) = ((char)v11 != 0? v46 : (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rdi<8>, 0xd<8>), Shl(rdi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) != 0? rdi<8> | 0x8000000000000 : (v47 < -9007199254740991? rdi<8> | 0x8000000000000 : v46)));
-            return a0;
-        }
-    }
 }
 
 extern char got.float_exception_flags;
@@ -555,6 +244,409 @@ long long roundAndPackFloat64(unsigned int a0, unsigned int a1, unsigned int a2,
     }
 }
 
+extern char countLeadingZeros32.countLeadingZerosHigh;
+
+long long normalizeRoundAndPackFloat64(unsigned int a0, unsigned int a1, unsigned int a2, unsigned short a3)
+{
+    char v0;  // [bp+0x0]
+    unsigned int v2;  // ecx
+    void* v3;  // r9
+    unsigned long long v4;  // rdx
+    void* v5;  // r9
+    unsigned long v6;  // rcx
+    unsigned long long v7;  // rsi
+
+    v2 = 0;
+    *((char *)&v2) = [D] amd64g_calculate_condition(0x5<64>, 0x24<64>, Shr(rdx<8>, 0x20<8>), Shr(rdx<8>, 0x1f<8>), cc_ndep<8>);
+    v3 = 0;
+    *((char *)&v3) = (v4 >> 32 == 0? (unsigned int)v4 : (unsigned int)(v4 >> 32)) < 0x10000;
+    v5 = v3 * 16;
+    v6 = ...;
+    *((unsigned int *)&v4) = v4 << ((char)v6 & 63);
+    *((unsigned int *)&v7) = v7 - v6;
+    return roundAndPackFloat64(a0, v7, v4, v6, &countLeadingZeros32.countLeadingZerosHigh, v5, *((short *)&v0));
+}
+
+extern char countLeadingZeros32.countLeadingZerosHigh;
+
+long long int32_to_float64(unsigned int a0)
+{
+    int tmp_115;  // tmp #115
+    int tmp_128;  // tmp #128
+    int tmp_141;  // tmp #141
+    unsigned long v1;  // rdi
+    void* v2;  // rdi
+    char v3;  // cl
+    unsigned long v5;  // rax
+
+    if ((unsigned int)v1 != 0)
+    {
+        tmp_115 = v1 / 0x80000000;
+        tmp_128 = ((unsigned int)(0 - v1) < 0? (unsigned int)v1 : 0 - (unsigned int)v1);
+        tmp_141 = ((unsigned int)(0 - v1) < 0? (unsigned int)v1 : 0 - (unsigned int)v1);
+        v2 = 0;
+        *((char *)&v2) = (unsigned int)tmp_128 < 0x10000;
+        *((unsigned int *)&v2) = (unsigned int)v2 * 16;
+        v3 = (0x1000000 <= (0x10000 <= (unsigned int)tmp_128? (unsigned int)tmp_128 : (unsigned int)(tmp_141 << 16))? (unsigned int)v2 : (unsigned int)(v2 + 8)) + *((int *)&((char *)&countLeadingZeros32.countLeadingZerosHigh)[4 * ((0x1000000 <= (0x10000 <= (unsigned int)tmp_128? (unsigned int)tmp_128 : (unsigned int)(tmp_141 << 16))? (0x10000 <= (unsigned int)tmp_128? (unsigned int)tmp_128 : (unsigned int)(tmp_141 << 16)) : (unsigned int)((0x10000 <= (unsigned int)tmp_128? (unsigned int)tmp_128 : (unsigned int)(tmp_141 << 16)) << 8)) >> 24)]);
+        v5 = ...;
+        return v5;
+    }
+    return 0;
+}
+
+extern char got.float_exception_flags;
+
+int addFloat64Sigs(unsigned long a0, unsigned long long a1, unsigned int a2, unsigned long a3, unsigned long a4, unsigned long a5, unsigned long v1, unsigned short a6)
+{
+    char v0;  // [bp+0x0]
+    unsigned int v2;  // ebx
+    unsigned long v3;  // r9
+    unsigned long long v4;  // r11
+    unsigned long v5;  // r8
+    void* v7;  // rsi
+    unsigned long v8;  // r11
+    unsigned long v10;  // r8
+    void* v11;  // rsi
+    unsigned long long v12;  // cc_dep1
+    unsigned long long v13;  // r8
+    unsigned long v14;  // rdx
+    unsigned long long v15;  // r9
+    void* v16;  // rsi
+    unsigned int v17;  // rcx
+    unsigned int v18;  // eax
+    unsigned long long v19;  // rdx
+    unsigned long long v21;  // rcx
+    unsigned long v22;  // rdx
+    void* v24;  // rax
+    void* v25;  // r9
+    unsigned long long v27;  // r8
+    unsigned long long v28;  // rsi
+    unsigned int v29;  // eax
+
+    v2 = (unsigned int)a1 / 0x10000000000000 & 2047;
+    v3 = a0 * 0x200 & 0x1ffffffffffffe00;
+    v4 = a1 * 0x200 & 0x1ffffffffffffe00;
+    v5 = ((unsigned int)a0 / 0x10000000000000 & 2047) - ((unsigned int)a1 / 0x10000000000000 & 2047);
+    if (((unsigned int)(a0 >> 52) & 2047) > ((unsigned int)(a1 >> 52) & 2047))
+    {
+        if (!(((unsigned short)(a0 >> 52) & 2047) == 2047))
+        {
+            v7 = 0;
+            *((char *)&v7) = v2 == 0;
+            v8 = (v2 != 0? a1 * 0x200 & 0x1ffffffffffffe00 | 0x2000000000000000 : r11<8>);
+            v10 = v5 - v7;
+            if ((unsigned int)v5 != (unsigned int)v7)
+            {
+                roundAndPackFloat64(rdx<8>, (unsigned int)a0 / 0x10000000000000 & 2047, a1 * 0x200 & 0x1ffffffffffffe00 | 0x2000000000000000, a1 * 0x200 & 0x1ffffffffffffe00 | 0x2000000000000000, r8<8>, a0 * 0x200 & 0x1ffffffffffffe00, *((short *)stack_base));
+                return (unsigned int)((a1 * 0x200 & 0x1ffffffffffffe00 | 0x2000000000000000) >> 52) & 2047;
+            }
+            v15 = (a0 * 0x200 & 0x1ffffffffffffe00 | 0x2000000000000000) + r11<8>;
+            v16 = 0;
+            *((char *)&v16) = [D] amd64g_calculate_condition(0x9<64>, 0x4<64>, r9<8>, r9<8>, cc_ndep<8>);
+            v17 = ((char)[D] amd64g_calculate_condition(0x8<64>, 0x4<64>, r9<8>, r9<8>, cc_ndep<8>)? v15 : v15 << 1);
+            v18 = (unsigned int)(((unsigned int)a0 / 0x10000000000000 & 2047) - v16);
+            *((unsigned int *)&a0) = rdx<8>;
+            *((unsigned int *)&v16) = v18;
+            roundAndPackFloat64(a0, (unsigned int)v16, rcx<8>, v17, v10, v15, *((short *)&v0));
+            return roundAndPackFloat64(a0, (unsigned int)v16, v22, v17, v10, v15, *((short *)&v0));
+        }
+        else if ((a0 << 9 & 0x1ffffffffffffe00) == 0)
+        {
+            return a0;
+        }
+    }
+    else
+    {
+        if (!((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>)))
+        {
+            if (((unsigned short)(a0 >> 52) & 2047) != 0)
+            {
+                if (((unsigned short)(a0 >> 52) & 2047) != 2047)
+                {
+                    v21 = 0x4000000000000000 | (a1 * 0x200 & 0x1ffffffffffffe00) + (a0 * 0x200 & 0x1ffffffffffffe00);
+                    *((unsigned int *)&a0) = rdx<8>;
+                    *((unsigned int *)&v16) = (unsigned int)a0 / 0x10000000000000 & 2047;
+                    roundAndPackFloat64(a0, (unsigned int)v16, rcx<8>, v17, v10, v15, *((short *)&v0));
+                    return roundAndPackFloat64(a0, (unsigned int)v16, v22, v17, v10, v15, *((short *)&v0));
+                }
+                if ((a0 << 9 & 0x1ffffffffffffe00) == 0 && ((unsigned short)(a0 >> 52) & 2047) == 2047 && (a1 << 9 & 0x1ffffffffffffe00) == 0)
+                {
+                    return a0;
+                }
+            }
+            else
+            {
+                *((unsigned int *)&a0) = v14 * 0x8000000000000000 | (a1 * 0x200 & 0x1ffffffffffffe00) + (a0 * 0x200 & 0x1ffffffffffffe00) >> 9;
+                return a0;
+            }
+        }
+        else
+        {
+            if (!(((unsigned short)(a1 >> 52) & 2047) == 2047))
+            {
+                v11 = 0;
+                *((char *)&v11) = ((unsigned int)(a0 >> 52) & 2047) == 0;
+                v12 = v5;
+                v13 = v5 + v11;
+                if (!((unsigned int)(v12 + v11) == 0))
+                {
+                    if ((unsigned int)v13 >= -63)
+                    {
+                    }
+                    else
+                    {
+                        v24 = 0;
+                        *((char *)&v24) = (((unsigned int)(a0 >> 52) & 2047) != 0? a0 << 9 & 0x1ffffffffffffe00 | 0x2000000000000000 : a0 << 9 & 0x1ffffffffffffe00) != 0;
+                        v25 = v24;
+                        v15 = (v25 | 0x2000000000000000) + r11<8>;
+                        *((unsigned int *)&v16) = rax<8>;
+                        roundAndPackFloat64(rdx<8>, rsi<4>, rcx<8>, rcx<8>, r8<8>, r9<8>, *((short *)stack_base));
+                        return v29;
+                    }
+                }
+                if ((unsigned int)(v12 + v11) == 0 || (unsigned int)v13 >= -63)
+                {
+                    roundAndPackFloat64(rdx<8>, (unsigned int)a0 / 0x10000000000000 & 2047, rcx<8>, rcx<8>, r8<8>, (((unsigned int)(a0 >> 52) & 2047) != 0? a0 << 9 & 0x1ffffffffffffe00 | 0x2000000000000000 : a0 << 9 & 0x1ffffffffffffe00), *((short *)stack_base));
+                    return rcx<8> / 0x10000000000000 & 2047;
+                }
+            }
+            else if ((a1 << 9 & 0x1ffffffffffffe00) == 0)
+            {
+                *((unsigned int *)&a0) = 0x7ff0000000000000 | v19 * 0x8000000000000000;
+                return a0;
+            }
+        }
+    }
+    if (((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>) || ((unsigned short)(a0 >> 52) & 2047) == 2047) && (((unsigned int)(a0 >> 52) & 2047) <= ((unsigned int)(a1 >> 52) & 2047) || ((unsigned short)(a0 >> 52) & 2047) == 2047) && (((unsigned int)(a0 >> 52) & 2047) <= ((unsigned int)(a1 >> 52) & 2047) || (a0 << 9 & 0x1ffffffffffffe00) != 0) && ((a0 << 9 & 0x1ffffffffffffe00) != 0 || (a1 << 9 & 0x1ffffffffffffe00) != 0) && ((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>) || ((unsigned short)(a0 >> 52) & 2047) != 0 || ((unsigned int)(a0 >> 52) & 2047) > ((unsigned int)(a1 >> 52) & 2047)) && (((unsigned short)(a1 >> 52) & 2047) == 2047 || !((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>)) || ((unsigned int)(a0 >> 52) & 2047) > ((unsigned int)(a1 >> 52) & 2047)) && (!((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>)) || ((unsigned int)(a0 >> 52) & 2047) > ((unsigned int)(a1 >> 52) & 2047) || (a1 << 9 & 0x1ffffffffffffe00) != 0))
+    {
+        *((char *)&a2) = (char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (0x7ff8000000000000 & a1) == 0x7ff0000000000000;
+        if (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) == 0 && ((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (0x7ff8000000000000 & a1) == 0x7ff0000000000000) == 0)
+        {
+            v27 = a1 | 0x8000000000000;
+            v28 = a1 * 2;
+            *((unsigned int *)&a0) = ((char)a2 != 0? v27 : (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rdi<8>, 0xd<8>), Shl(rdi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) != 0? rdi<8> | 0x8000000000000 : (v28 < -9007199254740991? rdi<8> | 0x8000000000000 : v27)));
+            return a0;
+        }
+        if (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (0x7ff8000000000000 & a1) == 0x7ff0000000000000) != 0 || ((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) != 0)
+        {
+            *((char *)got.float_exception_flags) = *((char *)got.float_exception_flags) | 16;
+            v27 = a1 | 0x8000000000000;
+            v28 = a1 * 2;
+            *((unsigned int *)&a0) = ((char)a2 != 0? v27 : (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rdi<8>, 0xd<8>), Shl(rdi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) != 0? rdi<8> | 0x8000000000000 : (v28 < -9007199254740991? rdi<8> | 0x8000000000000 : v27)));
+            return a0;
+        }
+    }
+}
+
+extern char countLeadingZeros32.countLeadingZerosHigh;
+extern char got.float_exception_flags;
+extern char got.float_rounding_mode;
+
+int subFloat64Sigs(unsigned long long a0, unsigned long long a1, unsigned int a2, unsigned short a3)
+{
+    char v0;  // [bp+0x0]
+    unsigned long long v2;  // rbx
+    unsigned long long v3;  // r9
+    unsigned long long v4;  // r11
+    unsigned long long v5;  // rax
+    unsigned long long v6;  // r8
+    void* v7;  // rcx
+    unsigned long long v9;  // r8
+    void* v10;  // rcx
+    void* v11;  // rsi
+    unsigned long long v13;  // r8
+    unsigned long v14;  // rdx
+    void* v15;  // rax
+    void* v16;  // rsi
+    unsigned long v17;  // rax
+    void* v18;  // rcx
+    void* v19;  // rcx
+    void* v20;  // rcx
+    unsigned long v21;  // rdi
+    void* v22;  // rcx
+    unsigned long long v23;  // r9
+    unsigned long long v24;  // rax
+    unsigned long long v25;  // rax
+    unsigned int v26;  // edx
+    unsigned int v27;  // ecx
+    void* v28;  // r8
+    void* v29;  // r8
+    unsigned int v30;  // rcx
+    unsigned long long v32;  // rax
+    unsigned long long v33;  // r8
+    unsigned long long v34;  // rsi
+    unsigned long long v35;  // rax
+    unsigned int v36;  // eax
+    unsigned int v37;  // eax
+
+    v2 = (unsigned int)a0 / 0x10000000000000 & 2047;
+    v3 = (unsigned int)a1 / 0x10000000000000 & 2047;
+    v4 = a0 * 0x400 & 0x3ffffffffffffc00;
+    v5 = a1 * 0x400 & 0x3ffffffffffffc00;
+    v6 = ((unsigned int)a0 / 0x10000000000000 & 2047) - ((unsigned int)a1 / 0x10000000000000 & 2047);
+    if (((unsigned int)(a0 >> 52) & 2047) > ((unsigned int)(a1 >> 52) & 2047))
+    {
+        if (!(((unsigned short)(a0 >> 52) & 2047) == 2047))
+        {
+            v7 = 0;
+            *((char *)&v7) = (unsigned int)v3 == 0;
+            v16 = ((unsigned int)v3 == 0? a1 << 10 & 0x3ffffffffffffc00 : a1 << 10 & 0x3ffffffffffffc00 | 0x4000000000000000);
+            v9 = v6 - v7;
+            if ((unsigned int)v6 != (unsigned int)v7)
+            {
+                if ((unsigned int)v9 <= 63)
+                {
+                    v17 = ((unsigned int)v3 == 0? v5 : v5 | 0x4000000000000000) >> ((char)v9 & 63);
+                    *((char *)&v9) = 0 - (char)v9;
+                    v18 = 0;
+                    *((char *)&v18) = v16 << ((char)v9 & 63) != 0;
+                    v19 = v18 | v17;
+                    v16 = v19;
+                }
+                else
+                {
+                    v15 = 0;
+                    *((char *)&v15) = v16 != 0;
+                    v16 = v15;
+                }
+            }
+            v23 = (unsigned int)a0 / 0x10000000000000 & 2047;
+            v24 = (a0 * 0x400 & 0x3ffffffffffffc00 | 0x4000000000000000) - v16;
+            v27 = 0;
+            *((char *)&v27) = [D] amd64g_calculate_condition(0x5<64>, 0x24<64>, Shr(rax<8>, 0x20<8>), Shr(rax<8>, 0x1f<8>), cc_ndep<8>);
+            v28 = 0;
+            *((char *)&v28) = (v25 >> 32 == 0? (unsigned int)v25 : (unsigned int)(v25 >> 32)) < 0x10000;
+            v29 = v28 * 16;
+            v30 = ...;
+            roundAndPackFloat64(v26, !(v30) + (unsigned int)v2, v25 << ((char)v30 & 63), rcx<8>, r8<8>, r9<8>, *((short *)&v0));
+            return v36;
+        }
+        else if ((a0 << 10 & 0x3ffffffffffffc00) == 0)
+        {
+            return a0;
+        }
+    }
+    else
+    {
+        if (!((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>)))
+        {
+            if (((unsigned short)(a0 >> 52) & 2047) != 0)
+            {
+                if ((a0 << 10 & 0x3ffffffffffffc00) == 0 && (a1 << 10 & 0x3ffffffffffffc00) == 0 && ((unsigned short)(a0 >> 52) & 2047) == 2047)
+                {
+                    *((char *)*((long long *)&got.float_exception_flags)) = *((char *)*((long long *)&got.float_exception_flags)) | 16;
+                    return -1;
+                }
+            }
+            else
+            {
+                v2 = 1;
+                v3 = 1;
+            }
+            if (((unsigned short)(a0 >> 52) & 2047) == 0 || ((unsigned short)(a0 >> 52) & 2047) != 2047)
+            {
+                if ((a1 << 10 & 0x3ffffffffffffc00) < (a0 << 10 & 0x3ffffffffffffc00))
+                {
+                    v23 = v2;
+                    v24 = (a0 * 0x400 & 0x3ffffffffffffc00) - v5;
+                    v27 = 0;
+                    *((char *)&v27) = [D] amd64g_calculate_condition(0x5<64>, 0x24<64>, Shr(rax<8>, 0x20<8>), Shr(rax<8>, 0x1f<8>), cc_ndep<8>);
+                    v28 = 0;
+                    *((char *)&v28) = (v25 >> 32 == 0? (unsigned int)v25 : (unsigned int)(v25 >> 32)) < 0x10000;
+                    v29 = v28 * 16;
+                    v30 = ...;
+                    *((unsigned int *)&a1) = !(v30) + (unsigned int)v2;
+                    roundAndPackFloat64(v26, a1, v25 << ((char)v30 & 63), v30, v29, v23, *((short *)&v0));
+                    return roundAndPackFloat64(a0, a1, a2, v30, v29, v23, *((short *)&v0));
+                }
+                if ((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>))
+                {
+                    return (*((int *)got.float_rounding_mode) == 3? 0x8000000000000000 : 0);
+                }
+                v25 = rax<8> - v4;
+                v26 = a2 ^ 1;
+                v27 = 0;
+                *((char *)&v27) = [D] amd64g_calculate_condition(0x5<64>, 0x24<64>, Shr(rax<8>, 0x20<8>), Shr(rax<8>, 0x1f<8>), cc_ndep<8>);
+                v28 = 0;
+                *((char *)&v28) = (v25 >> 32 == 0? (unsigned int)v25 : (unsigned int)(v25 >> 32)) < 0x10000;
+                v29 = v28 * 16;
+                v30 = ...;
+                roundAndPackFloat64(v26, !(v30) + (unsigned int)v3, v25 << ((char)v30 & 63), v30, v29, v3, *((short *)&v0));
+                return v35;
+            }
+        }
+        else if (!(((unsigned short)(a1 >> 52) & 2047) == 2047))
+        {
+            v10 = 0;
+            *((char *)&v10) = (unsigned int)v2 == 0;
+            v11 = ((unsigned int)v2 == 0? a0 << 10 & 0x3ffffffffffffc00 : a0 << 10 & 0x3ffffffffffffc00 | 0x4000000000000000);
+            v13 = v6 + v10;
+            if (!((unsigned int)(v6 + v10) == 0))
+            {
+                if ((unsigned int)v13 >= -63)
+                {
+                    v21 = ((unsigned int)v2 == 0? a0 << 10 & 0x3ffffffffffffc00 : a0 << 10 & 0x3ffffffffffffc00 | 0x4000000000000000) >> ((char)(0 - (unsigned int)v13) & 63);
+                    v22 = 0;
+                    *((char *)&v22) = ((unsigned int)v2 == 0? v4 : v4 | 0x4000000000000000) << ((char)v13 & 63) != 0;
+                    v20 = v22 | v21;
+                }
+                else
+                {
+                    v20 = 0;
+                    *((char *)&v20) = ((unsigned int)v2 == 0? a0 << 10 & 0x3ffffffffffffc00 : a0 << 10 & 0x3ffffffffffffc00 | 0x4000000000000000) != 0;
+                }
+                v11 = v20;
+            }
+            v32 = v5 | 0x4000000000000000;
+            v25 = rax<8> - v11;
+            v26 = a2 ^ 1;
+            v27 = 0;
+            *((char *)&v27) = [D] amd64g_calculate_condition(0x5<64>, 0x24<64>, Shr(rax<8>, 0x20<8>), Shr(rax<8>, 0x1f<8>), cc_ndep<8>);
+            v28 = 0;
+            *((char *)&v28) = (v25 >> 32 == 0? (unsigned int)v25 : (unsigned int)(v25 >> 32)) < 0x10000;
+            v29 = v28 * 16;
+            v30 = ...;
+            roundAndPackFloat64(v26, !(v30) + (unsigned int)v3, v25 << ((char)v30 & 63), v30, v29, v3, *((short *)&v0));
+            return v37;
+        }
+        else if ((a1 << 10 & 0x3ffffffffffffc00) == 0)
+        {
+            *((unsigned int *)&a0) = 0x7ff0000000000000 | !((unsigned int)v14) * 0x8000000000000000;
+            return a0;
+        }
+    }
+    if (((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>) || ((unsigned short)(a0 >> 52) & 2047) == 2047) && (((unsigned int)(a0 >> 52) & 2047) <= ((unsigned int)(a1 >> 52) & 2047) || ((unsigned short)(a0 >> 52) & 2047) == 2047) && (((unsigned int)(a0 >> 52) & 2047) <= ((unsigned int)(a1 >> 52) & 2047) || (a0 << 10 & 0x3ffffffffffffc00) != 0) && ((a0 << 10 & 0x3ffffffffffffc00) != 0 || (a1 << 10 & 0x3ffffffffffffc00) != 0) && ((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>) || ((unsigned short)(a0 >> 52) & 2047) != 0 || ((unsigned int)(a0 >> 52) & 2047) > ((unsigned int)(a1 >> 52) & 2047)) && (((unsigned short)(a1 >> 52) & 2047) == 2047 || !((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>)) || ((unsigned int)(a0 >> 52) & 2047) > ((unsigned int)(a1 >> 52) & 2047)) && (!((char)[D] amd64g_calculate_condition(0x8<64>, 0x7<64>, Conv(32->64, (Conv(64->32, (rdi<8> >> 0x34<8>)) & 0x7ff<32>)), Conv(32->64, (Conv(64->32, (rsi<8> >> 0x34<8>)) & 0x7ff<32>)), cc_ndep<8>)) || (a1 << 10 & 0x3ffffffffffffc00) != 0 || ((unsigned int)(a0 >> 52) & 2047) > ((unsigned int)(a1 >> 52) & 2047)))
+    {
+        *((char *)&a2) = (char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (0x7ff8000000000000 & a1) == 0x7ff0000000000000;
+        if (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) == 0 && ((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (0x7ff8000000000000 & a1) == 0x7ff0000000000000) == 0)
+        {
+            v33 = a1 | 0x8000000000000;
+            v34 = a1 * 2;
+            *((unsigned int *)&a0) = ((char)a2 != 0? v33 : (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rdi<8>, 0xd<8>), Shl(rdi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) != 0? rdi<8> | 0x8000000000000 : (v34 < -9007199254740991? rdi<8> | 0x8000000000000 : v33)));
+            return a0;
+        }
+        if (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (0x7ff8000000000000 & a1) == 0x7ff0000000000000) != 0 || ((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rsi<8>, 0xd<8>), Shl(rsi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) != 0)
+        {
+            *((char *)*((long long *)&got.float_exception_flags)) = *((char *)*((long long *)&got.float_exception_flags)) | 16;
+            v33 = a1 | 0x8000000000000;
+            v34 = a1 * 2;
+            *((unsigned int *)&a0) = ((char)a2 != 0? v33 : (((char)[D] amd64g_calculate_condition(0x5<64>, 0x20<64>, Shl(rdi<8>, 0xd<8>), Shl(rdi<8>, 0xc<8>), cc_ndep<8>) & (a0 & 0x7ff8000000000000) == 0x7ff0000000000000) != 0? rdi<8> | 0x8000000000000 : (v34 < -9007199254740991? rdi<8> | 0x8000000000000 : v33)));
+            return a0;
+        }
+    }
+}
+
+long long float64_add(unsigned long a0, unsigned long long a1, unsigned long a2, unsigned int a3, unsigned int a4, unsigned int a5, unsigned short v1, unsigned long a6, unsigned short a7)
+{
+    char v0;  // [bp+0x0]
+
+    if ((unsigned int)(a0 >> 63) == (unsigned int)(a1 >> 63))
+    {
+        return addFloat64Sigs(a0, a1, (unsigned int)a0 / 0x8000000000000000, a3, a4, a5, *((long long *)&v0), v1);
+    }
+    return subFloat64Sigs(a0, a1, (unsigned int)a0 / 0x8000000000000000, a3);
+}
+
 extern char got.float_exception_flags;
 
 long long float64_le(unsigned long a0, unsigned long long a1)
@@ -622,33 +714,46 @@ long long float64_abs(unsigned long a0)
 extern char countLeadingZeros32.countLeadingZerosHigh;
 extern char got.float_exception_flags;
 
-int local_sin(unsigned long long a0, unsigned long a1, unsigned short a2)
+int local_sin(unsigned long a0, unsigned long a1, unsigned short a2, unsigned int a3, unsigned int a4, unsigned int a5)
 {
     unsigned long v0;  // [bp-0x38]
-    unsigned long v1;  // [bp-0x18]
+    char v1;  // [bp+0x0]
+    unsigned long v2;  // [bp+0x8]
     unsigned long v3;  // rax
-    unsigned long long v4;  // r15
-    unsigned long long v6;  // rbp
+    unsigned long v4;  // r15
+    unsigned long v6;  // rax
+    unsigned long long v7;  // rbp
+    unsigned long v8;  // r14
 
     v0 = v3;
     v4 = a0;
-    v6 = 1;
+    v7 = 1;
+    v8 = v4;
     while (true)
     {
-        v4 = float64_div(float64_mul(v4, 0x8000000000000000 ^ float64_mul(a0, a0, a2), a2), ..., ...);
+        v4 = float64_div(float64_mul(v4, 0x8000000000000000 ^ float64_mul(a0, a0, a2), (unsigned short)v8 / 0x8000000000000000), ..., ...);
+        if ((unsigned int)(v8 >> 63) == (unsigned int)(v4 >> 63))
+        {
+            (unsigned int)v6 = addFloat64Sigs(v8, v4, (unsigned int)v8 / 0x8000000000000000, a3, a4, a5, *((long long *)&v1), v2);
+        }
+        else
+        {
+            (unsigned int)v6 = subFloat64Sigs(v8, v4, (unsigned int)v8 / 0x8000000000000000, a3);
+        }
+        v8 = v6;
         if ((!(v4) & 0x7ff0000000000000) == 0 && (v4 & 4503599627370495) != 0)
         {
             *((char *)got.float_exception_flags) = *((char *)got.float_exception_flags) | 16;
-            return v1;
+            return v6;
         }
         if ((v4 & 4503599627370495) == 0 || (!(v4) & 0x7ff0000000000000) != 0)
         {
-            v6 += 1;
+            v7 = 2;
             if ((v4 & 9223372036854775807) > 4532020583610935536)
             {
                 continue;
             }
-            return v1;
+            return v6;
         }
     }
 }
@@ -665,7 +770,7 @@ extern char got.startTimer;
 extern char got.test_in;
 extern char got.test_out;
 
-long long submain(unsigned long a0, unsigned int a1, unsigned short a2)
+long long submain(unsigned long a0, unsigned int a1, unsigned short a2, unsigned long a3, unsigned long a4, unsigned long a5)
 {
     char v0;  // [bp-0x38]
     unsigned int v1;  // [bp-0x30]
@@ -675,12 +780,11 @@ long long submain(unsigned long a0, unsigned int a1, unsigned short a2)
     unsigned long long v7;  // xmm1lq
     uint128_t v8;  // xmm1
     int v9;  // xmm0
-    char v10;  // cl
-    void* v12;  // r13
-    unsigned long long v13;  // rax
-    int v15;  // xmm1
-    uint128_t v16;  // xmm0
-    void* v18;  // rax
+    void* v10;  // r13
+    unsigned long long v11;  // rax
+    int v13;  // xmm1
+    uint128_t v14;  // xmm0
+    void* v16;  // rax
 
     v3 = 0;
     (unsigned int)v4 = gettimeofday(&v0, NULL);
@@ -692,39 +796,39 @@ long long submain(unsigned long a0, unsigned int a1, unsigned short a2)
     v7 = v1;
     *((unsigned long long *)&v8) = (unsigned long long)(v8 * 4517329193108106637 + v9);
     *((unsigned long long *)got.startTimer) = v8;
-    v12 = 0;
+    v10 = 0;
     while (true)
     {
-        v10 = local_sin(*((long long *)(got.test_in + (v12 << 3))), a1, a2) != *((long long *)(got.test_out + (v12 << 3)));
-        v3 += rcx<8>;
-        v12 += 1;
-        if (v12 == 36)
+        *((char *)&a3) = local_sin(*((long long *)(got.test_in + (v10 << 3))), a1, a2, 0x0, a4, a5) != *((long long *)(got.test_out + (v10 << 3)));
+        v3 += a3;
+        v10 += 1;
+        if (v10 == 36)
         {
             break;
         }
     }
-    (unsigned int)v13 = gettimeofday(&v0, NULL);
-    if ((unsigned int)v13 != 0)
+    (unsigned int)v11 = gettimeofday(&v0, NULL);
+    if ((unsigned int)v11 != 0)
     {
-        printf("Error return from gettimeofday: %d", (unsigned int)v13);
-        v15 = 0;
-        *((unsigned long long *)&v15) = *((long long *)&v0);
-        v16 = 0;
-        *((unsigned long long *)&v16) = v1;
-        *((unsigned long long *)&v16) = (unsigned long long)(v16 * 4517329193108106637 + v15);
-        *((unsigned long long *)*((long long *)&got.endTimer)) = v16;
+        printf("Error return from gettimeofday: %d", (unsigned int)v11);
+        v13 = 0;
+        *((unsigned long long *)&v13) = *((long long *)&v0);
+        v14 = 0;
+        *((unsigned long long *)&v14) = v1;
+        *((unsigned long long *)&v14) = (unsigned long long)(v14 * 4517329193108106637 + v13);
+        *((unsigned long long *)*((long long *)&got.endTimer)) = v14;
         printf("%0.6f\n");
-        v18 = v3;
-        return v18;
+        v16 = v3;
+        return v16;
     }
-    v15 = 0;
-    *((unsigned long long *)&v15) = *((long long *)&v0);
-    v16 = 0;
-    *((unsigned long long *)&v16) = v1;
-    *((unsigned long long *)&v16) = (unsigned long long)(v16 * 4517329193108106637 + v15);
-    *((unsigned long long *)*((long long *)&got.endTimer)) = v16;
+    v13 = 0;
+    *((unsigned long long *)&v13) = *((long long *)&v0);
+    v14 = 0;
+    *((unsigned long long *)&v14) = v1;
+    *((unsigned long long *)&v14) = (unsigned long long)(v14 * 4517329193108106637 + v13);
+    *((unsigned long long *)*((long long *)&got.endTimer)) = v14;
     printf("%0.6f\n");
-    v18 = v3;
-    return v18;
+    v16 = v3;
+    return v16;
 }
 

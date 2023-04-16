@@ -55,41 +55,61 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
+typedef pointer pointer __((offset(0x632)));
+
 typedef pointer pointer __((offset(0x154)));
 
 typedef pointer pointer __((offset(0x34)));
 
-typedef pointer pointer __((offset(0x625)));
+typedef pointer pointer __((offset(0x7cb)));
 
-typedef pointer pointer __((offset(0x63d)));
+typedef pointer pointer __((offset(0x759)));
 
-typedef pointer pointer __((offset(0x635)));
+typedef pointer pointer __((offset(0x76a)));
 
-typedef pointer pointer __((offset(0x97)));
+typedef pointer pointer __((offset(0x610)));
 
-typedef pointer pointer __((offset(0x690)));
+typedef pointer pointer __((offset(0x6a7)));
 
-typedef pointer pointer __((offset(0x62d)));
+typedef pointer pointer __((offset(0x772)));
+
+typedef pointer pointer __((offset(0x9f)));
 
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x6ed)));
+typedef pointer pointer __((offset(0x51)));
 
-typedef pointer pointer __((offset(0x64e)));
+typedef pointer pointer __((offset(0x35)));
 
-typedef pointer pointer __((offset(0x58)));
+typedef pointer pointer __((offset(0x12e)));
 
-typedef pointer pointer __((offset(0x22)));
+typedef pointer pointer __((offset(0x762)));
+
+typedef pointer pointer __((offset(0x743)));
 
 typedef pointer pointer __((offset(0x45)));
+
+typedef pointer pointer __((offset(0x657)));
+
+typedef pointer pointer __((offset(0x82d)));
+
+typedef pointer pointer __((offset(0x644)));
+
+typedef pointer pointer __((offset(0x80)));
 
 typedef pointer pointer __((offset(0x2d)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x722)));
+typedef pointer pointer __((offset(0xe9)));
 
-typedef pointer pointer __((offset(0x46)));
+typedef pointer pointer __((offset(0x85d)));
+
+typedef pointer pointer __((offset(0x78d)));
+
+typedef pointer pointer __((offset(0x669)));
+
+typedef pointer pointer __((offset(0xc1)));
 
 typedef void _IO_lock_t;
 
@@ -238,7 +258,10 @@ struct Elf64_Sym {
 
 
 
+void kernel_deriche(float param_1,ulong param_2,ulong param_3,long param_4,long param_5,long param_6,long param_7);
 undefined8 submain(int param_1,char **param_2);
+float expf(float __x);
+float exp2f(float __x);
 undefined polybench_alloc_data();
 void free(void * __ptr);
 size_t fwrite(void * __ptr, size_t __size, size_t __n, FILE * __s);

@@ -78,10 +78,10 @@ typedef struct w2c_sha__driver {
   u32 *w2c_env_0x5F_table_base;
   /* import: 'env' 'memory' */
   wasm_rt_memory_t *w2c_env_memory;
+  u32 w2c_sha_info_data_1;
   u32 w2c_sha_info_digest_1;
   u32 w2c_sha_info_count_lo_1;
   u32 w2c_sha_info_count_hi_1;
-  u32 w2c_sha_info_data_1;
   u32 w2c_indata_1;
   u32 w2c_in_i_1;
   u32 w2c_startTimer_1;
@@ -120,11 +120,17 @@ void w2c_sha__driver_local_memset(w2c_sha__driver*, u32, u32, u32, u32);
 /* export: 'local_memcpy' */
 void w2c_sha__driver_local_memcpy(w2c_sha__driver*, u32, u32, u32);
 
-/* export: 'sha_init' */
-void w2c_sha__driver_sha_init(w2c_sha__driver*);
+/* export: 'sha_transform' */
+void w2c_sha__driver_sha_transform(w2c_sha__driver*);
+
+/* export: 'sha_info_data' */
+u32* w2c_sha__driver_sha_info_data(w2c_sha__driver* instance);
 
 /* export: 'sha_info_digest' */
 u32* w2c_sha__driver_sha_info_digest(w2c_sha__driver* instance);
+
+/* export: 'sha_init' */
+void w2c_sha__driver_sha_init(w2c_sha__driver*);
 
 /* export: 'sha_info_count_lo' */
 u32* w2c_sha__driver_sha_info_count_lo(w2c_sha__driver* instance);
@@ -134,9 +140,6 @@ u32* w2c_sha__driver_sha_info_count_hi(w2c_sha__driver* instance);
 
 /* export: 'sha_update' */
 void w2c_sha__driver_sha_update(w2c_sha__driver*, u32, u32);
-
-/* export: 'sha_info_data' */
-u32* w2c_sha__driver_sha_info_data(w2c_sha__driver* instance);
 
 /* export: 'sha_final' */
 void w2c_sha__driver_sha_final(w2c_sha__driver*);

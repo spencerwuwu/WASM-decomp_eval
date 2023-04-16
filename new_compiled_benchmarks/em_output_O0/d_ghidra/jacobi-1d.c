@@ -2,6 +2,31 @@
 
 
 
+void kernel_jacobi_1d(int param_1,int param_2,long param_3,long param_4)
+
+{
+  int local_28;
+  int local_24;
+  
+  for (local_24 = 0; local_24 < param_1; local_24 = local_24 + 1) {
+    for (local_28 = 1; local_28 < param_2 + -1; local_28 = local_28 + 1) {
+      *(double *)(param_4 + (long)local_28 * 8) =
+           (*(double *)(param_3 + (long)(local_28 + -1) * 8) +
+            *(double *)(param_3 + (long)local_28 * 8) +
+           *(double *)(param_3 + (long)(local_28 + 1) * 8)) * 0.33333;
+    }
+    for (local_28 = 1; local_28 < param_2 + -1; local_28 = local_28 + 1) {
+      *(double *)(param_3 + (long)local_28 * 8) =
+           (*(double *)(param_4 + (long)(local_28 + -1) * 8) +
+            *(double *)(param_4 + (long)local_28 * 8) +
+           *(double *)(param_4 + (long)(local_28 + 1) * 8)) * 0.33333;
+    }
+  }
+  return;
+}
+
+
+
 undefined8 submain(int param_1,char **param_2)
 
 {
@@ -34,31 +59,6 @@ void init_array(int param_1,long param_2,long param_3)
   for (local_24 = 0; local_24 < param_1; local_24 = local_24 + 1) {
     *(double *)(param_2 + (long)local_24 * 8) = ((double)local_24 + 2.0) / (double)param_1;
     *(double *)(param_3 + (long)local_24 * 8) = ((double)local_24 + 3.0) / (double)param_1;
-  }
-  return;
-}
-
-
-
-void kernel_jacobi_1d(int param_1,int param_2,long param_3,long param_4)
-
-{
-  int local_28;
-  int local_24;
-  
-  for (local_24 = 0; local_24 < param_1; local_24 = local_24 + 1) {
-    for (local_28 = 1; local_28 < param_2 + -1; local_28 = local_28 + 1) {
-      *(double *)(param_4 + (long)local_28 * 8) =
-           (*(double *)(param_3 + (long)(local_28 + -1) * 8) +
-            *(double *)(param_3 + (long)local_28 * 8) +
-           *(double *)(param_3 + (long)(local_28 + 1) * 8)) * 0.33333;
-    }
-    for (local_28 = 1; local_28 < param_2 + -1; local_28 = local_28 + 1) {
-      *(double *)(param_3 + (long)local_28 * 8) =
-           (*(double *)(param_4 + (long)(local_28 + -1) * 8) +
-            *(double *)(param_4 + (long)local_28 * 8) +
-           *(double *)(param_4 + (long)(local_28 + 1) * 8)) * 0.33333;
-    }
   }
   return;
 }

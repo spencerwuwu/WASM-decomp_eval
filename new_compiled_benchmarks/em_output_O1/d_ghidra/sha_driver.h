@@ -54,59 +54,59 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x443)));
+typedef pointer pointer __((offset(0x2e0)));
 
-typedef pointer pointer __((offset(0xc0)));
+typedef pointer pointer __((offset(0x3e7)));
 
-typedef pointer pointer __((offset(0x494)));
+typedef pointer pointer __((offset(0x5f9)));
 
-typedef pointer pointer __((offset(0x14c)));
+typedef pointer pointer __((offset(0x555)));
 
-typedef pointer pointer __((offset(0x305)));
+typedef pointer pointer __((offset(0x33b)));
 
-typedef pointer pointer __((offset(0x3a4)));
+typedef pointer pointer __((offset(0x5e5)));
+
+typedef pointer pointer __((offset(0x490)));
+
+typedef pointer pointer __((offset(0x4f3)));
+
+typedef pointer pointer __((offset(0x5de)));
 
 typedef pointer pointer __((offset(0x7)));
 
-typedef pointer pointer __((offset(0x270)));
-
-typedef pointer pointer __((offset(0x403)));
-
-typedef pointer pointer __((offset(0x335)));
+typedef pointer pointer __((offset(0x35b)));
 
 typedef pointer pointer __((offset(0x3b0)));
 
-typedef pointer pointer __((offset(0x43c)));
+typedef pointer pointer __((offset(0x663)));
 
-typedef pointer pointer __((offset(0x25c)));
+typedef pointer pointer __((offset(0x501)));
 
-typedef pointer pointer __((offset(0x1c7)));
+typedef pointer pointer __((offset(0x677)));
 
-typedef pointer pointer __((offset(0x11b)));
+typedef pointer pointer __((offset(0x417)));
 
-typedef pointer pointer __((offset(0x3d9)));
+typedef pointer pointer __((offset(0x6b4)));
+
+typedef pointer pointer __((offset(0x2a0)));
 
 typedef pointer pointer __((offset(0x50)));
 
-typedef pointer pointer __((offset(0x2d3)));
+typedef pointer pointer __((offset(0x525)));
 
-typedef pointer pointer __((offset(0x190)));
+typedef pointer pointer __((offset(0x5c4)));
 
-typedef pointer pointer __((offset(0x3c5)));
+typedef pointer pointer __((offset(0x36c)));
 
-typedef pointer pointer __((offset(0x1f7)));
-
-typedef pointer pointer __((offset(0x2e1)));
-
-typedef pointer pointer __((offset(0x457)));
-
-typedef pointer pointer __((offset(0x13b)));
-
-typedef pointer pointer __((offset(0x3be)));
+typedef pointer pointer __((offset(0x623)));
 
 typedef pointer pointer __((offset(0x80)));
 
-typedef pointer pointer __((offset(0x4a0)));
+typedef pointer pointer __((offset(0x65c)));
+
+typedef pointer pointer __((offset(0x5d0)));
+
+typedef pointer pointer __((offset(0x47c)));
 
 typedef struct timeval timeval, *Ptimeval;
 
@@ -227,12 +227,12 @@ struct Elf64_Sym {
 
 void local_memset(long param_1,undefined4 param_2,int param_3,int param_4);
 void local_memcpy(undefined4 *param_1,undefined4 *param_2,int param_3);
+void sha_transform(void);
 void sha_init(void);
 void sha_update(undefined4 *param_1,uint param_2);
 void sha_final(void);
 void sha_stream(void);
 int submain(void);
-void sha_transform(void);
 void * memset(void * __s, int __c, size_t __n);
 int gettimeofday(timeval * __tv, __timezone_ptr_t __tz);
 int printf(char * __format, ...);

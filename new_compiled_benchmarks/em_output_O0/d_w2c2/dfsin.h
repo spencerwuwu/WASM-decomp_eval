@@ -54,29 +54,29 @@ U32 f14(dfsinInstance*,U64);
 
 U32 f15(dfsinInstance*,U64);
 
-U64 f16(dfsinInstance*,U32,U32,U64);
+void f16(dfsinInstance*,U64,U32,U32);
 
-U64 f17(dfsinInstance*,U32);
+U32 f17(dfsinInstance*,U64);
 
 U32 f18(dfsinInstance*,U32);
 
-U64 f19(dfsinInstance*,U64,U64);
+U64 f19(dfsinInstance*,U32,U32,U64);
 
-U64 f20(dfsinInstance*,U64,U64,U32);
+U64 f20(dfsinInstance*,U32,U32,U64);
 
-U64 f21(dfsinInstance*,U64,U64,U32);
+U64 f21(dfsinInstance*,U32,U32,U64);
 
-U64 f22(dfsinInstance*,U64,U64);
+U64 f22(dfsinInstance*,U32);
 
-U64 f23(dfsinInstance*,U32,U32,U64);
+U64 f23(dfsinInstance*,U64,U64,U32);
 
-U64 f24(dfsinInstance*,U32,U32,U64);
+U64 f24(dfsinInstance*,U64,U64);
 
-U64 f25(dfsinInstance*,U64,U64);
+U64 f25(dfsinInstance*,U64,U64,U32);
 
-void f26(dfsinInstance*,U64,U32,U32);
+U64 f26(dfsinInstance*,U64,U64);
 
-U32 f27(dfsinInstance*,U64);
+U64 f27(dfsinInstance*,U64,U64);
 
 U64 f28(dfsinInstance*,U64,U64);
 
@@ -118,27 +118,37 @@ U32 f46(dfsinInstance*,U32,U32);
 
 U32 f47(dfsinInstance*,U32,U32);
 
-U32 f48(dfsinInstance*,U32,U32,U32,U32);
+void f48(dfsinInstance*,U32,U32,U32,U32);
 
-U32 f49(dfsinInstance*,U32);
+U32 f49(dfsinInstance*,U32,U32,U32,U32);
 
 U32 f50(dfsinInstance*,U32,U32,U32,U32);
 
 U32 f51(dfsinInstance*,U32,U32,U32,U32);
 
-U32 f52(dfsinInstance*,U32,U32,U32,U32);
+U32 f52(dfsinInstance*,U32);
 
-U32 f53(dfsinInstance*,U32,U32,U32,U32);
+U32 f53(dfsinInstance*,U32,U32,U32,U32,U32);
 
-U32 f54(dfsinInstance*,U32,U32,U32,U32);
+U32 f54(dfsinInstance*,U32,U32,U32,U32,U32);
 
-U32 f55(dfsinInstance*,U32,U32);
+U32 f55(dfsinInstance*,U32,U32,U32,U32);
 
-U32 f56(dfsinInstance*,U32,U32);
+U32 f56(dfsinInstance*,U32,U32,U32,U32);
 
-U32 f57(dfsinInstance*,U32,U32);
+U32 f57(dfsinInstance*,U32,U32,U32,U32);
 
-F64 f58(dfsinInstance*,U32,U32);
+U32 f58(dfsinInstance*,U32,U32,U32,U32);
+
+U32 f59(dfsinInstance*,U32,U32,U32,U32);
+
+U32 f60(dfsinInstance*,U32,U32);
+
+U32 f61(dfsinInstance*,U32,U32);
+
+U32 f62(dfsinInstance*,U32,U32);
+
+F64 f63(dfsinInstance*,U32,U32);
 
 void dfsin____wasm_call_ctors(dfsinInstance*i);
 
@@ -166,9 +176,19 @@ U32 dfsin_extractFloat64Exp(dfsinInstance*i,U32 l0,U32 l1);
 
 U32 dfsin_extractFloat64Sign(dfsinInstance*i,U32 l0,U32 l1);
 
+void dfsin_normalizeFloat64Subnormal(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
 U32 dfsin_packFloat64(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
+U32 dfsin_roundAndPackFloat64(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
+U32 dfsin_normalizeRoundAndPackFloat64(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
 U32 dfsin_int32_to_float64(dfsinInstance*i,U32 l0);
+
+U32 dfsin_addFloat64Sigs(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4);
+
+U32 dfsin_subFloat64Sigs(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4);
 
 U32 dfsin_float64_add(dfsinInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
@@ -210,9 +230,19 @@ U32 dfsin_origX24extractFloat64Exp(dfsinInstance*i,U64 l0);
 
 U32 dfsin_origX24extractFloat64Sign(dfsinInstance*i,U64 l0);
 
+void dfsin_origX24normalizeFloat64Subnormal(dfsinInstance*i,U64 l0,U32 l1,U32 l2);
+
 U64 dfsin_origX24packFloat64(dfsinInstance*i,U32 l0,U32 l1,U64 l2);
 
+U64 dfsin_origX24roundAndPackFloat64(dfsinInstance*i,U32 l0,U32 l1,U64 l2);
+
+U64 dfsin_origX24normalizeRoundAndPackFloat64(dfsinInstance*i,U32 l0,U32 l1,U64 l2);
+
 U64 dfsin_origX24int32_to_float64(dfsinInstance*i,U32 l0);
+
+U64 dfsin_origX24addFloat64Sigs(dfsinInstance*i,U64 l0,U64 l1,U32 l2);
+
+U64 dfsin_origX24subFloat64Sigs(dfsinInstance*i,U64 l0,U64 l1,U32 l2);
 
 U64 dfsin_origX24float64_add(dfsinInstance*i,U64 l0,U64 l1);
 

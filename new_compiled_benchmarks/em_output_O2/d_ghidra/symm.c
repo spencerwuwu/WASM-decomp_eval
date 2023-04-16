@@ -2,6 +2,57 @@
 
 
 
+void kernel_symm(double param_1,double param_2,uint param_3,uint param_4,long param_5,long param_6,
+                long param_7)
+
+{
+  long lVar1;
+  ulong uVar2;
+  ulong uVar3;
+  long lVar4;
+  ulong uVar5;
+  double dVar6;
+  
+  if (0 < (int)param_3) {
+    uVar3 = 0;
+    do {
+      if (0 < (int)param_4) {
+        lVar4 = uVar3 * 8000 + param_6;
+        uVar2 = 0;
+        do {
+          if (uVar3 == 0) {
+            dVar6 = 0.0;
+          }
+          else {
+            dVar6 = 0.0;
+            uVar5 = 0;
+            do {
+              lVar1 = param_5 + uVar5 * 0x2580;
+              *(double *)(lVar1 + uVar2 * 8) =
+                   *(double *)(uVar3 * 0x2580 + param_7 + uVar2 * 8) * param_1 *
+                   *(double *)(lVar4 + uVar5 * 8) + *(double *)(lVar1 + uVar2 * 8);
+              dVar6 = dVar6 + *(double *)(uVar5 * 0x2580 + param_7 + uVar2 * 8) *
+                              *(double *)(lVar4 + uVar5 * 8);
+              uVar5 = uVar5 + 1;
+            } while (uVar5 != uVar3);
+          }
+          lVar1 = param_5 + uVar3 * 0x2580;
+          *(double *)(lVar1 + uVar2 * 8) =
+               dVar6 * param_1 +
+               *(double *)(lVar1 + uVar2 * 8) * param_2 +
+               *(double *)(uVar3 * 0x2580 + param_7 + uVar2 * 8) * param_1 *
+               *(double *)(lVar4 + uVar3 * 8);
+          uVar2 = uVar2 + 1;
+        } while (uVar2 != param_4);
+      }
+      uVar3 = uVar3 + 1;
+    } while (uVar3 != param_3);
+  }
+  return;
+}
+
+
+
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined8 submain(int param_1,char **param_2)
@@ -34,7 +85,7 @@ undefined8 submain(int param_1,char **param_2)
   __ptr = (void *)polybench_alloc_data(1200000,8);
   __ptr_00 = (void *)polybench_alloc_data(1000000,8);
   __ptr_01 = (void *)polybench_alloc_data(1200000,8);
-  auVar17 = __LCPI0_3;
+  auVar17 = __LCPI1_3;
   lVar3 = 0;
   do {
     lVar7 = lVar3 + 0x4b0;
@@ -70,7 +121,7 @@ undefined8 submain(int param_1,char **param_2)
         lVar15 = lVar15 + 2;
       } while (lVar8 != 0x4b0);
     }
-    auVar16 = __LCPI0_3;
+    auVar16 = __LCPI1_3;
     lVar3 = lVar3 + 1;
   } while (lVar3 != 1000);
   uVar6 = 1;
@@ -93,7 +144,7 @@ undefined8 submain(int param_1,char **param_2)
         uVar10 = uVar10 + 2;
         lVar7 = lVar7 + 2;
         lVar5 = lVar5 + 2;
-        if (uVar10 == uVar4) goto joined_r0x0010033c;
+        if (uVar10 == uVar4) goto joined_r0x0010044c;
       } while( true );
     }
     uVar4 = 0;
@@ -101,9 +152,9 @@ undefined8 submain(int param_1,char **param_2)
       *(double *)((long)__ptr_00 + uVar4 * 8 + uVar19 * 8000) =
            (double)((uint)((int)uVar4 + (int)uVar19) % 100) / 1000.0;
       uVar4 = uVar4 + 1;
-joined_r0x0010033c:
+joined_r0x0010044c:
     } while (uVar6 != uVar4);
-                    // WARNING: Read-only address (ram,0x00100670) is written
+                    // WARNING: Read-only address (ram,0x00100780) is written
     uVar4 = uVar19 + 1;
     if (uVar19 < 999) {
       uVar11 = 999 - uVar19;
@@ -125,14 +176,14 @@ joined_r0x0010033c:
           puVar2[3] = 0xc08f3800;
           uVar13 = uVar13 + 4;
         } while (uVar13 != uVar12);
-        if (uVar11 == uVar12) goto LAB_00100280;
+        if (uVar11 == uVar12) goto LAB_00100390;
       }
       do {
         *(undefined8 *)((long)__ptr_00 + uVar10 * 8 + uVar19 * 8000) = 0xc08f380000000000;
         uVar10 = uVar10 + 1;
       } while (uVar10 != 1000);
     }
-LAB_00100280:
+LAB_00100390:
     uVar6 = uVar6 + 1;
     uVar19 = uVar4;
     if (uVar4 == 1000) {

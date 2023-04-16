@@ -87,6 +87,9 @@ void w2c_mvt_0x5F_wasm_call_ctors(w2c_mvt*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_mvt_0x5F_wasm_apply_data_relocs(w2c_mvt*);
 
+/* export: 'kernel_mvt' */
+void w2c_mvt_kernel_mvt(w2c_mvt*, u32, u32, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_mvt_submain(w2c_mvt*, u32, u32);
 

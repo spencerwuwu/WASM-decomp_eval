@@ -2,6 +2,86 @@
 
 
 
+void kernel_durbin(int param_1,ulong *param_2,ulong *param_3)
+
+{
+  double dVar1;
+  ulong uVar2;
+  ulong uVar3;
+  ulong uVar4;
+  ulong uVar5;
+  double dVar6;
+  double dVar7;
+  double dVar8;
+  undefined auVar9 [16];
+  undefined auVar10 [16];
+  double local_3eb8 [2001];
+  
+  *param_3 = *param_2 ^ 0x8000000000000000;
+  if (1 < param_1) {
+    dVar7 = (double)(*param_2 ^ 0x8000000000000000);
+    auVar9 = ZEXT816(0x3ff0000000000000);
+    uVar4 = 1;
+    uVar5 = 0;
+    do {
+      if (uVar5 == 0) {
+        dVar6 = 0.0;
+        uVar2 = 0;
+      }
+      else {
+        dVar6 = 0.0;
+        uVar2 = 0;
+        uVar3 = 0;
+        do {
+          dVar6 = (double)param_2[(uVar4 - uVar2) + -2] *
+                  *(double *)((long)param_3 + (uVar2 * 8 | 8)) +
+                  (double)param_2[~uVar2 + uVar4] * (double)param_3[uVar2] + dVar6;
+          uVar2 = uVar2 + 2;
+          uVar3 = uVar3 + 2;
+        } while (uVar3 != (uVar4 & 0x7ffffffffffffffe));
+      }
+      if ((uVar4 & 1) != 0) {
+        dVar6 = dVar6 + (double)param_2[~uVar2 + uVar4] * (double)param_3[uVar2];
+      }
+      dVar8 = SUB168(auVar9,0) * (1.0 - dVar7 * dVar7);
+      dVar7 = (double)((ulong)(dVar6 + (double)param_2[uVar4]) ^ 0x8000000000000000) / dVar8;
+      if (3 < uVar4) {
+        uVar2 = uVar4 & 0x7ffffffffffffffc;
+        uVar3 = 0;
+        do {
+          dVar6 = (double)param_3[uVar3 + 2];
+          dVar1 = (double)(param_3 + uVar3 + 2)[1];
+          auVar10 = shufpd(*(undefined (*) [16])(param_3 + ~uVar3 + uVar4 + -1),
+                           *(undefined (*) [16])(param_3 + ~uVar3 + uVar4 + -1),1);
+          auVar9 = shufpd(*(undefined (*) [16])(param_3 + ~uVar3 + uVar4 + -3),
+                          *(undefined (*) [16])(param_3 + ~uVar3 + uVar4 + -3),1);
+          *(undefined (*) [16])(local_3eb8 + uVar3) =
+               CONCAT88(SUB168(auVar10 >> 0x40,0) * dVar7 + (double)(param_3 + uVar3)[1],
+                        SUB168(auVar10,0) * dVar7 + (double)param_3[uVar3]);
+          local_3eb8[uVar3 + 2] = SUB168(auVar9,0) * dVar7 + dVar6;
+          local_3eb8[uVar3 + 3] = SUB168(auVar9 >> 0x40,0) * dVar7 + dVar1;
+          uVar3 = uVar3 + 4;
+          if (uVar3 == uVar2) goto joined_r0x001001c2;
+        } while( true );
+      }
+      uVar2 = 0;
+      do {
+        local_3eb8[uVar2] = (double)param_3[~uVar2 + uVar4] * dVar7 + (double)param_3[uVar2];
+        uVar2 = uVar2 + 1;
+joined_r0x001001c2:
+      } while (uVar4 != uVar2);
+      memcpy(param_3,local_3eb8,uVar5 * 8 + 8);
+      param_3[uVar4] = (ulong)dVar7;
+      uVar4 = uVar4 + 1;
+      uVar5 = uVar5 + 1;
+      auVar9 = ZEXT816((ulong)dVar8);
+    } while (uVar5 != param_1 - 1);
+  }
+  return;
+}
+
+
+
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined8 submain(int param_1,char **param_2)
@@ -75,17 +155,17 @@ undefined8 submain(int param_1,char **param_2)
     do {
       local_3eb8[uVar5] = (double)__dest[~uVar5 + uVar6] * dVar10 + (double)__dest[uVar5];
       uVar5 = uVar5 + 1;
-joined_r0x00100286:
+joined_r0x001004b6:
     } while (uVar6 != uVar5);
     memcpy(__dest,local_3eb8,lVar4 * 8 + 8);
     __dest[uVar6] = (ulong)dVar10;
-    __stream = _DAT_13a3d8d48388b4c;
+    __stream = _DAT_1523d8d48388b4c;
     uVar6 = uVar6 + 1;
     lVar4 = lVar4 + 1;
     auVar11 = ZEXT816((ulong)dVar12);
     if (lVar4 == 1999) {
       if ((0x2a < param_1) && (**param_2 == '\0')) {
-        fwrite(_L_str_1,0x16,1,_DAT_13a3d8d48388b4c);
+        fwrite(_L_str_1,0x16,1,_DAT_1523d8d48388b4c);
         lVar4 = 0;
         fprintf(__stream,"begin dump: %s",&_L_str_3);
         do {
@@ -118,7 +198,7 @@ joined_r0x00100286:
     local_3eb8[uVar7 + 2] = SUB168(auVar11,0) * dVar10 + dVar2;
     local_3eb8[uVar7 + 3] = SUB168(auVar11 >> 0x40,0) * dVar10 + dVar3;
     uVar7 = uVar7 + 4;
-    if (uVar7 == uVar5) goto joined_r0x00100286;
+    if (uVar7 == uVar5) goto joined_r0x001004b6;
   } while( true );
 }
 

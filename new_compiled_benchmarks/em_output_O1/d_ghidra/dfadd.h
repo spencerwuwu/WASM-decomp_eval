@@ -53,87 +53,127 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x5dd)));
-
-typedef pointer pointer __((offset(0x731)));
-
 typedef pointer pointer __((offset(0xb0)));
 
-typedef pointer pointer __((offset(0x542)));
+typedef pointer pointer __((offset(0x777)));
 
-typedef pointer pointer __((offset(0x3d7)));
+typedef pointer pointer __((offset(0x4b0)));
 
-typedef pointer pointer __((offset(0x590)));
+typedef pointer pointer __((offset(0x4fd)));
 
-typedef pointer pointer __((offset(0x408)));
+typedef pointer pointer __((offset(0x760)));
 
-typedef pointer pointer __((offset(0x575)));
-
-typedef pointer pointer __((offset(0x660)));
+typedef pointer pointer __((offset(0x41e)));
 
 typedef pointer pointer __((offset(0xc0)));
 
-typedef pointer pointer __((offset(0x4de)));
+typedef pointer pointer __((offset(0x4bb)));
 
-typedef pointer pointer __((offset(0x357)));
+typedef pointer pointer __((offset(0x569)));
 
-typedef pointer pointer __((offset(0x57c)));
+typedef pointer pointer __((offset(0x66c)));
 
-typedef pointer pointer __((offset(0x64f)));
+typedef pointer pointer __((offset(0x154)));
 
 typedef pointer pointer __((offset(0xd0)));
 
-typedef pointer pointer __((offset(0x3a8)));
+typedef pointer pointer __((offset(0x580)));
+
+typedef pointer pointer __((offset(0x829)));
+
+typedef pointer pointer __((offset(0x177)));
+
+typedef pointer pointer __((offset(0x6ec)));
+
+typedef pointer pointer __((offset(0x840)));
+
+typedef pointer pointer __((offset(0x7a5)));
+
+typedef pointer pointer __((offset(0x3e8)));
 
 typedef pointer pointer __((offset(0x7)));
 
+typedef pointer pointer __((offset(0x15e)));
+
 typedef pointer pointer __((offset(0xe0)));
 
-typedef pointer pointer __((offset(0x2c2)));
+typedef pointer pointer __((offset(0x85b)));
 
 typedef pointer pointer __((offset(0x40)));
 
-typedef pointer pointer __((offset(0x6d4)));
+typedef pointer pointer __((offset(0x2f3)));
 
-typedef pointer pointer __((offset(0x550)));
+typedef pointer pointer __((offset(0x526)));
 
-typedef pointer pointer __((offset(0x560)));
+typedef pointer pointer __((offset(0x772)));
 
-typedef pointer pointer __((offset(0x342)));
+typedef pointer pointer __((offset(0x226)));
 
-typedef pointer pointer __((offset(0x36f)));
+typedef pointer pointer __((offset(0x847)));
 
-typedef pointer pointer __((offset(0x5fe)));
+typedef pointer pointer __((offset(0x822)));
 
-typedef pointer pointer __((offset(0x42c)));
+typedef pointer pointer __((offset(0x805)));
 
-typedef pointer pointer __((offset(0x1c7)));
+typedef pointer pointer __((offset(0x28b)));
 
-typedef pointer pointer __((offset(0x6de)));
+typedef pointer pointer __((offset(0x5d4)));
 
-typedef pointer pointer __((offset(0x5f7)));
+typedef pointer pointer __((offset(0x700)));
 
-typedef pointer pointer __((offset(0xe8)));
+typedef pointer pointer __((offset(0x61f)));
+
+typedef pointer pointer __((offset(0x336)));
 
 typedef pointer pointer __((offset(0x50)));
 
-typedef pointer pointer __((offset(0x3ae)));
+typedef pointer pointer __((offset(0x280)));
 
-typedef pointer pointer __((offset(0x4d8)));
+typedef pointer pointer __((offset(0x790)));
+
+typedef pointer pointer __((offset(0x898)));
 
 typedef pointer pointer __((offset(0x450)));
 
-typedef pointer pointer __((offset(0x5cc)));
+typedef pointer pointer __((offset(0x34d)));
+
+typedef pointer pointer __((offset(0x432)));
+
+typedef pointer pointer __((offset(0x780)));
+
+typedef pointer pointer __((offset(0x6e6)));
+
+typedef pointer pointer __((offset(0x839)));
+
+typedef pointer pointer __((offset(0x753)));
+
+typedef pointer pointer __((offset(0x7ac)));
+
+typedef pointer pointer __((offset(0x54a)));
+
+typedef pointer pointer __((offset(0x26f)));
+
+typedef pointer pointer __((offset(0x1b1)));
+
+typedef pointer pointer __((offset(0x317)));
+
+typedef pointer pointer __((offset(0x4c8)));
+
+typedef pointer pointer __((offset(0x7c0)));
+
+typedef pointer pointer __((offset(0x297)));
+
+typedef pointer pointer __((offset(0x426)));
+
+typedef pointer pointer __((offset(0x767)));
 
 typedef pointer pointer __((offset(0x70)));
 
-typedef pointer pointer __((offset(0x612)));
-
 typedef pointer pointer __((offset(0xa0)));
 
-typedef pointer pointer __((offset(0x6f7)));
+typedef pointer pointer __((offset(0x633)));
 
-typedef pointer pointer __((offset(0x4f2)));
+typedef pointer pointer __((offset(0x210)));
 
 typedef struct timeval timeval, *Ptimeval;
 
@@ -210,6 +250,17 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
+typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
+
+struct Elf64_Sym {
+    dword st_name;
+    byte st_info;
+    byte st_other;
+    word st_shndx;
+    qword st_value;
+    qword st_size;
+};
+
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
 
 struct Elf64_Ehdr {
@@ -236,17 +287,6 @@ struct Elf64_Ehdr {
     word e_shstrndx;
 };
 
-typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
-
-struct Elf64_Sym {
-    dword st_name;
-    byte st_info;
-    byte st_other;
-    word st_shndx;
-    qword st_value;
-    qword st_size;
-};
-
 
 
 
@@ -258,10 +298,13 @@ ulong extractFloat64Frac(ulong param_1);
 uint extractFloat64Exp(undefined8 param_1);
 ulong extractFloat64Sign(ulong param_1);
 long packFloat64(long param_1,long param_2,long param_3);
-ulong float64_add(ulong param_1,ulong param_2);
+long roundAndPackFloat64(ulong param_1,long param_2,ulong param_3);
+void normalizeRoundAndPackFloat64(undefined8 param_1,int param_2,ulong param_3);
+ulong addFloat64Sigs(ulong param_1,ulong param_2,ulong param_3);
+ulong subFloat64Sigs(ulong param_1,ulong param_2,uint param_3);
+void float64_add(undefined8 param_1,undefined8 param_2);
 void ullong_to_double(void);
 int submain(void);
-long roundAndPackFloat64(ulong param_1,long param_2,ulong param_3);
 int gettimeofday(timeval * __tv, __timezone_ptr_t __tz);
 int printf(char * __format, ...);
 

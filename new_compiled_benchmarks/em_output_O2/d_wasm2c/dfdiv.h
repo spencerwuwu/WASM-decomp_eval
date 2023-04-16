@@ -136,14 +136,20 @@ u32 w2c_dfdiv_extractFloat64Exp(w2c_dfdiv*, u32, u32);
 /* export: 'extractFloat64Sign' */
 u32 w2c_dfdiv_extractFloat64Sign(w2c_dfdiv*, u32, u32);
 
+/* export: 'normalizeFloat64Subnormal' */
+void w2c_dfdiv_normalizeFloat64Subnormal(w2c_dfdiv*, u32, u32, u32, u32);
+
 /* export: 'packFloat64' */
 u32 w2c_dfdiv_packFloat64(w2c_dfdiv*, u32, u32, u32, u32);
 
-/* export: 'float64_div' */
-u32 w2c_dfdiv_float64_div(w2c_dfdiv*, u32, u32, u32, u32);
+/* export: 'roundAndPackFloat64' */
+u32 w2c_dfdiv_roundAndPackFloat64(w2c_dfdiv*, u32, u32, u32, u32);
 
 /* export: 'float_rounding_mode' */
 u32* w2c_dfdiv_float_rounding_mode(w2c_dfdiv* instance);
+
+/* export: 'float64_div' */
+u32 w2c_dfdiv_float64_div(w2c_dfdiv*, u32, u32, u32, u32);
 
 /* export: 'ullong_to_double' */
 f64 w2c_dfdiv_ullong_to_double(w2c_dfdiv*, u32, u32);
@@ -193,8 +199,14 @@ u32 w2c_dfdiv_orig0x24extractFloat64Exp(w2c_dfdiv*, u64);
 /* export: 'orig$extractFloat64Sign' */
 u32 w2c_dfdiv_orig0x24extractFloat64Sign(w2c_dfdiv*, u64);
 
+/* export: 'orig$normalizeFloat64Subnormal' */
+void w2c_dfdiv_orig0x24normalizeFloat64Subnormal(w2c_dfdiv*, u64, u32, u32);
+
 /* export: 'orig$packFloat64' */
 u64 w2c_dfdiv_orig0x24packFloat64(w2c_dfdiv*, u32, u32, u64);
+
+/* export: 'orig$roundAndPackFloat64' */
+u64 w2c_dfdiv_orig0x24roundAndPackFloat64(w2c_dfdiv*, u32, u32, u64);
 
 /* export: 'orig$float64_div' */
 u64 w2c_dfdiv_orig0x24float64_div(w2c_dfdiv*, u64, u64);

@@ -26,13 +26,17 @@ void f6(heat3dInstance*);
 
 void f7(heat3dInstance*);
 
-U32 f8(heat3dInstance*,U32,U32);
+void f8(heat3dInstance*,U32,U32,U32,U32);
 
-U32 f9(heat3dInstance*,U64,U32);
+U32 f9(heat3dInstance*,U32,U32);
+
+U32 f10(heat3dInstance*,U64,U32);
 
 void heat3d____wasm_call_ctors(heat3dInstance*i);
 
 void heat3d____wasm_apply_data_relocs(heat3dInstance*i);
+
+void heat3d_kernel_heat_3d(heat3dInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
 U32 heat3d_submain(heat3dInstance*i,U32 l0,U32 l1);
 

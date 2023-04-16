@@ -732,6 +732,7 @@ DEFINE_TABLE_FILL(externref)
 
 static void w2c_floyd0x2Dwarshall_0x5F_wasm_call_ctors_0(w2c_floyd0x2Dwarshall*);
 static void w2c_floyd0x2Dwarshall_0x5F_wasm_apply_data_relocs_0(w2c_floyd0x2Dwarshall*);
+static void w2c_floyd0x2Dwarshall_kernel_floyd_warshall_0(w2c_floyd0x2Dwarshall*, u32, u32);
 static u32 w2c_floyd0x2Dwarshall_submain_0(w2c_floyd0x2Dwarshall*, u32, u32);
 static u32 w2c_floyd0x2Dwarshall_legalfunc0x24polybench_alloc_data(w2c_floyd0x2Dwarshall*, u64, u32);
 
@@ -740,7 +741,8 @@ FUNC_TYPE_T(w2c_floyd0x2Dwarshall_t1) = "\x92\xfb\x6a\xdf\x49\x07\x0a\x83\xbe\x0
 FUNC_TYPE_T(w2c_floyd0x2Dwarshall_t2) = "\x36\xa9\xe7\xf1\xc9\x5b\x82\xff\xb9\x97\x43\xe0\xc5\xc4\xce\x95\xd8\x3c\x9a\x43\x0a\xac\x59\xf8\x4e\xf3\xcb\xfa\xb6\x14\x50\x68";
 FUNC_TYPE_T(w2c_floyd0x2Dwarshall_t3) = "\xf6\x98\x1b\xc6\x10\xda\xb7\xb2\x63\x37\xcd\xdc\x72\xca\xe9\x50\x00\x13\xba\x10\x6c\xde\x87\x27\x10\xf8\x86\x2f\xe3\xdb\x94\xe4";
 FUNC_TYPE_T(w2c_floyd0x2Dwarshall_t4) = "\x89\x3a\x3d\x2c\x8f\x4d\x7f\x6d\x6c\x9d\x62\x67\x29\xaf\x3d\x44\x39\x8e\xc3\xf3\xe8\x51\xc1\x99\xb9\xdd\x9f\xd5\x3d\x1f\xd3\xe4";
-FUNC_TYPE_T(w2c_floyd0x2Dwarshall_t5) = "\xc1\x35\x64\x94\x2d\x55\x73\x56\xf4\xe1\x63\x0d\x0e\xe1\x22\x79\x32\x48\xe9\x1a\x10\x0b\x2b\x94\x08\xe2\xbe\x33\x0f\x6d\x15\x99";
+FUNC_TYPE_T(w2c_floyd0x2Dwarshall_t5) = "\x26\x10\x81\xe2\x21\x43\xd6\x01\x3e\x2d\x2f\x16\x17\x78\x6f\xba\xb3\x2f\x4d\x54\x9b\x8a\xa9\xdd\xbf\x53\x92\x3c\xd3\x71\xc6\xb2";
+FUNC_TYPE_T(w2c_floyd0x2Dwarshall_t6) = "\xc1\x35\x64\x94\x2d\x55\x73\x56\xf4\xe1\x63\x0d\x0e\xe1\x22\x79\x32\x48\xe9\x1a\x10\x0b\x2b\x94\x08\xe2\xbe\x33\x0f\x6d\x15\x99";
 
 static void init_globals(w2c_floyd0x2Dwarshall* instance) {
 }
@@ -771,6 +773,11 @@ void w2c_floyd0x2Dwarshall_0x5F_wasm_call_ctors(w2c_floyd0x2Dwarshall* instance)
 /* export: '__wasm_apply_data_relocs' */
 void w2c_floyd0x2Dwarshall_0x5F_wasm_apply_data_relocs(w2c_floyd0x2Dwarshall* instance) {
   return w2c_floyd0x2Dwarshall_0x5F_wasm_apply_data_relocs_0(instance);
+}
+
+/* export: 'kernel_floyd_warshall' */
+void w2c_floyd0x2Dwarshall_kernel_floyd_warshall(w2c_floyd0x2Dwarshall* instance, u32 var_p0, u32 var_p1) {
+  return w2c_floyd0x2Dwarshall_kernel_floyd_warshall_0(instance, var_p0, var_p1);
 }
 
 /* export: 'submain' */
@@ -849,11 +856,20 @@ wasm_rt_func_type_t wasm2c_floyd0x2Dwarshall_get_func_type(uint32_t param_count,
     va_end(args);
   }
   
+  if (param_count == 2 && result_count == 0) {
+    va_start(args, result_count);
+    if (true && va_arg(args, wasm_rt_type_t) == WASM_RT_I32 && va_arg(args, wasm_rt_type_t) == WASM_RT_I32) {
+      va_end(args);
+      return w2c_floyd0x2Dwarshall_t5;
+    }
+    va_end(args);
+  }
+  
   if (param_count == 2 && result_count == 1) {
     va_start(args, result_count);
     if (true && va_arg(args, wasm_rt_type_t) == WASM_RT_I64 && va_arg(args, wasm_rt_type_t) == WASM_RT_I32 && va_arg(args, wasm_rt_type_t) == WASM_RT_I32) {
       va_end(args);
-      return w2c_floyd0x2Dwarshall_t5;
+      return w2c_floyd0x2Dwarshall_t6;
     }
     va_end(args);
   }
@@ -868,6 +884,96 @@ void w2c_floyd0x2Dwarshall_0x5F_wasm_call_ctors_0(w2c_floyd0x2Dwarshall* instanc
 
 void w2c_floyd0x2Dwarshall_0x5F_wasm_apply_data_relocs_0(w2c_floyd0x2Dwarshall* instance) {
   FUNC_PROLOGUE;
+  FUNC_EPILOGUE;
+}
+
+void w2c_floyd0x2Dwarshall_kernel_floyd_warshall_0(w2c_floyd0x2Dwarshall* instance, u32 var_p0, u32 var_p1) {
+  u32 var_l2 = 0, var_l3 = 0, var_l4 = 0, var_l5 = 0, var_l6 = 0, var_l7 = 0, var_l8 = 0;
+  FUNC_PROLOGUE;
+  u32 var_i0, var_i1, var_i2, var_i3, var_i4;
+  var_i0 = var_p0;
+  var_i1 = 1u;
+  var_i0 = (u32)((s32)var_i0 < (s32)var_i1);
+  if (var_i0) {goto var_B0;}
+  var_i0 = 0u;
+  var_l2 = var_i0;
+  var_L1: 
+    var_i0 = var_l2;
+    var_l3 = var_i0;
+    var_i0 = 0u;
+    var_l2 = var_i0;
+    var_L2: 
+      var_i0 = var_p1;
+      var_i1 = var_l2;
+      var_l4 = var_i1;
+      var_i2 = 11200u;
+      var_i1 *= var_i2;
+      var_i0 += var_i1;
+      var_l5 = var_i0;
+      var_i1 = var_l3;
+      var_i2 = 2u;
+      var_i1 <<= (var_i2 & 31);
+      var_i0 += var_i1;
+      var_l6 = var_i0;
+      var_i0 = 0u;
+      var_l2 = var_i0;
+      var_L3: 
+        var_i0 = var_l5;
+        var_i1 = var_l2;
+        var_l2 = var_i1;
+        var_i2 = 2u;
+        var_i1 <<= (var_i2 & 31);
+        var_l7 = var_i1;
+        var_i0 += var_i1;
+        var_l8 = var_i0;
+        var_i1 = var_l8;
+        var_i1 = i32_load(instance->w2c_env_memory, (u64)(var_i1));
+        var_l8 = var_i1;
+        var_i2 = var_p1;
+        var_i3 = var_l3;
+        var_i4 = 11200u;
+        var_i3 *= var_i4;
+        var_i2 += var_i3;
+        var_i3 = var_l7;
+        var_i2 += var_i3;
+        var_i2 = i32_load(instance->w2c_env_memory, (u64)(var_i2));
+        var_i3 = var_l6;
+        var_i3 = i32_load(instance->w2c_env_memory, (u64)(var_i3));
+        var_i2 += var_i3;
+        var_l7 = var_i2;
+        var_i3 = var_l8;
+        var_i4 = var_l7;
+        var_i3 = (u32)((s32)var_i3 < (s32)var_i4);
+        var_i1 = var_i3 ? var_i1 : var_i2;
+        i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
+        var_i0 = var_l2;
+        var_i1 = 1u;
+        var_i0 += var_i1;
+        var_l7 = var_i0;
+        var_l2 = var_i0;
+        var_i0 = var_l7;
+        var_i1 = var_p0;
+        var_i0 = var_i0 != var_i1;
+        if (var_i0) {goto var_L3;}
+      var_i0 = var_l4;
+      var_i1 = 1u;
+      var_i0 += var_i1;
+      var_l7 = var_i0;
+      var_l2 = var_i0;
+      var_i0 = var_l7;
+      var_i1 = var_p0;
+      var_i0 = var_i0 != var_i1;
+      if (var_i0) {goto var_L2;}
+    var_i0 = var_l3;
+    var_i1 = 1u;
+    var_i0 += var_i1;
+    var_l7 = var_i0;
+    var_l2 = var_i0;
+    var_i0 = var_l7;
+    var_i1 = var_p0;
+    var_i0 = var_i0 != var_i1;
+    if (var_i0) {goto var_L1;}
+  var_B0:;
   FUNC_EPILOGUE;
 }
 

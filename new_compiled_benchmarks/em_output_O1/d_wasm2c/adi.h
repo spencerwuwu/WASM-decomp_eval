@@ -87,6 +87,15 @@ void w2c_adi_0x5F_wasm_call_ctors(w2c_adi*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_adi_0x5F_wasm_apply_data_relocs(w2c_adi*);
 
+/* export: 'init_array' */
+void w2c_adi_init_array(w2c_adi*, u32, u32);
+
+/* export: 'print_array' */
+void w2c_adi_print_array(w2c_adi*, u32, u32);
+
+/* export: 'kernel_adi' */
+void w2c_adi_kernel_adi(w2c_adi*, u32, u32, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_adi_submain(w2c_adi*, u32, u32);
 

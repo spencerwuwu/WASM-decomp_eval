@@ -1,3 +1,85 @@
+long long kernel_durbin(unsigned int a0, unsigned long long a1[2], void* a2)
+{
+    unsigned long v0;  // [bp-0x3ed0]
+    int v1;  // [bp-0x3ec8], Other Possible Types: uint128_t
+    uint128_t v2;  // [bp-0x3eb8], Other Possible Types: unsigned long
+    uint128_t v4;  // xmm0
+    void* v5;  // rbx
+    uint128_t v6;  // xmm1
+    int v8;  // xmm3
+    unsigned long long v9;  // r13
+    unsigned long v10;  // rax
+    uint128_t v11;  // xmm1
+    int v12;  // xmm0
+    uint128_t v13;  // xmm0
+    uint128_t v14;  // xmm2
+    void* v15;  // rax
+    uint128_t v16;  // xmm1
+    uint128_t v17;  // xmm1
+    int v18;  // xmm3
+    uint128_t v19;  // xmm2
+    void* v20;  // rax
+    uint128_t v21;  // xmm0
+    uint128_t v23;  // xmm1
+    unsigned long long v24;  // r13
+
+    v4 = 0;
+    *((unsigned long long *)&v4) = a1[0];
+    *((unsigned long long *)&v4) = v4 ^ 0x8000000000000000;
+    *((unsigned long long *)a2) = v4;
+    if (a0 >= 2)
+    {
+        v5 = a2;
+        v6 = 0;
+        *((unsigned long long *)&v6) = a1[0];
+        v23 = v6 ^ 0x8000000000000000;
+        v8 = 0;
+        *((unsigned long long *)&v8) = 0x3ff0000000000000;
+        v9 = 1;
+        while (true)
+        {
+            v11 = v23 * v23;
+            v12 = 0;
+            *((unsigned long long *)&v12) = 0x3ff0000000000000;
+            v13 = v12 - v11;
+            v14 = 0;
+            v15 = 0;
+            do
+            {
+                v16 = 0;
+                *((unsigned long long *)&v16) = v2;
+                xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=(rdx<8> + (rax<8> * 0x8<64>)), size=8, endness=Iend_LE)))
+                v14 += v17;
+                v15 += 1;
+            }
+            while (v15 != v9);
+            v18 = v8 * v13;
+            v0 = (unsigned long long)v18;
+            xmm2<16> = (((xmm2<16> + Conv(64->128, Load(addr=(rsi<8> + 0x8<64>), size=8, endness=Iend_LE))) ^ 0x8000000000000000<128>) / Conv(64->128, Load(addr=stack_base-16080, size=8, endness=Iend_LE)))
+            v20 = 0;
+            do
+            {
+                v21 = 0;
+                *((unsigned long long *)&v21) = *((long long *)&((char *)v5 + 0x8 * !(v20))[8]);
+                xmm0lq<8> = Conv(128->64, ((xmm0<16> * Load(addr=stack_base-16072, size=16, endness=Iend_LE)) + Conv(64->128, Load(addr=(rbx<8> + (rax<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+                v2 = v21;
+                v20 += 1;
+            }
+            while (v20 != 1);
+            v1 = v19;
+            v23 = v1;
+            *((unsigned long long *)&v5[8]) = v1;
+            v24 = 2;
+            if (a0 - 1 == 1)
+            {
+                break;
+            }
+        }
+        return memcpy(v5, &v2, 0x8);
+    }
+    return v10;
+}
+
 extern char .L.str.3;
 extern char got.stderr;
 

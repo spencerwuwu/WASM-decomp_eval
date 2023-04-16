@@ -310,7 +310,7 @@ int motion_vector(struct_0 *a0, unsigned int a1[2], unsigned int a2, unsigned in
     {
         v0 = Get_Bits(a3);
     }
-    if (a3 == 0 || v3 == 0)
+    if (v3 == 0 || a3 == 0)
     {
         v0 = 0;
     }

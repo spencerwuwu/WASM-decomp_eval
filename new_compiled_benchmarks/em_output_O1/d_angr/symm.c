@@ -1,9 +1,99 @@
+long long kernel_symm(unsigned int a0, unsigned long long a1, void* a2, unsigned long long *a3, void* a4)
+{
+    unsigned long v1;  // rdi
+    void* v2;  // r9
+    unsigned long v3;  // rax
+    unsigned long long v4;  // cc_op
+    unsigned long long v5;  // cc_dep1
+    void* v6;  // cc_dep2
+    void* v7;  // r10
+    unsigned long long *v8;  // r14
+    uint128_t v9;  // xmm2
+    void* v10;  // r15
+    uint128_t v11;  // xmm3
+    int v12;  // xmm0
+    uint128_t v13;  // xmm3
+    uint128_t v14;  // xmm3
+    uint128_t v15;  // xmm3
+    uint128_t v16;  // xmm3
+    uint128_t v17;  // xmm4
+    int v18;  // xmm1
+    uint128_t v19;  // xmm4
+    unsigned long v20;  // cc_ndep
+    void* v21;  // rbx
+    unsigned long long v22;  // cc_op
+    void* v23;  // cc_dep1
+    unsigned long long v24;  // cc_dep2
+    unsigned long v25;  // cc_ndep
+
+    if ((unsigned int)v1 > 0)
+    {
+        v2 = 0;
+        do
+        {
+            v4 = 19;
+            v5 = a1;
+            v6 = 0;
+            if ((unsigned int)a1 > 0)
+            {
+                v7 = 0x1f40 * v2 + (char *)a3;
+                v21 = 0;
+                do
+                {
+                    if (v2 == 0)
+                    {
+                        v9 = 0;
+                    }
+                    else
+                    {
+                        v8 = 0 * 9600 + a4 + v21 * 8;
+                        v9 = 0;
+                        v10 = 0;
+                        do
+                        {
+                            v11 = 0;
+                            *((unsigned long long *)&v11) = *(v8);
+                            xmm3lq<8> = Conv(128->64, (((xmm3<16> * xmm0<16>) * Conv(64->128, Load(addr=(r10<8> + (r15<8> * 0x8<64>)), size=8, endness=Iend_LE))) + Conv(64->128, Load(addr=(rdx<8> + (r15<8> * 0x2580<64>)), size=8, endness=Iend_LE))))
+                            *((unsigned long long *)((char *)a2 + 0x2580 * v10)) = v11;
+                            v13 = 0;
+                            *((unsigned long long *)&v13) = *((long long *)(0x2580 * v10 + (char *)a4));
+                            xmm3<16> = (xmm3<16> * Conv(64->128, Load(addr=(r10<8> + (r15<8> * 0x8<64>)), size=8, endness=Iend_LE)))
+                            v9 += v14;
+                            v10 += 1;
+                        }
+                        while (v10 != 0);
+                    }
+                    v15 = 0;
+                    *((unsigned long long *)&v15) = *((long long *)((char *)a4 + 0x8 * v21));
+                    xmm3<16> = ((xmm3<16> * xmm0<16>) * Conv(64->128, Load(addr=((0x0<64> * 0x1f40<64>) + rcx<8>), size=8, endness=Iend_LE)))
+                    v17 = 0;
+                    *((unsigned long long *)&v17) = *((long long *)((char *)a2 + 0x8 * v21));
+                    v19 = v17 * v18 + v16;
+                    *((unsigned long long *)&v9) = (unsigned long long)(v9 * v12 + v19);
+                    *((unsigned long long *)((char *)a2 + 0x8 * v21)) = v9;
+                    v20 = (0 * 9600 + a4 <= 0 * 9600? 1 : 0);
+                    v21 += 1;
+                    v22 = 8;
+                    v23 = v21;
+                    v24 = a1;
+                }
+                while (v21 != a1);
+            }
+            v25 = [D] amd64g_calculate_rflags_c(cc_op<8>, cc_dep1<8>, cc_dep2<8>, cc_ndep<8>);
+            v2 += 1;
+        }
+        while (v2 != v1);
+        return v1;
+    }
+    return v3;
+}
+
 extern char .L.str.3;
 extern char got.stderr;
 
 long long submain(unsigned int a0, unsigned long long a1)
 {
-    void* v0;  // [bp-0x38], Other Possible Types: unsigned long
+    unsigned long v0;  // [bp-0x38], Other Possible Types: void*
     unsigned long v2;  // rax
     void* v5;  // rbx
     unsigned long long *v6;  // r14

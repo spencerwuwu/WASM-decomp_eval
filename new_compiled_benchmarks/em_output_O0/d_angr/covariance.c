@@ -1,81 +1,3 @@
-extern char .L.str;
-
-long long submain(unsigned int a0, unsigned long long *a1)
-{
-    void* v0;  // [bp-0x40]
-    void* v1;  // [bp-0x38]
-    void* v2;  // [bp-0x30]
-    char v3;  // [bp-0x28]
-    unsigned int v4;  // [bp-0x20]
-    unsigned int v5;  // [bp-0x1c]
-    unsigned int v6;  // [bp-0xc]
-    void* v9;  // rdi
-    void* v10;  // rdi
-
-    v6 = a0;
-    v5 = 1400;
-    v4 = 1200;
-    v2 = polybench_alloc_data(0x19a280, 0x8);
-    v1 = polybench_alloc_data(0x15f900, 0x8);
-    v0 = polybench_alloc_data(0x4b0, 0x8);
-    init_array(v4, v5, &v3, v2);
-    kernel_covariance(v4, v5, v2, v1, v0);
-    if (v6 > 42)
-    {
-        if (strcmp(*(a1), &.L.str) == 0)
-        {
-            print_array(v4, v1);
-            free(v2);
-            v9 = v1;
-            free(rdi<8>);
-            v10 = v0;
-            free(rdi<8>);
-            return 0;
-        }
-        free(v2);
-        v9 = v1;
-        free(rdi<8>);
-        v10 = v0;
-        free(rdi<8>);
-        return 0;
-    }
-    free(v2);
-    v9 = v1;
-    free(rdi<8>);
-    v10 = v0;
-    free(rdi<8>);
-    return 0;
-}
-
-int init_array(unsigned int a0, unsigned int a1, unsigned long long *a2, unsigned long a3)
-{
-    unsigned int v0;  // [bp-0x28]
-    int tmp_26;  // tmp #26
-    unsigned int v1;  // [bp-0x24]
-    unsigned int v2;  // [bp-0xc]
-    unsigned long long v4;  // xmm0lq
-    unsigned long long v5;  // xmm1lq
-    int v8;  // xmm1
-    int v9;  // xmm0
-
-    v2 = a0;
-    *(a2) = a1;
-    for (v1 = 0; v1 < 1400; v1 += 1)
-    {
-        for (v0 = 0; v0 < 1200; v0 += 1)
-        {
-            v4 = v1;
-            v5 = v0;
-            tmp_26 = xmm0<16> * xmm1<16>;
-            v8 = 0;
-            *((unsigned long long *)&v8) = 0x4092c00000000000;
-            v9 = tmp_26 / v8;
-            *((unsigned long long *)(a3 + v1 * 9600 + v0 * 8)) = (unsigned long long)v9;
-        }
-    }
-    return;
-}
-
 int kernel_covariance(unsigned int a0, unsigned int a1, unsigned long a2, unsigned long a3, unsigned long long *a4)
 {
     unsigned int v0;  // [bp-0x3c]
@@ -152,6 +74,84 @@ int kernel_covariance(unsigned int a0, unsigned int a1, unsigned long a2, unsign
             *((unsigned long long *)&v17) = v17 / v16;
             *((unsigned long long *)(a3 + v2 * 9600 + v1 * 8)) = v17;
             *((long long *)(a3 + v1 * 9600 + v2 * 8)) = *((long long *)(a3 + v2 * 9600 + v1 * 8));
+        }
+    }
+    return;
+}
+
+extern char .L.str;
+
+long long submain(unsigned int a0, unsigned long long *a1)
+{
+    void* v0;  // [bp-0x40]
+    unsigned long v1;  // [bp-0x38]
+    unsigned long v2;  // [bp-0x30]
+    char v3;  // [bp-0x28]
+    unsigned int v4;  // [bp-0x20]
+    unsigned int v5;  // [bp-0x1c]
+    unsigned int v6;  // [bp-0xc]
+    void* v10;  // rdi
+    void* v11;  // rdi
+
+    v6 = a0;
+    v5 = 1400;
+    v4 = 1200;
+    v2 = polybench_alloc_data(0x19a280, 0x8);
+    v1 = polybench_alloc_data(0x15f900, 0x8);
+    v0 = polybench_alloc_data(0x4b0, 0x8);
+    init_array(v4, v5, &v3, v2);
+    kernel_covariance(v4, v5, v2, v1, v0);
+    if (v6 > 42)
+    {
+        if (strcmp(*(a1), &.L.str) == 0)
+        {
+            print_array(v4, v1);
+            free(v2);
+            v10 = v1;
+            free(rdi<8>);
+            v11 = v0;
+            free(rdi<8>);
+            return 0;
+        }
+        free(v2);
+        v10 = v1;
+        free(rdi<8>);
+        v11 = v0;
+        free(rdi<8>);
+        return 0;
+    }
+    free(v2);
+    v10 = v1;
+    free(rdi<8>);
+    v11 = v0;
+    free(rdi<8>);
+    return 0;
+}
+
+int init_array(unsigned int a0, unsigned int a1, unsigned long long *a2, unsigned long a3)
+{
+    unsigned int v0;  // [bp-0x28]
+    int tmp_26;  // tmp #26
+    unsigned int v1;  // [bp-0x24]
+    unsigned int v2;  // [bp-0xc]
+    unsigned long long v4;  // xmm0lq
+    unsigned long long v5;  // xmm1lq
+    int v8;  // xmm1
+    int v9;  // xmm0
+
+    v2 = a0;
+    *(a2) = a1;
+    for (v1 = 0; v1 < 1400; v1 += 1)
+    {
+        for (v0 = 0; v0 < 1200; v0 += 1)
+        {
+            v4 = v1;
+            v5 = v0;
+            tmp_26 = xmm0<16> * xmm1<16>;
+            v8 = 0;
+            *((unsigned long long *)&v8) = 0x4092c00000000000;
+            v9 = tmp_26 / v8;
+            *((unsigned long long *)(a3 + v1 * 9600 + v0 * 8)) = (unsigned long long)v9;
         }
     }
     return;

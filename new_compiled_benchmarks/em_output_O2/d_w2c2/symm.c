@@ -10,7 +10,183 @@ void f7(symmInstance*i) {
 L0:;
 }
 
-U32 f8(symmInstance*i,U32 l0,U32 l1) {
+void f8(symmInstance*i,U32 l0,U32 l1,F64 l2,F64 l3,U32 l4,U32 l5,U32 l6) {
+U32 l7=0;
+U32 l8=0;
+U32 l9=0;
+F64 l10=0;
+U32 l11=0;
+U32 l12=0;
+U32 l13=0;
+U32 l14=0;
+U32 l15=0;
+U32 l16=0;
+U32 l17=0;
+U32 l18=0;
+U32 si0,si1,si2,si3,si4;
+F64 sd0,sd1,sd2,sd3,sd4;
+si0=l0;
+si1=0U;
+si0=(U32)((I32)si0>(I32)si1);
+if(si0){
+si0=l1;
+si1=0U;
+si0=(U32)((I32)si0<=(I32)si1);
+l13=si0;
+L2:;
+{
+si0=l13;
+si0=!(si0);
+if(si0){
+si0=l5;
+si1=l7;
+si2=8000U;
+si1*=si2;
+si0+=si1;
+l14=si0;
+si1=l7;
+si2=3U;
+si1<<=(si2&31);
+si0+=si1;
+l15=si0;
+si0=0U;
+l9=si0;
+L4:;
+{
+si0=l7;
+si0=!(si0);
+if(si0){
+sd0=0;
+l10=sd0;
+goto L5;
+}
+L6:;
+si0=l9;
+si1=3U;
+si0<<=(si1&31);
+l11=si0;
+si1=l6;
+si2=l7;
+si3=9600U;
+si2*=si3;
+si1+=si2;
+si0+=si1;
+l16=si0;
+si0=0U;
+l8=si0;
+sd0=0;
+l10=sd0;
+L7:;
+{
+si0=l4;
+si1=l8;
+si2=9600U;
+si1*=si2;
+l12=si1;
+si0+=si1;
+si1=l11;
+si0+=si1;
+l17=si0;
+si1=l16;
+sd1=f64_load(i->env__memory,(U64)si1);
+sd2=l2;
+sd1*=sd2;
+si2=l14;
+si3=l8;
+si4=3U;
+si3<<=(si4&31);
+si2+=si3;
+l18=si2;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1*=sd2;
+si2=l17;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l6;
+si1=l12;
+si0+=si1;
+si1=l11;
+si0+=si1;
+sd0=f64_load(i->env__memory,(U64)si0);
+si1=l18;
+sd1=f64_load(i->env__memory,(U64)si1);
+sd0*=sd1;
+sd1=l10;
+sd0+=sd1;
+l10=sd0;
+si0=l8;
+si1=1U;
+si0+=si1;
+l8=si0;
+si1=l7;
+si0=si0 != si1;
+if(si0){
+goto L7;
+}
+}
+L5:;
+si0=l9;
+si1=3U;
+si0<<=(si1&31);
+l11=si0;
+si1=l4;
+si2=l7;
+si3=9600U;
+si2*=si3;
+l8=si2;
+si1+=si2;
+si0+=si1;
+l12=si0;
+sd1=l2;
+sd2=l10;
+sd1*=sd2;
+sd2=l3;
+si3=l12;
+sd3=f64_load(i->env__memory,(U64)si3);
+sd2*=sd3;
+si3=l6;
+si4=l8;
+si3+=si4;
+si4=l11;
+si3+=si4;
+sd3=f64_load(i->env__memory,(U64)si3);
+sd4=l2;
+sd3*=sd4;
+si4=l15;
+sd4=f64_load(i->env__memory,(U64)si4);
+sd3*=sd4;
+sd2+=sd3;
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l9;
+si1=1U;
+si0+=si1;
+l9=si0;
+si1=l1;
+si0=si0 != si1;
+if(si0){
+goto L4;
+}
+}
+}
+L3:;
+si0=l7;
+si1=1U;
+si0+=si1;
+l7=si0;
+si1=l0;
+si0=si0 != si1;
+if(si0){
+goto L2;
+}
+}
+}
+L1:;
+L0:;
+}
+
+U32 f9(symmInstance*i,U32 l0,U32 l1) {
 U32 l2=0;
 U32 l3=0;
 U32 l4=0;
@@ -36,15 +212,15 @@ l8=si0;
 (*i->env_____stack_pointer)=si0;
 sj0=1200000ULL;
 si1=8U;
-si0=f9(i,sj0,si1);
+si0=f10(i,sj0,si1);
 l11=si0;
 sj0=1000000ULL;
 si1=8U;
-si0=f9(i,sj0,si1);
+si0=f10(i,sj0,si1);
 l9=si0;
 sj0=1200000ULL;
 si1=8U;
-si0=f9(i,sj0,si1);
+si0=f10(i,sj0,si1);
 l12=si0;
 L1:;
 {
@@ -604,7 +780,7 @@ L0:;
 return si0;
 }
 
-U32 f9(symmInstance*i,U64 l0,U32 l1) {
+U32 f10(symmInstance*i,U64 l0,U32 l1) {
 U32 si0,si1,si2;
 U64 sj0,sj1,sj2;
 sj0=l0;
@@ -639,8 +815,12 @@ void symm____wasm_apply_data_relocs(symmInstance*i){
 f7(i);
 }
 
+void symm_kernel_symm(symmInstance*i,U32 l0,U32 l1,F64 l2,F64 l3,U32 l4,U32 l5,U32 l6){
+f8(i,l0,l1,l2,l3,l4,l5,l6);
+}
+
 U32 symm_submain(symmInstance*i,U32 l0,U32 l1){
-return f8(i,l0,l1);
+return f9(i,l0,l1);
 }
 
 void symmInstantiate(symmInstance* i, void* resolve(const char* module, const char* name)) {

@@ -23,11 +23,11 @@ void f4(bicgInstance*);
 
 void f5(bicgInstance*);
 
-U32 f6(bicgInstance*,U32,U32);
+void f6(bicgInstance*,U32,U32,U32,U32,U32,U32,U32);
 
-void f7(bicgInstance*,U32,U32,U32,U32,U32);
+U32 f7(bicgInstance*,U32,U32);
 
-void f8(bicgInstance*,U32,U32,U32,U32,U32,U32,U32);
+void f8(bicgInstance*,U32,U32,U32,U32,U32);
 
 void f9(bicgInstance*,U32,U32,U32,U32);
 
@@ -36,6 +36,8 @@ U32 f10(bicgInstance*,U64,U32);
 void bicg____wasm_call_ctors(bicgInstance*i);
 
 void bicg____wasm_apply_data_relocs(bicgInstance*i);
+
+void bicg_kernel_bicg(bicgInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5,U32 l6);
 
 U32 bicg_submain(bicgInstance*i,U32 l0,U32 l1);
 

@@ -65,15 +65,15 @@ typedef pointer pointer __((offset(0x18)));
 
 typedef pointer pointer __((offset(0x3e0)));
 
-typedef pointer pointer __((offset(0x260)));
+typedef pointer pointer __((offset(0x270)));
 
 typedef pointer pointer __((offset(0x2b)));
+
+typedef pointer pointer __((offset(0x180)));
 
 typedef pointer pointer __((offset(0x44)));
 
 typedef pointer pointer __((offset(0x1)));
-
-typedef pointer pointer __((offset(0xf0)));
 
 typedef void _IO_lock_t;
 
@@ -222,9 +222,9 @@ struct Elf64_Sym {
 
 
 
+void kernel_syr2k(double param_1,double param_2,int param_3,int param_4,long param_5,long param_6,long param_7);
 undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,int param_2,undefined8 *param_3,undefined8 *param_4,long param_5,long param_6,long param_7);
-void kernel_syr2k(double param_1,double param_2,int param_3,int param_4,long param_5,long param_6,long param_7);
 void print_array(void);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);

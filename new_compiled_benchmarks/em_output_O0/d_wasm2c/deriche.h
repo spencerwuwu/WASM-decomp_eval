@@ -87,6 +87,9 @@ void w2c_deriche_0x5F_wasm_call_ctors(w2c_deriche*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_deriche_0x5F_wasm_apply_data_relocs(w2c_deriche*);
 
+/* export: 'kernel_deriche' */
+void w2c_deriche_kernel_deriche(w2c_deriche*, u32, u32, f32, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_deriche_submain(w2c_deriche*, u32, u32);
 

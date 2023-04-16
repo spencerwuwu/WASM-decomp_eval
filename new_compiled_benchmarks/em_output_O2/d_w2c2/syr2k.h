@@ -26,13 +26,17 @@ void f6(syr2kInstance*);
 
 void f7(syr2kInstance*);
 
-U32 f8(syr2kInstance*,U32,U32);
+void f8(syr2kInstance*,U32,U32,F64,F64,U32,U32,U32);
 
-U32 f9(syr2kInstance*,U64,U32);
+U32 f9(syr2kInstance*,U32,U32);
+
+U32 f10(syr2kInstance*,U64,U32);
 
 void syr2k____wasm_call_ctors(syr2kInstance*i);
 
 void syr2k____wasm_apply_data_relocs(syr2kInstance*i);
+
+void syr2k_kernel_syr2k(syr2kInstance*i,U32 l0,U32 l1,F64 l2,F64 l3,U32 l4,U32 l5,U32 l6);
 
 U32 syr2k_submain(syr2kInstance*i,U32 l0,U32 l1);
 

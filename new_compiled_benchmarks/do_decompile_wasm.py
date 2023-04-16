@@ -91,8 +91,14 @@ def decompile_wasm(base_dir):
             _decompile_wasm2c(wasm_f, c_file, wasm2c_f, wasm2c_dir)
         
 
+def try_decompile():
+    wasm_f = "em_output_O0/wasm/adi.wasm"
+    w2c2_f = "em_output_O0/d_w2c2/adi.c"
+    _decompile_w2c2(wasm_f, w2c2_f)
+
 
 if __name__ == '__main__':
+    # try_decompile()
     for o in OPTIMIZE_LEVELS:
         base_dir = "em_output_O%s/" % o
         decompile_wasm(base_dir)

@@ -1,4 +1,29 @@
 
+void fprintf(int32_t edi, int64_t rsi);
+
+void print_array(int32_t edi, int64_t rsi);
+
+void fun_26c(int64_t rdi, int64_t rsi);
+
+int32_t fun_24e(int64_t rdi, int64_t rsi) {
+    int32_t eax3;
+    int32_t edi4;
+    int64_t rbp5;
+    int64_t rbp6;
+    int64_t rdi7;
+    int64_t rbp8;
+    int64_t v9;
+
+    if (reinterpret_cast<int1_t>(eax3 == fprintf)) {
+        edi4 = *reinterpret_cast<int32_t*>(rbp5 - 20);
+        rsi = *reinterpret_cast<int64_t*>(rbp6 - 32);
+        print_array(edi4, rsi);
+    }
+    rdi7 = *reinterpret_cast<int64_t*>(rbp8 - 32);
+    fun_26c(rdi7, rsi);
+    goto v9;
+}
+
 int64_t* g566 = reinterpret_cast<int64_t*>(0x358d48388b48);
 
 void fun_577(int64_t rdi, int64_t rsi);
@@ -6,8 +31,6 @@ void fun_577(int64_t rdi, int64_t rsi);
 int64_t* g57e = reinterpret_cast<int64_t*>(0x358d48388b48);
 
 void fun_596(int64_t rdi);
-
-void fprintf();
 
 int64_t* g5de = reinterpret_cast<int64_t*>(0x358d48388b48);
 
@@ -82,7 +105,7 @@ void print_array(int32_t edi, int64_t rsi) {
     return;
 }
 
-void fun_7c(int64_t rdi, int64_t rsi) {
+void fun_26c(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
     goto v3;
@@ -287,15 +310,19 @@ struct s3 {
     int32_t f4;
 };
 
-void fun_34b(int64_t rdi);
+void fun_53b(int64_t rdi);
 
-void fun_191(struct s0* rdi, struct s1* rsi, int64_t rdx, int64_t rcx) {
+int64_t fun_381() {
+    int64_t rbp1;
+    int64_t rax2;
+    int64_t rbp3;
+    int64_t rbp4;
     int64_t rbp5;
-    int64_t rax6;
+    int64_t rbp6;
     int64_t rbp7;
     int64_t rbp8;
-    int64_t rbp9;
-    int64_t rbp10;
+    struct s0* rdi9;
+    struct s1* rsi10;
     int64_t rbp11;
     int64_t rbp12;
     int64_t rbp13;
@@ -309,14 +336,14 @@ void fun_191(struct s0* rdi, struct s1* rsi, int64_t rdx, int64_t rcx) {
     int64_t rbp21;
     int64_t rbp22;
     int64_t rbp23;
-    int64_t rbp24;
-    int64_t rbp25;
-    struct s2* rdi26;
-    struct s3* rsi27;
-    struct s0* rdi28;
-    struct s1* rsi29;
-    struct s2* rdi30;
-    struct s3* rsi31;
+    struct s2* rdi24;
+    struct s3* rsi25;
+    struct s0* rdi26;
+    struct s1* rsi27;
+    struct s2* rdi28;
+    struct s3* rsi29;
+    int64_t rbp30;
+    int64_t rbp31;
     int64_t rbp32;
     int64_t rbp33;
     int64_t rbp34;
@@ -327,74 +354,72 @@ void fun_191(struct s0* rdi, struct s1* rsi, int64_t rdx, int64_t rcx) {
     int64_t rbp39;
     int64_t rbp40;
     int64_t rbp41;
-    int64_t rbp42;
-    int64_t rbp43;
-    struct s2* rdi44;
-    struct s3* rsi45;
+    struct s2* rdi42;
+    struct s3* rsi43;
+    int64_t rbp44;
+    int64_t rbp45;
     int64_t rbp46;
     int64_t rbp47;
-    int64_t rbp48;
+    int64_t rdi48;
     int64_t rbp49;
-    int64_t rdi50;
-    int64_t rbp51;
-    int64_t v52;
+    int64_t v50;
 
-    *reinterpret_cast<int64_t*>(rbp5 - 48) = rax6;
-    *reinterpret_cast<int32_t*>(rbp7 - 28) = reinterpret_cast<int32_t>(fprintf);
-    while (*reinterpret_cast<int32_t*>(rbp8 - 28) < *reinterpret_cast<int32_t*>(rbp9 - 4)) {
-        *reinterpret_cast<int32_t*>(rbp10 - 32) = reinterpret_cast<int32_t>(fprintf);
-        while (*reinterpret_cast<int32_t*>(rbp11 - 32) < *reinterpret_cast<int32_t*>(rbp12 - 4)) {
+    *reinterpret_cast<int64_t*>(rbp1 - 48) = rax2;
+    *reinterpret_cast<int32_t*>(rbp3 - 28) = reinterpret_cast<int32_t>(fprintf);
+    while (*reinterpret_cast<int32_t*>(rbp4 - 28) < *reinterpret_cast<int32_t*>(rbp5 - 4)) {
+        *reinterpret_cast<int32_t*>(rbp6 - 32) = reinterpret_cast<int32_t>(fprintf);
+        while (*reinterpret_cast<int32_t*>(rbp7 - 32) < *reinterpret_cast<int32_t*>(rbp8 - 4)) {
             __asm__("xorps xmm0, xmm0");
-            rdi->f0 = rsi->f0;
-            rdi = reinterpret_cast<struct s0*>(&rdi->f4);
-            rsi = reinterpret_cast<struct s1*>(&rsi->f4);
-            *reinterpret_cast<int32_t*>(rbp13 - 32) = *reinterpret_cast<int32_t*>(rbp14 - 32) + 1;
+            rdi9->f0 = rsi10->f0;
+            rdi9 = reinterpret_cast<struct s0*>(&rdi9->f4);
+            rsi10 = reinterpret_cast<struct s1*>(&rsi10->f4);
+            *reinterpret_cast<int32_t*>(rbp11 - 32) = *reinterpret_cast<int32_t*>(rbp12 - 32) + 1;
         }
-        *reinterpret_cast<int32_t*>(rbp15 - 28) = *reinterpret_cast<int32_t*>(rbp16 - 28) + 1;
+        *reinterpret_cast<int32_t*>(rbp13 - 28) = *reinterpret_cast<int32_t*>(rbp14 - 28) + 1;
     }
-    *reinterpret_cast<int32_t*>(rbp17 - 36) = reinterpret_cast<int32_t>(fprintf);
-    while (*reinterpret_cast<int32_t*>(rbp18 - 36) < *reinterpret_cast<int32_t*>(rbp19 - 4)) {
-        *reinterpret_cast<int32_t*>(rbp20 - 28) = reinterpret_cast<int32_t>(fprintf);
-        while (*reinterpret_cast<int32_t*>(rbp21 - 28) < *reinterpret_cast<int32_t*>(rbp22 - 4)) {
-            *reinterpret_cast<int32_t*>(rbp23 - 32) = reinterpret_cast<int32_t>(fprintf);
-            while (*reinterpret_cast<int32_t*>(rbp24 - 32) < *reinterpret_cast<int32_t*>(rbp25 - 4)) {
-                rdi->f0 = rsi->f0;
-                rdi26 = reinterpret_cast<struct s2*>(&rdi->f4);
-                rsi27 = reinterpret_cast<struct s3*>(&rsi->f4);
+    *reinterpret_cast<int32_t*>(rbp15 - 36) = reinterpret_cast<int32_t>(fprintf);
+    while (*reinterpret_cast<int32_t*>(rbp16 - 36) < *reinterpret_cast<int32_t*>(rbp17 - 4)) {
+        *reinterpret_cast<int32_t*>(rbp18 - 28) = reinterpret_cast<int32_t>(fprintf);
+        while (*reinterpret_cast<int32_t*>(rbp19 - 28) < *reinterpret_cast<int32_t*>(rbp20 - 4)) {
+            *reinterpret_cast<int32_t*>(rbp21 - 32) = reinterpret_cast<int32_t>(fprintf);
+            while (*reinterpret_cast<int32_t*>(rbp22 - 32) < *reinterpret_cast<int32_t*>(rbp23 - 4)) {
+                rdi9->f0 = rsi10->f0;
+                rdi24 = reinterpret_cast<struct s2*>(&rdi9->f4);
+                rsi25 = reinterpret_cast<struct s3*>(&rsi10->f4);
+                rdi24->f0 = rsi25->f0;
+                rdi26 = reinterpret_cast<struct s0*>(&rdi24->f4);
+                rsi27 = reinterpret_cast<struct s1*>(&rsi25->f4);
                 rdi26->f0 = rsi27->f0;
-                rdi28 = reinterpret_cast<struct s0*>(&rdi26->f4);
-                rsi29 = reinterpret_cast<struct s1*>(&rsi27->f4);
-                rdi28->f0 = rsi29->f0;
-                rdi30 = reinterpret_cast<struct s2*>(&rdi28->f4);
-                rsi31 = reinterpret_cast<struct s3*>(&rsi29->f4);
+                rdi28 = reinterpret_cast<struct s2*>(&rdi26->f4);
+                rsi29 = reinterpret_cast<struct s3*>(&rsi27->f4);
                 __asm__("mulsd xmm0, xmm2");
                 __asm__("addsd xmm0, xmm1");
-                rdi30->f0 = rsi31->f0;
-                rdi = reinterpret_cast<struct s0*>(&rdi30->f4);
-                rsi = reinterpret_cast<struct s1*>(&rsi31->f4);
-                *reinterpret_cast<int32_t*>(rbp32 - 32) = *reinterpret_cast<int32_t*>(rbp33 - 32) + 1;
+                rdi28->f0 = rsi29->f0;
+                rdi9 = reinterpret_cast<struct s0*>(&rdi28->f4);
+                rsi10 = reinterpret_cast<struct s1*>(&rsi29->f4);
+                *reinterpret_cast<int32_t*>(rbp30 - 32) = *reinterpret_cast<int32_t*>(rbp31 - 32) + 1;
             }
-            *reinterpret_cast<int32_t*>(rbp34 - 28) = *reinterpret_cast<int32_t*>(rbp35 - 28) + 1;
+            *reinterpret_cast<int32_t*>(rbp32 - 28) = *reinterpret_cast<int32_t*>(rbp33 - 28) + 1;
         }
-        *reinterpret_cast<int32_t*>(rbp36 - 36) = *reinterpret_cast<int32_t*>(rbp37 - 36) + 1;
+        *reinterpret_cast<int32_t*>(rbp34 - 36) = *reinterpret_cast<int32_t*>(rbp35 - 36) + 1;
     }
-    *reinterpret_cast<int32_t*>(rbp38 - 28) = reinterpret_cast<int32_t>(fprintf);
-    while (*reinterpret_cast<int32_t*>(rbp39 - 28) < *reinterpret_cast<int32_t*>(rbp40 - 4)) {
-        *reinterpret_cast<int32_t*>(rbp41 - 32) = reinterpret_cast<int32_t>(fprintf);
-        while (*reinterpret_cast<int32_t*>(rbp42 - 32) < *reinterpret_cast<int32_t*>(rbp43 - 4)) {
-            rdi->f0 = rsi->f0;
-            rdi44 = reinterpret_cast<struct s2*>(&rdi->f4);
-            rsi45 = reinterpret_cast<struct s3*>(&rsi->f4);
-            rdi44->f0 = rsi45->f0;
-            rdi = reinterpret_cast<struct s0*>(&rdi44->f4);
-            rsi = reinterpret_cast<struct s1*>(&rsi45->f4);
-            *reinterpret_cast<int32_t*>(rbp46 - 32) = *reinterpret_cast<int32_t*>(rbp47 - 32) + 1;
+    *reinterpret_cast<int32_t*>(rbp36 - 28) = reinterpret_cast<int32_t>(fprintf);
+    while (*reinterpret_cast<int32_t*>(rbp37 - 28) < *reinterpret_cast<int32_t*>(rbp38 - 4)) {
+        *reinterpret_cast<int32_t*>(rbp39 - 32) = reinterpret_cast<int32_t>(fprintf);
+        while (*reinterpret_cast<int32_t*>(rbp40 - 32) < *reinterpret_cast<int32_t*>(rbp41 - 4)) {
+            rdi9->f0 = rsi10->f0;
+            rdi42 = reinterpret_cast<struct s2*>(&rdi9->f4);
+            rsi43 = reinterpret_cast<struct s3*>(&rsi10->f4);
+            rdi42->f0 = rsi43->f0;
+            rdi9 = reinterpret_cast<struct s0*>(&rdi42->f4);
+            rsi10 = reinterpret_cast<struct s1*>(&rsi43->f4);
+            *reinterpret_cast<int32_t*>(rbp44 - 32) = *reinterpret_cast<int32_t*>(rbp45 - 32) + 1;
         }
-        *reinterpret_cast<int32_t*>(rbp48 - 28) = *reinterpret_cast<int32_t*>(rbp49 - 28) + 1;
+        *reinterpret_cast<int32_t*>(rbp46 - 28) = *reinterpret_cast<int32_t*>(rbp47 - 28) + 1;
     }
-    rdi50 = *reinterpret_cast<int64_t*>(rbp51 - 48);
-    fun_34b(rdi50);
-    goto v52;
+    rdi48 = *reinterpret_cast<int64_t*>(rbp49 - 48);
+    fun_53b(rdi48);
+    goto v50;
 }
 
 void fun_596(int64_t rdi) {
@@ -454,7 +479,7 @@ void fun_596(int64_t rdi) {
     goto v26;
 }
 
-void fun_34b(int64_t rdi) {
+void fun_53b(int64_t rdi) {
     int64_t v2;
 
     goto v2;
@@ -477,28 +502,64 @@ void fun_67a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx) {
     goto v5;
 }
 
-void fprintf() {
-}
-
-void fun_68(int32_t edi) {
-    int1_t less2;
-    int64_t rsi3;
-    int64_t rbp4;
-    int64_t rdi5;
-    int64_t rbp6;
-
-    if (less2) {
-        rsi3 = *reinterpret_cast<int64_t*>(rbp4 - 32);
-        print_array(edi, rsi3);
-        rdi5 = *reinterpret_cast<int64_t*>(rbp6 - 32);
-        fun_7c(rdi5, rsi3);
-    }
-}
-
 struct s4 {
     int32_t f0;
     int32_t f4;
 };
+
+void init_array(int32_t edi, struct s4* rsi);
+
+void fun_231(int64_t rdi, int64_t rsi);
+
+void fun_215(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
+    int64_t rax4;
+    int32_t edi5;
+    int64_t rbp6;
+    struct s4* rsi7;
+    int64_t rbp8;
+    int64_t rdi9;
+    int64_t rbp10;
+    int64_t rsi11;
+    int64_t rbp12;
+    int64_t rbp13;
+    int64_t rdi14;
+    int64_t rbp15;
+    int64_t rdi16;
+    int64_t rbp17;
+    int32_t eax18;
+    int64_t v19;
+    int32_t edi20;
+    int64_t rbp21;
+    int64_t rbp22;
+
+    *reinterpret_cast<int64_t*>(rbp3 - 32) = rax4;
+    edi5 = *reinterpret_cast<int32_t*>(rbp6 - 20);
+    rsi7 = *reinterpret_cast<struct s4**>(rbp8 - 32);
+    init_array(edi5, rsi7);
+    *reinterpret_cast<int32_t*>(&rdi9) = *reinterpret_cast<int32_t*>(rbp10 - 20);
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi9) + 4) = reinterpret_cast<int32_t>(fprintf);
+    rsi11 = *reinterpret_cast<int64_t*>(rbp12 - 32);
+    fun_231(rdi9, rsi11);
+    if (*reinterpret_cast<int32_t*>(rbp13 - 4) <= 42) {
+        addr_263_3:
+        rdi14 = *reinterpret_cast<int64_t*>(rbp15 - 32);
+        fun_26c(rdi14, rsi11);
+    } else {
+        rdi16 = **reinterpret_cast<int64_t**>(rbp17 - 16);
+        rsi11 = 0x249;
+        eax18 = fun_24e(rdi16, 0x249);
+        if (!reinterpret_cast<int1_t>(eax18 == fprintf)) 
+            goto addr_263_3; else 
+            goto addr_257_6;
+    }
+    goto v19;
+    addr_257_6:
+    edi20 = *reinterpret_cast<int32_t*>(rbp21 - 20);
+    rsi11 = *reinterpret_cast<int64_t*>(rbp22 - 32);
+    print_array(edi20, rsi11);
+    goto addr_263_3;
+}
 
 struct s5 {
     int32_t f0;
@@ -515,60 +576,6 @@ struct s7 {
     int32_t f4;
 };
 
-void init_array(int32_t edi, struct s5* rsi) {
-    struct s4* rdi1;
-    int32_t v3;
-    int32_t v4;
-    int32_t v5;
-    int64_t rdx6;
-    struct s6* rdi7;
-    struct s7* rsi8;
-    int32_t v9;
-    int64_t rcx10;
-    struct s6* rdi11;
-    struct s7* rsi12;
-
-    *reinterpret_cast<int32_t*>(&rdi1) = edi;
-    v3 = *reinterpret_cast<int32_t*>(&rdi1);
-    v4 = reinterpret_cast<int32_t>(fprintf);
-    while (v4 < v3) {
-        v5 = reinterpret_cast<int32_t>(fprintf);
-        while (v5 <= v4) {
-            __asm__("cdq ");
-            *reinterpret_cast<int32_t*>(&rdx6) = (reinterpret_cast<int32_t>(fprintf) - v5) % v3;
-            *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdx6) + 4) = reinterpret_cast<int32_t>(fprintf);
-            __asm__("cvtsi2sd xmm0, edx");
-            __asm__("cvtsi2sd xmm1, dword [rbp-0x4]");
-            __asm__("divsd xmm0, xmm1");
-            rdi1->f0 = rsi->f0;
-            rdi7 = reinterpret_cast<struct s6*>(&rdi1->f4);
-            rsi8 = reinterpret_cast<struct s7*>(&rsi->f4);
-            __asm__("addsd xmm0, xmm1");
-            rdi7->f0 = rsi8->f0;
-            rdi1 = reinterpret_cast<struct s4*>(&rdi7->f4);
-            rsi = reinterpret_cast<struct s5*>(&rsi8->f4);
-            ++v5;
-        }
-        v9 = v4 + 1;
-        while (v9 < v3) {
-            __asm__("xorps xmm0, xmm0");
-            rdi1->f0 = rsi->f0;
-            rdi1 = reinterpret_cast<struct s4*>(&rdi1->f4);
-            rsi = reinterpret_cast<struct s5*>(&rsi->f4);
-            ++v9;
-        }
-        rcx10 = v4;
-        rdi1->f0 = rsi->f0;
-        rdi11 = reinterpret_cast<struct s6*>(&rdi1->f4);
-        rsi12 = reinterpret_cast<struct s7*>(&rsi->f4);
-        rdi11->f0 = rsi12->f0;
-        rdi1 = reinterpret_cast<struct s4*>(&rdi11->f4);
-        rsi = reinterpret_cast<struct s5*>(&rsi12->f4);
-        ++v4;
-    }
-    fun_191(0x3d0900, 8, rdx6, rcx10);
-}
-
 struct s8 {
     int32_t f0;
     int32_t f4;
@@ -579,94 +586,332 @@ struct s9 {
     int32_t f4;
 };
 
-int32_t fprintf = 0xe5894855;
-
 struct s10 {
     int32_t f0;
     int32_t f4;
 };
 
-void kernel_lu(int32_t edi, struct s8* rsi) {
-    int32_t* rdi1;
+struct s11 {
+    int32_t f0;
+    int32_t f4;
+};
+
+void init_array(int32_t edi, struct s4* rsi) {
+    struct s5* rdi1;
     int32_t v3;
     int32_t v4;
     int32_t v5;
-    int32_t v6;
-    int32_t* rdi7;
-    struct s9* rsi8;
-    int32_t* rdi9;
-    int32_t* rdi10;
-    int32_t* rdi11;
+    struct s6* rdi6;
+    struct s7* rsi7;
+    int32_t v8;
+    struct s6* rdi9;
+    struct s7* rsi10;
+    struct s8* rdi11;
     struct s9* rsi12;
-    int32_t* rdi13;
-    struct s10* rsi14;
+    int64_t rax13;
+    int64_t v14;
     int32_t v15;
     int32_t v16;
-    int32_t* rdi17;
-    struct s9* rsi18;
-    int32_t* rdi19;
-    int32_t* rdi20;
+    int32_t v17;
+    int32_t v18;
+    int32_t v19;
+    struct s10* rdi20;
+    struct s11* rsi21;
+    struct s8* rdi22;
+    struct s9* rsi23;
+    struct s10* rdi24;
+    struct s11* rsi25;
+    int32_t v26;
+    int32_t v27;
+    struct s10* rdi28;
+    struct s11* rsi29;
 
     *reinterpret_cast<int32_t*>(&rdi1) = edi;
     v3 = *reinterpret_cast<int32_t*>(&rdi1);
     v4 = reinterpret_cast<int32_t>(fprintf);
     while (v4 < v3) {
         v5 = reinterpret_cast<int32_t>(fprintf);
-        while (v5 < v4) {
-            v6 = reinterpret_cast<int32_t>(fprintf);
-            while (v6 < v5) {
-                *rdi1 = rsi->f0;
-                rdi7 = rdi1 + 1;
-                rsi8 = reinterpret_cast<struct s9*>(&rsi->f4);
-                *rdi7 = rsi8->f0;
-                rdi9 = rdi7 + 1;
-                *rdi9 = rsi8->f4;
-                rdi10 = rdi9 + 1;
-                __asm__("movd rdx, xmm0");
-                __asm__("movd xmm0, rdx");
-                __asm__("mulsd xmm0, xmm2");
-                __asm__("addsd xmm0, xmm1");
-                *rdi10 = fprintf;
-                rdi1 = rdi10 + 1;
-                rsi = reinterpret_cast<struct s8*>(0x8000000000000004);
-                ++v6;
-            }
-            *rdi1 = rsi->f0;
-            rdi11 = rdi1 + 1;
-            rsi12 = reinterpret_cast<struct s9*>(&rsi->f4);
-            *rdi11 = rsi12->f0;
-            rdi13 = rdi11 + 1;
-            rsi14 = reinterpret_cast<struct s10*>(&rsi12->f4);
+        while (v5 <= v4) {
+            __asm__("cdq ");
+            __asm__("cvtsi2sd xmm0, edx");
+            __asm__("cvtsi2sd xmm1, dword [rbp-0x4]");
             __asm__("divsd xmm0, xmm1");
-            *rdi13 = rsi14->f0;
-            rdi1 = rdi13 + 1;
-            rsi = reinterpret_cast<struct s8*>(&rsi14->f4);
+            rdi1->f0 = rsi->f0;
+            rdi6 = reinterpret_cast<struct s6*>(&rdi1->f4);
+            rsi7 = reinterpret_cast<struct s7*>(&rsi->f4);
+            __asm__("addsd xmm0, xmm1");
+            rdi6->f0 = rsi7->f0;
+            rdi1 = reinterpret_cast<struct s5*>(&rdi6->f4);
+            rsi = reinterpret_cast<struct s4*>(&rsi7->f4);
             ++v5;
         }
-        v15 = v4;
-        while (v15 < v3) {
-            v16 = reinterpret_cast<int32_t>(fprintf);
-            while (v16 < v4) {
-                *rdi1 = rsi->f0;
-                rdi17 = rdi1 + 1;
-                rsi18 = reinterpret_cast<struct s9*>(&rsi->f4);
-                *rdi17 = rsi18->f0;
-                rdi19 = rdi17 + 1;
-                *rdi19 = rsi18->f4;
-                rdi20 = rdi19 + 1;
-                __asm__("movd rdx, xmm0");
-                __asm__("movd xmm0, rdx");
-                __asm__("mulsd xmm0, xmm2");
-                __asm__("addsd xmm0, xmm1");
-                *rdi20 = fprintf;
-                rdi1 = rdi20 + 1;
-                rsi = reinterpret_cast<struct s8*>(0x8000000000000004);
-                ++v16;
-            }
-            ++v15;
+        v8 = v4 + 1;
+        while (v8 < v3) {
+            __asm__("xorps xmm0, xmm0");
+            rdi1->f0 = rsi->f0;
+            rdi1 = reinterpret_cast<struct s5*>(&rdi1->f4);
+            rsi = reinterpret_cast<struct s4*>(&rsi->f4);
+            ++v8;
         }
+        rdi1->f0 = rsi->f0;
+        rdi9 = reinterpret_cast<struct s6*>(&rdi1->f4);
+        rsi10 = reinterpret_cast<struct s7*>(&rsi->f4);
+        rdi9->f0 = rsi10->f0;
+        rdi1 = reinterpret_cast<struct s5*>(&rdi9->f4);
+        rsi = reinterpret_cast<struct s4*>(&rsi10->f4);
         ++v4;
     }
+    *reinterpret_cast<int32_t*>(&rdi11) = 0x3d0900;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi11) + 4) = reinterpret_cast<int32_t>(fprintf);
+    *reinterpret_cast<int32_t*>(&rsi12) = 8;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi12) + 4) = reinterpret_cast<int32_t>(fprintf);
+    rax13 = fun_381();
+    v14 = rax13;
+    v15 = reinterpret_cast<int32_t>(fprintf);
+    while (v15 < v3) {
+        v16 = reinterpret_cast<int32_t>(fprintf);
+        while (v16 < v3) {
+            __asm__("xorps xmm0, xmm0");
+            rdi11->f0 = rsi12->f0;
+            rdi11 = reinterpret_cast<struct s8*>(&rdi11->f4);
+            rsi12 = reinterpret_cast<struct s9*>(&rsi12->f4);
+            ++v16;
+        }
+        ++v15;
+    }
+    v17 = reinterpret_cast<int32_t>(fprintf);
+    while (v17 < v3) {
+        v18 = reinterpret_cast<int32_t>(fprintf);
+        while (v18 < v3) {
+            v19 = reinterpret_cast<int32_t>(fprintf);
+            while (v19 < v3) {
+                rdi11->f0 = rsi12->f0;
+                rdi20 = reinterpret_cast<struct s10*>(&rdi11->f4);
+                rsi21 = reinterpret_cast<struct s11*>(&rsi12->f4);
+                rdi20->f0 = rsi21->f0;
+                rdi22 = reinterpret_cast<struct s8*>(&rdi20->f4);
+                rsi23 = reinterpret_cast<struct s9*>(&rsi21->f4);
+                rdi22->f0 = rsi23->f0;
+                rdi24 = reinterpret_cast<struct s10*>(&rdi22->f4);
+                rsi25 = reinterpret_cast<struct s11*>(&rsi23->f4);
+                __asm__("mulsd xmm0, xmm2");
+                __asm__("addsd xmm0, xmm1");
+                rdi24->f0 = rsi25->f0;
+                rdi11 = reinterpret_cast<struct s8*>(&rdi24->f4);
+                rsi12 = reinterpret_cast<struct s9*>(&rsi25->f4);
+                ++v19;
+            }
+            ++v18;
+        }
+        ++v17;
+    }
+    v26 = reinterpret_cast<int32_t>(fprintf);
+    while (v26 < v3) {
+        v27 = reinterpret_cast<int32_t>(fprintf);
+        while (v27 < v3) {
+            rdi11->f0 = rsi12->f0;
+            rdi28 = reinterpret_cast<struct s10*>(&rdi11->f4);
+            rsi29 = reinterpret_cast<struct s11*>(&rsi12->f4);
+            rdi28->f0 = rsi29->f0;
+            rdi11 = reinterpret_cast<struct s8*>(&rdi28->f4);
+            rsi12 = reinterpret_cast<struct s9*>(&rsi29->f4);
+            ++v27;
+        }
+        ++v26;
+    }
+    fun_53b(v14);
     return;
+}
+
+void fun_231(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
+    int64_t rdi4;
+    int64_t rbp5;
+    int64_t rdi6;
+    int64_t rbp7;
+    int32_t eax8;
+    int64_t v9;
+    int32_t edi10;
+    int64_t rbp11;
+    int64_t rbp12;
+
+    if (*reinterpret_cast<int32_t*>(rbp3 - 4) <= 42) {
+        addr_263_2:
+        rdi4 = *reinterpret_cast<int64_t*>(rbp5 - 32);
+        fun_26c(rdi4, rsi);
+    } else {
+        rdi6 = **reinterpret_cast<int64_t**>(rbp7 - 16);
+        rsi = 0x249;
+        eax8 = fun_24e(rdi6, 0x249);
+        if (!reinterpret_cast<int1_t>(eax8 == fprintf)) 
+            goto addr_263_2; else 
+            goto addr_257_5;
+    }
+    goto v9;
+    addr_257_5:
+    edi10 = *reinterpret_cast<int32_t*>(rbp11 - 20);
+    rsi = *reinterpret_cast<int64_t*>(rbp12 - 32);
+    print_array(edi10, rsi);
+    goto addr_263_2;
+}
+
+void fprintf(int32_t edi, int64_t rsi) {
+}
+
+void fun_1d() {
+}
+
+void fun_fec4567();
+
+/* .L.str.3 */
+void L_str_3() {
+    fun_fec4567();
+}
+
+struct s12 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s13 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s14 {
+    int32_t f0;
+    int32_t f4;
+};
+
+int32_t fprintf = 0xe5894855;
+
+void fun_64(struct s12* rdi, struct s13* rsi, int64_t rdx) {
+    struct s14* rdi4;
+    int64_t rbp5;
+    int64_t rbp6;
+
+    rdi->f0 = rsi->f0;
+    rdi4 = reinterpret_cast<struct s14*>(&rdi->f4);
+    rdi4->f0 = rsi->f4;
+    __asm__("movd rdx, xmm0");
+    __asm__("movd xmm0, rdx");
+    __asm__("mulsd xmm0, xmm2");
+    __asm__("addsd xmm0, xmm1");
+    rdi4->f4 = fprintf;
+    *reinterpret_cast<int32_t*>(rbp5 - 28) = *reinterpret_cast<int32_t*>(rbp6 - 28) + 1;
+}
+
+struct s15 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s16 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s17 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s18 {
+    int32_t f0;
+    int32_t f4;
+};
+
+void fun_c7(struct s15* rdi, struct s16* rsi) {
+    struct s17* rdi3;
+    struct s18* rsi4;
+    int64_t rbp5;
+    int64_t rbp6;
+
+    rdi->f0 = rsi->f0;
+    rdi3 = reinterpret_cast<struct s17*>(&rdi->f4);
+    rsi4 = reinterpret_cast<struct s18*>(&rsi->f4);
+    rdi3->f0 = rsi4->f0;
+    __asm__("divsd xmm0, xmm1");
+    rdi3->f4 = rsi4->f4;
+    *reinterpret_cast<int32_t*>(rbp5 - 24) = *reinterpret_cast<int32_t*>(rbp6 - 24) + 1;
+}
+
+struct s19 {
+    int32_t f0;
+    int32_t f4;
+};
+
+int32_t g4 = 0x48fc7d89;
+
+struct s20 {
+    int32_t f0;
+    int32_t f4;
+};
+
+int32_t g8 = 0xc7f07589;
+
+struct s21 {
+    int32_t f0;
+    int32_t f4;
+};
+
+int32_t gc = 0xec45;
+
+struct s22 {
+    int32_t f0;
+    int32_t f4;
+};
+
+void fun_114() {
+    int64_t rbp1;
+    int64_t rbp2;
+    int64_t rbp3;
+    int64_t rbp4;
+    int64_t rbp5;
+    int64_t rbp6;
+    int64_t rbp7;
+    struct s19* rdi8;
+    struct s20* rdi9;
+    struct s21* rdi10;
+    struct s22* rdi11;
+    int64_t rbp12;
+    int64_t rbp13;
+    int64_t rbp14;
+    int64_t rbp15;
+    int64_t rbp16;
+    int64_t rbp17;
+
+    *reinterpret_cast<int32_t*>(rbp1 - 24) = *reinterpret_cast<int32_t*>(rbp2 - 20);
+    while (*reinterpret_cast<int32_t*>(rbp3 - 24) < *reinterpret_cast<int32_t*>(rbp4 - 4)) {
+        *reinterpret_cast<int32_t*>(rbp5 - 28) = reinterpret_cast<int32_t>(fprintf);
+        while (*reinterpret_cast<int32_t*>(rbp6 - 28) < *reinterpret_cast<int32_t*>(rbp7 - 20)) {
+            rdi8->f0 = g4;
+            rdi9 = reinterpret_cast<struct s20*>(&rdi8->f4);
+            rdi9->f0 = g8;
+            rdi10 = reinterpret_cast<struct s21*>(&rdi9->f4);
+            rdi10->f0 = gc;
+            rdi11 = reinterpret_cast<struct s22*>(&rdi10->f4);
+            __asm__("movd rdx, xmm0");
+            __asm__("movd xmm0, rdx");
+            __asm__("mulsd xmm0, xmm2");
+            __asm__("addsd xmm0, xmm1");
+            rdi11->f0 = fprintf;
+            rdi8 = reinterpret_cast<struct s19*>(&rdi11->f4);
+            *reinterpret_cast<int32_t*>(rbp12 - 28) = *reinterpret_cast<int32_t*>(rbp13 - 28) + 1;
+        }
+        *reinterpret_cast<int32_t*>(rbp14 - 24) = *reinterpret_cast<int32_t*>(rbp15 - 24) + 1;
+    }
+    *reinterpret_cast<int32_t*>(rbp16 - 20) = *reinterpret_cast<int32_t*>(rbp17 - 20) + 1;
+    goto 18;
+}
+
+void fun_1e2() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void submain(int32_t edi, int64_t rsi) {
+    fun_215(0x3d0900, 8);
 }
 

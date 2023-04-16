@@ -84,6 +84,9 @@ void w2c_floyd0x2Dwarshall_0x5F_wasm_call_ctors(w2c_floyd0x2Dwarshall*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_floyd0x2Dwarshall_0x5F_wasm_apply_data_relocs(w2c_floyd0x2Dwarshall*);
 
+/* export: 'kernel_floyd_warshall' */
+void w2c_floyd0x2Dwarshall_kernel_floyd_warshall(w2c_floyd0x2Dwarshall*, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_floyd0x2Dwarshall_submain(w2c_floyd0x2Dwarshall*, u32, u32);
 

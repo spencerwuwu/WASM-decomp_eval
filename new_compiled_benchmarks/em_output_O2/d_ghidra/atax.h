@@ -54,43 +54,49 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x56)));
+typedef pointer pointer __((offset(0x924)));
 
-typedef pointer pointer __((offset(0x20)));
+typedef pointer pointer __((offset(0x536)));
 
-typedef pointer pointer __((offset(0x22f)));
+typedef pointer pointer __((offset(0x934)));
 
-typedef pointer pointer __((offset(0x41e)));
+typedef pointer pointer __((offset(0x500)));
 
-typedef pointer pointer __((offset(0x3fd)));
+typedef pointer pointer __((offset(0x512)));
+
+typedef pointer pointer __((offset(0x56d)));
 
 typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x4be)));
+typedef pointer pointer __((offset(0x91c)));
 
-typedef pointer pointer __((offset(0x44)));
+typedef pointer pointer __((offset(0x4e0)));
+
+typedef pointer pointer __((offset(0x250)));
 
 typedef pointer pointer __((offset(0x30)));
 
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x45b)));
-
-typedef pointer pointer __((offset(0x477)));
-
-typedef pointer pointer __((offset(0x40d)));
-
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x3f5)));
+typedef pointer pointer __((offset(0x223)));
 
-typedef pointer pointer __((offset(0x8d)));
+typedef pointer pointer __((offset(0x1bb)));
+
+typedef pointer pointer __((offset(0x93c)));
+
+typedef pointer pointer __((offset(0x1e3)));
+
+typedef pointer pointer __((offset(0x92c)));
+
+typedef pointer pointer __((offset(0x757)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x405)));
+typedef pointer pointer __((offset(0x170)));
 
-typedef pointer pointer __((offset(0x32)));
+typedef pointer pointer __((offset(0x524)));
 
 typedef void _IO_lock_t;
 
@@ -199,6 +205,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
+
+struct Elf64_Sym {
+    dword st_name;
+    byte st_info;
+    byte st_other;
+    word st_shndx;
+    qword st_value;
+    qword st_size;
+};
+
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
 
 struct Elf64_Ehdr {
@@ -225,25 +242,17 @@ struct Elf64_Ehdr {
     word e_shstrndx;
 };
 
-typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
-
-struct Elf64_Sym {
-    dword st_name;
-    byte st_info;
-    byte st_other;
-    word st_shndx;
-    qword st_value;
-    qword st_size;
-};
 
 
 
-
+void init_array(uint param_1,uint param_2,long param_3,long param_4);
+void print_array(uint param_1,long param_2);
+void kernel_atax(uint param_1,uint param_2,long param_3,long param_4,void *param_5,long param_6);
 undefined8 submain(int param_1,char **param_2);
-undefined polybench_alloc_data();
-void * memset(void * __s, int __c, size_t __n);
-void free(void * __ptr);
 size_t fwrite(void * __ptr, size_t __size, size_t __n, FILE * __s);
 int fprintf(FILE * __stream, char * __format, ...);
 int fputc(int __c, FILE * __stream);
+void * memset(void * __s, int __c, size_t __n);
+undefined polybench_alloc_data();
+void free(void * __ptr);
 

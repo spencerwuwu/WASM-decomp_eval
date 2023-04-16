@@ -88,300 +88,6 @@ long packFloat64(int param_1,int param_2,long param_3)
 
 
 
-undefined8 float64_add(undefined8 param_1,undefined8 param_2)
-
-{
-  int iVar1;
-  int iVar2;
-  undefined8 local_10;
-  
-  iVar1 = extractFloat64Sign(param_1);
-  iVar2 = extractFloat64Sign(param_2);
-  if (iVar1 == iVar2) {
-    local_10 = addFloat64Sigs(param_1,param_2,iVar1);
-  }
-  else {
-    local_10 = subFloat64Sigs(param_1,param_2,iVar1);
-  }
-  return local_10;
-}
-
-
-
-undefined8 addFloat64Sigs(undefined8 param_1,undefined8 param_2,undefined4 param_3)
-
-{
-  int iVar1;
-  undefined8 uVar2;
-  int local_4c;
-  long local_48;
-  ulong local_40;
-  ulong local_38;
-  int local_30;
-  int local_2c;
-  int local_28;
-  undefined4 local_24;
-  undefined8 local_20;
-  undefined8 local_18;
-  
-  local_24 = param_3;
-  local_20 = param_2;
-  local_18 = param_1;
-  local_38 = extractFloat64Frac(param_1);
-  local_28 = extractFloat64Exp(local_18);
-  local_40 = extractFloat64Frac(local_20);
-  local_2c = extractFloat64Exp(local_20);
-  local_4c = local_28 - local_2c;
-  local_38 = local_38 * 0x200;
-  local_40 = local_40 * 0x200;
-  if (local_4c < 1) {
-    if (-1 < local_4c) {
-      if (local_28 == 0x7ff) {
-        if ((local_38 | local_40) != 0) {
-          uVar2 = propagateFloat64NaN(local_18,local_20);
-          return uVar2;
-        }
-        return local_18;
-      }
-      if (local_28 == 0) {
-        uVar2 = packFloat64(local_24,0,local_38 + local_40 >> 9);
-        return uVar2;
-      }
-      local_48 = local_38 + 0x4000000000000000 + local_40;
-      local_30 = local_28;
-      iVar1 = local_30;
-      goto LAB_0010049b;
-    }
-    if (local_2c == 0x7ff) {
-      if (local_40 != 0) {
-        uVar2 = propagateFloat64NaN(local_18,local_20);
-        return uVar2;
-      }
-      uVar2 = packFloat64(local_24,0x7ff,0);
-      return uVar2;
-    }
-    if (local_28 == 0) {
-      local_4c = local_4c + 1;
-    }
-    else {
-      local_38 = local_38 | 0x2000000000000000;
-    }
-    shift64RightJamming(local_38,-local_4c,&local_38);
-    local_30 = local_2c;
-  }
-  else {
-    if (local_28 == 0x7ff) {
-      if (local_38 != 0) {
-        uVar2 = propagateFloat64NaN(local_18,local_20);
-        return uVar2;
-      }
-      return local_18;
-    }
-    if (local_2c == 0) {
-      local_4c = local_4c + -1;
-    }
-    else {
-      local_40 = local_40 | 0x2000000000000000;
-    }
-    shift64RightJamming(local_40,local_4c,&local_40);
-    local_30 = local_28;
-  }
-  local_38 = local_38 | 0x2000000000000000;
-  local_48 = (local_38 + local_40) * 2;
-  iVar1 = local_30 + -1;
-  if (local_48 < 0) {
-    local_48 = local_38 + local_40;
-    iVar1 = local_30;
-  }
-LAB_0010049b:
-  local_30 = iVar1;
-  uVar2 = roundAndPackFloat64(local_24,local_30,local_48);
-  return uVar2;
-}
-
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-undefined8 subFloat64Sigs(undefined8 param_1,undefined8 param_2,uint param_3)
-
-{
-  ulong uVar1;
-  ulong uVar2;
-  undefined8 uVar3;
-  int local_4c;
-  long local_48;
-  ulong local_40;
-  ulong local_38;
-  int local_30;
-  int local_2c;
-  int local_28;
-  uint local_24;
-  undefined8 local_20;
-  undefined8 local_18;
-  
-  local_24 = param_3;
-  local_20 = param_2;
-  local_18 = param_1;
-  local_38 = extractFloat64Frac(param_1);
-  local_28 = extractFloat64Exp(local_18);
-  local_40 = extractFloat64Frac(local_20);
-  local_2c = extractFloat64Exp(local_20);
-  local_4c = local_28 - local_2c;
-  uVar1 = local_38 << 10;
-  uVar2 = local_40 << 10;
-  if (local_4c < 1) {
-    if (local_4c < 0) {
-      if (local_2c == 0x7ff) {
-        if (uVar2 != 0) {
-          local_40 = uVar2;
-          local_38 = uVar1;
-          uVar3 = propagateFloat64NaN(local_18,local_20);
-          return uVar3;
-        }
-        local_40 = uVar2;
-        local_38 = uVar1;
-        uVar3 = packFloat64(local_24 ^ 1,0x7ff,0);
-        return uVar3;
-      }
-      if (local_28 == 0) {
-        local_4c = local_4c + 1;
-        local_38 = uVar1;
-      }
-      else {
-        local_38 = uVar1 | 0x4000000000000000;
-      }
-      local_40 = uVar2;
-      shift64RightJamming(local_38,-local_4c,&local_38);
-      local_40 = local_40 | 0x4000000000000000;
-    }
-    else {
-      if (local_28 == 0x7ff) {
-        if (((local_38 | local_40) & 0x3fffffffffffff) != 0) {
-          local_40 = uVar2;
-          local_38 = uVar1;
-          uVar3 = propagateFloat64NaN(local_18,local_20);
-          return uVar3;
-        }
-        local_40 = uVar2;
-        local_38 = uVar1;
-        float_raise(0x10);
-        return 0x7fffffffffffffff;
-      }
-      if (local_28 == 0) {
-        local_28 = 1;
-        local_2c = 1;
-      }
-      local_40 = uVar2;
-      local_38 = uVar1;
-      if (uVar2 < uVar1) goto LAB_0010073b;
-      if (uVar2 <= uVar1) {
-        uVar3 = packFloat64(_DAT_124c0940f033883 == 3,0,0);
-        return uVar3;
-      }
-    }
-    local_48 = local_40 - local_38;
-    local_30 = local_2c;
-    local_24 = local_24 ^ 1;
-  }
-  else {
-    if (local_28 == 0x7ff) {
-      if (uVar1 != 0) {
-        local_40 = uVar2;
-        local_38 = uVar1;
-        uVar3 = propagateFloat64NaN(local_18,local_20);
-        return uVar3;
-      }
-      return local_18;
-    }
-    if (local_2c == 0) {
-      local_4c = local_4c + -1;
-      local_40 = uVar2;
-    }
-    else {
-      local_40 = uVar2 | 0x4000000000000000;
-    }
-    local_38 = uVar1;
-    shift64RightJamming(local_40,local_4c,&local_40);
-    local_38 = local_38 | 0x4000000000000000;
-LAB_0010073b:
-    local_48 = local_38 - local_40;
-    local_30 = local_28;
-  }
-  local_30 = local_30 + -1;
-  uVar3 = normalizeRoundAndPackFloat64(local_24,local_30,local_48);
-  return uVar3;
-}
-
-
-
-undefined8 ullong_to_double(void)
-
-{
-  undefined8 local_20;
-  
-  return local_20;
-}
-
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-int submain(void)
-
-{
-  long lVar1;
-  int local_10;
-  int local_c;
-  
-  local_c = 0;
-  _DAT_f845c700110ff2 = rtclock();
-  for (local_10 = 0; local_10 < 0x2e; local_10 = local_10 + 1) {
-    lVar1 = float64_add(*(undefined8 *)((long)local_10 * 8 + -0xfba76b737fb74b8),
-                        *(undefined8 *)((long)local_10 * 8 + -0x17ba76b737fb74b8));
-    local_c = (uint)(lVar1 != *(long *)((long)local_10 * 8 + 0x24c0950fd1043b48)) + local_c;
-  }
-  _DAT_58b4800110ff2 = rtclock();
-  printf("%0.6f\n",_DAT_58b4800100ff2 - _DAT_d3d8d48005c0ff2);
-  return local_c;
-}
-
-
-
-ulong propagateFloat64NaN(ulong param_1,ulong param_2)
-
-{
-  uint uVar1;
-  int iVar2;
-  uint uVar3;
-  ulong local_40;
-  ulong local_38;
-  ulong local_30;
-  
-  float64_is_nan(param_1);
-  uVar1 = float64_is_signaling_nan(param_1);
-  iVar2 = float64_is_nan(param_2);
-  uVar3 = float64_is_signaling_nan(param_2);
-  local_40 = param_1 | 0x8000000000000;
-  local_30 = param_2 | 0x8000000000000;
-  if ((uVar1 | uVar3) != 0) {
-    float_raise(0x10);
-  }
-  if (uVar3 == 0) {
-    local_38 = local_40;
-    if (uVar1 == 0) {
-      if (iVar2 != 0) {
-        local_40 = local_30;
-      }
-      local_38 = local_40;
-    }
-    local_30 = local_38;
-  }
-  return local_30;
-}
-
-
-
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 long roundAndPackFloat64(int param_1,uint param_2,ulong param_3)
@@ -475,6 +181,300 @@ int countLeadingZeros64(ulong param_1)
   }
   iVar1 = countLeadingZeros32(local_10 & 0xffffffff);
   return iVar1 + local_14;
+}
+
+
+
+undefined8 addFloat64Sigs(undefined8 param_1,undefined8 param_2,undefined4 param_3)
+
+{
+  int iVar1;
+  undefined8 uVar2;
+  int local_4c;
+  long local_48;
+  ulong local_40;
+  ulong local_38;
+  int local_30;
+  int local_2c;
+  int local_28;
+  undefined4 local_24;
+  undefined8 local_20;
+  undefined8 local_18;
+  
+  local_24 = param_3;
+  local_20 = param_2;
+  local_18 = param_1;
+  local_38 = extractFloat64Frac(param_1);
+  local_28 = extractFloat64Exp(local_18);
+  local_40 = extractFloat64Frac(local_20);
+  local_2c = extractFloat64Exp(local_20);
+  local_4c = local_28 - local_2c;
+  local_38 = local_38 * 0x200;
+  local_40 = local_40 * 0x200;
+  if (local_4c < 1) {
+    if (-1 < local_4c) {
+      if (local_28 == 0x7ff) {
+        if ((local_38 | local_40) != 0) {
+          uVar2 = propagateFloat64NaN(local_18,local_20);
+          return uVar2;
+        }
+        return local_18;
+      }
+      if (local_28 == 0) {
+        uVar2 = packFloat64(local_24,0,local_38 + local_40 >> 9);
+        return uVar2;
+      }
+      local_48 = local_38 + 0x4000000000000000 + local_40;
+      local_30 = local_28;
+      iVar1 = local_30;
+      goto LAB_001006eb;
+    }
+    if (local_2c == 0x7ff) {
+      if (local_40 != 0) {
+        uVar2 = propagateFloat64NaN(local_18,local_20);
+        return uVar2;
+      }
+      uVar2 = packFloat64(local_24,0x7ff,0);
+      return uVar2;
+    }
+    if (local_28 == 0) {
+      local_4c = local_4c + 1;
+    }
+    else {
+      local_38 = local_38 | 0x2000000000000000;
+    }
+    shift64RightJamming(local_38,-local_4c,&local_38);
+    local_30 = local_2c;
+  }
+  else {
+    if (local_28 == 0x7ff) {
+      if (local_38 != 0) {
+        uVar2 = propagateFloat64NaN(local_18,local_20);
+        return uVar2;
+      }
+      return local_18;
+    }
+    if (local_2c == 0) {
+      local_4c = local_4c + -1;
+    }
+    else {
+      local_40 = local_40 | 0x2000000000000000;
+    }
+    shift64RightJamming(local_40,local_4c,&local_40);
+    local_30 = local_28;
+  }
+  local_38 = local_38 | 0x2000000000000000;
+  local_48 = (local_38 + local_40) * 2;
+  iVar1 = local_30 + -1;
+  if (local_48 < 0) {
+    local_48 = local_38 + local_40;
+    iVar1 = local_30;
+  }
+LAB_001006eb:
+  local_30 = iVar1;
+  uVar2 = roundAndPackFloat64(local_24,local_30,local_48);
+  return uVar2;
+}
+
+
+
+ulong propagateFloat64NaN(ulong param_1,ulong param_2)
+
+{
+  uint uVar1;
+  int iVar2;
+  uint uVar3;
+  ulong local_40;
+  ulong local_38;
+  ulong local_30;
+  
+  float64_is_nan(param_1);
+  uVar1 = float64_is_signaling_nan(param_1);
+  iVar2 = float64_is_nan(param_2);
+  uVar3 = float64_is_signaling_nan(param_2);
+  local_40 = param_1 | 0x8000000000000;
+  local_30 = param_2 | 0x8000000000000;
+  if ((uVar1 | uVar3) != 0) {
+    float_raise(0x10);
+  }
+  if (uVar3 == 0) {
+    local_38 = local_40;
+    if (uVar1 == 0) {
+      if (iVar2 != 0) {
+        local_40 = local_30;
+      }
+      local_38 = local_40;
+    }
+    local_30 = local_38;
+  }
+  return local_30;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined8 subFloat64Sigs(undefined8 param_1,undefined8 param_2,uint param_3)
+
+{
+  ulong uVar1;
+  ulong uVar2;
+  undefined8 uVar3;
+  int local_4c;
+  long local_48;
+  ulong local_40;
+  ulong local_38;
+  int local_30;
+  int local_2c;
+  int local_28;
+  uint local_24;
+  undefined8 local_20;
+  undefined8 local_18;
+  
+  local_24 = param_3;
+  local_20 = param_2;
+  local_18 = param_1;
+  local_38 = extractFloat64Frac(param_1);
+  local_28 = extractFloat64Exp(local_18);
+  local_40 = extractFloat64Frac(local_20);
+  local_2c = extractFloat64Exp(local_20);
+  local_4c = local_28 - local_2c;
+  uVar1 = local_38 << 10;
+  uVar2 = local_40 << 10;
+  if (local_4c < 1) {
+    if (local_4c < 0) {
+      if (local_2c == 0x7ff) {
+        if (uVar2 != 0) {
+          local_40 = uVar2;
+          local_38 = uVar1;
+          uVar3 = propagateFloat64NaN(local_18,local_20);
+          return uVar3;
+        }
+        local_40 = uVar2;
+        local_38 = uVar1;
+        uVar3 = packFloat64(local_24 ^ 1,0x7ff,0);
+        return uVar3;
+      }
+      if (local_28 == 0) {
+        local_4c = local_4c + 1;
+        local_38 = uVar1;
+      }
+      else {
+        local_38 = uVar1 | 0x4000000000000000;
+      }
+      local_40 = uVar2;
+      shift64RightJamming(local_38,-local_4c,&local_38);
+      local_40 = local_40 | 0x4000000000000000;
+    }
+    else {
+      if (local_28 == 0x7ff) {
+        if (((local_38 | local_40) & 0x3fffffffffffff) != 0) {
+          local_40 = uVar2;
+          local_38 = uVar1;
+          uVar3 = propagateFloat64NaN(local_18,local_20);
+          return uVar3;
+        }
+        local_40 = uVar2;
+        local_38 = uVar1;
+        float_raise(0x10);
+        return 0x7fffffffffffffff;
+      }
+      if (local_28 == 0) {
+        local_28 = 1;
+        local_2c = 1;
+      }
+      local_40 = uVar2;
+      local_38 = uVar1;
+      if (uVar2 < uVar1) goto LAB_00100a7b;
+      if (uVar2 <= uVar1) {
+        uVar3 = packFloat64(_DAT_124c0940f033883 == 3,0,0);
+        return uVar3;
+      }
+    }
+    local_48 = local_40 - local_38;
+    local_30 = local_2c;
+    local_24 = local_24 ^ 1;
+  }
+  else {
+    if (local_28 == 0x7ff) {
+      if (uVar1 != 0) {
+        local_40 = uVar2;
+        local_38 = uVar1;
+        uVar3 = propagateFloat64NaN(local_18,local_20);
+        return uVar3;
+      }
+      return local_18;
+    }
+    if (local_2c == 0) {
+      local_4c = local_4c + -1;
+      local_40 = uVar2;
+    }
+    else {
+      local_40 = uVar2 | 0x4000000000000000;
+    }
+    local_38 = uVar1;
+    shift64RightJamming(local_40,local_4c,&local_40);
+    local_38 = local_38 | 0x4000000000000000;
+LAB_00100a7b:
+    local_48 = local_38 - local_40;
+    local_30 = local_28;
+  }
+  local_30 = local_30 + -1;
+  uVar3 = normalizeRoundAndPackFloat64(local_24,local_30,local_48);
+  return uVar3;
+}
+
+
+
+undefined8 float64_add(undefined8 param_1,undefined8 param_2)
+
+{
+  int iVar1;
+  int iVar2;
+  undefined8 local_10;
+  
+  iVar1 = extractFloat64Sign(param_1);
+  iVar2 = extractFloat64Sign(param_2);
+  if (iVar1 == iVar2) {
+    local_10 = addFloat64Sigs(param_1,param_2,iVar1);
+  }
+  else {
+    local_10 = subFloat64Sigs(param_1,param_2,iVar1);
+  }
+  return local_10;
+}
+
+
+
+undefined8 ullong_to_double(void)
+
+{
+  undefined8 local_20;
+  
+  return local_20;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+int submain(void)
+
+{
+  long lVar1;
+  int local_10;
+  int local_c;
+  
+  local_c = 0;
+  _DAT_f845c700110ff2 = rtclock();
+  for (local_10 = 0; local_10 < 0x2e; local_10 = local_10 + 1) {
+    lVar1 = float64_add(*(undefined8 *)((long)local_10 * 8 + -0xfba76b737fb74b8),
+                        *(undefined8 *)((long)local_10 * 8 + -0x17ba76b737fb74b8));
+    local_c = (uint)(lVar1 != *(long *)((long)local_10 * 8 + 0x24c0950fd1043b48)) + local_c;
+  }
+  _DAT_58b4800110ff2 = rtclock();
+  printf("%0.6f\n",_DAT_58b4800100ff2 - _DAT_5d3d8d48005c0ff2);
+  return local_c;
 }
 
 

@@ -55,41 +55,61 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x79)));
+typedef pointer pointer __((offset(0xc7)));
 
-typedef pointer pointer __((offset(0x46d)));
+typedef pointer pointer __((offset(0x61d)));
 
-typedef pointer pointer __((offset(0xf3)));
+typedef pointer pointer __((offset(0x494)));
 
-typedef pointer pointer __((offset(0x3c7)));
+typedef pointer pointer __((offset(0x56f)));
+
+typedef pointer pointer __((offset(0x154)));
+
+typedef pointer pointer __((offset(0x482)));
+
+typedef pointer pointer __((offset(0x134)));
+
+typedef pointer pointer __((offset(0x64d)));
 
 typedef pointer pointer __((offset(0x34)));
 
+typedef pointer pointer __((offset(0x58a)));
+
+typedef pointer pointer __((offset(0x55f)));
+
+typedef pointer pointer __((offset(0x86)));
+
+typedef pointer pointer __((offset(0xa5)));
+
 typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x39e)));
+typedef pointer pointer __((offset(0x540)));
 
-typedef pointer pointer __((offset(0x4a2)));
+typedef pointer pointer __((offset(0x35)));
 
-typedef pointer pointer __((offset(0x58)));
+typedef pointer pointer __((offset(0xef)));
 
-typedef pointer pointer __((offset(0x3b6)));
-
-typedef pointer pointer __((offset(0x22)));
+typedef pointer pointer __((offset(0x460)));
 
 typedef pointer pointer __((offset(0x45)));
 
-typedef pointer pointer __((offset(0x3ae)));
+typedef pointer pointer __((offset(0x4b9)));
 
-typedef pointer pointer __((offset(0x3a6)));
+typedef pointer pointer __((offset(0x5c8)));
+
+typedef pointer pointer __((offset(0x567)));
+
+typedef pointer pointer __((offset(0x4a7)));
+
+typedef pointer pointer __((offset(0x57)));
 
 typedef pointer pointer __((offset(0x2d)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x409)));
+typedef pointer pointer __((offset(0x556)));
 
-typedef pointer pointer __((offset(0x46)));
+typedef pointer pointer __((offset(0x4d9)));
 
 typedef void _IO_lock_t;
 
@@ -143,14 +163,6 @@ struct _IO_marker {
 
 typedef struct _IO_FILE FILE;
 
-typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
-
-struct Elf64_Rela {
-    qword r_offset; // location to apply the relocation action
-    qword r_info; // the symbol table index and the type of relocation
-    qword r_addend; // a constant addend used to compute the relocatable field value
-};
-
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
@@ -198,6 +210,14 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
+
+struct Elf64_Rela {
+    qword r_offset; // location to apply the relocation action
+    qword r_info; // the symbol table index and the type of relocation
+    qword r_addend; // a constant addend used to compute the relocatable field value
+};
+
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -238,7 +258,10 @@ struct Elf64_Ehdr {
 
 
 
+void kernel_deriche(float param_1,uint param_2,ulong param_3,long param_4,long param_5,long param_6,long param_7);
 undefined8 submain(int param_1,char **param_2);
+float expf(float __x);
+float exp2f(float __x);
 undefined polybench_alloc_data();
 void free(void * __ptr);
 size_t fwrite(void * __ptr, size_t __size, size_t __n, FILE * __s);

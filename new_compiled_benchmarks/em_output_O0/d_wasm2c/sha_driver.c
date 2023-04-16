@@ -734,9 +734,9 @@ static void w2c_sha__driver_0x5F_wasm_call_ctors_0(w2c_sha__driver*);
 static void w2c_sha__driver_0x5F_wasm_apply_data_relocs_0(w2c_sha__driver*);
 static void w2c_sha__driver_local_memset_0(w2c_sha__driver*, u32, u32, u32, u32);
 static void w2c_sha__driver_local_memcpy_0(w2c_sha__driver*, u32, u32, u32);
+static void w2c_sha__driver_sha_transform_0(w2c_sha__driver*);
 static void w2c_sha__driver_sha_init_0(w2c_sha__driver*);
 static void w2c_sha__driver_sha_update_0(w2c_sha__driver*, u32, u32);
-static void w2c_sha__driver_sha_transform(w2c_sha__driver*);
 static void w2c_sha__driver_sha_final_0(w2c_sha__driver*);
 static void w2c_sha__driver_sha_stream_0(w2c_sha__driver*);
 static u32 w2c_sha__driver_submain_0(w2c_sha__driver*);
@@ -751,10 +751,10 @@ FUNC_TYPE_T(w2c_sha__driver_t5) = "\x72\xab\x00\xdf\x20\x3d\xce\xa1\xf2\x29\xc7\
 FUNC_TYPE_T(w2c_sha__driver_t6) = "\xa2\x6b\xdd\x6b\x8b\xf9\x1a\x68\xb2\x64\xcc\x3d\x18\x9d\x89\xa7\x92\x04\x85\x33\x0d\xe7\x95\x54\xeb\x44\xc7\xa8\xff\xf6\x68\x3a";
 
 static void init_globals(w2c_sha__driver* instance) {
-  instance->w2c_sha_info_digest_1 = 16464u;
-  instance->w2c_sha_info_count_lo_1 = 16484u;
-  instance->w2c_sha_info_count_hi_1 = 16488u;
-  instance->w2c_sha_info_data_1 = 16496u;
+  instance->w2c_sha_info_data_1 = 16464u;
+  instance->w2c_sha_info_digest_1 = 16528u;
+  instance->w2c_sha_info_count_lo_1 = 16548u;
+  instance->w2c_sha_info_count_hi_1 = 16552u;
   instance->w2c_in_i_1 = 16384u;
   instance->w2c_indata_1 = 0u;
   instance->w2c_startTimer_1 = 16560u;
@@ -2174,14 +2174,24 @@ void w2c_sha__driver_local_memcpy(w2c_sha__driver* instance, u32 var_p0, u32 var
   return w2c_sha__driver_local_memcpy_0(instance, var_p0, var_p1, var_p2);
 }
 
-/* export: 'sha_init' */
-void w2c_sha__driver_sha_init(w2c_sha__driver* instance) {
-  return w2c_sha__driver_sha_init_0(instance);
+/* export: 'sha_transform' */
+void w2c_sha__driver_sha_transform(w2c_sha__driver* instance) {
+  return w2c_sha__driver_sha_transform_0(instance);
+}
+
+/* export: 'sha_info_data' */
+u32* w2c_sha__driver_sha_info_data(w2c_sha__driver* instance) {
+  return &instance->w2c_sha_info_data_1;
 }
 
 /* export: 'sha_info_digest' */
 u32* w2c_sha__driver_sha_info_digest(w2c_sha__driver* instance) {
   return &instance->w2c_sha_info_digest_1;
+}
+
+/* export: 'sha_init' */
+void w2c_sha__driver_sha_init(w2c_sha__driver* instance) {
+  return w2c_sha__driver_sha_init_0(instance);
 }
 
 /* export: 'sha_info_count_lo' */
@@ -2197,11 +2207,6 @@ u32* w2c_sha__driver_sha_info_count_hi(w2c_sha__driver* instance) {
 /* export: 'sha_update' */
 void w2c_sha__driver_sha_update(w2c_sha__driver* instance, u32 var_p0, u32 var_p1) {
   return w2c_sha__driver_sha_update_0(instance, var_p0, var_p1);
-}
-
-/* export: 'sha_info_data' */
-u32* w2c_sha__driver_sha_info_data(w2c_sha__driver* instance) {
-  return &instance->w2c_sha_info_data_1;
 }
 
 /* export: 'sha_final' */
@@ -2796,261 +2801,7 @@ void w2c_sha__driver_local_memcpy_0(w2c_sha__driver* instance, u32 var_p0, u32 v
   FUNC_EPILOGUE;
 }
 
-void w2c_sha__driver_sha_init_0(w2c_sha__driver* instance) {
-  u32 var_l0 = 0, var_l1 = 0, var_l2 = 0, var_l3 = 0, var_l4 = 0, var_l5 = 0, var_l6 = 0, var_l7 = 0, 
-      var_l8 = 0;
-  FUNC_PROLOGUE;
-  u32 var_i0, var_i1;
-  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_digest);
-  var_l0 = var_i0;
-  var_i0 = 1732584193u;
-  var_l1 = var_i0;
-  var_i0 = var_l0;
-  var_i1 = var_l1;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
-  var_i0 = 4023233417u;
-  var_l2 = var_i0;
-  var_i0 = var_l0;
-  var_i1 = var_l2;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 4, var_i1);
-  var_i0 = 2562383102u;
-  var_l3 = var_i0;
-  var_i0 = var_l0;
-  var_i1 = var_l3;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 8, var_i1);
-  var_i0 = 271733878u;
-  var_l4 = var_i0;
-  var_i0 = var_l0;
-  var_i1 = var_l4;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 12, var_i1);
-  var_i0 = 3285377520u;
-  var_l5 = var_i0;
-  var_i0 = var_l0;
-  var_i1 = var_l5;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 16, var_i1);
-  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_lo);
-  var_l6 = var_i0;
-  var_i0 = 0u;
-  var_l7 = var_i0;
-  var_i0 = var_l6;
-  var_i1 = var_l7;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
-  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_hi);
-  var_l8 = var_i0;
-  var_i0 = var_l8;
-  var_i1 = var_l7;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
-  goto var_Bfunc;
-  var_Bfunc:;
-  FUNC_EPILOGUE;
-}
-
-void w2c_sha__driver_sha_update_0(w2c_sha__driver* instance, u32 var_p0, u32 var_p1) {
-  u32 var_l2 = 0, var_l3 = 0, var_l4 = 0, var_l5 = 0, var_l6 = 0, var_l7 = 0, var_l8 = 0, var_l9 = 0, 
-      var_l10 = 0, var_l11 = 0, var_l12 = 0, var_l13 = 0, var_l14 = 0, var_l15 = 0, var_l16 = 0, var_l17 = 0, 
-      var_l18 = 0, var_l19 = 0, var_l20 = 0, var_l21 = 0, var_l22 = 0, var_l23 = 0, var_l24 = 0, var_l25 = 0, 
-      var_l26 = 0, var_l27 = 0, var_l28 = 0, var_l29 = 0, var_l30 = 0, var_l31 = 0, var_l32 = 0, var_l33 = 0, 
-      var_l34 = 0, var_l35 = 0, var_l36 = 0, var_l37 = 0, var_l38 = 0, var_l39 = 0, var_l40 = 0, var_l41 = 0, 
-      var_l42 = 0, var_l43 = 0, var_l44 = 0, var_l45 = 0, var_l46 = 0, var_l47 = 0, var_l48 = 0, var_l49 = 0, 
-      var_l50 = 0, var_l51 = 0, var_l52 = 0;
-  FUNC_PROLOGUE;
-  u32 var_i0, var_i1, var_i2;
-  var_i0 = (*instance->w2c_env_0x5F_stack_pointer);
-  var_l2 = var_i0;
-  var_i0 = 16u;
-  var_l3 = var_i0;
-  var_i0 = var_l2;
-  var_i1 = var_l3;
-  var_i0 -= var_i1;
-  var_l4 = var_i0;
-  var_i0 = var_l4;
-  (*instance->w2c_env_0x5F_stack_pointer) = var_i0;
-  var_i0 = var_l4;
-  var_i1 = var_p0;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 12, var_i1);
-  var_i0 = var_l4;
-  var_i1 = var_p1;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 8, var_i1);
-  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_lo);
-  var_l5 = var_i0;
-  var_i0 = var_l5;
-  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0));
-  var_l6 = var_i0;
-  var_i0 = var_l4;
-  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
-  var_l7 = var_i0;
-  var_i0 = 3u;
-  var_l8 = var_i0;
-  var_i0 = var_l7;
-  var_i1 = var_l8;
-  var_i0 <<= (var_i1 & 31);
-  var_l9 = var_i0;
-  var_i0 = var_l6;
-  var_i1 = var_l9;
-  var_i0 += var_i1;
-  var_l10 = var_i0;
-  var_i0 = var_l10;
-  var_l11 = var_i0;
-  var_i0 = var_l6;
-  var_l12 = var_i0;
-  var_i0 = var_l11;
-  var_i1 = var_l12;
-  var_i0 = var_i0 < var_i1;
-  var_l13 = var_i0;
-  var_i0 = 1u;
-  var_l14 = var_i0;
-  var_i0 = var_l13;
-  var_i1 = var_l14;
-  var_i0 &= var_i1;
-  var_l15 = var_i0;
-  var_i0 = var_l15;
-  var_i0 = !(var_i0);
-  if (var_i0) {goto var_B0;}
-  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_hi);
-  var_l16 = var_i0;
-  var_i0 = var_l16;
-  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0));
-  var_l17 = var_i0;
-  var_i0 = 1u;
-  var_l18 = var_i0;
-  var_i0 = var_l17;
-  var_i1 = var_l18;
-  var_i0 += var_i1;
-  var_l19 = var_i0;
-  var_i0 = var_l16;
-  var_i1 = var_l19;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
-  var_B0:;
-  var_i0 = var_l4;
-  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
-  var_l20 = var_i0;
-  var_i0 = 3u;
-  var_l21 = var_i0;
-  var_i0 = var_l20;
-  var_i1 = var_l21;
-  var_i0 <<= (var_i1 & 31);
-  var_l22 = var_i0;
-  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_lo);
-  var_l23 = var_i0;
-  var_i0 = var_l23;
-  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0));
-  var_l24 = var_i0;
-  var_i0 = var_l24;
-  var_i1 = var_l22;
-  var_i0 += var_i1;
-  var_l25 = var_i0;
-  var_i0 = var_l23;
-  var_i1 = var_l25;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
-  var_i0 = var_l4;
-  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
-  var_l26 = var_i0;
-  var_i0 = 29u;
-  var_l27 = var_i0;
-  var_i0 = var_l26;
-  var_i1 = var_l27;
-  var_i0 >>= (var_i1 & 31);
-  var_l28 = var_i0;
-  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_hi);
-  var_l29 = var_i0;
-  var_i0 = var_l29;
-  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0));
-  var_l30 = var_i0;
-  var_i0 = var_l30;
-  var_i1 = var_l28;
-  var_i0 += var_i1;
-  var_l31 = var_i0;
-  var_i0 = var_l29;
-  var_i1 = var_l31;
-  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
-  var_L2: 
-    var_i0 = var_l4;
-    var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
-    var_l32 = var_i0;
-    var_i0 = 64u;
-    var_l33 = var_i0;
-    var_i0 = var_l32;
-    var_l34 = var_i0;
-    var_i0 = var_l33;
-    var_l35 = var_i0;
-    var_i0 = var_l34;
-    var_i1 = var_l35;
-    var_i0 = (u32)((s32)var_i0 >= (s32)var_i1);
-    var_l36 = var_i0;
-    var_i0 = 1u;
-    var_l37 = var_i0;
-    var_i0 = var_l36;
-    var_i1 = var_l37;
-    var_i0 &= var_i1;
-    var_l38 = var_i0;
-    var_i0 = var_l38;
-    var_i0 = !(var_i0);
-    if (var_i0) {goto var_B1;}
-    var_i0 = var_l4;
-    var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 12u);
-    var_l39 = var_i0;
-    var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_data);
-    var_l40 = var_i0;
-    var_i0 = 64u;
-    var_l41 = var_i0;
-    var_i0 = var_l40;
-    var_i1 = var_l39;
-    var_i2 = var_l41;
-    w2c_sha__driver_local_memcpy_0(instance, var_i0, var_i1, var_i2);
-    w2c_sha__driver_sha_transform(instance);
-    var_i0 = var_l4;
-    var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 12u);
-    var_l42 = var_i0;
-    var_i0 = 64u;
-    var_l43 = var_i0;
-    var_i0 = var_l42;
-    var_i1 = var_l43;
-    var_i0 += var_i1;
-    var_l44 = var_i0;
-    var_i0 = var_l4;
-    var_i1 = var_l44;
-    i32_store(instance->w2c_env_memory, (u64)(var_i0) + 12, var_i1);
-    var_i0 = var_l4;
-    var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
-    var_l45 = var_i0;
-    var_i0 = 64u;
-    var_l46 = var_i0;
-    var_i0 = var_l45;
-    var_i1 = var_l46;
-    var_i0 -= var_i1;
-    var_l47 = var_i0;
-    var_i0 = var_l4;
-    var_i1 = var_l47;
-    i32_store(instance->w2c_env_memory, (u64)(var_i0) + 8, var_i1);
-    goto var_L2;
-  UNREACHABLE;
-  var_B1:;
-  var_i0 = var_l4;
-  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 12u);
-  var_l48 = var_i0;
-  var_i0 = var_l4;
-  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
-  var_l49 = var_i0;
-  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_data);
-  var_l50 = var_i0;
-  var_i0 = var_l50;
-  var_i1 = var_l48;
-  var_i2 = var_l49;
-  w2c_sha__driver_local_memcpy_0(instance, var_i0, var_i1, var_i2);
-  var_i0 = 16u;
-  var_l51 = var_i0;
-  var_i0 = var_l4;
-  var_i1 = var_l51;
-  var_i0 += var_i1;
-  var_l52 = var_i0;
-  var_i0 = var_l52;
-  (*instance->w2c_env_0x5F_stack_pointer) = var_i0;
-  goto var_Bfunc;
-  var_Bfunc:;
-  FUNC_EPILOGUE;
-}
-
-void w2c_sha__driver_sha_transform(w2c_sha__driver* instance) {
+void w2c_sha__driver_sha_transform_0(w2c_sha__driver* instance) {
   u32 var_l0 = 0, var_l1 = 0, var_l2 = 0, var_l3 = 0, var_l4 = 0, var_l5 = 0, var_l6 = 0, var_l7 = 0, 
       var_l8 = 0, var_l9 = 0, var_l10 = 0, var_l11 = 0, var_l12 = 0, var_l13 = 0, var_l14 = 0, var_l15 = 0, 
       var_l16 = 0, var_l17 = 0, var_l18 = 0, var_l19 = 0, var_l20 = 0, var_l21 = 0, var_l22 = 0, var_l23 = 0, 
@@ -4186,6 +3937,260 @@ void w2c_sha__driver_sha_transform(w2c_sha__driver* instance) {
   FUNC_EPILOGUE;
 }
 
+void w2c_sha__driver_sha_init_0(w2c_sha__driver* instance) {
+  u32 var_l0 = 0, var_l1 = 0, var_l2 = 0, var_l3 = 0, var_l4 = 0, var_l5 = 0, var_l6 = 0, var_l7 = 0, 
+      var_l8 = 0;
+  FUNC_PROLOGUE;
+  u32 var_i0, var_i1;
+  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_digest);
+  var_l0 = var_i0;
+  var_i0 = 1732584193u;
+  var_l1 = var_i0;
+  var_i0 = var_l0;
+  var_i1 = var_l1;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
+  var_i0 = 4023233417u;
+  var_l2 = var_i0;
+  var_i0 = var_l0;
+  var_i1 = var_l2;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 4, var_i1);
+  var_i0 = 2562383102u;
+  var_l3 = var_i0;
+  var_i0 = var_l0;
+  var_i1 = var_l3;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 8, var_i1);
+  var_i0 = 271733878u;
+  var_l4 = var_i0;
+  var_i0 = var_l0;
+  var_i1 = var_l4;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 12, var_i1);
+  var_i0 = 3285377520u;
+  var_l5 = var_i0;
+  var_i0 = var_l0;
+  var_i1 = var_l5;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 16, var_i1);
+  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_lo);
+  var_l6 = var_i0;
+  var_i0 = 0u;
+  var_l7 = var_i0;
+  var_i0 = var_l6;
+  var_i1 = var_l7;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
+  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_hi);
+  var_l8 = var_i0;
+  var_i0 = var_l8;
+  var_i1 = var_l7;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
+  goto var_Bfunc;
+  var_Bfunc:;
+  FUNC_EPILOGUE;
+}
+
+void w2c_sha__driver_sha_update_0(w2c_sha__driver* instance, u32 var_p0, u32 var_p1) {
+  u32 var_l2 = 0, var_l3 = 0, var_l4 = 0, var_l5 = 0, var_l6 = 0, var_l7 = 0, var_l8 = 0, var_l9 = 0, 
+      var_l10 = 0, var_l11 = 0, var_l12 = 0, var_l13 = 0, var_l14 = 0, var_l15 = 0, var_l16 = 0, var_l17 = 0, 
+      var_l18 = 0, var_l19 = 0, var_l20 = 0, var_l21 = 0, var_l22 = 0, var_l23 = 0, var_l24 = 0, var_l25 = 0, 
+      var_l26 = 0, var_l27 = 0, var_l28 = 0, var_l29 = 0, var_l30 = 0, var_l31 = 0, var_l32 = 0, var_l33 = 0, 
+      var_l34 = 0, var_l35 = 0, var_l36 = 0, var_l37 = 0, var_l38 = 0, var_l39 = 0, var_l40 = 0, var_l41 = 0, 
+      var_l42 = 0, var_l43 = 0, var_l44 = 0, var_l45 = 0, var_l46 = 0, var_l47 = 0, var_l48 = 0, var_l49 = 0, 
+      var_l50 = 0, var_l51 = 0, var_l52 = 0;
+  FUNC_PROLOGUE;
+  u32 var_i0, var_i1, var_i2;
+  var_i0 = (*instance->w2c_env_0x5F_stack_pointer);
+  var_l2 = var_i0;
+  var_i0 = 16u;
+  var_l3 = var_i0;
+  var_i0 = var_l2;
+  var_i1 = var_l3;
+  var_i0 -= var_i1;
+  var_l4 = var_i0;
+  var_i0 = var_l4;
+  (*instance->w2c_env_0x5F_stack_pointer) = var_i0;
+  var_i0 = var_l4;
+  var_i1 = var_p0;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 12, var_i1);
+  var_i0 = var_l4;
+  var_i1 = var_p1;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0) + 8, var_i1);
+  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_lo);
+  var_l5 = var_i0;
+  var_i0 = var_l5;
+  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0));
+  var_l6 = var_i0;
+  var_i0 = var_l4;
+  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
+  var_l7 = var_i0;
+  var_i0 = 3u;
+  var_l8 = var_i0;
+  var_i0 = var_l7;
+  var_i1 = var_l8;
+  var_i0 <<= (var_i1 & 31);
+  var_l9 = var_i0;
+  var_i0 = var_l6;
+  var_i1 = var_l9;
+  var_i0 += var_i1;
+  var_l10 = var_i0;
+  var_i0 = var_l10;
+  var_l11 = var_i0;
+  var_i0 = var_l6;
+  var_l12 = var_i0;
+  var_i0 = var_l11;
+  var_i1 = var_l12;
+  var_i0 = var_i0 < var_i1;
+  var_l13 = var_i0;
+  var_i0 = 1u;
+  var_l14 = var_i0;
+  var_i0 = var_l13;
+  var_i1 = var_l14;
+  var_i0 &= var_i1;
+  var_l15 = var_i0;
+  var_i0 = var_l15;
+  var_i0 = !(var_i0);
+  if (var_i0) {goto var_B0;}
+  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_hi);
+  var_l16 = var_i0;
+  var_i0 = var_l16;
+  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0));
+  var_l17 = var_i0;
+  var_i0 = 1u;
+  var_l18 = var_i0;
+  var_i0 = var_l17;
+  var_i1 = var_l18;
+  var_i0 += var_i1;
+  var_l19 = var_i0;
+  var_i0 = var_l16;
+  var_i1 = var_l19;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
+  var_B0:;
+  var_i0 = var_l4;
+  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
+  var_l20 = var_i0;
+  var_i0 = 3u;
+  var_l21 = var_i0;
+  var_i0 = var_l20;
+  var_i1 = var_l21;
+  var_i0 <<= (var_i1 & 31);
+  var_l22 = var_i0;
+  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_lo);
+  var_l23 = var_i0;
+  var_i0 = var_l23;
+  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0));
+  var_l24 = var_i0;
+  var_i0 = var_l24;
+  var_i1 = var_l22;
+  var_i0 += var_i1;
+  var_l25 = var_i0;
+  var_i0 = var_l23;
+  var_i1 = var_l25;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
+  var_i0 = var_l4;
+  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
+  var_l26 = var_i0;
+  var_i0 = 29u;
+  var_l27 = var_i0;
+  var_i0 = var_l26;
+  var_i1 = var_l27;
+  var_i0 >>= (var_i1 & 31);
+  var_l28 = var_i0;
+  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_count_hi);
+  var_l29 = var_i0;
+  var_i0 = var_l29;
+  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0));
+  var_l30 = var_i0;
+  var_i0 = var_l30;
+  var_i1 = var_l28;
+  var_i0 += var_i1;
+  var_l31 = var_i0;
+  var_i0 = var_l29;
+  var_i1 = var_l31;
+  i32_store(instance->w2c_env_memory, (u64)(var_i0), var_i1);
+  var_L2: 
+    var_i0 = var_l4;
+    var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
+    var_l32 = var_i0;
+    var_i0 = 64u;
+    var_l33 = var_i0;
+    var_i0 = var_l32;
+    var_l34 = var_i0;
+    var_i0 = var_l33;
+    var_l35 = var_i0;
+    var_i0 = var_l34;
+    var_i1 = var_l35;
+    var_i0 = (u32)((s32)var_i0 >= (s32)var_i1);
+    var_l36 = var_i0;
+    var_i0 = 1u;
+    var_l37 = var_i0;
+    var_i0 = var_l36;
+    var_i1 = var_l37;
+    var_i0 &= var_i1;
+    var_l38 = var_i0;
+    var_i0 = var_l38;
+    var_i0 = !(var_i0);
+    if (var_i0) {goto var_B1;}
+    var_i0 = var_l4;
+    var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 12u);
+    var_l39 = var_i0;
+    var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_data);
+    var_l40 = var_i0;
+    var_i0 = 64u;
+    var_l41 = var_i0;
+    var_i0 = var_l40;
+    var_i1 = var_l39;
+    var_i2 = var_l41;
+    w2c_sha__driver_local_memcpy_0(instance, var_i0, var_i1, var_i2);
+    w2c_sha__driver_sha_transform_0(instance);
+    var_i0 = var_l4;
+    var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 12u);
+    var_l42 = var_i0;
+    var_i0 = 64u;
+    var_l43 = var_i0;
+    var_i0 = var_l42;
+    var_i1 = var_l43;
+    var_i0 += var_i1;
+    var_l44 = var_i0;
+    var_i0 = var_l4;
+    var_i1 = var_l44;
+    i32_store(instance->w2c_env_memory, (u64)(var_i0) + 12, var_i1);
+    var_i0 = var_l4;
+    var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
+    var_l45 = var_i0;
+    var_i0 = 64u;
+    var_l46 = var_i0;
+    var_i0 = var_l45;
+    var_i1 = var_l46;
+    var_i0 -= var_i1;
+    var_l47 = var_i0;
+    var_i0 = var_l4;
+    var_i1 = var_l47;
+    i32_store(instance->w2c_env_memory, (u64)(var_i0) + 8, var_i1);
+    goto var_L2;
+  UNREACHABLE;
+  var_B1:;
+  var_i0 = var_l4;
+  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 12u);
+  var_l48 = var_i0;
+  var_i0 = var_l4;
+  var_i0 = i32_load(instance->w2c_env_memory, (u64)(var_i0) + 8u);
+  var_l49 = var_i0;
+  var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_data);
+  var_l50 = var_i0;
+  var_i0 = var_l50;
+  var_i1 = var_l48;
+  var_i2 = var_l49;
+  w2c_sha__driver_local_memcpy_0(instance, var_i0, var_i1, var_i2);
+  var_i0 = 16u;
+  var_l51 = var_i0;
+  var_i0 = var_l4;
+  var_i1 = var_l51;
+  var_i0 += var_i1;
+  var_l52 = var_i0;
+  var_i0 = var_l52;
+  (*instance->w2c_env_0x5F_stack_pointer) = var_i0;
+  goto var_Bfunc;
+  var_Bfunc:;
+  FUNC_EPILOGUE;
+}
+
 void w2c_sha__driver_sha_final_0(w2c_sha__driver* instance) {
   u32 var_l0 = 0, var_l1 = 0, var_l2 = 0, var_l3 = 0, var_l4 = 0, var_l5 = 0, var_l6 = 0, var_l7 = 0, 
       var_l8 = 0, var_l9 = 0, var_l10 = 0, var_l11 = 0, var_l12 = 0, var_l13 = 0, var_l14 = 0, var_l15 = 0, 
@@ -4311,7 +4316,7 @@ void w2c_sha__driver_sha_final_0(w2c_sha__driver* instance) {
   var_i2 = var_l29;
   var_i3 = var_l30;
   w2c_sha__driver_local_memset_0(instance, var_i0, var_i1, var_i2, var_i3);
-  w2c_sha__driver_sha_transform(instance);
+  w2c_sha__driver_sha_transform_0(instance);
   var_i0 = (*instance->w2c_GOT0x2Emem_sha_info_data);
   var_l33 = var_i0;
   var_i0 = 56u;
@@ -4361,7 +4366,7 @@ void w2c_sha__driver_sha_final_0(w2c_sha__driver* instance) {
   var_i0 = var_l43;
   var_i1 = var_l44;
   i32_store(instance->w2c_env_memory, (u64)(var_i0) + 60, var_i1);
-  w2c_sha__driver_sha_transform(instance);
+  w2c_sha__driver_sha_transform_0(instance);
   var_i0 = 16u;
   var_l45 = var_i0;
   var_i0 = var_l2;

@@ -1,7 +1,7 @@
 int gsm_add(unsigned short a0, unsigned short a1)
 {
     unsigned long v0;  // [bp-0x28], Other Possible Types: unsigned long long
-    unsigned long long v1;  // [bp-0x20]
+    unsigned long long v1;  // [bp-0x20], Other Possible Types: unsigned long
     unsigned long v2;  // [bp-0x18]
 
     v2 = a0 + a1;
@@ -113,7 +113,7 @@ int gsm_norm(unsigned long a0)
         }
         v3 ^= -1;
     }
-    if (v3 > -0x40000000 || v3 >= 0)
+    if (v3 >= 0 || v3 > -0x40000000)
     {
         if ((0xffff0000 & v3) != 0)
         {
@@ -203,9 +203,9 @@ int Autocorrelation(unsigned long a0, unsigned long long a1[9])
     unsigned short v6;  // [bp-0x22]
     unsigned int v7;  // [bp-0x20]
     unsigned int v8;  // [bp-0x1c]
-    unsigned short v9[2];  // [bp-0x10]
+    unsigned short *v9;  // [bp-0x10]
 
-    *((unsigned long *)&v9) = a0;
+    v9 = a0;
     v5 = 0;
     for (v8 = 0; v8 <= 159; v8 += 1)
     {
@@ -232,7 +232,7 @@ int Autocorrelation(unsigned long a0, unsigned long long a1[9])
             v9[v8] = gsm_mult_r(v0, 0x4000 >> ((char)(v3 - 1) & 31));
         }
     }
-    *(&v2) = v9;
+    *((unsigned short **)&v2) = v9;
     v1 = v2[0];
     for (v8 = 8; v8 >= 0; v8 -= 1)
     {
@@ -319,7 +319,7 @@ int Autocorrelation(unsigned long a0, unsigned long long a1[9])
         for (v8 = 159; v8 >= 0; v8 -= 1)
         {
             tmp_27 = v9;
-            *(&v9) = &v9[1];
+            v9 = &v9[1];
             *((unsigned short *)tmp_27) = *((short *)tmp_27) << ((char)v4 & 31);
         }
         return;

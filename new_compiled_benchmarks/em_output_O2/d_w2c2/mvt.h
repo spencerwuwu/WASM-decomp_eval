@@ -26,13 +26,17 @@ void f6(mvtInstance*);
 
 void f7(mvtInstance*);
 
-U32 f8(mvtInstance*,U32,U32);
+void f8(mvtInstance*,U32,U32,U32,U32,U32,U32);
 
-U32 f9(mvtInstance*,U64,U32);
+U32 f9(mvtInstance*,U32,U32);
+
+U32 f10(mvtInstance*,U64,U32);
 
 void mvt____wasm_call_ctors(mvtInstance*i);
 
 void mvt____wasm_apply_data_relocs(mvtInstance*i);
+
+void mvt_kernel_mvt(mvtInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5);
 
 U32 mvt_submain(mvtInstance*i,U32 l0,U32 l1);
 

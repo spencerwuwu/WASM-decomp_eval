@@ -55,25 +55,25 @@ U32 f14(dfdivInstance*,U64);
 
 U32 f15(dfdivInstance*,U64);
 
-U64 f16(dfdivInstance*,U32,U32,U64);
+void f16(dfdivInstance*,U64,U32,U32);
 
-U64 f17(dfdivInstance*,U64,U64);
+U64 f17(dfdivInstance*,U32,U32,U64);
 
-F64 f18(dfdivInstance*,U64);
+U64 f18(dfdivInstance*,U32,U32,U64);
 
-U32 f19(dfdivInstance*);
+U64 f19(dfdivInstance*,U64,U64);
 
-void f20(dfdivInstance*,U32,U32,U32,U32);
+F64 f20(dfdivInstance*,U64);
 
-void f21(dfdivInstance*,U32,U32,U32,U32,U32,U32,U32,U32,U32,U32);
+U32 f21(dfdivInstance*);
 
-void f22(dfdivInstance*,U32,U32,U32,U32,U32,U32,U32,U32,U32,U32);
+void f22(dfdivInstance*,U32,U32,U32,U32);
 
-void f23(dfdivInstance*,U32,U32,U32,U32,U32,U32);
+void f23(dfdivInstance*,U32,U32,U32,U32,U32,U32,U32,U32,U32,U32);
 
-U32 f24(dfdivInstance*,U32,U32);
+void f24(dfdivInstance*,U32,U32,U32,U32,U32,U32,U32,U32,U32,U32);
 
-U32 f25(dfdivInstance*,U32,U32);
+void f25(dfdivInstance*,U32,U32,U32,U32,U32,U32);
 
 U32 f26(dfdivInstance*,U32,U32);
 
@@ -81,11 +81,19 @@ U32 f27(dfdivInstance*,U32,U32);
 
 U32 f28(dfdivInstance*,U32,U32);
 
-U32 f29(dfdivInstance*,U32,U32,U32,U32);
+U32 f29(dfdivInstance*,U32,U32);
 
-U32 f30(dfdivInstance*,U32,U32,U32,U32);
+U32 f30(dfdivInstance*,U32,U32);
 
-F64 f31(dfdivInstance*,U32,U32);
+void f31(dfdivInstance*,U32,U32,U32,U32);
+
+U32 f32(dfdivInstance*,U32,U32,U32,U32);
+
+U32 f33(dfdivInstance*,U32,U32,U32,U32);
+
+U32 f34(dfdivInstance*,U32,U32,U32,U32);
+
+F64 f35(dfdivInstance*,U32,U32);
 
 void dfdiv____wasm_call_ctors(dfdivInstance*i);
 
@@ -111,7 +119,11 @@ U32 dfdiv_extractFloat64Exp(dfdivInstance*i,U32 l0,U32 l1);
 
 U32 dfdiv_extractFloat64Sign(dfdivInstance*i,U32 l0,U32 l1);
 
+void dfdiv_normalizeFloat64Subnormal(dfdivInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
 U32 dfdiv_packFloat64(dfdivInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
+U32 dfdiv_roundAndPackFloat64(dfdivInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
 U32 dfdiv_float64_div(dfdivInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
@@ -137,7 +149,11 @@ U32 dfdiv_origX24extractFloat64Exp(dfdivInstance*i,U64 l0);
 
 U32 dfdiv_origX24extractFloat64Sign(dfdivInstance*i,U64 l0);
 
+void dfdiv_origX24normalizeFloat64Subnormal(dfdivInstance*i,U64 l0,U32 l1,U32 l2);
+
 U64 dfdiv_origX24packFloat64(dfdivInstance*i,U32 l0,U32 l1,U64 l2);
+
+U64 dfdiv_origX24roundAndPackFloat64(dfdivInstance*i,U32 l0,U32 l1,U64 l2);
 
 U64 dfdiv_origX24float64_div(dfdivInstance*i,U64 l0,U64 l1);
 

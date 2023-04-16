@@ -90,6 +90,9 @@ void w2c_gramschmidt_0x5F_wasm_call_ctors(w2c_gramschmidt*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_gramschmidt_0x5F_wasm_apply_data_relocs(w2c_gramschmidt*);
 
+/* export: 'kernel_gramschmidt' */
+void w2c_gramschmidt_kernel_gramschmidt(w2c_gramschmidt*, u32, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_gramschmidt_submain(w2c_gramschmidt*, u32, u32);
 

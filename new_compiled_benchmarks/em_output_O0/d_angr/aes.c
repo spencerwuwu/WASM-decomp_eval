@@ -39,7 +39,7 @@ int encrypt(unsigned int *a0, unsigned long long a1, unsigned int a2)
             *((int *)*((long long *)&got.round_val)) = 4;
             *((int *)*((long long *)&got.nb)) = 6;
         }
-        if (v0 == 0x1f500 || v0 == 0x2ef00 || v0 == 0x3e900)
+        if (v0 == 0x3e900 || v0 == 0x2ef00 || v0 == 0x1f500)
         {
             *((int *)*((long long *)&got.round_val)) = 4;
             *((int *)*((long long *)&got.nb)) = 8;
@@ -144,7 +144,7 @@ int KeySchedule(unsigned int a0, unsigned int *a1)
         v8 = 8;
         v7 = 14;
     }
-    if (a0 == 0x1f500 || a0 == 0x3e900 || a0 == 256128 || a0 == 192128 || a0 == 192192 || a0 == 128128 || a0 == 0x2ef00 || a0 == 256192 || a0 == 128192)
+    if (a0 == 0x3e900 || a0 == 192192 || a0 == 128192 || a0 == 0x1f500 || a0 == 256128 || a0 == 192128 || a0 == 0x2ef00 || a0 == 256192 || a0 == 128128)
     {
         for (v5 = 0; v5 < v9; v5 += 1)
         {
@@ -199,15 +199,15 @@ int AddRoundKey(unsigned int *a0, unsigned int a1, unsigned int a2)
     unsigned int v0;  // [bp-0x20]
     unsigned int v1;  // [bp-0x1c]
 
-    if (a1 == 192128 || a1 == 256128 || a1 == 128128)
+    if (a1 == 256128 || a1 == 192128 || a1 == 128128)
     {
         v0 = 4;
     }
-    if (a1 == 192192 || a1 == 256192 || a1 == 128192)
+    if (a1 == 128192 || a1 == 192192 || a1 == 256192)
     {
         v0 = 6;
     }
-    if (a1 == 0x2ef00 || a1 == 0x3e900 || a1 == 0x1f500)
+    if (a1 == 0x3e900 || a1 == 0x1f500 || a1 == 0x2ef00)
     {
         v0 = 8;
     }
@@ -466,7 +466,7 @@ int decrypt(unsigned int *a0, unsigned int *a1, unsigned int a2)
             *((int *)*((long long *)&got.round_val)) = 12;
             *((int *)*((long long *)&got.nb)) = 6;
         }
-        if (v0 == 0x1f500 || v0 == 0x2ef00)
+        if (v0 == 0x2ef00 || v0 == 0x1f500)
         {
             *((int *)*((long long *)&got.round_val)) = 14;
             *((int *)*((long long *)&got.nb)) = 8;

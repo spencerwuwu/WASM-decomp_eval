@@ -55,25 +55,25 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x33)));
+typedef pointer pointer __((offset(0x43)));
 
-typedef pointer pointer __((offset(0x29)));
+typedef pointer pointer __((offset(0x5a)));
 
-typedef pointer pointer __((offset(0x27)));
+typedef pointer pointer __((offset(0x28)));
 
-typedef pointer pointer __((offset(0x18)));
+typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x2b)));
+typedef pointer pointer __((offset(0x2a)));
 
-typedef pointer pointer __((offset(0x170)));
+typedef pointer pointer __((offset(0x5a0)));
 
-typedef pointer pointer __((offset(0x44)));
+typedef pointer pointer __((offset(0x250)));
 
-typedef pointer pointer __((offset(0x5d0)));
+typedef pointer pointer __((offset(0x390)));
 
-typedef pointer pointer __((offset(0x3c0)));
+typedef pointer pointer __((offset(0x17)));
 
-typedef pointer pointer __((offset(0x1)));
+typedef pointer pointer __((offset(0x32)));
 
 typedef void _IO_lock_t;
 
@@ -222,12 +222,12 @@ struct Elf64_Sym {
 
 
 
-undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,int param_2,int param_3,int param_4,undefined8 *param_5,undefined8 *param_6,long param_7,long param_8,long param_9,long param_10);
-void kernel_2mm(double param_1,double param_2,int param_3,int param_4,int param_5,int param_6,long param_7_00,long param_8_00,long param_7,long param_8,long param_9);
 void print_array(void);
+void kernel_2mm(double param_1,double param_2,int param_3,int param_4,int param_5,int param_6,long param_7_00,long param_8_00,long param_7,long param_8,long param_9);
+undefined8 submain(int param_1,char **param_2);
+int fprintf(FILE * __stream, char * __format, ...);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);
 void free(void * __ptr);
-int fprintf(FILE * __stream, char * __format, ...);
 

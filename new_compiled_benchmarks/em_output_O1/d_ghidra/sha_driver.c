@@ -62,6 +62,111 @@ void local_memcpy(undefined4 *param_1,undefined4 *param_2,int param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
+void sha_transform(void)
+
+{
+  long lVar1;
+  uint uVar2;
+  uint uVar3;
+  uint uVar4;
+  uint uVar5;
+  uint uVar6;
+  uint uVar7;
+  uint uVar8;
+  uint uVar9;
+  uint auStack_1b8 [8];
+  uint auStack_198 [5];
+  uint auStack_184 [85];
+  
+  auStack_184[15] = _DAT_f1048280f00283f;
+  auStack_184[16] = uRam0f1048280f002843;
+  auStack_184[17] = uRam0f1048280f002847;
+  auStack_184[18] = uRam0f1048280f00284b;
+  auStack_184[11] = _DAT_f1048280f00282f;
+  auStack_184[12] = uRam0f1048280f002833;
+  auStack_184[13] = uRam0f1048280f002837;
+  auStack_184[14] = uRam0f1048280f00283b;
+  auStack_184[7] = _DAT_f1048280f00281f;
+  auStack_184[8] = uRam0f1048280f002823;
+  auStack_184[9] = uRam0f1048280f002827;
+  auStack_184[10] = uRam0f1048280f00282b;
+  auStack_184[3] = _DAT_f1048280f00280f;
+  auStack_184[4] = uRam0f1048280f002813;
+  auStack_184[5] = uRam0f1048280f002817;
+  auStack_184[6] = uRam0f1048280f00281b;
+  lVar1 = 0x10;
+  do {
+    auStack_184[lVar1 + 3] =
+         auStack_198[lVar1] ^ auStack_184[lVar1] ^ auStack_1b8[lVar1 + 2] ^ auStack_1b8[lVar1];
+    lVar1 = lVar1 + 1;
+  } while (lVar1 != 0x50);
+  lVar1 = 0;
+  uVar9 = _DAT_708b04788b008b54;
+  uVar2 = _DAT_708b04788b008b50;
+  uVar5 = _DAT_708b04788b008b4c;
+  uVar8 = _DAT_708b04788b008b48;
+  uVar6 = _DAT_708b04788b008b44;
+  do {
+    uVar7 = uVar6;
+    uVar4 = uVar5;
+    uVar3 = uVar2;
+    uVar6 = auStack_184[lVar1 + 3] +
+            (~uVar8 & uVar3) + uVar9 + (uVar4 & uVar8) + (uVar7 << 5 | uVar7 >> 0x1b) + 0x5a827999;
+    uVar5 = uVar8 << 0x1e | uVar8 >> 2;
+    lVar1 = lVar1 + 1;
+    uVar9 = uVar3;
+    uVar2 = uVar4;
+    uVar8 = uVar7;
+  } while (lVar1 != 0x14);
+  lVar1 = 0x14;
+  do {
+    uVar9 = uVar4;
+    uVar2 = uVar6;
+    uVar4 = uVar5;
+    uVar6 = (uVar4 ^ uVar7 ^ uVar9) + (uVar2 << 5 | uVar2 >> 0x1b) + uVar3 + auStack_184[lVar1 + 3]
+            + 0x6ed9eba1;
+    uVar5 = uVar7 << 0x1e | uVar7 >> 2;
+    lVar1 = lVar1 + 1;
+    uVar7 = uVar2;
+    uVar3 = uVar9;
+  } while (lVar1 != 0x28);
+  lVar1 = 0x28;
+  do {
+    uVar8 = uVar4;
+    uVar7 = uVar6;
+    uVar4 = uVar5;
+    uVar6 = auStack_184[lVar1 + 3] +
+            (uVar8 & uVar4 | (uVar8 | uVar4) & uVar2) + (uVar7 << 5 | uVar7 >> 0x1b) + uVar9 +
+            0x8f1bbcdc;
+    uVar5 = uVar2 << 0x1e | uVar2 >> 2;
+    lVar1 = lVar1 + 1;
+    uVar9 = uVar8;
+    uVar2 = uVar7;
+  } while (lVar1 != 0x3c);
+  lVar1 = 0x3c;
+  do {
+    uVar2 = uVar4;
+    uVar9 = uVar6;
+    uVar4 = uVar5;
+    uVar6 = (uVar4 ^ uVar7 ^ uVar2) + (uVar9 << 5 | uVar9 >> 0x1b) + uVar8 + auStack_184[lVar1 + 3]
+            + 0xca62c1d6;
+    uVar5 = uVar7 << 0x1e | uVar7 >> 2;
+    lVar1 = lVar1 + 1;
+    uVar8 = uVar2;
+    uVar7 = uVar9;
+  } while (lVar1 != 0x50);
+  _DAT_708b04788b008b44 = uVar6 + _DAT_708b04788b008b44;
+  _DAT_708b04788b008b48 = uVar9 + _DAT_708b04788b008b48;
+  _DAT_708b04788b008b4c = uVar5 + _DAT_708b04788b008b4c;
+  _DAT_708b04788b008b50 = uVar4 + _DAT_708b04788b008b50;
+  _DAT_708b04788b008b54 = uVar2 + _DAT_708b04788b008b54;
+  return;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 void sha_init(void)
 
 {
@@ -299,111 +404,6 @@ int submain(void)
   _DAT_5c0f41f200110ff2 = (double)local_20._8_4_ * 1e-06 + (double)local_20._0_8_;
   printf("%0.6f\n",_DAT_5c0f41f200110ff2 - _DAT_fe6de80e110f41f2);
   return iVar3;
-}
-
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-void sha_transform(void)
-
-{
-  long lVar1;
-  uint uVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  uint auStack_1b8 [8];
-  uint auStack_198 [5];
-  uint auStack_184 [85];
-  
-  auStack_184[15] = _DAT_f1048280f00283f;
-  auStack_184[16] = uRam0f1048280f002843;
-  auStack_184[17] = uRam0f1048280f002847;
-  auStack_184[18] = uRam0f1048280f00284b;
-  auStack_184[11] = _DAT_f1048280f00282f;
-  auStack_184[12] = uRam0f1048280f002833;
-  auStack_184[13] = uRam0f1048280f002837;
-  auStack_184[14] = uRam0f1048280f00283b;
-  auStack_184[7] = _DAT_f1048280f00281f;
-  auStack_184[8] = uRam0f1048280f002823;
-  auStack_184[9] = uRam0f1048280f002827;
-  auStack_184[10] = uRam0f1048280f00282b;
-  auStack_184[3] = _DAT_f1048280f00280f;
-  auStack_184[4] = uRam0f1048280f002813;
-  auStack_184[5] = uRam0f1048280f002817;
-  auStack_184[6] = uRam0f1048280f00281b;
-  lVar1 = 0x10;
-  do {
-    auStack_184[lVar1 + 3] =
-         auStack_198[lVar1] ^ auStack_184[lVar1] ^ auStack_1b8[lVar1 + 2] ^ auStack_1b8[lVar1];
-    lVar1 = lVar1 + 1;
-  } while (lVar1 != 0x50);
-  lVar1 = 0;
-  uVar9 = _DAT_708b04788b008b54;
-  uVar2 = _DAT_708b04788b008b50;
-  uVar5 = _DAT_708b04788b008b4c;
-  uVar8 = _DAT_708b04788b008b48;
-  uVar6 = _DAT_708b04788b008b44;
-  do {
-    uVar7 = uVar6;
-    uVar4 = uVar5;
-    uVar3 = uVar2;
-    uVar6 = auStack_184[lVar1 + 3] +
-            (~uVar8 & uVar3) + uVar9 + (uVar4 & uVar8) + (uVar7 << 5 | uVar7 >> 0x1b) + 0x5a827999;
-    uVar5 = uVar8 << 0x1e | uVar8 >> 2;
-    lVar1 = lVar1 + 1;
-    uVar9 = uVar3;
-    uVar2 = uVar4;
-    uVar8 = uVar7;
-  } while (lVar1 != 0x14);
-  lVar1 = 0x14;
-  do {
-    uVar9 = uVar4;
-    uVar2 = uVar6;
-    uVar4 = uVar5;
-    uVar6 = (uVar4 ^ uVar7 ^ uVar9) + (uVar2 << 5 | uVar2 >> 0x1b) + uVar3 + auStack_184[lVar1 + 3]
-            + 0x6ed9eba1;
-    uVar5 = uVar7 << 0x1e | uVar7 >> 2;
-    lVar1 = lVar1 + 1;
-    uVar7 = uVar2;
-    uVar3 = uVar9;
-  } while (lVar1 != 0x28);
-  lVar1 = 0x28;
-  do {
-    uVar8 = uVar4;
-    uVar7 = uVar6;
-    uVar4 = uVar5;
-    uVar6 = auStack_184[lVar1 + 3] +
-            (uVar8 & uVar4 | (uVar8 | uVar4) & uVar2) + (uVar7 << 5 | uVar7 >> 0x1b) + uVar9 +
-            0x8f1bbcdc;
-    uVar5 = uVar2 << 0x1e | uVar2 >> 2;
-    lVar1 = lVar1 + 1;
-    uVar9 = uVar8;
-    uVar2 = uVar7;
-  } while (lVar1 != 0x3c);
-  lVar1 = 0x3c;
-  do {
-    uVar2 = uVar4;
-    uVar9 = uVar6;
-    uVar4 = uVar5;
-    uVar6 = (uVar4 ^ uVar7 ^ uVar2) + (uVar9 << 5 | uVar9 >> 0x1b) + uVar8 + auStack_184[lVar1 + 3]
-            + 0xca62c1d6;
-    uVar5 = uVar7 << 0x1e | uVar7 >> 2;
-    lVar1 = lVar1 + 1;
-    uVar8 = uVar2;
-    uVar7 = uVar9;
-  } while (lVar1 != 0x50);
-  _DAT_708b04788b008b44 = uVar6 + _DAT_708b04788b008b44;
-  _DAT_708b04788b008b48 = uVar9 + _DAT_708b04788b008b48;
-  _DAT_708b04788b008b4c = uVar5 + _DAT_708b04788b008b4c;
-  _DAT_708b04788b008b50 = uVar4 + _DAT_708b04788b008b50;
-  _DAT_708b04788b008b54 = uVar2 + _DAT_708b04788b008b54;
-  return;
 }
 
 

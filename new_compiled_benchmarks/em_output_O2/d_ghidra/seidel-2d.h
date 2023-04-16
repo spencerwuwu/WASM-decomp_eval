@@ -54,29 +54,31 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x1f8)));
+typedef pointer pointer __((offset(0x3e7)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x57)));
+typedef pointer pointer __((offset(0x318)));
+
+typedef pointer pointer __((offset(0x202)));
+
+typedef pointer pointer __((offset(0x13f)));
+
+typedef pointer pointer __((offset(0x177)));
+
+typedef pointer pointer __((offset(0x367)));
 
 typedef pointer pointer __((offset(0x28)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x297)));
+typedef pointer pointer __((offset(0x3b7)));
 
-typedef pointer pointer __((offset(0xe2)));
-
-typedef pointer pointer __((offset(0x2c7)));
-
-typedef pointer pointer __((offset(0x1f)));
-
-typedef pointer pointer __((offset(0x209)));
+typedef pointer pointer __((offset(0x120)));
 
 typedef pointer pointer __((offset(0x30)));
 
-typedef pointer pointer __((offset(0x247)));
+typedef pointer pointer __((offset(0x329)));
 
 typedef pointer pointer __((offset(0x17)));
 
@@ -132,6 +134,14 @@ struct _IO_marker {
 
 typedef struct _IO_FILE FILE;
 
+typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
+
+struct Elf64_Rela {
+    qword r_offset; // location to apply the relocation action
+    qword r_info; // the symbol table index and the type of relocation
+    qword r_addend; // a constant addend used to compute the relocatable field value
+};
+
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
@@ -179,14 +189,6 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
-typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
-
-struct Elf64_Rela {
-    qword r_offset; // location to apply the relocation action
-    qword r_info; // the symbol table index and the type of relocation
-    qword r_addend; // a constant addend used to compute the relocatable field value
-};
-
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -227,6 +229,7 @@ struct Elf64_Ehdr {
 
 
 
+void kernel_seidel_2d(int param_1,int param_2,double *param_3);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

@@ -2,6 +2,42 @@
 
 
 
+void kernel_bicg(uint param_1,uint param_2,long param_3,void *param_4,long param_5,long param_6,
+                long param_7)
+
+{
+  ulong uVar1;
+  ulong uVar2;
+  long lVar3;
+  
+  if (0 < (int)param_1) {
+    memset(param_4,0,(ulong)param_1 * 8);
+  }
+  if (0 < (int)param_2) {
+    uVar1 = 0;
+    do {
+      *(undefined8 *)(param_5 + uVar1 * 8) = 0;
+      if (0 < (int)param_1) {
+        uVar2 = 0;
+        do {
+          lVar3 = uVar1 * 0x3b60 + param_3;
+          *(double *)((long)param_4 + uVar2 * 8) =
+               *(double *)(param_7 + uVar1 * 8) * *(double *)(lVar3 + uVar2 * 8) +
+               *(double *)((long)param_4 + uVar2 * 8);
+          *(double *)(param_5 + uVar1 * 8) =
+               *(double *)(lVar3 + uVar2 * 8) * *(double *)(param_6 + uVar2 * 8) +
+               *(double *)(param_5 + uVar1 * 8);
+          uVar2 = uVar2 + 1;
+        } while (uVar2 != param_1);
+      }
+      uVar1 = uVar1 + 1;
+    } while (uVar1 != param_2);
+  }
+  return;
+}
+
+
+
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined8 submain(int param_1,char **param_2)
@@ -29,7 +65,7 @@ undefined8 submain(int param_1,char **param_2)
   __ptr_00 = (void *)polybench_alloc_data(0x834,8);
   __ptr_01 = (void *)polybench_alloc_data(0x76c,8);
   __ptr_02 = (void *)polybench_alloc_data(0x834);
-  auVar9 = __LCPI0_1;
+  auVar9 = __LCPI1_1;
   iVar4 = 0;
   iVar5 = 1;
   uVar1 = 0;
@@ -40,7 +76,7 @@ undefined8 submain(int param_1,char **param_2)
     auVar6 = divpd(CONCAT88((double)(int)((ulong)(double)(iVar4 + 2) >> 0x20),(double)(iVar4 + 2)),
                    auVar9);
     *(undefined (*) [16])((long)__ptr_01 + (lVar2 * 8 | 0x10U)) = auVar6;
-    auVar6 = __LCPI0_8;
+    auVar6 = __LCPI1_8;
     lVar2 = lVar2 + 4;
     iVar4 = iVar4 + 4;
     iVar5 = iVar5 + 4;

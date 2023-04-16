@@ -2,6 +2,33 @@
 
 
 
+void kernel_bicg(int param_1,int param_2,long param_3,long param_4,long param_5,long param_6,
+                long param_7)
+
+{
+  int local_38;
+  int local_34;
+  
+  for (local_34 = 0; local_34 < param_1; local_34 = local_34 + 1) {
+    *(undefined8 *)(param_4 + (long)local_34 * 8) = 0;
+  }
+  for (local_34 = 0; local_34 < param_2; local_34 = local_34 + 1) {
+    *(undefined8 *)(param_5 + (long)local_34 * 8) = 0;
+    for (local_38 = 0; local_38 < param_1; local_38 = local_38 + 1) {
+      *(double *)(param_4 + (long)local_38 * 8) =
+           *(double *)(param_7 + (long)local_34 * 8) *
+           *(double *)(param_3 + (long)local_34 * 0x3b60 + (long)local_38 * 8) +
+           *(double *)(param_4 + (long)local_38 * 8);
+      *(double *)(param_5 + (long)local_34 * 8) =
+           *(double *)(param_3 + (long)local_34 * 0x3b60 + (long)local_38 * 8) *
+           *(double *)(param_6 + (long)local_38 * 8) + *(double *)(param_5 + (long)local_34 * 8);
+    }
+  }
+  return;
+}
+
+
+
 undefined8 submain(int param_1,char **param_2)
 
 {
@@ -49,33 +76,6 @@ void init_array(int param_1,int param_2,long param_3,long param_4,long param_5)
     for (local_30 = 0; local_30 < param_1; local_30 = local_30 + 1) {
       *(double *)(param_3 + (long)local_2c * 0x3b60 + (long)local_30 * 8) =
            (double)((local_2c * (local_30 + 1)) % param_2) / (double)param_2;
-    }
-  }
-  return;
-}
-
-
-
-void kernel_bicg(int param_1,int param_2,long param_3,long param_4,long param_5,long param_6,
-                long param_7)
-
-{
-  int local_38;
-  int local_34;
-  
-  for (local_34 = 0; local_34 < param_1; local_34 = local_34 + 1) {
-    *(undefined8 *)(param_4 + (long)local_34 * 8) = 0;
-  }
-  for (local_34 = 0; local_34 < param_2; local_34 = local_34 + 1) {
-    *(undefined8 *)(param_5 + (long)local_34 * 8) = 0;
-    for (local_38 = 0; local_38 < param_1; local_38 = local_38 + 1) {
-      *(double *)(param_4 + (long)local_38 * 8) =
-           *(double *)(param_7 + (long)local_34 * 8) *
-           *(double *)(param_3 + (long)local_34 * 0x3b60 + (long)local_38 * 8) +
-           *(double *)(param_4 + (long)local_38 * 8);
-      *(double *)(param_5 + (long)local_34 * 8) =
-           *(double *)(param_3 + (long)local_34 * 0x3b60 + (long)local_38 * 8) *
-           *(double *)(param_6 + (long)local_38 * 8) + *(double *)(param_5 + (long)local_34 * 8);
     }
   }
   return;

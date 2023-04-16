@@ -57,81 +57,81 @@ typedef pointer pointer __((offset(0x240)));
 
 typedef pointer pointer __((offset(0x410)));
 
+typedef pointer pointer __((offset(0x18d0)));
+
 typedef pointer pointer __((offset(0x330)));
 
 typedef pointer pointer __((offset(0x3d0)));
 
-typedef pointer pointer __((offset(0xb30)));
-
-typedef pointer pointer __((offset(0x1740)));
-
-typedef pointer pointer __((offset(0xa44)));
-
-typedef pointer pointer __((offset(0x500)));
+typedef pointer pointer __((offset(0xe7b)));
 
 typedef pointer pointer __((offset(0xaeb)));
 
+typedef pointer pointer __((offset(0x17d0)));
+
 typedef pointer pointer __((offset(0x90)));
 
-typedef pointer pointer __((offset(0xa64)));
+typedef pointer pointer __((offset(0x18b0)));
 
-typedef pointer pointer __((offset(0x1720)));
+typedef pointer pointer __((offset(0xf30)));
 
 typedef pointer pointer __((offset(0x7)));
 
-typedef pointer pointer __((offset(0x1850)));
-
 typedef pointer pointer __((offset(0x1990)));
 
-typedef pointer pointer __((offset(0x570)));
+typedef pointer pointer __((offset(0x720)));
 
-typedef pointer pointer __((offset(0x870)));
+typedef pointer pointer __((offset(0xb10)));
 
-typedef pointer pointer __((offset(0x15a0)));
+typedef pointer pointer __((offset(0x1900)));
 
-typedef pointer pointer __((offset(0xdc0)));
-
-typedef pointer pointer __((offset(0x84b)));
+typedef pointer pointer __((offset(0x4e0)));
 
 typedef pointer pointer __((offset(0x1e0)));
 
-typedef pointer pointer __((offset(0x1430)));
-
 typedef pointer pointer __((offset(0x380)));
 
-typedef pointer pointer __((offset(0x16c0)));
+typedef pointer pointer __((offset(0x17f0)));
+
+typedef pointer pointer __((offset(0x14e0)));
 
 typedef pointer pointer __((offset(0x430)));
 
-typedef pointer pointer __((offset(0x9ab)));
+typedef pointer pointer __((offset(0xec0)));
 
-typedef pointer pointer __((offset(0x5e0)));
+typedef pointer pointer __((offset(0xdd4)));
 
-typedef pointer pointer __((offset(0xf00)));
+typedef pointer pointer __((offset(0x880)));
 
-typedef pointer pointer __((offset(0x1110)));
+typedef pointer pointer __((offset(0x11c0)));
 
-typedef pointer pointer __((offset(0x460)));
+typedef pointer pointer __((offset(0xd3b)));
 
-typedef pointer pointer __((offset(0xeb0)));
+typedef pointer pointer __((offset(0x1770)));
+
+typedef pointer pointer __((offset(0x480)));
 
 typedef pointer pointer __((offset(0x350)));
 
-typedef pointer pointer __((offset(0xafd)));
+typedef pointer pointer __((offset(0x510)));
 
-typedef pointer pointer __((offset(0x1800)));
-
-typedef pointer pointer __((offset(0x1930)));
+typedef pointer pointer __((offset(0x810)));
 
 typedef pointer pointer __((offset(0x180)));
 
 typedef pointer pointer __((offset(0x3f0)));
 
-typedef pointer pointer __((offset(0x18e0)));
+typedef pointer pointer __((offset(0x1650)));
 
-typedef pointer pointer __((offset(0x16f0)));
+typedef pointer pointer __((offset(0x770)));
 
-typedef pointer pointer __((offset(0x1820)));
+typedef pointer pointer __((offset(0xc00)));
+
+typedef pointer pointer __((offset(0xdf4)));
+
+typedef pointer pointer __((offset(0xe8d)));
+
+typedef pointer pointer __((offset(0x17a0)));
 
 typedef struct timeval timeval, *Ptimeval;
 
@@ -259,16 +259,18 @@ bool float64_is_signaling_nan(ulong param_1);
 ulong extractFloat64Frac(ulong param_1);
 ulong extractFloat64Exp(ulong param_1);
 ulong extractFloat64Sign(ulong param_1);
+void normalizeFloat64Subnormal(long param_1,int *param_2,long *param_3);
+int countLeadingZeros64(ulong param_1);
 long packFloat64(int param_1,int param_2,long param_3);
+long roundAndPackFloat64(int param_1,uint param_2,ulong param_3);
+void normalizeRoundAndPackFloat64(undefined4 param_1,int param_2,long param_3);
 undefined8 int32_to_float64(uint param_1);
 int countLeadingZeros32(uint param_1);
-undefined8 float64_add(undefined8 param_1,undefined8 param_2);
 undefined8 addFloat64Sigs(undefined8 param_1,undefined8 param_2,undefined4 param_3);
-undefined8 subFloat64Sigs(undefined8 param_1,undefined8 param_2,uint param_3);
-undefined8 float64_mul(undefined8 param_1,undefined8 param_2);
 ulong propagateFloat64NaN(ulong param_1,ulong param_2);
-void normalizeFloat64Subnormal(long param_1,int *param_2,long *param_3);
-long roundAndPackFloat64(int param_1,uint param_2,ulong param_3);
+undefined8 subFloat64Sigs(undefined8 param_1,undefined8 param_2,uint param_3);
+undefined8 float64_add(undefined8 param_1,undefined8 param_2);
+undefined8 float64_mul(undefined8 param_1,undefined8 param_2);
 undefined8 float64_div(undefined8 param_1,undefined8 param_2);
 ulong estimateDiv128To64(ulong param_1,undefined8 param_2,ulong param_3);
 bool float64_le(ulong param_1,ulong param_2);
@@ -278,8 +280,6 @@ ulong float64_abs(ulong param_1);
 undefined8 local_sin(undefined8 param_1);
 undefined8 ullong_to_double(void);
 int submain(void);
-void normalizeRoundAndPackFloat64(undefined4 param_1,int param_2,long param_3);
-int countLeadingZeros64(ulong param_1);
 double rtclock(void);
 int printf(char * __format, ...);
 int gettimeofday(timeval * __tv, __timezone_ptr_t __tz);

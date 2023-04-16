@@ -1,51 +1,3 @@
-extern char .L.str;
-
-long long submain(unsigned int a0, unsigned long long *a1)
-{
-    void* v0;  // [bp-0x30]
-    void* v1;  // [bp-0x28]
-    unsigned int v2;  // [bp-0x1c]
-    unsigned int v3;  // [bp-0xc]
-    void* v6;  // rdi
-
-    v3 = a0;
-    v2 = 2000;
-    v1 = polybench_alloc_data(0x7d0, 0x8);
-    v0 = polybench_alloc_data(0x7d0, 0x8);
-    init_array(v2, v1);
-    kernel_durbin(v2, v1, v0);
-    if (v3 > 42)
-    {
-        if (strcmp(*(a1), &.L.str) == 0)
-        {
-            print_array(v2, v0);
-            free(v1);
-            v6 = v0;
-            free(rdi<8>);
-            return 0;
-        }
-        free(v1);
-        v6 = v0;
-        free(rdi<8>);
-        return 0;
-    }
-    free(v1);
-    v6 = v0;
-    free(rdi<8>);
-    return 0;
-}
-
-int init_array(unsigned int a0, unsigned long long *a1)
-{
-    unsigned int v0;  // [bp-0x1c]
-
-    for (v0 = 0; v0 < a0; v0 += 1)
-    {
-        a1[v0] = a0 + 1 - v0;
-    }
-    return;
-}
-
 int kernel_durbin(unsigned int a0, unsigned long long *a1, unsigned long long *a2)
 {
     unsigned int v0;  // [bp-0x3ec8]
@@ -112,6 +64,54 @@ int kernel_durbin(unsigned int a0, unsigned long long *a1, unsigned long long *a
             a2[v1] = v5;
         }
         a2[v0] = v4;
+    }
+    return;
+}
+
+extern char .L.str;
+
+long long submain(unsigned int a0, unsigned long long *a1)
+{
+    void* v0;  // [bp-0x30]
+    void* v1;  // [bp-0x28]
+    unsigned int v2;  // [bp-0x1c]
+    unsigned int v3;  // [bp-0xc]
+    void* v7;  // rdi
+
+    v3 = a0;
+    v2 = 2000;
+    v1 = polybench_alloc_data(0x7d0, 0x8);
+    v0 = polybench_alloc_data(0x7d0, 0x8);
+    init_array(v2, v1);
+    kernel_durbin(v2, v1, v0);
+    if (v3 > 42)
+    {
+        if (strcmp(*(a1), &.L.str) == 0)
+        {
+            print_array(v2, v0);
+            free(v1);
+            v7 = v0;
+            free(rdi<8>);
+            return 0;
+        }
+        free(v1);
+        v7 = v0;
+        free(rdi<8>);
+        return 0;
+    }
+    free(v1);
+    v7 = v0;
+    free(rdi<8>);
+    return 0;
+}
+
+int init_array(unsigned int a0, unsigned long long *a1)
+{
+    unsigned int v0;  // [bp-0x1c]
+
+    for (v0 = 0; v0 < a0; v0 += 1)
+    {
+        a1[v0] = a0 + 1 - v0;
     }
     return;
 }

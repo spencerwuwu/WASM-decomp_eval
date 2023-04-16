@@ -123,10 +123,108 @@ ulong extractFloat64Sign(ulong param_1)
 
 
 
+void normalizeFloat64Subnormal(long param_1,int *param_2,long *param_3)
+
+{
+  int iVar1;
+  
+  iVar1 = countLeadingZeros64(param_1);
+  *param_3 = param_1 << ((byte)(iVar1 + -0xb) & 0x3f);
+  *param_2 = 1 - (iVar1 + -0xb);
+  return;
+}
+
+
+
+int countLeadingZeros64(ulong param_1)
+
+{
+  int iVar1;
+  int local_14;
+  ulong local_10;
+  
+  local_14 = 0;
+  if (param_1 < 0x100000000) {
+    local_14 = 0x20;
+    local_10 = param_1;
+  }
+  else {
+    local_10 = param_1 >> 0x20;
+  }
+  iVar1 = countLeadingZeros32(local_10 & 0xffffffff);
+  return iVar1 + local_14;
+}
+
+
+
 long packFloat64(int param_1,int param_2,long param_3)
 
 {
   return ((long)param_1 << 0x3f) + ((long)param_2 << 0x34) + param_3;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+long roundAndPackFloat64(int param_1,uint param_2,ulong param_3)
+
+{
+  long lVar1;
+  bool bVar2;
+  uint local_34;
+  int local_30;
+  ulong local_20;
+  uint local_18;
+  int local_14;
+  
+  bVar2 = _DAT_e47d83e44589008b == 0;
+  local_30 = 0x200;
+  if (!bVar2) {
+    if (_DAT_e47d83e44589008b == 1) {
+      local_30 = 0;
+    }
+    else {
+      local_30 = 0x3ff;
+      if (param_1 == 0) {
+        if (_DAT_e47d83e44589008b == 3) {
+          local_30 = 0;
+        }
+      }
+      else if (_DAT_e47d83e44589008b == 2) {
+        local_30 = 0;
+      }
+    }
+  }
+  local_34 = (uint)param_3 & 0x3ff;
+  local_20 = param_3;
+  local_18 = param_2;
+  local_14 = param_1;
+  if (0x7fc < (param_2 & 0xffff)) {
+    if ((0x7fd < (int)param_2) || ((param_2 == 0x7fd && ((long)(param_3 + (long)local_30) < 0)))) {
+      float_raise(9);
+      lVar1 = packFloat64(local_14,0x7ff,0);
+      return lVar1 - (int)(uint)(local_30 == 0);
+    }
+    if ((int)param_2 < 0) {
+      shift64RightJamming(param_3,-param_2,&local_20);
+      local_18 = 0;
+      local_34 = (uint)local_20 & 0x3ff;
+      if ((local_20 & 0x3ff) != 0) {
+        float_raise(4);
+      }
+    }
+  }
+  if (local_34 != 0) {
+    _DAT_6348e8458b480889 = _DAT_58b4801c983088b | 1;
+  }
+  local_20 = (long)(int)((local_34 == 0x200 && bVar2) ^ 0xffffffff) &
+             local_20 + (long)local_30 >> 10;
+  if (local_20 == 0) {
+    local_18 = 0;
+  }
+  lVar1 = packFloat64(local_14,local_18,local_20);
+  return lVar1;
 }
 
 
@@ -268,19 +366,6 @@ ulong propagateFloat64NaN(ulong param_1,ulong param_2)
 
 
 
-void normalizeFloat64Subnormal(long param_1,int *param_2,long *param_3)
-
-{
-  int iVar1;
-  
-  iVar1 = countLeadingZeros64(param_1);
-  *param_3 = param_1 << ((byte)(iVar1 + -0xb) & 0x3f);
-  *param_2 = 1 - (iVar1 + -0xb);
-  return;
-}
-
-
-
 ulong estimateDiv128To64(ulong param_1,undefined8 param_2,ulong param_3)
 
 {
@@ -334,70 +419,6 @@ ulong estimateDiv128To64(ulong param_1,undefined8 param_2,ulong param_3)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-long roundAndPackFloat64(int param_1,uint param_2,ulong param_3)
-
-{
-  long lVar1;
-  bool bVar2;
-  uint local_34;
-  int local_30;
-  ulong local_20;
-  uint local_18;
-  int local_14;
-  
-  bVar2 = _DAT_e47d83e44589008b == 0;
-  local_30 = 0x200;
-  if (!bVar2) {
-    if (_DAT_e47d83e44589008b == 1) {
-      local_30 = 0;
-    }
-    else {
-      local_30 = 0x3ff;
-      if (param_1 == 0) {
-        if (_DAT_e47d83e44589008b == 3) {
-          local_30 = 0;
-        }
-      }
-      else if (_DAT_e47d83e44589008b == 2) {
-        local_30 = 0;
-      }
-    }
-  }
-  local_34 = (uint)param_3 & 0x3ff;
-  local_20 = param_3;
-  local_18 = param_2;
-  local_14 = param_1;
-  if (0x7fc < (param_2 & 0xffff)) {
-    if ((0x7fd < (int)param_2) || ((param_2 == 0x7fd && ((long)(param_3 + (long)local_30) < 0)))) {
-      float_raise(9);
-      lVar1 = packFloat64(local_14,0x7ff,0);
-      return lVar1 - (int)(uint)(local_30 == 0);
-    }
-    if ((int)param_2 < 0) {
-      shift64RightJamming(param_3,-param_2,&local_20);
-      local_18 = 0;
-      local_34 = (uint)local_20 & 0x3ff;
-      if ((local_20 & 0x3ff) != 0) {
-        float_raise(4);
-      }
-    }
-  }
-  if (local_34 != 0) {
-    _DAT_6348e8458b480889 = _DAT_58b4801c983088b | 1;
-  }
-  local_20 = (long)(int)((local_34 == 0x200 && bVar2) ^ 0xffffffff) &
-             local_20 + (long)local_30 >> 10;
-  if (local_20 == 0) {
-    local_18 = 0;
-  }
-  lVar1 = packFloat64(local_14,local_18,local_20);
-  return lVar1;
-}
-
-
-
 undefined8 ullong_to_double(void)
 
 {
@@ -425,29 +446,8 @@ int submain(void)
     local_c = (uint)(lVar1 != *(long *)((long)local_10 * 8 + 0x24c0950fd1043b48)) + local_c;
   }
   _DAT_58b4800110ff2 = rtclock();
-  printf("%0.6f\n",_DAT_58b4800100ff2 - _DAT_7d3d8d48005c0ff2);
+  printf("%0.6f\n",_DAT_58b4800100ff2 - _DAT_1d3d8d48005c0ff2);
   return local_c;
-}
-
-
-
-int countLeadingZeros64(ulong param_1)
-
-{
-  int iVar1;
-  int local_14;
-  ulong local_10;
-  
-  local_14 = 0;
-  if (param_1 < 0x100000000) {
-    local_14 = 0x20;
-    local_10 = param_1;
-  }
-  else {
-    local_10 = param_1 >> 0x20;
-  }
-  iVar1 = countLeadingZeros32(local_10 & 0xffffffff);
-  return iVar1 + local_14;
 }
 
 

@@ -90,6 +90,9 @@ void w2c_cholesky_0x5F_wasm_call_ctors(w2c_cholesky*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_cholesky_0x5F_wasm_apply_data_relocs(w2c_cholesky*);
 
+/* export: 'kernel_cholesky' */
+void w2c_cholesky_kernel_cholesky(w2c_cholesky*, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_cholesky_submain(w2c_cholesky*, u32, u32);
 

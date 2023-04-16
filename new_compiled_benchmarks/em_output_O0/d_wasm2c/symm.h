@@ -81,6 +81,9 @@ void w2c_symm_0x5F_wasm_call_ctors(w2c_symm*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_symm_0x5F_wasm_apply_data_relocs(w2c_symm*);
 
+/* export: 'kernel_symm' */
+void w2c_symm_kernel_symm(w2c_symm*, u32, u32, f64, f64, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_symm_submain(w2c_symm*, u32, u32);
 

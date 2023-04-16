@@ -51,21 +51,21 @@ U32 f12(dfmulInstance*,U64);
 
 U32 f13(dfmulInstance*,U64);
 
-U64 f14(dfmulInstance*,U32,U32,U64);
+void f14(dfmulInstance*,U64,U32,U32);
 
-U64 f15(dfmulInstance*,U64,U64);
+U64 f15(dfmulInstance*,U32,U32,U64);
 
-F64 f16(dfmulInstance*,U64);
+U64 f16(dfmulInstance*,U32,U32,U64);
 
-U32 f17(dfmulInstance*);
+U64 f17(dfmulInstance*,U64,U64);
 
-void f18(dfmulInstance*,U32,U32,U32,U32);
+F64 f18(dfmulInstance*,U64);
 
-void f19(dfmulInstance*,U32,U32,U32,U32,U32,U32);
+U32 f19(dfmulInstance*);
 
-U32 f20(dfmulInstance*,U32,U32);
+void f20(dfmulInstance*,U32,U32,U32,U32);
 
-U32 f21(dfmulInstance*,U32,U32);
+void f21(dfmulInstance*,U32,U32,U32,U32,U32,U32);
 
 U32 f22(dfmulInstance*,U32,U32);
 
@@ -73,11 +73,19 @@ U32 f23(dfmulInstance*,U32,U32);
 
 U32 f24(dfmulInstance*,U32,U32);
 
-U32 f25(dfmulInstance*,U32,U32,U32,U32);
+U32 f25(dfmulInstance*,U32,U32);
 
-U32 f26(dfmulInstance*,U32,U32,U32,U32);
+U32 f26(dfmulInstance*,U32,U32);
 
-F64 f27(dfmulInstance*,U32,U32);
+void f27(dfmulInstance*,U32,U32,U32,U32);
+
+U32 f28(dfmulInstance*,U32,U32,U32,U32);
+
+U32 f29(dfmulInstance*,U32,U32,U32,U32);
+
+U32 f30(dfmulInstance*,U32,U32,U32,U32);
+
+F64 f31(dfmulInstance*,U32,U32);
 
 void dfmul____wasm_call_ctors(dfmulInstance*i);
 
@@ -99,7 +107,11 @@ U32 dfmul_extractFloat64Exp(dfmulInstance*i,U32 l0,U32 l1);
 
 U32 dfmul_extractFloat64Sign(dfmulInstance*i,U32 l0,U32 l1);
 
+void dfmul_normalizeFloat64Subnormal(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
 U32 dfmul_packFloat64(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
+U32 dfmul_roundAndPackFloat64(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
 U32 dfmul_float64_mul(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
@@ -121,7 +133,11 @@ U32 dfmul_origX24extractFloat64Exp(dfmulInstance*i,U64 l0);
 
 U32 dfmul_origX24extractFloat64Sign(dfmulInstance*i,U64 l0);
 
+void dfmul_origX24normalizeFloat64Subnormal(dfmulInstance*i,U64 l0,U32 l1,U32 l2);
+
 U64 dfmul_origX24packFloat64(dfmulInstance*i,U32 l0,U32 l1,U64 l2);
+
+U64 dfmul_origX24roundAndPackFloat64(dfmulInstance*i,U32 l0,U32 l1,U64 l2);
 
 U64 dfmul_origX24float64_mul(dfmulInstance*i,U64 l0,U64 l1);
 

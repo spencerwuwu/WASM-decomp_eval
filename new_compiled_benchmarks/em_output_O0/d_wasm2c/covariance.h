@@ -81,6 +81,9 @@ void w2c_covariance_0x5F_wasm_call_ctors(w2c_covariance*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_covariance_0x5F_wasm_apply_data_relocs(w2c_covariance*);
 
+/* export: 'kernel_covariance' */
+void w2c_covariance_kernel_covariance(w2c_covariance*, u32, u32, f64, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_covariance_submain(w2c_covariance*, u32, u32);
 

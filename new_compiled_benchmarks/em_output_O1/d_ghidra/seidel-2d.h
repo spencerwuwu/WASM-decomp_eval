@@ -54,31 +54,33 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x1c9)));
+typedef pointer pointer __((offset(0x26a)));
 
-typedef pointer pointer __((offset(0x217)));
+typedef pointer pointer __((offset(0x1ab)));
+
+typedef pointer pointer __((offset(0x10f)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0xbb)));
+typedef pointer pointer __((offset(0x139)));
 
-typedef pointer pointer __((offset(0x49)));
-
-typedef pointer pointer __((offset(0x18b)));
+typedef pointer pointer __((offset(0x307)));
 
 typedef pointer pointer __((offset(0x28)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x1f)));
+typedef pointer pointer __((offset(0x337)));
 
-typedef pointer pointer __((offset(0x17a)));
+typedef pointer pointer __((offset(0x27b)));
 
 typedef pointer pointer __((offset(0x30)));
 
-typedef pointer pointer __((offset(0x247)));
+typedef pointer pointer __((offset(0x2b9)));
 
 typedef pointer pointer __((offset(0x17)));
+
+typedef pointer pointer __((offset(0xf0)));
 
 typedef void _IO_lock_t;
 
@@ -227,6 +229,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_seidel_2d(int param_1,int param_2,long param_3);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void free(void * __ptr);

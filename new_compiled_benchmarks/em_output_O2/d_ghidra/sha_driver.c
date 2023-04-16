@@ -85,6 +85,114 @@ void local_memcpy(undefined4 *param_1,undefined4 *param_2,uint param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
+void sha_transform(void)
+
+{
+  long lVar1;
+  uint uVar2;
+  uint uVar3;
+  uint uVar4;
+  uint uVar5;
+  uint uVar6;
+  uint uVar7;
+  uint uVar8;
+  uint auStack_1b8 [8];
+  uint auStack_198 [5];
+  uint auStack_184 [85];
+  
+  auStack_184[15] = _DAT_f1048280f00283f;
+  auStack_184[16] = uRam0f1048280f002843;
+  auStack_184[17] = uRam0f1048280f002847;
+  auStack_184[18] = uRam0f1048280f00284b;
+  auStack_184[11] = _DAT_f1048280f00282f;
+  auStack_184[12] = uRam0f1048280f002833;
+  auStack_184[13] = uRam0f1048280f002837;
+  auStack_184[14] = uRam0f1048280f00283b;
+  auStack_184[7] = _DAT_f1048280f00281f;
+  auStack_184[8] = uRam0f1048280f002823;
+  auStack_184[9] = uRam0f1048280f002827;
+  auStack_184[10] = uRam0f1048280f00282b;
+  auStack_184[3] = _DAT_f1048280f00280f;
+  auStack_184[4] = uRam0f1048280f002813;
+  auStack_184[5] = uRam0f1048280f002817;
+  auStack_184[6] = uRam0f1048280f00281b;
+  lVar1 = 0x10;
+  do {
+    auStack_184[lVar1 + 3] =
+         auStack_198[lVar1] ^ auStack_184[lVar1] ^ auStack_1b8[lVar1 + 2] ^ auStack_1b8[lVar1];
+    lVar1 = lVar1 + 1;
+  } while (lVar1 != 0x50);
+  lVar1 = 0;
+  uVar6 = _DAT_708b04788b008b50;
+  uVar7 = _DAT_708b04788b008b54;
+  uVar2 = _DAT_708b04788b008b4c;
+  uVar4 = _DAT_708b04788b008b48;
+  uVar8 = _DAT_708b04788b008b44;
+  do {
+    uVar3 = uVar2;
+    uVar5 = uVar4 << 0x1e | uVar4 >> 2;
+    uVar4 = auStack_184[lVar1 + 3] +
+            (~uVar4 & uVar6) + uVar7 + (uVar3 & uVar4) + (uVar8 << 5 | uVar8 >> 0x1b) + 0x5a827999;
+    uVar2 = uVar8 << 0x1e | uVar8 >> 2;
+    uVar8 = *(int *)((long)auStack_184 + (lVar1 * 4 | 4U) + 0xc) +
+            (~uVar8 & uVar3) + (uVar5 & uVar8) + uVar6 + (uVar4 * 0x20 | uVar4 >> 0x1b) + 0x5a827999
+    ;
+    lVar1 = lVar1 + 2;
+    uVar6 = uVar5;
+    uVar7 = uVar3;
+  } while (lVar1 != 0x14);
+  lVar1 = 0x14;
+  do {
+    uVar7 = uVar2;
+    uVar6 = uVar4 << 0x1e | uVar4 >> 2;
+    uVar4 = auStack_184[lVar1 + 3] + (uVar7 ^ uVar4 ^ uVar5) + (uVar8 << 5 | uVar8 >> 0x1b) + uVar3
+            + 0x6ed9eba1;
+    uVar2 = uVar8 << 0x1e | uVar8 >> 2;
+    uVar8 = *(int *)((long)auStack_184 + (lVar1 * 4 | 4U) + 0xc) +
+            (uVar8 ^ uVar7 ^ uVar6) + uVar5 + (uVar4 * 0x20 | uVar4 >> 0x1b) + 0x6ed9eba1;
+    lVar1 = lVar1 + 2;
+    uVar5 = uVar6;
+    uVar3 = uVar7;
+  } while (lVar1 != 0x28);
+  lVar1 = 0x28;
+  do {
+    uVar3 = uVar2;
+    uVar5 = uVar4 << 0x1e | uVar4 >> 2;
+    uVar4 = auStack_184[lVar1 + 3] +
+            (uVar6 & uVar3 | (uVar6 | uVar3) & uVar4) + (uVar8 << 5 | uVar8 >> 0x1b) + uVar7 +
+            0x8f1bbcdc;
+    uVar2 = uVar8 << 0x1e | uVar8 >> 2;
+    uVar8 = (uVar3 & uVar5 | (uVar3 | uVar5) & uVar8) + uVar6 + (uVar4 * 0x20 | uVar4 >> 0x1b) +
+            *(int *)((long)auStack_184 + (lVar1 * 4 | 4U) + 0xc) + 0x8f1bbcdc;
+    lVar1 = lVar1 + 2;
+    uVar6 = uVar5;
+    uVar7 = uVar3;
+  } while (lVar1 != 0x3c);
+  lVar1 = 0x3c;
+  do {
+    uVar6 = uVar2;
+    uVar7 = uVar4 << 0x1e | uVar4 >> 2;
+    uVar4 = auStack_184[lVar1 + 3] + (uVar6 ^ uVar4 ^ uVar5) + (uVar8 << 5 | uVar8 >> 0x1b) + uVar3
+            + 0xca62c1d6;
+    uVar2 = uVar8 << 0x1e | uVar8 >> 2;
+    uVar8 = *(int *)((long)auStack_184 + (lVar1 * 4 | 4U) + 0xc) +
+            (uVar8 ^ uVar6 ^ uVar7) + uVar5 + (uVar4 * 0x20 | uVar4 >> 0x1b) + 0xca62c1d6;
+    lVar1 = lVar1 + 2;
+    uVar5 = uVar7;
+    uVar3 = uVar6;
+  } while (lVar1 != 0x50);
+  _DAT_708b04788b008b44 = uVar8 + _DAT_708b04788b008b44;
+  _DAT_708b04788b008b48 = uVar4 + _DAT_708b04788b008b48;
+  _DAT_708b04788b008b4c = uVar2 + _DAT_708b04788b008b4c;
+  _DAT_708b04788b008b50 = uVar7 + _DAT_708b04788b008b50;
+  _DAT_708b04788b008b54 = uVar6 + _DAT_708b04788b008b54;
+  return;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 void sha_init(void)
 
 {
@@ -287,114 +395,6 @@ char submain(void)
   _DAT_5c0f41f200110ff2 = (double)local_38._8_4_ * 1e-06 + (double)local_38._0_8_;
   printf("%0.6f\n",_DAT_5c0f41f200110ff2 - _DAT_feb2e80e110f41f2);
   return ((bVar4 >> 4) + bVar4 & 0xf) + (iVar1 != -0x528c06de);
-}
-
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-void sha_transform(void)
-
-{
-  long lVar1;
-  uint uVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  uint auStack_1b8 [8];
-  uint auStack_198 [5];
-  uint auStack_184 [85];
-  
-  auStack_184[15] = _DAT_f1048280f00283f;
-  auStack_184[16] = uRam0f1048280f002843;
-  auStack_184[17] = uRam0f1048280f002847;
-  auStack_184[18] = uRam0f1048280f00284b;
-  auStack_184[11] = _DAT_f1048280f00282f;
-  auStack_184[12] = uRam0f1048280f002833;
-  auStack_184[13] = uRam0f1048280f002837;
-  auStack_184[14] = uRam0f1048280f00283b;
-  auStack_184[7] = _DAT_f1048280f00281f;
-  auStack_184[8] = uRam0f1048280f002823;
-  auStack_184[9] = uRam0f1048280f002827;
-  auStack_184[10] = uRam0f1048280f00282b;
-  auStack_184[3] = _DAT_f1048280f00280f;
-  auStack_184[4] = uRam0f1048280f002813;
-  auStack_184[5] = uRam0f1048280f002817;
-  auStack_184[6] = uRam0f1048280f00281b;
-  lVar1 = 0x10;
-  do {
-    auStack_184[lVar1 + 3] =
-         auStack_198[lVar1] ^ auStack_184[lVar1] ^ auStack_1b8[lVar1 + 2] ^ auStack_1b8[lVar1];
-    lVar1 = lVar1 + 1;
-  } while (lVar1 != 0x50);
-  lVar1 = 0;
-  uVar6 = _DAT_708b04788b008b50;
-  uVar7 = _DAT_708b04788b008b54;
-  uVar2 = _DAT_708b04788b008b4c;
-  uVar4 = _DAT_708b04788b008b48;
-  uVar8 = _DAT_708b04788b008b44;
-  do {
-    uVar3 = uVar2;
-    uVar5 = uVar4 << 0x1e | uVar4 >> 2;
-    uVar4 = auStack_184[lVar1 + 3] +
-            (~uVar4 & uVar6) + uVar7 + (uVar3 & uVar4) + (uVar8 << 5 | uVar8 >> 0x1b) + 0x5a827999;
-    uVar2 = uVar8 << 0x1e | uVar8 >> 2;
-    uVar8 = *(int *)((long)auStack_184 + (lVar1 * 4 | 4U) + 0xc) +
-            (~uVar8 & uVar3) + (uVar5 & uVar8) + uVar6 + (uVar4 * 0x20 | uVar4 >> 0x1b) + 0x5a827999
-    ;
-    lVar1 = lVar1 + 2;
-    uVar6 = uVar5;
-    uVar7 = uVar3;
-  } while (lVar1 != 0x14);
-  lVar1 = 0x14;
-  do {
-    uVar7 = uVar2;
-    uVar6 = uVar4 << 0x1e | uVar4 >> 2;
-    uVar4 = auStack_184[lVar1 + 3] + (uVar7 ^ uVar4 ^ uVar5) + (uVar8 << 5 | uVar8 >> 0x1b) + uVar3
-            + 0x6ed9eba1;
-    uVar2 = uVar8 << 0x1e | uVar8 >> 2;
-    uVar8 = *(int *)((long)auStack_184 + (lVar1 * 4 | 4U) + 0xc) +
-            (uVar8 ^ uVar7 ^ uVar6) + uVar5 + (uVar4 * 0x20 | uVar4 >> 0x1b) + 0x6ed9eba1;
-    lVar1 = lVar1 + 2;
-    uVar5 = uVar6;
-    uVar3 = uVar7;
-  } while (lVar1 != 0x28);
-  lVar1 = 0x28;
-  do {
-    uVar3 = uVar2;
-    uVar5 = uVar4 << 0x1e | uVar4 >> 2;
-    uVar4 = auStack_184[lVar1 + 3] +
-            (uVar6 & uVar3 | (uVar6 | uVar3) & uVar4) + (uVar8 << 5 | uVar8 >> 0x1b) + uVar7 +
-            0x8f1bbcdc;
-    uVar2 = uVar8 << 0x1e | uVar8 >> 2;
-    uVar8 = (uVar3 & uVar5 | (uVar3 | uVar5) & uVar8) + uVar6 + (uVar4 * 0x20 | uVar4 >> 0x1b) +
-            *(int *)((long)auStack_184 + (lVar1 * 4 | 4U) + 0xc) + 0x8f1bbcdc;
-    lVar1 = lVar1 + 2;
-    uVar6 = uVar5;
-    uVar7 = uVar3;
-  } while (lVar1 != 0x3c);
-  lVar1 = 0x3c;
-  do {
-    uVar6 = uVar2;
-    uVar7 = uVar4 << 0x1e | uVar4 >> 2;
-    uVar4 = auStack_184[lVar1 + 3] + (uVar6 ^ uVar4 ^ uVar5) + (uVar8 << 5 | uVar8 >> 0x1b) + uVar3
-            + 0xca62c1d6;
-    uVar2 = uVar8 << 0x1e | uVar8 >> 2;
-    uVar8 = *(int *)((long)auStack_184 + (lVar1 * 4 | 4U) + 0xc) +
-            (uVar8 ^ uVar6 ^ uVar7) + uVar5 + (uVar4 * 0x20 | uVar4 >> 0x1b) + 0xca62c1d6;
-    lVar1 = lVar1 + 2;
-    uVar5 = uVar7;
-    uVar3 = uVar6;
-  } while (lVar1 != 0x50);
-  _DAT_708b04788b008b44 = uVar8 + _DAT_708b04788b008b44;
-  _DAT_708b04788b008b48 = uVar4 + _DAT_708b04788b008b48;
-  _DAT_708b04788b008b4c = uVar2 + _DAT_708b04788b008b4c;
-  _DAT_708b04788b008b50 = uVar7 + _DAT_708b04788b008b50;
-  _DAT_708b04788b008b54 = uVar6 + _DAT_708b04788b008b54;
-  return;
 }
 
 

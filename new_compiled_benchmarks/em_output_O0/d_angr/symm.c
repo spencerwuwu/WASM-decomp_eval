@@ -1,55 +1,3 @@
-extern char .L.str;
-
-long long submain(unsigned int a0, unsigned long long *a1)
-{
-    unsigned long long v0;  // [bp-0x58]
-    void* v1;  // [bp-0x48]
-    void* v2;  // [bp-0x40]
-    void* v3;  // [bp-0x38]
-    char v4;  // [bp-0x30]
-    char v5;  // [bp-0x28]
-    unsigned int v6;  // [bp-0x20]
-    unsigned int v7;  // [bp-0x1c]
-    unsigned int v8;  // [bp-0xc]
-    void* v11;  // rdi
-    void* v12;  // rdi
-
-    v8 = a0;
-    v7 = 1000;
-    v6 = 1200;
-    v3 = polybench_alloc_data(0x124f80, 0x8);
-    v2 = polybench_alloc_data(0xf4240, 0x8);
-    v1 = polybench_alloc_data(0x124f80, 0x8);
-    v0 = v1;
-    init_array(v7, v6, &v5, &v4, v3, v2, v0);
-    kernel_symm(v7, v6, v3, v2, v1);
-    if (v8 > 42)
-    {
-        if (strcmp(*(a1), &.L.str) == 0)
-        {
-            print_array(v7, v6, v3);
-            free(v3);
-            v11 = v2;
-            free(rdi<8>);
-            v12 = v1;
-            free(rdi<8>);
-            return 0;
-        }
-        free(v3);
-        v11 = v2;
-        free(rdi<8>);
-        v12 = v1;
-        free(rdi<8>);
-        return 0;
-    }
-    free(v3);
-    v11 = v2;
-    free(rdi<8>);
-    v12 = v1;
-    free(rdi<8>);
-    return 0;
-}
-
 int kernel_symm(unsigned int a0, unsigned int a1, unsigned long a2, unsigned long a3, unsigned long a4)
 {
     void* v0;  // [bp-0x50]
@@ -115,6 +63,58 @@ int kernel_symm(unsigned int a0, unsigned int a1, unsigned long a2, unsigned lon
         }
     }
     return;
+}
+
+extern char .L.str;
+
+long long submain(unsigned int a0, unsigned long long *a1)
+{
+    unsigned long long v0;  // [bp-0x58]
+    unsigned long v1;  // [bp-0x48]
+    unsigned long v2;  // [bp-0x40]
+    unsigned long v3;  // [bp-0x38]
+    char v4;  // [bp-0x30]
+    char v5;  // [bp-0x28]
+    unsigned int v6;  // [bp-0x20]
+    unsigned int v7;  // [bp-0x1c]
+    unsigned int v8;  // [bp-0xc]
+    void* v12;  // rdi
+    void* v13;  // rdi
+
+    v8 = a0;
+    v7 = 1000;
+    v6 = 1200;
+    v3 = polybench_alloc_data(0x124f80, 0x8);
+    v2 = polybench_alloc_data(0xf4240, 0x8);
+    v1 = polybench_alloc_data(0x124f80, 0x8);
+    v0 = v1;
+    init_array(v7, v6, &v5, &v4, v3, v2, v0);
+    kernel_symm(v7, v6, v3, v2, v1);
+    if (v8 > 42)
+    {
+        if (strcmp(*(a1), &.L.str) == 0)
+        {
+            print_array(v7, v6, v3);
+            free(v3);
+            v12 = v2;
+            free(rdi<8>);
+            v13 = v1;
+            free(rdi<8>);
+            return 0;
+        }
+        free(v3);
+        v12 = v2;
+        free(rdi<8>);
+        v13 = v1;
+        free(rdi<8>);
+        return 0;
+    }
+    free(v3);
+    v12 = v2;
+    free(rdi<8>);
+    v13 = v1;
+    free(rdi<8>);
+    return 0;
 }
 
 extern char .L.str.3;

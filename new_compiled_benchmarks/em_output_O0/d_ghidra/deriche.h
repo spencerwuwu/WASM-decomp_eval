@@ -58,21 +58,21 @@ typedef unsigned short    word;
 
 typedef pointer pointer __((offset(0x37)));
 
-typedef pointer pointer __((offset(0x110)));
-
 typedef pointer pointer __((offset(0x2e)));
 
 typedef pointer pointer __((offset(0x27)));
 
 typedef pointer pointer __((offset(0x18)));
 
-typedef pointer pointer __((offset(0xa10)));
+typedef pointer pointer __((offset(0x840)));
 
-typedef pointer pointer __((offset(0x1d0)));
+typedef pointer pointer __((offset(0xa10)));
 
 typedef pointer pointer __((offset(0x48)));
 
 typedef pointer pointer __((offset(0x30)));
+
+typedef pointer pointer __((offset(0x950)));
 
 typedef pointer pointer __((offset(0x1)));
 
@@ -223,14 +223,14 @@ struct Elf64_Sym {
 
 
 
+void kernel_deriche(float param_1,int param_2,int param_3,long param_4,long param_5,long param_6,long param_7);
 undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,int param_2,undefined4 *param_3,long param_4);
-void kernel_deriche(float param_1,int param_2,int param_3,long param_4,long param_5,long param_6,long param_7);
 void print_array(void);
+float expf(float __x);
+float powf(float __x, float __y);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);
 void free(void * __ptr);
-float expf(float __x);
-float powf(float __x, float __y);
 int fprintf(FILE * __stream, char * __format, ...);
 

@@ -23,11 +23,11 @@ void f4(correlationInstance*);
 
 void f5(correlationInstance*);
 
-U32 f6(correlationInstance*,U32,U32);
+void f6(correlationInstance*,U32,U32,F64,U32,U32,U32,U32);
 
-void f7(correlationInstance*,U32,U32,U32,U32);
+U32 f7(correlationInstance*,U32,U32);
 
-void f8(correlationInstance*,U32,U32,F64,U32,U32,U32,U32);
+void f8(correlationInstance*,U32,U32,U32,U32);
 
 void f9(correlationInstance*,U32,U32);
 
@@ -36,6 +36,8 @@ U32 f10(correlationInstance*,U64,U32);
 void correlation____wasm_call_ctors(correlationInstance*i);
 
 void correlation____wasm_apply_data_relocs(correlationInstance*i);
+
+void correlation_kernel_correlation(correlationInstance*i,U32 l0,U32 l1,F64 l2,U32 l3,U32 l4,U32 l5,U32 l6);
 
 U32 correlation_submain(correlationInstance*i,U32 l0,U32 l1);
 

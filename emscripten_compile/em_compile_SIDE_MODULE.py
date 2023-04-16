@@ -4,6 +4,7 @@ import os
 
 pbcPath = 'polybench-c-4.2.1-beta/'
 pbcSourceFilesWithPath = [
+                          'stencils/adi/adi.c',
                           'medley/floyd-warshall/floyd-warshall.c',
                           'medley/nussinov/nussinov.c',
                           'medley/deriche/deriche.c',
@@ -28,7 +29,6 @@ pbcSourceFilesWithPath = [
                           'linear-algebra/solvers/lu/lu.c',
                           'linear-algebra/solvers/ludcmp/ludcmp.c',
                           'linear-algebra/solvers/trisolv/trisolv.c',
-                          'stencils/adi/adi.c',
                           'stencils/fdtd-2d/fdtd-2d.c',
                           'stencils/heat-3d/heat-3d.c',
                           'stencils/jacobi-1d/jacobi-1d.c',
@@ -39,20 +39,20 @@ pbcSourceFilesWithPath = [
 
 chsPath = 'CHStone_v1.11_150204/'
 chsSourceFilesWithPath = [
+                          "dfadd/dfadd.c",
                           "aes/aes.c",
                           "adpcm/adpcm.c",
                           "blowfish/bf.c",
-                          "dfadd/dfadd.c",
                           "dfdiv/dfdiv.c",
                           "dfmul/dfmul.c",
                           "dfsin/dfsin.c",
                           "gsm/gsm.c",
-                          "mips/mips.c",
                           "motion/mpeg2.c",
                           "sha/sha_driver.c"
+                          # "mips/mips.c",
                           ]
 
-opt_level = '-O1'
+opt_level = '-O2'
 wasm_flags = '-s WASM=1 -s SIDE_MODULE=1 -g3 --emit-symbol-map'
 c_flags  = ' -g3 -c ' 
 c_flags += '-fignore-exceptions -fPIC -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -Werror=implicit-function-declaration --sysroot=$(dirname $(which emcc))/cache/sysroot -Xclang -iwithsysroot/include/fakesdl -Xclang -iwithsysroot/include/compat '

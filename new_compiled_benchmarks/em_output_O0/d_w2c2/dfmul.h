@@ -50,25 +50,25 @@ U32 f11(dfmulInstance*,U64);
 
 U32 f12(dfmulInstance*,U64);
 
-U64 f13(dfmulInstance*,U32,U32,U64);
+void f13(dfmulInstance*,U64,U32,U32);
 
-U64 f14(dfmulInstance*,U64,U64);
+U32 f14(dfmulInstance*,U64);
 
-U64 f15(dfmulInstance*,U64,U64);
+U32 f15(dfmulInstance*,U32);
 
-void f16(dfmulInstance*,U64,U32,U32);
+U64 f16(dfmulInstance*,U32,U32,U64);
 
 U64 f17(dfmulInstance*,U32,U32,U64);
 
-U32 f18(dfmulInstance*,U64);
+U64 f18(dfmulInstance*,U64,U64);
 
-F64 f19(dfmulInstance*,U64);
+U64 f19(dfmulInstance*,U64,U64);
 
-U32 f20(dfmulInstance*);
+F64 f20(dfmulInstance*,U64);
 
-F64 f21(dfmulInstance*);
+U32 f21(dfmulInstance*);
 
-U32 f22(dfmulInstance*,U32);
+F64 f22(dfmulInstance*);
 
 void f23(dfmulInstance*,U32,U32,U32,U32);
 
@@ -84,11 +84,15 @@ U32 f28(dfmulInstance*,U32,U32);
 
 U32 f29(dfmulInstance*,U32,U32);
 
-U32 f30(dfmulInstance*,U32,U32,U32,U32);
+void f30(dfmulInstance*,U32,U32,U32,U32);
 
 U32 f31(dfmulInstance*,U32,U32,U32,U32);
 
-F64 f32(dfmulInstance*,U32,U32);
+U32 f32(dfmulInstance*,U32,U32,U32,U32);
+
+U32 f33(dfmulInstance*,U32,U32,U32,U32);
+
+F64 f34(dfmulInstance*,U32,U32);
 
 void dfmul____wasm_call_ctors(dfmulInstance*i);
 
@@ -110,7 +114,11 @@ U32 dfmul_extractFloat64Exp(dfmulInstance*i,U32 l0,U32 l1);
 
 U32 dfmul_extractFloat64Sign(dfmulInstance*i,U32 l0,U32 l1);
 
+void dfmul_normalizeFloat64Subnormal(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
 U32 dfmul_packFloat64(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
+U32 dfmul_roundAndPackFloat64(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
 U32 dfmul_float64_mul(dfmulInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
@@ -132,7 +140,11 @@ U32 dfmul_origX24extractFloat64Exp(dfmulInstance*i,U64 l0);
 
 U32 dfmul_origX24extractFloat64Sign(dfmulInstance*i,U64 l0);
 
+void dfmul_origX24normalizeFloat64Subnormal(dfmulInstance*i,U64 l0,U32 l1,U32 l2);
+
 U64 dfmul_origX24packFloat64(dfmulInstance*i,U32 l0,U32 l1,U64 l2);
+
+U64 dfmul_origX24roundAndPackFloat64(dfmulInstance*i,U32 l0,U32 l1,U64 l2);
 
 U64 dfmul_origX24float64_mul(dfmulInstance*i,U64 l0,U64 l1);
 

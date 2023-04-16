@@ -84,6 +84,15 @@ void w2c_PL__3mm_0x5F_wasm_call_ctors(w2c_PL__3mm*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_PL__3mm_0x5F_wasm_apply_data_relocs(w2c_PL__3mm*);
 
+/* export: 'init_array' */
+void w2c_PL__3mm_init_array(w2c_PL__3mm*, u32, u32, u32, u32, u32, u32, u32, u32, u32);
+
+/* export: 'print_array' */
+void w2c_PL__3mm_print_array(w2c_PL__3mm*, u32, u32, u32);
+
+/* export: 'kernel_3mm' */
+void w2c_PL__3mm_kernel_3mm(w2c_PL__3mm*, u32, u32, u32, u32, u32, u32, u32, u32, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_PL__3mm_submain(w2c_PL__3mm*, u32, u32);
 

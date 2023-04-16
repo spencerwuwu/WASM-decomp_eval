@@ -5,6 +5,13 @@ long long abs(unsigned int a0)
     return ((unsigned int)(0 - v1) < 0? (unsigned int)v1 : 0 - (unsigned int)v1);
 }
 
+typedef struct struct_0 {
+    unsigned int field_0;
+    char field_4;
+    char padding_5[3];
+    uint128_t field_8;
+} struct_0;
+
 extern char got.ah1;
 extern char got.ah2;
 extern char got.al1;
@@ -102,7 +109,7 @@ int encode(unsigned int a0, unsigned int a1)
     unsigned long long v13;  // rcx
     unsigned long long v14;  // rax
     unsigned long v15;  // rdx
-    unsigned long v16;  // r8
+    struct_0 *v16;  // r8
     unsigned int v17;  // edi
     unsigned long long v18;  // rsi
     unsigned long long v19;  // r10
@@ -128,7 +135,7 @@ int encode(unsigned int a0, unsigned int a1)
     void* v40;  // rbx
     unsigned long v41;  // cc_ndep
     unsigned long v42;  // rcx
-    unsigned long v43;  // rdx
+    struct_0 *v43;  // rdx
     unsigned int v44;  // edi
     unsigned long long v45;  // rsi
     unsigned long long v46;  // r9
@@ -194,8 +201,8 @@ int encode(unsigned int a0, unsigned int a1)
     {
         v19 = *((int *)(v15 + 4));
         v15 += 4;
-        tmp_25 = *((int *)(v16 + 4));
-        v16 += 4;
+        tmp_25 = *((int *)&v16->field_4);
+        v16 = &v16->field_4;
         tmp_13 = v18;
         v18 += v19 * tmp_25;
         v20 = (tmp_13 + v19 * tmp_25 <= tmp_13? 1 : 0);
@@ -305,8 +312,8 @@ int encode(unsigned int a0, unsigned int a1)
     {
         v46 = *((int *)(v42 + 4));
         v42 += 4;
-        tmp_25 = *((int *)(v43 + 4));
-        v43 += 4;
+        tmp_25 = *((int *)&v43->field_4);
+        v43 = &v43->field_4;
         tmp_13 = v45;
         v45 += v46 * tmp_25;
         v47 = (tmp_13 + v46 * tmp_25 <= tmp_13? 1 : 0);
@@ -601,19 +608,6 @@ long long logsch(unsigned int a0, unsigned int a1)
     return (((unsigned int)(v1 * 127 >> 7) + *((int *)(got.wh_code_table + (v2 << 2))) > 0? (unsigned int)(v1 * 127 >> 7) + *((int *)(got.wh_code_table + (v2 << 2))) : 0) < 0x5800? ((unsigned int)(v1 * 127 >> 7) + *((int *)(got.wh_code_table + (v2 << 2))) > 0? (unsigned int)(v1 * 127 >> 7) + *((int *)(got.wh_code_table + (v2 << 2))) : 0) : 0x5800);
 }
 
-typedef struct struct_0 {
-    char field_0;
-    char padding_1[3];
-    char field_4;
-    char padding_5[3];
-    uint128_t field_8;
-    uint128_t field_10;
-    uint128_t field_14;
-    unsigned long long field_20;
-    unsigned long long field_24;
-    unsigned int field_28;
-} struct_0;
-
 extern char got.accumc;
 extern char got.accumd;
 extern char got.dec_ah1;
@@ -746,7 +740,7 @@ int decode(unsigned int a0)
     unsigned long long v50;  // rsi
     unsigned int v51[2];  // rdi
     void* v52;  // r9
-    struct_0 *v53;  // r10
+    void* v53;  // r10
     uint128_t v54;  // xmm1
     unsigned long long v55;  // rax
 
@@ -933,8 +927,8 @@ int decode(unsigned int a0)
         tmp_30 = *((int *)v52);
         v52 += 4;
         v50 += tmp_30 * v51[0];
-        v48 = *((int *)&v53->field_0);
-        v53 = &v53->field_4;
+        v48 = *((int *)v53);
+        v53 += 4;
         tmp_38 = v51[1];
         v51 = &v51[1];
         v49 += v48 * tmp_38;

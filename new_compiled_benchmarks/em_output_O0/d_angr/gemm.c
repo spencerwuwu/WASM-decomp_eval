@@ -1,98 +1,3 @@
-extern char .L.str;
-
-long long submain(unsigned int a0, unsigned long long *a1)
-{
-    unsigned long long v0;  // [bp-0x68]
-    unsigned long long v1;  // [bp-0x60]
-    void* v2;  // [bp-0x50]
-    void* v3;  // [bp-0x48]
-    void* v4;  // [bp-0x40]
-    char v5;  // [bp-0x38]
-    char v6;  // [bp-0x30]
-    unsigned int v7;  // [bp-0x24]
-    unsigned int v8;  // [bp-0x20]
-    unsigned int v9;  // [bp-0x1c]
-    unsigned int v10;  // [bp-0xc]
-    void* v13;  // rdi
-    void* v14;  // rdi
-
-    v10 = a0;
-    v9 = 1000;
-    v8 = 1100;
-    v7 = 1200;
-    v4 = polybench_alloc_data(0x10c8e0, 0x8);
-    v3 = polybench_alloc_data(0x124f80, 0x8);
-    v2 = polybench_alloc_data(0x142440, 0x8);
-    v0 = v3;
-    v1 = v2;
-    init_array(v9, v8, v7, &v6, &v5, v4, v0, v1);
-    kernel_gemm(v9, v8, v7, v4, v3, v2);
-    if (v10 > 42)
-    {
-        if (strcmp(*(a1), &.L.str) == 0)
-        {
-            print_array(v9, v8, v4);
-            free(v4);
-            v13 = v3;
-            free(rdi<8>);
-            v14 = v2;
-            free(rdi<8>);
-            return 0;
-        }
-        free(v4);
-        v13 = v3;
-        free(rdi<8>);
-        v14 = v2;
-        free(rdi<8>);
-        return 0;
-    }
-    free(v4);
-    v13 = v3;
-    free(rdi<8>);
-    v14 = v2;
-    free(rdi<8>);
-    return 0;
-}
-
-int init_array(unsigned int a0, unsigned int a1, unsigned int a2, unsigned long long *a3, unsigned long long *a4, unsigned long a5, unsigned long v3, unsigned long a6)
-{
-    unsigned int v0;  // [bp-0x38]
-    unsigned int v1;  // [bp-0x34]
-    unsigned int v2;  // [bp-0xc]
-    unsigned long v4;  // rdi
-    unsigned long long v5;  // xmm1lq
-    uint128_t v6;  // xmm1
-
-    v2 = v4;
-    *(a3) = 0x3ff8000000000000;
-    *(a4) = 4608083138725491507;
-    for (v1 = 0; v1 < v2; v1 += 1)
-    {
-        for (v0 = 0; v0 < a1; v0 += 1)
-        {
-            v5 = v2;
-            *((unsigned long long *)(a5 + v1 * 8800 + v0 * 8)) = ((v0 * v1 + 1 >> 31 CONCAT v0 * v1 + 1) /m v2 >> 32) / xmm1<16>;
-        }
-    }
-    for (v1 = 0; v1 < v2; v1 += 1)
-    {
-        for (v0 = 0; v0 < a2; v0 += 1)
-        {
-            *((unsigned long long *)&v6) = a2;
-            *((unsigned long long *)(v3 + v1 * 9600 + v0 * 8)) = (((v0 + 1) * v1 >> 31 CONCAT (v0 + 1) * v1) /m a2 >> 32) / v6;
-        }
-    }
-    for (v1 = 0; v1 < a2; v1 += 1)
-    {
-        for (v0 = 0; v0 < a1; v0 += 1)
-        {
-            *((unsigned long long *)&v6) = a1;
-            *((unsigned long long *)(a6 + v1 * 8800 + v0 * 8)) = (((v0 + 2) * v1 >> 31 CONCAT (v0 + 2) * v1) /m a1 >> 32) / v6;
-        }
-    }
-    return;
-}
-
 int kernel_gemm(unsigned int a0, unsigned int a1, unsigned int a2, unsigned long a3, unsigned long a4, unsigned long a5)
 {
     unsigned int v0;  // [bp-0x4c]
@@ -131,6 +36,101 @@ int kernel_gemm(unsigned int a0, unsigned int a1, unsigned int a2, unsigned long
                 xmm0lq<8> = Conv(128->64, (((xmm0<16> * Conv(64->128, Load(addr=((r8<8> + (Conv(32->s64, Load(addr=stack_base-68, size=4, endness=Iend_LE)) * 0x2580<64>)) + (Conv(32->s64, Load(addr=stack_base-76, size=4, endness=Iend_LE)) * 0x8<64>)), size=8, endness=Iend_LE))) * xmm2<16>) + xmm1<16>))
                 *((unsigned long long *)(a3 + v2 * 8800 + v1 * 8)) = v9;
             }
+        }
+    }
+    return;
+}
+
+extern char .L.str;
+
+long long submain(unsigned int a0, unsigned long long *a1)
+{
+    unsigned long long v0;  // [bp-0x68]
+    unsigned long long v1;  // [bp-0x60]
+    unsigned long v2;  // [bp-0x50]
+    unsigned long v3;  // [bp-0x48]
+    unsigned long v4;  // [bp-0x40]
+    char v5;  // [bp-0x38]
+    char v6;  // [bp-0x30]
+    unsigned int v7;  // [bp-0x24]
+    unsigned int v8;  // [bp-0x20]
+    unsigned int v9;  // [bp-0x1c]
+    unsigned int v10;  // [bp-0xc]
+    void* v14;  // rdi
+    void* v15;  // rdi
+
+    v10 = a0;
+    v9 = 1000;
+    v8 = 1100;
+    v7 = 1200;
+    v4 = polybench_alloc_data(0x10c8e0, 0x8);
+    v3 = polybench_alloc_data(0x124f80, 0x8);
+    v2 = polybench_alloc_data(0x142440, 0x8);
+    v0 = v3;
+    v1 = v2;
+    init_array(v9, v8, v7, &v6, &v5, v4, v0, v1);
+    kernel_gemm(v9, v8, v7, v4, v3, v2);
+    if (v10 > 42)
+    {
+        if (strcmp(*(a1), &.L.str) == 0)
+        {
+            print_array(v9, v8, v4);
+            free(v4);
+            v14 = v3;
+            free(rdi<8>);
+            v15 = v2;
+            free(rdi<8>);
+            return 0;
+        }
+        free(v4);
+        v14 = v3;
+        free(rdi<8>);
+        v15 = v2;
+        free(rdi<8>);
+        return 0;
+    }
+    free(v4);
+    v14 = v3;
+    free(rdi<8>);
+    v15 = v2;
+    free(rdi<8>);
+    return 0;
+}
+
+int init_array(unsigned int a0, unsigned int a1, unsigned int a2, unsigned long long *a3, unsigned long long *a4, unsigned long a5, unsigned long v3, unsigned long a6)
+{
+    unsigned int v0;  // [bp-0x38]
+    unsigned int v1;  // [bp-0x34]
+    unsigned int v2;  // [bp-0xc]
+    unsigned long v4;  // rdi
+    unsigned long long v5;  // xmm1lq
+    uint128_t v6;  // xmm1
+
+    v2 = v4;
+    *(a3) = 0x3ff8000000000000;
+    *(a4) = 4608083138725491507;
+    for (v1 = 0; v1 < v2; v1 += 1)
+    {
+        for (v0 = 0; v0 < a1; v0 += 1)
+        {
+            v5 = v2;
+            *((unsigned long long *)(a5 + v1 * 8800 + v0 * 8)) = ((v0 * v1 + 1 >> 31 CONCAT v0 * v1 + 1) /m v2 >> 32) / xmm1<16>;
+        }
+    }
+    for (v1 = 0; v1 < v2; v1 += 1)
+    {
+        for (v0 = 0; v0 < a2; v0 += 1)
+        {
+            *((unsigned long long *)&v6) = a2;
+            *((unsigned long long *)(v3 + v1 * 9600 + v0 * 8)) = (((v0 + 1) * v1 >> 31 CONCAT (v0 + 1) * v1) /m a2 >> 32) / v6;
+        }
+    }
+    for (v1 = 0; v1 < a2; v1 += 1)
+    {
+        for (v0 = 0; v0 < a1; v0 += 1)
+        {
+            *((unsigned long long *)&v6) = a1;
+            *((unsigned long long *)(a6 + v1 * 8800 + v0 * 8)) = (((v0 + 2) * v1 >> 31 CONCAT (v0 + 2) * v1) /m a1 >> 32) / v6;
         }
     }
     return;

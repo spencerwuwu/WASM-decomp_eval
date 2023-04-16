@@ -27,13 +27,17 @@ void f6(trmmInstance*);
 
 void f7(trmmInstance*);
 
-U32 f8(trmmInstance*,U32,U32);
+void f8(trmmInstance*,U32,U32,F64,U32,U32);
 
-U32 f9(trmmInstance*,U64,U32);
+U32 f9(trmmInstance*,U32,U32);
+
+U32 f10(trmmInstance*,U64,U32);
 
 void trmm____wasm_call_ctors(trmmInstance*i);
 
 void trmm____wasm_apply_data_relocs(trmmInstance*i);
+
+void trmm_kernel_trmm(trmmInstance*i,U32 l0,U32 l1,F64 l2,U32 l3,U32 l4);
 
 U32 trmm_submain(trmmInstance*i,U32 l0,U32 l1);
 

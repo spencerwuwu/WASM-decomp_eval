@@ -57,15 +57,15 @@ typedef unsigned short    word;
 
 typedef pointer pointer __((offset(0x33)));
 
-typedef pointer pointer __((offset(0xb0)));
-
-typedef pointer pointer __((offset(0x1b0)));
-
 typedef pointer pointer __((offset(0x29)));
+
+typedef pointer pointer __((offset(0x630)));
 
 typedef pointer pointer __((offset(0x27)));
 
 typedef pointer pointer __((offset(0x18)));
+
+typedef pointer pointer __((offset(0x580)));
 
 typedef pointer pointer __((offset(0x730)));
 
@@ -222,9 +222,9 @@ struct Elf64_Sym {
 
 
 
+void kernel_heat_3d(undefined8 param_1,int param_2,long param_3,long param_4);
 undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,long param_2,long param_3);
-void kernel_heat_3d(undefined8 param_1,int param_2,long param_3,long param_4);
 void print_array(void);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);

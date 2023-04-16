@@ -338,15 +338,15 @@ int Get_motion_code(unsigned long a0, unsigned long a1, unsigned long a2, unsign
     unsigned long long v31;  // r15
     unsigned long long v32;  // rcx
     void* v33;  // rdx
-    unsigned long long v34;  // rdi
+    void* v34;  // rdi, Other Possible Types: unsigned long long
     unsigned int v36;  // cc_dep1
     unsigned long long v37;  // rdi, Other Possible Types: char *
-    unsigned long long v38;  // r8, Other Possible Types: char *, void*
+    void* v38;  // r8, Other Possible Types: char *
     unsigned long long v39;  // r8
-    unsigned long long v40;  // rax
+    void* v40;  // rax, Other Possible Types: unsigned long long
     unsigned long long v41;  // rbp
     unsigned long long v42;  // r9
-    unsigned long long v43;  // rax
+    unsigned long long v43;  // rax, Other Possible Types: void*
     unsigned long long v44;  // rbp
     unsigned long long v45;  // r9
     unsigned long long v46;  // r13
@@ -497,7 +497,7 @@ int Get_motion_code(unsigned long a0, unsigned long a1, unsigned long a2, unsign
                 {
                     do
                     {
-                        *((unsigned long long *)got.ld_Rdptr) = v40 + 1;
+                        *((void* *)got.ld_Rdptr) = v40 + 1;
                         *((unsigned int *)&v22) = (unsigned int)v22 | (unsigned int)(*((char *)v40) << (24 - (char)v41 & 31));
                         *((unsigned int *)v4) = v22;
                         *((unsigned int *)&v32) = (unsigned int)v41 + 8;
@@ -527,7 +527,7 @@ int Get_motion_code(unsigned long a0, unsigned long a1, unsigned long a2, unsign
                             v40 = got.ld_Rdbfr;
                             v4 = got.ld_Bfr;
                         }
-                        *((unsigned long long *)got.ld_Rdptr) = v40 + 1;
+                        *((void* *)got.ld_Rdptr) = v40 + 1;
                         *((unsigned int *)&v22) = (unsigned int)v22 | (unsigned int)(*((char *)v40) << (24 - (char)v41 & 31));
                         *((unsigned int *)v4) = v22;
                         *((unsigned int *)&v32) = (unsigned int)v41 + 8;
@@ -543,7 +543,7 @@ int Get_motion_code(unsigned long a0, unsigned long a1, unsigned long a2, unsign
             }
             *((unsigned int *)&v32) = *((char *)(v34 + v15 * 2));
             *((unsigned int *)&v40) = 0 - *((char *)(v34 + v15 * 2));
-            *((unsigned int *)&v40) = ((char)[D] amd64g_calculate_condition(0x9<64>, 0x13<64>, r8<8>, 0x0<64>, cc_ndep<8>)? (unsigned int)v32 : rax<8>);
+            *((unsigned int *)&v40) = ((char)[D] amd64g_calculate_condition(0x9<64>, 0x13<64>, r8<8>, 0x0<64>, cc_ndep<8>)? (unsigned int)v5 : rax<8>);
             return eax<4>;
         }
         if (*((int *)v4) >= 0xc000000)
@@ -740,7 +740,7 @@ int Get_motion_code(unsigned long a0, unsigned long a1, unsigned long a2, unsign
                 {
                     do
                     {
-                        *((unsigned long long *)got.ld_Rdptr) = v43 + 1;
+                        *((void* *)got.ld_Rdptr) = v43 + 1;
                         *((unsigned int *)&v26) = (unsigned int)v26 | (unsigned int)(*((char *)v43) << (24 - (char)v46 & 31));
                         *((unsigned int *)v4) = v26;
                         *((unsigned int *)&v5) = (unsigned int)v46 + 8;
@@ -769,7 +769,7 @@ int Get_motion_code(unsigned long a0, unsigned long a1, unsigned long a2, unsign
                             v43 = got.ld_Rdbfr;
                             v4 = got.ld_Bfr;
                         }
-                        *((unsigned long long *)got.ld_Rdptr) = v43 + 1;
+                        *((void* *)got.ld_Rdptr) = v43 + 1;
                         *((unsigned int *)&v26) = (unsigned int)v26 | (unsigned int)(*((char *)v43) << (24 - (char)v46 & 31));
                         *((unsigned int *)v4) = v26;
                         *((unsigned int *)&v5) = (unsigned int)v46 + 8;
@@ -788,15 +788,15 @@ int Get_motion_code(unsigned long a0, unsigned long a1, unsigned long a2, unsign
         {
             return 0;
         }
-        if (*((int *)v4) >= 0x6000000 || *((int *)v4) >= 0xc000000)
+        if (*((int *)v4) >= 0xc000000 || *((int *)v4) >= 0x6000000)
         {
-            if ((*((int *)v4) < 0xc000000 || (unsigned int)v43 <= 25) && ((unsigned int)v43 <= 25 || *((int *)v4) >= 0xc000000))
+            if (((unsigned int)v43 <= 25 || *((int *)v4) < 0xc000000) && ((unsigned int)v43 <= 25 || *((int *)v4) >= 0xc000000))
             {
                 v59 = v2;
             }
             *((unsigned int *)&v5) = *(v38 + 0x2 * v37);
             *((unsigned int *)&v43) = 0 - *(v38 + 0x2 * v37);
-            *((unsigned int *)&v40) = ((char)[D] amd64g_calculate_condition(0x9<64>, 0x13<64>, r9<8>, 0x0<64>, cc_ndep<8>)? (unsigned int)v32 : rax<8>);
+            *((unsigned int *)&v40) = ((char)[D] amd64g_calculate_condition(0x9<64>, 0x13<64>, r9<8>, 0x0<64>, cc_ndep<8>)? (unsigned int)v5 : rax<8>);
             return eax<4>;
         }
     }
@@ -968,7 +968,7 @@ long long motion_vectors(unsigned long a0, unsigned long long a1, unsigned long 
     unsigned int v0;  // [bp-0x78]
     unsigned long v1;  // [bp-0x68], Other Possible Types: unsigned int
     unsigned int v2;  // [bp-0x60], Other Possible Types: unsigned long
-    unsigned long long v3;  // [bp-0x58], Other Possible Types: unsigned int, void*
+    unsigned int v3;  // [bp-0x58], Other Possible Types: unsigned long long, void*
     void* v4;  // [bp-0x50]
     unsigned long long v5;  // [bp-0x48]
     void* v6;  // [bp-0x40]
@@ -1021,7 +1021,7 @@ long long motion_vectors(unsigned long a0, unsigned long long a1, unsigned long 
     v14 = v10;
     if (a4 == 1)
     {
-        if (a7 == 0 && a5 == 0)
+        if (a5 == 0 && a7 == 0)
         {
             v37 = *((int *)*((long long *)&got.ld_Bfr));
             *((unsigned int *)&v13) = (unsigned int)v37 * 2;
@@ -1236,12 +1236,12 @@ long long motion_vectors(unsigned long a0, unsigned long long a1, unsigned long 
             while (v52 < 17);
         }
         *((unsigned int *)*((long long *)&got.ld_Incnt)) = (unsigned int)v11;
-        *((unsigned int *)&((char *)v4 + 0x4 * v3)[8]) = *((long long *)&v2) >> 31;
+        *((unsigned int *)&((char *)v4 + 0x4 * v3)[8]) = v2 >> 31;
         v0 = 0;
         motion_vector(v6 + v3 * 8 + 16, v5, v10, a6, a7, a8, v0);
         return motion_vector(v6 + v3 * 8 + 16, v5, v10, a6, a7, a8, v0);
     }
-    *((unsigned int *)&((char *)v4 + 0x4 * v3)[8]) = *((long long *)&v2) >> 31;
+    *((unsigned int *)&((char *)v4 + 0x4 * v3)[8]) = v2 >> 31;
     v47 = v42 + v3 * 8 + 16;
     v0 = 0;
     motion_vector(v47, v5, v25, a6, v13, v38, v0);
@@ -1333,7 +1333,7 @@ long long submain()
     int tmp_31;  // tmp #31
     int tmp_56;  // tmp #56
     unsigned int v0;  // [bp-0x88]
-    int v1;  // [bp-0x78], Other Possible Types: char
+    char v1;  // [bp-0x78], Other Possible Types: int
     unsigned int v2;  // [bp-0x70]
     int v3;  // [bp-0x68], Other Possible Types: unsigned long long
     int v4;  // [bp-0x58], Other Possible Types: unsigned int

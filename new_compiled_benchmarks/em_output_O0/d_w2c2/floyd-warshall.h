@@ -23,9 +23,9 @@ void f4(floydwarshallInstance*);
 
 void f5(floydwarshallInstance*);
 
-U32 f6(floydwarshallInstance*,U32,U32);
+void f6(floydwarshallInstance*,U32,U32);
 
-void f7(floydwarshallInstance*,U32,U32);
+U32 f7(floydwarshallInstance*,U32,U32);
 
 void f8(floydwarshallInstance*,U32,U32);
 
@@ -36,6 +36,8 @@ U32 f10(floydwarshallInstance*,U64,U32);
 void floydwarshall____wasm_call_ctors(floydwarshallInstance*i);
 
 void floydwarshall____wasm_apply_data_relocs(floydwarshallInstance*i);
+
+void floydwarshall_kernel_floyd_warshall(floydwarshallInstance*i,U32 l0,U32 l1);
 
 U32 floydwarshall_submain(floydwarshallInstance*i,U32 l0,U32 l1);
 

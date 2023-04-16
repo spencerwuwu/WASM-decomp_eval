@@ -81,6 +81,9 @@ void w2c_seidel0x2D2d_0x5F_wasm_call_ctors(w2c_seidel0x2D2d*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_seidel0x2D2d_0x5F_wasm_apply_data_relocs(w2c_seidel0x2D2d*);
 
+/* export: 'kernel_seidel_2d' */
+void w2c_seidel0x2D2d_kernel_seidel_2d(w2c_seidel0x2D2d*, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_seidel0x2D2d_submain(w2c_seidel0x2D2d*, u32, u32);
 

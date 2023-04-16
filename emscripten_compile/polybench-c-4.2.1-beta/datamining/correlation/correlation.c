@@ -62,7 +62,7 @@ void print_array(int m,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_correlation(int m, int n,
 			DATA_TYPE float_n,
 			DATA_TYPE POLYBENCH_2D(data,N,M,n,m),

@@ -61,17 +61,17 @@ typedef pointer pointer __((offset(0x29)));
 
 typedef pointer pointer __((offset(0x27)));
 
-typedef pointer pointer __((offset(0xc0)));
-
 typedef pointer pointer __((offset(0x18)));
 
 typedef pointer pointer __((offset(0x260)));
 
-typedef pointer pointer __((offset(0x140)));
-
 typedef pointer pointer __((offset(0x2b)));
 
 typedef pointer pointer __((offset(0x44)));
+
+typedef pointer pointer __((offset(0x1e0)));
+
+typedef pointer pointer __((offset(0x120)));
 
 typedef pointer pointer __((offset(0x1)));
 
@@ -222,9 +222,9 @@ struct Elf64_Ehdr {
 
 
 
+void kernel_jacobi_1d(int param_1,int param_2,long param_3,long param_4);
 undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,long param_2,long param_3);
-void kernel_jacobi_1d(int param_1,int param_2,long param_3,long param_4);
 void print_array(void);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);

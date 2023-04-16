@@ -85,6 +85,77 @@ int local_memcpy(unsigned long a0, unsigned long a1, unsigned int a2)
     return;
 }
 
+extern char got.sha_info_data;
+extern char got.sha_info_digest;
+
+int sha_transform()
+{
+    unsigned int v0;  // [bp-0x168]
+    unsigned int v1;  // [bp-0x24]
+    unsigned int v2;  // [bp-0x20]
+    unsigned int v3;  // [bp-0x1c]
+    unsigned int v4;  // [bp-0x18]
+    unsigned int v5;  // [bp-0x14]
+    unsigned int v6;  // [bp-0x10]
+    unsigned int v7;  // [bp-0xc]
+
+    for (v7 = 0; v7 < 16; v7 += 1)
+    {
+        v0 = *((int *)(got.sha_info_data + v7 * 4));
+    }
+    for (v7 = 16; v7 < 80; v7 += 1)
+    {
+        v0 = v0 ^ v0 ^ v0 ^ v0;
+    }
+    v5 = *((int *)got.sha_info_digest);
+    v4 = *((int *)(got.sha_info_digest + 4));
+    v3 = *((int *)(got.sha_info_digest + 8));
+    v2 = *((int *)(got.sha_info_digest + 12));
+    v1 = *((int *)(got.sha_info_digest + 16));
+    for (v7 = 0; v7 < 20; v7 += 1)
+    {
+        v6 = ((unsigned int)(v5 * 32) | (unsigned int)(v5 >> 27)) + (v4 & v3 | (v4 ^ -1) & v2) + v1 + v0 + 1518500249;
+        v1 = v2;
+        v2 = v3;
+        v3 = (unsigned int)(v4 * 0x40000000) | (unsigned int)(v4 >> 2);
+        v4 = v5;
+        v5 = v6;
+    }
+    for (v7 = 20; v7 < 40; v7 += 1)
+    {
+        v6 = ((unsigned int)(v5 * 32) | (unsigned int)(v5 >> 27)) + (v4 ^ v3 ^ v2) + v1 + v0 + 1859775393;
+        v1 = v2;
+        v2 = v3;
+        v3 = (unsigned int)(v4 * 0x40000000) | (unsigned int)(v4 >> 2);
+        v4 = v5;
+        v5 = v6;
+    }
+    for (v7 = 40; v7 < 60; v7 += 1)
+    {
+        v6 = ((unsigned int)(v5 * 32) | (unsigned int)(v5 >> 27)) + (v4 & v3 | v4 & v2 | v3 & v2) + v1 + v0 + 2400959708;
+        v1 = v2;
+        v2 = v3;
+        v3 = (unsigned int)(v4 * 0x40000000) | (unsigned int)(v4 >> 2);
+        v4 = v5;
+        v5 = v6;
+    }
+    for (v7 = 60; v7 < 80; v7 += 1)
+    {
+        v6 = ((unsigned int)(v5 * 32) | (unsigned int)(v5 >> 27)) + (v4 ^ v3 ^ v2) + v1 + v0 + 3395469782;
+        v1 = v2;
+        v2 = v3;
+        v3 = (unsigned int)(v4 * 0x40000000) | (unsigned int)(v4 >> 2);
+        v4 = v5;
+        v5 = v6;
+    }
+    *((unsigned int *)got.sha_info_digest) = v5 + *((int *)got.sha_info_digest);
+    *((unsigned int *)(got.sha_info_digest + 4)) = v4 + *((int *)(got.sha_info_digest + 4));
+    *((unsigned int *)(got.sha_info_digest + 8)) = v3 + *((int *)(got.sha_info_digest + 8));
+    *((unsigned int *)(got.sha_info_digest + 12)) = v2 + *((int *)(got.sha_info_digest + 12));
+    *((unsigned int *)(got.sha_info_digest + 16)) = v1 + *((int *)(got.sha_info_digest + 16));
+    return got.sha_info_digest;
+}
+
 extern char got.sha_info_count_hi;
 extern char got.sha_info_count_lo;
 extern char got.sha_info_digest;
@@ -207,77 +278,6 @@ long long submain()
     *((unsigned long *)got.endTimer) = v4;
     printf("%0.6f\n");
     return v0;
-}
-
-extern char got.sha_info_data;
-extern char got.sha_info_digest;
-
-int sha_transform()
-{
-    unsigned int v0;  // [bp-0x168]
-    unsigned int v1;  // [bp-0x24]
-    unsigned int v2;  // [bp-0x20]
-    unsigned int v3;  // [bp-0x1c]
-    unsigned int v4;  // [bp-0x18]
-    unsigned int v5;  // [bp-0x14]
-    unsigned int v6;  // [bp-0x10]
-    unsigned int v7;  // [bp-0xc]
-
-    for (v7 = 0; v7 < 16; v7 += 1)
-    {
-        v0 = *((int *)(got.sha_info_data + v7 * 4));
-    }
-    for (v7 = 16; v7 < 80; v7 += 1)
-    {
-        v0 = v0 ^ v0 ^ v0 ^ v0;
-    }
-    v5 = *((int *)got.sha_info_digest);
-    v4 = *((int *)(got.sha_info_digest + 4));
-    v3 = *((int *)(got.sha_info_digest + 8));
-    v2 = *((int *)(got.sha_info_digest + 12));
-    v1 = *((int *)(got.sha_info_digest + 16));
-    for (v7 = 0; v7 < 20; v7 += 1)
-    {
-        v6 = ((unsigned int)(v5 * 32) | (unsigned int)(v5 >> 27)) + (v4 & v3 | (v4 ^ -1) & v2) + v1 + v0 + 1518500249;
-        v1 = v2;
-        v2 = v3;
-        v3 = (unsigned int)(v4 * 0x40000000) | (unsigned int)(v4 >> 2);
-        v4 = v5;
-        v5 = v6;
-    }
-    for (v7 = 20; v7 < 40; v7 += 1)
-    {
-        v6 = ((unsigned int)(v5 * 32) | (unsigned int)(v5 >> 27)) + (v4 ^ v3 ^ v2) + v1 + v0 + 1859775393;
-        v1 = v2;
-        v2 = v3;
-        v3 = (unsigned int)(v4 * 0x40000000) | (unsigned int)(v4 >> 2);
-        v4 = v5;
-        v5 = v6;
-    }
-    for (v7 = 40; v7 < 60; v7 += 1)
-    {
-        v6 = ((unsigned int)(v5 * 32) | (unsigned int)(v5 >> 27)) + (v4 & v3 | v4 & v2 | v3 & v2) + v1 + v0 + 2400959708;
-        v1 = v2;
-        v2 = v3;
-        v3 = (unsigned int)(v4 * 0x40000000) | (unsigned int)(v4 >> 2);
-        v4 = v5;
-        v5 = v6;
-    }
-    for (v7 = 60; v7 < 80; v7 += 1)
-    {
-        v6 = ((unsigned int)(v5 * 32) | (unsigned int)(v5 >> 27)) + (v4 ^ v3 ^ v2) + v1 + v0 + 3395469782;
-        v1 = v2;
-        v2 = v3;
-        v3 = (unsigned int)(v4 * 0x40000000) | (unsigned int)(v4 >> 2);
-        v4 = v5;
-        v5 = v6;
-    }
-    *((unsigned int *)got.sha_info_digest) = v5 + *((int *)got.sha_info_digest);
-    *((unsigned int *)(got.sha_info_digest + 4)) = v4 + *((int *)(got.sha_info_digest + 4));
-    *((unsigned int *)(got.sha_info_digest + 8)) = v3 + *((int *)(got.sha_info_digest + 8));
-    *((unsigned int *)(got.sha_info_digest + 12)) = v2 + *((int *)(got.sha_info_digest + 12));
-    *((unsigned int *)(got.sha_info_digest + 16)) = v1 + *((int *)(got.sha_info_digest + 16));
-    return got.sha_info_digest;
 }
 
 int rtclock()

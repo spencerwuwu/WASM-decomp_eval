@@ -1,3 +1,42 @@
+long long kernel_floyd_warshall(unsigned int a0, unsigned long a1)
+{
+    unsigned long long v1;  // rdi
+    unsigned long v2;  // rax
+    unsigned long long v3;  // rax
+    void* v5;  // rdi
+    unsigned int *v6;  // r8
+    void* v7;  // r9
+    unsigned long long v8;  // rdx
+    unsigned long long v9;  // rcx
+
+    if ((unsigned int)v1 > 0)
+    {
+        v3 = v1;
+        do
+        {
+            v8 = 0;
+            do
+            {
+                v5 = v8 * 11200 + a1;
+                v6 = v8 * 11200 + a1 + 0 * 4;
+                v7 = 0;
+                do
+                {
+                    *((int *)((char *)v5 + 0x4 * v7)) = (*((int *)((char *)v5 + 0x4 * v7)) < *((int *)(0 * 11200 + a1 + (v7 << 2))) + *(v6)? *((int *)((char *)v5 + 0x4 * v7)) : *((int *)(0 * 11200 + a1 + (v7 << 2))) + *(v6));
+                    v7 += 1;
+                }
+                while (v7 != v3);
+                v8 = 1;
+            }
+            while (v3 != 1);
+            v9 = 1;
+        }
+        while (v3 != 1);
+        return v3;
+    }
+    return v2;
+}
+
 extern char .L.str.3;
 extern char got.stderr;
 

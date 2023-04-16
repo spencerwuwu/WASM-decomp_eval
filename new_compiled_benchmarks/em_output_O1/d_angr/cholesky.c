@@ -1,3 +1,114 @@
+long long kernel_cholesky(unsigned int a0, unsigned long long a1)
+{
+    unsigned long v0;  // [bp-0x28]
+    int tmp_4;  // tmp #4
+    int tmp_2;  // tmp #2
+    unsigned long v2;  // rax
+    unsigned long v3;  // rdi
+    unsigned long long v4;  // rbx
+    void* v5;  // r15
+    unsigned long long *v6;  // rdx
+    uint128_t v7;  // xmm1
+    uint128_t v8;  // xmm1
+    uint128_t v9;  // xmm0
+    void* v10;  // rsi
+    uint128_t v11;  // xmm0
+    unsigned long v12;  // cc_ndep
+    void* v13;  // rax
+    void* v14;  // rax
+    uint128_t v15;  // xmm0
+    unsigned long long v16;  // cc_op
+    void* v17;  // cc_dep1
+    void* v18;  // rdx
+    uint128_t v19;  // xmm1
+    uint128_t v20;  // xmm1
+    unsigned long v21;  // cc_ndep
+    unsigned long long v22;  // cc_op
+    void* v23;  // cc_dep1
+    void* v24;  // r12
+    unsigned long v25;  // cc_dep1
+    unsigned long long v26;  // rax
+    unsigned long v27;  // cc_ndep
+
+    v0 = v2;
+    if ((unsigned int)v3 > 0)
+    {
+        v4 = a1;
+        v5 = 0;
+        do
+        {
+            if (v5 != 0)
+            {
+                v13 = 0;
+                do
+                {
+                    if (v13 != 0)
+                    {
+                        v6 = 0 * 16000 + v4 + v13 * 8;
+                        v9 = 0;
+                        *((unsigned long long *)&v9) = *((long long *)(0 * 16000 + v4 + v13 * 8));
+                        v10 = 0;
+                        do
+                        {
+                            v7 = 0;
+                            *((unsigned long long *)&v7) = *((long long *)(0 * 16000 + v4 + v10 * 8));
+                            xmm1<16> = (xmm1<16> * Conv(64->128, Load(addr=(((0x0<64> * 0x3e80<64>) + rbx<8>) + (rsi<8> * 0x8<64>)), size=8, endness=Iend_LE)))
+                            v9 -= v8;
+                            *(v6) = v9;
+                            v10 += 1;
+                        }
+                        while (v10 != 0);
+                    }
+                    v11 = 0;
+                    *((unsigned long long *)&v11) = *((long long *)(0 * 16000 + v4 + v13 * 8));
+                    xmm0lq<8> = Conv(128->64, (xmm0<16> / Conv(64->128, Load(addr=(((rax<8> * 0x3e80<64>) + rbx<8>) + (rax<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+                    *((unsigned long long *)(0 * 16000 + v4 + v13 * 8)) = v11;
+                    v12 = (0 * 16000 + v4 <= 0 * 16000? 1 : 0);
+                    v13 += 1;
+                }
+                while (v13 != 0);
+                v14 = 0 * 16000 + v4;
+                v15 = 0;
+                *((unsigned long long *)&v15) = *((long long *)v14);
+                v16 = 19;
+                v17 = 0;
+                v18 = 0;
+                do
+                {
+                    v19 = 0;
+                    *((unsigned long long *)&v19) = *((long long *)((char *)v14 + 0x8 * v18));
+                    v20 = v19 * v19;
+                    v15 -= v20;
+                    *((unsigned long long *)v14) = v15;
+                    v21 = [D] amd64g_calculate_rflags_c(cc_op<8>, cc_dep1<8>, 0x0<64>, cc_ndep<8>);
+                    v18 += 1;
+                    v22 = 8;
+                    v23 = v18;
+                }
+                while (v18 != 0);
+            }
+            v24 = v5 * 16000 + v4;
+            v25 = BinaryOp CmpF & 69;
+            if ((BinaryOp CmpF & 1) != 0)
+            {
+                sqrt(*((long long *)(v5 * 16000 + v4 + v5 * 8)));
+            }
+            else
+            {
+                tmp_4 = UnaryOp Sqrt;
+                *((unsigned long long *)&v15) = tmp_4;
+            }
+            v26 = v24 + v5 * 8;
+            *((unsigned long long *)((char *)v24 + 0x8 * v5)) = v15;
+            v27 = [D] amd64g_calculate_rflags_c(0x0<64>, cc_dep1<8>, 0x0<64>, cc_ndep<8>);
+            v5 += 1;
+        }
+        while (v5 != v3);
+        return v26;
+    }
+    return v2;
+}
+
 extern char .L.str.3;
 extern char got.stderr;
 

@@ -109,59 +109,6 @@ int extractFloat64Sign(unsigned long a0)
     return (unsigned int)a0 / 0x8000000000000000;
 }
 
-int packFloat64(unsigned int a0, unsigned int a1, unsigned long a2)
-{
-    return a0 * 0x8000000000000000 + a1 * 0x10000000000000 + a2;
-}
-
-int propagateFloat64NaN(unsigned int a0, unsigned int a1)
-{
-    unsigned long long v0;  // [bp-0x40]
-    unsigned long long v1;  // [bp-0x38]
-    unsigned long long v2;  // [bp-0x30]
-    unsigned int v3;  // [bp-0x28]
-    unsigned int v4;  // [bp-0x24]
-    unsigned int v5;  // [bp-0x20]
-    unsigned int v6;  // [bp-0x1c]
-    unsigned long long v7;  // [bp-0x18], Other Possible Types: unsigned int
-    unsigned long long v8;  // [bp-0x10], Other Possible Types: unsigned int
-
-    v8 = a0;
-    v7 = a1;
-    v6 = float64_is_nan(*((long long *)&v8));
-    v5 = float64_is_signaling_nan(*((long long *)&v8));
-    v4 = float64_is_nan(*((long long *)&v7));
-    v3 = float64_is_signaling_nan(*((long long *)&v7));
-    v8 = 0x8000000000000 | *((long long *)&v8);
-    v7 = 0x8000000000000 | *((long long *)&v7);
-    if (v3 != 0 || v5 != 0)
-    {
-        float_raise(0x10);
-    }
-    if (v3 != 0)
-    {
-        v2 = v7;
-        return v2;
-    }
-    if (v5 != 0)
-    {
-        v1 = v8;
-        v2 = v1;
-        return v2;
-    }
-    if (v4 != 0)
-    {
-        v0 = v7;
-    }
-    else
-    {
-        v0 = v8;
-    }
-    v1 = v0;
-    v2 = v1;
-    return v2;
-}
-
 int normalizeFloat64Subnormal(unsigned long long a0, unsigned int *a1, unsigned long long *a2)
 {
     unsigned int v0;  // [bp-0x24]
@@ -172,54 +119,29 @@ int normalizeFloat64Subnormal(unsigned long long a0, unsigned int *a1, unsigned 
     return (unsigned int)a1;
 }
 
-int estimateDiv128To64(unsigned int a0, unsigned int a1, unsigned int a2)
+int countLeadingZeros64(unsigned long a0)
 {
-    unsigned long long v0;  // [bp-0x70], Other Possible Types: unsigned long
-    unsigned long long v1;  // [bp-0x68]
-    unsigned long long v2;  // [bp-0x60]
-    char v3;  // [bp-0x58]
-    char v4;  // [bp-0x50]
-    char v5;  // [bp-0x48]
-    unsigned long long v6;  // [bp-0x40], Other Possible Types: char
-    unsigned int v7;  // [bp-0x38]
-    unsigned int v8;  // [bp-0x30]
-    unsigned long long v9;  // [bp-0x10], Other Possible Types: unsigned long
+    unsigned int v0;  // [bp-0x14]
+    unsigned long v1;  // [bp-0x10], Other Possible Types: unsigned long long
 
-    if (a2 <= a0)
+    v1 = a0;
+    v0 = 0;
+    if (v1 < 0x100000000)
     {
-        v9 = -1;
-        return v9;
+        v0 += 32;
+        countLeadingZeros32(v1);
+        v0 = countLeadingZeros32(v1) + v0;
+        return v0;
     }
-    *((long long *)&v8) = a2 / 0x100000000;
-    if (*((long long *)&v8) << 32 <= a0)
-    {
-        v1 = -0x100000000;
-    }
-    else
-    {
-        v1 = (0 CONCAT a0) /m *((long long *)&v8) * 0x100000000;
-    }
-    v2 = v1;
-    mul64To128(a2, v2, &v4, &v3);
-    sub128(a0, a1, *((long long *)&v4), *((long long *)&v3), &v6, &v5);
-    while (*((long long *)&v6) < 0)
-    {
-        v2 -= 0x100000000;
-        *((long long *)&v7) = a2 * 0x100000000;
-        add128(*((long long *)&v6), *((long long *)&v5), *((long long *)&v8), *((long long *)&v7), &v6, &v5);
-    }
-    v6 = *((long long *)&v6) * 0x100000000 | *((long long *)&v5) >> 32;
-    if (*((long long *)&v8) << 32 <= v6)
-    {
-        v0 = 4294967295;
-        v2 = v0 | v2;
-        v9 = v2;
-        return v9;
-    }
-    v0 = (0 CONCAT v6) /m *((long long *)&v8);
-    v2 = v0 | v2;
-    v9 = v2;
-    return v9;
+    v1 >>= 32;
+    countLeadingZeros32(v1);
+    v0 = countLeadingZeros32(v1) + v0;
+    return v0;
+}
+
+int packFloat64(unsigned int a0, unsigned int a1, unsigned long a2)
+{
+    return a0 * 0x8000000000000000 + a1 * 0x10000000000000 + a2;
 }
 
 extern char got.float_exception_flags;
@@ -280,7 +202,7 @@ int roundAndPackFloat64(unsigned int a0, unsigned int a1, unsigned int a2)
                 v7 = v11;
                 return v7;
             }
-            if ((*((long long *)&v5) + v1 >= 0 || v6 != 2045) && v6 < 0)
+            if ((v6 != 2045 || *((long long *)&v5) + v1 >= 0) && v6 < 0)
             {
                 v2 = 1;
                 shift64RightJamming(*((long long *)&v5), 0 - v6, &v5);
@@ -301,7 +223,7 @@ int roundAndPackFloat64(unsigned int a0, unsigned int a1, unsigned int a2)
             return v7;
         }
     }
-    if (2045 > v6 || 2045 >= v6 && *((long long *)&v5) + v1 >= 0 || 2045 >= v6 && v6 != 2045)
+    if (2045 > v6 || 2045 >= v6 && v6 != 2045 || 2045 >= v6 && *((long long *)&v5) + v1 >= 0)
     {
         if (v0 != 0)
         {
@@ -320,6 +242,104 @@ int roundAndPackFloat64(unsigned int a0, unsigned int a1, unsigned int a2)
         v7 = packFloat64(a0, v6, *((long long *)&v5));
         return v7;
     }
+}
+
+int propagateFloat64NaN(unsigned int a0, unsigned int a1)
+{
+    unsigned long long v0;  // [bp-0x40]
+    unsigned long long v1;  // [bp-0x38]
+    unsigned long long v2;  // [bp-0x30]
+    unsigned int v3;  // [bp-0x28]
+    unsigned int v4;  // [bp-0x24]
+    unsigned int v5;  // [bp-0x20]
+    unsigned int v6;  // [bp-0x1c]
+    unsigned int v7;  // [bp-0x18], Other Possible Types: unsigned long long
+    unsigned int v8;  // [bp-0x10], Other Possible Types: unsigned long long
+
+    v8 = a0;
+    v7 = a1;
+    v6 = float64_is_nan(*((long long *)&v8));
+    v5 = float64_is_signaling_nan(*((long long *)&v8));
+    v4 = float64_is_nan(*((long long *)&v7));
+    v3 = float64_is_signaling_nan(*((long long *)&v7));
+    v8 = 0x8000000000000 | *((long long *)&v8);
+    v7 = 0x8000000000000 | *((long long *)&v7);
+    if (v3 != 0 || v5 != 0)
+    {
+        float_raise(0x10);
+    }
+    if (v3 != 0)
+    {
+        v2 = v7;
+        return v2;
+    }
+    if (v5 != 0)
+    {
+        v1 = v8;
+        v2 = v1;
+        return v2;
+    }
+    if (v4 != 0)
+    {
+        v0 = v7;
+    }
+    else
+    {
+        v0 = v8;
+    }
+    v1 = v0;
+    v2 = v1;
+    return v2;
+}
+
+int estimateDiv128To64(unsigned int a0, unsigned int a1, unsigned int a2)
+{
+    unsigned long long v0;  // [bp-0x70], Other Possible Types: unsigned long
+    unsigned long long v1;  // [bp-0x68]
+    unsigned long long v2;  // [bp-0x60], Other Possible Types: unsigned long
+    char v3;  // [bp-0x58]
+    char v4;  // [bp-0x50]
+    char v5;  // [bp-0x48]
+    char v6;  // [bp-0x40], Other Possible Types: unsigned long long
+    unsigned int v7;  // [bp-0x38]
+    unsigned int v8;  // [bp-0x30]
+    unsigned long long v9;  // [bp-0x10]
+
+    if (a2 <= a0)
+    {
+        v9 = -1;
+        return v9;
+    }
+    *((long long *)&v8) = a2 / 0x100000000;
+    if (*((long long *)&v8) << 32 <= a0)
+    {
+        v1 = -0x100000000;
+    }
+    else
+    {
+        v1 = (0 CONCAT a0) /m *((long long *)&v8) * 0x100000000;
+    }
+    v2 = v1;
+    mul64To128(a2, v2, &v4, &v3);
+    sub128(a0, a1, *((long long *)&v4), *((long long *)&v3), &v6, &v5);
+    while (*((long long *)&v6) < 0)
+    {
+        v2 -= 0x100000000;
+        *((long long *)&v7) = a2 * 0x100000000;
+        add128(*((long long *)&v6), *((long long *)&v5), *((long long *)&v8), *((long long *)&v7), &v6, &v5);
+    }
+    v6 = *((long long *)&v6) * 0x100000000 | *((long long *)&v5) >> 32;
+    if (*((long long *)&v8) << 32 <= v6)
+    {
+        v0 = 4294967295;
+        v2 = v0 | v2;
+        v9 = v2;
+        return v9;
+    }
+    v0 = (0 CONCAT v6) /m *((long long *)&v8);
+    v2 = v0 | v2;
+    v9 = v2;
+    return v9;
 }
 
 long long ullong_to_double(unsigned long a0)
@@ -359,26 +379,6 @@ long long submain()
     *((unsigned long *)got.endTimer) = v7;
     printf("%0.6f\n");
     return v4;
-}
-
-int countLeadingZeros64(unsigned long a0)
-{
-    unsigned int v0;  // [bp-0x14]
-    unsigned long v1;  // [bp-0x10], Other Possible Types: unsigned long long
-
-    v1 = a0;
-    v0 = 0;
-    if (v1 < 0x100000000)
-    {
-        v0 += 32;
-        countLeadingZeros32(v1);
-        v0 = countLeadingZeros32(v1) + v0;
-        return v0;
-    }
-    v1 >>= 32;
-    countLeadingZeros32(v1);
-    v0 = countLeadingZeros32(v1) + v0;
-    return v0;
 }
 
 extern char countLeadingZeros32.countLeadingZerosHigh;

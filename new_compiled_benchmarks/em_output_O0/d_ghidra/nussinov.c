@@ -2,49 +2,6 @@
 
 
 
-undefined8 submain(int param_1,char **param_2)
-
-{
-  int iVar1;
-  void *__ptr;
-  void *__ptr_00;
-  
-  __ptr = (void *)polybench_alloc_data(0x9c4,1);
-  __ptr_00 = (void *)polybench_alloc_data(0x5f5e10,4);
-  init_array(0x9c4,__ptr,__ptr_00);
-  kernel_nussinov(0x9c4,__ptr,__ptr_00);
-  if (0x2a < param_1) {
-    iVar1 = strcmp(*param_2,"");
-    if (iVar1 == 0) {
-      print_array(0x9c4,__ptr_00);
-    }
-  }
-  free(__ptr);
-  free(__ptr_00);
-  return 0;
-}
-
-
-
-void init_array(int param_1,long param_2,long param_3)
-
-{
-  int local_28;
-  int local_24;
-  
-  for (local_24 = 0; local_24 < param_1; local_24 = local_24 + 1) {
-    *(char *)(param_2 + local_24) = (char)((local_24 + 1) % 4);
-  }
-  for (local_24 = 0; local_24 < param_1; local_24 = local_24 + 1) {
-    for (local_28 = 0; local_28 < param_1; local_28 = local_28 + 1) {
-      *(undefined4 *)(param_3 + (long)local_24 * 10000 + (long)local_28 * 4) = 0;
-    }
-  }
-  return;
-}
-
-
-
 void kernel_nussinov(int param_1,long param_2,long param_3)
 
 {
@@ -121,6 +78,49 @@ void kernel_nussinov(int param_1,long param_2,long param_3)
         *(int *)(param_3 + (long)local_24 * 10000 + (long)local_28 * 4) = local_40;
         iVar2 = local_2c;
       }
+    }
+  }
+  return;
+}
+
+
+
+undefined8 submain(int param_1,char **param_2)
+
+{
+  int iVar1;
+  void *__ptr;
+  void *__ptr_00;
+  
+  __ptr = (void *)polybench_alloc_data(0x9c4,1);
+  __ptr_00 = (void *)polybench_alloc_data(0x5f5e10,4);
+  init_array(0x9c4,__ptr,__ptr_00);
+  kernel_nussinov(0x9c4,__ptr,__ptr_00);
+  if (0x2a < param_1) {
+    iVar1 = strcmp(*param_2,"");
+    if (iVar1 == 0) {
+      print_array(0x9c4,__ptr_00);
+    }
+  }
+  free(__ptr);
+  free(__ptr_00);
+  return 0;
+}
+
+
+
+void init_array(int param_1,long param_2,long param_3)
+
+{
+  int local_28;
+  int local_24;
+  
+  for (local_24 = 0; local_24 < param_1; local_24 = local_24 + 1) {
+    *(char *)(param_2 + local_24) = (char)((local_24 + 1) % 4);
+  }
+  for (local_24 = 0; local_24 < param_1; local_24 = local_24 + 1) {
+    for (local_28 = 0; local_28 < param_1; local_28 = local_28 + 1) {
+      *(undefined4 *)(param_3 + (long)local_24 * 10000 + (long)local_28 * 4) = 0;
     }
   }
   return;

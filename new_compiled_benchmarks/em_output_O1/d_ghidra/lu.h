@@ -55,29 +55,33 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x1fb)));
-
-typedef pointer pointer __((offset(0x372)));
+typedef pointer pointer __((offset(0x517)));
 
 typedef pointer pointer __((offset(0x41)));
 
-typedef pointer pointer __((offset(0x334)));
+typedef pointer pointer __((offset(0x31b)));
 
-typedef pointer pointer __((offset(0x114)));
+typedef pointer pointer __((offset(0x443)));
 
-typedef pointer pointer __((offset(0x3c7)));
+typedef pointer pointer __((offset(0x146)));
 
-typedef pointer pointer __((offset(0x323)));
+typedef pointer pointer __((offset(0x492)));
 
-typedef pointer pointer __((offset(0x1f7)));
+typedef pointer pointer __((offset(0x234)));
 
-typedef pointer pointer __((offset(0x57)));
+typedef pointer pointer __((offset(0x454)));
+
+typedef pointer pointer __((offset(0x177)));
 
 typedef pointer pointer __((offset(0x28)));
 
 typedef pointer pointer __((offset(0x26)));
 
-typedef pointer pointer __((offset(0x3f7)));
+typedef pointer pointer __((offset(0x317)));
+
+typedef pointer pointer __((offset(0x4e7)));
+
+typedef pointer pointer __((offset(0x120)));
 
 typedef pointer pointer __((offset(0x30)));
 
@@ -230,6 +234,7 @@ struct Elf64_Sym {
 
 
 
+void kernel_lu(uint param_1,long param_2);
 undefined8 submain(int param_1,char **param_2);
 undefined polybench_alloc_data();
 void * memset(void * __s, int __c, size_t __n);

@@ -6,5 +6,9 @@ extractFloat64Frac:f27
 extractFloat64Exp:f28
 extractFloat64Sign:f29
 packFloat64:f30
-float64_add:f31
-ullong_to_double:f32
+roundAndPackFloat64:f31
+normalizeRoundAndPackFloat64:f32
+addFloat64Sigs:f33
+subFloat64Sigs:f34
+float64_add:f35
+ullong_to_double:f36

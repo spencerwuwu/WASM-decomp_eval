@@ -1,9 +1,61 @@
+long long kernel_gesummv(unsigned int a0, unsigned long a1, unsigned long a2, unsigned long long a3, void* a4, unsigned long long a5)
+{
+    unsigned long long v1;  // rdi
+    unsigned long long v2;  // rax
+    unsigned long v3;  // rax
+    void* v4;  // r10
+    uint128_t v5;  // xmm2
+    uint128_t v6;  // xmm2
+    uint128_t v7;  // xmm2
+    int v8;  // xmm1
+    uint128_t v9;  // xmm2
+    uint128_t v10;  // xmm3
+    int v11;  // xmm0
+    unsigned long long v12;  // rdi
+
+    if ((unsigned int)v1 > 0)
+    {
+        v2 = v1;
+        v12 = 0;
+        do
+        {
+            *((long long *)(a3 + v12 * 8)) = 0;
+            *((long long *)(a5 + v12 * 8)) = 0;
+            v4 = 0;
+            do
+            {
+                v5 = 0;
+                *((unsigned long long *)&v5) = *((long long *)(a1 + v12 * 10400 + v4 * 8));
+                xmm2lq<8> = Conv(128->64, ((xmm2<16> * Conv(64->128, Load(addr=(r8<8> + (r10<8> * 0x8<64>)), size=8, endness=Iend_LE))) + Conv(64->128, Load(addr=(rcx<8> + (rdi<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+                *((unsigned long long *)(a3 + v12 * 8)) = v5;
+                v6 = 0;
+                *((unsigned long long *)&v6) = *((long long *)(v12 * 10400 + a2 + v4 * 8));
+                xmm2lq<8> = Conv(128->64, ((xmm2<16> * Conv(64->128, Load(addr=(r8<8> + (r10<8> * 0x8<64>)), size=8, endness=Iend_LE))) + Conv(64->128, Load(addr=(r9<8> + (rdi<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+                *((unsigned long long *)(a5 + v12 * 8)) = v6;
+                v4 += 1;
+            }
+            while (v4 != v2);
+            v7 = 0;
+            *((unsigned long long *)&v7) = *((long long *)a5);
+            v9 = v7 * v8;
+            v10 = 0;
+            *((unsigned long long *)&v10) = *((long long *)a3);
+            *((unsigned long long *)&v10) = (unsigned long long)(v10 * v11 + v9);
+            *((unsigned long long *)a5) = v10;
+            v12 = 1;
+        }
+        while (v2 != 1);
+        return v2;
+    }
+    return v3;
+}
+
 extern char .L.str.3;
 extern char got.stderr;
 
 long long submain(unsigned int a0, unsigned long a1)
 {
-    char **v0;  // [bp-0x38], Other Possible Types: unsigned long, void*
+    unsigned long v0;  // [bp-0x38], Other Possible Types: void*, char **
     unsigned long v2;  // rax
     void* v4;  // rbx
     void* v5;  // r14

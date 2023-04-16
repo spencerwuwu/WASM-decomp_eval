@@ -11,9 +11,9 @@ U32*env_____table_base;
 U32*GOTX2Emem__float_exception_flags;
 U32*GOTX2Emem__float_rounding_mode;
 U32*GOTX2Emem__startTimer;
-U32*GOTX2Emem__z_output;
 U32*GOTX2Emem__b_input;
 U32*GOTX2Emem__a_input;
+U32*GOTX2Emem__z_output;
 U32*GOTX2Emem__endTimer;
 U32 g10;
 U32 g11;
@@ -52,31 +52,45 @@ U32 f12(dfaddInstance*,U64);
 
 U64 f13(dfaddInstance*,U32,U32,U64);
 
-U64 f14(dfaddInstance*,U64,U64);
+U64 f14(dfaddInstance*,U32,U32,U64);
 
 U64 f15(dfaddInstance*,U32,U32,U64);
 
-F64 f16(dfaddInstance*,U64);
+U64 f16(dfaddInstance*,U64,U64,U32);
 
-U32 f17(dfaddInstance*);
+U64 f17(dfaddInstance*,U64,U64,U32);
 
-void f18(dfaddInstance*,U32,U32,U32,U32);
+U64 f18(dfaddInstance*,U64,U64);
 
-U32 f19(dfaddInstance*,U32,U32);
+F64 f19(dfaddInstance*,U64);
 
-U32 f20(dfaddInstance*,U32,U32);
+U32 f20(dfaddInstance*);
 
-U32 f21(dfaddInstance*,U32,U32);
+void f21(dfaddInstance*,U32,U32,U32,U32);
 
 U32 f22(dfaddInstance*,U32,U32);
 
 U32 f23(dfaddInstance*,U32,U32);
 
-U32 f24(dfaddInstance*,U32,U32,U32,U32);
+U32 f24(dfaddInstance*,U32,U32);
 
-U32 f25(dfaddInstance*,U32,U32,U32,U32);
+U32 f25(dfaddInstance*,U32,U32);
 
-F64 f26(dfaddInstance*,U32,U32);
+U32 f26(dfaddInstance*,U32,U32);
+
+U32 f27(dfaddInstance*,U32,U32,U32,U32);
+
+U32 f28(dfaddInstance*,U32,U32,U32,U32);
+
+U32 f29(dfaddInstance*,U32,U32,U32,U32);
+
+U32 f30(dfaddInstance*,U32,U32,U32,U32,U32);
+
+U32 f31(dfaddInstance*,U32,U32,U32,U32,U32);
+
+U32 f32(dfaddInstance*,U32,U32,U32,U32);
+
+F64 f33(dfaddInstance*,U32,U32);
 
 void dfadd____wasm_call_ctors(dfaddInstance*i);
 
@@ -98,6 +112,14 @@ U32 dfadd_extractFloat64Sign(dfaddInstance*i,U32 l0,U32 l1);
 
 U32 dfadd_packFloat64(dfaddInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
+U32 dfadd_roundAndPackFloat64(dfaddInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
+U32 dfadd_normalizeRoundAndPackFloat64(dfaddInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
+U32 dfadd_addFloat64Sigs(dfaddInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4);
+
+U32 dfadd_subFloat64Sigs(dfaddInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4);
+
 U32 dfadd_float64_add(dfaddInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
 F64 dfadd_ullong_to_double(dfaddInstance*i,U32 l0,U32 l1);
@@ -117,6 +139,14 @@ U32 dfadd_origX24extractFloat64Exp(dfaddInstance*i,U64 l0);
 U32 dfadd_origX24extractFloat64Sign(dfaddInstance*i,U64 l0);
 
 U64 dfadd_origX24packFloat64(dfaddInstance*i,U32 l0,U32 l1,U64 l2);
+
+U64 dfadd_origX24roundAndPackFloat64(dfaddInstance*i,U32 l0,U32 l1,U64 l2);
+
+U64 dfadd_origX24normalizeRoundAndPackFloat64(dfaddInstance*i,U32 l0,U32 l1,U64 l2);
+
+U64 dfadd_origX24addFloat64Sigs(dfaddInstance*i,U64 l0,U64 l1,U32 l2);
+
+U64 dfadd_origX24subFloat64Sigs(dfaddInstance*i,U64 l0,U64 l1,U32 l2);
 
 U64 dfadd_origX24float64_add(dfaddInstance*i,U64 l0,U64 l1);
 

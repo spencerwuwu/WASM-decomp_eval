@@ -2,6 +2,139 @@
 
 
 
+void kernel_jacobi_1d(int param_1,uint param_2,ulong param_3,ulong param_4)
+
+{
+  ulong uVar1;
+  double *pdVar2;
+  double *pdVar3;
+  double *pdVar4;
+  double dVar5;
+  double dVar6;
+  double dVar7;
+  double dVar8;
+  double dVar9;
+  double dVar10;
+  ulong uVar11;
+  ulong uVar12;
+  ulong uVar13;
+  ulong uVar14;
+  int iVar15;
+  ulong uVar16;
+  
+  if (0 < param_1) {
+    uVar11 = (ulong)(param_2 - 1);
+    uVar1 = uVar11 - 1;
+    uVar12 = uVar1 & 0xfffffffffffffffc;
+    iVar15 = 0;
+    do {
+      if (2 < (int)param_2) {
+        uVar16 = 1;
+        if (uVar1 < 4 || param_3 < param_4 + uVar11 * 8 && param_4 + 8 < param_3 + uVar11 * 8 + 8) {
+LAB_00100134:
+          uVar13 = uVar16;
+          if ((param_2 & 1) != 0) {
+            pdVar2 = (double *)((param_3 - 8) + uVar16 * 8);
+            uVar13 = uVar16 + 1;
+            *(double *)(param_4 + uVar16 * 8) =
+                 (pdVar2[1] + *pdVar2 + *(double *)(param_3 + 8 + uVar16 * 8)) * 0.33333;
+          }
+          if (~uVar16 != -uVar11) {
+            do {
+              pdVar2 = (double *)((param_3 - 8) + uVar13 * 8);
+              *(double *)(param_4 + uVar13 * 8) =
+                   (pdVar2[1] + *pdVar2 + *(double *)(param_3 + 8 + uVar13 * 8)) * 0.33333;
+              pdVar2 = (double *)(param_3 + uVar13 * 8);
+              *(double *)(param_4 + 8 + uVar13 * 8) =
+                   (pdVar2[1] + *pdVar2 + *(double *)(param_3 + 0x10 + uVar13 * 8)) * 0.33333;
+              uVar13 = uVar13 + 2;
+            } while (uVar13 != uVar11);
+          }
+        }
+        else {
+          uVar16 = 0;
+          do {
+            pdVar2 = (double *)(param_3 + uVar16 * 8);
+            pdVar3 = (double *)(param_3 + 0x10 + uVar16 * 8);
+            dVar5 = *pdVar3;
+            dVar6 = pdVar3[1];
+            uVar14 = uVar16 * 8 | 8;
+            pdVar3 = (double *)(param_3 + 0x10 + uVar14);
+            dVar7 = *pdVar3;
+            dVar8 = pdVar3[1];
+            uVar13 = uVar16 * 8 | 0x10;
+            pdVar3 = (double *)(param_3 + uVar13);
+            pdVar4 = (double *)(param_3 + 0x10 + uVar13);
+            dVar9 = *pdVar4;
+            dVar10 = pdVar4[1];
+            *(undefined (*) [16])(param_4 + uVar14) =
+                 CONCAT88((pdVar3[1] + ((double *)(param_3 + uVar14))[1] + pdVar2[1]) * 0.33333,
+                          (*pdVar3 + *(double *)(param_3 + uVar14) + *pdVar2) * 0.33333);
+            *(undefined (*) [16])(param_4 + 0x10 + uVar14) =
+                 CONCAT88((dVar10 + dVar8 + dVar6) * 0.33333,(dVar9 + dVar7 + dVar5) * 0.33333);
+            uVar16 = uVar16 + 4;
+          } while (uVar16 != uVar12);
+          uVar16 = uVar12 + 1;
+          if (uVar1 != uVar12) goto LAB_00100134;
+        }
+        if (2 < (int)param_2) {
+          uVar16 = 1;
+          if (3 < uVar1 &&
+              (param_4 + uVar11 * 8 + 8 <= param_3 + 8 || param_3 + uVar11 * 8 <= param_4)) {
+            uVar16 = 0;
+            do {
+              pdVar2 = (double *)(param_4 + uVar16 * 8);
+              pdVar3 = (double *)(param_4 + 0x10 + uVar16 * 8);
+              dVar5 = *pdVar3;
+              dVar6 = pdVar3[1];
+              uVar14 = uVar16 * 8 | 8;
+              pdVar3 = (double *)(param_4 + 0x10 + uVar14);
+              dVar7 = *pdVar3;
+              dVar8 = pdVar3[1];
+              uVar13 = uVar16 * 8 | 0x10;
+              pdVar3 = (double *)(param_4 + uVar13);
+              pdVar4 = (double *)(param_4 + 0x10 + uVar13);
+              dVar9 = *pdVar4;
+              dVar10 = pdVar4[1];
+              *(undefined (*) [16])(param_3 + uVar14) =
+                   CONCAT88((pdVar3[1] + ((double *)(param_4 + uVar14))[1] + pdVar2[1]) * 0.33333,
+                            (*pdVar3 + *(double *)(param_4 + uVar14) + *pdVar2) * 0.33333);
+              *(undefined (*) [16])(param_3 + 0x10 + uVar14) =
+                   CONCAT88((dVar10 + dVar8 + dVar6) * 0.33333,(dVar9 + dVar7 + dVar5) * 0.33333);
+              uVar16 = uVar16 + 4;
+            } while (uVar16 != uVar12);
+            uVar16 = uVar12 + 1;
+            if (uVar1 == uVar12) goto LAB_00100090;
+          }
+          uVar13 = uVar16;
+          if ((param_2 & 1) != 0) {
+            pdVar2 = (double *)((param_4 - 8) + uVar16 * 8);
+            uVar13 = uVar16 + 1;
+            *(double *)(param_3 + uVar16 * 8) =
+                 (pdVar2[1] + *pdVar2 + *(double *)(param_4 + 8 + uVar16 * 8)) * 0.33333;
+          }
+          if (~uVar16 != -uVar11) {
+            do {
+              pdVar2 = (double *)((param_4 - 8) + uVar13 * 8);
+              *(double *)(param_3 + uVar13 * 8) =
+                   (pdVar2[1] + *pdVar2 + *(double *)(param_4 + 8 + uVar13 * 8)) * 0.33333;
+              pdVar2 = (double *)(param_4 + uVar13 * 8);
+              *(double *)(param_3 + 8 + uVar13 * 8) =
+                   (pdVar2[1] + *pdVar2 + *(double *)(param_4 + 0x10 + uVar13 * 8)) * 0.33333;
+              uVar13 = uVar13 + 2;
+            } while (uVar13 != uVar11);
+          }
+        }
+      }
+LAB_00100090:
+      iVar15 = iVar15 + 1;
+    } while (iVar15 != param_1);
+  }
+  return;
+}
+
+
+
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined8 submain(int param_1,char **param_2)
@@ -31,8 +164,8 @@ undefined8 submain(int param_1,char **param_2)
   
   __ptr = (void *)polybench_alloc_data(2000,8);
   __ptr_00 = (void *)polybench_alloc_data(2000,8);
-  auVar10 = __LCPI0_4;
-  auVar9 = __LCPI0_2;
+  auVar10 = __LCPI1_4;
+  auVar9 = __LCPI1_2;
   uVar11 = 0;
   if ((ulong)((long)__ptr_00 - (long)__ptr) < 0x10) {
     do {
@@ -141,13 +274,13 @@ undefined8 submain(int param_1,char **param_2)
       pdVar1 = (double *)((long)__ptr_00 + lVar14 * 8);
       *(double *)((long)__ptr + lVar14 * 8 + 8) =
            (pdVar1[1] + *pdVar1 + *(double *)((long)__ptr_00 + lVar14 * 8 + 0x10)) * 0.33333;
-      __stream = _DAT_14d3d8d48388b4c;
+      __stream = _DAT_1653d8d48388b4c;
       lVar14 = lVar14 + 2;
     } while (lVar14 != 1999);
     iVar13 = iVar13 + 1;
   } while (iVar13 != 500);
   if ((0x2a < param_1) && (**param_2 == '\0')) {
-    fwrite(_L_str_1,0x16,1,_DAT_14d3d8d48388b4c);
+    fwrite(_L_str_1,0x16,1,_DAT_1653d8d48388b4c);
     lVar14 = 0;
     fprintf(__stream,"begin dump: %s",&_L_str_3);
     do {

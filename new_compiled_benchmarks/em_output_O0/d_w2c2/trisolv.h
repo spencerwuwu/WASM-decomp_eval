@@ -23,9 +23,9 @@ void f4(trisolvInstance*);
 
 void f5(trisolvInstance*);
 
-U32 f6(trisolvInstance*,U32,U32);
+void f6(trisolvInstance*,U32,U32,U32,U32);
 
-void f7(trisolvInstance*,U32,U32,U32,U32);
+U32 f7(trisolvInstance*,U32,U32);
 
 void f8(trisolvInstance*,U32,U32,U32,U32);
 
@@ -36,6 +36,8 @@ U32 f10(trisolvInstance*,U64,U32);
 void trisolv____wasm_call_ctors(trisolvInstance*i);
 
 void trisolv____wasm_apply_data_relocs(trisolvInstance*i);
+
+void trisolv_kernel_trisolv(trisolvInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
 
 U32 trisolv_submain(trisolvInstance*i,U32 l0,U32 l1);
 

@@ -1,29 +1,3 @@
-extern char .L.str;
-
-long long submain(unsigned int a0, unsigned long long *a1)
-{
-    void* v0;  // [bp-0x28]
-    unsigned int v1;  // [bp-0x1c]
-
-    v1 = 2800;
-    v0 = polybench_alloc_data(0x77a100, 0x4);
-    init_array(v1, v0);
-    kernel_floyd_warshall(v1, v0);
-    if (a0 > 42)
-    {
-        if (strcmp(*(a1), &.L.str) == 0)
-        {
-            print_array(v1, v0);
-            free(v0);
-            return 0;
-        }
-        free(v0);
-        return 0;
-    }
-    free(v0);
-    return 0;
-}
-
 int kernel_floyd_warshall(unsigned int a0, unsigned long a1)
 {
     unsigned int v0;  // [bp-0x28]
@@ -50,6 +24,32 @@ int kernel_floyd_warshall(unsigned int a0, unsigned long a1)
         }
     }
     return;
+}
+
+extern char .L.str;
+
+long long submain(unsigned int a0, unsigned long long *a1)
+{
+    unsigned long v0;  // [bp-0x28]
+    unsigned int v1;  // [bp-0x1c]
+
+    v1 = 2800;
+    v0 = polybench_alloc_data(0x77a100, 0x4);
+    init_array(v1, v0);
+    kernel_floyd_warshall(v1, v0);
+    if (a0 > 42)
+    {
+        if (strcmp(*(a1), &.L.str) == 0)
+        {
+            print_array(v1, v0);
+            free(v0);
+            return 0;
+        }
+        free(v0);
+        return 0;
+    }
+    free(v0);
+    return 0;
 }
 
 extern char .L.str.3;

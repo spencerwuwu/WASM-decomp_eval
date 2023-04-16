@@ -138,17 +138,32 @@ u32 w2c_dfsin_extractFloat64Exp(w2c_dfsin*, u32, u32);
 /* export: 'extractFloat64Sign' */
 u32 w2c_dfsin_extractFloat64Sign(w2c_dfsin*, u32, u32);
 
+/* export: 'normalizeFloat64Subnormal' */
+void w2c_dfsin_normalizeFloat64Subnormal(w2c_dfsin*, u32, u32, u32, u32);
+
 /* export: 'packFloat64' */
 u32 w2c_dfsin_packFloat64(w2c_dfsin*, u32, u32, u32, u32);
+
+/* export: 'roundAndPackFloat64' */
+u32 w2c_dfsin_roundAndPackFloat64(w2c_dfsin*, u32, u32, u32, u32);
+
+/* export: 'float_rounding_mode' */
+u32* w2c_dfsin_float_rounding_mode(w2c_dfsin* instance);
+
+/* export: 'normalizeRoundAndPackFloat64' */
+u32 w2c_dfsin_normalizeRoundAndPackFloat64(w2c_dfsin*, u32, u32, u32, u32);
 
 /* export: 'int32_to_float64' */
 u32 w2c_dfsin_int32_to_float64(w2c_dfsin*, u32);
 
+/* export: 'addFloat64Sigs' */
+u32 w2c_dfsin_addFloat64Sigs(w2c_dfsin*, u32, u32, u32, u32, u32);
+
+/* export: 'subFloat64Sigs' */
+u32 w2c_dfsin_subFloat64Sigs(w2c_dfsin*, u32, u32, u32, u32, u32);
+
 /* export: 'float64_add' */
 u32 w2c_dfsin_float64_add(w2c_dfsin*, u32, u32, u32, u32);
-
-/* export: 'float_rounding_mode' */
-u32* w2c_dfsin_float_rounding_mode(w2c_dfsin* instance);
 
 /* export: 'float64_mul' */
 u32 w2c_dfsin_float64_mul(w2c_dfsin*, u32, u32, u32, u32);
@@ -219,11 +234,26 @@ u32 w2c_dfsin_orig0x24extractFloat64Exp(w2c_dfsin*, u64);
 /* export: 'orig$extractFloat64Sign' */
 u32 w2c_dfsin_orig0x24extractFloat64Sign(w2c_dfsin*, u64);
 
+/* export: 'orig$normalizeFloat64Subnormal' */
+void w2c_dfsin_orig0x24normalizeFloat64Subnormal(w2c_dfsin*, u64, u32, u32);
+
 /* export: 'orig$packFloat64' */
 u64 w2c_dfsin_orig0x24packFloat64(w2c_dfsin*, u32, u32, u64);
 
+/* export: 'orig$roundAndPackFloat64' */
+u64 w2c_dfsin_orig0x24roundAndPackFloat64(w2c_dfsin*, u32, u32, u64);
+
+/* export: 'orig$normalizeRoundAndPackFloat64' */
+u64 w2c_dfsin_orig0x24normalizeRoundAndPackFloat64(w2c_dfsin*, u32, u32, u64);
+
 /* export: 'orig$int32_to_float64' */
 u64 w2c_dfsin_orig0x24int32_to_float64(w2c_dfsin*, u32);
+
+/* export: 'orig$addFloat64Sigs' */
+u64 w2c_dfsin_orig0x24addFloat64Sigs(w2c_dfsin*, u64, u64, u32);
+
+/* export: 'orig$subFloat64Sigs' */
+u64 w2c_dfsin_orig0x24subFloat64Sigs(w2c_dfsin*, u64, u64, u32);
 
 /* export: 'orig$float64_add' */
 u64 w2c_dfsin_orig0x24float64_add(w2c_dfsin*, u64, u64);

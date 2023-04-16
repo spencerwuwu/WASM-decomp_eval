@@ -1,3 +1,66 @@
+long long kernel_syrk(unsigned int a0, unsigned int a1, unsigned long a2, unsigned long a3)
+{
+    unsigned long v1;  // rdi
+    void* v3;  // r9
+    unsigned long v4;  // rax
+    void* v5;  // r11
+    void* v6;  // r10
+    uint128_t v7;  // xmm2
+    int v8;  // xmm1
+    unsigned long v9;  // rsi
+    unsigned long long v10;  // r11
+    unsigned long long *v11;  // rbx
+    void* v12;  // r14
+    uint128_t v13;  // xmm2
+    int v14;  // xmm0
+    unsigned long long v15;  // r9
+    unsigned long long v16;  // r8
+
+    if ((unsigned int)v1 > 0)
+    {
+        v3 = 0;
+        do
+        {
+            v5 = 0;
+            do
+            {
+                v6 = v3 * 9600 + a2;
+                v7 = 0;
+                *((unsigned long long *)&v7) = *((long long *)(v3 * 9600 + a2 + v5 * 8));
+                *((unsigned long long *)&v7) = (unsigned long long)(v7 * v8);
+                *((unsigned long long *)(v3 * 9600 + a2 + v5 * 8)) = v7;
+                v5 += 1;
+            }
+            while (v5 != 1);
+            if ((unsigned int)v9 > 0)
+            {
+                v10 = 0;
+                do
+                {
+                    v11 = 0 * 8000 + a3 + v10 * 8;
+                    v12 = 0;
+                    do
+                    {
+                        v13 = 0;
+                        *((unsigned long long *)&v13) = *(v11);
+                        xmm2lq<8> = Conv(128->64, (((xmm2<16> * xmm0<16>) * Conv(64->128, Load(addr=(((r14<8> * 0x1f40<64>) + rcx<8>) + (r11<8> * 0x8<64>)), size=8, endness=Iend_LE))) + Conv(64->128, Load(addr=(r10<8> + (r14<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+                        *((unsigned long long *)((char *)v6 + 0x8 * v12)) = v13;
+                        v12 += 1;
+                    }
+                    while (v12 != 1);
+                    v10 = 1;
+                }
+                while (v9 != 1);
+            }
+            v15 = 1;
+            v16 = 2;
+        }
+        while (v1 != 1);
+        return v1;
+    }
+    return v4;
+}
+
 extern char .L.str.3;
 extern char got.stderr;
 

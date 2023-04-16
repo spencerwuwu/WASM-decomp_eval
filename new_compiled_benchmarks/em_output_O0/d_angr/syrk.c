@@ -1,73 +1,3 @@
-extern char .L.str;
-
-long long submain(unsigned int a0, unsigned long long *a1)
-{
-    void* v0;  // [bp-0x40]
-    void* v1;  // [bp-0x38]
-    char v2;  // [bp-0x30]
-    char v3;  // [bp-0x28]
-    unsigned int v4;  // [bp-0x20]
-    unsigned int v5;  // [bp-0x1c]
-    unsigned int v6;  // [bp-0xc]
-    void* v9;  // rdi
-
-    v6 = a0;
-    v5 = 1200;
-    v4 = 1000;
-    v1 = polybench_alloc_data(0x15f900, 0x8);
-    v0 = polybench_alloc_data(0x124f80, 0x8);
-    init_array(v5, v4, &v3, &v2, v1, v0);
-    kernel_syrk(v5, v4, v1, v0);
-    if (v6 > 42)
-    {
-        if (strcmp(*(a1), &.L.str) == 0)
-        {
-            print_array(v5, v1);
-            free(v1);
-            v9 = v0;
-            free(rdi<8>);
-            return 0;
-        }
-        free(v1);
-        v9 = v0;
-        free(rdi<8>);
-        return 0;
-    }
-    free(v1);
-    v9 = v0;
-    free(rdi<8>);
-    return 0;
-}
-
-int init_array(unsigned int a0, unsigned int a1, unsigned long long *a2, unsigned long long *a3, unsigned long a4, unsigned long a5)
-{
-    unsigned int v0;  // [bp-0x38]
-    unsigned int v1;  // [bp-0x34]
-    unsigned int v2;  // [bp-0xc]
-    unsigned long v4;  // rdi
-    unsigned long long v5;  // xmm1lq
-
-    v2 = v4;
-    *(a2) = 0x3ff8000000000000;
-    *(a3) = 4608083138725491507;
-    for (v1 = 0; v1 < v2; v1 += 1)
-    {
-        for (v0 = 0; v0 < a1; v0 += 1)
-        {
-            v5 = v2;
-            *((unsigned long long *)(a5 + v1 * 8000 + v0 * 8)) = ((v0 * v1 + 1 >> 31 CONCAT v0 * v1 + 1) /m v2 >> 32) / xmm1<16>;
-        }
-    }
-    for (v1 = 0; v1 < v2; v1 += 1)
-    {
-        for (v0 = 0; v0 < v2; v0 += 1)
-        {
-            *((unsigned long long *)(a4 + v1 * 9600 + v0 * 8)) = ((v0 * v1 + 2 >> 31 CONCAT v0 * v1 + 2) /m a1 >> 32) / a1;
-        }
-    }
-    return;
-}
-
 int kernel_syrk(unsigned int a0, unsigned int a1, unsigned long a2, unsigned long a3)
 {
     unsigned int v0;  // [bp-0x3c]
@@ -106,6 +36,76 @@ int kernel_syrk(unsigned int a0, unsigned int a1, unsigned long a2, unsigned lon
                 xmm0lq<8> = Conv(128->64, (((xmm0<16> * Conv(64->128, Load(addr=((rcx<8> + (Conv(32->s64, Load(addr=stack_base-52, size=4, endness=Iend_LE)) * 0x1f40<64>)) + (Conv(32->s64, Load(addr=stack_base-60, size=4, endness=Iend_LE)) * 0x8<64>)), size=8, endness=Iend_LE))) * xmm2<16>) + xmm1<16>))
                 *((unsigned long long *)(a2 + v2 * 9600 + v1 * 8)) = v9;
             }
+        }
+    }
+    return;
+}
+
+extern char .L.str;
+
+long long submain(unsigned int a0, unsigned long long *a1)
+{
+    unsigned long v0;  // [bp-0x40]
+    unsigned long v1;  // [bp-0x38]
+    char v2;  // [bp-0x30]
+    char v3;  // [bp-0x28]
+    unsigned int v4;  // [bp-0x20]
+    unsigned int v5;  // [bp-0x1c]
+    unsigned int v6;  // [bp-0xc]
+    void* v10;  // rdi
+
+    v6 = a0;
+    v5 = 1200;
+    v4 = 1000;
+    v1 = polybench_alloc_data(0x15f900, 0x8);
+    v0 = polybench_alloc_data(0x124f80, 0x8);
+    init_array(v5, v4, &v3, &v2, v1, v0);
+    kernel_syrk(v5, v4, v1, v0);
+    if (v6 > 42)
+    {
+        if (strcmp(*(a1), &.L.str) == 0)
+        {
+            print_array(v5, v1);
+            free(v1);
+            v10 = v0;
+            free(rdi<8>);
+            return 0;
+        }
+        free(v1);
+        v10 = v0;
+        free(rdi<8>);
+        return 0;
+    }
+    free(v1);
+    v10 = v0;
+    free(rdi<8>);
+    return 0;
+}
+
+int init_array(unsigned int a0, unsigned int a1, unsigned long long *a2, unsigned long long *a3, unsigned long a4, unsigned long a5)
+{
+    unsigned int v0;  // [bp-0x38]
+    unsigned int v1;  // [bp-0x34]
+    unsigned int v2;  // [bp-0xc]
+    unsigned long v4;  // rdi
+    unsigned long long v5;  // xmm1lq
+
+    v2 = v4;
+    *(a2) = 0x3ff8000000000000;
+    *(a3) = 4608083138725491507;
+    for (v1 = 0; v1 < v2; v1 += 1)
+    {
+        for (v0 = 0; v0 < a1; v0 += 1)
+        {
+            v5 = v2;
+            *((unsigned long long *)(a5 + v1 * 8000 + v0 * 8)) = ((v0 * v1 + 1 >> 31 CONCAT v0 * v1 + 1) /m v2 >> 32) / xmm1<16>;
+        }
+    }
+    for (v1 = 0; v1 < v2; v1 += 1)
+    {
+        for (v0 = 0; v0 < v2; v0 += 1)
+        {
+            *((unsigned long long *)(a4 + v1 * 9600 + v0 * 8)) = ((v0 * v1 + 2 >> 31 CONCAT v0 * v1 + 2) /m a1 >> 32) / a1;
         }
     }
     return;

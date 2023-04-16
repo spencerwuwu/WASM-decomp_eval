@@ -53,21 +53,19 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
+typedef pointer pointer __((offset(0xa8d)));
+
 typedef pointer pointer __((offset(0xb0)));
 
-typedef pointer pointer __((offset(0x230)));
+typedef pointer pointer __((offset(0x3d0)));
 
-typedef pointer pointer __((offset(0x4c0)));
+typedef pointer pointer __((offset(0xb30)));
 
 typedef pointer pointer __((offset(0x90)));
-
-typedef pointer pointer __((offset(0x73b)));
 
 typedef pointer pointer __((offset(0x150)));
 
 typedef pointer pointer __((offset(0xca0)));
-
-typedef pointer pointer __((offset(0x7d0)));
 
 typedef pointer pointer __((offset(0xc30)));
 
@@ -77,25 +75,17 @@ typedef pointer pointer __((offset(0x130)));
 
 typedef pointer pointer __((offset(0xe0)));
 
-typedef pointer pointer __((offset(0xbd0)));
+typedef pointer pointer __((offset(0xac0)));
 
-typedef pointer pointer __((offset(0x5fb)));
+typedef pointer pointer __((offset(0x420)));
 
-typedef pointer pointer __((offset(0x49b)));
-
-typedef pointer pointer __((offset(0x694)));
-
-typedef pointer pointer __((offset(0x970)));
-
-typedef pointer pointer __((offset(0x74d)));
-
-typedef pointer pointer __((offset(0x6b4)));
-
-typedef pointer pointer __((offset(0x7a0)));
+typedef pointer pointer __((offset(0x9d4)));
 
 typedef pointer pointer __((offset(0x1c0)));
 
-typedef pointer pointer __((offset(0x880)));
+typedef pointer pointer __((offset(0x800)));
+
+typedef pointer pointer __((offset(0x9f4)));
 
 typedef pointer pointer __((offset(0xb80)));
 
@@ -103,9 +93,19 @@ typedef pointer pointer __((offset(0x190)));
 
 typedef pointer pointer __((offset(0x450)));
 
-typedef pointer pointer __((offset(0x780)));
+typedef pointer pointer __((offset(0x710)));
+
+typedef pointer pointer __((offset(0xa7b)));
+
+typedef pointer pointer __((offset(0x6eb)));
+
+typedef pointer pointer __((offset(0x480)));
+
+typedef pointer pointer __((offset(0xb50)));
 
 typedef pointer pointer __((offset(0x170)));
+
+typedef pointer pointer __((offset(0x93b)));
 
 typedef struct timeval timeval, *Ptimeval;
 
@@ -230,15 +230,15 @@ ulong extractFloat64Frac(ulong param_1);
 ulong extractFloat64Exp(ulong param_1);
 ulong extractFloat64Sign(ulong param_1);
 long packFloat64(int param_1,int param_2,long param_3);
-undefined8 float64_add(undefined8 param_1,undefined8 param_2);
-undefined8 addFloat64Sigs(undefined8 param_1,undefined8 param_2,undefined4 param_3);
-undefined8 subFloat64Sigs(undefined8 param_1,undefined8 param_2,uint param_3);
-undefined8 ullong_to_double(void);
-int submain(void);
-ulong propagateFloat64NaN(ulong param_1,ulong param_2);
 long roundAndPackFloat64(int param_1,uint param_2,ulong param_3);
 void normalizeRoundAndPackFloat64(undefined4 param_1,int param_2,long param_3);
 int countLeadingZeros64(ulong param_1);
+undefined8 addFloat64Sigs(undefined8 param_1,undefined8 param_2,undefined4 param_3);
+ulong propagateFloat64NaN(ulong param_1,ulong param_2);
+undefined8 subFloat64Sigs(undefined8 param_1,undefined8 param_2,uint param_3);
+undefined8 float64_add(undefined8 param_1,undefined8 param_2);
+undefined8 ullong_to_double(void);
+int submain(void);
 int countLeadingZeros32(uint param_1);
 double rtclock(void);
 int printf(char * __format, ...);

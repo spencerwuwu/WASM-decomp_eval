@@ -53,27 +53,21 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x540)));
-
 typedef pointer pointer __((offset(0x240)));
 
-typedef pointer pointer __((offset(0x890)));
+typedef pointer pointer __((offset(0x330)));
 
-typedef pointer pointer __((offset(0x8e0)));
+typedef pointer pointer __((offset(0x8f0)));
 
-typedef pointer pointer __((offset(0x630)));
+typedef pointer pointer __((offset(0x360)));
 
-typedef pointer pointer __((offset(0x680)));
+typedef pointer pointer __((offset(0x800)));
 
 typedef pointer pointer __((offset(0x280)));
 
 typedef pointer pointer __((offset(0x90)));
 
-typedef pointer pointer __((offset(0x2b0)));
-
 typedef pointer pointer __((offset(0x7)));
-
-typedef pointer pointer __((offset(0x8b0)));
 
 typedef pointer pointer __((offset(0x1d0)));
 
@@ -81,17 +75,23 @@ typedef pointer pointer __((offset(0x9f0)));
 
 typedef pointer pointer __((offset(0x260)));
 
+typedef pointer pointer __((offset(0x570)));
+
+typedef pointer pointer __((offset(0x940)));
+
 typedef pointer pointer __((offset(0x220)));
 
 typedef pointer pointer __((offset(0xa60)));
 
 typedef pointer pointer __((offset(0x180)));
 
+typedef pointer pointer __((offset(0x910)));
+
 typedef pointer pointer __((offset(0x1e0)));
 
 typedef pointer pointer __((offset(0x1a0)));
 
-typedef pointer pointer __((offset(0x990)));
+typedef pointer pointer __((offset(0x2d0)));
 
 typedef struct timeval timeval, *Ptimeval;
 
@@ -216,14 +216,14 @@ bool float64_is_signaling_nan(ulong param_1);
 ulong extractFloat64Frac(ulong param_1);
 ulong extractFloat64Exp(ulong param_1);
 ulong extractFloat64Sign(ulong param_1);
+void normalizeFloat64Subnormal(long param_1,int *param_2,long *param_3);
+int countLeadingZeros64(ulong param_1);
 long packFloat64(int param_1,int param_2,long param_3);
+long roundAndPackFloat64(int param_1,uint param_2,ulong param_3);
 undefined8 float64_mul(undefined8 param_1,undefined8 param_2);
 ulong propagateFloat64NaN(ulong param_1,ulong param_2);
-void normalizeFloat64Subnormal(long param_1,int *param_2,long *param_3);
-long roundAndPackFloat64(int param_1,uint param_2,ulong param_3);
 undefined8 ullong_to_double(void);
 int submain(void);
-int countLeadingZeros64(ulong param_1);
 int countLeadingZeros32(uint param_1);
 double rtclock(void);
 int printf(char * __format, ...);

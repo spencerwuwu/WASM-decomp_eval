@@ -86,7 +86,7 @@ void print_array(int nx,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_fdtd_2d(int tmax,
 		    int nx,
 		    int ny,

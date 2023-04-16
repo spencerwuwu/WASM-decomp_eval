@@ -55,13 +55,15 @@ typedef unsigned short    word;
 #define BADSPACEBASE   void
 #define code   void
 
-typedef pointer pointer __((offset(0x240)));
-
 typedef pointer pointer __((offset(0x33)));
+
+typedef pointer pointer __((offset(0x160)));
 
 typedef pointer pointer __((offset(0x29)));
 
 typedef pointer pointer __((offset(0x27)));
+
+typedef pointer pointer __((offset(0x280)));
 
 typedef pointer pointer __((offset(0x18)));
 
@@ -70,8 +72,6 @@ typedef pointer pointer __((offset(0x3a0)));
 typedef pointer pointer __((offset(0x2b)));
 
 typedef pointer pointer __((offset(0x44)));
-
-typedef pointer pointer __((offset(0x120)));
 
 typedef pointer pointer __((offset(0x1)));
 
@@ -222,9 +222,9 @@ struct Elf64_Sym {
 
 
 
+void kernel_gesummv(double param_1,double param_2,int param_3,long param_4,long param_5,long param_6,long param_7,long param_8);
 undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,undefined8 *param_2,undefined8 *param_3,long param_4,long param_5,long param_6);
-void kernel_gesummv(double param_1,double param_2,int param_3,long param_4,long param_5,long param_6,long param_7,long param_8);
 void print_array(void);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);

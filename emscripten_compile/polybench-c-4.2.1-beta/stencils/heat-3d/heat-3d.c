@@ -60,7 +60,7 @@ void print_array(int n,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_heat_3d(int tsteps,
 		      int n,
 		      DATA_TYPE POLYBENCH_3D(A,N,N,N,n,n,n),

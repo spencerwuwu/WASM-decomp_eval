@@ -1,40 +1,3 @@
-extern char .L.str;
-
-long long submain(unsigned int a0, unsigned long long *a1)
-{
-    void* v0;  // [bp-0x30]
-    void* v1;  // [bp-0x28]
-    unsigned int v2;  // [bp-0x1c]
-    unsigned int v3;  // [bp-0xc]
-    void* v6;  // rdi
-
-    v3 = a0;
-    v2 = 2500;
-    v1 = polybench_alloc_data(0x9c4, 0x1);
-    v0 = polybench_alloc_data(0x5f5e10, 0x4);
-    init_array(v2, v1, v0);
-    kernel_nussinov(v2, v1, v0);
-    if (v3 > 42)
-    {
-        if (strcmp(*(a1), &.L.str) == 0)
-        {
-            print_array(v2, v0);
-            free(v1);
-            v6 = v0;
-            free(rdi<8>);
-            return 0;
-        }
-        free(v1);
-        v6 = v0;
-        free(rdi<8>);
-        return 0;
-    }
-    free(v1);
-    v6 = v0;
-    free(rdi<8>);
-    return 0;
-}
-
 int kernel_nussinov(unsigned int a0, char *a1, unsigned long a2)
 {
     unsigned int v0;  // [bp-0x40]
@@ -116,5 +79,42 @@ int kernel_nussinov(unsigned int a0, char *a1, unsigned long a2)
         }
     }
     return;
+}
+
+extern char .L.str;
+
+long long submain(unsigned int a0, unsigned long long *a1)
+{
+    unsigned long v0;  // [bp-0x30]
+    void* v1;  // [bp-0x28]
+    unsigned int v2;  // [bp-0x1c]
+    unsigned int v3;  // [bp-0xc]
+    void* v7;  // rdi
+
+    v3 = a0;
+    v2 = 2500;
+    v1 = polybench_alloc_data(0x9c4, 0x1);
+    v0 = polybench_alloc_data(0x5f5e10, 0x4);
+    init_array(v2, v1, v0);
+    kernel_nussinov(v2, v1, v0);
+    if (v3 > 42)
+    {
+        if (strcmp(*(a1), &.L.str) == 0)
+        {
+            print_array(v2, v0);
+            free(v1);
+            v7 = v0;
+            free(rdi<8>);
+            return 0;
+        }
+        free(v1);
+        v7 = v0;
+        free(rdi<8>);
+        return 0;
+    }
+    free(v1);
+    v7 = v0;
+    free(rdi<8>);
+    return 0;
 }
 

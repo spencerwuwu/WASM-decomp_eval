@@ -28,13 +28,17 @@ void f7(durbinInstance*);
 
 void f8(durbinInstance*);
 
-U32 f9(durbinInstance*,U32,U32);
+void f9(durbinInstance*,U32,U32,U32);
 
-U32 f10(durbinInstance*,U64,U32);
+U32 f10(durbinInstance*,U32,U32);
+
+U32 f11(durbinInstance*,U64,U32);
 
 void durbin____wasm_call_ctors(durbinInstance*i);
 
 void durbin____wasm_apply_data_relocs(durbinInstance*i);
+
+void durbin_kernel_durbin(durbinInstance*i,U32 l0,U32 l1,U32 l2);
 
 U32 durbin_submain(durbinInstance*i,U32 l0,U32 l1);
 

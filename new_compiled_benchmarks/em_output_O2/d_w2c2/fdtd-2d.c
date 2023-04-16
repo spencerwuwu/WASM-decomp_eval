@@ -10,7 +10,575 @@ void f7(fdtd2dInstance*i) {
 L0:;
 }
 
-U32 f8(fdtd2dInstance*i,U32 l0,U32 l1) {
+void f8(fdtd2dInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5,U32 l6) {
+U32 l7=0;
+U32 l8=0;
+U32 l9=0;
+U32 l10=0;
+U32 l11=0;
+U32 l12=0;
+U32 l13=0;
+U32 l14=0;
+U32 l15=0;
+U32 l16=0;
+U32 l17=0;
+U32 l18=0;
+U32 l19=0;
+U32 l20=0;
+U32 l21=0;
+U32 l22=0;
+U32 l23=0;
+U32 l24=0;
+U32 l25=0;
+U32 l26=0;
+U32 si0,si1,si2,si3,si4;
+F64 sd1,sd2;
+si0=l0;
+si1=0U;
+si0=(U32)((I32)si0>(I32)si1);
+if(si0){
+si0=l1;
+si1=2U;
+si0-=si1;
+l20=si0;
+si0=l2;
+si1=-2U;
+si0&=si1;
+l21=si0;
+si0=l2;
+si1=1U;
+si0&=si1;
+l22=si0;
+si0=l2;
+si1=-4U;
+si0&=si1;
+l23=si0;
+si0=l2;
+si1=3U;
+si0&=si1;
+l17=si0;
+si0=l2;
+si1=2U;
+si0-=si1;
+l18=si0;
+si0=l2;
+si1=1U;
+si0-=si1;
+l19=si0;
+si1=-2U;
+si0&=si1;
+l24=si0;
+si0=l19;
+si1=1U;
+si0&=si1;
+l25=si0;
+L2:;
+{
+si0=l2;
+si1=0U;
+si0=(U32)((I32)si0<=(I32)si1);
+l26=si0;
+if(si0){
+goto L3;
+}
+si0=l6;
+si1=l16;
+si2=3U;
+si1<<=(si2&31);
+si0+=si1;
+l8=si0;
+si0=0U;
+l12=si0;
+si0=0U;
+l7=si0;
+si0=0U;
+l11=si0;
+si0=l2;
+si1=3U;
+si0=si0 > si1;
+if(si0){
+L5:;
+{
+si0=l4;
+si1=l7;
+si2=3U;
+si1<<=(si2&31);
+l9=si1;
+si0+=si1;
+si1=l8;
+sd1=f64_load(i->env__memory,(U64)si1);
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l4;
+si1=l9;
+si2=8U;
+si1|=si2;
+si0+=si1;
+si1=l8;
+sd1=f64_load(i->env__memory,(U64)si1);
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l4;
+si1=l9;
+si2=16U;
+si1|=si2;
+si0+=si1;
+si1=l8;
+sd1=f64_load(i->env__memory,(U64)si1);
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l4;
+si1=l9;
+si2=24U;
+si1|=si2;
+si0+=si1;
+si1=l8;
+sd1=f64_load(i->env__memory,(U64)si1);
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l7;
+si1=4U;
+si0+=si1;
+l7=si0;
+si0=l11;
+si1=4U;
+si0+=si1;
+l11=si0;
+si1=l23;
+si0=si0 != si1;
+if(si0){
+goto L5;
+}
+}
+}
+L4:;
+si0=l17;
+si0=!(si0);
+if(si0){
+goto L3;
+}
+L6:;
+{
+si0=l4;
+si1=l7;
+si2=3U;
+si1<<=(si2&31);
+si0+=si1;
+si1=l8;
+sd1=f64_load(i->env__memory,(U64)si1);
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l7;
+si1=1U;
+si0+=si1;
+l7=si0;
+si0=l12;
+si1=1U;
+si0+=si1;
+l12=si0;
+si1=l17;
+si0=si0 != si1;
+if(si0){
+goto L6;
+}
+}
+L3:;
+si0=1U;
+l10=si0;
+si0=l1;
+si1=1U;
+si0=(U32)((I32)si0>(I32)si1);
+if(si0){
+L8:;
+{
+si0=l26;
+if(si0){
+goto L9;
+}
+si0=l10;
+si1=1U;
+si0-=si1;
+l15=si0;
+si0=0U;
+l8=si0;
+si0=0U;
+l9=si0;
+si0=l19;
+if(si0){
+L11:;
+{
+si0=l4;
+si1=l10;
+si2=9600U;
+si1*=si2;
+l12=si1;
+si0+=si1;
+l11=si0;
+si1=l8;
+si2=3U;
+si1<<=(si2&31);
+l7=si1;
+si0+=si1;
+l14=si0;
+si1=l5;
+si2=l12;
+si1+=si2;
+l12=si1;
+si2=l7;
+si1+=si2;
+sd1=f64_load(i->env__memory,(U64)si1);
+si2=l5;
+si3=l15;
+si4=9600U;
+si3*=si4;
+si2+=si3;
+l13=si2;
+si3=l7;
+si2+=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1-=sd2;
+sd2=-0.5;
+sd1*=sd2;
+si2=l14;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l11;
+si1=l7;
+si2=8U;
+si1|=si2;
+l7=si1;
+si0+=si1;
+l11=si0;
+si1=l7;
+si2=l12;
+si1+=si2;
+sd1=f64_load(i->env__memory,(U64)si1);
+si2=l7;
+si3=l13;
+si2+=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1-=sd2;
+sd2=-0.5;
+sd1*=sd2;
+si2=l11;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l8;
+si1=2U;
+si0+=si1;
+l8=si0;
+si0=l9;
+si1=2U;
+si0+=si1;
+l9=si0;
+si1=l21;
+si0=si0 != si1;
+if(si0){
+goto L11;
+}
+}
+}
+L10:;
+si0=l22;
+si0=!(si0);
+if(si0){
+goto L9;
+}
+si0=l8;
+si1=3U;
+si0<<=(si1&31);
+l7=si0;
+si1=l4;
+si2=l10;
+si3=9600U;
+si2*=si3;
+l9=si2;
+si1+=si2;
+si0+=si1;
+l8=si0;
+si1=l5;
+si2=l9;
+si1+=si2;
+si2=l7;
+si1+=si2;
+sd1=f64_load(i->env__memory,(U64)si1);
+si2=l5;
+si3=l15;
+si4=9600U;
+si3*=si4;
+si2+=si3;
+si3=l7;
+si2+=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1-=sd2;
+sd2=-0.5;
+sd1*=sd2;
+si2=l8;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+L9:;
+si0=l10;
+si1=1U;
+si0+=si1;
+l10=si0;
+si1=l1;
+si0=si0 != si1;
+if(si0){
+goto L8;
+}
+}
+}
+L7:;
+si0=0U;
+l10=si0;
+si0=l1;
+si1=0U;
+si0=(U32)((I32)si0<=(I32)si1);
+if(si0){
+goto L12;
+}
+L13:;
+{
+si0=l2;
+si1=2U;
+si0=(U32)((I32)si0<(I32)si1);
+l15=si0;
+if(si0){
+goto L14;
+}
+si0=0U;
+l12=si0;
+si0=1U;
+l7=si0;
+si0=l18;
+if(si0){
+L16:;
+{
+si0=l3;
+si1=l10;
+si2=9600U;
+si1*=si2;
+l9=si1;
+si0+=si1;
+l11=si0;
+si1=l7;
+si2=3U;
+si1<<=(si2&31);
+l8=si1;
+si0+=si1;
+l14=si0;
+si1=l5;
+si2=l9;
+si1+=si2;
+l13=si1;
+si2=l8;
+si1+=si2;
+l9=si1;
+sd1=f64_load(i->env__memory,(U64)si1);
+si2=l9;
+si3=8U;
+si2-=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1-=sd2;
+sd2=-0.5;
+sd1*=sd2;
+si2=l14;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l11;
+si1=l8;
+si2=8U;
+si1+=si2;
+l8=si1;
+si0+=si1;
+l11=si0;
+si1=l8;
+si2=l13;
+si1+=si2;
+sd1=f64_load(i->env__memory,(U64)si1);
+si2=l9;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1-=sd2;
+sd2=-0.5;
+sd1*=sd2;
+si2=l11;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l7;
+si1=2U;
+si0+=si1;
+l7=si0;
+si0=l12;
+si1=2U;
+si0+=si1;
+l12=si0;
+si1=l24;
+si0=si0 != si1;
+if(si0){
+goto L16;
+}
+}
+}
+L15:;
+si0=l25;
+si0=!(si0);
+if(si0){
+goto L14;
+}
+si0=l7;
+si1=3U;
+si0<<=(si1&31);
+l7=si0;
+si1=l3;
+si2=l10;
+si3=9600U;
+si2*=si3;
+l8=si2;
+si1+=si2;
+si0+=si1;
+l9=si0;
+si1=l5;
+si2=l8;
+si1+=si2;
+si2=l7;
+si1+=si2;
+l7=si1;
+sd1=f64_load(i->env__memory,(U64)si1);
+si2=l7;
+si3=8U;
+si2-=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1-=sd2;
+sd2=-0.5;
+sd1*=sd2;
+si2=l9;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+L14:;
+si0=l10;
+si1=1U;
+si0+=si1;
+l10=si0;
+si1=l1;
+si0=si0 != si1;
+if(si0){
+goto L13;
+}
+}
+si0=0U;
+l13=si0;
+si0=l1;
+si1=1U;
+si0=(U32)((I32)si0<=(I32)si1);
+if(si0){
+goto L12;
+}
+L17:;
+{
+si0=l13;
+si1=1U;
+si0+=si1;
+l10=si0;
+si0=0U;
+l7=si0;
+si0=l15;
+si0=!(si0);
+if(si0){
+L19:;
+{
+si0=l7;
+si1=3U;
+si0<<=(si1&31);
+l8=si0;
+si1=l5;
+si2=l13;
+si3=9600U;
+si2*=si3;
+l9=si2;
+si1+=si2;
+si0+=si1;
+l12=si0;
+si1=l3;
+si2=l9;
+si1+=si2;
+l11=si1;
+si2=l7;
+si3=1U;
+si2+=si3;
+l14=si2;
+si3=3U;
+si2<<=(si3&31);
+si1+=si2;
+sd1=f64_load(i->env__memory,(U64)si1);
+si2=l8;
+si3=l11;
+si2+=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1-=sd2;
+si2=l4;
+si3=l10;
+si4=9600U;
+si3*=si4;
+si2+=si3;
+si3=l8;
+si2+=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+si2=l4;
+si3=l9;
+si2+=si3;
+si3=l8;
+si2+=si3;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1-=sd2;
+sd2=-0.69999999999999996;
+sd1*=sd2;
+si2=l12;
+sd2=f64_load(i->env__memory,(U64)si2);
+sd1+=sd2;
+f64_store(i->env__memory,(U64)si0,sd1);
+si0=l7;
+si1=l18;
+si0=si0 != si1;
+l8=si0;
+si0=l14;
+l7=si0;
+si0=l8;
+if(si0){
+goto L19;
+}
+}
+}
+L18:;
+si0=l13;
+si1=l20;
+si0=si0 != si1;
+l7=si0;
+si0=l10;
+l13=si0;
+si0=l7;
+if(si0){
+goto L17;
+}
+}
+L12:;
+si0=l16;
+si1=1U;
+si0+=si1;
+l16=si0;
+si1=l0;
+si0=si0 != si1;
+if(si0){
+goto L2;
+}
+}
+}
+L1:;
+L0:;
+}
+
+U32 f9(fdtd2dInstance*i,U32 l0,U32 l1) {
 U32 l2=0;
 U32 l3=0;
 U32 l4=0;
@@ -21,38 +589,34 @@ U32 l8=0;
 U32 l9=0;
 U32 l10=0;
 U32 l11=0;
-U32 l12=0;
-U32 l13=0;
-U32 l14=0;
-F64 l15=0;
-U32 l16=0;
-U32 si0,si1,si2,si3,si4,si5;
+F64 l12=0;
+U32 si0,si1,si2,si3,si4,si5,si6;
 U64 sj0;
 F64 sd0,sd1,sd2;
 si0=(*i->env_____stack_pointer);
 si1=144U;
 si0-=si1;
-l5=si0;
+l4=si0;
 (*i->env_____stack_pointer)=si0;
 sj0=1200000ULL;
 si1=8U;
-si0=f9(i,sj0,si1);
-l13=si0;
+si0=f10(i,sj0,si1);
+l9=si0;
 sj0=1200000ULL;
 si1=8U;
-si0=f9(i,sj0,si1);
-l8=si0;
-sj0=1200000ULL;
-si1=8U;
-si0=f9(i,sj0,si1);
+si0=f10(i,sj0,si1);
 l10=si0;
+sj0=1200000ULL;
+si1=8U;
+si0=f10(i,sj0,si1);
+l11=si0;
 sj0=500ULL;
 si1=8U;
-si0=f9(i,sj0,si1);
-l11=si0;
+si0=f10(i,sj0,si1);
+l6=si0;
 L1:;
 {
-si0=l11;
+si0=l6;
 si1=l3;
 si2=3U;
 si1<<=(si2&31);
@@ -60,7 +624,7 @@ si0+=si1;
 si1=l3;
 sd1=(F64)(I32)(si1);
 f64_store(i->env__memory,(U64)si0,sd1);
-si0=l11;
+si0=l6;
 si1=l3;
 si2=1U;
 si1+=si2;
@@ -71,7 +635,7 @@ si0+=si1;
 si1=l2;
 sd1=(F64)(I32)(si1);
 f64_store(i->env__memory,(U64)si0,sd1);
-si0=l11;
+si0=l6;
 si1=l3;
 si2=2U;
 si1+=si2;
@@ -82,7 +646,7 @@ si0+=si1;
 si1=l2;
 sd1=(F64)(I32)(si1);
 f64_store(i->env__memory,(U64)si0,sd1);
-si0=l11;
+si0=l6;
 si1=l3;
 si2=3U;
 si1+=si2;
@@ -93,7 +657,7 @@ si0+=si1;
 si1=l2;
 sd1=(F64)(I32)(si1);
 f64_store(i->env__memory,(U64)si0,sd1);
-si0=l11;
+si0=l6;
 si1=l3;
 si2=4U;
 si1+=si2;
@@ -116,9 +680,9 @@ goto L1;
 }
 L2:;
 {
-si0=l7;
+si0=l8;
 sd0=(F64)(I32)(si0);
-l15=sd0;
+l12=sd0;
 si0=0U;
 l3=si0;
 L3:;
@@ -126,30 +690,30 @@ L3:;
 si0=l3;
 si1=3U;
 si0<<=(si1&31);
-l4=si0;
-si1=l13;
-si2=l7;
+l5=si0;
+si1=l9;
+si2=l8;
 si3=9600U;
 si2*=si3;
 l2=si2;
 si1+=si2;
 si0+=si1;
-sd1=l15;
+sd1=l12;
 si2=l3;
 si3=1U;
 si2+=si3;
-l6=si2;
+l7=si2;
 sd2=(F64)(I32)(si2);
 sd1*=sd2;
 sd2=1000;
 sd1/=sd2;
 f64_store(i->env__memory,(U64)si0,sd1);
 si0=l2;
-si1=l8;
+si1=l10;
 si0+=si1;
-si1=l4;
+si1=l5;
 si0+=si1;
-sd1=l15;
+sd1=l12;
 si2=l3;
 si3=2U;
 si2+=si3;
@@ -159,11 +723,11 @@ sd2=1200;
 sd1/=sd2;
 f64_store(i->env__memory,(U64)si0,sd1);
 si0=l2;
-si1=l10;
+si1=l11;
 si0+=si1;
-si1=l4;
+si1=l5;
 si0+=si1;
-sd1=l15;
+sd1=l12;
 si2=l3;
 si3=3U;
 si2+=si3;
@@ -172,7 +736,7 @@ sd1*=sd2;
 sd2=1000;
 sd1/=sd2;
 f64_store(i->env__memory,(U64)si0,sd1);
-si0=l6;
+si0=l7;
 l3=si0;
 si1=1200U;
 si0=si0 != si1;
@@ -180,347 +744,35 @@ if(si0){
 goto L3;
 }
 }
-si0=l7;
+si0=l8;
 si1=1U;
 si0+=si1;
-l7=si0;
+l8=si0;
 si1=1000U;
 si0=si0 != si1;
 if(si0){
 goto L2;
 }
 }
-L4:;
-{
-si0=l11;
-si1=l16;
-si2=3U;
-si1<<=(si2&31);
-si0+=si1;
-l3=si0;
-si0=0U;
-l4=si0;
-L5:;
-{
-si0=l8;
-si1=l4;
-si2=3U;
-si1<<=(si2&31);
-l6=si1;
-si0+=si1;
-l2=si0;
-si1=l3;
-sd1=f64_load(i->env__memory,(U64)si1);
-f64_store(i->env__memory,(U64)si0,sd1);
-si0=l8;
-si1=l6;
-si2=8U;
-si1|=si2;
-si0+=si1;
-si1=l3;
-sd1=f64_load(i->env__memory,(U64)si1);
-f64_store(i->env__memory,(U64)si0,sd1);
-si0=l2;
-si1=l3;
-sd1=f64_load(i->env__memory,(U64)si1);
-f64_store(i->env__memory,(U64)si0+16U,sd1);
-si0=l2;
-si1=l3;
-sd1=f64_load(i->env__memory,(U64)si1);
-f64_store(i->env__memory,(U64)si0+24U,sd1);
-si0=l2;
-si1=l3;
-sd1=f64_load(i->env__memory,(U64)si1);
-f64_store(i->env__memory,(U64)si0+32U,sd1);
-si0=l2;
-si1=l3;
-sd1=f64_load(i->env__memory,(U64)si1);
-f64_store(i->env__memory,(U64)si0+40U,sd1);
-si0=l4;
-si1=6U;
-si0+=si1;
-l4=si0;
-si1=1200U;
-si0=si0 != si1;
-if(si0){
-goto L5;
-}
-}
-si0=1U;
-l9=si0;
-L6:;
-{
-si0=l9;
-si1=1U;
-si0-=si1;
-l14=si0;
-si0=0U;
-l2=si0;
-L7:;
-{
-si0=l8;
-si1=l9;
-si2=9600U;
-si1*=si2;
-l4=si1;
-si0+=si1;
-l6=si0;
-si1=l2;
-si2=3U;
-si1<<=(si2&31);
-l3=si1;
-si0+=si1;
-l7=si0;
-si1=l4;
-si2=l10;
-si1+=si2;
-l4=si1;
-si2=l3;
-si1+=si2;
-sd1=f64_load(i->env__memory,(U64)si1);
-si2=l10;
-si3=l14;
-si4=9600U;
-si3*=si4;
-si2+=si3;
-l12=si2;
-si3=l3;
-si2+=si3;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1-=sd2;
-sd2=-0.5;
-sd1*=sd2;
-si2=l7;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1+=sd2;
-f64_store(i->env__memory,(U64)si0,sd1);
-si0=l6;
-si1=l3;
-si2=8U;
-si1|=si2;
-l3=si1;
-si0+=si1;
-l6=si0;
-si1=l3;
-si2=l4;
-si1+=si2;
-sd1=f64_load(i->env__memory,(U64)si1);
-si2=l3;
-si3=l12;
-si2+=si3;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1-=sd2;
-sd2=-0.5;
-sd1*=sd2;
-si2=l6;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1+=sd2;
-f64_store(i->env__memory,(U64)si0,sd1);
-si0=l2;
-si1=2U;
-si0+=si1;
-l2=si0;
-si1=1200U;
-si0=si0 != si1;
-if(si0){
-goto L7;
-}
-}
-si0=l9;
-si1=1U;
-si0+=si1;
-l9=si0;
+si0=500U;
 si1=1000U;
-si0=si0 != si1;
-if(si0){
-goto L6;
-}
-}
-si0=0U;
-l14=si0;
-L8:;
-{
-si0=1U;
-l3=si0;
-L9:;
-{
-si0=l13;
-si1=l14;
-si2=9600U;
-si1*=si2;
-l2=si1;
-si0+=si1;
-l7=si0;
-si1=l3;
-si2=3U;
-si1<<=(si2&31);
-l4=si1;
-si0+=si1;
-l6=si0;
-si1=l2;
-si2=l10;
-si1+=si2;
-l12=si1;
-si2=l4;
-si1+=si2;
-l2=si1;
-sd1=f64_load(i->env__memory,(U64)si1);
-si2=l2;
-si3=8U;
-si2-=si3;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1-=sd2;
-sd2=-0.5;
-sd1*=sd2;
-si2=l6;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1+=sd2;
-f64_store(i->env__memory,(U64)si0,sd1);
-si0=l3;
-si1=1U;
-si0+=si1;
-l4=si0;
-si1=1200U;
-si0=si0 == si1;
-si0=!(si0);
-if(si0){
-si0=l7;
-si1=l4;
-si2=3U;
-si1<<=(si2&31);
-l4=si1;
-si0+=si1;
-l6=si0;
-si1=l4;
-si2=l12;
-si1+=si2;
-sd1=f64_load(i->env__memory,(U64)si1);
-si2=l2;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1-=sd2;
-sd2=-0.5;
-sd1*=sd2;
-si2=l6;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1+=sd2;
-f64_store(i->env__memory,(U64)si0,sd1);
-si0=l3;
-si1=2U;
-si0+=si1;
-l3=si0;
-goto L9;
-}
-L10:;
-}
-si0=0U;
-l9=si0;
-si0=l14;
-si1=1U;
-si0+=si1;
-l14=si0;
-si1=1000U;
-si0=si0 != si1;
-if(si0){
-goto L8;
-}
-}
-L11:;
-{
-si0=l9;
-si1=1U;
-si0+=si1;
-l12=si0;
-si0=0U;
-l3=si0;
-L12:;
-{
-si0=l3;
-si1=3U;
-si0<<=(si1&31);
-l2=si0;
-si1=l10;
-si2=l9;
-si3=9600U;
-si2*=si3;
-l4=si2;
-si1+=si2;
-si0+=si1;
-l6=si0;
-si1=l4;
-si2=l13;
-si1+=si2;
-l7=si1;
-si2=l3;
-si3=1U;
-si2+=si3;
-l3=si2;
-si3=3U;
-si2<<=(si3&31);
-si1+=si2;
-sd1=f64_load(i->env__memory,(U64)si1);
-si2=l2;
-si3=l7;
-si2+=si3;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1-=sd2;
-si2=l2;
-si3=l8;
-si4=l12;
-si5=9600U;
-si4*=si5;
-si3+=si4;
-si2+=si3;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1+=sd2;
-si2=l2;
-si3=l4;
-si4=l8;
-si3+=si4;
-si2+=si3;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1-=sd2;
-sd2=-0.69999999999999996;
-sd1*=sd2;
-si2=l6;
-sd2=f64_load(i->env__memory,(U64)si2);
-sd1+=sd2;
-f64_store(i->env__memory,(U64)si0,sd1);
-si0=l3;
-si1=1199U;
-si0=si0 != si1;
-if(si0){
-goto L12;
-}
-}
-si0=l12;
-l9=si0;
-si1=999U;
-si0=si0 != si1;
-if(si0){
-goto L11;
-}
-}
-si0=l16;
-si1=1U;
-si0+=si1;
-l16=si0;
-si1=500U;
-si0=si0 != si1;
-if(si0){
-goto L4;
-}
-}
+si2=1200U;
+si3=l9;
+si4=l10;
+si5=l11;
+si6=l6;
+f8(i,si0,si1,si2,si3,si4,si5,si6);
 si0=l0;
 si1=43U;
 si0=(U32)((I32)si0<(I32)si1);
 if(si0){
-goto L13;
+goto L4;
 }
 si0=l1;
 si0=i32_load(i->env__memory,(U64)si0);
 si0=i32_load8_u(i->env__memory,(U64)si0);
 if(si0){
-goto L13;
+goto L4;
 }
 si0=(*i->env_____memory_base);
 l2=si0;
@@ -532,7 +784,7 @@ si3=(*i->GOTX2Emem__stderr);
 si3=i32_load(i->env__memory,(U64)si3);
 l3=si3;
 si0=env__fwrite(i,si0,si1,si2,si3);
-si0=l5;
+si0=l4;
 si1=l2;
 si2=6U;
 si1+=si2;
@@ -541,24 +793,24 @@ si0=l3;
 si1=l2;
 si2=9U;
 si1+=si2;
-si2=l5;
+si2=l4;
 si3=128U;
 si2+=si3;
 si0=env__fiprintf(i,si0,si1,si2);
 si0=0U;
-l4=si0;
-L14:;
+l5=si0;
+L5:;
 {
-si0=l4;
+si0=l5;
 si1=1000U;
 si0*=si1;
-l6=si0;
+l7=si0;
 si0=0U;
 l2=si0;
-L15:;
+L6:;
 {
 si0=l2;
-si1=l6;
+si1=l7;
 si0+=si1;
 si1=20U;
 si0=REM_U(si0,si1);
@@ -568,10 +820,10 @@ si0=10U;
 si1=l3;
 si0=env__fputc(i,si0,si1);
 }
-L16:;
-si0=l5;
-si1=l13;
-si2=l4;
+L7:;
+si0=l4;
+si1=l9;
+si2=l5;
 si3=9600U;
 si2*=si3;
 si1+=si2;
@@ -585,7 +837,7 @@ si0=l3;
 si1=(*i->env_____memory_base);
 si2=24U;
 si1+=si2;
-si2=l5;
+si2=l4;
 si3=112U;
 si2+=si3;
 si0=env_____small_fprintf(i,si0,si1,si2);
@@ -596,20 +848,20 @@ l2=si0;
 si1=1200U;
 si0=si0 != si1;
 if(si0){
-goto L15;
-}
-}
-si0=l4;
-si1=1U;
-si0+=si1;
-l4=si0;
-si1=1000U;
-si0=si0 != si1;
-if(si0){
-goto L14;
+goto L6;
 }
 }
 si0=l5;
+si1=1U;
+si0+=si1;
+l5=si0;
+si1=1000U;
+si0=si0 != si1;
+if(si0){
+goto L5;
+}
+}
+si0=l4;
 si1=(*i->env_____memory_base);
 l2=si1;
 si2=6U;
@@ -619,7 +871,7 @@ si0=l3;
 si1=l2;
 si2=32U;
 si1+=si2;
-si2=l5;
+si2=l4;
 si3=96U;
 si2+=si3;
 si0=env__fiprintf(i,si0,si1,si2);
@@ -630,7 +882,7 @@ si1=22U;
 si2=1U;
 si3=l3;
 si0=env__fwrite(i,si0,si1,si2,si3);
-si0=l5;
+si0=l4;
 si1=l2;
 si2=3U;
 si1+=si2;
@@ -639,24 +891,24 @@ si0=l3;
 si1=l2;
 si2=9U;
 si1+=si2;
-si2=l5;
+si2=l4;
 si3=80U;
 si2+=si3;
 si0=env__fiprintf(i,si0,si1,si2);
 si0=0U;
-l4=si0;
-L17:;
+l5=si0;
+L8:;
 {
-si0=l4;
+si0=l5;
 si1=1000U;
 si0*=si1;
-l6=si0;
+l7=si0;
 si0=0U;
 l2=si0;
-L18:;
+L9:;
 {
 si0=l2;
-si1=l6;
+si1=l7;
 si0+=si1;
 si1=20U;
 si0=REM_U(si0,si1);
@@ -666,10 +918,10 @@ si0=10U;
 si1=l3;
 si0=env__fputc(i,si0,si1);
 }
-L19:;
-si0=l5;
-si1=l8;
-si2=l4;
+L10:;
+si0=l4;
+si1=l10;
+si2=l5;
 si3=9600U;
 si2*=si3;
 si1+=si2;
@@ -683,7 +935,7 @@ si0=l3;
 si1=(*i->env_____memory_base);
 si2=24U;
 si1+=si2;
-si2=l5;
+si2=l4;
 si3=-64U;
 si2-=si3;
 si0=env_____small_fprintf(i,si0,si1,si2);
@@ -694,20 +946,20 @@ l2=si0;
 si1=1200U;
 si0=si0 != si1;
 if(si0){
-goto L18;
-}
-}
-si0=l4;
-si1=1U;
-si0+=si1;
-l4=si0;
-si1=1000U;
-si0=si0 != si1;
-if(si0){
-goto L17;
+goto L9;
 }
 }
 si0=l5;
+si1=1U;
+si0+=si1;
+l5=si0;
+si1=1000U;
+si0=si0 != si1;
+if(si0){
+goto L8;
+}
+}
+si0=l4;
 si1=(*i->env_____memory_base);
 l2=si1;
 si2=3U;
@@ -717,35 +969,35 @@ si0=l3;
 si1=l2;
 si2=32U;
 si1+=si2;
-si2=l5;
+si2=l4;
 si3=48U;
 si2+=si3;
 si0=env__fiprintf(i,si0,si1,si2);
-si0=l5;
+si0=l4;
 si1=l2;
 i32_store(i->env__memory,(U64)si0+32U,si1);
 si0=l3;
 si1=l2;
 si2=9U;
 si1+=si2;
-si2=l5;
+si2=l4;
 si3=32U;
 si2+=si3;
 si0=env__fiprintf(i,si0,si1,si2);
 si0=0U;
-l4=si0;
-L20:;
+l5=si0;
+L11:;
 {
-si0=l4;
+si0=l5;
 si1=1000U;
 si0*=si1;
-l6=si0;
+l7=si0;
 si0=0U;
 l2=si0;
-L21:;
+L12:;
 {
 si0=l2;
-si1=l6;
+si1=l7;
 si0+=si1;
 si1=20U;
 si0=REM_U(si0,si1);
@@ -755,10 +1007,10 @@ si0=10U;
 si1=l3;
 si0=env__fputc(i,si0,si1);
 }
-L22:;
-si0=l5;
-si1=l10;
-si2=l4;
+L13:;
+si0=l4;
+si1=l11;
+si2=l5;
 si3=9600U;
 si2*=si3;
 si1+=si2;
@@ -772,7 +1024,7 @@ si0=l3;
 si1=(*i->env_____memory_base);
 si2=24U;
 si1+=si2;
-si2=l5;
+si2=l4;
 si3=16U;
 si2+=si3;
 si0=env_____small_fprintf(i,si0,si1,si2);
@@ -783,20 +1035,20 @@ l2=si0;
 si1=1200U;
 si0=si0 != si1;
 if(si0){
-goto L21;
-}
-}
-si0=l4;
-si1=1U;
-si0+=si1;
-l4=si0;
-si1=1000U;
-si0=si0 != si1;
-if(si0){
-goto L20;
+goto L12;
 }
 }
 si0=l5;
+si1=1U;
+si0+=si1;
+l5=si0;
+si1=1000U;
+si0=si0 != si1;
+if(si0){
+goto L11;
+}
+}
+si0=l4;
 si1=(*i->env_____memory_base);
 l2=si1;
 i32_store(i->env__memory,(U64)si0,si1);
@@ -804,18 +1056,18 @@ si0=l3;
 si1=l2;
 si2=32U;
 si1+=si2;
-si2=l5;
+si2=l4;
 si0=env__fiprintf(i,si0,si1,si2);
-L13:;
-si0=l13;
-env__free(i,si0);
-si0=l8;
+L4:;
+si0=l9;
 env__free(i,si0);
 si0=l10;
 env__free(i,si0);
 si0=l11;
 env__free(i,si0);
-si0=l5;
+si0=l6;
+env__free(i,si0);
+si0=l4;
 si1=144U;
 si0+=si1;
 (*i->env_____stack_pointer)=si0;
@@ -824,7 +1076,7 @@ L0:;
 return si0;
 }
 
-U32 f9(fdtd2dInstance*i,U64 l0,U32 l1) {
+U32 f10(fdtd2dInstance*i,U64 l0,U32 l1) {
 U32 si0,si1,si2;
 U64 sj0,sj1,sj2;
 sj0=l0;
@@ -859,8 +1111,12 @@ void fdtd2d____wasm_apply_data_relocs(fdtd2dInstance*i){
 f7(i);
 }
 
+void fdtd2d_kernel_fdtd_2d(fdtd2dInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5,U32 l6){
+f8(i,l0,l1,l2,l3,l4,l5,l6);
+}
+
 U32 fdtd2d_submain(fdtd2dInstance*i,U32 l0,U32 l1){
-return f8(i,l0,l1);
+return f9(i,l0,l1);
 }
 
 void fdtd2dInstantiate(fdtd2dInstance* i, void* resolve(const char* module, const char* name)) {

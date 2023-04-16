@@ -65,17 +65,17 @@ typedef pointer pointer __((offset(0x18)));
 
 typedef pointer pointer __((offset(0x2b)));
 
-typedef pointer pointer __((offset(0x220)));
+typedef pointer pointer __((offset(0x2c0)));
 
 typedef pointer pointer __((offset(0x46)));
+
+typedef pointer pointer __((offset(0x3b0)));
 
 typedef pointer pointer __((offset(0x44)));
 
 typedef pointer pointer __((offset(0x4e0)));
 
 typedef pointer pointer __((offset(0x1)));
-
-typedef pointer pointer __((offset(0xf0)));
 
 typedef void _IO_lock_t;
 
@@ -224,13 +224,13 @@ struct Elf64_Ehdr {
 
 
 
+void kernel_gramschmidt(int param_1,int param_2,long param_3,long param_4,long param_5);
 undefined8 submain(int param_1,char **param_2);
 void init_array(int param_1,int param_2,long param_3,long param_4,long param_5);
-void kernel_gramschmidt(int param_1,int param_2,long param_3,long param_4,long param_5);
 void print_array(void);
+double sqrt(double __x);
 undefined polybench_alloc_data();
 int strcmp(char * __s1, char * __s2);
 void free(void * __ptr);
-double sqrt(double __x);
 int fprintf(FILE * __stream, char * __format, ...);
 

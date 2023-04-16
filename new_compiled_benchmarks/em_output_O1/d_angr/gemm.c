@@ -1,3 +1,95 @@
+long long kernel_gemm(unsigned int a0, unsigned long long a1, unsigned int a2, unsigned long a3, unsigned long a4, unsigned long a5)
+{
+    unsigned long v1;  // rdi
+    unsigned long v2;  // rax
+    void* v3;  // rbx
+    uint128_t v4;  // xmm2
+    int v5;  // xmm1
+    unsigned long v6;  // cc_ndep
+    unsigned long long v7;  // cc_op
+    unsigned long long v8;  // cc_dep1
+    void* v9;  // cc_dep2
+    void* v10;  // rbx
+    unsigned long long v11;  // cc_op
+    unsigned long long v12;  // cc_dep1
+    void* v13;  // cc_dep2
+    unsigned long long *v14;  // r14
+    void* v15;  // r15
+    uint128_t v16;  // xmm2
+    int v17;  // xmm0
+    unsigned long v18;  // cc_ndep
+    unsigned long long v19;  // cc_op
+    void* v20;  // cc_dep1
+    unsigned long long v21;  // cc_dep2
+    unsigned long v22;  // cc_ndep
+    unsigned long long v23;  // cc_op
+    void* v24;  // cc_dep1
+    unsigned long long v25;  // cc_dep2
+    unsigned long v26;  // cc_ndep
+
+    if ((unsigned int)v1 > 0)
+    {
+        do
+        {
+            if ((unsigned int)a1 > 0)
+            {
+                v3 = 0;
+                do
+                {
+                    v4 = 0;
+                    *((unsigned long long *)&v4) = *((long long *)(0 * 8800 + a3 + v3 * 8));
+                    *((unsigned long long *)&v4) = (unsigned long long)(v4 * v5);
+                    *((unsigned long long *)(0 * 8800 + a3 + v3 * 8)) = v4;
+                    v6 = (0 * 8800 + a3 <= 0 * 8800? 1 : 0);
+                    v3 += 1;
+                }
+                while (v3 != a1);
+            }
+            v7 = 19;
+            v8 = a2;
+            v9 = 0;
+            if ((unsigned int)a2 > 0)
+            {
+                v10 = 0;
+                do
+                {
+                    v11 = 19;
+                    v12 = a1;
+                    v13 = 0;
+                    if ((unsigned int)a1 > 0)
+                    {
+                        v14 = 0 * 9600 + a4 + v10 * 8;
+                        v15 = 0;
+                        do
+                        {
+                            v16 = 0;
+                            *((unsigned long long *)&v16) = *(v14);
+                            xmm2lq<8> = Conv(128->64, (((xmm2<16> * xmm0<16>) * Conv(64->128, Load(addr=(((0x0<64> * 0x2260<64>) + r9<8>) + (r15<8> * 0x8<64>)), size=8, endness=Iend_LE))) + Conv(64->128, Load(addr=(((0x0<64> * 0x2260<64>) + rcx<8>) + (r15<8> * 0x8<64>)), size=8, endness=Iend_LE))))
+                            *((unsigned long long *)(0 * 8800 + a3 + v15 * 8)) = v16;
+                            v18 = (0 * 8800 + a3 <= 0 * 8800? 1 : 0);
+                            v15 += 1;
+                            v19 = 8;
+                            v20 = v15;
+                            v21 = a1;
+                        }
+                        while (v15 != a1);
+                    }
+                    v22 = [D] amd64g_calculate_rflags_c(cc_op<8>, cc_dep1<8>, cc_dep2<8>, cc_ndep<8>);
+                    v10 += 1;
+                    v23 = 8;
+                    v24 = v10;
+                    v25 = a2;
+                }
+                while (v10 != a2);
+            }
+            v26 = [D] amd64g_calculate_rflags_c(cc_op<8>, cc_dep1<8>, cc_dep2<8>, cc_ndep<8>);
+        }
+        while (v1 != 1);
+        return v1;
+    }
+    return v2;
+}
+
 extern char .L.str.3;
 extern char got.stderr;
 

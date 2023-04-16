@@ -2,6 +2,91 @@
 
 
 
+void kernel_lu(uint param_1,long param_2)
+
+{
+  double *pdVar1;
+  ulong uVar2;
+  ulong uVar3;
+  double *pdVar4;
+  ulong uVar5;
+  long lVar6;
+  ulong uVar7;
+  double dVar8;
+  
+  if (0 < (int)param_1) {
+    uVar2 = 0;
+    do {
+      if (uVar2 != 0) {
+        pdVar4 = (double *)(uVar2 * 16000 + param_2);
+        uVar5 = 0;
+        do {
+          if (uVar5 == 0) {
+            dVar8 = *pdVar4;
+          }
+          else {
+            pdVar1 = pdVar4 + uVar5;
+            dVar8 = pdVar4[uVar5];
+            if (uVar5 == 1) {
+              uVar7 = 0;
+            }
+            else {
+              uVar7 = 0;
+              uVar3 = 0;
+              do {
+                dVar8 = dVar8 - pdVar4[uVar7] * *(double *)(uVar7 * 16000 + param_2 + uVar5 * 8);
+                *pdVar1 = dVar8;
+                dVar8 = dVar8 - pdVar4[uVar7 | 1] *
+                                *(double *)((uVar7 | 1) * 16000 + param_2 + uVar5 * 8);
+                *pdVar1 = dVar8;
+                uVar7 = uVar7 + 2;
+                uVar3 = uVar3 + 2;
+              } while (uVar3 != (uVar5 & 0x7ffffffffffffffe));
+            }
+            if ((uVar5 & 1) != 0) {
+              dVar8 = dVar8 - pdVar4[uVar7] * *(double *)(uVar7 * 16000 + param_2 + uVar5 * 8);
+              *pdVar1 = dVar8;
+            }
+          }
+          pdVar4[uVar5] = dVar8 / *(double *)(uVar5 * 0x3e88 + param_2);
+          uVar5 = uVar5 + 1;
+        } while (uVar5 != uVar2);
+      }
+      uVar5 = uVar2;
+      do {
+        if (uVar2 != 0) {
+          lVar6 = uVar2 * 16000 + param_2;
+          pdVar4 = (double *)(lVar6 + uVar5 * 8);
+          dVar8 = *(double *)(lVar6 + uVar5 * 8);
+          uVar7 = 0;
+          uVar3 = 0;
+          if (uVar2 != 1) {
+            do {
+              dVar8 = dVar8 - *(double *)(lVar6 + uVar7 * 8) *
+                              *(double *)(uVar7 * 16000 + param_2 + uVar5 * 8);
+              *pdVar4 = dVar8;
+              dVar8 = dVar8 - *(double *)(lVar6 + (uVar7 | 1) * 8) *
+                              *(double *)((uVar7 | 1) * 16000 + param_2 + uVar5 * 8);
+              *pdVar4 = dVar8;
+              uVar7 = uVar7 + 2;
+              uVar3 = uVar3 + 2;
+            } while (uVar3 != (uVar2 & 0x7ffffffffffffffe));
+          }
+          if ((uVar2 & 1) != 0) {
+            *pdVar4 = dVar8 - *(double *)(lVar6 + uVar7 * 8) *
+                              *(double *)(uVar7 * 16000 + param_2 + uVar5 * 8);
+          }
+        }
+        uVar5 = uVar5 + 1;
+      } while (uVar5 != param_1);
+      uVar2 = uVar2 + 1;
+    } while (uVar2 != param_1);
+  }
+  return;
+}
+
+
+
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined8 submain(int param_1,char **param_2)
@@ -44,12 +129,12 @@ undefined8 submain(int param_1,char **param_2)
   __ptr = (void *)polybench_alloc_data(4000000);
   uVar26 = 1;
   uVar24 = 0;
-  auVar30 = __LCPI0_3;
+  auVar30 = __LCPI1_3;
   do {
     uVar21 = uVar24 + 1;
     if (uVar24 == 0) {
       uVar15 = 0;
-LAB_00100100:
+LAB_00100300:
       do {
         *(double *)((long)__ptr + uVar15 * 8 + uVar24 * 16000) = (double)-(int)uVar15 / 2000.0 + 1.0
         ;
@@ -68,12 +153,12 @@ LAB_00100100:
         uVar17 = uVar17 + 2;
         iVar27 = iVar27 + SUB164(auVar30,0);
       } while (uVar17 != uVar15);
-      if (uVar21 != uVar15) goto LAB_00100100;
+      if (uVar21 != uVar15) goto LAB_00100300;
     }
     if (uVar24 < 1999) {
       memset((void *)(uVar24 * 0x3e88 + 8 + (long)__ptr),0,(uVar24 * -8 + 0x3e70 & 0x7fffffff8) + 8)
       ;
-      auVar30 = __LCPI0_3;
+      auVar30 = __LCPI1_3;
     }
     *(undefined8 *)(uVar24 * 0x3e88 + (long)__ptr) = 0x3ff0000000000000;
     uVar26 = uVar26 + 1;
@@ -92,7 +177,7 @@ LAB_00100100:
           if (pvVar23 < (void *)((long)__ptr + lVar16 * 8 + 0x1e80988) &&
               (void *)((long)__ptr + lVar16 * 8) < pvVar25) {
             uVar24 = 0;
-LAB_00100330:
+LAB_00100530:
             do {
               *(double *)((long)pvVar23 + uVar24 * 8) =
                    *pdVar18 * *(double *)((long)__ptr + lVar16 * 8 + uVar24 * 16000) +
@@ -107,7 +192,7 @@ LAB_00100330:
           else {
             uVar24 = 0;
             if (pvVar23 < (void *)((long)__ptr + lVar22 + lVar16 * 8 + 8) &&
-                (void *)((long)__ptr + lVar22 + lVar16 * 8) < pvVar25) goto LAB_00100330;
+                (void *)((long)__ptr + lVar22 + lVar16 * 8) < pvVar25) goto LAB_00100530;
             dVar28 = *pdVar18;
             uVar24 = 0;
             do {

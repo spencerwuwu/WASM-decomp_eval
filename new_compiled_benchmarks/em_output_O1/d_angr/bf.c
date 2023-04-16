@@ -139,7 +139,7 @@ int BF_encrypt(unsigned long long a0[2], unsigned int a1)
     int tmp_205;  // tmp #205
     int tmp_272;  // tmp #272
     unsigned long long v1;  // rax
-    unsigned long long v2[18];  // rsi
+    unsigned long long v2;  // rsi
     unsigned long long v3;  // rcx
     unsigned long long v4;  // r9
     unsigned long long v5;  // rbx
@@ -254,14 +254,14 @@ int BF_encrypt(unsigned long long a0[2], unsigned int a1)
     v10 = ...;
     v11 = ...;
     v12 = ...;
-    tmp_27 = (*((int *)(v4 + ((unsigned int)v12 / 0x2000 & 2040) + 0x800)) + *((int *)(v4 + v11 * 8)) ^ *((int *)(v4 + (char)v10 * 8 + 0x1000))) + *((int *)(v4 + (char)v10 * 8 + 0x1800)) ^ v2[10] ^ v9;
-    v24 = (*((int *)(v4 + ((unsigned int)v12 / 0x2000 & 2040) + 0x800)) + *((int *)(v4 + v11 * 8)) ^ *((int *)(v4 + (char)v10 * 8 + 0x1000))) + *((int *)(v4 + (char)v10 * 8 + 0x1800)) ^ v2[10] ^ v9;
+    tmp_27 = (*((int *)(v4 + ((unsigned int)v12 / 0x2000 & 2040) + 0x800)) + *((int *)(v4 + v11 * 8)) ^ *((int *)(v4 + (char)v10 * 8 + 0x1000))) + *((int *)(v4 + (char)v10 * 8 + 0x1800)) ^ *((long long *)(v2 + 80)) ^ v9;
+    v24 = (*((int *)(v4 + ((unsigned int)v12 / 0x2000 & 2040) + 0x800)) + *((int *)(v4 + v11 * 8)) ^ *((int *)(v4 + (char)v10 * 8 + 0x1000))) + *((int *)(v4 + (char)v10 * 8 + 0x1800)) ^ *((long long *)(v2 + 80)) ^ v9;
     tmp_361 = ...;
     tmp_64 = ...;
     v25 = ...;
-    tmp_428 = (*((int *)(v4 + ((unsigned int)((tmp_361 ^ v2[9] ^ v10) >> 13) & 2040) + 0x800)) + *((int *)(v4 + ((tmp_361 ^ v2[9] ^ v10) >> 24) * 8)) ^ *((int *)(v4 + (char)v25 * 8 + 0x1000))) + *((int *)(v4 + (char)v25 * 8 + 0x1800));
+    tmp_428 = (*((int *)(v4 + ((unsigned int)((tmp_361 ^ *((long long *)(v2 + 72)) ^ v10) >> 13) & 2040) + 0x800)) + *((int *)(v4 + ((tmp_361 ^ *((long long *)(v2 + 72)) ^ v10) >> 24) * 8)) ^ *((int *)(v4 + (char)v25 * 8 + 0x1000))) + *((int *)(v4 + (char)v25 * 8 + 0x1800));
     v26 = ...;
-    tmp_495 = (*((int *)(v4 + ((unsigned int)((tmp_428 ^ v2[8] ^ v24) >> 13) & 2040) + 0x800)) + *((int *)(v4 + ((tmp_428 ^ v2[8] ^ v24) >> 24) * 8)) ^ *((int *)(v4 + (char)v26 * 8 + 0x1000))) + *((int *)(v4 + (char)v26 * 8 + 0x1800));
+    tmp_495 = (*((int *)(v4 + ((unsigned int)((tmp_428 ^ *((long long *)(v2 + 64)) ^ v24) >> 13) & 2040) + 0x800)) + *((int *)(v4 + ((tmp_428 ^ *((long long *)(v2 + 64)) ^ v24) >> 24) * 8)) ^ *((int *)(v4 + (char)v26 * 8 + 0x1000))) + *((int *)(v4 + (char)v26 * 8 + 0x1800));
     v27 = ...;
     tmp_521 = ...;
     tmp_562 = ...;
@@ -269,14 +269,14 @@ int BF_encrypt(unsigned long long a0[2], unsigned int a1)
     v29 = ...;
     v30 = ...;
     tmp_138 = (unsigned int)v30 + *((int *)(v4 + (char)v29 * 8 + 0x1800));
-    v39 = (unsigned int)v30 + *((int *)(v4 + (char)v29 * 8 + 0x1800)) ^ v2[4] ^ v28;
-    tmp_205 = (*((int *)(v4 + ((unsigned int)((tmp_138 ^ v2[4] ^ v28) >> 13) & 2040) + 0x800)) + *((int *)(v4 + ((tmp_138 ^ v2[4] ^ v28) >> 24) * 8)) ^ *((int *)(v4 + (char)v39 * 8 + 0x1000))) + *((int *)(v4 + (char)v39 * 8 + 0x1800));
+    v39 = (unsigned int)v30 + *((int *)(v4 + (char)v29 * 8 + 0x1800)) ^ *((long long *)(v2 + 32)) ^ v28;
+    tmp_205 = (*((int *)(v4 + ((unsigned int)((tmp_138 ^ *((long long *)(v2 + 32)) ^ v28) >> 13) & 2040) + 0x800)) + *((int *)(v4 + ((tmp_138 ^ *((long long *)(v2 + 32)) ^ v28) >> 24) * 8)) ^ *((int *)(v4 + (char)v39 * 8 + 0x1000))) + *((int *)(v4 + (char)v39 * 8 + 0x1800));
     tmp_45 = ...;
     v40 = ...;
-    tmp_272 = (*((int *)(v4 + ((unsigned int)((tmp_205 ^ v2[3] ^ v29) >> 13) & 2040) + 0x800)) + *((int *)(v4 + ((tmp_205 ^ v2[3] ^ v29) >> 24) * 8)) ^ *((int *)(v4 + (char)v40 * 8 + 0x1000))) + *((int *)(v4 + (char)v40 * 8 + 0x1800));
+    tmp_272 = (*((int *)(v4 + ((unsigned int)((tmp_205 ^ *((long long *)(v2 + 24)) ^ v29) >> 13) & 2040) + 0x800)) + *((int *)(v4 + ((tmp_205 ^ *((long long *)(v2 + 24)) ^ v29) >> 24) * 8)) ^ *((int *)(v4 + (char)v40 * 8 + 0x1000))) + *((int *)(v4 + (char)v40 * 8 + 0x1800));
     v41 = ...;
     v42 = ...;
-    v43 = tmp_272 ^ v2[2] ^ v39 ^ v2[0];
+    v43 = tmp_272 ^ *((long long *)(v2 + 16)) ^ v39 ^ *((long long *)v2);
     *((int *)&a0[1]) = r8<8>;
     *((int *)&a0[0]) = rdx<8>;
     return rdx<8>;

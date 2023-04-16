@@ -81,6 +81,9 @@ void w2c_correlation_0x5F_wasm_call_ctors(w2c_correlation*);
 /* export: '__wasm_apply_data_relocs' */
 void w2c_correlation_0x5F_wasm_apply_data_relocs(w2c_correlation*);
 
+/* export: 'kernel_correlation' */
+void w2c_correlation_kernel_correlation(w2c_correlation*, u32, u32, f64, u32, u32, u32, u32);
+
 /* export: 'submain' */
 u32 w2c_correlation_submain(w2c_correlation*, u32, u32);
 

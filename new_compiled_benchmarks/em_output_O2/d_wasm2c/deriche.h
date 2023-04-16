@@ -60,6 +60,12 @@ wasm_rt_func_type_t wasm2c_deriche_get_func_type(uint32_t param_count, uint32_t 
 /* import: 'env' '__small_fprintf' */
 u32 w2c_env_0x5F_small_fprintf(struct w2c_env*, u32, u32, u32);
 
+/* import: 'env' 'exp2f' */
+f32 w2c_env_exp2f(struct w2c_env*, f32);
+
+/* import: 'env' 'expf' */
+f32 w2c_env_expf(struct w2c_env*, f32);
+
 /* import: 'env' 'fiprintf' */
 u32 w2c_env_fiprintf(struct w2c_env*, u32, u32, u32);
 
@@ -83,6 +89,9 @@ void w2c_deriche_0x5F_wasm_call_ctors(w2c_deriche*);
 
 /* export: '__wasm_apply_data_relocs' */
 void w2c_deriche_0x5F_wasm_apply_data_relocs(w2c_deriche*);
+
+/* export: 'kernel_deriche' */
+void w2c_deriche_kernel_deriche(w2c_deriche*, u32, u32, f32, u32, u32, u32, u32);
 
 /* export: 'submain' */
 u32 w2c_deriche_submain(w2c_deriche*, u32, u32);

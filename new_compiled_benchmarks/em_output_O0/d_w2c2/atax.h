@@ -11,11 +11,11 @@ U32*env_____table_base;
 U32*GOTX2Emem__stderr;
 } ataxInstance;
 
+U32 env__fprintf(struct ataxInstance*,U32,U32,U32);
+
 U32 env__strcmp(struct ataxInstance*,U32,U32);
 
 void env__free(struct ataxInstance*,U32);
-
-U32 env__fprintf(struct ataxInstance*,U32,U32,U32);
 
 U32 env__polybench_alloc_data(struct ataxInstance*,U32,U32,U32);
 
@@ -23,19 +23,25 @@ void f4(ataxInstance*);
 
 void f5(ataxInstance*);
 
-U32 f6(ataxInstance*,U32,U32);
+void f6(ataxInstance*,U32,U32,U32,U32);
 
-void f7(ataxInstance*,U32,U32,U32,U32);
+void f7(ataxInstance*,U32,U32);
 
 void f8(ataxInstance*,U32,U32,U32,U32,U32,U32);
 
-void f9(ataxInstance*,U32,U32);
+U32 f9(ataxInstance*,U32,U32);
 
 U32 f10(ataxInstance*,U64,U32);
 
 void atax____wasm_call_ctors(ataxInstance*i);
 
 void atax____wasm_apply_data_relocs(ataxInstance*i);
+
+void atax_init_array(ataxInstance*i,U32 l0,U32 l1,U32 l2,U32 l3);
+
+void atax_print_array(ataxInstance*i,U32 l0,U32 l1);
+
+void atax_kernel_atax(ataxInstance*i,U32 l0,U32 l1,U32 l2,U32 l3,U32 l4,U32 l5);
 
 U32 atax_submain(ataxInstance*i,U32 l0,U32 l1);
 

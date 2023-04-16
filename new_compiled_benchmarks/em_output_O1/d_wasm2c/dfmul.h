@@ -133,14 +133,20 @@ u32 w2c_dfmul_extractFloat64Exp(w2c_dfmul*, u32, u32);
 /* export: 'extractFloat64Sign' */
 u32 w2c_dfmul_extractFloat64Sign(w2c_dfmul*, u32, u32);
 
+/* export: 'normalizeFloat64Subnormal' */
+void w2c_dfmul_normalizeFloat64Subnormal(w2c_dfmul*, u32, u32, u32, u32);
+
 /* export: 'packFloat64' */
 u32 w2c_dfmul_packFloat64(w2c_dfmul*, u32, u32, u32, u32);
 
-/* export: 'float64_mul' */
-u32 w2c_dfmul_float64_mul(w2c_dfmul*, u32, u32, u32, u32);
+/* export: 'roundAndPackFloat64' */
+u32 w2c_dfmul_roundAndPackFloat64(w2c_dfmul*, u32, u32, u32, u32);
 
 /* export: 'float_rounding_mode' */
 u32* w2c_dfmul_float_rounding_mode(w2c_dfmul* instance);
+
+/* export: 'float64_mul' */
+u32 w2c_dfmul_float64_mul(w2c_dfmul*, u32, u32, u32, u32);
 
 /* export: 'ullong_to_double' */
 f64 w2c_dfmul_ullong_to_double(w2c_dfmul*, u32, u32);
@@ -184,8 +190,14 @@ u32 w2c_dfmul_orig0x24extractFloat64Exp(w2c_dfmul*, u64);
 /* export: 'orig$extractFloat64Sign' */
 u32 w2c_dfmul_orig0x24extractFloat64Sign(w2c_dfmul*, u64);
 
+/* export: 'orig$normalizeFloat64Subnormal' */
+void w2c_dfmul_orig0x24normalizeFloat64Subnormal(w2c_dfmul*, u64, u32, u32);
+
 /* export: 'orig$packFloat64' */
 u64 w2c_dfmul_orig0x24packFloat64(w2c_dfmul*, u32, u32, u64);
+
+/* export: 'orig$roundAndPackFloat64' */
+u64 w2c_dfmul_orig0x24roundAndPackFloat64(w2c_dfmul*, u32, u32, u64);
 
 /* export: 'orig$float64_mul' */
 u64 w2c_dfmul_orig0x24float64_mul(w2c_dfmul*, u64, u64);
