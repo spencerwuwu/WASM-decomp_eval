@@ -22,10 +22,16 @@ def main():
 
     output = cccc_runner.run(args.PROGRAM_SOURCE_CODE_FILE)
 
-    project_summary = output.find("project_summary")
-    complexity = project_summary.find("McCabes_cyclomatic_complexity").attrib["value"]
+    procedures = output.find("procedural_detail")
 
-    print(str(complexity))
+    metrics = {}
+    for p in procedures:
+        signature = p.find("name").text
+        name = signature[: signature.find("(")]
+
+        metrics[name] = int(p.find("McCabes_cyclomatic_complexity").attrib["value"])
+
+    print(metrics)
 
 
 def parse_arguments():

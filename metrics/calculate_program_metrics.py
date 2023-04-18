@@ -86,13 +86,15 @@ def parse_arguments():
 
 
 def calculate_program_metrics(src_path):
-    loc = int(run_metric_program(f"python3 calculate_lines_of_code.py {src_path}"))
+    loc = json.loads(
+        run_metric_program(f"python3 calculate_lines_of_code.py {src_path}")
+    )
     halstead_complexity_difficulty_measure = float(
         run_metric_program(
             f"python3 calculate_halstead_complexity_difficulty_measure.py {src_path}"
         )
     )
-    mccabe_cyclomatic_complexity = int(
+    mccabe_cyclomatic_complexity = json.loads(
         run_metric_program(
             f"python3 calculate_mccabe_cyclomatic_complexity.py {src_path}"
         )

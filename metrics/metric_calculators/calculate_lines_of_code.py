@@ -22,10 +22,16 @@ def main():
 
     output = cccc_runner.run(args.PROGRAM_SOURCE_CODE_FILE)
 
-    project_summary = output.find("project_summary")
-    loc = project_summary.find("lines_of_code").attrib["value"]
+    procedures = output.find("procedural_detail")
 
-    print(str(loc))
+    metrics = {}
+    for p in procedures:
+        signature = p.find("name").text
+        name = signature[: signature.find("(")]
+
+        metrics[name] = int(p.find("lines_of_code").attrib["value"])
+
+    print(metrics)
 
 
 def parse_arguments():
