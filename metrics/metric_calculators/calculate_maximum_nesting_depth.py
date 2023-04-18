@@ -13,21 +13,8 @@ def main():
     else:
         configure_logger(logging.INFO)
 
-    index = Index.create()
-    translation_unit = None
-    try:
-        translation_unit = index.parse(
-            args.PROGRAM_SOURCE_CODE_FILE,
-            args=[
-                r"-Inew_compiled_benchmarks/decompiler_lib",
-            ],
-        )
-    except:
-        print(-1)
-        exit()
-
     depth = DepthVisitor()
-    print(depth.visit(translation_unit.cursor))
+    print(depth.visitFile(args.PROGRAM_SOURCE_CODE_FILE))
 
 
 def parse_arguments():
@@ -67,9 +54,39 @@ class DepthVisitor:
             CursorKind.DO_STMT,
             CursorKind.FOR_STMT,
         ]
-        self.ignored_statements_with_compound = [CursorKind.FUNCTION_DECL]
+        self.function_decl = CursorKind.FUNCTION_DECL
         self.compound_statement = CursorKind.COMPOUND_STMT
 
+    def visitFile(self, file_name):
+        index = Index.create()
+        try:
+            file = index.parse(
+                file_name,
+            )
+
+            # map function name: compound statement (ignore function declarations)
+            defined_functions = []
+
+            for func in file.cursor.get_children():
+                children = list(func.get_children())
+                if len(children) == 0:
+                    continue
+                statement_body = children[-1]
+                if (
+                    func.kind == self.function_decl
+                    and statement_body.kind == self.compound_statement
+                ):
+                    defined_functions.append((func.mangled_name, statement_body))
+
+            nesting_depth = {
+                name: self.visit(statement_body) - 1
+                for name, statement_body in defined_functions
+            }
+            return nesting_depth
+        except:
+            return None
+
+    # assume functions cannot be nested (only supported thru GCC extension)
     def visit(self, node, parentNode=None):
         maxDepth = 0
 
@@ -90,7 +107,7 @@ class DepthVisitor:
         if (
             type == self.compound_statement
             and prevNodeType not in self.statements_with_optional_compound
-            and prevNodeType not in self.ignored_statements_with_compound
+            and prevNodeType != self.function_decl
         ):
             return True
 

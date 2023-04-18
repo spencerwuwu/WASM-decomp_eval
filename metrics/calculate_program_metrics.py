@@ -101,8 +101,10 @@ def calculate_program_metrics(src_path):
         run_metric_program(f"python3 calculate_kafuras_information_flow.py {src_path}")
     )
 
-    maximum_nesting_depth = int(
-        run_metric_program(f"python3 calculate_maximum_nesting_depth.py {src_path}")
+    maximum_nesting_depth = json.loads(
+        run_metric_program(
+            f"python3 calculate_maximum_nesting_depth.py {src_path}"
+        ).replace("'", '"')
     )
 
     metrics = {
