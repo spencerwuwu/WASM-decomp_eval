@@ -89,7 +89,7 @@ def calculate_program_metrics(src_path):
     loc = json.loads(
         run_metric_program(f"python3 calculate_lines_of_code.py {src_path}")
     )
-    halstead_complexity_difficulty_measure = float(
+    halstead_complexity_difficulty_measure = json.loads(
         run_metric_program(
             f"python3 calculate_halstead_complexity_difficulty_measure.py {src_path}"
         )
@@ -104,9 +104,7 @@ def calculate_program_metrics(src_path):
     )
 
     maximum_nesting_depth = json.loads(
-        run_metric_program(
-            f"python3 calculate_maximum_nesting_depth.py {src_path}"
-        ).replace("'", '"')
+        run_metric_program(f"python3 calculate_maximum_nesting_depth.py {src_path}")
     )
 
     metrics = {
@@ -133,6 +131,7 @@ def run_metric_program(command):
             )
             .stdout.decode()
             .rstrip()
+            .replace("'", '"')
         )
     except subprocess.CalledProcessError as e:
         logging.error(e)
