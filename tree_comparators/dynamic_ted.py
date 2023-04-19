@@ -1,14 +1,12 @@
-from structures.tree import Tree
-from structures.node import Node
+from structures.tree import TreeNode
 
-# TODO
-def tree_edit_distance(T1: Tree, T2: Tree) -> float:
+def tree_edit_distance(T1: TreeNode, T2: TreeNode) -> float:
     """ Calculate distance between two rooted trees using TED algorithm
         Returns float from [0,1] range
     """
 
-    T1.depth_calc()
-    T2.depth_calc()
+    #T1.depth_calc()
+    #T2.depth_calc()
     A = [None] + T1.get_nodes_pre(only_name=False)
     B = [None] + T2.get_nodes_pre(only_name=False)
     D = [[0 for _ in range(len(B))] for _ in range(len(A))]

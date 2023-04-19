@@ -6,7 +6,7 @@ from clang.cindex import *
 log = logging.getLogger("tree.py")
 
 class TreeNode():
-    def __init__(self, cursor=None):
+    def __init__(self, cursor=None, depth=-1):
         if cursor is None:
             self.translation_unit = None 
             self.cursor_kind = None
@@ -16,22 +16,49 @@ class TreeNode():
         self.cursor = cursor
         self.parent = None
         self.children = []
+        self.depth = depth
     
     def get_children(self):
         return self.children
 
     # TODO: not sure how this work
-    def get_nodes_pre(self, only_kind: bool):
+    def get_nodes_pre(self, only_name: bool):
         """ Traverses tree and returns a list of nodes in preorder
             if only_name then list of strings, else list od node objects
         """
         nodes = []
         def _get_children(node):
             for child in node.children:
-                nodes.append(str(child.cursor_kind) if only_kind else child.cursor)
+                nodes.append(str(child.cursor_kind) if only_name else child)
                 _get_children(child)
-        nodes.append(str(self.cursor_kind) if only_kind else self.cursor)
+        nodes.append(str(self.cursor_kind) if only_name else self)
         _get_children(self)
+        return nodes
+
+    def get_nodes_postorder(self, only_name: bool):
+        """ Traverses tree and returns a list of nodes in preorder
+            if only_name then list of strings, else list od node objects
+        """
+        
+        nodes = []
+        def _get_children(node):
+            for child in node.children:
+                _get_children(child)
+            nodes.append(str(child.cursor_kind) if only_name else child.cursor)
+        get_children(self)
+        return nodes
+
+    def get_descendants(self, node):
+        """ Traverses a subtree rooted in a node,
+            returns list of node descendants
+        """
+
+        nodes = []
+        def f(node):
+            for child in node.children:
+                nodes.append(child)
+                f(child)
+        f(node)
         return nodes
 
 
@@ -47,7 +74,7 @@ def dfs_build_tree(cursor, cur_level=0):
         return None
     # print(" " * cur_level + "|-", cursor.kind, cursor.spelling, cursor.displayname)
 
-    cur_node = TreeNode(cursor)
+    cur_node = TreeNode(cursor, cur_level)
 
     if len(list(cursor.get_children())) == 0:
         return cur_node
