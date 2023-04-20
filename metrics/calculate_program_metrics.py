@@ -99,9 +99,6 @@ def calculate_program_metrics(src_path):
             f"python3 calculate_mccabe_cyclomatic_complexity.py {src_path}"
         )
     )
-    kafuras_information_flow = int(
-        run_metric_program(f"python3 calculate_kafuras_information_flow.py {src_path}")
-    )
 
     maximum_nesting_depth = json.loads(
         run_metric_program(f"python3 calculate_maximum_nesting_depth.py {src_path}")
@@ -111,7 +108,6 @@ def calculate_program_metrics(src_path):
         "Lines of code": loc,
         "Halstead complexity difficulty measure": halstead_complexity_difficulty_measure,
         "McCabe cyclomatic complexity": mccabe_cyclomatic_complexity,
-        "Kafura's information flow": kafuras_information_flow,
         "Maximum nesting depth": maximum_nesting_depth,
     }
     return metrics
