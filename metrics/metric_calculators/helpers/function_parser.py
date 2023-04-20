@@ -39,4 +39,4 @@ def parseFunctionBody(file, function_name):
         if matches is None:
             return None
 
-    return matches.group(3)
+    return matches.group(0)
