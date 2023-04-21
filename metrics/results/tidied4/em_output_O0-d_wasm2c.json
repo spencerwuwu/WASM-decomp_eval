@@ -924,15 +924,15 @@
       "Maximum nesting depth": 1,
       "McCabe cyclomatic complexity": 6
     },
-    "Get_Bits1": {
-      "Halstead complexity difficulty measure": 9.0,
-      "Lines of code": 15,
-      "Maximum nesting depth": 0,
-      "McCabe cyclomatic complexity": 1
-    },
     "Get_Bits": {
       "Halstead complexity difficulty measure": 25.7,
       "Lines of code": 49,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "Get_Bits1": {
+      "Halstead complexity difficulty measure": 9.0,
+      "Lines of code": 15,
       "Maximum nesting depth": 0,
       "McCabe cyclomatic complexity": 1
     },

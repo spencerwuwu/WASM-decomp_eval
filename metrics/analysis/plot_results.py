@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # DECOMPILERS = ["wasm2c", "w2c2", "angr", "ghidra", "snowman"]
-DECOMPILERS = ["wasm2c"]
+DECOMPILERS = ["wasm2c", "w2c2", "angr", "ghidra"]
 OPTIMIZATION_LEVELS = [0, 1, 2]
 METRICS = [
     "Lines of code",
@@ -83,6 +83,7 @@ def plot_metric_averages(metric, data):
 
 def plot_average_metric_changes(metric, data):
     plot_data = get_average_metric_changes(metric, data)
+    plot_data["o2_angr"]["average"] = 0
     # print(json.dumps(plot_data, indent=2))
 
     bar_width = 0.15
@@ -135,6 +136,13 @@ def plot_average_metric_changes(metric, data):
             width=bar_width,
             label=labels[decompiler],
         )
+    plt.text(
+        2 + 4 * bar_width - 0.2,
+        0.02 * max([max(averages[d]) for d in averages.keys()]),
+        "No data",
+        fontsize=15,
+        rotation="vertical",
+    )
 
     plt.title(
         f"Average change from original code\nfor metric: '{metric}'",
@@ -148,12 +156,13 @@ def plot_average_metric_changes(metric, data):
     #     ["-O0", "-O1", "-O2"],
     # )
     plt.xticks(
-        [r + 1 * bar_width for r in range(len(OPTIMIZATION_LEVELS))],
+        [r + 2.5 * bar_width for r in range(len(OPTIMIZATION_LEVELS))],
         ["-O0", "-O1", "-O2"],
     )
 
     plt.legend()
     plt.savefig(f"plots/average_delta_{metric.replace(' ', '_').lower()}.png")
+    # plt.show()
 
 
 def get_average_metric_changes(metric, data):

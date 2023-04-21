@@ -31,7 +31,8 @@ def main():
 
     copy_over_decompiled_results()
 
-    convert_wasm2c_func_names()
+    convert_wasm2c_and_w2c2_func_names()
+    convert_angr_and_ghidra_func_names()
 
     delete_extra()
 
@@ -140,81 +141,141 @@ def adapt_original_to_decompiled(tidied1_original_src):
         new_d[k] = v
     d = new_d
 
+    d = recursively_sort_dict(d)
+
     tidied3_dir = get_tidied_dir(3)
     tidied3_dir.mkdir(exist_ok=True)
     tidied_file_path = tidied3_dir / tidied1_original_src.name
     tidied_file_path.write_text(json.dumps(d, indent=2))
 
 
-def convert_wasm2c_func_names():
-    tidied3_dir = get_tidied_dir(3)
+def convert_wasm2c_and_w2c2_func_names():
+    for decompiler in ["wasm2c", "w2c2"]:
+        tidied3_dir = get_tidied_dir(3)
 
-    for optimization_level in [0, 1, 2]:
-        json_file_path = tidied3_dir / f"em_output_O{optimization_level}-d_wasm2c.json"
-
-        d = json.loads(json_file_path.read_text())
-
-        new_d = dict()
-        for file_ in d.keys():
-            new_d[file_] = dict()
-
-            file_no_ext = file_.replace(".c", "")
-            function_map_file_path = (
-                get_results_dir().parent.parent
-                / f"new_compiled_benchmarks/em_output_O{optimization_level}/d_wasm2c_symbols/{file_no_ext}.map"
+        for optimization_level in [0, 1, 2]:
+            json_file_path = (
+                tidied3_dir / f"em_output_O{optimization_level}-d_{decompiler}.json"
             )
-            func_map = dict()
-            for line in function_map_file_path.read_text().splitlines():
-                orig_func, wasm2c_func = line.split(":")
-                func_map[wasm2c_func] = orig_func
 
-            for func in d[file_].keys():
-                if func in func_map.keys():
-                    mapped_function = func_map[func]
+            d = json.loads(json_file_path.read_text())
+
+            new_d = dict()
+            for file_ in d.keys():
+                new_d[file_] = dict()
+
+                file_no_ext = file_.replace(".c", "")
+                function_map_file_path = (
+                    get_results_dir().parent.parent
+                    / f"new_compiled_benchmarks/em_output_O{optimization_level}/d_{decompiler}_symbols/{file_no_ext}.map"
+                )
+                func_map = dict()
+                for line in function_map_file_path.read_text().splitlines():
+                    orig_func, wasm2c_func = line.split(":")
+                    func_map[wasm2c_func] = orig_func
+
+                for func in d[file_].keys():
+                    if func in func_map.keys():
+                        mapped_function = func_map[func]
+                        new_d[file_][mapped_function] = d[file_][func]
+
+            d = new_d
+
+            d = recursively_sort_dict(d)
+
+            tidied4_dir = get_tidied_dir(4)
+            tidied4_dir.mkdir(exist_ok=True)
+            tidied_file_path = tidied4_dir / json_file_path.name
+            tidied_file_path.write_text(json.dumps(d, indent=2))
+
+            subprocess.run(
+                f"cp {get_tidied_dir(3) / 'original_src.json'} {tidied4_dir}",
+                shell=True,
+            )
+
+
+def convert_angr_and_ghidra_func_names():
+    for decompiler in ["angr", "ghidra"]:
+        tidied3_dir = get_tidied_dir(3)
+
+        for optimization_level in [0, 1, 2]:
+            json_file_path = (
+                tidied3_dir / f"em_output_O{optimization_level}-d_{decompiler}.json"
+            )
+
+            d = json.loads(json_file_path.read_text())
+
+            new_d = dict()
+            for file_ in d.keys():
+                new_d[file_] = dict()
+
+                file_no_ext = file_.replace(".c", "")
+                # function_map_file_path = (
+                #     get_results_dir().parent.parent
+                #     / f"new_compiled_benchmarks/em_output_O{optimization_level}/d_{decompiler}_symbols/{file_no_ext}.map"
+                # )
+                # func_map = dict()
+                # for line in function_map_file_path.read_text().splitlines():
+                #     orig_func, wasm2c_func = line.split(":")
+                #     func_map[wasm2c_func] = orig_func
+
+                for func in d[file_].keys():
+                    # if func in func_map.keys():
+                    # mapped_function = func_map[func]
+                    mapped_function = func
                     new_d[file_][mapped_function] = d[file_][func]
 
-        d = new_d
+            d = new_d
 
-        tidied4_dir = get_tidied_dir(4)
-        tidied4_dir.mkdir(exist_ok=True)
-        tidied_file_path = tidied4_dir / json_file_path.name
-        tidied_file_path.write_text(json.dumps(d, indent=2))
+            d = recursively_sort_dict(d)
 
-        subprocess.run(
-            f"cp {get_tidied_dir(3) / 'original_src.json'} {tidied4_dir}", shell=True
-        )
+            tidied4_dir = get_tidied_dir(4)
+            tidied4_dir.mkdir(exist_ok=True)
+            tidied_file_path = tidied4_dir / json_file_path.name
+            tidied_file_path.write_text(json.dumps(d, indent=2))
+
+            subprocess.run(
+                f"cp {get_tidied_dir(3) / 'original_src.json'} {tidied4_dir}",
+                shell=True,
+            )
 
 
 def delete_extra():
-    tidied4_dir = get_tidied_dir(4)
+    for decompiler in ["wasm2c", "w2c2", "angr"]:
+        tidied4_dir = get_tidied_dir(4)
 
-    original_d = json.loads((tidied4_dir / "original_src.json").read_text())
-    decompiled_programs = set()
-    for optimization_level in [0, 1, 2]:
-        json_file_path = tidied4_dir / f"em_output_O{optimization_level}-d_wasm2c.json"
+        original_d = json.loads((tidied4_dir / "original_src.json").read_text())
+        decompiled_programs = set()
+        for optimization_level in [0, 1, 2]:
+            json_file_path = (
+                tidied4_dir / f"em_output_O{optimization_level}-d_{decompiler}.json"
+            )
 
-        d = json.loads(json_file_path.read_text())
-        keys = list(d.keys())
-        for k in keys:
-            decompiled_programs.add(k)
-            if k not in original_d:
-                del d[k]
+            d = json.loads(json_file_path.read_text())
+            keys = list(d.keys())
+            for k in keys:
+                decompiled_programs.add(k)
+                if k not in original_d:
+                    del d[k]
+
+            tidied5_dir = get_tidied_dir(5)
+            tidied5_dir.mkdir(exist_ok=True)
+            tidied_file_path = tidied5_dir / json_file_path.name
+            tidied_file_path.write_text(json.dumps(d, indent=2))
+
+        # json_file_path = tidied4_dir / f"original_src.json"
+        # d = json.loads(json_file_path.read_text())
+        # keys = list(d.keys())
+        # for k in keys:
+        #     if k not in decompiled_programs:
+        #         del d[k]
+
+        d = recursively_sort_dict(d)
 
         tidied5_dir = get_tidied_dir(5)
         tidied5_dir.mkdir(exist_ok=True)
         tidied_file_path = tidied5_dir / json_file_path.name
         tidied_file_path.write_text(json.dumps(d, indent=2))
-
-    json_file_path = tidied4_dir / f"original_src.json"
-    d = json.loads(json_file_path.read_text())
-    keys = list(d.keys())
-    for k in keys:
-        if k not in decompiled_programs:
-            del d[k]
-    tidied5_dir = get_tidied_dir(5)
-    tidied5_dir.mkdir(exist_ok=True)
-    tidied_file_path = tidied5_dir / json_file_path.name
-    tidied_file_path.write_text(json.dumps(d, indent=2))
 
 
 def copy_over_decompiled_results():
