@@ -28,15 +28,13 @@ def parseFunctionNames(filepath):
 
 
 def parseFunctionBody(file, function_name):
-    pattern = r"(%s\s*\(.*?\)\s)({((?>[^{}]+|(?2))*)})" % function_name
+    pattern = (
+        r"%s\s*\(([a-zA-z0-9\n\s\t,#*().])*\)((?1)|[;])*({((?>[^{}]+|(?3))*)})"
+        % function_name
+    )
     matches = regex.search(pattern, file)
 
     if matches is None:
-        external_signature_pattern = (
-            r"(%s\s*\(.*?\)[^;]\X*?)({((?>[^{}]+|(?2))*)})" % function_name
-        )
-        matches = regex.search(external_signature_pattern, file)
-        if matches is None:
-            return None
+        return None
 
     return matches.group(0)

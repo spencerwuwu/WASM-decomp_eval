@@ -1,11 +1,15 @@
 {
   "2mm.c": {
     "Lines of code": {
-      "print_array": 8,
+      "init_array": 24,
+      "print_array": 14,
+      "kernel_2mm": 27,
       "submain": 37
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 10.3,
+      "init_array": 40.8,
+      "print_array": 18.0,
+      "kernel_2mm": 32.9,
       "submain": 13.5
     },
     "McCabe cyclomatic complexity": {
@@ -23,11 +27,15 @@
   },
   "3mm.c": {
     "Lines of code": {
-      "print_array": 10,
+      "init_array": 20,
+      "print_array": 14,
+      "kernel_3mm": 34,
       "submain": 41
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 10.7,
+      "init_array": 41.8,
+      "print_array": 18.0,
+      "kernel_3mm": 36.8,
       "submain": 13.6
     },
     "McCabe cyclomatic complexity": {
@@ -45,14 +53,14 @@
   },
   "Nussinov.orig.c": {
     "Lines of code": {
-      "eassert_func": 7,
+      "eassert_func": 8,
       "cur_time": 7,
       "match": 4,
       "max_score": 4,
       "getint": 23
     },
     "Halstead complexity difficulty measure": {
-      "eassert_func": 8.0,
+      "eassert_func": 9.2,
       "cur_time": 7.6,
       "match": 6.0,
       "max_score": 7.3,
@@ -91,7 +99,6 @@
       "gsm_mult": 7,
       "gsm_mult_r": 12,
       "gsm_abs": 4,
-      "gsm_norm": 30,
       "gsm_div": 27
     },
     "Halstead complexity difficulty measure": {
@@ -99,7 +106,6 @@
       "gsm_mult": 10.7,
       "gsm_mult_r": 14.4,
       "gsm_abs": 7.9,
-      "gsm_norm": 16.8,
       "gsm_div": 14.8
     },
     "McCabe cyclomatic complexity": {
@@ -121,15 +127,15 @@
   },
   "adi.c": {
     "Lines of code": {
-      "init_array": 13,
-      "print_array": 7,
-      "kernel_adi": 11,
+      "init_array": 10,
+      "print_array": 14,
+      "kernel_adi": 55,
       "submain": 21
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 10.8,
-      "print_array": 10.3,
-      "kernel_adi": 10.5,
+      "init_array": 25.8,
+      "print_array": 19.4,
+      "kernel_adi": 74.4,
       "submain": 10.4
     },
     "McCabe cyclomatic complexity": {
@@ -337,13 +343,15 @@
   },
   "atax.c": {
     "Lines of code": {
-      "init_array": 17,
-      "print_array": 7,
+      "init_array": 13,
+      "print_array": 13,
+      "kernel_atax": 20,
       "submain": 25
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 11.2,
-      "print_array": 10.3,
+      "init_array": 27.1,
+      "print_array": 13.3,
+      "kernel_atax": 25.9,
       "submain": 10.0
     },
     "McCabe cyclomatic complexity": {
@@ -427,11 +435,15 @@
   },
   "bicg.c": {
     "Lines of code": {
-      "print_array": 8,
+      "init_array": 14,
+      "print_array": 20,
+      "kernel_bicg": 22,
       "submain": 31
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 11.0,
+      "init_array": 32.9,
+      "print_array": 20.4,
+      "kernel_bicg": 24.8,
       "submain": 11.3
     },
     "McCabe cyclomatic complexity": {
@@ -463,15 +475,15 @@
   },
   "cholesky.c": {
     "Lines of code": {
-      "init_array": 10,
-      "print_array": 4,
-      "kernel_cholesky": 8,
+      "init_array": 27,
+      "print_array": 14,
+      "kernel_cholesky": 19,
       "submain": 14
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 9.6,
-      "print_array": 9.6,
-      "kernel_cholesky": 9.1,
+      "init_array": 51.3,
+      "print_array": 20.5,
+      "kernel_cholesky": 38.2,
       "submain": 7.5
     },
     "McCabe cyclomatic complexity": {
@@ -489,13 +501,15 @@
   },
   "correlation.c": {
     "Lines of code": {
-      "init_array": 17,
-      "print_array": 7,
+      "init_array": 11,
+      "print_array": 14,
+      "kernel_correlation": 48,
       "submain": 26
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 12.0,
-      "print_array": 10.3,
+      "init_array": 23.3,
+      "print_array": 19.4,
+      "kernel_correlation": 34.8,
       "submain": 11.2
     },
     "McCabe cyclomatic complexity": {
@@ -513,13 +527,15 @@
   },
   "covariance.c": {
     "Lines of code": {
-      "init_array": 15,
-      "print_array": 6,
+      "init_array": 10,
+      "print_array": 14,
+      "kernel_covariance": 29,
       "submain": 23
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 11.6,
-      "print_array": 10.1,
+      "init_array": 21.2,
+      "print_array": 19.4,
+      "kernel_covariance": 40.9,
       "submain": 10.4
     },
     "McCabe cyclomatic complexity": {
@@ -541,18 +557,24 @@
       "IQuantize": 9,
       "PostshiftIDctMatrix": 8,
       "BoundIDctMatrix": 15,
-      "WriteBlock": 33,
+      "WriteOneBlock": 28,
+      "WriteBlock": 26,
+      "Write4Blocks": 44,
       "YuvToRgb": 30,
-      "decode_block": 13
+      "decode_block": 13,
+      "decode_start": 79
     },
     "Halstead complexity difficulty measure": {
       "IZigzagMatrix": 13.0,
       "IQuantize": 16.2,
       "PostshiftIDctMatrix": 16.8,
       "BoundIDctMatrix": 24.0,
-      "WriteBlock": 14.2,
+      "WriteOneBlock": 21.5,
+      "WriteBlock": 11.2,
+      "Write4Blocks": 23.5,
       "YuvToRgb": 34.0,
-      "decode_block": 10.3
+      "decode_block": 10.3,
+      "decode_start": 31.1
     },
     "McCabe cyclomatic complexity": {
       "IZigzagMatrix": 1,
@@ -581,15 +603,15 @@
   },
   "deriche.c": {
     "Lines of code": {
-      "init_array": 13,
-      "print_array": 7,
-      "kernel_deriche": 11,
+      "init_array": 10,
+      "print_array": 14,
+      "kernel_deriche": 79,
       "submain": 22
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 12.2,
-      "print_array": 10.2,
-      "kernel_deriche": 10.6,
+      "init_array": 15.6,
+      "print_array": 18.0,
+      "kernel_deriche": 65.4,
       "submain": 12.0
     },
     "McCabe cyclomatic complexity": {
@@ -679,11 +701,15 @@
   },
   "doitgen.c": {
     "Lines of code": {
-      "print_array": 6,
+      "init_array": 13,
+      "print_array": 15,
+      "kernel_doitgen": 19,
       "submain": 25
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 9.8,
+      "init_array": 35.1,
+      "print_array": 20.6,
+      "kernel_doitgen": 21.4,
       "submain": 9.8
     },
     "McCabe cyclomatic complexity": {
@@ -701,13 +727,15 @@
   },
   "durbin.c": {
     "Lines of code": {
-      "init_array": 13,
-      "print_array": 5,
+      "init_array": 9,
+      "print_array": 13,
+      "kernel_durbin": 30,
       "submain": 18
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 10.1,
-      "print_array": 9.9,
+      "init_array": 14.2,
+      "print_array": 13.3,
+      "kernel_durbin": 38.0,
       "submain": 8.1
     },
     "McCabe cyclomatic complexity": {
@@ -725,11 +753,15 @@
   },
   "fdtd-2d.c": {
     "Lines of code": {
-      "print_array": 9,
+      "init_array": 19,
+      "print_array": 31,
+      "kernel_fdtd_2d": 27,
       "submain": 32
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 11.5,
+      "init_array": 30.0,
+      "print_array": 40.3,
+      "kernel_fdtd_2d": 38.9,
       "submain": 11.2
     },
     "McCabe cyclomatic complexity": {
@@ -747,15 +779,15 @@
   },
   "floyd-warshall.c": {
     "Lines of code": {
-      "init_array": 10,
-      "print_array": 4,
-      "kernel_floyd_warshall": 8,
+      "init_array": 11,
+      "print_array": 14,
+      "kernel_floyd_warshall": 14,
       "submain": 14
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 9.6,
-      "print_array": 9.6,
-      "kernel_floyd_warshall": 9.1,
+      "init_array": 29.9,
+      "print_array": 19.4,
+      "kernel_floyd_warshall": 23.6,
       "submain": 7.5
     },
     "McCabe cyclomatic complexity": {
@@ -773,11 +805,15 @@
   },
   "gemm.c": {
     "Lines of code": {
-      "print_array": 6,
+      "init_array": 20,
+      "print_array": 14,
+      "kernel_gemm": 19,
       "submain": 29
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 9.9,
+      "init_array": 37.2,
+      "print_array": 18.0,
+      "kernel_gemm": 23.5,
       "submain": 11.5
     },
     "McCabe cyclomatic complexity": {
@@ -795,11 +831,15 @@
   },
   "gemver.c": {
     "Lines of code": {
-      "print_array": 12,
+      "init_array": 31,
+      "print_array": 13,
+      "kernel_gemver": 28,
       "submain": 50
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 11.1,
+      "init_array": 34.0,
+      "print_array": 13.3,
+      "kernel_gemver": 41.9,
       "submain": 16.1
     },
     "McCabe cyclomatic complexity": {
@@ -817,11 +857,15 @@
   },
   "gesummv.c": {
     "Lines of code": {
-      "print_array": 8,
+      "init_array": 19,
+      "print_array": 13,
+      "kernel_gesummv": 24,
       "submain": 32
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 10.5,
+      "init_array": 30.7,
+      "print_array": 13.3,
+      "kernel_gesummv": 29.0,
       "submain": 12.4
     },
     "McCabe cyclomatic complexity": {
@@ -844,7 +888,7 @@
       "Show_Bits": 5,
       "Get_Bits1": 4,
       "Flush_Buffer": 43,
-      "Get_Bits": 6
+      "Get_Bits": 8
     },
     "Halstead complexity difficulty measure": {
       "read": 19.1,
@@ -852,7 +896,7 @@
       "Show_Bits": 6.8,
       "Get_Bits1": 3.0,
       "Flush_Buffer": 39.9,
-      "Get_Bits": 6.8
+      "Get_Bits": 7.3
     },
     "McCabe cyclomatic complexity": {
       "read": 2,
@@ -891,11 +935,15 @@
   },
   "gramschmidt.c": {
     "Lines of code": {
-      "print_array": 6,
+      "init_array": 15,
+      "print_array": 23,
+      "kernel_gramschmidt": 27,
       "submain": 25
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 11.4,
+      "init_array": 34.0,
+      "print_array": 31.5,
+      "kernel_gramschmidt": 42.8,
       "submain": 10.5
     },
     "McCabe cyclomatic complexity": {
@@ -954,14 +1002,14 @@
   "heat-3d.c": {
     "Lines of code": {
       "init_array": 10,
-      "print_array": 4,
-      "kernel_heat_3d": 8,
+      "print_array": 15,
+      "kernel_heat_3d": 31,
       "submain": 16
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 10.0,
-      "print_array": 9.6,
-      "kernel_heat_3d": 9.2,
+      "init_array": 37.5,
+      "print_array": 23.8,
+      "kernel_heat_3d": 78.5,
       "submain": 8.9
     },
     "McCabe cyclomatic complexity": {
@@ -982,12 +1030,16 @@
       "pgetc": 16,
       "buf_getb": 13,
       "buf_getv": 28,
+      "huff_make_dhuff_tb": 59,
+      "DecodeHuffman": 21,
       "DecodeHuffMCU": 59
     },
     "Halstead complexity difficulty measure": {
       "pgetc": 11.0,
       "buf_getb": 9.8,
       "buf_getv": 24.9,
+      "huff_make_dhuff_tb": 38.1,
+      "DecodeHuffman": 21.7,
       "DecodeHuffMCU": 29.1
     },
     "McCabe cyclomatic complexity": {
@@ -1010,14 +1062,14 @@
   "jacobi-1d.c": {
     "Lines of code": {
       "init_array": 11,
-      "print_array": 5,
-      "kernel_jacobi_1d": 9,
+      "print_array": 14,
+      "kernel_jacobi_1d": 16,
       "submain": 17
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 10.3,
-      "print_array": 9.9,
-      "kernel_jacobi_1d": 9.6,
+      "init_array": 20.5,
+      "print_array": 13.3,
+      "kernel_jacobi_1d": 25.8,
       "submain": 8.3
     },
     "McCabe cyclomatic complexity": {
@@ -1035,15 +1087,15 @@
   },
   "jacobi-2d.c": {
     "Lines of code": {
-      "init_array": 11,
-      "print_array": 5,
-      "kernel_jacobi_2d": 9,
+      "init_array": 12,
+      "print_array": 14,
+      "kernel_jacobi_2d": 18,
       "submain": 17
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 10.3,
-      "print_array": 9.9,
-      "kernel_jacobi_2d": 9.6,
+      "init_array": 30.7,
+      "print_array": 19.4,
+      "kernel_jacobi_2d": 40.4,
       "submain": 8.7
     },
     "McCabe cyclomatic complexity": {
@@ -1092,16 +1144,8 @@
     }
   },
   "lpc.c": {
-    "Lines of code": {
-      "gsm_norm": 7,
-      "Transformation_to_Log_Area_Ratios": 31,
-      "Quantization_and_coding": 28
-    },
-    "Halstead complexity difficulty measure": {
-      "gsm_norm": 14.0,
-      "Transformation_to_Log_Area_Ratios": 19.3,
-      "Quantization_and_coding": 17.2
-    },
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
     "McCabe cyclomatic complexity": {
       "gsm_add": 1,
       "gsm_mult": 1,
@@ -1131,15 +1175,15 @@
   },
   "lu.c": {
     "Lines of code": {
-      "init_array": 10,
-      "print_array": 4,
-      "kernel_lu": 8,
+      "init_array": 27,
+      "print_array": 14,
+      "kernel_lu": 20,
       "submain": 14
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 9.6,
-      "print_array": 9.6,
-      "kernel_lu": 9.1,
+      "init_array": 39.7,
+      "print_array": 19.4,
+      "kernel_lu": 37.1,
       "submain": 7.5
     },
     "McCabe cyclomatic complexity": {
@@ -1157,11 +1201,15 @@
   },
   "ludcmp.c": {
     "Lines of code": {
-      "print_array": 7,
+      "init_array": 37,
+      "print_array": 13,
+      "kernel_ludcmp": 39,
       "submain": 28
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 10.3,
+      "init_array": 42.1,
+      "print_array": 13.3,
+      "kernel_ludcmp": 70.0,
       "submain": 10.3
     },
     "McCabe cyclomatic complexity": {
@@ -1330,8 +1378,12 @@
     }
   },
   "motion.c": {
-    "Lines of code": {},
-    "Halstead complexity difficulty measure": {},
+    "Lines of code": {
+      "motion_vectors": 30
+    },
+    "Halstead complexity difficulty measure": {
+      "motion_vectors": 39.0
+    },
     "McCabe cyclomatic complexity": {
       "motion_vectors": 3,
       "motion_vector": 5,
@@ -1389,11 +1441,15 @@
   },
   "mvt.c": {
     "Lines of code": {
-      "print_array": 8,
+      "init_array": 18,
+      "print_array": 20,
+      "kernel_mvt": 17,
       "submain": 32
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 11.2,
+      "init_array": 38.0,
+      "print_array": 22.0,
+      "kernel_mvt": 30.4,
       "submain": 11.4
     },
     "McCabe cyclomatic complexity": {
@@ -1411,14 +1467,14 @@
   },
   "nussinov.c": {
     "Lines of code": {
-      "init_array": 11,
-      "print_array": 5,
+      "init_array": 12,
+      "print_array": 17,
       "kernel_nussinov": 24,
       "submain": 16
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 10.4,
-      "print_array": 9.9,
+      "init_array": 21.2,
+      "print_array": 16.8,
       "kernel_nussinov": 52.9,
       "submain": 8.2
     },
@@ -1669,15 +1725,15 @@
   },
   "seidel-2d.c": {
     "Lines of code": {
-      "init_array": 10,
-      "print_array": 4,
-      "kernel_seidel_2d": 8,
+      "init_array": 8,
+      "print_array": 14,
+      "kernel_seidel_2d": 14,
       "submain": 15
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 9.6,
-      "print_array": 9.6,
-      "kernel_seidel_2d": 9.1,
+      "init_array": 24.0,
+      "print_array": 19.4,
+      "kernel_seidel_2d": 31.6,
       "submain": 7.6
     },
     "McCabe cyclomatic complexity": {
@@ -1771,11 +1827,15 @@
   },
   "symm.c": {
     "Lines of code": {
-      "print_array": 6,
+      "init_array": 22,
+      "print_array": 14,
+      "kernel_symm": 22,
       "submain": 28
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 9.9,
+      "init_array": 32.9,
+      "print_array": 18.0,
+      "kernel_symm": 21.9,
       "submain": 11.4
     },
     "McCabe cyclomatic complexity": {
@@ -1793,11 +1853,15 @@
   },
   "syr2k.c": {
     "Lines of code": {
-      "print_array": 6,
+      "init_array": 20,
+      "print_array": 14,
+      "kernel_syr2k": 20,
       "submain": 28
     },
     "Halstead complexity difficulty measure": {
-      "print_array": 10.1,
+      "init_array": 34.4,
+      "print_array": 19.4,
+      "kernel_syr2k": 28.8,
       "submain": 11.3
     },
     "McCabe cyclomatic complexity": {
@@ -1815,15 +1879,15 @@
   },
   "syrk.c": {
     "Lines of code": {
-      "init_array": 11,
-      "print_array": 5,
-      "kernel_syrk": 9,
+      "init_array": 16,
+      "print_array": 14,
+      "kernel_syrk": 18,
       "submain": 19
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 11.4,
-      "print_array": 9.9,
-      "kernel_syrk": 9.5,
+      "init_array": 30.7,
+      "print_array": 19.4,
+      "kernel_syrk": 23.1,
       "submain": 10.1
     },
     "McCabe cyclomatic complexity": {
@@ -1867,15 +1931,15 @@
   },
   "trisolv.c": {
     "Lines of code": {
-      "init_array": 12,
-      "print_array": 6,
-      "kernel_trisolv": 10,
+      "init_array": 14,
+      "print_array": 13,
+      "kernel_trisolv": 16,
       "submain": 18
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 11.1,
-      "print_array": 10.1,
-      "kernel_trisolv": 10.1,
+      "init_array": 28.2,
+      "print_array": 13.3,
+      "kernel_trisolv": 26.5,
       "submain": 9.4
     },
     "McCabe cyclomatic complexity": {
@@ -1893,15 +1957,15 @@
   },
   "trmm.c": {
     "Lines of code": {
-      "init_array": 11,
-      "print_array": 5,
-      "kernel_trmm": 9,
+      "init_array": 17,
+      "print_array": 14,
+      "kernel_trmm": 15,
       "submain": 18
     },
     "Halstead complexity difficulty measure": {
-      "init_array": 11.4,
-      "print_array": 9.7,
-      "kernel_trmm": 9.7,
+      "init_array": 35.4,
+      "print_array": 18.0,
+      "kernel_trmm": 18.6,
       "submain": 10.0
     },
     "McCabe cyclomatic complexity": {

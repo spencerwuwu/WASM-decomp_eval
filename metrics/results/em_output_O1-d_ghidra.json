@@ -1,11 +1,15 @@
 {
   "PL_2mm.c": {
     "Lines of code": {
+      "init_array": 67,
       "print_array": 30,
+      "kernel_2mm": 61,
       "submain": 102
     },
     "Halstead complexity difficulty measure": {
+      "init_array": 46.8,
       "print_array": 20.7,
+      "kernel_2mm": 41.0,
       "submain": 62.9
     },
     "McCabe cyclomatic complexity": {
@@ -23,11 +27,15 @@
   },
   "PL_3mm.c": {
     "Lines of code": {
+      "init_array": 65,
       "print_array": 30,
+      "kernel_3mm": 88,
       "submain": 130
     },
     "Halstead complexity difficulty measure": {
+      "init_array": 49.8,
       "print_array": 20.7,
+      "kernel_3mm": 51.8,
       "submain": 67.9
     },
     "McCabe cyclomatic complexity": {
@@ -142,7 +150,7 @@
   "aes.c": {
     "Lines of code": {
       "encrypt": 140,
-      "KeySchedule": 38,
+      "KeySchedule": 155,
       "AddRoundKey": 40,
       "ByteSub_ShiftRow": 184,
       "MixColumn_AddRoundKey": 89,
@@ -155,7 +163,7 @@
     },
     "Halstead complexity difficulty measure": {
       "encrypt": 48.3,
-      "KeySchedule": 13.4,
+      "KeySchedule": 66.0,
       "AddRoundKey": 27.2,
       "ByteSub_ShiftRow": 233.8,
       "MixColumn_AddRoundKey": 65.6,
@@ -223,16 +231,16 @@
     "Lines of code": {
       "local_memcpy": 14,
       "BF_set_key": 68,
-      "BF_encrypt": 13,
-      "BF_cfb64_encrypt": 11,
+      "BF_encrypt": 146,
+      "BF_cfb64_encrypt": 70,
       "blowfish_main": 61,
       "submain": 20
     },
     "Halstead complexity difficulty measure": {
       "local_memcpy": 19.5,
       "BF_set_key": 35.8,
-      "BF_encrypt": 16.7,
-      "BF_cfb64_encrypt": 12.4,
+      "BF_encrypt": 125.4,
+      "BF_cfb64_encrypt": 71.5,
       "blowfish_main": 27.2,
       "submain": 17.7
     },
@@ -255,9 +263,11 @@
   },
   "bicg.c": {
     "Lines of code": {
+      "kernel_bicg": 31,
       "submain": 82
     },
     "Halstead complexity difficulty measure": {
+      "kernel_bicg": 33.1,
       "submain": 54.7
     },
     "McCabe cyclomatic complexity": {
@@ -289,9 +299,11 @@
   },
   "correlation.c": {
     "Lines of code": {
+      "kernel_correlation": 112,
       "submain": 50
     },
     "Halstead complexity difficulty measure": {
+      "kernel_correlation": 87.5,
       "submain": 30.8
     },
     "McCabe cyclomatic complexity": {
@@ -305,9 +317,11 @@
   },
   "covariance.c": {
     "Lines of code": {
+      "kernel_covariance": 71,
       "submain": 94
     },
     "Halstead complexity difficulty measure": {
+      "kernel_covariance": 68.9,
       "submain": 55.8
     },
     "McCabe cyclomatic complexity": {
@@ -321,9 +335,11 @@
   },
   "deriche.c": {
     "Lines of code": {
+      "kernel_deriche": 162,
       "submain": 50
     },
     "Halstead complexity difficulty measure": {
+      "kernel_deriche": 90.8,
       "submain": 30.1
     },
     "McCabe cyclomatic complexity": {
@@ -705,9 +721,11 @@
   },
   "fdtd-2d.c": {
     "Lines of code": {
+      "kernel_fdtd_2d": 78,
       "submain": 92
     },
     "Halstead complexity difficulty measure": {
+      "kernel_fdtd_2d": 64.3,
       "submain": 56.4
     },
     "McCabe cyclomatic complexity": {
@@ -739,9 +757,11 @@
   },
   "gemm.c": {
     "Lines of code": {
+      "kernel_gemm": 40,
       "submain": 91
     },
     "Halstead complexity difficulty measure": {
+      "kernel_gemm": 33.6,
       "submain": 50.4
     },
     "McCabe cyclomatic complexity": {
@@ -755,9 +775,11 @@
   },
   "gemver.c": {
     "Lines of code": {
+      "kernel_gemver": 63,
       "submain": 114
     },
     "Halstead complexity difficulty measure": {
+      "kernel_gemver": 52.2,
       "submain": 66.8
     },
     "McCabe cyclomatic complexity": {
@@ -771,9 +793,11 @@
   },
   "gesummv.c": {
     "Lines of code": {
+      "kernel_gesummv": 27,
       "submain": 72
     },
     "Halstead complexity difficulty measure": {
+      "kernel_gesummv": 35.4,
       "submain": 49.1
     },
     "McCabe cyclomatic complexity": {
@@ -975,6 +999,8 @@
       "Flush_Buffer": 52,
       "Get_motion_code": 377,
       "Get_dmvector": 109,
+      "motion_vectors": 169,
+      "motion_vector": 156,
       "Initialize_Buffer": 34,
       "submain": 91
     },
@@ -987,6 +1013,8 @@
       "Flush_Buffer": 30.3,
       "Get_motion_code": 83.8,
       "Get_dmvector": 47.6,
+      "motion_vectors": 57.0,
+      "motion_vector": 80.4,
       "Initialize_Buffer": 18.5,
       "submain": 31.4
     },
@@ -1117,9 +1145,11 @@
   },
   "symm.c": {
     "Lines of code": {
+      "kernel_symm": 46,
       "submain": 104
     },
     "Halstead complexity difficulty measure": {
+      "kernel_symm": 42.8,
       "submain": 56.8
     },
     "McCabe cyclomatic complexity": {
@@ -1133,9 +1163,11 @@
   },
   "syr2k.c": {
     "Lines of code": {
+      "kernel_syr2k": 39,
       "submain": 88
     },
     "Halstead complexity difficulty measure": {
+      "kernel_syr2k": 36.8,
       "submain": 52.0
     },
     "McCabe cyclomatic complexity": {
