@@ -1,0 +1,1656 @@
+{
+  "PL_2mm.c": {
+    "print_array": {
+      "Halstead complexity difficulty measure": 4.5,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 19.7,
+      "Lines of code": 44,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "PL_3mm.c": {
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 18.2,
+      "Lines of code": 34,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "adi.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 23.2,
+      "Lines of code": 12,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "kernel_adi": {
+      "Halstead complexity difficulty measure": 126.0,
+      "Lines of code": 81,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 8
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 4.5,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 17.0,
+      "Lines of code": 25,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "adpcm.c": {
+    "abs": {
+      "Halstead complexity difficulty measure": 13.8,
+      "Lines of code": 9,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "adpcm_main": {
+      "Halstead complexity difficulty measure": 23.6,
+      "Lines of code": 17,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "decode": {
+      "Halstead complexity difficulty measure": 6.2,
+      "Lines of code": 6,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "encode": {
+      "Halstead complexity difficulty measure": 28.3,
+      "Lines of code": 37,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "filtep": {
+      "Halstead complexity difficulty measure": 9.5,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "filtez": {
+      "Halstead complexity difficulty measure": 22.2,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "logsch": {
+      "Halstead complexity difficulty measure": 12.5,
+      "Lines of code": 12,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "logscl": {
+      "Halstead complexity difficulty measure": 12.5,
+      "Lines of code": 13,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "quantl": {
+      "Halstead complexity difficulty measure": 20.3,
+      "Lines of code": 20,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "reset": {
+      "Halstead complexity difficulty measure": 40.4,
+      "Lines of code": 28,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 5
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "scalel": {
+      "Halstead complexity difficulty measure": 8.4,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 23.4,
+      "Lines of code": 23,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 5
+    },
+    "uppol1": {
+      "Halstead complexity difficulty measure": 21.3,
+      "Lines of code": 19,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 4
+    },
+    "uppol2": {
+      "Halstead complexity difficulty measure": 22.5,
+      "Lines of code": 25,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 5
+    },
+    "upzero": {
+      "Halstead complexity difficulty measure": 40.5,
+      "Lines of code": 30,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 5
+    }
+  },
+  "aes.c": {
+    "AddRoundKey": {
+      "Halstead complexity difficulty measure": 33.4,
+      "Lines of code": 46,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 11
+    },
+    "AddRoundKey_InversMixColumn": {
+      "Halstead complexity difficulty measure": 143.8,
+      "Lines of code": 106,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 17
+    },
+    "ByteSub_ShiftRow": {
+      "Halstead complexity difficulty measure": 236.9,
+      "Lines of code": 184,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 4
+    },
+    "InversShiftRow_ByteSub": {
+      "Halstead complexity difficulty measure": 236.9,
+      "Lines of code": 195,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 4
+    },
+    "KeySchedule": {
+      "Halstead complexity difficulty measure": 56.2,
+      "Lines of code": 91,
+      "Maximum nesting depth": 9,
+      "McCabe cyclomatic complexity": 16
+    },
+    "MixColumn_AddRoundKey": {
+      "Halstead complexity difficulty measure": 164.6,
+      "Lines of code": 102,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 11
+    },
+    "SubByte": {
+      "Halstead complexity difficulty measure": 31.2,
+      "Lines of code": 48,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "aes_main": {
+      "Halstead complexity difficulty measure": 5.5,
+      "Lines of code": 41,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "decrypt": {
+      "Halstead complexity difficulty measure": 22.3,
+      "Lines of code": 79,
+      "Maximum nesting depth": 6,
+      "McCabe cyclomatic complexity": 12
+    },
+    "encrypt": {
+      "Halstead complexity difficulty measure": 21.5,
+      "Lines of code": 78,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 11
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 5.9,
+      "Lines of code": 9,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    }
+  },
+  "atax.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 27.5,
+      "Lines of code": 15,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 4
+    },
+    "kernel_atax": {
+      "Halstead complexity difficulty measure": 40.2,
+      "Lines of code": 22,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 5
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 4.5,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 17.7,
+      "Lines of code": 25,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "bf.c": {
+    "BF_cfb64_encrypt": {
+      "Halstead complexity difficulty measure": 13.1,
+      "Lines of code": 7,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 6
+    },
+    "BF_encrypt": {
+      "Halstead complexity difficulty measure": 15.2,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "BF_set_key": {
+      "Halstead complexity difficulty measure": 29.7,
+      "Lines of code": 69,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 9
+    },
+    "blowfish_main": {
+      "Halstead complexity difficulty measure": 27.7,
+      "Lines of code": 38,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 5
+    },
+    "local_memcpy": {
+      "Halstead complexity difficulty measure": 21.0,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 6.9,
+      "Lines of code": 9,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    }
+  },
+  "bicg.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 35.9,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 4
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 20.1,
+      "Lines of code": 28,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "cholesky.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 78.6,
+      "Lines of code": 45,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 11
+    },
+    "kernel_cholesky": {
+      "Halstead complexity difficulty measure": 57.9,
+      "Lines of code": 35,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 5
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 11.4,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "correlation.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 15.9,
+      "Lines of code": 13,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 18.6,
+      "Lines of code": 34,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "covariance.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 16.5,
+      "Lines of code": 13,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 17.2,
+      "Lines of code": 31,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "deriche.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 15.8,
+      "Lines of code": 13,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 20.4,
+      "Lines of code": 34,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "dfadd.c": {
+    "addFloat64Sigs": {
+      "Halstead complexity difficulty measure": 42.0,
+      "Lines of code": 88,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 13
+    },
+    "countLeadingZeros32": {
+      "Halstead complexity difficulty measure": 12.8,
+      "Lines of code": 17,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "countLeadingZeros64": {
+      "Halstead complexity difficulty measure": 13.5,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "extractFloat64Exp": {
+      "Halstead complexity difficulty measure": 4.1,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "extractFloat64Frac": {
+      "Halstead complexity difficulty measure": 4.4,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "extractFloat64Sign": {
+      "Halstead complexity difficulty measure": 3.6,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_add": {
+      "Halstead complexity difficulty measure": 16.8,
+      "Lines of code": 15,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "float64_is_nan": {
+      "Halstead complexity difficulty measure": 4.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_is_signaling_nan": {
+      "Halstead complexity difficulty measure": 7.8,
+      "Lines of code": 9,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "float_raise": {
+      "Halstead complexity difficulty measure": 4.8,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "normalizeRoundAndPackFloat64": {
+      "Halstead complexity difficulty measure": 9.7,
+      "Lines of code": 7,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "packFloat64": {
+      "Halstead complexity difficulty measure": 7.9,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "propagateFloat64NaN": {
+      "Halstead complexity difficulty measure": 20.3,
+      "Lines of code": 29,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 5
+    },
+    "roundAndPackFloat64": {
+      "Halstead complexity difficulty measure": 33.2,
+      "Lines of code": 57,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 12
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "shift64RightJamming": {
+      "Halstead complexity difficulty measure": 21.2,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "subFloat64Sigs": {
+      "Halstead complexity difficulty measure": 46.0,
+      "Lines of code": 107,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 14
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 16.6,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "ullong_to_double": {
+      "Halstead complexity difficulty measure": 4.7,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    }
+  },
+  "dfdiv.c": {
+    "add128": {
+      "Halstead complexity difficulty measure": 14.4,
+      "Lines of code": 6,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "countLeadingZeros32": {
+      "Halstead complexity difficulty measure": 12.8,
+      "Lines of code": 17,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "countLeadingZeros64": {
+      "Halstead complexity difficulty measure": 13.5,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "estimateDiv128To64": {
+      "Halstead complexity difficulty measure": 27.6,
+      "Lines of code": 48,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 5
+    },
+    "extractFloat64Exp": {
+      "Halstead complexity difficulty measure": 4.1,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "extractFloat64Frac": {
+      "Halstead complexity difficulty measure": 4.4,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "extractFloat64Sign": {
+      "Halstead complexity difficulty measure": 3.6,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_div": {
+      "Halstead complexity difficulty measure": 40.6,
+      "Lines of code": 98,
+      "Maximum nesting depth": 5,
+      "McCabe cyclomatic complexity": 15
+    },
+    "float64_is_nan": {
+      "Halstead complexity difficulty measure": 4.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_is_signaling_nan": {
+      "Halstead complexity difficulty measure": 7.8,
+      "Lines of code": 9,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "float_raise": {
+      "Halstead complexity difficulty measure": 4.8,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "mul64To128": {
+      "Halstead complexity difficulty measure": 26.8,
+      "Lines of code": 18,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "normalizeFloat64Subnormal": {
+      "Halstead complexity difficulty measure": 11.4,
+      "Lines of code": 8,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "packFloat64": {
+      "Halstead complexity difficulty measure": 7.9,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "propagateFloat64NaN": {
+      "Halstead complexity difficulty measure": 20.3,
+      "Lines of code": 29,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 5
+    },
+    "roundAndPackFloat64": {
+      "Halstead complexity difficulty measure": 33.2,
+      "Lines of code": 57,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 12
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "shift64RightJamming": {
+      "Halstead complexity difficulty measure": 21.2,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "sub128": {
+      "Halstead complexity difficulty measure": 13.8,
+      "Lines of code": 6,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 16.6,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "ullong_to_double": {
+      "Halstead complexity difficulty measure": 4.7,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    }
+  },
+  "dfmul.c": {
+    "countLeadingZeros32": {
+      "Halstead complexity difficulty measure": 12.8,
+      "Lines of code": 17,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "countLeadingZeros64": {
+      "Halstead complexity difficulty measure": 13.5,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "extractFloat64Exp": {
+      "Halstead complexity difficulty measure": 4.1,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "extractFloat64Frac": {
+      "Halstead complexity difficulty measure": 4.4,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "extractFloat64Sign": {
+      "Halstead complexity difficulty measure": 3.6,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_is_nan": {
+      "Halstead complexity difficulty measure": 4.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_is_signaling_nan": {
+      "Halstead complexity difficulty measure": 7.8,
+      "Lines of code": 9,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "float64_mul": {
+      "Halstead complexity difficulty measure": 43.0,
+      "Lines of code": 81,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 12
+    },
+    "float_raise": {
+      "Halstead complexity difficulty measure": 4.8,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "mul64To128": {
+      "Halstead complexity difficulty measure": 26.8,
+      "Lines of code": 18,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "normalizeFloat64Subnormal": {
+      "Halstead complexity difficulty measure": 11.4,
+      "Lines of code": 8,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "packFloat64": {
+      "Halstead complexity difficulty measure": 7.9,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "propagateFloat64NaN": {
+      "Halstead complexity difficulty measure": 20.3,
+      "Lines of code": 29,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 5
+    },
+    "roundAndPackFloat64": {
+      "Halstead complexity difficulty measure": 33.2,
+      "Lines of code": 57,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 12
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "shift64RightJamming": {
+      "Halstead complexity difficulty measure": 21.2,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 16.6,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "ullong_to_double": {
+      "Halstead complexity difficulty measure": 4.7,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    }
+  },
+  "dfsin.c": {
+    "add128": {
+      "Halstead complexity difficulty measure": 14.4,
+      "Lines of code": 6,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "addFloat64Sigs": {
+      "Halstead complexity difficulty measure": 42.0,
+      "Lines of code": 88,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 13
+    },
+    "countLeadingZeros32": {
+      "Halstead complexity difficulty measure": 12.8,
+      "Lines of code": 17,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "countLeadingZeros64": {
+      "Halstead complexity difficulty measure": 13.5,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "estimateDiv128To64": {
+      "Halstead complexity difficulty measure": 27.6,
+      "Lines of code": 48,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 5
+    },
+    "extractFloat64Exp": {
+      "Halstead complexity difficulty measure": 4.1,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "extractFloat64Frac": {
+      "Halstead complexity difficulty measure": 4.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "extractFloat64Sign": {
+      "Halstead complexity difficulty measure": 3.6,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_abs": {
+      "Halstead complexity difficulty measure": 4.4,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_add": {
+      "Halstead complexity difficulty measure": 16.8,
+      "Lines of code": 15,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "float64_div": {
+      "Halstead complexity difficulty measure": 40.6,
+      "Lines of code": 98,
+      "Maximum nesting depth": 5,
+      "McCabe cyclomatic complexity": 15
+    },
+    "float64_ge": {
+      "Halstead complexity difficulty measure": 5.6,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_is_nan": {
+      "Halstead complexity difficulty measure": 4.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float64_is_signaling_nan": {
+      "Halstead complexity difficulty measure": 7.8,
+      "Lines of code": 9,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "float64_le": {
+      "Halstead complexity difficulty measure": 26.6,
+      "Lines of code": 34,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 5
+    },
+    "float64_mul": {
+      "Halstead complexity difficulty measure": 43.0,
+      "Lines of code": 81,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 12
+    },
+    "float64_neg": {
+      "Halstead complexity difficulty measure": 5.1,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "float_raise": {
+      "Halstead complexity difficulty measure": 4.8,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "int32_to_float64": {
+      "Halstead complexity difficulty measure": 18.0,
+      "Lines of code": 19,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "local_sin": {
+      "Halstead complexity difficulty measure": 18.0,
+      "Lines of code": 25,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "mul64To128": {
+      "Halstead complexity difficulty measure": 26.8,
+      "Lines of code": 18,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "normalizeFloat64Subnormal": {
+      "Halstead complexity difficulty measure": 11.4,
+      "Lines of code": 8,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "normalizeRoundAndPackFloat64": {
+      "Halstead complexity difficulty measure": 9.7,
+      "Lines of code": 7,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "packFloat64": {
+      "Halstead complexity difficulty measure": 7.9,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "propagateFloat64NaN": {
+      "Halstead complexity difficulty measure": 20.3,
+      "Lines of code": 29,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 5
+    },
+    "roundAndPackFloat64": {
+      "Halstead complexity difficulty measure": 33.2,
+      "Lines of code": 57,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 12
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "shift64ExtraRightJamming": {
+      "Halstead complexity difficulty measure": 30.7,
+      "Lines of code": 25,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 4
+    },
+    "shift64RightJamming": {
+      "Halstead complexity difficulty measure": 21.2,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "sub128": {
+      "Halstead complexity difficulty measure": 13.8,
+      "Lines of code": 6,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "subFloat64Sigs": {
+      "Halstead complexity difficulty measure": 46.0,
+      "Lines of code": 107,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 14
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 15.5,
+      "Lines of code": 15,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "ullong_to_double": {
+      "Halstead complexity difficulty measure": 4.7,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    }
+  },
+  "doitgen.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 36.6,
+      "Lines of code": 22,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 6
+    },
+    "kernel_doitgen": {
+      "Halstead complexity difficulty measure": 34.2,
+      "Lines of code": 27,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 6
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 15.8,
+      "Lines of code": 22,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "durbin.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 16.3,
+      "Lines of code": 8,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "kernel_durbin": {
+      "Halstead complexity difficulty measure": 47.9,
+      "Lines of code": 32,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 5
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 14.4,
+      "Lines of code": 19,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "fdtd-2d.c": {
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 19.0,
+      "Lines of code": 25,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "floyd-warshall.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 29.5,
+      "Lines of code": 16,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 4
+    },
+    "kernel_floyd_warshall": {
+      "Halstead complexity difficulty measure": 50.6,
+      "Lines of code": 24,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 5
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 11.4,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "gemm.c": {
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 18.1,
+      "Lines of code": 34,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "gemver.c": {
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 27.1,
+      "Lines of code": 50,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "gesummv.c": {
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 21.2,
+      "Lines of code": 36,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "gramschmidt.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 32.2,
+      "Lines of code": 18,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 5
+    },
+    "kernel_gramschmidt": {
+      "Halstead complexity difficulty measure": 59.7,
+      "Lines of code": 41,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 7
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 16.4,
+      "Lines of code": 22,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "gsm.c": {
+    "Autocorrelation": {
+      "Halstead complexity difficulty measure": 143.3,
+      "Lines of code": 111,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 11
+    },
+    "Gsm_LPC_Analysis": {
+      "Halstead complexity difficulty measure": 10.0,
+      "Lines of code": 13,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "Quantization_and_coding": {
+      "Halstead complexity difficulty measure": 54.9,
+      "Lines of code": 140,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 17
+    },
+    "Reflection_coefficients": {
+      "Halstead complexity difficulty measure": 60.5,
+      "Lines of code": 81,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 12
+    },
+    "Transformation_to_Log_Area_Ratios": {
+      "Halstead complexity difficulty measure": 21.2,
+      "Lines of code": 29,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 5
+    },
+    "gsm_abs": {
+      "Halstead complexity difficulty measure": 13.0,
+      "Lines of code": 12,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "gsm_add": {
+      "Halstead complexity difficulty measure": 20.2,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "gsm_div": {
+      "Halstead complexity difficulty measure": 30.0,
+      "Lines of code": 27,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 4
+    },
+    "gsm_mult": {
+      "Halstead complexity difficulty measure": 16.5,
+      "Lines of code": 11,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "gsm_mult_r": {
+      "Halstead complexity difficulty measure": 16.7,
+      "Lines of code": 11,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "gsm_norm": {
+      "Halstead complexity difficulty measure": 16.8,
+      "Lines of code": 29,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 6
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 27.4,
+      "Lines of code": 24,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 4
+    }
+  },
+  "heat-3d.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 30.5,
+      "Lines of code": 19,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 4
+    },
+    "kernel_heat_3d": {
+      "Halstead complexity difficulty measure": 117.0,
+      "Lines of code": 87,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 8
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 12.7,
+      "Lines of code": 18,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "jacobi-1d.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 19.8,
+      "Lines of code": 9,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "kernel_jacobi_1d": {
+      "Halstead complexity difficulty measure": 42.0,
+      "Lines of code": 20,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 4
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 14.3,
+      "Lines of code": 19,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "jacobi-2d.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 23.6,
+      "Lines of code": 14,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "kernel_jacobi_2d": {
+      "Halstead complexity difficulty measure": 72.3,
+      "Lines of code": 29,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 6
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 13.7,
+      "Lines of code": 19,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "lu.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 78.6,
+      "Lines of code": 45,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 11
+    },
+    "kernel_lu": {
+      "Halstead complexity difficulty measure": 59.1,
+      "Lines of code": 34,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 6
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 11.4,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "ludcmp.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 77.1,
+      "Lines of code": 51,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 12
+    },
+    "kernel_ludcmp": {
+      "Halstead complexity difficulty measure": 98.1,
+      "Lines of code": 47,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 10
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 18.5,
+      "Lines of code": 25,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "mips.c": {
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 60.6,
+      "Lines of code": 176,
+      "Maximum nesting depth": 6,
+      "McCabe cyclomatic complexity": 39
+    }
+  },
+  "mpeg2.c": {
+    "Fill_Buffer": {
+      "Halstead complexity difficulty measure": 22.7,
+      "Lines of code": 30,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 6
+    },
+    "Flush_Buffer": {
+      "Halstead complexity difficulty measure": 18.6,
+      "Lines of code": 30,
+      "Maximum nesting depth": 4,
+      "McCabe cyclomatic complexity": 6
+    },
+    "Get_Bits": {
+      "Halstead complexity difficulty measure": 6.4,
+      "Lines of code": 7,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "Get_Bits1": {
+      "Halstead complexity difficulty measure": 3.5,
+      "Lines of code": 5,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "Get_dmvector": {
+      "Halstead complexity difficulty measure": 17.1,
+      "Lines of code": 17,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "Get_motion_code": {
+      "Halstead complexity difficulty measure": 30.9,
+      "Lines of code": 60,
+      "Maximum nesting depth": 5,
+      "McCabe cyclomatic complexity": 8
+    },
+    "Initialize_Buffer": {
+      "Halstead complexity difficulty measure": 4.4,
+      "Lines of code": 9,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "Show_Bits": {
+      "Halstead complexity difficulty measure": 4.6,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "decode_motion_vector": {
+      "Halstead complexity difficulty measure": 37.5,
+      "Lines of code": 38,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 6
+    },
+    "motion_vector": {
+      "Halstead complexity difficulty measure": 20.0,
+      "Lines of code": 14,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 7
+    },
+    "read": {
+      "Halstead complexity difficulty measure": 19.7,
+      "Lines of code": 17,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 43.3,
+      "Lines of code": 42,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 7
+    }
+  },
+  "mvt.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 37.5,
+      "Lines of code": 19,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "kernel_mvt": {
+      "Halstead complexity difficulty measure": 38.1,
+      "Lines of code": 20,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 5
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 20.7,
+      "Lines of code": 28,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "nussinov.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 24.2,
+      "Lines of code": 14,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 4
+    },
+    "kernel_nussinov": {
+      "Halstead complexity difficulty measure": 121.4,
+      "Lines of code": 78,
+      "Maximum nesting depth": 5,
+      "McCabe cyclomatic complexity": 13
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 13.3,
+      "Lines of code": 19,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "seidel-2d.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 19.4,
+      "Lines of code": 12,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "kernel_seidel_2d": {
+      "Halstead complexity difficulty measure": 62.5,
+      "Lines of code": 23,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 4
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 11.2,
+      "Lines of code": 16,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "sha_driver.c": {
+    "local_memcpy": {
+      "Halstead complexity difficulty measure": 21.1,
+      "Lines of code": 16,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "local_memset": {
+      "Halstead complexity difficulty measure": 22.5,
+      "Lines of code": 19,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 3
+    },
+    "rtclock": {
+      "Halstead complexity difficulty measure": 10.4,
+      "Lines of code": 10,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "sha_final": {
+      "Halstead complexity difficulty measure": 15.5,
+      "Lines of code": 24,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "sha_init": {
+      "Halstead complexity difficulty measure": 4.3,
+      "Lines of code": 11,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "sha_stream": {
+      "Halstead complexity difficulty measure": 10.5,
+      "Lines of code": 11,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "sha_transform": {
+      "Halstead complexity difficulty measure": 42.6,
+      "Lines of code": 69,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 7
+    },
+    "sha_update": {
+      "Halstead complexity difficulty measure": 14.4,
+      "Lines of code": 18,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 14.4,
+      "Lines of code": 15,
+      "Maximum nesting depth": 1,
+      "McCabe cyclomatic complexity": 2
+    }
+  },
+  "symm.c": {
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 18.4,
+      "Lines of code": 32,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "syr2k.c": {
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 18.1,
+      "Lines of code": 32,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "syrk.c": {
+    "kernel_syrk": {
+      "Halstead complexity difficulty measure": 35.8,
+      "Lines of code": 23,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 5
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 16.5,
+      "Lines of code": 29,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "trisolv.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 26.5,
+      "Lines of code": 14,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "kernel_trisolv": {
+      "Halstead complexity difficulty measure": 32.1,
+      "Lines of code": 18,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 14.3,
+      "Lines of code": 15,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 16.3,
+      "Lines of code": 22,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  },
+  "trmm.c": {
+    "init_array": {
+      "Halstead complexity difficulty measure": 32.0,
+      "Lines of code": 18,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 4
+    },
+    "kernel_trmm": {
+      "Halstead complexity difficulty measure": 34.2,
+      "Lines of code": 21,
+      "Maximum nesting depth": 3,
+      "McCabe cyclomatic complexity": 4
+    },
+    "print_array": {
+      "Halstead complexity difficulty measure": 5.0,
+      "Lines of code": 4,
+      "Maximum nesting depth": 0,
+      "McCabe cyclomatic complexity": 1
+    },
+    "submain": {
+      "Halstead complexity difficulty measure": 16.3,
+      "Lines of code": 28,
+      "Maximum nesting depth": 2,
+      "McCabe cyclomatic complexity": 3
+    }
+  }
+}
