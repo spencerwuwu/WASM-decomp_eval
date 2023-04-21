@@ -1,20 +1,4 @@
 {
-  "PL_2mm.c": {
-    "kernel_2mm": {
-      "Halstead complexity difficulty measure": 53.1,
-      "Lines of code": 212,
-      "Maximum nesting depth": 1,
-      "McCabe cyclomatic complexity": 13
-    }
-  },
-  "PL_3mm.c": {
-    "kernel_3mm": {
-      "Halstead complexity difficulty measure": 64.7,
-      "Lines of code": 307,
-      "Maximum nesting depth": 1,
-      "McCabe cyclomatic complexity": 19
-    }
-  },
   "adi.c": {
     "kernel_adi": {
       "Halstead complexity difficulty measure": 139.5,

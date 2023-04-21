@@ -6,7 +6,8 @@ import logging
 import matplotlib.pyplot as plt
 import numpy as np
 
-DECOMPILERS = ["wasm2c", "w2c2", "angr", "ghidra", "snowman"]
+# DECOMPILERS = ["wasm2c", "w2c2", "angr", "ghidra", "snowman"]
+DECOMPILERS = ["wasm2c"]
 OPTIMIZATION_LEVELS = [0, 1, 2]
 METRICS = [
     "Lines of code",
@@ -19,7 +20,8 @@ METRICS = [
 def main():
     configure_logger(logging.INFO)
 
-    results_dir = Path(__file__).absolute().parent.parent / "results"
+    # results_dir = Path(__file__).absolute().parent.parent / "results"
+    results_dir = Path(__file__).absolute().parent.parent / "results/tidied4"
 
     data = {"original_src": json.loads((results_dir / "original_src.json").read_text())}
     for level in OPTIMIZATION_LEVELS:
@@ -29,7 +31,7 @@ def main():
             )
 
     for metric in METRICS:
-        plot_metric_averages(metric, data)
+        # plot_metric_averages(metric, data)
         plot_average_metric_changes(metric, data)
 
 
@@ -141,8 +143,12 @@ def plot_average_metric_changes(metric, data):
     )
     plt.xlabel("Optimization level", fontweight="bold", fontsize=10)
     plt.ylabel(f"{metric}\ndelta", fontweight="bold", fontsize=10)
+    # plt.xticks(
+    #     [r + 3 * bar_width for r in range(len(OPTIMIZATION_LEVELS))],
+    #     ["-O0", "-O1", "-O2"],
+    # )
     plt.xticks(
-        [r + 3 * bar_width for r in range(len(OPTIMIZATION_LEVELS))],
+        [r + 1 * bar_width for r in range(len(OPTIMIZATION_LEVELS))],
         ["-O0", "-O1", "-O2"],
     )
 
@@ -162,29 +168,35 @@ def get_average_metric_changes(metric, data):
         )
 
         metric_deltas = []
-        num_skipped = 0
+        # num_skipped = 0
         for program in data[original_dataset]:
             if program not in data[decompiled_dataset]:
                 # logging.warning(
                 #     f"Skipping {program} since it's only in original_src dataset"
                 # )
-                num_skipped += 1
+                # num_skipped += 1
                 continue
+            for func in data[original_dataset][program]:
+                if func not in data[decompiled_dataset][program]:
+                    # num_skipped += 1
+                    continue
 
-            metric_delta = (
-                data[decompiled_dataset][program][metric]
-                - data[original_dataset][program][metric]
-            )
-            metric_deltas.append(metric_delta)
-
-            if metric_delta < 0:
-                logging.info(
-                    f"Negative delta for {decompiled_dataset}, {program}, {metric}: {metric_delta}"
+                # print(decompiled_dataset)
+                # print(data[decompiled_dataset][program])
+                metric_delta = (
+                    data[decompiled_dataset][program][func][metric]
+                    - data[original_dataset][program][func][metric]
                 )
-                pass
-        logging.warning(
-            f"{num_skipped} of {len(data[original_dataset])} programs in original_src dataset skipped"
-        )
+                metric_deltas.append(metric_delta)
+
+                if metric_delta < 0:
+                    logging.info(
+                        f"Negative delta for {decompiled_dataset}, {program}, {metric}: {metric_delta}"
+                    )
+                    pass
+        # logging.warning(
+        #     f"{num_skipped} of {len(data[original_dataset])} functions in original_src dataset skipped"
+        # )
 
         average = statistics.mean(metric_deltas)
         pstdev = statistics.pstdev(metric_deltas)

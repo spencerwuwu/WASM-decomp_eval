@@ -33,6 +33,8 @@ def main():
 
     convert_wasm2c_func_names()
 
+    delete_extra()
+
 
 # make tidied json file have the hierarchy
 # file --> functions --> metrics
@@ -166,15 +168,10 @@ def convert_wasm2c_func_names():
                 orig_func, wasm2c_func = line.split(":")
                 func_map[wasm2c_func] = orig_func
 
-            for metric in d[file_].keys():
-                new_d[file_][metric] = dict()
-
-                for function in d[file_][metric]:
-                    if function in func_map.keys():
-                        mapped_function = func_map[function]
-                        new_d[file_][metric][mapped_function] = d[file_][metric][
-                            function
-                        ]
+            for func in d[file_].keys():
+                if func in func_map.keys():
+                    mapped_function = func_map[func]
+                    new_d[file_][mapped_function] = d[file_][func]
 
         d = new_d
 
@@ -188,13 +185,45 @@ def convert_wasm2c_func_names():
         )
 
 
+def delete_extra():
+    tidied4_dir = get_tidied_dir(4)
+
+    original_d = json.loads((tidied4_dir / "original_src.json").read_text())
+    decompiled_programs = set()
+    for optimization_level in [0, 1, 2]:
+        json_file_path = tidied4_dir / f"em_output_O{optimization_level}-d_wasm2c.json"
+
+        d = json.loads(json_file_path.read_text())
+        keys = list(d.keys())
+        for k in keys:
+            decompiled_programs.add(k)
+            if k not in original_d:
+                del d[k]
+
+        tidied5_dir = get_tidied_dir(5)
+        tidied5_dir.mkdir(exist_ok=True)
+        tidied_file_path = tidied5_dir / json_file_path.name
+        tidied_file_path.write_text(json.dumps(d, indent=2))
+
+    json_file_path = tidied4_dir / f"original_src.json"
+    d = json.loads(json_file_path.read_text())
+    keys = list(d.keys())
+    for k in keys:
+        if k not in decompiled_programs:
+            del d[k]
+    tidied5_dir = get_tidied_dir(5)
+    tidied5_dir.mkdir(exist_ok=True)
+    tidied_file_path = tidied5_dir / json_file_path.name
+    tidied_file_path.write_text(json.dumps(d, indent=2))
+
+
 def copy_over_decompiled_results():
     tidied3_dir = get_tidied_dir(3)
-    results_dir = get_results_dir()
+    tidied1_dir = get_tidied_dir(1)
 
-    for f in os.listdir(results_dir):
+    for f in os.listdir(tidied1_dir):
         if "em_output" in f:
-            src = results_dir / f
+            src = tidied1_dir / f
             dst = tidied3_dir / f
             subprocess.run(f"cp {src} {dst}", shell=True)
 
