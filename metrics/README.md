@@ -12,7 +12,7 @@ python3 -m pip install -r requirements.txt
 
 1. C and C++ Code Counter: [Install Instructions](https://github.com/sarnold/cccc)
 
-## Usage (Docker)
+## Metrics calculator usage (Docker)
 
 ```bash
 # build
@@ -24,20 +24,16 @@ cd ../new_compiled_benchmarks/em_output_O0/d_wasm2c
 docker run -v $(pwd):/input_files metrics python3 calculate_program_metrics.py -f aes.c
 ```
 
-Example output:
+## Plotting the results
 
-```json
-{
-  "aes.c": {
-    "Lines of code": 64,
-    "Halstead complexity difficulty measure": 23.330479452054796,
-    "McCabe cyclomatic complexity": 5,
-    "Kafura's information flow": 0
-  }
-}
+```bash
+cd analysis
+python3 tidy_results.py
+python3 plot_results.py
+xdg-open plots
 ```
 
-## Usage (without Docker, requires manual installation of dependencies)
+## Metrics calculator (without Docker, requires manual installation of dependencies)
 
 ```bash
 python3 calculate_program_metrics.py example_source_code.c -h

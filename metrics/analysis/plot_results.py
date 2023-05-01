@@ -20,8 +20,7 @@ METRICS = [
 def main():
     configure_logger(logging.INFO)
 
-    # results_dir = Path(__file__).absolute().parent.parent / "results"
-    results_dir = Path(__file__).absolute().parent.parent / "results/tidied4"
+    results_dir = Path(__file__).absolute().parent.parent / "results/tidied_04"
 
     data = {"original_src": json.loads((results_dir / "original_src.json").read_text())}
     for level in OPTIMIZATION_LEVELS:
@@ -130,9 +129,6 @@ def plot_average_metric_changes(metric, data):
         plt.bar(
             br[decompiler],
             averages[decompiler],
-            # yerr=margins_from_average[decompiler],
-            # capsize=2,
-            # color="b",
             width=bar_width,
             label=labels[decompiler],
         )
@@ -151,10 +147,6 @@ def plot_average_metric_changes(metric, data):
     )
     plt.xlabel("Optimization level", fontweight="bold", fontsize=10)
     plt.ylabel(f"{metric}\ndelta", fontweight="bold", fontsize=10)
-    # plt.xticks(
-    #     [r + 3 * bar_width for r in range(len(OPTIMIZATION_LEVELS))],
-    #     ["-O0", "-O1", "-O2"],
-    # )
     plt.xticks(
         [r + 2.5 * bar_width for r in range(len(OPTIMIZATION_LEVELS))],
         ["-O0", "-O1", "-O2"],
@@ -177,21 +169,13 @@ def get_average_metric_changes(metric, data):
         )
 
         metric_deltas = []
-        # num_skipped = 0
         for program in data[original_dataset]:
             if program not in data[decompiled_dataset]:
-                # logging.warning(
-                #     f"Skipping {program} since it's only in original_src dataset"
-                # )
-                # num_skipped += 1
                 continue
             for func in data[original_dataset][program]:
                 if func not in data[decompiled_dataset][program]:
-                    # num_skipped += 1
                     continue
 
-                # print(decompiled_dataset)
-                # print(data[decompiled_dataset][program])
                 metric_delta = (
                     data[decompiled_dataset][program][func][metric]
                     - data[original_dataset][program][func][metric]
@@ -203,9 +187,6 @@ def get_average_metric_changes(metric, data):
                         f"Negative delta for {decompiled_dataset}, {program}, {metric}: {metric_delta}"
                     )
                     pass
-        # logging.warning(
-        #     f"{num_skipped} of {len(data[original_dataset])} functions in original_src dataset skipped"
-        # )
 
         average = statistics.mean(metric_deltas)
         pstdev = statistics.pstdev(metric_deltas)
