@@ -6,9 +6,9 @@ from pathlib import Path
 import sys
 import json
 
-# add halstead dir to import halstead module
-halstead_path = Path(__file__).absolute().parent / "halstead_helpers"
-sys.path.append(str(halstead_path))
+# add helper dir to import halstead module
+helpers_path = Path(__file__).absolute().parent / "helpers"
+sys.path.append(str(helpers_path))
 
 import halstead
 
@@ -23,7 +23,12 @@ def main():
 
     result = halstead.manageFile(args.PROGRAM_SOURCE_CODE_FILE)
     # print(json.dumps(result, indent=2))
-    print(result["difficulty"])
+    print(
+        {
+            func_name: round(data.get("difficulty"), 1) if data else 0
+            for func_name, data in result.items()
+        }
+    )
 
 
 def parse_arguments():

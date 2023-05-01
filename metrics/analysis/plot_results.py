@@ -6,7 +6,8 @@ import logging
 import matplotlib.pyplot as plt
 import numpy as np
 
-DECOMPILERS = ["wasm2c", "w2c2", "angr", "ghidra", "snowman"]
+# DECOMPILERS = ["wasm2c", "w2c2", "angr", "ghidra", "snowman"]
+DECOMPILERS = ["wasm2c", "w2c2", "angr", "ghidra"]
 OPTIMIZATION_LEVELS = [0, 1, 2]
 METRICS = [
     "Lines of code",
@@ -19,7 +20,7 @@ METRICS = [
 def main():
     configure_logger(logging.INFO)
 
-    results_dir = Path(__file__).absolute().parent.parent / "results"
+    results_dir = Path(__file__).absolute().parent.parent / "results/tidied_04"
 
     data = {"original_src": json.loads((results_dir / "original_src.json").read_text())}
     for level in OPTIMIZATION_LEVELS:
@@ -29,7 +30,7 @@ def main():
             )
 
     for metric in METRICS:
-        plot_metric_averages(metric, data)
+        # plot_metric_averages(metric, data)
         plot_average_metric_changes(metric, data)
 
 
@@ -81,6 +82,7 @@ def plot_metric_averages(metric, data):
 
 def plot_average_metric_changes(metric, data):
     plot_data = get_average_metric_changes(metric, data)
+    plot_data["o2_angr"]["average"] = 0
     # print(json.dumps(plot_data, indent=2))
 
     bar_width = 0.15
@@ -127,12 +129,16 @@ def plot_average_metric_changes(metric, data):
         plt.bar(
             br[decompiler],
             averages[decompiler],
-            # yerr=margins_from_average[decompiler],
-            # capsize=2,
-            # color="b",
             width=bar_width,
             label=labels[decompiler],
         )
+    plt.text(
+        2 + 4 * bar_width - 0.2,
+        0.02 * max([max(averages[d]) for d in averages.keys()]),
+        "No data",
+        fontsize=15,
+        rotation="vertical",
+    )
 
     plt.title(
         f"Average change from original code\nfor metric: '{metric}'",
@@ -142,12 +148,13 @@ def plot_average_metric_changes(metric, data):
     plt.xlabel("Optimization level", fontweight="bold", fontsize=10)
     plt.ylabel(f"{metric}\ndelta", fontweight="bold", fontsize=10)
     plt.xticks(
-        [r + 3 * bar_width for r in range(len(OPTIMIZATION_LEVELS))],
+        [r + 2.5 * bar_width for r in range(len(OPTIMIZATION_LEVELS))],
         ["-O0", "-O1", "-O2"],
     )
 
     plt.legend()
     plt.savefig(f"plots/average_delta_{metric.replace(' ', '_').lower()}.png")
+    # plt.show()
 
 
 def get_average_metric_changes(metric, data):
@@ -162,29 +169,24 @@ def get_average_metric_changes(metric, data):
         )
 
         metric_deltas = []
-        num_skipped = 0
         for program in data[original_dataset]:
             if program not in data[decompiled_dataset]:
-                # logging.warning(
-                #     f"Skipping {program} since it's only in original_src dataset"
-                # )
-                num_skipped += 1
                 continue
+            for func in data[original_dataset][program]:
+                if func not in data[decompiled_dataset][program]:
+                    continue
 
-            metric_delta = (
-                data[decompiled_dataset][program][metric]
-                - data[original_dataset][program][metric]
-            )
-            metric_deltas.append(metric_delta)
-
-            if metric_delta < 0:
-                logging.info(
-                    f"Negative delta for {decompiled_dataset}, {program}, {metric}: {metric_delta}"
+                metric_delta = (
+                    data[decompiled_dataset][program][func][metric]
+                    - data[original_dataset][program][func][metric]
                 )
-                pass
-        logging.warning(
-            f"{num_skipped} of {len(data[original_dataset])} programs in original_src dataset skipped"
-        )
+                metric_deltas.append(metric_delta)
+
+                if metric_delta < 0:
+                    logging.info(
+                        f"Negative delta for {decompiled_dataset}, {program}, {metric}: {metric_delta}"
+                    )
+                    pass
 
         average = statistics.mean(metric_deltas)
         pstdev = statistics.pstdev(metric_deltas)

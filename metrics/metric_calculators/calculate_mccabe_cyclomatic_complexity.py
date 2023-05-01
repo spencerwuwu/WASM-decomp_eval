@@ -5,11 +5,7 @@ import logging
 from pathlib import Path
 import sys
 
-# add program_runner dir to import runner libraries
-program_runners_path = Path(__file__).absolute().parent.parent / "program_runners"
-sys.path.append(str(program_runners_path))
-
-import cccc_runner
+from clang.cindex import CursorKind, Index
 
 
 def main():
@@ -20,12 +16,8 @@ def main():
     else:
         configure_logger(logging.INFO)
 
-    output = cccc_runner.run(args.PROGRAM_SOURCE_CODE_FILE)
-
-    project_summary = output.find("project_summary")
-    complexity = project_summary.find("McCabes_cyclomatic_complexity").attrib["value"]
-
-    print(str(complexity))
+    complexity = ComplexityVisitor()
+    print(complexity.visitFile(args.PROGRAM_SOURCE_CODE_FILE))
 
 
 def parse_arguments():
@@ -54,6 +46,56 @@ def configure_logger(log_level):
         datefmt="%H:%M:%S",
         level=log_level,
     )
+
+
+class ComplexityVisitor:
+    def __init__(self):
+        self.function_decl = CursorKind.FUNCTION_DECL
+        self.compound_statement = CursorKind.COMPOUND_STMT
+        self.decision_points = [
+            CursorKind.IF_STMT,
+            CursorKind.CASE_STMT,
+            CursorKind.FOR_STMT,
+            CursorKind.WHILE_STMT,
+            CursorKind.DO_STMT,
+        ]
+
+    def visitFile(self, file_name):
+        index = Index.create()
+        try:
+            file = index.parse(
+                file_name,
+            )
+
+            # map function name: compound statement (ignore function declarations)
+            metric = {}
+
+            for func in file.cursor.get_children():
+                children = list(func.get_children())
+                if len(children) == 0:
+                    continue
+                statement_body = children[-1]
+                if (
+                    func.kind == self.function_decl
+                    and statement_body.kind == self.compound_statement
+                ):
+                    metric[func.mangled_name] = self.visit(statement_body) + 1
+
+            return metric
+        except:
+            return None
+
+    # assume functions cannot be nested (only supported thru GCC extension)
+    def visit(self, node):
+        decision_point_count = 0
+
+        for c in node.get_children():
+            decision_point_count += self.visit(c)
+
+        if node.kind in self.decision_points:
+            decision_point_count += 1
+
+        return decision_point_count
 
 
 if __name__ == "__main__":

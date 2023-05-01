@@ -86,22 +86,21 @@ def parse_arguments():
 
 
 def calculate_program_metrics(src_path):
-    loc = int(run_metric_program(f"python3 calculate_lines_of_code.py {src_path}"))
-    halstead_complexity_difficulty_measure = float(
+    loc = json.loads(
+        run_metric_program(f"python3 calculate_lines_of_code.py {src_path}")
+    )
+    halstead_complexity_difficulty_measure = json.loads(
         run_metric_program(
             f"python3 calculate_halstead_complexity_difficulty_measure.py {src_path}"
         )
     )
-    mccabe_cyclomatic_complexity = int(
+    mccabe_cyclomatic_complexity = json.loads(
         run_metric_program(
             f"python3 calculate_mccabe_cyclomatic_complexity.py {src_path}"
         )
     )
-    kafuras_information_flow = int(
-        run_metric_program(f"python3 calculate_kafuras_information_flow.py {src_path}")
-    )
 
-    maximum_nesting_depth = int(
+    maximum_nesting_depth = json.loads(
         run_metric_program(f"python3 calculate_maximum_nesting_depth.py {src_path}")
     )
 
@@ -109,7 +108,6 @@ def calculate_program_metrics(src_path):
         "Lines of code": loc,
         "Halstead complexity difficulty measure": halstead_complexity_difficulty_measure,
         "McCabe cyclomatic complexity": mccabe_cyclomatic_complexity,
-        "Kafura's information flow": kafuras_information_flow,
         "Maximum nesting depth": maximum_nesting_depth,
     }
     return metrics
@@ -129,6 +127,7 @@ def run_metric_program(command):
             )
             .stdout.decode()
             .rstrip()
+            .replace("'", '"')
         )
     except subprocess.CalledProcessError as e:
         logging.error(e)

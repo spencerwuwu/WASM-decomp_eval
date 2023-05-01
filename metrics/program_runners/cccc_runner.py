@@ -31,6 +31,6 @@ def run(source_code_file):
 
 
 def getOutput():
-    tree = ET.parse(output_dir / "cccc.xml")
+    tree = ET.parse(output_dir / "anonymous.xml")
     root = tree.getroot()
     return root

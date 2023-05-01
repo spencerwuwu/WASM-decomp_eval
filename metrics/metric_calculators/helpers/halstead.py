@@ -2,6 +2,7 @@
 # https://raw.githubusercontent.com/AhmedEssam17/CyclomaticComplexity-and-HalsteadMetrics/main/main.py
 
 import math
+import function_parser
 
 keyWords = ["int", "void", "return", "for", "while", "else", "if"]
 
@@ -47,12 +48,30 @@ loopWords = ["if", "for", "while"]
 
 def manageFile(filepath):
     file = open(filepath, "r")
+    file_text = file.read()
+
+    metrics = {}
+
+    for func_name in function_parser.parseFunctionNames(filepath):
+        function_body = function_parser.parseFunctionBody(file_text, func_name)
+        if function_body is None:
+            continue
+
+        metrics[func_name] = manageFunctionBody(function_body)
+
+    file.close()
+    return metrics
+
+
+def manageFunctionBody(text):
+    if text == "\n":
+        return None
     splits = []
     word = ""
     opr = ""
     codeBox = ""
 
-    for line in file:
+    for line in text:
         for char in line:
             codeBox += char
             if char in separators:
@@ -101,7 +120,6 @@ def manageFile(filepath):
     capitalN1 = 0
     smallN2 = 0
     capitalN2 = 0
-    temp = 0
 
     for n in operators:
         capitalN1 += operators[n]
@@ -145,5 +163,4 @@ def manageFile(filepath):
         "ccCount": ccCount,
     }
 
-    file.close()
     return results
