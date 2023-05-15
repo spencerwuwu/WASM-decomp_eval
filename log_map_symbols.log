@@ -413,9 +413,9 @@ map_symbols.py-INFO: Handling em_output_O0 fdtd-2d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_x86/fdtd-2d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_fdtd_2d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_w2c2/fdtd-2d.ast
-map_symbols.py-ERROR: Cannot find fdtd-2d_kernelX5fdtdX52d in d_w2c2/fdtd-2d
+map_symbols.py-DEBUG:   kernel_fdtd_2d -> f6
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_wasm2c/fdtd-2d.ast
-map_symbols.py-ERROR: Cannot find w2c_fdtd-2d_kernel_fdtd_2d in d_wasm2c/fdtd-2d
+map_symbols.py-DEBUG:   kernel_fdtd_2d -> w2c_fdtd0x2D2d_kernel_fdtd_2d_0
 map_symbols.py-INFO: Done em_output_O0 fdtd-2d
 map_symbols.py-INFO: ===========================
 
@@ -424,9 +424,9 @@ map_symbols.py-INFO: Handling em_output_O0 floyd-warshall
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_x86/floyd-warshall.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_floyd_warshall']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_w2c2/floyd-warshall.ast
-map_symbols.py-ERROR: Cannot find floyd-warshall_kernelX5floydX5warshall in d_w2c2/floyd-warshall
+map_symbols.py-DEBUG:   kernel_floyd_warshall -> f6
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_wasm2c/floyd-warshall.ast
-map_symbols.py-ERROR: Cannot find w2c_floyd-warshall_kernel_floyd_warshall in d_wasm2c/floyd-warshall
+map_symbols.py-DEBUG:   kernel_floyd_warshall -> w2c_floyd0x2Dwarshall_kernel_floyd_warshall_0
 map_symbols.py-INFO: Done em_output_O0 floyd-warshall
 map_symbols.py-INFO: ===========================
 
@@ -510,9 +510,9 @@ map_symbols.py-INFO: Handling em_output_O0 heat-3d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_x86/heat-3d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_heat_3d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_w2c2/heat-3d.ast
-map_symbols.py-ERROR: Cannot find heat-3d_kernelX5heatX53d in d_w2c2/heat-3d
+map_symbols.py-DEBUG:   kernel_heat_3d -> f6
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_wasm2c/heat-3d.ast
-map_symbols.py-ERROR: Cannot find w2c_heat-3d_kernel_heat_3d in d_wasm2c/heat-3d
+map_symbols.py-DEBUG:   kernel_heat_3d -> w2c_heat0x2D3d_kernel_heat_3d_0
 map_symbols.py-INFO: Done em_output_O0 heat-3d
 map_symbols.py-INFO: ===========================
 
@@ -521,9 +521,9 @@ map_symbols.py-INFO: Handling em_output_O0 jacobi-1d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_x86/jacobi-1d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_jacobi_1d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_w2c2/jacobi-1d.ast
-map_symbols.py-ERROR: Cannot find jacobi-1d_kernelX5jacobiX51d in d_w2c2/jacobi-1d
+map_symbols.py-DEBUG:   kernel_jacobi_1d -> f6
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_wasm2c/jacobi-1d.ast
-map_symbols.py-ERROR: Cannot find w2c_jacobi-1d_kernel_jacobi_1d in d_wasm2c/jacobi-1d
+map_symbols.py-DEBUG:   kernel_jacobi_1d -> w2c_jacobi0x2D1d_kernel_jacobi_1d_0
 map_symbols.py-INFO: Done em_output_O0 jacobi-1d
 map_symbols.py-INFO: ===========================
 
@@ -532,9 +532,9 @@ map_symbols.py-INFO: Handling em_output_O0 jacobi-2d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_x86/jacobi-2d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_jacobi_2d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_w2c2/jacobi-2d.ast
-map_symbols.py-ERROR: Cannot find jacobi-2d_kernelX5jacobiX52d in d_w2c2/jacobi-2d
+map_symbols.py-DEBUG:   kernel_jacobi_2d -> f6
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_wasm2c/jacobi-2d.ast
-map_symbols.py-ERROR: Cannot find w2c_jacobi-2d_kernel_jacobi_2d in d_wasm2c/jacobi-2d
+map_symbols.py-DEBUG:   kernel_jacobi_2d -> w2c_jacobi0x2D2d_kernel_jacobi_2d_0
 map_symbols.py-INFO: Done em_output_O0 jacobi-2d
 map_symbols.py-INFO: ===========================
 
@@ -619,9 +619,9 @@ map_symbols.py-INFO: Handling em_output_O0 seidel-2d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_x86/seidel-2d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_seidel_2d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_w2c2/seidel-2d.ast
-map_symbols.py-ERROR: Cannot find seidel-2d_kernelX5seidelX52d in d_w2c2/seidel-2d
+map_symbols.py-DEBUG:   kernel_seidel_2d -> f6
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_wasm2c/seidel-2d.ast
-map_symbols.py-ERROR: Cannot find w2c_seidel-2d_kernel_seidel_2d in d_wasm2c/seidel-2d
+map_symbols.py-DEBUG:   kernel_seidel_2d -> w2c_seidel0x2D2d_kernel_seidel_2d_0
 map_symbols.py-INFO: Done em_output_O0 seidel-2d
 map_symbols.py-INFO: ===========================
 
@@ -634,13 +634,13 @@ map_symbols.py-ERROR: Cannot find sha_final in orig/sha_driver
 map_symbols.py-ERROR: Cannot find sha_stream in orig/sha_driver
 map_symbols.py-DEBUG: -- Symbols: ['local_memset', 'local_memcpy', 'sha_update']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_w2c2/sha_driver.ast
-map_symbols.py-ERROR: Cannot find sha_driver_localX5memset in d_w2c2/sha_driver
-map_symbols.py-ERROR: Cannot find sha_driver_localX5memcpy in d_w2c2/sha_driver
-map_symbols.py-ERROR: Cannot find sha_driver_shaX5update in d_w2c2/sha_driver
+map_symbols.py-DEBUG:   local_memset -> f4
+map_symbols.py-DEBUG:   local_memcpy -> f5
+map_symbols.py-DEBUG:   sha_update -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O0/ast_wasm2c/sha_driver.ast
-map_symbols.py-ERROR: Cannot find w2c_sha_driver_local_memset in d_wasm2c/sha_driver
-map_symbols.py-ERROR: Cannot find w2c_sha_driver_local_memcpy in d_wasm2c/sha_driver
-map_symbols.py-ERROR: Cannot find w2c_sha_driver_sha_update in d_wasm2c/sha_driver
+map_symbols.py-DEBUG:   local_memset -> w2c_sha__driver_local_memset_0
+map_symbols.py-ERROR: Cannot find w2c_sha____driver_local_memcpy in d_wasm2c/sha____driver
+map_symbols.py-ERROR: Cannot find w2c_sha________driver_sha_update in d_wasm2c/sha________driver
 map_symbols.py-INFO: Done em_output_O0 sha_driver
 map_symbols.py-INFO: ===========================
 
@@ -1094,9 +1094,9 @@ map_symbols.py-INFO: Handling em_output_O1 fdtd-2d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_x86/fdtd-2d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_fdtd_2d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_w2c2/fdtd-2d.ast
-map_symbols.py-ERROR: Cannot find fdtd-2d_kernelX5fdtdX52d in d_w2c2/fdtd-2d
+map_symbols.py-DEBUG:   kernel_fdtd_2d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_wasm2c/fdtd-2d.ast
-map_symbols.py-ERROR: Cannot find w2c_fdtd-2d_kernel_fdtd_2d in d_wasm2c/fdtd-2d
+map_symbols.py-DEBUG:   kernel_fdtd_2d -> w2c_fdtd0x2D2d_kernel_fdtd_2d_0
 map_symbols.py-INFO: Done em_output_O1 fdtd-2d
 map_symbols.py-INFO: ===========================
 
@@ -1105,9 +1105,9 @@ map_symbols.py-INFO: Handling em_output_O1 floyd-warshall
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_x86/floyd-warshall.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_floyd_warshall']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_w2c2/floyd-warshall.ast
-map_symbols.py-ERROR: Cannot find floyd-warshall_kernelX5floydX5warshall in d_w2c2/floyd-warshall
+map_symbols.py-DEBUG:   kernel_floyd_warshall -> f7
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_wasm2c/floyd-warshall.ast
-map_symbols.py-ERROR: Cannot find w2c_floyd-warshall_kernel_floyd_warshall in d_wasm2c/floyd-warshall
+map_symbols.py-DEBUG:   kernel_floyd_warshall -> w2c_floyd0x2Dwarshall_kernel_floyd_warshall_0
 map_symbols.py-INFO: Done em_output_O1 floyd-warshall
 map_symbols.py-INFO: ===========================
 
@@ -1194,9 +1194,9 @@ map_symbols.py-INFO: Handling em_output_O1 heat-3d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_x86/heat-3d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_heat_3d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_w2c2/heat-3d.ast
-map_symbols.py-ERROR: Cannot find heat-3d_kernelX5heatX53d in d_w2c2/heat-3d
+map_symbols.py-DEBUG:   kernel_heat_3d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_wasm2c/heat-3d.ast
-map_symbols.py-ERROR: Cannot find w2c_heat-3d_kernel_heat_3d in d_wasm2c/heat-3d
+map_symbols.py-DEBUG:   kernel_heat_3d -> w2c_heat0x2D3d_kernel_heat_3d_0
 map_symbols.py-INFO: Done em_output_O1 heat-3d
 map_symbols.py-INFO: ===========================
 
@@ -1205,9 +1205,9 @@ map_symbols.py-INFO: Handling em_output_O1 jacobi-1d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_x86/jacobi-1d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_jacobi_1d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_w2c2/jacobi-1d.ast
-map_symbols.py-ERROR: Cannot find jacobi-1d_kernelX5jacobiX51d in d_w2c2/jacobi-1d
+map_symbols.py-DEBUG:   kernel_jacobi_1d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_wasm2c/jacobi-1d.ast
-map_symbols.py-ERROR: Cannot find w2c_jacobi-1d_kernel_jacobi_1d in d_wasm2c/jacobi-1d
+map_symbols.py-DEBUG:   kernel_jacobi_1d -> w2c_jacobi0x2D1d_kernel_jacobi_1d_0
 map_symbols.py-INFO: Done em_output_O1 jacobi-1d
 map_symbols.py-INFO: ===========================
 
@@ -1216,9 +1216,9 @@ map_symbols.py-INFO: Handling em_output_O1 jacobi-2d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_x86/jacobi-2d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_jacobi_2d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_w2c2/jacobi-2d.ast
-map_symbols.py-ERROR: Cannot find jacobi-2d_kernelX5jacobiX52d in d_w2c2/jacobi-2d
+map_symbols.py-DEBUG:   kernel_jacobi_2d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_wasm2c/jacobi-2d.ast
-map_symbols.py-ERROR: Cannot find w2c_jacobi-2d_kernel_jacobi_2d in d_wasm2c/jacobi-2d
+map_symbols.py-DEBUG:   kernel_jacobi_2d -> w2c_jacobi0x2D2d_kernel_jacobi_2d_0
 map_symbols.py-INFO: Done em_output_O1 jacobi-2d
 map_symbols.py-INFO: ===========================
 
@@ -1305,9 +1305,9 @@ map_symbols.py-INFO: Handling em_output_O1 seidel-2d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_x86/seidel-2d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_seidel_2d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_w2c2/seidel-2d.ast
-map_symbols.py-ERROR: Cannot find seidel-2d_kernelX5seidelX52d in d_w2c2/seidel-2d
+map_symbols.py-DEBUG:   kernel_seidel_2d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_wasm2c/seidel-2d.ast
-map_symbols.py-ERROR: Cannot find w2c_seidel-2d_kernel_seidel_2d in d_wasm2c/seidel-2d
+map_symbols.py-DEBUG:   kernel_seidel_2d -> w2c_seidel0x2D2d_kernel_seidel_2d_0
 map_symbols.py-INFO: Done em_output_O1 seidel-2d
 map_symbols.py-INFO: ===========================
 
@@ -1321,13 +1321,13 @@ map_symbols.py-ERROR: Cannot find sha_final in orig/sha_driver
 map_symbols.py-ERROR: Cannot find sha_stream in orig/sha_driver
 map_symbols.py-DEBUG: -- Symbols: ['local_memset', 'local_memcpy', 'sha_update']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_w2c2/sha_driver.ast
-map_symbols.py-ERROR: Cannot find sha_driver_localX5memset in d_w2c2/sha_driver
-map_symbols.py-ERROR: Cannot find sha_driver_localX5memcpy in d_w2c2/sha_driver
-map_symbols.py-ERROR: Cannot find sha_driver_shaX5update in d_w2c2/sha_driver
+map_symbols.py-DEBUG:   local_memset -> f6
+map_symbols.py-DEBUG:   local_memcpy -> f7
+map_symbols.py-DEBUG:   sha_update -> f10
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O1/ast_wasm2c/sha_driver.ast
-map_symbols.py-ERROR: Cannot find w2c_sha_driver_local_memset in d_wasm2c/sha_driver
-map_symbols.py-ERROR: Cannot find w2c_sha_driver_local_memcpy in d_wasm2c/sha_driver
-map_symbols.py-ERROR: Cannot find w2c_sha_driver_sha_update in d_wasm2c/sha_driver
+map_symbols.py-DEBUG:   local_memset -> w2c_sha__driver_local_memset_0
+map_symbols.py-ERROR: Cannot find w2c_sha____driver_local_memcpy in d_wasm2c/sha____driver
+map_symbols.py-ERROR: Cannot find w2c_sha________driver_sha_update in d_wasm2c/sha________driver
 map_symbols.py-INFO: Done em_output_O1 sha_driver
 map_symbols.py-INFO: ===========================
 
@@ -1781,9 +1781,9 @@ map_symbols.py-INFO: Handling em_output_O2 fdtd-2d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_x86/fdtd-2d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_fdtd_2d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_w2c2/fdtd-2d.ast
-map_symbols.py-ERROR: Cannot find fdtd-2d_kernelX5fdtdX52d in d_w2c2/fdtd-2d
+map_symbols.py-DEBUG:   kernel_fdtd_2d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_wasm2c/fdtd-2d.ast
-map_symbols.py-ERROR: Cannot find w2c_fdtd-2d_kernel_fdtd_2d in d_wasm2c/fdtd-2d
+map_symbols.py-DEBUG:   kernel_fdtd_2d -> w2c_fdtd0x2D2d_kernel_fdtd_2d_0
 map_symbols.py-INFO: Done em_output_O2 fdtd-2d
 map_symbols.py-INFO: ===========================
 
@@ -1792,9 +1792,9 @@ map_symbols.py-INFO: Handling em_output_O2 floyd-warshall
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_x86/floyd-warshall.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_floyd_warshall']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_w2c2/floyd-warshall.ast
-map_symbols.py-ERROR: Cannot find floyd-warshall_kernelX5floydX5warshall in d_w2c2/floyd-warshall
+map_symbols.py-DEBUG:   kernel_floyd_warshall -> f7
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_wasm2c/floyd-warshall.ast
-map_symbols.py-ERROR: Cannot find w2c_floyd-warshall_kernel_floyd_warshall in d_wasm2c/floyd-warshall
+map_symbols.py-DEBUG:   kernel_floyd_warshall -> w2c_floyd0x2Dwarshall_kernel_floyd_warshall_0
 map_symbols.py-INFO: Done em_output_O2 floyd-warshall
 map_symbols.py-INFO: ===========================
 
@@ -1881,9 +1881,9 @@ map_symbols.py-INFO: Handling em_output_O2 heat-3d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_x86/heat-3d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_heat_3d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_w2c2/heat-3d.ast
-map_symbols.py-ERROR: Cannot find heat-3d_kernelX5heatX53d in d_w2c2/heat-3d
+map_symbols.py-DEBUG:   kernel_heat_3d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_wasm2c/heat-3d.ast
-map_symbols.py-ERROR: Cannot find w2c_heat-3d_kernel_heat_3d in d_wasm2c/heat-3d
+map_symbols.py-DEBUG:   kernel_heat_3d -> w2c_heat0x2D3d_kernel_heat_3d_0
 map_symbols.py-INFO: Done em_output_O2 heat-3d
 map_symbols.py-INFO: ===========================
 
@@ -1892,9 +1892,9 @@ map_symbols.py-INFO: Handling em_output_O2 jacobi-1d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_x86/jacobi-1d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_jacobi_1d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_w2c2/jacobi-1d.ast
-map_symbols.py-ERROR: Cannot find jacobi-1d_kernelX5jacobiX51d in d_w2c2/jacobi-1d
+map_symbols.py-DEBUG:   kernel_jacobi_1d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_wasm2c/jacobi-1d.ast
-map_symbols.py-ERROR: Cannot find w2c_jacobi-1d_kernel_jacobi_1d in d_wasm2c/jacobi-1d
+map_symbols.py-DEBUG:   kernel_jacobi_1d -> w2c_jacobi0x2D1d_kernel_jacobi_1d_0
 map_symbols.py-INFO: Done em_output_O2 jacobi-1d
 map_symbols.py-INFO: ===========================
 
@@ -1903,9 +1903,9 @@ map_symbols.py-INFO: Handling em_output_O2 jacobi-2d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_x86/jacobi-2d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_jacobi_2d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_w2c2/jacobi-2d.ast
-map_symbols.py-ERROR: Cannot find jacobi-2d_kernelX5jacobiX52d in d_w2c2/jacobi-2d
+map_symbols.py-DEBUG:   kernel_jacobi_2d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_wasm2c/jacobi-2d.ast
-map_symbols.py-ERROR: Cannot find w2c_jacobi-2d_kernel_jacobi_2d in d_wasm2c/jacobi-2d
+map_symbols.py-DEBUG:   kernel_jacobi_2d -> w2c_jacobi0x2D2d_kernel_jacobi_2d_0
 map_symbols.py-INFO: Done em_output_O2 jacobi-2d
 map_symbols.py-INFO: ===========================
 
@@ -1992,9 +1992,9 @@ map_symbols.py-INFO: Handling em_output_O2 seidel-2d
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_x86/seidel-2d.ast
 map_symbols.py-DEBUG: -- Symbols: ['kernel_seidel_2d']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_w2c2/seidel-2d.ast
-map_symbols.py-ERROR: Cannot find seidel-2d_kernelX5seidelX52d in d_w2c2/seidel-2d
+map_symbols.py-DEBUG:   kernel_seidel_2d -> f8
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_wasm2c/seidel-2d.ast
-map_symbols.py-ERROR: Cannot find w2c_seidel-2d_kernel_seidel_2d in d_wasm2c/seidel-2d
+map_symbols.py-DEBUG:   kernel_seidel_2d -> w2c_seidel0x2D2d_kernel_seidel_2d_0
 map_symbols.py-INFO: Done em_output_O2 seidel-2d
 map_symbols.py-INFO: ===========================
 
@@ -2008,13 +2008,13 @@ map_symbols.py-ERROR: Cannot find sha_final in orig/sha_driver
 map_symbols.py-ERROR: Cannot find sha_stream in orig/sha_driver
 map_symbols.py-DEBUG: -- Symbols: ['local_memset', 'local_memcpy', 'sha_update']
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_w2c2/sha_driver.ast
-map_symbols.py-ERROR: Cannot find sha_driver_localX5memset in d_w2c2/sha_driver
-map_symbols.py-ERROR: Cannot find sha_driver_localX5memcpy in d_w2c2/sha_driver
-map_symbols.py-ERROR: Cannot find sha_driver_shaX5update in d_w2c2/sha_driver
+map_symbols.py-DEBUG:   local_memset -> f6
+map_symbols.py-DEBUG:   local_memcpy -> f7
+map_symbols.py-DEBUG:   sha_update -> f10
 map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_wasm2c/sha_driver.ast
-map_symbols.py-ERROR: Cannot find w2c_sha_driver_local_memset in d_wasm2c/sha_driver
-map_symbols.py-ERROR: Cannot find w2c_sha_driver_local_memcpy in d_wasm2c/sha_driver
-map_symbols.py-ERROR: Cannot find w2c_sha_driver_sha_update in d_wasm2c/sha_driver
+map_symbols.py-DEBUG:   local_memset -> w2c_sha__driver_local_memset_0
+map_symbols.py-ERROR: Cannot find w2c_sha____driver_local_memcpy in d_wasm2c/sha____driver
+map_symbols.py-ERROR: Cannot find w2c_sha________driver_sha_update in d_wasm2c/sha________driver
 map_symbols.py-INFO: Done em_output_O2 sha_driver
 map_symbols.py-INFO: ===========================
 
@@ -2072,6 +2072,4 @@ map_symbols.py-INFO: ++ Loading: new_compiled_benchmarks/em_output_O2/ast_wasm2c
 map_symbols.py-DEBUG:   kernel_trmm -> w2c_trmm_kernel_trmm_0
 map_symbols.py-INFO: Done em_output_O2 trmm
 map_symbols.py-INFO: ===========================
-
-
 
