@@ -1,6 +1,8 @@
 # Prerequisites
 *.d
 
+.ipynb_checkpoints/
+
 # Object files
 #*.o
 *.ko
