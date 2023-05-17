@@ -48,22 +48,22 @@ void init_array(int n, int m,
 
 /* DCE code. Must scan the entire live-out data.
    Can be used also to check the correctness of the output. */
-static
-void print_array(int n,
-		 DATA_TYPE POLYBENCH_2D(C,N,N,n,n))
-{
-  int i, j;
-
-  POLYBENCH_DUMP_START;
-  POLYBENCH_DUMP_BEGIN("C");
-  for (i = 0; i < n; i++)
-    for (j = 0; j < n; j++) {
-	if ((i * n + j) % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
-	fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, C[i][j]);
-    }
-  POLYBENCH_DUMP_END("C");
-  POLYBENCH_DUMP_FINISH;
-}
+// static
+// void print_array(int n,
+// 		 DATA_TYPE POLYBENCH_2D(C,N,N,n,n))
+// {
+//   int i, j;
+// 
+//   POLYBENCH_DUMP_START;
+//   POLYBENCH_DUMP_BEGIN("C");
+//   for (i = 0; i < n; i++)
+//     for (j = 0; j < n; j++) {
+// 	if ((i * n + j) % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
+// 	fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, C[i][j]);
+//     }
+//   POLYBENCH_DUMP_END("C");
+//   POLYBENCH_DUMP_FINISH;
+// }
 
 
 /* Main computational kernel. The whole function will be timed,
@@ -99,50 +99,50 @@ void kernel_syr2k(int n, int m,
 }
 
 
-int submain(int argc, char** argv)
-{
-  /* Retrieve problem size. */
-  int n = N;
-  int m = M;
-
-  /* Variable declaration/allocation. */
-  DATA_TYPE alpha;
-  DATA_TYPE beta;
-  POLYBENCH_2D_ARRAY_DECL(C,DATA_TYPE,N,N,n,n);
-  POLYBENCH_2D_ARRAY_DECL(A,DATA_TYPE,N,M,n,m);
-  POLYBENCH_2D_ARRAY_DECL(B,DATA_TYPE,N,M,n,m);
-
-  /* Initialize array(s). */
-  init_array (n, m, &alpha, &beta,
-	      POLYBENCH_ARRAY(C),
-	      POLYBENCH_ARRAY(A),
-	      POLYBENCH_ARRAY(B));
-
-  /* Start timer. */
-  polybench_start_instruments;
-
-  /* Run kernel. */
-  kernel_syr2k (n, m,
-		alpha, beta,
-		POLYBENCH_ARRAY(C),
-		POLYBENCH_ARRAY(A),
-		POLYBENCH_ARRAY(B));
-
-  /* Stop and print timer. */
-  polybench_stop_instruments;
-  polybench_print_instruments;
-
-  /* Prevent dead-code elimination. All live-out data must be printed
-     by the function call in argument. */
-  polybench_prevent_dce(print_array(n, POLYBENCH_ARRAY(C)));
-
-  /* Be clean. */
-  POLYBENCH_FREE_ARRAY(C);
-  POLYBENCH_FREE_ARRAY(A);
-  POLYBENCH_FREE_ARRAY(B);
-
-  return 0;
-}
+// int submain(int argc, char** argv)
+// {
+//   /* Retrieve problem size. */
+//   int n = N;
+//   int m = M;
+// 
+//   /* Variable declaration/allocation. */
+//   DATA_TYPE alpha;
+//   DATA_TYPE beta;
+//   POLYBENCH_2D_ARRAY_DECL(C,DATA_TYPE,N,N,n,n);
+//   POLYBENCH_2D_ARRAY_DECL(A,DATA_TYPE,N,M,n,m);
+//   POLYBENCH_2D_ARRAY_DECL(B,DATA_TYPE,N,M,n,m);
+// 
+//   /* Initialize array(s). */
+//   init_array (n, m, &alpha, &beta,
+// 	      POLYBENCH_ARRAY(C),
+// 	      POLYBENCH_ARRAY(A),
+// 	      POLYBENCH_ARRAY(B));
+// 
+//   /* Start timer. */
+//   polybench_start_instruments;
+// 
+//   /* Run kernel. */
+//   kernel_syr2k (n, m,
+// 		alpha, beta,
+// 		POLYBENCH_ARRAY(C),
+// 		POLYBENCH_ARRAY(A),
+// 		POLYBENCH_ARRAY(B));
+// 
+//   /* Stop and print timer. */
+//   polybench_stop_instruments;
+//   polybench_print_instruments;
+// 
+//   /* Prevent dead-code elimination. All live-out data must be printed
+//      by the function call in argument. */
+//   polybench_prevent_dce(print_array(n, POLYBENCH_ARRAY(C)));
+// 
+//   /* Be clean. */
+//   POLYBENCH_FREE_ARRAY(C);
+//   POLYBENCH_FREE_ARRAY(A);
+//   POLYBENCH_FREE_ARRAY(B);
+// 
+//   return 0;
+// }
 
 
 // int main(int argc, char** argv) {

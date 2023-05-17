@@ -49,21 +49,21 @@ void init_array(int ni, int nj, int nk, int nl, int nm,
 /* DCE code. Must scan the entire live-out data.
    Can be used also to check the correctness of the output. */
 // static
-void print_array(int ni, int nl,
-		 DATA_TYPE POLYBENCH_2D(G,NI,NL,ni,nl))
-{
-  int i, j;
-
-  POLYBENCH_DUMP_START;
-  POLYBENCH_DUMP_BEGIN("G");
-  for (i = 0; i < ni; i++)
-    for (j = 0; j < nl; j++) {
-	if ((i * ni + j) % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
-	fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, G[i][j]);
-    }
-  POLYBENCH_DUMP_END("G");
-  POLYBENCH_DUMP_FINISH;
-}
+// void print_array(int ni, int nl,
+// 		 DATA_TYPE POLYBENCH_2D(G,NI,NL,ni,nl))
+// {
+//   int i, j;
+// 
+//   POLYBENCH_DUMP_START;
+//   POLYBENCH_DUMP_BEGIN("G");
+//   for (i = 0; i < ni; i++)
+//     for (j = 0; j < nl; j++) {
+// 	if ((i * ni + j) % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
+// 	fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, G[i][j]);
+//     }
+//   POLYBENCH_DUMP_END("G");
+//   POLYBENCH_DUMP_FINISH;
+// }
 
 
 /* Main computational kernel. The whole function will be timed,
@@ -110,63 +110,63 @@ void kernel_3mm(int ni, int nj, int nk, int nl, int nm,
 }
 
 
-int submain(int argc, char** argv)
-{
-  /* Retrieve problem size. */
-  int ni = NI;
-  int nj = NJ;
-  int nk = NK;
-  int nl = NL;
-  int nm = NM;
-
-  /* Variable declaration/allocation. */
-  POLYBENCH_2D_ARRAY_DECL(E, DATA_TYPE, NI, NJ, ni, nj);
-  POLYBENCH_2D_ARRAY_DECL(A, DATA_TYPE, NI, NK, ni, nk);
-  POLYBENCH_2D_ARRAY_DECL(B, DATA_TYPE, NK, NJ, nk, nj);
-  POLYBENCH_2D_ARRAY_DECL(F, DATA_TYPE, NJ, NL, nj, nl);
-  POLYBENCH_2D_ARRAY_DECL(C, DATA_TYPE, NJ, NM, nj, nm);
-  POLYBENCH_2D_ARRAY_DECL(D, DATA_TYPE, NM, NL, nm, nl);
-  POLYBENCH_2D_ARRAY_DECL(G, DATA_TYPE, NI, NL, ni, nl);
-
-  /* Initialize array(s). */
-  init_array (ni, nj, nk, nl, nm,
-	      POLYBENCH_ARRAY(A),
-	      POLYBENCH_ARRAY(B),
-	      POLYBENCH_ARRAY(C),
-	      POLYBENCH_ARRAY(D));
-
-  /* Start timer. */
-  polybench_start_instruments;
-
-  /* Run kernel. */
-  kernel_3mm (ni, nj, nk, nl, nm,
-	      POLYBENCH_ARRAY(E),
-	      POLYBENCH_ARRAY(A),
-	      POLYBENCH_ARRAY(B),
-	      POLYBENCH_ARRAY(F),
-	      POLYBENCH_ARRAY(C),
-	      POLYBENCH_ARRAY(D),
-	      POLYBENCH_ARRAY(G));
-
-  /* Stop and print timer. */
-  polybench_stop_instruments;
-  polybench_print_instruments;
-
-  /* Prevent dead-code elimination. All live-out data must be printed
-     by the function call in argument. */
-  polybench_prevent_dce(print_array(ni, nl,  POLYBENCH_ARRAY(G)));
-
-  /* Be clean. */
-  POLYBENCH_FREE_ARRAY(E);
-  POLYBENCH_FREE_ARRAY(A);
-  POLYBENCH_FREE_ARRAY(B);
-  POLYBENCH_FREE_ARRAY(F);
-  POLYBENCH_FREE_ARRAY(C);
-  POLYBENCH_FREE_ARRAY(D);
-  POLYBENCH_FREE_ARRAY(G);
-
-  return 0;
-}
+// int submain(int argc, char** argv)
+// {
+//   /* Retrieve problem size. */
+//   int ni = NI;
+//   int nj = NJ;
+//   int nk = NK;
+//   int nl = NL;
+//   int nm = NM;
+// 
+//   /* Variable declaration/allocation. */
+//   POLYBENCH_2D_ARRAY_DECL(E, DATA_TYPE, NI, NJ, ni, nj);
+//   POLYBENCH_2D_ARRAY_DECL(A, DATA_TYPE, NI, NK, ni, nk);
+//   POLYBENCH_2D_ARRAY_DECL(B, DATA_TYPE, NK, NJ, nk, nj);
+//   POLYBENCH_2D_ARRAY_DECL(F, DATA_TYPE, NJ, NL, nj, nl);
+//   POLYBENCH_2D_ARRAY_DECL(C, DATA_TYPE, NJ, NM, nj, nm);
+//   POLYBENCH_2D_ARRAY_DECL(D, DATA_TYPE, NM, NL, nm, nl);
+//   POLYBENCH_2D_ARRAY_DECL(G, DATA_TYPE, NI, NL, ni, nl);
+// 
+//   /* Initialize array(s). */
+//   init_array (ni, nj, nk, nl, nm,
+// 	      POLYBENCH_ARRAY(A),
+// 	      POLYBENCH_ARRAY(B),
+// 	      POLYBENCH_ARRAY(C),
+// 	      POLYBENCH_ARRAY(D));
+// 
+//   /* Start timer. */
+//   polybench_start_instruments;
+// 
+//   /* Run kernel. */
+//   kernel_3mm (ni, nj, nk, nl, nm,
+// 	      POLYBENCH_ARRAY(E),
+// 	      POLYBENCH_ARRAY(A),
+// 	      POLYBENCH_ARRAY(B),
+// 	      POLYBENCH_ARRAY(F),
+// 	      POLYBENCH_ARRAY(C),
+// 	      POLYBENCH_ARRAY(D),
+// 	      POLYBENCH_ARRAY(G));
+// 
+//   /* Stop and print timer. */
+//   polybench_stop_instruments;
+//   polybench_print_instruments;
+// 
+//   /* Prevent dead-code elimination. All live-out data must be printed
+//      by the function call in argument. */
+//   polybench_prevent_dce(print_array(ni, nl,  POLYBENCH_ARRAY(G)));
+// 
+//   /* Be clean. */
+//   POLYBENCH_FREE_ARRAY(E);
+//   POLYBENCH_FREE_ARRAY(A);
+//   POLYBENCH_FREE_ARRAY(B);
+//   POLYBENCH_FREE_ARRAY(F);
+//   POLYBENCH_FREE_ARRAY(C);
+//   POLYBENCH_FREE_ARRAY(D);
+//   POLYBENCH_FREE_ARRAY(G);
+// 
+//   return 0;
+// }
 
 // int main(int argc, char** argv) {
 //     for (int i = 0; i < TEST_REPEAT_TIME; ++i)

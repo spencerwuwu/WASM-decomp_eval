@@ -39,23 +39,23 @@ void init_array (int m, int n,
 
 /* DCE code. Must scan the entire live-out data.
    Can be used also to check the correctness of the output. */
-static
-void print_array(int m,
-		 DATA_TYPE POLYBENCH_2D(cov,M,M,m,m))
-
-{
-  int i, j;
-
-  POLYBENCH_DUMP_START;
-  POLYBENCH_DUMP_BEGIN("cov");
-  for (i = 0; i < m; i++)
-    for (j = 0; j < m; j++) {
-      if ((i * m + j) % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
-      fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, cov[i][j]);
-    }
-  POLYBENCH_DUMP_END("cov");
-  POLYBENCH_DUMP_FINISH;
-}
+// static
+// void print_array(int m,
+// 		 DATA_TYPE POLYBENCH_2D(cov,M,M,m,m))
+// 
+// {
+//   int i, j;
+// 
+//   POLYBENCH_DUMP_START;
+//   POLYBENCH_DUMP_BEGIN("cov");
+//   for (i = 0; i < m; i++)
+//     for (j = 0; j < m; j++) {
+//       if ((i * m + j) % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
+//       fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, cov[i][j]);
+//     }
+//   POLYBENCH_DUMP_END("cov");
+//   POLYBENCH_DUMP_FINISH;
+// }
 
 
 /* Main computational kernel. The whole function will be timed,
@@ -96,46 +96,46 @@ void kernel_covariance(int m, int n,
 }
 
 
-int submain(int argc, char** argv)
-{
-  /* Retrieve problem size. */
-  int n = N;
-  int m = M;
-
-  /* Variable declaration/allocation. */
-  DATA_TYPE float_n;
-  POLYBENCH_2D_ARRAY_DECL(data,DATA_TYPE,N,M,n,m);
-  POLYBENCH_2D_ARRAY_DECL(cov,DATA_TYPE,M,M,m,m);
-  POLYBENCH_1D_ARRAY_DECL(mean,DATA_TYPE,M,m);
-
-
-  /* Initialize array(s). */
-  init_array (m, n, &float_n, POLYBENCH_ARRAY(data));
-
-  /* Start timer. */
-  polybench_start_instruments;
-
-  /* Run kernel. */
-  kernel_covariance (m, n, float_n,
-		     POLYBENCH_ARRAY(data),
-		     POLYBENCH_ARRAY(cov),
-		     POLYBENCH_ARRAY(mean));
-
-  /* Stop and print timer. */
-  polybench_stop_instruments;
-  polybench_print_instruments;
-
-  /* Prevent dead-code elimination. All live-out data must be printed
-     by the function call in argument. */
-  polybench_prevent_dce(print_array(m, POLYBENCH_ARRAY(cov)));
-
-  /* Be clean. */
-  POLYBENCH_FREE_ARRAY(data);
-  POLYBENCH_FREE_ARRAY(cov);
-  POLYBENCH_FREE_ARRAY(mean);
-
-  return 0;
-}
+// int submain(int argc, char** argv)
+// {
+//   /* Retrieve problem size. */
+//   int n = N;
+//   int m = M;
+// 
+//   /* Variable declaration/allocation. */
+//   DATA_TYPE float_n;
+//   POLYBENCH_2D_ARRAY_DECL(data,DATA_TYPE,N,M,n,m);
+//   POLYBENCH_2D_ARRAY_DECL(cov,DATA_TYPE,M,M,m,m);
+//   POLYBENCH_1D_ARRAY_DECL(mean,DATA_TYPE,M,m);
+// 
+// 
+//   /* Initialize array(s). */
+//   init_array (m, n, &float_n, POLYBENCH_ARRAY(data));
+// 
+//   /* Start timer. */
+//   polybench_start_instruments;
+// 
+//   /* Run kernel. */
+//   kernel_covariance (m, n, float_n,
+// 		     POLYBENCH_ARRAY(data),
+// 		     POLYBENCH_ARRAY(cov),
+// 		     POLYBENCH_ARRAY(mean));
+// 
+//   /* Stop and print timer. */
+//   polybench_stop_instruments;
+//   polybench_print_instruments;
+// 
+//   /* Prevent dead-code elimination. All live-out data must be printed
+//      by the function call in argument. */
+//   polybench_prevent_dce(print_array(m, POLYBENCH_ARRAY(cov)));
+// 
+//   /* Be clean. */
+//   POLYBENCH_FREE_ARRAY(data);
+//   POLYBENCH_FREE_ARRAY(cov);
+//   POLYBENCH_FREE_ARRAY(mean);
+// 
+//   return 0;
+// }
 
 // int main(int argc, char** argv) {
 //     for (int i = 0; i < TEST_REPEAT_TIME; ++i)

@@ -42,29 +42,29 @@ void init_array (int m, int n,
 
 /* DCE code. Must scan the entire live-out data.
    Can be used also to check the correctness of the output. */
-static
-void print_array(int m, int n,
-		 DATA_TYPE POLYBENCH_1D(s,M,m),
-		 DATA_TYPE POLYBENCH_1D(q,N,n))
-
-{
-  int i;
-
-  POLYBENCH_DUMP_START;
-  POLYBENCH_DUMP_BEGIN("s");
-  for (i = 0; i < m; i++) {
-    if (i % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
-    fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, s[i]);
-  }
-  POLYBENCH_DUMP_END("s");
-  POLYBENCH_DUMP_BEGIN("q");
-  for (i = 0; i < n; i++) {
-    if (i % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
-    fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, q[i]);
-  }
-  POLYBENCH_DUMP_END("q");
-  POLYBENCH_DUMP_FINISH;
-}
+// static
+// void print_array(int m, int n,
+// 		 DATA_TYPE POLYBENCH_1D(s,M,m),
+// 		 DATA_TYPE POLYBENCH_1D(q,N,n))
+// 
+// {
+//   int i;
+// 
+//   POLYBENCH_DUMP_START;
+//   POLYBENCH_DUMP_BEGIN("s");
+//   for (i = 0; i < m; i++) {
+//     if (i % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
+//     fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, s[i]);
+//   }
+//   POLYBENCH_DUMP_END("s");
+//   POLYBENCH_DUMP_BEGIN("q");
+//   for (i = 0; i < n; i++) {
+//     if (i % 20 == 0) fprintf (POLYBENCH_DUMP_TARGET, "\n");
+//     fprintf (POLYBENCH_DUMP_TARGET, DATA_PRINTF_MODIFIER, q[i]);
+//   }
+//   POLYBENCH_DUMP_END("q");
+//   POLYBENCH_DUMP_FINISH;
+// }
 
 
 /* Main computational kernel. The whole function will be timed,
@@ -96,53 +96,53 @@ void kernel_bicg(int m, int n,
 }
 
 
-int submain(int argc, char** argv)
-{
-  /* Retrieve problem size. */
-  int n = N;
-  int m = M;
-
-  /* Variable declaration/allocation. */
-  POLYBENCH_2D_ARRAY_DECL(A, DATA_TYPE, N, M, n, m);
-  POLYBENCH_1D_ARRAY_DECL(s, DATA_TYPE, M, m);
-  POLYBENCH_1D_ARRAY_DECL(q, DATA_TYPE, N, n);
-  POLYBENCH_1D_ARRAY_DECL(p, DATA_TYPE, M, m);
-  POLYBENCH_1D_ARRAY_DECL(r, DATA_TYPE, N, n);
-
-  /* Initialize array(s). */
-  init_array (m, n,
-	      POLYBENCH_ARRAY(A),
-	      POLYBENCH_ARRAY(r),
-	      POLYBENCH_ARRAY(p));
-
-  /* Start timer. */
-  polybench_start_instruments;
-
-  /* Run kernel. */
-  kernel_bicg (m, n,
-	       POLYBENCH_ARRAY(A),
-	       POLYBENCH_ARRAY(s),
-	       POLYBENCH_ARRAY(q),
-	       POLYBENCH_ARRAY(p),
-	       POLYBENCH_ARRAY(r));
-
-  /* Stop and print timer. */
-  polybench_stop_instruments;
-  polybench_print_instruments;
-
-  /* Prevent dead-code elimination. All live-out data must be printed
-     by the function call in argument. */
-  polybench_prevent_dce(print_array(m, n, POLYBENCH_ARRAY(s), POLYBENCH_ARRAY(q)));
-
-  /* Be clean. */
-  POLYBENCH_FREE_ARRAY(A);
-  POLYBENCH_FREE_ARRAY(s);
-  POLYBENCH_FREE_ARRAY(q);
-  POLYBENCH_FREE_ARRAY(p);
-  POLYBENCH_FREE_ARRAY(r);
-
-  return 0;
-}
+// int submain(int argc, char** argv)
+// {
+//   /* Retrieve problem size. */
+//   int n = N;
+//   int m = M;
+// 
+//   /* Variable declaration/allocation. */
+//   POLYBENCH_2D_ARRAY_DECL(A, DATA_TYPE, N, M, n, m);
+//   POLYBENCH_1D_ARRAY_DECL(s, DATA_TYPE, M, m);
+//   POLYBENCH_1D_ARRAY_DECL(q, DATA_TYPE, N, n);
+//   POLYBENCH_1D_ARRAY_DECL(p, DATA_TYPE, M, m);
+//   POLYBENCH_1D_ARRAY_DECL(r, DATA_TYPE, N, n);
+// 
+//   /* Initialize array(s). */
+//   init_array (m, n,
+// 	      POLYBENCH_ARRAY(A),
+// 	      POLYBENCH_ARRAY(r),
+// 	      POLYBENCH_ARRAY(p));
+// 
+//   /* Start timer. */
+//   polybench_start_instruments;
+// 
+//   /* Run kernel. */
+//   kernel_bicg (m, n,
+// 	       POLYBENCH_ARRAY(A),
+// 	       POLYBENCH_ARRAY(s),
+// 	       POLYBENCH_ARRAY(q),
+// 	       POLYBENCH_ARRAY(p),
+// 	       POLYBENCH_ARRAY(r));
+// 
+//   /* Stop and print timer. */
+//   polybench_stop_instruments;
+//   polybench_print_instruments;
+// 
+//   /* Prevent dead-code elimination. All live-out data must be printed
+//      by the function call in argument. */
+//   polybench_prevent_dce(print_array(m, n, POLYBENCH_ARRAY(s), POLYBENCH_ARRAY(q)));
+// 
+//   /* Be clean. */
+//   POLYBENCH_FREE_ARRAY(A);
+//   POLYBENCH_FREE_ARRAY(s);
+//   POLYBENCH_FREE_ARRAY(q);
+//   POLYBENCH_FREE_ARRAY(p);
+//   POLYBENCH_FREE_ARRAY(r);
+// 
+//   return 0;
+// }
 
 // int main(int argc, char** argv) {
 //     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
