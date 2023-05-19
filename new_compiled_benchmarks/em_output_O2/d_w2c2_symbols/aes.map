@@ -1,0 +1,10 @@
+encrypt:f5
+KeySchedule:f6
+ByteSub_ShiftRow:f7
+MixColumn_AddRoundKey:f8
+AddRoundKey:f9
+decrypt:f10
+InversShiftRow_ByteSub:f11
+AddRoundKey_InversMixColumn:f12
+SubByte:f13
+aes_main:f14

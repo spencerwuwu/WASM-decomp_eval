@@ -1,15 +1,17 @@
 # Prerequisites
 *.d
 
+.ipynb_checkpoints/
+
 # Object files
-*.o
+#*.o
 *.ko
 *.obj
 *.elf
 
 # Linker output
 *.ilk
-*.map
+#*.map
 *.exp
 
 # Precompiled Headers
@@ -53,3 +55,12 @@ dkms.conf
 
 # IDE
 .idea/
+
+# Native binary
+/target
+
+# VSCode files
+.vscode
+
+# Python cache
+__pycache__

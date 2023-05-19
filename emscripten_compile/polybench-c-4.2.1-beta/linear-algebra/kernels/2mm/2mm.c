@@ -22,7 +22,7 @@
 
 
 /* Array initialization. */
-static
+// static
 void init_array(int ni, int nj, int nk, int nl,
 		DATA_TYPE *alpha,
 		DATA_TYPE *beta,
@@ -52,7 +52,7 @@ void init_array(int ni, int nj, int nk, int nl,
 
 /* DCE code. Must scan the entire live-out data.
    Can be used also to check the correctness of the output. */
-static
+// static
 void print_array(int ni, int nl,
 		 DATA_TYPE POLYBENCH_2D(D,NI,NL,ni,nl))
 {
@@ -72,7 +72,7 @@ void print_array(int ni, int nl,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_2mm(int ni, int nj, int nk, int nl,
 		DATA_TYPE alpha,
 		DATA_TYPE beta,
@@ -159,8 +159,8 @@ int submain(int argc, char** argv)
   return 0;
 }
 
-int main(int argc, char** argv) {
-    for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-        submain(argc, argv);
-}
+// int main(int argc, char** argv) {
+//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
+//         submain(argc, argv);
+// }
 

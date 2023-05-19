@@ -74,7 +74,7 @@ void print_array(int n,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_mvt(int n,
 		DATA_TYPE POLYBENCH_1D(x1,N,n),
 		DATA_TYPE POLYBENCH_1D(x2,N,n),
@@ -146,8 +146,8 @@ int submain(int argc, char** argv)
   return 0;
 }
 
-int main(int argc, char** argv) {
-    for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-        submain(argc, argv);
-}
+// int main(int argc, char** argv) {
+//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
+//         submain(argc, argv);
+// }
 

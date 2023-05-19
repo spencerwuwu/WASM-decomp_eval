@@ -1,0 +1,4 @@
+local_memcpy:w2c_bf_local_memcpy_0
+BF_set_key:w2c_bf_BF_set_key_0
+BF_encrypt:w2c_bf_BF_encrypt_0
+BF_cfb64_encrypt:w2c_bf_BF_cfb64_encrypt_0

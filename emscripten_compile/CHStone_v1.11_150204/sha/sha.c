@@ -92,7 +92,8 @@ local_memcpy (INT32 * s1, const BYTE * s2, int n)
 
 /* do SHA transformation */
 
-static void
+// static 
+    void
 sha_transform ()
 {
   int i;

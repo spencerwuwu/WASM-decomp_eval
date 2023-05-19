@@ -22,7 +22,7 @@
 
 
 /* Array initialization. */
-static
+// static
 void init_array (int n,
 		 DATA_TYPE POLYBENCH_2D(u,N,N,n,n))
 {
@@ -38,7 +38,7 @@ void init_array (int n,
 
 /* DCE code. Must scan the entire live-out data.
    Can be used also to check the correctness of the output. */
-static
+// static
 void print_array(int n,
 		 DATA_TYPE POLYBENCH_2D(u,N,N,n,n))
 
@@ -63,7 +63,7 @@ void print_array(int n,
  * "Automatic Data and Computation Decomposition on Distributed Memory Parallel Computers"
  * by Peizong Lee and Zvi Meir Kedem, TOPLAS, 2002
  */
-static
+// static
 void kernel_adi(int tsteps, int n,
 		DATA_TYPE POLYBENCH_2D(u,N,N,n,n),
 		DATA_TYPE POLYBENCH_2D(v,N,N,n,n),
@@ -168,9 +168,9 @@ int submain(int argc, char** argv)
 }
 
 
-int main(int argc, char** argv) {
-    for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-        submain(argc, argv);
-}
+// int main(int argc, char** argv) {
+//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
+//         submain(argc, argv);
+// }
 
 

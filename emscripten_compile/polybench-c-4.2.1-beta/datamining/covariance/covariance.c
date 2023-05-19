@@ -60,7 +60,7 @@ void print_array(int m,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_covariance(int m, int n,
 		       DATA_TYPE float_n,
 		       DATA_TYPE POLYBENCH_2D(data,N,M,n,m),
@@ -137,8 +137,8 @@ int submain(int argc, char** argv)
   return 0;
 }
 
-int main(int argc, char** argv) {
-    for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-        submain(argc, argv);
-}
+// int main(int argc, char** argv) {
+//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
+//         submain(argc, argv);
+// }
 

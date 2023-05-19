@@ -1,0 +1,14 @@
+0:memset
+1:gettimeofday
+2:iprintf
+3:__small_printf
+4:__wasm_call_ctors
+5:__wasm_apply_data_relocs
+6:local_memset
+7:local_memcpy
+8:sha_transform
+9:sha_init
+10:sha_update
+11:sha_final
+12:sha_stream
+13:submain

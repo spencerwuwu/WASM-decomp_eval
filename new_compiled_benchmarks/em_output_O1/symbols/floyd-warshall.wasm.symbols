@@ -1,0 +1,10 @@
+0:fwrite
+1:fiprintf
+2:fputc
+3:free
+4:legalimport$polybench_alloc_data
+5:__wasm_call_ctors
+6:__wasm_apply_data_relocs
+7:kernel_floyd_warshall
+8:submain
+9:legalfunc$polybench_alloc_data

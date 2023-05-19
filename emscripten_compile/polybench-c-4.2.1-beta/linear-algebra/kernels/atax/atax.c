@@ -22,7 +22,7 @@
 
 
 /* Array initialization. */
-static
+// static
 void init_array (int m, int n,
 		 DATA_TYPE POLYBENCH_2D(A,M,N,m,n),
 		 DATA_TYPE POLYBENCH_1D(x,N,n))
@@ -41,7 +41,7 @@ void init_array (int m, int n,
 
 /* DCE code. Must scan the entire live-out data.
    Can be used also to check the correctness of the output. */
-static
+// static
 void print_array(int n,
 		 DATA_TYPE POLYBENCH_1D(y,N,n))
 
@@ -61,7 +61,7 @@ void print_array(int n,
 
 /* Main computational kernel. The whole function will be timed,
    including the call and return. */
-static
+// static
 void kernel_atax(int m, int n,
 		 DATA_TYPE POLYBENCH_2D(A,M,N,m,n),
 		 DATA_TYPE POLYBENCH_1D(x,N,n),
@@ -128,8 +128,8 @@ int submain(int argc, char** argv)
   return 0;
 }
 
-int main(int argc, char** argv) {
-    for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-        submain(argc, argv);
-}
+// int main(int argc, char** argv) {
+//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
+//         submain(argc, argv);
+// }
 

@@ -1,0 +1,11 @@
+0:strcmp
+1:free
+2:fprintf
+3:legalimport$polybench_alloc_data
+4:__wasm_call_ctors
+5:__wasm_apply_data_relocs
+6:kernel_jacobi_2d
+7:submain
+8:init_array
+9:print_array
+10:legalfunc$polybench_alloc_data

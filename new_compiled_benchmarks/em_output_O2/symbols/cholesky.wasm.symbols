@@ -1,0 +1,12 @@
+0:memset
+1:free
+2:fwrite
+3:fiprintf
+4:fputc
+5:__small_fprintf
+6:legalimport$polybench_alloc_data
+7:__wasm_call_ctors
+8:__wasm_apply_data_relocs
+9:kernel_cholesky
+10:submain
+11:legalfunc$polybench_alloc_data

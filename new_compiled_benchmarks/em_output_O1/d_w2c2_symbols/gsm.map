@@ -1,0 +1,11 @@
+gsm_add:f7
+gsm_mult:f8
+gsm_mult_r:f9
+gsm_abs:f10
+gsm_norm:f11
+gsm_div:f12
+Autocorrelation:f13
+Reflection_coefficients:f14
+Transformation_to_Log_Area_Ratios:f15
+Quantization_and_coding:f16
+Gsm_LPC_Analysis:f17

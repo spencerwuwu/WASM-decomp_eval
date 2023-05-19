@@ -1,0 +1,16 @@
+0:gettimeofday
+1:iprintf
+2:__small_printf
+3:__wasm_call_ctors
+4:__wasm_apply_data_relocs
+5:encrypt
+6:KeySchedule
+7:ByteSub_ShiftRow
+8:MixColumn_AddRoundKey
+9:AddRoundKey
+10:decrypt
+11:InversShiftRow_ByteSub
+12:AddRoundKey_InversMixColumn
+13:SubByte
+14:aes_main
+15:submain

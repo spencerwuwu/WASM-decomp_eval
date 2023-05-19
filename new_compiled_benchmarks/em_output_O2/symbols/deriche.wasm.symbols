@@ -1,0 +1,13 @@
+0:expf
+1:exp2f
+2:fwrite
+3:fiprintf
+4:fputc
+5:__small_fprintf
+6:free
+7:legalimport$polybench_alloc_data
+8:__wasm_call_ctors
+9:__wasm_apply_data_relocs
+10:kernel_deriche
+11:submain
+12:legalfunc$polybench_alloc_data
