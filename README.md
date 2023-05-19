@@ -1,5 +1,13 @@
 # CS699_DeWasm
 
+## Use new dataset
+- Install dependencies of gcj_proceed.py
+- Execute gcj_proceed.py, it should execute `singleProgram` per program to generate 
+original program, compiled program, input, output in `tmp` folder.
+- Currently have 686 C and 8744 CPP files. In total 9430 now.
+- TODO: Merge `singleProgram` to the current compilation pipeline.
+- TODO: Detect potential bugs because lots of False detected even using dataset with all programs passed.
+
 ## AST similarity progress
 ### Workflow
 - Parse symbol file 
