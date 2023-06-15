@@ -1,0 +1,11 @@
+int gsm_add(short param_1,short param_2)  ;
+int gsm_mult(short param_1,short param_2)  ;
+int gsm_mult_r(short param_1,short param_2)  ;
+int gsm_abs(short param_1)  ;
+int gsm_norm(ulong param_1)  ;
+int gsm_div(short param_1,short param_2)  ;
+void Autocorrelation(short *param_1,long *param_2,ulong param_3)  ;
+void Reflection_coefficients(long *param_1,short *param_2)  ;
+void Transformation_to_Log_Area_Ratios(short *param_1)  ;
+void Quantization_and_coding(short *param_1)  ;
+void Gsm_LPC_Analysis(int8 param_1,int8 param_2)  ;

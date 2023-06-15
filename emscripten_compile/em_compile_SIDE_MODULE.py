@@ -87,14 +87,15 @@ def pbcCompile():
         command = compiler + ' ' + wasm_flags + ' ' + pbcPath + curr + ' ' + pbc_flags + ' ' + opt_level \
                   + ' ' + output_prefix + wasm_output_folder + fileName + '.wasm'
         #print(command)
-        print('Compiling WASM', curr)
-        os.system(command)
+        #print('Compiling WASM', curr)
+        #os.system(command)
 
         command = c_compiler + ' ' + c_flags + ' ' + pbcPath + curr + ' ' + pbc_flags + ' ' + opt_level \
                   + ' ' + output_prefix + c_output_folder + fileName + '.o'
-        #print(command)
-        print('Compiling x86', curr)
-        os.system(command)
+        print(command)
+        #print('Compiling x86', curr)
+        #os.system(command)
+        exit(0)
 
 
 def chsCompile():
