@@ -10,4 +10,4 @@ int uppol2(int param_1,int param_2,int param_3,int param_4,int param_5)  ;
 int uppol1(int param_1,int param_2,int param_3,int param_4)  ;
 int logsch(int param_1,int param_2)  ;
 void decode(uint param_1)  ;
-unsigned long _DAT_e0458b48e0458948, _DAT_58b48e8458948, DAT_e0458b48e0458950, DAT_58b48e8458950, _DAT_e0458b48e045894c, _DAT_58b48e845894c, _DAT_2b48d0458b480889, _DAT_3d8b480889, _DAT_6f9c1fc4d8b0889, _DAT_3d8b480889;
+unsigned int _DAT_e0458b48e0458948, _DAT_58b48e8458948, DAT_e0458b48e0458950, DAT_58b48e8458950, _DAT_e0458b48e045894c, _DAT_58b48e845894c, _DAT_2b48d0458b480889, _DAT_3d8b480889, _DAT_6f9c1fc4d8b0889, _DAT_3d8b480889;

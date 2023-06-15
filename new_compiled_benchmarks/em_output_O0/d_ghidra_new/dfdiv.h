@@ -17,4 +17,4 @@ int8 float64_div(int8 param_1,int8 param_2)  ;
 ulong propagateFloat64NaN(ulong param_1,ulong param_2)  ;
 ulong estimateDiv128To64(ulong param_1,int8 param_2,ulong param_3)  ;
 int8 ullong_to_double(void)  ;
-unsigned long _DAT_48559066c35d0889, _DAT_58b48080b, _DAT_e47d83e44589008b, _DAT_6348e8458b480889, _DAT_58b4801c983088b;
+unsigned int _DAT_48559066c35d0889, _DAT_58b48080b, _DAT_e47d83e44589008b, _DAT_6348e8458b480889, _DAT_58b4801c983088b;

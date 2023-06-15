@@ -29,4 +29,4 @@ ulong float64_neg(ulong param_1)  ;
 ulong float64_abs(ulong param_1)  ;
 int8 local_sin(int8 param_1)  ;
 int8 ullong_to_double(void)  ;
-unsigned long _DAT_48559066c35d0889, _DAT_58b48080b, _DAT_e47d83e44589008b, _DAT_6348e8458b480889, _DAT_58b4801c983088b, _DAT_124c0940f033883;
+unsigned int _DAT_48559066c35d0889, _DAT_58b48080b, _DAT_e47d83e44589008b, _DAT_6348e8458b480889, _DAT_58b4801c983088b, _DAT_124c0940f033883;

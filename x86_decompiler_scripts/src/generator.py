@@ -152,7 +152,7 @@ def batch_decompile(dir):
             print(file + ' decompilation failed\n')
 
 
-def add_extra_declarations(code_txt, error_msg, key=None):
+def add_extra_declarations(code_txt, error_msg, keys=[]):
     var_list = []
     reg_exp = r"error: ‘([_a-zA-Z0-9]+)’ undeclared"  # match global var name
     pattern = re.compile(reg_exp)
@@ -162,15 +162,19 @@ def add_extra_declarations(code_txt, error_msg, key=None):
         var_name = m.group(1)
         if __name__ == '__main__':
             print('var name: ', var_name)
-        if key is not None and key not in var_name:
-            continue
-        var_list.append(var_name)
+        matched = False
+        for key in keys:
+            if key in var_name:
+                matched = True
+                break
+        if matched:
+            var_list.append(var_name)
     if len(var_list)==0:
         return ""
         #return code_txt
 
     # new declaration stmt
-    decl_txt = 'unsigned long '
+    decl_txt = 'unsigned int '
     decl_txt += ", ".join(e for e in var_list)
     decl_txt += ";\n"
     return decl_txt;

@@ -1,0 +1,16 @@
+void shift64RightJamming(ulong param_1,int param_2,ulong *param_3)  ;
+void add128(long param_1,ulong param_2,long param_3,ulong param_4,long *param_5,long *param_6)  ;
+void sub128(long param_1,ulong param_2,long param_3,ulong param_4,long *param_5,long *param_6)  ;
+void mul64To128(ulong param_1,ulong param_2,long *param_3,ulong *param_4)  ;
+void float_raise(uint param_1)  ;
+int float64_is_nan(long param_1)  ;
+int float64_is_signaling_nan(ulong param_1)  ;
+ulong extractFloat64Frac(ulong param_1)  ;
+uint extractFloat64Exp(int8 param_1)  ;
+ulong extractFloat64Sign(ulong param_1)  ;
+void normalizeFloat64Subnormal(ulong param_1,int *param_2,long *param_3)  ;
+long packFloat64(long param_1,long param_2,long param_3)  ;
+long roundAndPackFloat64(ulong param_1,long param_2,ulong param_3)  ;
+ulong float64_div(ulong param_1,ulong param_2)  ;
+void ullong_to_double(void)  ;
+unsigned int puRam00000000001000b7, _DAT_ff831174ff85398b, DAT_483fe0c148090a80, DAT_c9314503eb040980, DAT_c148c2014c010980, DAT_b848100880, DAT_49c0ff4810088041, _DAT_104840f118b;
