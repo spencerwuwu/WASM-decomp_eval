@@ -1,7 +1,7 @@
 import re
-from src import Config, modifier
+from . import Config, modifier
 
-type_reg_exp = r"(void|int|char|short|long|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t|struct|union|uint|uchar|int8|ushort|ulong|double|float|size_t|BF_KEY|EVP_PKEY_CTX|byte)"
+type_reg_exp = r"(void|int|char|short|long|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t|struct|union|uint|uchar|int8|ushort|ulong|double|float|float64_t|size_t|BF_KEY|EVP_PKEY_CTX|byte)"
 id_reg_exp = r"([A-Za-z_]+[A-Za-z_0-9]*)"
 # the regular expression used to match parameters
 par_dec_reg = (r"("
@@ -51,12 +51,19 @@ def find_function_def(txt):
 
 
 def find_fun_with_name(txt, fun_name):
+    # reg_exp = (fun_type_reg +
+    #            fun_name +
+    #            r"\((" + par_dec_reg + '|' + void_par_reg + ")*\)\s*{"
+    #            )
     reg_exp = (fun_type_reg +
                fun_name +
-               r"\((" + par_dec_reg + '|' + void_par_reg + ")*\)\s*{"
+               r"\s*\(.*\)\s*{"
                )
     pattern = re.compile(reg_exp)
     match = pattern.search(txt)
+    if match is None:
+        print(f"Cannot find {fun_name}:  {reg_exp}")
+        exit(1)
     if match and __name__ == '__main__':
         print('reg exp: %s' % reg_exp)
         print(match.group(0))

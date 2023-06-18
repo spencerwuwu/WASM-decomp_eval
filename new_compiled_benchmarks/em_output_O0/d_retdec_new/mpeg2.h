@@ -1,0 +1,18 @@
+int64_t __asm_movsd(int64_t, ...);
+int64_t __asm_movsd_1(int64_t, ...);
+int64_t __asm_subsd(int64_t, ...);
+int64_t __asm_cvtsi2sd(int64_t, ...);
+int64_t __asm_mulsd(int64_t, ...);
+int64_t __asm_cvtsi2sd_2(int64_t, ...);
+int64_t __asm_addsd(int64_t, ...);
+int64_t read(int64_t a1, int64_t a2, int64_t a3) ;
+void Fill_Buffer(void) ;
+int32_t Show_Bits(int32_t N) ;
+int32_t Get_Bits1(void) ;
+int32_t Get_Bits(int32_t N) ;
+void Flush_Buffer(int32_t N) ;
+int32_t Get_motion_code(void) ;
+int32_t Get_dmvector(void) ;
+void motion_vectors(int32_t (*PMV)[1][1], int32_t * dmvector, int32_t (*motion_vertical_field_select)[1], int32_t s, int32_t motion_vector_count, int32_t mv_format, int32_t h_r_size, int32_t v_r_size, int32_t dmv, int32_t mvscale) ;
+void motion_vector(int32_t * PMV, int32_t * dmvector, int32_t h_r_size, int32_t v_r_size, int32_t dmv, int32_t mvscale, int32_t full_pel_vector) ;
+void decode_motion_vector(int32_t * pred, int32_t r_size, uint32_t motion_code, int32_t motion_residual, int32_t full_pel_vector) ;

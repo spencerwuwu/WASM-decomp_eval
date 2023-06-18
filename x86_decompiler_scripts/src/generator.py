@@ -49,7 +49,7 @@ def compile_single_file(file_path, debug="", do_print=False):
         else:
             if do_print:
                 print(file_path + ' compiled')
-            return 0, ''
+    return 0, ''
 
 
 def batch_compile(src_dir):
@@ -163,6 +163,8 @@ def add_extra_declarations(code_txt, error_msg, keys=[]):
         if __name__ == '__main__':
             print('var name: ', var_name)
         matched = False
+        if len(keys) == 0:
+            matched = True
         for key in keys:
             if key in var_name:
                 matched = True
@@ -177,7 +179,7 @@ def add_extra_declarations(code_txt, error_msg, keys=[]):
     decl_txt = 'unsigned int '
     decl_txt += ", ".join(e for e in var_list)
     decl_txt += ";\n"
-    return decl_txt;
+    return decl_txt
     for name in var_list:
         decl_txt += name
         if name != var_list[-1]:

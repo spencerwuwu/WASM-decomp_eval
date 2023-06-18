@@ -1,0 +1,18 @@
+int64_t __asm_movsd(int64_t, ...);
+int64_t __asm_movsd_1(int64_t, ...);
+int64_t __asm_subsd(int64_t, ...);
+int64_t __asm_cvtsi2sd(int64_t, ...);
+int64_t __asm_mulsd(int64_t, ...);
+int64_t __asm_cvtsi2sd_2(int64_t, ...);
+int64_t __asm_addsd(int64_t, ...);
+int64_t gsm_add(int64_t a1, int64_t a2, int64_t a3, int64_t a4) ;
+int16_t gsm_mult(int16_t a, int16_t b) ;
+int16_t gsm_mult_r(int16_t a, int16_t b) ;
+int16_t gsm_abs(int16_t a) ;
+int16_t gsm_norm(int64_t a) ;
+int16_t gsm_div(int16_t num, int16_t denum) ;
+void Autocorrelation(int16_t * s, int64_t * L_ACF) ;
+void Reflection_coefficients(int64_t * L_ACF, int16_t * r) ;
+void Transformation_to_Log_Area_Ratios(int16_t * r) ;
+void Quantization_and_coding(int16_t * LAR) ;
+void Gsm_LPC_Analysis(int16_t * s, int16_t * LARc) ;
