@@ -33,7 +33,6 @@ int64_t estimateDiv128To64(uint64_t a0, int64_t a1, uint64_t b) ;
 int32_t float64_le(uint64_t a, int64_t b) ;
 int32_t float64_ge(int64_t a, int64_t b) ;
 int64_t float64_neg(int64_t x) ;
-int64_t float64_abs(int64_t x) ;
 int64_t local_sin(int64_t rad) ;
 float64_t ullong_to_double(int64_t x) ;
 unsigned int g2, g3, g1, g3;

@@ -732,10 +732,6 @@ int64_t float64_neg(int64_t x) {
     // 0x17a0
     return x ^ -0x8000000000000000;
 }
-int64_t float64_abs(int64_t x) {
-    // 0x17d0
-    return x & 0x7fffffffffffffff;
-}
 int64_t local_sin(int64_t rad) {
     int64_t v1 = float64_neg(float64_mul(rad, rad)); // 0x181f
     int64_t result = rad; // 0x1824
@@ -744,7 +740,7 @@ int64_t local_sin(int64_t rad) {
     int32_t v4 = 2 * v2; // 0x183c
     int64_t v5 = float64_div(v3, int32_to_float64((v4 | 1) * v4)); // 0x1857
     result = float64_add(result, v5);
-    int64_t v6 = float64_abs(v5); // 0x187e
+    int64_t v6 = float64__abs(v5); // 0x187e
     v2++;
     while (float64_ge(v6, 0x3ee4f8b588e368f1) != 0) {
         // 0x1828
@@ -752,7 +748,7 @@ int64_t local_sin(int64_t rad) {
         v4 = 2 * v2;
         v5 = float64_div(v3, int32_to_float64((v4 | 1) * v4));
         result = float64_add(result, v5);
-        v6 = float64_abs(v5);
+        v6 = float64__abs(v5);
         v2++;
     }
     // 0x189e

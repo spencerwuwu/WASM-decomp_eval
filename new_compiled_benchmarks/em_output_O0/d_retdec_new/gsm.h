@@ -8,7 +8,6 @@ int64_t __asm_addsd(int64_t, ...);
 int64_t gsm_add(int64_t a1, int64_t a2, int64_t a3, int64_t a4) ;
 int16_t gsm_mult(int16_t a, int16_t b) ;
 int16_t gsm_mult_r(int16_t a, int16_t b) ;
-int16_t gsm_abs(int16_t a) ;
 int16_t gsm_norm(int64_t a) ;
 int16_t gsm_div(int16_t num, int16_t denum) ;
 void Autocorrelation(int16_t * s, int64_t * L_ACF) ;

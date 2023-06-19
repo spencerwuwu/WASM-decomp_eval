@@ -8,7 +8,7 @@
 #include <polybench.h>
 #include "retdec_base.h"
     #include "adpcm.h"
-int32_t abs(int32_t a1) {
+int64_t _abs(int32_t a1) {
     // 0x0
     return (uint32_t)(a1 < 0 ? -a1 : a1);
 }

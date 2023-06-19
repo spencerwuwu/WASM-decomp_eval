@@ -5,7 +5,7 @@ import subprocess
 from src import generator, modifier, replacer, Config
 
 
-base = "/home/weicheng/Documents/CS699_WASM/CS699_webassembly/new_compiled_benchmarks/em_output_O0"
+base = "/home/weicheng/Documents/CS699_WASM/CS699_webassembly/new_compiled_benchmarks/em_output_O2"
 binary_path = f"{base}/x86"
 wasm_symbol_path = f"{base}/d_wasm2c_symbols/"
 
@@ -57,6 +57,9 @@ def decompile_object(proj):
     new_code += f"#include \"{proj}.h\"\n"
 
     for func_name in func_names:
+        # TODO: tiny hack
+        if func_name == "abs":
+            func_name = "_abs"
         #print(f"Searching {func_name} in {proj}")
         if func_name not in text:
             print(f"Missing {func_name} in {proj}")

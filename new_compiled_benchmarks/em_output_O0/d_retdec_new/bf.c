@@ -35,8 +35,8 @@ int64_t local_memcpy(int64_t a1, int64_t a2, int64_t a3) {
     return v6 & 0xffffffff;
 }
 void BF_set_key(int32_t len, char * data) {
-    int64_t in[1]; // bp-64, 0x60
-    int64_t in2[1]; // bp-72, 0x60
+    int64_t in2[1]; // bp-64, 0x60
+    int64_t in[1]; // bp-72, 0x60
     int64_t v1 = *(int64_t *)166; // 0x9f
     int64_t v2 = (int64_t)data;
     char * d; // bp-80, 0x60
@@ -135,18 +135,18 @@ void BF_set_key(int32_t len, char * data) {
     // 0x1e5
     for (int64_t i = 0; i < 18; i += 2) {
         // 0x206
-        BF_encrypt(in2, 1);
+        BF_encrypt(in, 1);
         int64_t v22 = 8 * i; // 0x220
-        *(int64_t *)(v22 + v1) = in2[0];
-        *(int64_t *)((v22 | 8) + v1) = in[0];
+        *(int64_t *)(v22 + v1) = in[0];
+        *(int64_t *)((v22 | 8) + v1) = in2[0];
     }
     int64_t v23 = *(int64_t *)590; // 0x247
     for (int64_t i = 0; i < 1024; i += 2) {
         // 0x266
-        BF_encrypt(in2, 1);
+        BF_encrypt(in, 1);
         int64_t v24 = 8 * i; // 0x280
-        *(int64_t *)(v24 + v23) = in2[0];
-        *(int64_t *)((v24 | 8) + v23) = in[0];
+        *(int64_t *)(v24 + v23) = in[0];
+        *(int64_t *)((v24 | 8) + v23) = in2[0];
     }
 }
 void BF_encrypt(int64_t * data, int32_t encrypt) {

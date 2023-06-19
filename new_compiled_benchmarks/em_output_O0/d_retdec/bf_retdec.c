@@ -63,8 +63,8 @@ int64_t local_memcpy(int64_t a1, int64_t a2, int64_t a3) {
 // Address range: 0x60 - 0x2ad
 // Line range:    95 - 151
 void BF_set_key(int32_t len, char * data) {
-    int64_t in[1]; // bp-64, 0x60
-    int64_t in2[1]; // bp-72, 0x60
+    int64_t in2[1]; // bp-64, 0x60
+    int64_t in[1]; // bp-72, 0x60
     int64_t v1 = *(int64_t *)166; // 0x9f
     int64_t v2 = (int64_t)data;
     char * d; // bp-80, 0x60
@@ -163,18 +163,18 @@ void BF_set_key(int32_t len, char * data) {
     // 0x1e5
     for (int64_t i = 0; i < 18; i += 2) {
         // 0x206
-        BF_encrypt(in2, 1);
+        BF_encrypt(in, 1);
         int64_t v22 = 8 * i; // 0x220
-        *(int64_t *)(v22 + v1) = in2[0];
-        *(int64_t *)((v22 | 8) + v1) = in[0];
+        *(int64_t *)(v22 + v1) = in[0];
+        *(int64_t *)((v22 | 8) + v1) = in2[0];
     }
     int64_t v23 = *(int64_t *)590; // 0x247
     for (int64_t i = 0; i < 1024; i += 2) {
         // 0x266
-        BF_encrypt(in2, 1);
+        BF_encrypt(in, 1);
         int64_t v24 = 8 * i; // 0x280
-        *(int64_t *)(v24 + v23) = in2[0];
-        *(int64_t *)((v24 | 8) + v23) = in[0];
+        *(int64_t *)(v24 + v23) = in[0];
+        *(int64_t *)((v24 | 8) + v23) = in2[0];
     }
 }
 
@@ -600,14 +600,14 @@ int32_t blowfish_main(void) {
     char indata[1]; // bp-56, 0x1ab0
     char ivec[1]; // bp-112, 0x1ab0
     char outdata[1]; // bp-104, 0x1ab0
-    char ukey[1]; // bp-16, 0x1ab0
-    char ukey2[1]; // bp-8, 0x1ab0
+    char ukey2[1]; // bp-16, 0x1ab0
+    char ukey[1]; // bp-8, 0x1ab0
     char v1[1]; // 0x1ab0
     // 0x1ab0
     int64_t v2; // 0x1ab0
     v1[0] = v2;
-    ukey2 = v1;
-    int64_t v3 = (int64_t)&ukey2; // 0x1ab1
+    ukey = v1;
+    int64_t v3 = (int64_t)&ukey; // 0x1ab1
     int32_t num = 0; // bp-116, 0x1abb
     for (int64_t i = 0; i < 8; i++) {
         int64_t v4 = i + v3;
@@ -615,7 +615,7 @@ int32_t blowfish_main(void) {
         *(char *)(v4 - 104) = 0;
     }
     // 0x1b12
-    BF_set_key(8, ukey);
+    BF_set_key(8, ukey2);
     int32_t result = 0;
     int32_t v5 = 0; // 0x1ab0
     int64_t v6 = 0;

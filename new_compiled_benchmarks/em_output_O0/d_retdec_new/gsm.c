@@ -47,14 +47,6 @@ int16_t gsm_mult_r(int16_t a, int16_t b) {
     // 0x14d
     return result;
 }
-int16_t gsm_abs(int16_t a) {
-    if (a >= 0) {
-        // 0x1b1
-        return a;
-    }
-    // 0x178
-    return a != -0x8000 ? -a : 0x7fff;
-}
 int16_t gsm_norm(int64_t a) {
     int64_t v1 = a; // 0x1cd
     if (a < 0) {
@@ -116,7 +108,7 @@ void Autocorrelation(int16_t * s, int64_t * L_ACF) {
     int16_t v2 = 0;
     for (int64_t i = 0; i < 160; i++) {
         int16_t v3 = v2;
-        int16_t v4 = gsm_abs(*(int16_t *)(2 * i + v1)); // 0x3e6
+        int16_t v4 = gsm__abs(*(int16_t *)(2 * i + v1)); // 0x3e6
         v2 = v4 > v3 ? v4 : v3;
     }
     // 0x41a
@@ -326,7 +318,7 @@ void Reflection_coefficients(int64_t * L_ACF, int16_t * r) {
     int64_t v18 = 8; // 0xbb0
     int32_t v19 = v4;
     uint32_t v20 = 1;
-    int16_t v21 = gsm_abs(v17); // 0xcd9
+    int16_t v21 = gsm__abs(v17); // 0xcd9
     int16_t v22 = P[0]; // 0xce2
     while (v22 >= v21) {
         int16_t v23 = gsm_div(v21, v22); // 0xd34
@@ -365,7 +357,7 @@ void Reflection_coefficients(int64_t * L_ACF, int16_t * r) {
         }
         v19 += 2;
         v20++;
-        v21 = gsm_abs(v17);
+        v21 = gsm__abs(v17);
         v22 = P[0];
     }
     int32_t v29 = v20; // 0xcfc
@@ -388,7 +380,7 @@ void Transformation_to_Log_Area_Ratios(int16_t * r) {
     int32_t v1 = 1; // 0xf39
     int32_t v2 = (int64_t)r; // 0xe70
     int16_t * v3 = (int16_t *)(int64_t)v2; // 0xe91
-    int16_t v4 = gsm_abs(*v3); // 0xe9c
+    int16_t v4 = gsm__abs(*v3); // 0xe9c
     int16_t v5; // 0xe70
     if (v4 > 0x5665) {
         // 0xec4
@@ -404,7 +396,7 @@ void Transformation_to_Log_Area_Ratios(int16_t * r) {
     while (v1 != 9) {
         // 0xe8d
         v3 = (int16_t *)(int64_t)v2;
-        v4 = gsm_abs(*v3);
+        v4 = gsm__abs(*v3);
         if (v4 > 0x5665) {
             // 0xec4
             v5 = v4 > 0x7999 ? 4 * v4 + 0x6800 : v4 - 0x2b33;

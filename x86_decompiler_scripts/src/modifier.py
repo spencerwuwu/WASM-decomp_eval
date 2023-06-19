@@ -507,8 +507,8 @@ def JEB3_modifier_after(main_fun):
 
 def RetDec_modifier_before(txt):
     # Resetting abs() type to match lib
-    txt = txt.replace("int64_t abs", "int32_t abs")
-    # Renaming powf to make it compilable
+    # Renaming abs, powf to make it compilable
+    txt = txt.replace("abs", "_abs")
     txt = txt.replace("powf", "_powf")
     #new_txt = RetDecModifier.add_global_var_decl(txt)
     return txt

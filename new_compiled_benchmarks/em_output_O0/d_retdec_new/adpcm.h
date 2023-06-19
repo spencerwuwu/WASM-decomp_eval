@@ -6,7 +6,7 @@ int64_t __asm_cvtsi2sd(int64_t, ...);
 int64_t __asm_mulsd(int64_t, ...);
 int64_t __asm_cvtsi2sd_2(int64_t, ...);
 int64_t __asm_addsd(int64_t, ...);
-int32_t abs(int32_t a1) ;
+int64_t _abs(int32_t a1) ;
 int32_t encode(int32_t xin1, int32_t xin2) ;
 int32_t filtez(int32_t * bpl, int32_t * dlt) ;
 int32_t filtep(int32_t rlt1, int32_t al1, int32_t rlt2, int32_t al2) ;
