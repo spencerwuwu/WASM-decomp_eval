@@ -31,6 +31,7 @@ def main():
         source_code_paths.append(source_code_path)
 
     if args.directory:
+        print(args.directory)
         if in_docker:
             dir_ = docker_input_files_dir
         else:
@@ -104,11 +105,32 @@ def calculate_program_metrics(src_path):
         run_metric_program(f"python3 calculate_maximum_nesting_depth.py {src_path}")
     )
 
+    # new
+    goto_count = json.loads(
+        run_metric_program(f"python3 calculate_goto.py {src_path}")
+    )
+
+    cast_count = json.loads(
+        run_metric_program(f"python3 calculate_cast.py {src_path}")
+    )
+
+    var_count = json.loads(
+        run_metric_program(f"python3 calculate_var.py {src_path}")
+    )
+
+    dead_count = json.loads(
+        run_metric_program(f"python3 calculate_dead.py {src_path} -p")
+    )
+
     metrics = {
         "Lines of code": loc,
         "Halstead complexity difficulty measure": halstead_complexity_difficulty_measure,
         "McCabe cyclomatic complexity": mccabe_cyclomatic_complexity,
         "Maximum nesting depth": maximum_nesting_depth,
+        "# goto": goto_count,
+        "# cast": cast_count,
+        "# var": var_count,
+        "# dead code": dead_count,
     }
     return metrics
 
