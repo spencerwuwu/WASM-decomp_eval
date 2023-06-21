@@ -87,12 +87,16 @@ def getFunctionStat(text):
     f.write(text)
     f.close()
     dead = 0
-    res = subprocess.run(['cppcheck', '--enable=all', '--language=c', tempFilePath], stderr=subprocess.PIPE,
-                         stdout=subprocess.PIPE).stderr.decode('utf-8')
+    try:
+        res = subprocess.run(['cppcheck', '--enable=style', '--language=c', '-j', '6', tempFilePath], stderr=subprocess.PIPE,
+                             stdout=subprocess.PIPE, timeout=60).stderr.decode('utf-8')
+    except subprocess.TimeoutExpired:
+        #logging.warning('CPPCHECK timeout, dead stat cannot be obtained')
+        res = []
+        dead = 'Timeout'
     if res:
         res = res.split(os.linesep)
         for i in res:
-            #print(i)
             for j in checklist:
                 if "[" + j + "]" in i:
                     dead += 1
