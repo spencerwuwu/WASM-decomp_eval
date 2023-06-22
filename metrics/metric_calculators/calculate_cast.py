@@ -5,6 +5,7 @@ import logging
 from pathlib import Path
 import sys
 import re
+import json
 
 # According to https://en.cppreference.com/w/c/language/cast,
 # We use cast operator to track the explicit type conversion, that is, type casting
@@ -38,7 +39,7 @@ def main():
             continue
         metrics[func_name] = getFunctionStat(function_body)
 
-    print(metrics)
+    print(json.dumps(metrics))
 
 
 def parse_arguments():

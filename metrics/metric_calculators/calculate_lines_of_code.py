@@ -4,6 +4,7 @@ import argparse
 import logging
 from pathlib import Path
 import sys
+import json
 
 # add program_runner dir to import runner libraries
 helpers_path = Path(__file__).absolute().parent / "helpers"
@@ -31,7 +32,7 @@ def main():
             continue
         metrics[func_name] = getFunctionLOC(function_body)
 
-    print(metrics)
+    print(json.dumps(metrics))
 
 
 def parse_arguments():

@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 import os
 import subprocess
+import json
 
 # add program_runner dir to import runner libraries
 helpers_path = Path(__file__).absolute().parent / "helpers"
@@ -35,7 +36,7 @@ def main():
             continue
         metrics[func_name] = getFunctionStat(function_body)
 
-    print(metrics)
+    print(json.dumps(metrics))
 
 
 def parse_arguments():

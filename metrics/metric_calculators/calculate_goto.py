@@ -10,6 +10,7 @@ helpers_path = Path(__file__).absolute().parent / "helpers"
 sys.path.append(str(helpers_path))
 
 import function_parser
+import json
 
 
 def main():
@@ -31,7 +32,7 @@ def main():
             continue
         metrics[func_name] = getFunctionStat(function_body)
 
-    print(metrics)
+    print(json.dumps(metrics))
 
 
 def parse_arguments():

@@ -4,6 +4,7 @@ import argparse
 import logging
 from pathlib import Path
 import sys
+import json
 
 from clang.cindex import CursorKind, Index
 
@@ -17,7 +18,7 @@ def main():
         configure_logger(logging.INFO)
 
     complexity = ComplexityVisitor()
-    print(complexity.visitFile(args.PROGRAM_SOURCE_CODE_FILE))
+    print(json.dumps(complexity.visitFile(args.PROGRAM_SOURCE_CODE_FILE)))
 
 
 def parse_arguments():

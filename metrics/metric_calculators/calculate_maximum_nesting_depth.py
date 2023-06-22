@@ -3,6 +3,7 @@ from clang.cindex import CursorKind, Index
 
 import argparse
 import logging
+import json
 
 
 def main():
@@ -14,7 +15,7 @@ def main():
         configure_logger(logging.INFO)
 
     depth = DepthVisitor()
-    print(depth.visitFile(args.PROGRAM_SOURCE_CODE_FILE))
+    print(json.dumps(depth.visitFile(args.PROGRAM_SOURCE_CODE_FILE)))
 
 
 def parse_arguments():

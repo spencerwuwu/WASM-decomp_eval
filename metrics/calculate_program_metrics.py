@@ -147,9 +147,7 @@ def run_metric_program(command):
                 cwd=metric_calculators_dir,
                 check=True,
             )
-            .stdout.decode()
-            .rstrip()
-            .replace("'", '"')
+            .stdout.decode("utf8","ignore")
         )
     except subprocess.CalledProcessError as e:
         logging.error(e)

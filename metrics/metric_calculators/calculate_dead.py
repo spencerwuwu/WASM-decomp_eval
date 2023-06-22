@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 import subprocess
 import os
+import json
 
 # According to https://en.cppreference.com/w/c/language/cast,
 # We use cast operator to track the explicit type conversion, that is, type casting
@@ -43,7 +44,7 @@ def main():
         if args.program:
             metrics['program'] = getFunctionStat(file_text)
 
-    print(metrics)
+    print(json.dumps(metrics))
 
 
 def parse_arguments():

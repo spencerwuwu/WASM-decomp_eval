@@ -23,11 +23,12 @@ def main():
 
     result = halstead.manageFile(args.PROGRAM_SOURCE_CODE_FILE)
     # print(json.dumps(result, indent=2))
-    print(
+    print(json.dumps(
         {
             func_name: round(data.get("difficulty"), 1) if data else 0
             for func_name, data in result.items()
         }
+    )
     )
 
 
