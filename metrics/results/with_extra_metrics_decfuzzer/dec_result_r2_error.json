@@ -1,0 +1,5431 @@
+.
+{
+  "s0r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 38
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 5,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 19,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s0r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s0retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 38
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 5,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 19,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s0retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s101r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 29
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.3,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 8,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s101r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s101retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 29
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.3,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 8,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s101retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s129r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 41
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.2,
+      "func_1": 8.9,
+      "main": 13.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 3,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 10,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s129r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s129retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 41
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.2,
+      "func_1": 8.9,
+      "main": 13.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 3,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 10,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s129retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s131r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 23
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.5,
+      "func_1": 8.0,
+      "main": 13.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s131r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s131retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 23
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.5,
+      "func_1": 8.0,
+      "main": 13.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s131retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s13r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 38
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s13r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s13retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 38
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s13retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s145r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 14
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.5,
+      "func_1": 6.7,
+      "main": 11.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s145r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s145retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 14
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.5,
+      "func_1": 6.7,
+      "main": 11.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s145retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s225r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 47
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.3,
+      "func_1": 9.0,
+      "main": 14.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 15,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 6,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s225r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s225retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 47
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.3,
+      "func_1": 9.0,
+      "main": 14.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 15,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 6,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s225retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s231r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 12
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.0,
+      "func_1": 6.0,
+      "main": 10.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 5,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s231r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s231retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 12
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.0,
+      "func_1": 6.0,
+      "main": 10.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 5,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s231retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s263r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 13
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.1,
+      "func_1": 6.2,
+      "main": 11.2
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s263r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s263retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 13
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.1,
+      "func_1": 6.2,
+      "main": 11.2
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s263retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s277r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 26
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.9,
+      "func_1": 8.5,
+      "main": 13.2
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 9,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s277r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s277retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 26
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.9,
+      "func_1": 8.5,
+      "main": 13.2
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 9,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s277retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s280r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 30
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.4,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 7,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s280r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s280retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 30
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.4,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 7,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s280retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s300r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 15
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.5,
+      "func_1": 6.7,
+      "main": 11.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s300r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s300retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 15
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.5,
+      "func_1": 6.7,
+      "main": 11.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s300retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s309r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 30
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.4,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 16,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 24,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s309r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s309retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 30
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.4,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 16,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 24,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s309retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s35r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 12
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 4.2,
+      "func_1": 5.1,
+      "main": 10.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 1,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s35r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s35retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 12
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 4.2,
+      "func_1": 5.1,
+      "main": 10.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 1,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s35retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s379r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 27
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.4,
+      "main": 13.3
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s379r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s379retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 27
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.4,
+      "main": 13.3
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s379retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s424r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 14
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.5,
+      "func_1": 7.7,
+      "main": 11.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s424r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s424retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 14
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.5,
+      "func_1": 7.7,
+      "main": 11.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s424retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s42r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 22
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.7,
+      "func_1": 8.1,
+      "main": 12.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 3,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 11,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s42r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s42retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 22
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.7,
+      "func_1": 8.1,
+      "main": 12.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 3,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 11,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s42retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s471r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 33
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.0,
+      "func_1": 8.6,
+      "main": 13.6
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 5,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 22,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s471r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s471retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 33
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.0,
+      "func_1": 8.6,
+      "main": 13.6
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 5,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 22,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s471retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s488r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 53
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.4,
+      "func_1": 9.2,
+      "main": 14.1
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 21,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 6,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 31,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s488r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s488retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 53
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.4,
+      "func_1": 9.2,
+      "main": 14.1
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 21,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 6,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 31,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s488retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s493r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 33
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.0,
+      "func_1": 8.6,
+      "main": 13.6
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 14,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s493r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s493retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 33
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.0,
+      "func_1": 8.6,
+      "main": 13.6
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 14,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s493retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s500r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 15
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.9,
+      "func_1": 7.1,
+      "main": 11.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 3,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s500r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s500retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 15
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.9,
+      "func_1": 7.1,
+      "main": 11.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 3,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s500retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s52r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 11
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 4.2,
+      "func_1": 5.1,
+      "main": 10.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s52r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s52retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 11
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 4.2,
+      "func_1": 5.1,
+      "main": 10.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s52retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s562r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 23
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.4,
+      "func_1": 7.8,
+      "main": 13.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s562r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s562retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 23
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.4,
+      "func_1": 7.8,
+      "main": 13.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s562retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s568r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 41
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.2,
+      "func_1": 8.9,
+      "main": 13.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 12,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 31,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s568r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s568retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 41
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.2,
+      "func_1": 8.9,
+      "main": 13.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 12,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 31,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s568retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s579r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 37
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.7,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 13,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s579r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s579retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 37
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.7,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 13,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s579retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s586r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 38
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 19,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s586r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s586retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 38
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 19,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s586retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s589r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 37
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 18,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s589r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s589retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 37
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 18,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s589retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s590r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 30
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.4,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 11,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s590r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s590retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 30
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.8,
+      "func_1": 8.4,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 11,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s590retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s598r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 36
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.7,
+      "main": 13.7
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 9,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s598r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s598retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 36
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.7,
+      "main": 13.7
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 9,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s598retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s643r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 42
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.2,
+      "func_1": 8.9,
+      "main": 13.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 8,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 3,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s643r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s643retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 42
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.2,
+      "func_1": 8.9,
+      "main": 13.9
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 8,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 3,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": "Timeout",
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s643retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s652r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 38
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 10,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s652r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s652retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 38
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.1,
+      "func_1": 8.8,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 10,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s652retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s70r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 23
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.5,
+      "func_1": 8.0,
+      "main": 13.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 3,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 4,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s70r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s70retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 23
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.5,
+      "func_1": 8.0,
+      "main": 13.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 3,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 4,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s70retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s72r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 34
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.0,
+      "func_1": 8.6,
+      "main": 13.6
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 13,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s72r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s72retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 34
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.0,
+      "func_1": 8.6,
+      "main": 13.6
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 13,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s72retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s736r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 29
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.7,
+      "func_1": 8.3,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 9,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 9,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s736r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s736retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 29
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.7,
+      "func_1": 8.3,
+      "main": 13.4
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 9,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 9,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s736retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s749r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 19
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.1,
+      "func_1": 7.4,
+      "main": 12.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 5,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 4,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s749r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s749retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 19
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.1,
+      "func_1": 7.4,
+      "main": 12.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 5,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 4,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s749retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s775r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 39
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.3,
+      "func_1": 9.0,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 20,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s775r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s775retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 39
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 7.3,
+      "func_1": 9.0,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 20,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s775retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s808r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 17
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.7,
+      "func_1": 8.0,
+      "main": 12.2
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s808r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s808retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 17
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.7,
+      "func_1": 8.0,
+      "main": 12.2
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s808retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s82r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 16
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.8,
+      "func_1": 7.0,
+      "main": 12.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s82r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s82retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 16
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.8,
+      "func_1": 7.0,
+      "main": 12.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s82retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s846r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 11
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 4.2,
+      "func_1": 5.1,
+      "main": 10.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s846r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s846retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 11
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 4.2,
+      "func_1": 5.1,
+      "main": 10.5
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s846retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s851r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 17
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.0,
+      "func_1": 7.3,
+      "main": 12.2
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s851r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s851retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 17
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.0,
+      "func_1": 7.3,
+      "main": 12.2
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 2,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s851retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s853r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 16
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.1,
+      "func_1": 7.4,
+      "main": 12.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 1,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s853r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s853retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 16
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 6.1,
+      "func_1": 7.4,
+      "main": 12.0
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 1,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s853retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s85r2.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 15
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.9,
+      "func_1": 7.1,
+      "main": 11.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 3,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 3,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s85r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s85retdec.c": {
+    "Lines of code": {
+      "set_var": 4,
+      "func_1": 5,
+      "main": 15
+    },
+    "Halstead complexity difficulty measure": {
+      "set_var": 5.9,
+      "func_1": 7.1,
+      "main": 11.8
+    },
+    "McCabe cyclomatic complexity": {
+      "set_var": 1,
+      "func_1": 3,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "set_var": 0,
+      "func_1": 2,
+      "main": 1
+    },
+    "# goto": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "set_var": 0,
+      "program": 3,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s85retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s868r2.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 16
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 6.1,
+      "func_1": 5.1,
+      "main": 12.0
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 2,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s868r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s868retdec.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 16
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 6.1,
+      "func_1": 5.1,
+      "main": 12.0
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 2,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s868retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s896r2.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 48
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.3,
+      "func_1": 5.1,
+      "main": 14.0
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 7,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 4,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": "Timeout",
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s896r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s896retdec.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 48
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.3,
+      "func_1": 5.1,
+      "main": 14.0
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 7,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 4,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": "Timeout",
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s896retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s899r2.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 49
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.3,
+      "func_1": 5.1,
+      "main": 14.1
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 18,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 6,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 31,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s899r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s899retdec.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 49
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.3,
+      "func_1": 5.1,
+      "main": 14.1
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 18,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 6,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 31,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s899retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s903r2.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 37
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.1,
+      "func_1": 5.1,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 8,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 22,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s903r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s903retdec.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 37
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.1,
+      "func_1": 5.1,
+      "main": 13.8
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 8,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 22,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s903retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s918r2.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 21
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 6.3,
+      "func_1": 5.1,
+      "main": 12.8
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 2,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s918r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s918retdec.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 21
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 6.3,
+      "func_1": 5.1,
+      "main": 12.8
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 2,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 1,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 2,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s918retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s940r2.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 16
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 5.8,
+      "func_1": 5.1,
+      "main": 12.0
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 4,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s940r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s940retdec.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 16
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 5.8,
+      "func_1": 5.1,
+      "main": 12.0
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 1,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 4,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s940retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s946r2.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 34
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.0,
+      "func_1": 5.1,
+      "main": 13.6
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 9,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 18,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s946r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s946retdec.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 34
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.0,
+      "func_1": 5.1,
+      "main": 13.6
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 9,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": 18,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s946retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s970r2.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 44
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.3,
+      "func_1": 5.1,
+      "main": 14.0
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 21,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": "Timeout",
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s970r2_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  },
+  "s970retdec.c": {
+    "Lines of code": {
+      "packed_printf": 4,
+      "set_var": 4,
+      "func_1": 5,
+      "main": 44
+    },
+    "Halstead complexity difficulty measure": {
+      "packed_printf": 4.8,
+      "set_var": 7.3,
+      "func_1": 5.1,
+      "main": 14.0
+    },
+    "McCabe cyclomatic complexity": {
+      "packed_printf": 1,
+      "set_var": 1,
+      "func_1": 21,
+      "main": 2
+    },
+    "Maximum nesting depth": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 5,
+      "main": 1
+    },
+    "# goto": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# cast": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    },
+    "# var": {
+      "packed_printf": 0,
+      "set_var": 0,
+      "func_1": 0,
+      "main": 1
+    },
+    "# dead code": {
+      "packed_printf": 0,
+      "program": "Timeout",
+      "set_var": 0,
+      "func_1": 0,
+      "main": 0
+    }
+  },
+  "s970retdec_r2.c": {
+    "Lines of code": {},
+    "Halstead complexity difficulty measure": {},
+    "McCabe cyclomatic complexity": {},
+    "Maximum nesting depth": {},
+    "# goto": {},
+    "# cast": {},
+    "# var": {},
+    "# dead code": {}
+  }
+}
