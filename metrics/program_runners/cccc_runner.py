@@ -8,7 +8,7 @@ output_dir = Path(__file__).absolute().parent.parent / "output" / "cccc"
 
 
 def run(source_code_file):
-    command = f"cccc {source_code_file} --outdir={output_dir}"
+    command = f"/home/weicheng/WASM/cccc/cccc/cccc {source_code_file} --outdir={output_dir}"
 
     output_dir.mkdir(parents=True, exist_ok=True)
 

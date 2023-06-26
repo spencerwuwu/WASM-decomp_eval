@@ -37,6 +37,8 @@ def main():
     file_text = file.read()
 
     for func_name in function_parser.parseFunctionNames(args.PROGRAM_SOURCE_CODE_FILE):
+        if func_name != args.FUNC:
+            continue
         function_body = function_parser.parseFunctionBody(file_text, func_name)
         if function_body is None:
             continue
@@ -55,6 +57,10 @@ def parse_arguments():
     parser.add_argument(
         "PROGRAM_SOURCE_CODE_FILE",
         help="A file containing the source code to be analyzed",
+    )
+    parser.add_argument(
+        "FUNC",
+        help="function target",
     )
     parser.add_argument(
         "-v",
@@ -89,7 +95,7 @@ def getFunctionStat(text):
     f.close()
     dead = 0
     try:
-        res = subprocess.run(['cppcheck', '--enable=style', '--language=c', '-j', '6', tempFilePath], stderr=subprocess.PIPE,
+        res = subprocess.run(['/home/weicheng/WASM/cppcheck-2.11/cppcheck', '--enable=style', '--language=c', tempFilePath], stderr=subprocess.PIPE,
                              stdout=subprocess.PIPE, timeout=60).stderr.decode('utf-8')
     except subprocess.TimeoutExpired:
         #logging.warning('CPPCHECK timeout, dead stat cannot be obtained')

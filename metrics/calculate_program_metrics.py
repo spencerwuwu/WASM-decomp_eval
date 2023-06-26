@@ -87,6 +87,11 @@ def parse_arguments():
 
 
 def calculate_program_metrics(src_path):
+    filename = str(src_path).split("/")[-1]
+    if "wasm2c" in filename:
+        fname = f"w2c_{filename.split('.')[0]}_func_1_0"
+    elif "w2c2" in filename:
+        fname = "f2"
     loc = json.loads(
         run_metric_program(f"python3 calculate_lines_of_code.py {src_path}")
     )
@@ -119,7 +124,7 @@ def calculate_program_metrics(src_path):
     )
 
     dead_count = json.loads(
-        run_metric_program(f"python3 calculate_dead.py {src_path} -p")
+        run_metric_program(f"python3 calculate_dead.py -p {src_path} {fname}")
     )
 
     metrics = {
