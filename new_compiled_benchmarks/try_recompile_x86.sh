@@ -42,7 +42,7 @@ for cfile in "$DIR/"*.c; do
 	if [[ $cfile == "em_output_O2/d_retdec_new/gramschmidt.c" ]]; then continue; fi
 	if [[ $cfile == "em_output_O2/d_retdec_new/mpeg2.c" ]]; then continue; fi
 	
-	clang -c $cfile $LD_FLAGS -o /dev/null -Wno- -g -Wno-error=int-conversion 
+	clang -c $cfile $LD_FLAGS -o /dev/null -Wno- -g -Wno-error=int-conversion -fno-stack-protector
 	#gcc -fno-stack-protector -no-pie -O0 -w -m32 -c $cfile $LD_FLAGS -o /dev/null
 	status=$?
 	if [[ $status != "0" ]]; then
