@@ -31,15 +31,25 @@ def main():
         source_code_paths.append(source_code_path)
 
     if args.directory:
-        print(args.directory)
         if in_docker:
             dir_ = docker_input_files_dir
         else:
             dir_ = Path(args.directory).expanduser().absolute()
-        for file_ in os.listdir(dir_):
-            file_path = dir_ / file_
-            if file_path.suffix == ".c":
-                source_code_paths.append(file_path)
+        cmd = f"find {dir_} -name '*.c'"
+        c_files = (
+            subprocess.run(
+                cmd,
+                shell=True,
+                capture_output=True,
+            )
+            .stdout.decode("utf8","ignore")
+        )
+        for f in c_files.splitlines():
+            source_code_paths.append(Path(f))
+        #for file_ in os.listdir(dir_):
+        #    file_path = dir_ / file_
+        #    if file_path.suffix == ".c":
+        #        source_code_paths.append(file_path)
 
     source_code_paths.sort()
     metrics = dict()

@@ -1,0 +1,779 @@
+{
+  "adpcm.c": {
+    "Lines of code": {
+      "abs": 10,
+      "encode": 72,
+      "decode": 67,
+      "reset": 32,
+      "filtez": 10,
+      "filtep": 10,
+      "quantl": 18,
+      "logscl": 12,
+      "scalel": 9,
+      "upzero": 30,
+      "uppol2": 24,
+      "uppol1": 21,
+      "logsch": 12,
+      "adpcm_main": 17,
+      "rtclock": 10,
+      "submain": 26
+    }
+  },
+  "aes.c": {
+    "Lines of code": {
+      "encrypt": 46,
+      "decrypt": 51,
+      "KeySchedule": 65,
+      "ByteSub_ShiftRow": 18,
+      "SubByte": 0,
+      "InversShiftRow_ByteSub": 0,
+      "MixColumn_AddRoundKey": 0,
+      "AddRoundKey_InversMixColumn": 0,
+      "AddRoundKey": 0,
+      "aes_main": 39,
+      "rtclock": 10,
+      "submain": 10
+    }
+  },
+  "aes_dec.c": {
+    "Lines of code": {
+      "decrypt": 55
+    }
+  },
+  "aes_enc.c": {
+    "Lines of code": {
+      "encrypt": 52
+    }
+  },
+  "aes_func.c": {
+    "Lines of code": {
+      "ByteSub_ShiftRow": 102,
+      "SubByte": 5,
+      "InversShiftRow_ByteSub": 102,
+      "MixColumn_AddRoundKey": 61,
+      "AddRoundKey_InversMixColumn": 72,
+      "AddRoundKey": 31
+    }
+  },
+  "aes_key.c": {
+    "Lines of code": {
+      "KeySchedule": 82
+    }
+  },
+  "bf.c": {
+    "Lines of code": {
+      "local_memcpy": 15,
+      "BF_set_key": 58,
+      "BF_cfb64_encrypt": 70,
+      "BF_encrypt": 56,
+      "blowfish_main": 34,
+      "rtclock": 10,
+      "submain": 11
+    }
+  },
+  "bf_cfb64.c": {
+    "Lines of code": {
+      "BF_cfb64_encrypt": 69
+    }
+  },
+  "bf_enc.c": {
+    "Lines of code": {}
+  },
+  "bf_skey.c": {
+    "Lines of code": {
+      "local_memcpy": 14,
+      "BF_set_key": 48
+    }
+  },
+  "dfadd.c": {
+    "Lines of code": {
+      "shift64RightJamming": 19,
+      "countLeadingZeros32": 37,
+      "countLeadingZeros64": 18,
+      "float_raise": 6,
+      "float64_is_nan": 7,
+      "float64_is_signaling_nan": 7,
+      "propagateFloat64NaN": 15,
+      "extractFloat64Frac": 7,
+      "extractFloat64Exp": 7,
+      "extractFloat64Sign": 7,
+      "packFloat64": 7,
+      "roundAndPackFloat64": 59,
+      "normalizeRoundAndPackFloat64": 9,
+      "addFloat64Sigs": 63,
+      "subFloat64Sigs": 5,
+      "float64_add": 0,
+      "ullong_to_double": 11,
+      "rtclock": 10,
+      "submain": 20
+    }
+  },
+  "softfloat.c": {
+    "Lines of code": {
+      "shift64RightJamming": 16,
+      "shift64ExtraRightJamming": 34,
+      "add128": 7,
+      "sub128": 8,
+      "mul64To128": 22,
+      "estimateDiv128To64": 24,
+      "countLeadingZeros32": 36,
+      "countLeadingZeros64": 18,
+      "float_raise": 5,
+      "float64_is_nan": 6,
+      "float64_is_signaling_nan": 7,
+      "propagateFloat64NaN": 16,
+      "extractFloat64Frac": 5,
+      "extractFloat64Exp": 5,
+      "extractFloat64Sign": 5,
+      "normalizeFloat64Subnormal": 8,
+      "packFloat64": 5,
+      "roundAndPackFloat64": 59,
+      "normalizeRoundAndPackFloat64": 7,
+      "int32_to_float64": 15,
+      "addFloat64Sigs": 70,
+      "subFloat64Sigs": 72,
+      "float64_add": 11,
+      "float64_mul": 59,
+      "float64_div": 75,
+      "float64_le": 16,
+      "float64_ge": 5,
+      "float64_neg": 5
+    }
+  },
+  "dfdiv.c": {
+    "Lines of code": {
+      "shift64RightJamming": 19,
+      "add128": 11,
+      "sub128": 8,
+      "mul64To128": 17,
+      "estimateDiv128To64": 0,
+      "countLeadingZeros32": 0,
+      "countLeadingZeros64": 0,
+      "float_raise": 6,
+      "float64_is_nan": 7,
+      "float64_is_signaling_nan": 5,
+      "propagateFloat64NaN": 13,
+      "extractFloat64Frac": 7,
+      "extractFloat64Exp": 7,
+      "extractFloat64Sign": 7,
+      "normalizeFloat64Subnormal": 10,
+      "packFloat64": 6,
+      "roundAndPackFloat64": 53,
+      "float64_div": 2,
+      "ullong_to_double": 11,
+      "rtclock": 10,
+      "submain": 20
+    }
+  },
+  "dfmul.c": {
+    "Lines of code": {
+      "shift64RightJamming": 19,
+      "mul64To128": 19,
+      "countLeadingZeros32": 19,
+      "countLeadingZeros64": 0,
+      "float_raise": 6,
+      "float64_is_nan": 7,
+      "float64_is_signaling_nan": 5,
+      "propagateFloat64NaN": 13,
+      "extractFloat64Frac": 7,
+      "extractFloat64Exp": 7,
+      "extractFloat64Sign": 7,
+      "normalizeFloat64Subnormal": 10,
+      "packFloat64": 6,
+      "roundAndPackFloat64": 48,
+      "float64_mul": 0,
+      "ullong_to_double": 11,
+      "rtclock": 10,
+      "submain": 20
+    }
+  },
+  "dfsin.c": {
+    "Lines of code": {
+      "shift64RightJamming": 20,
+      "shift64ExtraRightJamming": 32,
+      "add128": 9,
+      "sub128": 4,
+      "mul64To128": 0,
+      "estimateDiv128To64": 0,
+      "countLeadingZeros32": 0,
+      "countLeadingZeros64": 0,
+      "float_raise": 6,
+      "float64_is_nan": 7,
+      "float64_is_signaling_nan": 7,
+      "propagateFloat64NaN": 16,
+      "extractFloat64Frac": 7,
+      "extractFloat64Exp": 4,
+      "extractFloat64Sign": 7,
+      "normalizeFloat64Subnormal": 10,
+      "packFloat64": 7,
+      "roundAndPackFloat64": 57,
+      "normalizeRoundAndPackFloat64": 8,
+      "int32_to_float64": 11,
+      "addFloat64Sigs": 1,
+      "subFloat64Sigs": 0,
+      "float64_add": 0,
+      "float64_mul": 0,
+      "float64_div": 0,
+      "float64_le": 0,
+      "float64_ge": 0,
+      "float64_neg": 0,
+      "float64_abs": 5,
+      "local_sin": 20,
+      "ullong_to_double": 11,
+      "rtclock": 10,
+      "submain": 17
+    }
+  },
+  "add.c": {
+    "Lines of code": {
+      "gsm_add": 7,
+      "gsm_mult": 8,
+      "gsm_mult_r": 13,
+      "gsm_abs": 5,
+      "gsm_norm": 15,
+      "gsm_div": 25
+    }
+  },
+  "gsm.c": {
+    "Lines of code": {
+      "gsm_add": 6,
+      "gsm_mult": 8,
+      "gsm_mult_r": 12,
+      "gsm_abs": 5,
+      "gsm_norm": 13,
+      "gsm_div": 24,
+      "Autocorrelation": 91,
+      "Reflection_coefficients": 0,
+      "Transformation_to_Log_Area_Ratios": 0,
+      "Quantization_and_coding": 0,
+      "Gsm_LPC_Analysis": 0,
+      "rtclock": 10,
+      "submain": 20
+    }
+  },
+  "lpc.c": {
+    "Lines of code": {
+      "gsm_add": 3,
+      "gsm_mult": 6,
+      "gsm_mult_r": 9,
+      "gsm_abs": 4,
+      "gsm_norm": 17,
+      "gsm_div": 31,
+      "Autocorrelation": 97,
+      "Reflection_coefficients": 48,
+      "Transformation_to_Log_Area_Ratios": 25,
+      "Quantization_and_coding": 23,
+      "Gsm_LPC_Analysis": 10
+    }
+  },
+  "chenidct.c": {
+    "Lines of code": {
+      "ChenIDct": 107
+    }
+  },
+  "decode.c": {
+    "Lines of code": {
+      "IZigzagMatrix": 9,
+      "IQuantize": 10,
+      "PostshiftIDctMatrix": 9,
+      "BoundIDctMatrix": 16,
+      "WriteOneBlock": 29,
+      "WriteBlock": 21,
+      "Write4Blocks": 31,
+      "YuvToRgb": 31,
+      "decode_block": 14,
+      "decode_start": 65
+    }
+  },
+  "huffman.c": {
+    "Lines of code": {
+      "pgetc": 17,
+      "buf_getb": 14,
+      "buf_getv": 29,
+      "huff_make_dhuff_tb": 58,
+      "DecodeHuffman": 22,
+      "DecodeHuffMCU": 56
+    }
+  },
+  "jfif_read.c": {
+    "Lines of code": {
+      "jpeg_init_decompress": 32,
+      "jpeg_read": 8
+    }
+  },
+  "jpeg2bmp.c": {
+    "Lines of code": {
+      "jpeg2bmp_main": 33
+    }
+  },
+  "main.c": {
+    "Lines of code": {
+      "__bswap_16": 7,
+      "__bswap_32": 2,
+      "__bswap_64": 0,
+      "__uint16_identity": 4,
+      "__uint32_identity": 5,
+      "__uint64_identity": 3,
+      "read_byte": 0,
+      "read_word": 0,
+      "first_marker": 0,
+      "next_marker": 0,
+      "get_sof": 0,
+      "get_sos": 0,
+      "get_dht": 0,
+      "get_dqt": 0,
+      "read_markers": 0,
+      "ChenIDct": 25,
+      "IZigzagMatrix": 12,
+      "IQuantize": 6,
+      "PostshiftIDctMatrix": 0,
+      "BoundIDctMatrix": 0,
+      "WriteOneBlock": 0,
+      "WriteBlock": 0,
+      "Write4Blocks": 0,
+      "YuvToRgb": 0,
+      "decode_block": 0,
+      "decode_start": 0,
+      "pgetc": 7,
+      "buf_getb": 0,
+      "buf_getv": 0,
+      "huff_make_dhuff_tb": 0,
+      "DecodeHuffman": 0,
+      "DecodeHuffMCU": 0,
+      "jpeg_init_decompress": 32,
+      "jpeg_read": 4,
+      "jpeg2bmp_main": 32,
+      "rtclock": 10,
+      "submain": 10
+    }
+  },
+  "marker.c": {
+    "Lines of code": {
+      "read_byte": 5,
+      "read_word": 8,
+      "first_marker": 14,
+      "next_marker": 19,
+      "get_sof": 79,
+      "get_sos": 57,
+      "get_dht": 50,
+      "get_dqt": 41,
+      "read_markers": 44
+    }
+  },
+  "mips.c": {
+    "Lines of code": {
+      "rtclock": 10,
+      "submain": 184
+    }
+  },
+  "getbits.c": {
+    "Lines of code": {
+      "read": 17,
+      "Fill_Buffer": 25,
+      "Show_Bits": 6,
+      "Get_Bits1": 5,
+      "Flush_Buffer": 44,
+      "Get_Bits": 9
+    }
+  },
+  "getvlc.c": {
+    "Lines of code": {
+      "Get_motion_code": 25,
+      "Get_dmvector": 12
+    }
+  },
+  "motion.c": {
+    "Lines of code": {
+      "motion_vectors": 31,
+      "motion_vector": 32,
+      "decode_motion_vector": 25
+    }
+  },
+  "mpeg2.c": {
+    "Lines of code": {
+      "read": 22,
+      "Fill_Buffer": 36,
+      "Show_Bits": 6,
+      "Get_Bits1": 5,
+      "Flush_Buffer": 50,
+      "Get_Bits": 11,
+      "Get_motion_code": 31,
+      "Get_dmvector": 13,
+      "motion_vectors": 37,
+      "motion_vector": 46,
+      "decode_motion_vector": 27,
+      "rtclock": 10,
+      "Initialize_Buffer": 9,
+      "submain": 46
+    }
+  },
+  "sha.c": {
+    "Lines of code": {
+      "local_memset": 18,
+      "local_memcpy": 21,
+      "sha_transform": 40,
+      "sha_init": 11,
+      "sha_update": 18,
+      "sha_final": 24,
+      "sha_stream": 14
+    }
+  },
+  "sha_driver.c": {
+    "Lines of code": {
+      "local_memset": 16,
+      "local_memcpy": 10,
+      "sha_transform": 0,
+      "sha_init": 0,
+      "sha_update": 0,
+      "sha_final": 0,
+      "sha_stream": 0,
+      "rtclock": 10,
+      "submain": 16
+    }
+  },
+  "correlation.c": {
+    "Lines of code": {
+      "init_array": 12,
+      "print_array": 15,
+      "kernel_correlation": 46,
+      "submain": 25
+    }
+  },
+  "covariance.c": {
+    "Lines of code": {
+      "init_array": 11,
+      "print_array": 15,
+      "kernel_covariance": 29,
+      "submain": 22
+    }
+  },
+  "gemm.c": {
+    "Lines of code": {
+      "init_array": 21,
+      "print_array": 15,
+      "kernel_gemm": 20,
+      "submain": 28
+    }
+  },
+  "gemver.c": {
+    "Lines of code": {
+      "init_array": 32,
+      "print_array": 14,
+      "kernel_gemver": 28,
+      "submain": 49
+    }
+  },
+  "gesummv.c": {
+    "Lines of code": {
+      "init_array": 20,
+      "print_array": 14,
+      "kernel_gesummv": 24,
+      "submain": 31
+    }
+  },
+  "symm.c": {
+    "Lines of code": {
+      "init_array": 23,
+      "print_array": 15,
+      "kernel_symm": 23,
+      "submain": 27
+    }
+  },
+  "syr2k.c": {
+    "Lines of code": {
+      "init_array": 21,
+      "print_array": 15,
+      "kernel_syr2k": 20,
+      "submain": 27
+    }
+  },
+  "syrk.c": {
+    "Lines of code": {
+      "init_array": 17,
+      "print_array": 15,
+      "kernel_syrk": 18,
+      "submain": 18
+    }
+  },
+  "trmm.c": {
+    "Lines of code": {
+      "init_array": 18,
+      "print_array": 15,
+      "kernel_trmm": 16,
+      "submain": 17
+    }
+  },
+  "2mm.c": {
+    "Lines of code": {
+      "init_array": 24,
+      "print_array": 14,
+      "kernel_2mm": 27,
+      "submain": 36
+    }
+  },
+  "3mm.c": {
+    "Lines of code": {
+      "init_array": 20,
+      "print_array": 14,
+      "kernel_3mm": 34,
+      "submain": 40
+    }
+  },
+  "atax.c": {
+    "Lines of code": {
+      "init_array": 13,
+      "print_array": 13,
+      "kernel_atax": 20,
+      "submain": 24
+    }
+  },
+  "bicg.c": {
+    "Lines of code": {
+      "init_array": 15,
+      "print_array": 21,
+      "kernel_bicg": 22,
+      "submain": 30
+    }
+  },
+  "doitgen.c": {
+    "Lines of code": {
+      "init_array": 14,
+      "print_array": 16,
+      "kernel_doitgen": 19,
+      "submain": 24
+    }
+  },
+  "mvt.c": {
+    "Lines of code": {
+      "init_array": 19,
+      "print_array": 21,
+      "kernel_mvt": 17,
+      "submain": 31
+    }
+  },
+  "cholesky.c": {
+    "Lines of code": {
+      "init_array": 28,
+      "print_array": 15,
+      "kernel_cholesky": 19,
+      "submain": 13
+    }
+  },
+  "durbin.c": {
+    "Lines of code": {
+      "init_array": 10,
+      "print_array": 14,
+      "kernel_durbin": 30,
+      "submain": 17
+    }
+  },
+  "gramschmidt.c": {
+    "Lines of code": {
+      "init_array": 16,
+      "print_array": 24,
+      "kernel_gramschmidt": 27,
+      "submain": 24
+    }
+  },
+  "lu.c": {
+    "Lines of code": {
+      "init_array": 28,
+      "print_array": 15,
+      "kernel_lu": 20,
+      "submain": 13
+    }
+  },
+  "ludcmp.c": {
+    "Lines of code": {
+      "init_array": 38,
+      "print_array": 14,
+      "kernel_ludcmp": 39,
+      "submain": 27
+    }
+  },
+  "trisolv.c": {
+    "Lines of code": {
+      "init_array": 15,
+      "print_array": 14,
+      "kernel_trisolv": 16,
+      "submain": 17
+    }
+  },
+  "deriche.c": {
+    "Lines of code": {
+      "init_array": 11,
+      "print_array": 15,
+      "kernel_deriche": 79,
+      "submain": 21
+    }
+  },
+  "floyd-warshall.c": {
+    "Lines of code": {
+      "init_array": 12,
+      "print_array": 15,
+      "kernel_floyd_warshall": 14,
+      "submain": 13
+    }
+  },
+  "Nussinov.orig.c": {
+    "Lines of code": {
+      "__bswap_16": 4,
+      "__bswap_32": 8,
+      "__bswap_64": 7,
+      "__uint16_identity": 3,
+      "__uint32_identity": 3,
+      "__uint64_identity": 4,
+      "eassert_func": 7,
+      "cur_time": 7,
+      "match": 4,
+      "max_score": 4,
+      "getint": 23
+    }
+  },
+  "nussinov.c": {
+    "Lines of code": {
+      "init_array": 13,
+      "print_array": 18,
+      "kernel_nussinov": 24,
+      "submain": 15
+    }
+  },
+  "adi.c": {
+    "Lines of code": {
+      "init_array": 10,
+      "print_array": 14,
+      "kernel_adi": 55,
+      "submain": 20
+    }
+  },
+  "fdtd-2d.c": {
+    "Lines of code": {
+      "init_array": 20,
+      "print_array": 32,
+      "kernel_fdtd_2d": 27,
+      "submain": 31
+    }
+  },
+  "heat-3d.c": {
+    "Lines of code": {
+      "init_array": 11,
+      "print_array": 16,
+      "kernel_heat_3d": 31,
+      "submain": 15
+    }
+  },
+  "jacobi-1d.c": {
+    "Lines of code": {
+      "init_array": 12,
+      "print_array": 15,
+      "kernel_jacobi_1d": 16,
+      "submain": 16
+    }
+  },
+  "jacobi-2d.c": {
+    "Lines of code": {
+      "init_array": 13,
+      "print_array": 15,
+      "kernel_jacobi_2d": 18,
+      "submain": 16
+    }
+  },
+  "seidel-2d.c": {
+    "Lines of code": {
+      "init_array": 9,
+      "print_array": 15,
+      "kernel_seidel_2d": 14,
+      "submain": 14
+    }
+  },
+  "polybench.c": {
+    "Lines of code": {
+      "__bswap_16": 6,
+      "__bswap_32": 2,
+      "__bswap_64": 7,
+      "__uint16_identity": 3,
+      "__uint32_identity": 4,
+      "__uint64_identity": 5,
+      "rtclock": 14,
+      "polybench_flush_cache": 14,
+      "polybench_prepare_instruments": 8,
+      "polybench_timer_start": 9,
+      "polybench_timer_stop": 11,
+      "polybench_timer_print": 20,
+      "xmalloc": 18,
+      "polybench_free_data": 8,
+      "polybench_alloc_data": 12
+    }
+  },
+  "polybench_type1.c": {
+    "Lines of code": {
+      "__bswap_16": 6,
+      "__bswap_32": 2,
+      "__bswap_64": 7,
+      "__uint16_identity": 3,
+      "__uint32_identity": 4,
+      "__uint64_identity": 5,
+      "rtclock": 14,
+      "polybench_flush_cache": 14,
+      "polybench_prepare_instruments": 8,
+      "polybench_timer_start": 9,
+      "polybench_timer_stop": 11,
+      "polybench_timer_print": 20,
+      "xmalloc": 18,
+      "polybench_free_data": 8,
+      "polybench_alloc_data": 11
+    }
+  },
+  "polybench_type2.c": {
+    "Lines of code": {
+      "__bswap_16": 6,
+      "__bswap_32": 2,
+      "__bswap_64": 7,
+      "__uint16_identity": 3,
+      "__uint32_identity": 4,
+      "__uint64_identity": 5,
+      "rtclock": 14,
+      "polybench_flush_cache": 14,
+      "polybench_prepare_instruments": 8,
+      "polybench_timer_start": 9,
+      "polybench_timer_stop": 11,
+      "polybench_timer_print": 20,
+      "xmalloc": 18,
+      "polybench_free_data": 8,
+      "polybench_alloc_data": 11
+    }
+  },
+  "polybench_type3.c": {
+    "Lines of code": {
+      "__bswap_16": 6,
+      "__bswap_32": 2,
+      "__bswap_64": 7,
+      "__uint16_identity": 3,
+      "__uint32_identity": 4,
+      "__uint64_identity": 5,
+      "rtclock": 14,
+      "polybench_flush_cache": 14,
+      "polybench_prepare_instruments": 8,
+      "polybench_timer_start": 9,
+      "polybench_timer_stop": 11,
+      "polybench_timer_print": 20,
+      "xmalloc": 18,
+      "polybench_free_data": 8,
+      "polybench_alloc_data": 12
+    }
+  },
+  "template-for-new-benchmark.c": {
+    "Lines of code": {
+      "__bswap_16": 8,
+      "__bswap_32": 7,
+      "__bswap_64": 3,
+      "__uint16_identity": 4,
+      "__uint32_identity": 4,
+      "__uint64_identity": 3,
+      "init_array": 8,
+      "print_array": 11,
+      "kernel_template": 10,
+      "main": 13
+    }
+  }
+}
