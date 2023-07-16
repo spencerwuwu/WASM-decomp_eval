@@ -1,30 +1,21 @@
-/**
- * This version is stamped on May 10, 2016
- *
- * Contact:
- *   Louis-Noel Pouchet <pouchet.ohio-state.edu>
- *   Tomofumi Yuki <tomofumi.yuki.fr>
- *
- * Web address: http://polybench.sourceforge.net
- */
-/* floyd-warshall.c: this file is part of PolyBench/C */
-
+# 1 "./polybench-c-4.2.1-beta/medley/floyd-warshall/floyd-warshall.c"
+# 12 "./polybench-c-4.2.1-beta/medley/floyd-warshall/floyd-warshall.c"
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <math.h>
 
-/* Include polybench common header. */
+
 #include <polybench.h>
 
-/* Include benchmark-specific header. */
+
 #include "floyd-warshall.h"
 
 
-/* Array initialization. */
+
 static
 void init_array (int n,
-		 DATA_TYPE POLYBENCH_2D(path,N,N,n,n))
+   DATA_TYPE POLYBENCH_2D(path,N,N,n,n))
 {
   int i, j;
 
@@ -37,11 +28,11 @@ void init_array (int n,
 }
 
 
-/* DCE code. Must scan the entire live-out data.
-   Can be used also to check the correctness of the output. */
+
+
 static
 void print_array(int n,
-		 DATA_TYPE POLYBENCH_2D(path,N,N,n,n))
+   DATA_TYPE POLYBENCH_2D(path,N,N,n,n))
 
 {
   int i, j;
@@ -58,11 +49,11 @@ void print_array(int n,
 }
 
 
-/* Main computational kernel. The whole function will be timed,
-   including the call and return. */
-// static
+
+
+
 void kernel_floyd_warshall(int n,
-			   DATA_TYPE POLYBENCH_2D(path,N,N,n,n))
+      DATA_TYPE POLYBENCH_2D(path,N,N,n,n))
 {
   int i, j, k;
 
@@ -70,9 +61,9 @@ void kernel_floyd_warshall(int n,
   for (k = 0; k < _PB_N; k++)
     {
       for(i = 0; i < _PB_N; i++)
-	for (j = 0; j < _PB_N; j++)
-	  path[i][j] = path[i][j] < path[i][k] + path[k][j] ?
-	    path[i][j] : path[i][k] + path[k][j];
+ for (j = 0; j < _PB_N; j++)
+   path[i][j] = path[i][j] < path[i][k] + path[k][j] ?
+     path[i][j] : path[i][k] + path[k][j];
     }
 #pragma endscop
 
@@ -81,38 +72,32 @@ void kernel_floyd_warshall(int n,
 
 int submain(int argc, char** argv)
 {
-  /* Retrieve problem size. */
+
   int n = N;
 
-  /* Variable declaration/allocation. */
+
   POLYBENCH_2D_ARRAY_DECL(path, DATA_TYPE, N, N, n, n);
 
 
-  /* Initialize array(s). */
+
   init_array (n, POLYBENCH_ARRAY(path));
 
-  /* Start timer. */
+
   polybench_start_instruments;
 
-  /* Run kernel. */
+
   kernel_floyd_warshall (n, POLYBENCH_ARRAY(path));
 
-  /* Stop and print timer. */
+
   polybench_stop_instruments;
   polybench_print_instruments;
 
-  /* Prevent dead-code elimination. All live-out data must be printed
-     by the function call in argument. */
+
+
   polybench_prevent_dce(print_array(n, POLYBENCH_ARRAY(path)));
 
-  /* Be clean. */
+
   POLYBENCH_FREE_ARRAY(path);
 
   return 0;
 }
-
-// int main(int argc, char** argv) {
-//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-//         submain(argc, argv);
-// }
-

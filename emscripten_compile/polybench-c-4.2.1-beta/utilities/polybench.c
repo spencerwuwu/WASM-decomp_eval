@@ -1,31 +1,5 @@
-/**
- * This version is stamped on May 10, 2016
- *
- * Contact:
- *   Louis-Noel Pouchet <pouchet.ohio-state.edu>
- *   Tomofumi Yuki <tomofumi.yuki.fr>
- *
- * Web address: http://polybench.sourceforge.net
- */
-/* polybench.c: this file is part of PolyBench/C */
-/*************
- * This is the modified version of PolyBenchC
- * It is modified for compatibility with cheerp, a library transferring C/C++ to JS/WASM
- * Modification Details:
- * 1.   (around line 588) Memory implementation downgraded
- *      xmalloc is in fact never used again, in polybench_alloc_data, the xmalloc 
- *      is replaced with malloc. This is becasue cheerp never implement usable posix_memalign.
- *    Side Effect:
- *      POLYBENCH_ENABLE_INTARRAY_PAD may lost is effect or do undefined behaviors
- *      that not been tested by others. Don't use this macro.
- * 2.   (around line 371) Timer initial function changed
- *      calloc doesn't work when using cheerp's wasm mode. 
- *    Side Effect:
- *      May reduce the total running time (memory write time due to possible reuse)
- * Last modified time: Dec 10 20:20 2019
- *************/
-
-
+# 1 "./polybench-c-4.2.1-beta/utilities/polybench.c"
+# 29 "./polybench-c-4.2.1-beta/utilities/polybench.c"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -41,21 +15,21 @@
 #endif
 
 #if defined(POLYBENCH_PAPI)
-# undef POLYBENCH_PAPI
+#undef POLYBENCH_PAPI
 # include "polybench.h"
-# define POLYBENCH_PAPI
+#define POLYBENCH_PAPI 
 #else
 # include "polybench.h"
 #endif
 
-/* By default, collect PAPI counters on thread 0. */
+
 #ifndef POLYBENCH_THREAD_MONITOR
-# define POLYBENCH_THREAD_MONITOR 0
+#define POLYBENCH_THREAD_MONITOR 0
 #endif
 
-/* Total LLC cache size. By default 32+MB.. */
+
 #ifndef POLYBENCH_CACHE_SIZE_KB
-# define POLYBENCH_CACHE_SIZE_KB 32770
+#define POLYBENCH_CACHE_SIZE_KB 32770
 #endif
 
 
@@ -64,7 +38,7 @@ double polybench_program_total_flops = 0;
 
 #ifdef POLYBENCH_PAPI
 # include <papi.h>
-# define POLYBENCH_MAX_NB_PAPI_COUNTERS 96
+#define POLYBENCH_MAX_NB_PAPI_COUNTERS 96
   char* _polybench_papi_eventlist[] = {
 #include "papi_counters.list"
     NULL
@@ -75,11 +49,11 @@ double polybench_program_total_flops = 0;
 
 #endif
 
-/*
- * Allocation table, to enable inter-array padding. All data allocated
- * with polybench_alloc_data should be freed with polybench_free_data.
- *
- */
+
+
+
+
+
 #define NB_INITIAL_TABLE_ENTRIES 512
 struct polybench_data_ptrs
 {
@@ -91,9 +65,9 @@ struct polybench_data_ptrs
 static struct polybench_data_ptrs* _polybench_alloc_table = NULL;
 static size_t polybench_inter_array_padding_sz = 0;
 
-/* Timer code (gettimeofday). */
+
 double polybench_t_start, polybench_t_end;
-/* Timer code (RDTSC). */
+
 unsigned long long int polybench_c_start, polybench_c_end;
 
 static
@@ -145,8 +119,8 @@ void polybench_flush_cache()
 #ifdef POLYBENCH_LINUX_FIFO_SCHEDULER
 void polybench_linux_fifo_scheduler()
 {
-  /* Use FIFO scheduler to limit OS interference. Program must be run
-     as root, and this works only for Linux kernels. */
+
+
   struct sched_param schedParam;
   schedParam.sched_priority = sched_get_priority_max (SCHED_FIFO);
   sched_setscheduler (0, SCHED_FIFO, &schedParam);
@@ -155,7 +129,7 @@ void polybench_linux_fifo_scheduler()
 
 void polybench_linux_standard_scheduler()
 {
-  /* Restore to standard scheduler policy. */
+
   struct sched_param schedParam;
   schedParam.sched_priority = sched_get_priority_max (SCHED_OTHER);
   sched_setscheduler (0, SCHED_OTHER, &schedParam);
@@ -189,7 +163,7 @@ void test_fail(char *file, int line, char *call, int retval)
   else
     {
       char errstring[PAPI_MAX_STR_LEN];
-      // PAPI 5.4.3 has changed the API for PAPI_perror.
+
       #if defined (PAPI_VERSION) && ((PAPI_VERSION_MAJOR(PAPI_VERSION) == 5 && PAPI_VERSION_MINOR(PAPI_VERSION) >= 4) || PAPI_VERSION_MAJOR(PAPI_VERSION) > 5)
       fprintf (stdout, "Error in %s: %s\n", call, PAPI_strerror(retval));
       #else
@@ -212,30 +186,30 @@ void polybench_papi_init()
 #pragma omp master
     {
       if (omp_get_max_threads () < polybench_papi_counters_threadid)
-	polybench_papi_counters_threadid = omp_get_max_threads () - 1;
+ polybench_papi_counters_threadid = omp_get_max_threads () - 1;
     }
 #pragma omp barrier
 
     if (omp_get_thread_num () == polybench_papi_counters_threadid)
       {
 # endif
-	int retval;
-	polybench_papi_eventset = PAPI_NULL;
-	if ((retval = PAPI_library_init (PAPI_VER_CURRENT)) != PAPI_VER_CURRENT)
-	  test_fail (__FILE__, __LINE__, "PAPI_library_init", retval);
-	if ((retval = PAPI_create_eventset (&polybench_papi_eventset))
-	    != PAPI_OK)
-	  test_fail (__FILE__, __LINE__, "PAPI_create_eventset", retval);
-	int k;
-	for (k = 0; _polybench_papi_eventlist[k]; ++k)
-	  {
-	    if ((retval =
-		 PAPI_event_name_to_code (_polybench_papi_eventlist[k],
-					  &(polybench_papi_eventlist[k])))
-		!= PAPI_OK)
-	      test_fail (__FILE__, __LINE__, "PAPI_event_name_to_code", retval);
-	  }
-	polybench_papi_eventlist[k] = 0;
+ int retval;
+ polybench_papi_eventset = PAPI_NULL;
+ if ((retval = PAPI_library_init (PAPI_VER_CURRENT)) != PAPI_VER_CURRENT)
+   test_fail (__FILE__, __LINE__, "PAPI_library_init", retval);
+ if ((retval = PAPI_create_eventset (&polybench_papi_eventset))
+     != PAPI_OK)
+   test_fail (__FILE__, __LINE__, "PAPI_create_eventset", retval);
+ int k;
+ for (k = 0; _polybench_papi_eventlist[k]; ++k)
+   {
+     if ((retval =
+   PAPI_event_name_to_code (_polybench_papi_eventlist[k],
+       &(polybench_papi_eventlist[k])))
+  != PAPI_OK)
+       test_fail (__FILE__, __LINE__, "PAPI_event_name_to_code", retval);
+   }
+ polybench_papi_eventlist[k] = 0;
 
 
 # ifdef _OPENMP
@@ -254,12 +228,12 @@ void polybench_papi_close()
     if (omp_get_thread_num () == polybench_papi_counters_threadid)
       {
 # endif
-	int retval;
-	if ((retval = PAPI_destroy_eventset (&polybench_papi_eventset))
-	    != PAPI_OK)
-	  test_fail (__FILE__, __LINE__, "PAPI_destroy_eventset", retval);
-	if (PAPI_is_initialized ())
-	  PAPI_shutdown ();
+ int retval;
+ if ((retval = PAPI_destroy_eventset (&polybench_papi_eventset))
+     != PAPI_OK)
+   test_fail (__FILE__, __LINE__, "PAPI_destroy_eventset", retval);
+ if (PAPI_is_initialized ())
+   PAPI_shutdown ();
 # ifdef _OPENMP
       }
   }
@@ -274,24 +248,24 @@ int polybench_papi_start_counter(int evid)
 # endif
 
 # ifdef _OPENMP
-# pragma omp parallel
+#pragma omp parallel
   {
     if (omp_get_thread_num () == polybench_papi_counters_threadid)
       {
 # endif
 
-	int retval = 1;
-	char descr[PAPI_MAX_STR_LEN];
-	PAPI_event_info_t evinfo;
-	PAPI_event_code_to_name (polybench_papi_eventlist[evid], descr);
-	if (PAPI_add_event (polybench_papi_eventset,
-			    polybench_papi_eventlist[evid]) != PAPI_OK)
-	  test_fail (__FILE__, __LINE__, "PAPI_add_event", 1);
-	if (PAPI_get_event_info (polybench_papi_eventlist[evid], &evinfo)
-	    != PAPI_OK)
-	  test_fail (__FILE__, __LINE__, "PAPI_get_event_info", retval);
-	if ((retval = PAPI_start (polybench_papi_eventset)) != PAPI_OK)
-	  test_fail (__FILE__, __LINE__, "PAPI_start", retval);
+ int retval = 1;
+ char descr[PAPI_MAX_STR_LEN];
+ PAPI_event_info_t evinfo;
+ PAPI_event_code_to_name (polybench_papi_eventlist[evid], descr);
+ if (PAPI_add_event (polybench_papi_eventset,
+       polybench_papi_eventlist[evid]) != PAPI_OK)
+   test_fail (__FILE__, __LINE__, "PAPI_add_event", 1);
+ if (PAPI_get_event_info (polybench_papi_eventlist[evid], &evinfo)
+     != PAPI_OK)
+   test_fail (__FILE__, __LINE__, "PAPI_get_event_info", retval);
+ if ((retval = PAPI_start (polybench_papi_eventset)) != PAPI_OK)
+   test_fail (__FILE__, __LINE__, "PAPI_start", retval);
 # ifdef _OPENMP
       }
   }
@@ -304,27 +278,27 @@ int polybench_papi_start_counter(int evid)
 void polybench_papi_stop_counter(int evid)
 {
 # ifdef _OPENMP
-# pragma omp parallel
+#pragma omp parallel
   {
     if (omp_get_thread_num () == polybench_papi_counters_threadid)
       {
 # endif
-	int retval;
-	long_long values[1];
-	values[0] = 0;
-	if ((retval = PAPI_read (polybench_papi_eventset, &values[0]))
-	    != PAPI_OK)
-	  test_fail (__FILE__, __LINE__, "PAPI_read", retval);
+ int retval;
+ long_long values[1];
+ values[0] = 0;
+ if ((retval = PAPI_read (polybench_papi_eventset, &values[0]))
+     != PAPI_OK)
+   test_fail (__FILE__, __LINE__, "PAPI_read", retval);
 
-	if ((retval = PAPI_stop (polybench_papi_eventset, NULL)) != PAPI_OK)
-	  test_fail (__FILE__, __LINE__, "PAPI_stop", retval);
+ if ((retval = PAPI_stop (polybench_papi_eventset, NULL)) != PAPI_OK)
+   test_fail (__FILE__, __LINE__, "PAPI_stop", retval);
 
-	polybench_papi_values[evid] = values[0];
+ polybench_papi_values[evid] = values[0];
 
-	if ((retval = PAPI_remove_event
-	     (polybench_papi_eventset,
-	      polybench_papi_eventlist[evid])) != PAPI_OK)
-	  test_fail (__FILE__, __LINE__, "PAPI_remove_event", retval);
+ if ((retval = PAPI_remove_event
+      (polybench_papi_eventset,
+       polybench_papi_eventlist[evid])) != PAPI_OK)
+   test_fail (__FILE__, __LINE__, "PAPI_remove_event", retval);
 # ifdef _OPENMP
       }
   }
@@ -337,26 +311,26 @@ void polybench_papi_print()
 {
   int verbose = 0;
 # ifdef _OPENMP
-# pragma omp parallel
+#pragma omp parallel
   {
     if (omp_get_thread_num() == polybench_papi_counters_threadid)
       {
 #ifdef POLYBENCH_PAPI_VERBOSE
-	verbose = 1;
+ verbose = 1;
 #endif
-	if (verbose)
-	  printf ("On thread %d:\n", polybench_papi_counters_threadid);
+ if (verbose)
+   printf ("On thread %d:\n", polybench_papi_counters_threadid);
 #endif
-	int evid;
-	for (evid = 0; polybench_papi_eventlist[evid] != 0; ++evid)
-	  {
-	    if (verbose)
-	      printf ("%s=", _polybench_papi_eventlist[evid]);
-	    printf ("%llu ", polybench_papi_values[evid]);
-	    if (verbose)
-	      printf ("\n");
-	  }
-	printf ("\n");
+ int evid;
+ for (evid = 0; polybench_papi_eventlist[evid] != 0; ++evid)
+   {
+     if (verbose)
+       printf ("%s=", _polybench_papi_eventlist[evid]);
+     printf ("%llu ", polybench_papi_values[evid]);
+     if (verbose)
+       printf ("\n");
+   }
+ printf ("\n");
 # ifdef _OPENMP
       }
   }
@@ -365,15 +339,15 @@ void polybench_papi_print()
 }
 
 #endif
-/* ! POLYBENCH_PAPI */
+
 
 void polybench_prepare_instruments()
 {
 #ifndef POLYBENCH_NO_FLUSH_CACHE
-// ******************
-// Modified: calloc doesn't work on wasm mode of cheerp
-//polybench_flush_cache ();
-// ******************
+
+
+
+
 #endif
 #ifdef POLYBENCH_LINUX_FIFO_SCHEDULER
   polybench_linux_fifo_scheduler ();
@@ -403,15 +377,15 @@ void polybench_timer_stop()
 void polybench_timer_print()
 {
   #ifdef POLYBENCH_GFLOPS
-  if  (polybench_program_total_flops == 0)
-	{
-	  printf ("[PolyBench][WARNING] Program flops not defined, use polybench_set_program_flops(value)\n");
-	  printf ("%0.6lf\n", polybench_t_end - polybench_t_start);
-	}
+  if (polybench_program_total_flops == 0)
+ {
+   printf ("[PolyBench][WARNING] Program flops not defined, use polybench_set_program_flops(value)\n");
+   printf ("%0.6lf\n", polybench_t_end - polybench_t_start);
+ }
     else
-	printf ("%0.2lf\n",
-		(polybench_program_total_flops /
-		 (double)(polybench_t_end - polybench_t_start)) / 1000000000);
+ printf ("%0.2lf\n",
+  (polybench_program_total_flops /
+   (double)(polybench_t_end - polybench_t_start)) / 1000000000);
   #else
     # ifndef POLYBENCH_CYCLE_ACCURATE_TIMER
     printf ("%0.6f\n", polybench_t_end - polybench_t_start);
@@ -420,16 +394,7 @@ void polybench_timer_print()
     # endif
   #endif
 }
-
-/*
- * These functions are used only if the user defines a specific
- * inter-array padding. It grows a global structure,
- * _polybench_alloc_table, which keeps track of the data allocated via
- * polybench_alloc_data (on which inter-array padding is applied), so
- * that the original, non-shifted pointer can be recovered when
- * calling polybench_free_data.
- *
- */
+# 433 "./polybench-c-4.2.1-beta/utilities/polybench.c"
 #ifdef POLYBENCH_ENABLE_INTARRAY_PAD
 static
 void grow_alloc_table()
@@ -438,7 +403,7 @@ void grow_alloc_table()
       (_polybench_alloc_table->nb_entries % NB_INITIAL_TABLE_ENTRIES) != 0 ||
       _polybench_alloc_table->nb_avail_entries != 0)
     {
-      /* Should never happen if the API is properly used. */
+
       fprintf (stderr, "[ERROR] Inter-array padding requires to use polybench_alloc_data and polybench_free_data\n");
       exit (1);
     }
@@ -479,29 +444,29 @@ free_data_from_alloc_table (void* ptr)
     {
       int i;
       for (i = 0; i < _polybench_alloc_table->nb_entries; ++i)
-	if (_polybench_alloc_table->user_view[i] == ptr ||
-	    _polybench_alloc_table->real_ptr[i] == ptr)
-	  break;
+ if (_polybench_alloc_table->user_view[i] == ptr ||
+     _polybench_alloc_table->real_ptr[i] == ptr)
+   break;
       if (i != _polybench_alloc_table->nb_entries)
-	{
-	  free (_polybench_alloc_table->real_ptr[i]);
-	  for (; i < _polybench_alloc_table->nb_entries - 1; ++i)
-	    {
-	      _polybench_alloc_table->user_view[i] =
-		_polybench_alloc_table->user_view[i + 1];
-	      _polybench_alloc_table->real_ptr[i] =
-		_polybench_alloc_table->real_ptr[i + 1];
-	    }
-	  _polybench_alloc_table->nb_entries--;
-	  _polybench_alloc_table->nb_avail_entries++;
-	  if (_polybench_alloc_table->nb_entries == 0)
-	    {
-	      free (_polybench_alloc_table->user_view);
-	      free (_polybench_alloc_table->real_ptr);
-	      free (_polybench_alloc_table);
-	      _polybench_alloc_table = NULL;
-	    }
-	}
+ {
+   free (_polybench_alloc_table->real_ptr[i]);
+   for (; i < _polybench_alloc_table->nb_entries - 1; ++i)
+     {
+       _polybench_alloc_table->user_view[i] =
+  _polybench_alloc_table->user_view[i + 1];
+       _polybench_alloc_table->real_ptr[i] =
+  _polybench_alloc_table->real_ptr[i + 1];
+     }
+   _polybench_alloc_table->nb_entries--;
+   _polybench_alloc_table->nb_avail_entries++;
+   if (_polybench_alloc_table->nb_entries == 0)
+     {
+       free (_polybench_alloc_table->user_view);
+       free (_polybench_alloc_table->real_ptr);
+       free (_polybench_alloc_table);
+       _polybench_alloc_table = NULL;
+     }
+ }
     }
 }
 
@@ -511,56 +476,56 @@ void check_alloc_table_state()
   if (_polybench_alloc_table == NULL)
     {
       _polybench_alloc_table = (struct polybench_data_ptrs*)
-	malloc (sizeof(struct polybench_data_ptrs));
+ malloc (sizeof(struct polybench_data_ptrs));
       assert(_polybench_alloc_table != NULL);
       _polybench_alloc_table->user_view =
-	(void**) malloc (sizeof(void*) * NB_INITIAL_TABLE_ENTRIES);
+ (void**) malloc (sizeof(void*) * NB_INITIAL_TABLE_ENTRIES);
       assert(_polybench_alloc_table->user_view != NULL);
       _polybench_alloc_table->real_ptr =
-	(void**) malloc (sizeof(void*) * NB_INITIAL_TABLE_ENTRIES);
+ (void**) malloc (sizeof(void*) * NB_INITIAL_TABLE_ENTRIES);
       assert(_polybench_alloc_table->real_ptr != NULL);
       _polybench_alloc_table->nb_entries = 0;
       _polybench_alloc_table->nb_avail_entries = NB_INITIAL_TABLE_ENTRIES;
     }
 }
 
-#endif // !POLYBENCH_ENABLE_INTARRAY_PAD
+#endif
 
 
-// *****************
-// ATTENTION: THIS FUNCTION HAS BEEN BANNED! DO NOT USE IT
-// *****************
+
+
+
 static
 void*
 xmalloc(size_t alloc_sz)
 {
   void* ret = NULL;
-  /* By default, post-pad the arrays. Safe behavior, but likely useless. */
+
   polybench_inter_array_padding_sz += POLYBENCH_INTER_ARRAY_PADDING_FACTOR;
   size_t padded_sz = alloc_sz + polybench_inter_array_padding_sz;
-  // *****************
-  // Modified to avoid warning.
-  // ATTENTION AGAIN: THIS FUNCTION HAS BEEN BANNED AFTER THE MODIFICATION! DO *NOT* USE IT.
-  // If you call it, it won't do anything and will exit immediately!
-  //int err = posix_memalign (&ret, 4096, padded_sz);
+
+
+
+
+
   int err = 1;
-  // *****************
+
   if (! ret || err)
     {
       fprintf (stderr, "[PolyBench] posix_memalign: cannot allocate memory");
       exit (1);
     }
-  /* Safeguard: this is invoked only if polybench.c has been compiled
-     with inter-array padding support from polybench.h. If so, move
-     the starting address of the allocation and return it to the
-     user. The original pointer is registered in an allocation table
-     internal to polybench.c. Data must then be freed using
-     polybench_free_data, which will inspect the allocation table to
-     free the original pointer.*/
+
+
+
+
+
+
+
 #ifdef POLYBENCH_ENABLE_INTARRAY_PAD
-  /* This moves the 'ret' pointer by (padded_sz - alloc_sz) positions, and
-  registers it in the lookup table for future free using
-  polybench_free_data. */
+
+
+
   ret = register_padded_pointer(ret, alloc_sz, padded_sz);
 #endif
 
@@ -584,30 +549,11 @@ void* polybench_alloc_data(unsigned long long int n, int elt_size)
   check_alloc_table_state ();
 #endif
 
-  /// FIXME: detect overflow!
+
   size_t val = n;
   val *= elt_size;
-  // ****************************
-  // NO usable posix_memalign in cheerp-customized library, so replace it with normal malloc
-  // Cheerp forces pointer type transformation immediately after malloc
-  // current method: modify this file when changing benchmarks
-  // ATTENTION: DATA_TYPE_IS_DOUBLE -> double
-  //            DATA_TYPE_IS_FLOAT  -> float
-  //            etc.
-  // Overrided Implementation --------------
-  // [linear-algebra/blas] gemm gemver gesummv symm syr2k syrk trmm
-  // [linear-algebra/kernels] 2mm 3mm atax bicg doitgen mvt
-  // [linear-algebra/solvers] cholesky durbin gramschmidt lu ludcmp trisolv
-  // [datamining] correlation covariance
-  // [stencils] adi fdtd-2d heat-3d jacobi-1d jacobi-2d seidel-2d
+# 603 "./polybench-c-4.2.1-beta/utilities/polybench.c"
   void* ret = (double*) malloc (val);
-  // [medley] deriche
-  //void* ret = (float*) malloc (val);
-  // [medley] floyd-warshall nussinov
-  //void* ret = (int*) malloc (val);
-  // Original implementation -------
-  //void* ret = xmalloc (val);
-  // ****************************
-
+# 612 "./polybench-c-4.2.1-beta/utilities/polybench.c"
   return ret;
 }

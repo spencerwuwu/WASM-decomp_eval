@@ -1,50 +1,9 @@
-/*
-+--------------------------------------------------------------------------+
-| CHStone : a suite of benchmark programs for C-based High-Level Synthesis |
-| ======================================================================== |
-|                                                                          |
-| * Collected and Modified : Y. Hara, H. Tomiyama, S. Honda,               |
-|                            H. Takada and K. Ishii                        |
-|                            Nagoya University, Japan                      |
-|                                                                          |
-| * Remark :                                                               |
-|    1. This source code is modified to unify the formats of the benchmark |
-|       programs in CHStone.                                               |
-|    2. Test vectors are added for CHStone.                                |
-|    3. If "main_result" is 0 at the end of the program, the program is    |
-|       correctly executed.                                                |
-|    4. Please follow the copyright of each benchmark program.             |
-+--------------------------------------------------------------------------+
-*/
-/*
- * Copyright (C) 2008
- * Y. Hara, H. Tomiyama, S. Honda, H. Takada and K. Ishii
- * Nagoya University, Japan
- * All rights reserved.
- *
- * Disclaimer of Warranty
- *
- * These software programs are available to the user without any license fee or
- * royalty on an "as is" basis. The authors disclaims any and all warranties, 
- * whether express, implied, or statuary, including any implied warranties or 
- * merchantability or of fitness for a particular purpose. In no event shall the
- * copyright-holder be liable for any incidental, punitive, or consequential damages
- * of any kind whatsoever arising from the use of these programs. This disclaimer
- * of warranty extends to the user of these programs and user's customers, employees,
- * agents, transferees, successors, and assigns.
- *
- */
+# 1 "./CHStone_v1.11_150204/motion/mpeg2.c"
+# 37 "./CHStone_v1.11_150204/motion/mpeg2.c"
 #include <stdio.h>
 
 #define Num 2048
-
-/*
-+--------------------------------------------------------------------------+
-| * Test Vectors (added for CHStone)                                       |
-|     inRdbfr, inPMV, inPMV : input data                                   |
-|     outPMV, outmvfs : expected output data                               |
-+--------------------------------------------------------------------------+
-*/
+# 48 "./CHStone_v1.11_150204/motion/mpeg2.c"
 const unsigned char inRdbfr[Num] = {
   0, 104, 120, 48, 72, 32, 160, 192, 192, 64, 56, 248, 248, 88, 136, 224, 200,
   208, 176, 72, 96, 40, 184, 160, 32, 32, 120, 168, 64, 32, 72, 184,
@@ -333,8 +292,8 @@ int evalue;
 #include "getvlc.c"
 #include "motion.c"
 
-//***************************
-// Customized content
+
+
 #include <sys/time.h>
 double startTimer, endTimer;
 static
@@ -352,7 +311,7 @@ double rtclock()
 #define TIMER_END endTimer = rtclock();
 #define PRINT_TIMER_RESULT printf ("%0.6f\n", endTimer - startTimer);
 #define TEST_REPEAT_TIME 1
-//***************************
+
 
 void
 Initialize_Buffer ()
@@ -361,7 +320,7 @@ Initialize_Buffer ()
   ld_Rdptr = ld_Rdbfr + 2048;
   ld_Rdmax = ld_Rdptr;
   ld_Bfr = 68157440;
-  Flush_Buffer (0);		/* fills valid data into bfr */
+  Flush_Buffer (0);
 }
 
 int
@@ -387,39 +346,34 @@ submain ()
       dmv = 0;
       mvscale = 1;
       for (i = 0; i < 2; i++)
-	{
-	  dmvector[i] = 0;
-	  for (j = 0; j < 2; j++)
-	    {
-	      motion_vertical_field_select[i][j] = inmvfs[i][j];
-	      for (k = 0; k < 2; k++)
-		PMV[i][j][k] = inPMV[i][j][k];
-	    }
-	}
+ {
+   dmvector[i] = 0;
+   for (j = 0; j < 2; j++)
+     {
+       motion_vertical_field_select[i][j] = inmvfs[i][j];
+       for (k = 0; k < 2; k++)
+  PMV[i][j][k] = inPMV[i][j][k];
+     }
+ }
 
       Initialize_Buffer ();
       motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
-		      motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
-		      mvscale);
+        motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
+        mvscale);
 
       for (i = 0; i < 2; i++)
-	for (j = 0; j < 2; j++)
-	  {
-	    main_result +=
-	      (motion_vertical_field_select[i][j] != outmvfs[i][j]);
-	    for (k = 0; k < 2; k++)
-	      main_result += (PMV[i][j][k] != outPMV[i][j][k]);
-	  }
+ for (j = 0; j < 2; j++)
+   {
+     main_result +=
+       (motion_vertical_field_select[i][j] != outmvfs[i][j]);
+     for (k = 0; k < 2; k++)
+       main_result += (PMV[i][j][k] != outPMV[i][j][k]);
+   }
 
-  
-  //printf ("%d\n", main_result);
+
+
   TIMER_END
   PRINT_TIMER_RESULT
   return main_result;
 
 }
-
-// int main(int argc, char** argv) {
-//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-//         submain();
-// }

@@ -1,50 +1,23 @@
-/*
-+--------------------------------------------------------------------------+
-| CHStone : a suite of benchmark programs for C-based High-Level Synthesis |
-| ======================================================================== |
-|                                                                          |
-| * Collected and Modified : Y. Hara, H. Tomiyama, S. Honda,               |
-|                            H. Takada and K. Ishii                        |
-|                            Nagoya University, Japan                      |
-|                                                                          |
-| * Remark :                                                               |
-|    1. This source code is modified to unify the formats of the benchmark |
-|       programs in CHStone.                                               |
-|    2. Test vectors are added for CHStone.                                |
-|    3. If "main_result" is 0 at the end of the program, the program is    |
-|       correctly executed.                                                |
-|    4. Please follow the copyright of each benchmark program.             |
-+--------------------------------------------------------------------------+
-*/
-/* NIST Secure Hash Algorithm */
-/* heavily modified by Uwe Hollerbach uh@alumni.caltech edu */
-/* from Peter C. Gutmann's implementation as found in */
-/* Applied Cryptography by Bruce Schneier */
-
-/* NIST's proposed modification to SHA of 7/11/94 may be */
-/* activated by defining USE_MODIFIED_SHA */
+# 1 "./CHStone_v1.11_150204/sha/sha.c"
+# 30 "./CHStone_v1.11_150204/sha/sha.c"
+#define f1(x,y,z) ((x & y) | (~x & z))
+#define f2(x,y,z) (x ^ y ^ z)
+#define f3(x,y,z) ((x & y) | (x & z) | (y & z))
+#define f4(x,y,z) (x ^ y ^ z)
 
 
-/* SHA f()-functions */
 
-#define f1(x,y,z)	((x & y) | (~x & z))
-#define f2(x,y,z)	(x ^ y ^ z)
-#define f3(x,y,z)	((x & y) | (x & z) | (y & z))
-#define f4(x,y,z)	(x ^ y ^ z)
+#define CONST1 0x5a827999L
+#define CONST2 0x6ed9eba1L
+#define CONST3 0x8f1bbcdcL
+#define CONST4 0xca62c1d6L
 
-/* SHA constants */
 
-#define CONST1		0x5a827999L
-#define CONST2		0x6ed9eba1L
-#define CONST3		0x8f1bbcdcL
-#define CONST4		0xca62c1d6L
 
-/* 32-bit rotate */
+#define ROT32(x,n) ((x << n) | (x >> (32 - n)))
 
-#define ROT32(x,n)	((x << n) | (x >> (32 - n)))
-
-#define FUNC(n,i)						\
-    temp = ROT32(A,5) + f##n(B,C,D) + E + W[i] + CONST##n;	\
+#define FUNC(n,i) \
+    temp = ROT32(A,5) + f##n(B,C,D) + E + W[i] + CONST##n; \
     E = D; D = C; C = ROT32(B,30); B = A; A = temp
 
 void
@@ -90,9 +63,9 @@ local_memcpy (INT32 * s1, const BYTE * s2, int n)
     }
 }
 
-/* do SHA transformation */
 
-// static 
+
+
     void
 sha_transform ()
 {
@@ -137,7 +110,7 @@ sha_transform ()
   sha_info_digest[4] += E;
 }
 
-/* initialize the SHA digest */
+
 
 void
 sha_init ()
@@ -151,7 +124,7 @@ sha_init ()
   sha_info_count_hi = 0L;
 }
 
-/* update the SHA digest */
+
 
 void
 sha_update (const BYTE * buffer, int count)
@@ -172,7 +145,7 @@ sha_update (const BYTE * buffer, int count)
   local_memcpy (sha_info_data, buffer, count);
 }
 
-/* finish computing the SHA digest */
+
 
 void
 sha_final ()
@@ -200,7 +173,7 @@ sha_final ()
   sha_transform ();
 }
 
-/* compute the SHA digest of a FILE stream */
+
 void
 sha_stream ()
 {

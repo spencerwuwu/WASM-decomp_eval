@@ -1,32 +1,23 @@
-/**
- * This version is stamped on May 10, 2016
- *
- * Contact:
- *   Louis-Noel Pouchet <pouchet.ohio-state.edu>
- *   Tomofumi Yuki <tomofumi.yuki.fr>
- *
- * Web address: http://polybench.sourceforge.net
- */
-/* correlation.c: this file is part of PolyBench/C */
-
+# 1 "./polybench-c-4.2.1-beta/datamining/correlation/correlation.c"
+# 12 "./polybench-c-4.2.1-beta/datamining/correlation/correlation.c"
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <math.h>
 
-/* Include polybench common header. */
+
 #include <polybench.h>
 
-/* Include benchmark-specific header. */
+
 #include "correlation.h"
 
 
-/* Array initialization. */
+
 static
 void init_array (int m,
-		 int n,
-		 DATA_TYPE *float_n,
-		 DATA_TYPE POLYBENCH_2D(data,N,M,n,m))
+   int n,
+   DATA_TYPE *float_n,
+   DATA_TYPE POLYBENCH_2D(data,N,M,n,m))
 {
   int i, j;
 
@@ -39,11 +30,11 @@ void init_array (int m,
 }
 
 
-/* DCE code. Must scan the entire live-out data.
-   Can be used also to check the correctness of the output. */
+
+
 static
 void print_array(int m,
-		 DATA_TYPE POLYBENCH_2D(corr,M,M,m,m))
+   DATA_TYPE POLYBENCH_2D(corr,M,M,m,m))
 
 {
   int i, j;
@@ -60,15 +51,15 @@ void print_array(int m,
 }
 
 
-/* Main computational kernel. The whole function will be timed,
-   including the call and return. */
-// static
+
+
+
 void kernel_correlation(int m, int n,
-			DATA_TYPE float_n,
-			DATA_TYPE POLYBENCH_2D(data,N,M,n,m),
-			DATA_TYPE POLYBENCH_2D(corr,M,M,m,m),
-			DATA_TYPE POLYBENCH_1D(mean,M,m),
-			DATA_TYPE POLYBENCH_1D(stddev,M,m))
+   DATA_TYPE float_n,
+   DATA_TYPE POLYBENCH_2D(data,N,M,n,m),
+   DATA_TYPE POLYBENCH_2D(corr,M,M,m,m),
+   DATA_TYPE POLYBENCH_1D(mean,M,m),
+   DATA_TYPE POLYBENCH_1D(stddev,M,m))
 {
   int i, j, k;
 
@@ -80,7 +71,7 @@ void kernel_correlation(int m, int n,
     {
       mean[j] = SCALAR_VAL(0.0);
       for (i = 0; i < _PB_N; i++)
-	mean[j] += data[i][j];
+ mean[j] += data[i][j];
       mean[j] /= float_n;
     }
 
@@ -92,13 +83,13 @@ void kernel_correlation(int m, int n,
         stddev[j] += (data[i][j] - mean[j]) * (data[i][j] - mean[j]);
       stddev[j] /= float_n;
       stddev[j] = SQRT_FUN(stddev[j]);
-      /* The following in an inelegant but usual way to handle
-         near-zero std. dev. values, which below would cause a zero-
-         divide. */
+
+
+
       stddev[j] = stddev[j] <= eps ? SCALAR_VAL(1.0) : stddev[j];
     }
 
-  /* Center and reduce the column vectors. */
+
   for (i = 0; i < _PB_N; i++)
     for (j = 0; j < _PB_M; j++)
       {
@@ -106,7 +97,7 @@ void kernel_correlation(int m, int n,
         data[i][j] /= SQRT_FUN(float_n) * stddev[j];
       }
 
-  /* Calculate the m * m correlation matrix. */
+
   for (i = 0; i < _PB_M-1; i++)
     {
       corr[i][i] = SCALAR_VAL(1.0);
@@ -126,39 +117,39 @@ void kernel_correlation(int m, int n,
 
 int submain(int argc, char** argv)
 {
-  /* Retrieve problem size. */
+
   int n = N;
   int m = M;
 
-  /* Variable declaration/allocation. */
+
   DATA_TYPE float_n;
   POLYBENCH_2D_ARRAY_DECL(data,DATA_TYPE,N,M,n,m);
   POLYBENCH_2D_ARRAY_DECL(corr,DATA_TYPE,M,M,m,m);
   POLYBENCH_1D_ARRAY_DECL(mean,DATA_TYPE,M,m);
   POLYBENCH_1D_ARRAY_DECL(stddev,DATA_TYPE,M,m);
 
-  /* Initialize array(s). */
+
   init_array (m, n, &float_n, POLYBENCH_ARRAY(data));
 
-  /* Start timer. */
+
   polybench_start_instruments;
 
-  /* Run kernel. */
-  kernel_correlation (m, n, float_n,
-		      POLYBENCH_ARRAY(data),
-		      POLYBENCH_ARRAY(corr),
-		      POLYBENCH_ARRAY(mean),
-		      POLYBENCH_ARRAY(stddev));
 
-  /* Stop and print timer. */
+  kernel_correlation (m, n, float_n,
+        POLYBENCH_ARRAY(data),
+        POLYBENCH_ARRAY(corr),
+        POLYBENCH_ARRAY(mean),
+        POLYBENCH_ARRAY(stddev));
+
+
   polybench_stop_instruments;
   polybench_print_instruments;
 
-  /* Prevent dead-code elimination. All live-out data must be printed
-     by the function call in argument. */
+
+
   polybench_prevent_dce(print_array(m, POLYBENCH_ARRAY(corr)));
 
-  /* Be clean. */
+
   POLYBENCH_FREE_ARRAY(data);
   POLYBENCH_FREE_ARRAY(corr);
   POLYBENCH_FREE_ARRAY(mean);
@@ -166,9 +157,3 @@ int submain(int argc, char** argv)
 
   return 0;
 }
-
-// int main(int argc, char** argv) {
-//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-//         submain(argc, argv);
-// }
-

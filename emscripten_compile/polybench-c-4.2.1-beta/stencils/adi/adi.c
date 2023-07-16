@@ -1,46 +1,37 @@
-/**
- * This version is stamped on May 10, 2016
- *
- * Contact:
- *   Louis-Noel Pouchet <pouchet.ohio-state.edu>
- *   Tomofumi Yuki <tomofumi.yuki.fr>
- *
- * Web address: http://polybench.sourceforge.net
- */
-/* adi.c: this file is part of PolyBench/C */
-
+# 1 "./polybench-c-4.2.1-beta/stencils/adi/adi.c"
+# 12 "./polybench-c-4.2.1-beta/stencils/adi/adi.c"
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <math.h>
 
-/* Include polybench common header. */
+
 #include <polybench.h>
 
-/* Include benchmark-specific header. */
+
 #include "adi.h"
 
 
-/* Array initialization. */
-// static
+
+
 void init_array (int n,
-		 DATA_TYPE POLYBENCH_2D(u,N,N,n,n))
+   DATA_TYPE POLYBENCH_2D(u,N,N,n,n))
 {
   int i, j;
 
   for (i = 0; i < n; i++)
     for (j = 0; j < n; j++)
       {
-	u[i][j] =  (DATA_TYPE)(i + n-j) / n;
+ u[i][j] = (DATA_TYPE)(i + n-j) / n;
       }
 }
 
 
-/* DCE code. Must scan the entire live-out data.
-   Can be used also to check the correctness of the output. */
-// static
+
+
+
 void print_array(int n,
-		 DATA_TYPE POLYBENCH_2D(u,N,N,n,n))
+   DATA_TYPE POLYBENCH_2D(u,N,N,n,n))
 
 {
   int i, j;
@@ -55,20 +46,12 @@ void print_array(int n,
   POLYBENCH_DUMP_END("u");
   POLYBENCH_DUMP_FINISH;
 }
-
-
-/* Main computational kernel. The whole function will be timed,
-   including the call and return. */
-/* Based on a Fortran code fragment from Figure 5 of
- * "Automatic Data and Computation Decomposition on Distributed Memory Parallel Computers"
- * by Peizong Lee and Zvi Meir Kedem, TOPLAS, 2002
- */
-// static
+# 67 "./polybench-c-4.2.1-beta/stencils/adi/adi.c"
 void kernel_adi(int tsteps, int n,
-		DATA_TYPE POLYBENCH_2D(u,N,N,n,n),
-		DATA_TYPE POLYBENCH_2D(v,N,N,n,n),
-		DATA_TYPE POLYBENCH_2D(p,N,N,n,n),
-		DATA_TYPE POLYBENCH_2D(q,N,N,n,n))
+  DATA_TYPE POLYBENCH_2D(u,N,N,n,n),
+  DATA_TYPE POLYBENCH_2D(v,N,N,n,n),
+  DATA_TYPE POLYBENCH_2D(p,N,N,n,n),
+  DATA_TYPE POLYBENCH_2D(q,N,N,n,n))
 {
   int t, i, j;
   DATA_TYPE DX, DY, DT;
@@ -86,7 +69,7 @@ void kernel_adi(int tsteps, int n,
   mul1 = B1 * DT / (DX * DX);
   mul2 = B2 * DT / (DY * DY);
 
-  a = -mul1 /  SCALAR_VAL(2.0);
+  a = -mul1 / SCALAR_VAL(2.0);
   b = SCALAR_VAL(1.0)+mul1;
   c = a;
   d = -mul2 / SCALAR_VAL(2.0);
@@ -94,7 +77,7 @@ void kernel_adi(int tsteps, int n,
   f = d;
 
  for (t=1; t<=_PB_TSTEPS; t++) {
-    //Column Sweep
+
     for (i=1; i<_PB_N-1; i++) {
       v[0][i] = SCALAR_VAL(1.0);
       p[i][0] = SCALAR_VAL(0.0);
@@ -109,7 +92,7 @@ void kernel_adi(int tsteps, int n,
         v[j][i] = p[i][j] * v[j+1][i] + q[i][j];
       }
     }
-    //Row Sweep
+
     for (i=1; i<_PB_N-1; i++) {
       u[i][0] = SCALAR_VAL(1.0);
       p[i][0] = SCALAR_VAL(0.0);
@@ -130,35 +113,35 @@ void kernel_adi(int tsteps, int n,
 
 int submain(int argc, char** argv)
 {
-  /* Retrieve problem size. */
+
   int n = N;
   int tsteps = TSTEPS;
 
-  /* Variable declaration/allocation. */
+
   POLYBENCH_2D_ARRAY_DECL(u, DATA_TYPE, N, N, n, n);
   POLYBENCH_2D_ARRAY_DECL(v, DATA_TYPE, N, N, n, n);
   POLYBENCH_2D_ARRAY_DECL(p, DATA_TYPE, N, N, n, n);
   POLYBENCH_2D_ARRAY_DECL(q, DATA_TYPE, N, N, n, n);
 
 
-  /* Initialize array(s). */
+
   init_array (n, POLYBENCH_ARRAY(u));
 
-  /* Start timer. */
+
   polybench_start_instruments;
 
-  /* Run kernel. */
+
   kernel_adi (tsteps, n, POLYBENCH_ARRAY(u), POLYBENCH_ARRAY(v), POLYBENCH_ARRAY(p), POLYBENCH_ARRAY(q));
 
-  /* Stop and print timer. */
+
   polybench_stop_instruments;
   polybench_print_instruments;
 
-  /* Prevent dead-code elimination. All live-out data must be printed
-     by the function call in argument. */
+
+
   polybench_prevent_dce(print_array(n, POLYBENCH_ARRAY(u)));
 
-  /* Be clean. */
+
   POLYBENCH_FREE_ARRAY(u);
   POLYBENCH_FREE_ARRAY(v);
   POLYBENCH_FREE_ARRAY(p);
@@ -166,11 +149,3 @@ int submain(int argc, char** argv)
 
   return 0;
 }
-
-
-// int main(int argc, char** argv) {
-//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-//         submain(argc, argv);
-// }
-
-

@@ -1,40 +1,31 @@
-/**
- * This version is stamped on May 10, 2016
- *
- * Contact:
- *   Louis-Noel Pouchet <pouchet.ohio-state.edu>
- *   Tomofumi Yuki <tomofumi.yuki.fr>
- *
- * Web address: http://polybench.sourceforge.net
- */
-/* gemver.c: this file is part of PolyBench/C */
-
+# 1 "./polybench-c-4.2.1-beta/linear-algebra/blas/gemver/gemver.c"
+# 12 "./polybench-c-4.2.1-beta/linear-algebra/blas/gemver/gemver.c"
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <math.h>
 
-/* Include polybench common header. */
+
 #include <polybench.h>
 
-/* Include benchmark-specific header. */
+
 #include "gemver.h"
 
 
-/* Array initialization. */
+
 static
 void init_array (int n,
-		 DATA_TYPE *alpha,
-		 DATA_TYPE *beta,
-		 DATA_TYPE POLYBENCH_2D(A,N,N,n,n),
-		 DATA_TYPE POLYBENCH_1D(u1,N,n),
-		 DATA_TYPE POLYBENCH_1D(v1,N,n),
-		 DATA_TYPE POLYBENCH_1D(u2,N,n),
-		 DATA_TYPE POLYBENCH_1D(v2,N,n),
-		 DATA_TYPE POLYBENCH_1D(w,N,n),
-		 DATA_TYPE POLYBENCH_1D(x,N,n),
-		 DATA_TYPE POLYBENCH_1D(y,N,n),
-		 DATA_TYPE POLYBENCH_1D(z,N,n))
+   DATA_TYPE *alpha,
+   DATA_TYPE *beta,
+   DATA_TYPE POLYBENCH_2D(A,N,N,n,n),
+   DATA_TYPE POLYBENCH_1D(u1,N,n),
+   DATA_TYPE POLYBENCH_1D(v1,N,n),
+   DATA_TYPE POLYBENCH_1D(u2,N,n),
+   DATA_TYPE POLYBENCH_1D(v2,N,n),
+   DATA_TYPE POLYBENCH_1D(w,N,n),
+   DATA_TYPE POLYBENCH_1D(x,N,n),
+   DATA_TYPE POLYBENCH_1D(y,N,n),
+   DATA_TYPE POLYBENCH_1D(z,N,n))
 {
   int i, j;
 
@@ -59,11 +50,11 @@ void init_array (int n,
 }
 
 
-/* DCE code. Must scan the entire live-out data.
-   Can be used also to check the correctness of the output. */
+
+
 static
 void print_array(int n,
-		 DATA_TYPE POLYBENCH_1D(w,N,n))
+   DATA_TYPE POLYBENCH_1D(w,N,n))
 {
   int i;
 
@@ -78,21 +69,21 @@ void print_array(int n,
 }
 
 
-/* Main computational kernel. The whole function will be timed,
-   including the call and return. */
-// static
+
+
+
 void kernel_gemver(int n,
-		   DATA_TYPE alpha,
-		   DATA_TYPE beta,
-		   DATA_TYPE POLYBENCH_2D(A,N,N,n,n),
-		   DATA_TYPE POLYBENCH_1D(u1,N,n),
-		   DATA_TYPE POLYBENCH_1D(v1,N,n),
-		   DATA_TYPE POLYBENCH_1D(u2,N,n),
-		   DATA_TYPE POLYBENCH_1D(v2,N,n),
-		   DATA_TYPE POLYBENCH_1D(w,N,n),
-		   DATA_TYPE POLYBENCH_1D(x,N,n),
-		   DATA_TYPE POLYBENCH_1D(y,N,n),
-		   DATA_TYPE POLYBENCH_1D(z,N,n))
+     DATA_TYPE alpha,
+     DATA_TYPE beta,
+     DATA_TYPE POLYBENCH_2D(A,N,N,n,n),
+     DATA_TYPE POLYBENCH_1D(u1,N,n),
+     DATA_TYPE POLYBENCH_1D(v1,N,n),
+     DATA_TYPE POLYBENCH_1D(u2,N,n),
+     DATA_TYPE POLYBENCH_1D(v2,N,n),
+     DATA_TYPE POLYBENCH_1D(w,N,n),
+     DATA_TYPE POLYBENCH_1D(x,N,n),
+     DATA_TYPE POLYBENCH_1D(y,N,n),
+     DATA_TYPE POLYBENCH_1D(z,N,n))
 {
   int i, j;
 
@@ -111,7 +102,7 @@ void kernel_gemver(int n,
 
   for (i = 0; i < _PB_N; i++)
     for (j = 0; j < _PB_N; j++)
-      w[i] = w[i] +  alpha * A[i][j] * x[j];
+      w[i] = w[i] + alpha * A[i][j] * x[j];
 
 #pragma endscop
 }
@@ -119,10 +110,10 @@ void kernel_gemver(int n,
 
 int submain(int argc, char** argv)
 {
-  /* Retrieve problem size. */
+
   int n = N;
 
-  /* Variable declaration/allocation. */
+
   DATA_TYPE alpha;
   DATA_TYPE beta;
   POLYBENCH_2D_ARRAY_DECL(A, DATA_TYPE, N, N, n, n);
@@ -136,42 +127,42 @@ int submain(int argc, char** argv)
   POLYBENCH_1D_ARRAY_DECL(z, DATA_TYPE, N, n);
 
 
-  /* Initialize array(s). */
-  init_array (n, &alpha, &beta,
-	      POLYBENCH_ARRAY(A),
-	      POLYBENCH_ARRAY(u1),
-	      POLYBENCH_ARRAY(v1),
-	      POLYBENCH_ARRAY(u2),
-	      POLYBENCH_ARRAY(v2),
-	      POLYBENCH_ARRAY(w),
-	      POLYBENCH_ARRAY(x),
-	      POLYBENCH_ARRAY(y),
-	      POLYBENCH_ARRAY(z));
 
-  /* Start timer. */
+  init_array (n, &alpha, &beta,
+       POLYBENCH_ARRAY(A),
+       POLYBENCH_ARRAY(u1),
+       POLYBENCH_ARRAY(v1),
+       POLYBENCH_ARRAY(u2),
+       POLYBENCH_ARRAY(v2),
+       POLYBENCH_ARRAY(w),
+       POLYBENCH_ARRAY(x),
+       POLYBENCH_ARRAY(y),
+       POLYBENCH_ARRAY(z));
+
+
   polybench_start_instruments;
 
-  /* Run kernel. */
-  kernel_gemver (n, alpha, beta,
-		 POLYBENCH_ARRAY(A),
-		 POLYBENCH_ARRAY(u1),
-		 POLYBENCH_ARRAY(v1),
-		 POLYBENCH_ARRAY(u2),
-		 POLYBENCH_ARRAY(v2),
-		 POLYBENCH_ARRAY(w),
-		 POLYBENCH_ARRAY(x),
-		 POLYBENCH_ARRAY(y),
-		 POLYBENCH_ARRAY(z));
 
-  /* Stop and print timer. */
+  kernel_gemver (n, alpha, beta,
+   POLYBENCH_ARRAY(A),
+   POLYBENCH_ARRAY(u1),
+   POLYBENCH_ARRAY(v1),
+   POLYBENCH_ARRAY(u2),
+   POLYBENCH_ARRAY(v2),
+   POLYBENCH_ARRAY(w),
+   POLYBENCH_ARRAY(x),
+   POLYBENCH_ARRAY(y),
+   POLYBENCH_ARRAY(z));
+
+
   polybench_stop_instruments;
   polybench_print_instruments;
 
-  /* Prevent dead-code elimination. All live-out data must be printed
-     by the function call in argument. */
+
+
   polybench_prevent_dce(print_array(n, POLYBENCH_ARRAY(w)));
 
-  /* Be clean. */
+
   POLYBENCH_FREE_ARRAY(A);
   POLYBENCH_FREE_ARRAY(u1);
   POLYBENCH_FREE_ARRAY(v1);
@@ -184,8 +175,3 @@ int submain(int argc, char** argv)
 
   return 0;
 }
-
-// int main(int argc, char** argv) {
-//     for (int i = 0; i < TEST_REPEAT_TIME; ++i)
-//         submain(argc, argv);
-// }
