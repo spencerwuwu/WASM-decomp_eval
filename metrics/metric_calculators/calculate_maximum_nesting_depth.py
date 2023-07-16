@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
+import os
+
 from clang.cindex import CursorKind, Index
 
 import argparse
 import logging
-import json
+from pathlib import Path
+import sys
 
+# add program_runner dir to import runner libraries
+helpers_path = Path(__file__).absolute().parent / "helpers"
+sys.path.append(str(helpers_path))
+
+import function_parser
 
 def main():
     args = parse_arguments()
@@ -15,7 +23,7 @@ def main():
         configure_logger(logging.INFO)
 
     depth = DepthVisitor()
-    print(json.dumps(depth.visitFile(args.PROGRAM_SOURCE_CODE_FILE)))
+    print(depth.visitFile(args.PROGRAM_SOURCE_CODE_FILE))
 
 
 def parse_arguments():
@@ -60,32 +68,18 @@ class DepthVisitor:
 
     def visitFile(self, file_name):
         index = Index.create()
-        try:
-            file = index.parse(
-                file_name,
-            )
+        defined_functions = []
+        for per_func in function_parser.parseFunctionNamesAndBody(file_name):
+            function_body = per_func[1]
+            func_name = per_func[0]
+            defined_functions.append((func_name, function_body))
 
-            # map function name: compound statement (ignore function declarations)
-            defined_functions = []
+        nesting_depth = {
+            name: self.visit(statement_body) - 1
+            for name, statement_body in defined_functions
+        }
+        return nesting_depth
 
-            for func in file.cursor.get_children():
-                children = list(func.get_children())
-                if len(children) == 0:
-                    continue
-                statement_body = children[-1]
-                if (
-                    func.kind == self.function_decl
-                    and statement_body.kind == self.compound_statement
-                ):
-                    defined_functions.append((func.mangled_name, statement_body))
-
-            nesting_depth = {
-                name: self.visit(statement_body) - 1
-                for name, statement_body in defined_functions
-            }
-            return nesting_depth
-        except:
-            return None
 
     # assume functions cannot be nested (only supported thru GCC extension)
     def visit(self, node, parentNode=None):

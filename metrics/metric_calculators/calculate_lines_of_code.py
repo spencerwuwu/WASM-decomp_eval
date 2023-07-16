@@ -4,7 +4,6 @@ import argparse
 import logging
 from pathlib import Path
 import sys
-import json
 
 # add program_runner dir to import runner libraries
 helpers_path = Path(__file__).absolute().parent / "helpers"
@@ -26,13 +25,16 @@ def main():
     file = open(args.PROGRAM_SOURCE_CODE_FILE, "r")
     file_text = file.read()
 
-    for func_name in function_parser.parseFunctionNames(args.PROGRAM_SOURCE_CODE_FILE):
-        function_body = function_parser.parseFunctionBody(file_text, func_name)
+    # for func_name in function_parser.parseFunctionNames(args.PROGRAM_SOURCE_CODE_FILE):
+    #     function_body = function_parser.parseFunctionBody(file_text, func_name)
+    for per_func in function_parser.parseFunctionNamesAndBody(args.PROGRAM_SOURCE_CODE_FILE):
+        function_body = per_func[1]
+        func_name = per_func[0]
         if function_body is None:
             continue
         metrics[func_name] = getFunctionLOC(function_body)
 
-    print(json.dumps(metrics))
+    print(metrics)
 
 
 def parse_arguments():

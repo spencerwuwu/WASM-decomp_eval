@@ -6,7 +6,6 @@ from pathlib import Path
 import sys
 import subprocess
 import os
-import json
 
 # According to https://en.cppreference.com/w/c/language/cast,
 # We use cast operator to track the explicit type conversion, that is, type casting
@@ -36,15 +35,21 @@ def main():
     file = open(args.PROGRAM_SOURCE_CODE_FILE, "r")
     file_text = file.read()
 
-    for func_name in function_parser.parseFunctionNames(args.PROGRAM_SOURCE_CODE_FILE):
-        function_body = function_parser.parseFunctionBody(file_text, func_name)
+    # for func_name in function_parser.parseFunctionNames(args.PROGRAM_SOURCE_CODE_FILE):
+    for per_func in function_parser.parseFunctionNamesAndBody(args.PROGRAM_SOURCE_CODE_FILE):
+        function_body = per_func[1]
+        func_name = per_func[0]
+        if args.program:
+            metrics['program'] = getFunctionStat(file_text)
+        if func_name != args.FUNC:
+            continue
+        # function_body = function_parser.parseFunctionBody(file_text, func_name)
         if function_body is None:
             continue
         metrics[func_name] = getFunctionStat(function_body)
-        if args.program:
-            metrics['program'] = getFunctionStat(file_text)
 
-    print(json.dumps(metrics))
+
+    print(metrics)
 
 
 def parse_arguments():
@@ -55,6 +60,10 @@ def parse_arguments():
     parser.add_argument(
         "PROGRAM_SOURCE_CODE_FILE",
         help="A file containing the source code to be analyzed",
+    )
+    parser.add_argument(
+        "FUNC",
+        help="function target",
     )
     parser.add_argument(
         "-v",
@@ -89,8 +98,9 @@ def getFunctionStat(text):
     f.close()
     dead = 0
     try:
-        res = subprocess.run(['cppcheck', '--enable=style', '--language=c', '-j', '6', tempFilePath], stderr=subprocess.PIPE,
-                             stdout=subprocess.PIPE, timeout=60).stderr.decode('utf-8')
+        #res = subprocess.run(['cppcheck', '--enable=style', '--language=c', '-j', '6', tempFilePath], stderr=subprocess.PIPE,
+        res = subprocess.run(['cppcheck', '--enable=style', '--language=c', tempFilePath], stderr=subprocess.PIPE,
+                             stdout=subprocess.PIPE, timeout=3).stderr.decode('utf-8')
     except subprocess.TimeoutExpired:
         #logging.warning('CPPCHECK timeout, dead stat cannot be obtained')
         res = []

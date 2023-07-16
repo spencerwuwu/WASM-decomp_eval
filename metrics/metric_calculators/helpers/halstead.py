@@ -52,8 +52,11 @@ def manageFile(filepath):
 
     metrics = {}
 
-    for func_name in function_parser.parseFunctionNames(filepath):
-        function_body = function_parser.parseFunctionBody(file_text, func_name)
+    # for func_name in function_parser.parseFunctionNames(filepath):
+    #     function_body = function_parser.parseFunctionBody(file_text, func_name)
+    for per_func in function_parser.parseFunctionNamesAndBody(filepath):
+        function_body = per_func[1]
+        func_name = per_func[0]
         if function_body is None:
             continue
 
