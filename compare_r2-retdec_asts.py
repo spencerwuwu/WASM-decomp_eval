@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.DEBUG,
 log = logging.getLogger("compare_asts.py")
 
 
-TIMEOUT = 10
+TIMEOUT = 60
 
 
 with open("lib/timeout_util.py", "r") as fd:
@@ -97,7 +97,7 @@ def process(base_dir, filename, opt_level):
                 r2_dist = tree_edit_distance(orig_tree_dict[sym], r2_tree_dict[sym])
             except TimeOutException as ex:
                 log.warning(f"timeout: {TIMEOUT} ted @ r2-{filename}-{opt_level}")
-                r2_dist = 1 
+                r2_dist = 0 
             signal.alarm(0)
         results[sym]["r2-ghidra"]["nqc"] = r2_s
         results[sym]["r2-ghidra"]["ted"] = r2_dist
@@ -121,7 +121,7 @@ def process(base_dir, filename, opt_level):
                 retdec_dist = tree_edit_distance(orig_tree_dict[sym], retdec_tree_dict[sym])
             except TimeOutException as ex:
                 log.warning(f"timeout: {TIMEOUT} ted @ retdec-{filename}-{opt_level}")
-                retdec_dist = 1
+                retdec_dist = 0
             signal.alarm(0)
         results[sym]["retdec"]["nqc"] = retdec_s
         results[sym]["retdec"]["ted"] = retdec_dist

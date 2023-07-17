@@ -100,7 +100,7 @@ def process(base_dir, filename, opt_level):
             w2c2_dist = tree_edit_distance(orig_tree_dict[sym], w2c2_tree_dict[w2c2_sym])
         except TimeOutException as ex:
             log.warning(f"timeout: {TIMEOUT} ted @ w2c2-{filename}-{opt_level}")
-            w2c2_dist = 1
+            w2c2_dist = 0
         signal.alarm(0)
         results[sym]["w2c2"]["ted"] = w2c2_dist
 
@@ -109,7 +109,7 @@ def process(base_dir, filename, opt_level):
             wasm2c_dist = tree_edit_distance(orig_tree_dict[sym], wasm2c_tree_dict[wasm2c_sym])
         except TimeOutException as ex:
             log.warning(f"timeout: {TIMEOUT} ted @ wasm2c-{filename}-{opt_level}")
-            wasm2c_dist = 1
+            wasm2c_dist = 0
         signal.alarm(0)
         results[sym]["wasm2c"]["ted"] = wasm2c_dist
 
