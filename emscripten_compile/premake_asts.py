@@ -3,7 +3,11 @@ import os
 import sys
 from clang.cindex import TranslationUnit
 
-opt_level = '-O0'
+if len(sys.argv) < 2:
+    print("Usage: python3 premake_asts.py <opt_level>")
+    exit(1)
+
+opt_level = f'-O{sys.argv[1]}'
 c_flags_str  = ' -g3 ' 
 c_flags_str += '-fignore-exceptions -fPIC -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -Werror=implicit-function-declaration --sysroot=$(dirname $(which emcc))/cache/sysroot -Xclang -iwithsysroot/include/fakesdl -Xclang -iwithsysroot/include/compat '
 c_flags = c_flags_str.split()

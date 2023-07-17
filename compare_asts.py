@@ -79,7 +79,7 @@ def process(base_dir, filename, opt_level):
             w2c2_s = node_quantity_compare(orig_tree_dict[sym], w2c2_tree_dict[w2c2_sym])
         except TimeOutException as ex:
             log.warning(f"timeout: {TIMEOUT} nqc @ w2c2-{filename}-{opt_level}")
-            w2c2_s = -1
+            w2c2_s = 0
         signal.alarm(0)
         results[sym]["w2c2"]["nqc"] = w2c2_s
 
@@ -88,7 +88,7 @@ def process(base_dir, filename, opt_level):
             wasm2c_s = node_quantity_compare(orig_tree_dict[sym], wasm2c_tree_dict[wasm2c_sym])
         except TimeOutException as ex:
             log.warning(f"timeout: {TIMEOUT} nqc @ wasm2c-{filename}-{opt_level}")
-            wasm2c_s = -1
+            wasm2c_s = 0
         signal.alarm(0)
         results[sym]["wasm2c"]["nqc"] = wasm2c_s
 
@@ -100,7 +100,7 @@ def process(base_dir, filename, opt_level):
             w2c2_dist = tree_edit_distance(orig_tree_dict[sym], w2c2_tree_dict[w2c2_sym])
         except TimeOutException as ex:
             log.warning(f"timeout: {TIMEOUT} ted @ w2c2-{filename}-{opt_level}")
-            w2c2_dist = -1
+            w2c2_dist = 1
         signal.alarm(0)
         results[sym]["w2c2"]["ted"] = w2c2_dist
 
@@ -109,7 +109,7 @@ def process(base_dir, filename, opt_level):
             wasm2c_dist = tree_edit_distance(orig_tree_dict[sym], wasm2c_tree_dict[wasm2c_sym])
         except TimeOutException as ex:
             log.warning(f"timeout: {TIMEOUT} ted @ wasm2c-{filename}-{opt_level}")
-            wasm2c_dist = -1
+            wasm2c_dist = 1
         signal.alarm(0)
         results[sym]["wasm2c"]["ted"] = wasm2c_dist
 
@@ -130,7 +130,7 @@ def process(base_dir, filename, opt_level):
 def main():
     # Load in previous data
     if os.path.exists("ast_results.json"):
-        with open("re-ast_results.json", "r") as fd:
+        with open("ast_results.json", "r") as fd:
             results = json.load(fd)
     else:
         results = []
@@ -166,7 +166,7 @@ def main():
             seen.append((opt_level, filename))
             results.append({"opt": opt_level, "filename": filename, "results": data})
             # Dump current data
-            with open("re-ast_results.json", "w") as outfile:
+            with open("ast_results.json", "w") as outfile:
                 json.dump(results, outfile)
 
             log.info(f'==== Done O{opt_level} {filename}')
