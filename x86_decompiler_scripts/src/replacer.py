@@ -57,9 +57,9 @@ def find_fun_with_name(txt, fun_name):
     #            )
     reg_exp = (fun_type_reg +
                fun_name +
-               r"\s*\(.*\)\s*{"
+               r"\s*\(.*\n?\)\s*{"
                )
-    pattern = re.compile(reg_exp)
+    pattern = re.compile(reg_exp, re.DOTALL)
     match = pattern.search(txt)
     if match is None:
         print(f"Cannot find {fun_name}:  {reg_exp}")

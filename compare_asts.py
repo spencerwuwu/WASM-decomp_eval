@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.DEBUG,
 log = logging.getLogger("compare_asts.py")
 
 
-TIMEOUT = 10
+TIMEOUT = 60
 
 
 with open("lib/timeout_util.py", "r") as fd:
@@ -130,7 +130,7 @@ def process(base_dir, filename, opt_level):
 def main():
     # Load in previous data
     if os.path.exists("ast_results.json"):
-        with open("ast_results.json", "r") as fd:
+        with open("re-ast_results.json", "r") as fd:
             results = json.load(fd)
     else:
         results = []
@@ -166,7 +166,7 @@ def main():
             seen.append((opt_level, filename))
             results.append({"opt": opt_level, "filename": filename, "results": data})
             # Dump current data
-            with open("ast_results.json", "w") as outfile:
+            with open("re-ast_results.json", "w") as outfile:
                 json.dump(results, outfile)
 
             log.info(f'==== Done O{opt_level} {filename}')

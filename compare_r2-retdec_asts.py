@@ -29,7 +29,7 @@ def read_orig_symbol(symbol_map_f):
         for line in fd.read().split("\n"):
             if len(line) == 0:
                 continue
-            a, b = line.split(":")
+            a,_ = line.split(":")
             symbols.append(a)
     return symbols
 
@@ -41,8 +41,12 @@ def process(base_dir, filename, opt_level):
     retdec_ast =  base_dir + f'ast_retdec_new/{filename}.ast'
     any_symbol_f = base_dir + f'd_wasm2c_symbols/{filename}.map'
 
-    if not os.path.exists(r2_ast) or not os.path.exists(retdec_ast):
-        return {}
+    do_r2 = True
+    do_ret = True
+    if not os.path.exists(r2_ast):
+        do_r2 = False
+    if not os.path.exists(retdec_ast):
+        do_ret = False
 
     orig_symbols = read_orig_symbol(any_symbol_f)
     
@@ -55,62 +59,74 @@ def process(base_dir, filename, opt_level):
     #     dfs_print_tree(root)
     #     print()
 
-    log.debug(f'++ Loading: {r2_ast}')
-    r2_t_unit = TranslationUnit.from_ast_file(r2_ast)
-    r2_tree_dict = create_ast_tree(r2_t_unit, orig_symbols)
+    if do_r2:
+        log.debug(f'++ Loading: {r2_ast}')
+        r2_t_unit = TranslationUnit.from_ast_file(r2_ast)
+        r2_tree_dict = create_ast_tree(r2_t_unit, orig_symbols)
+    else:
+        r2_tree_dict = {}
 
-
-    log.debug(f'++ Loading: {retdec_ast}')
-    retdec_t_unit = TranslationUnit.from_ast_file(retdec_ast)
-    retdec_tree_dict = create_ast_tree(retdec_t_unit, orig_symbols)
+    if do_ret:
+        log.debug(f'++ Loading: {retdec_ast}')
+        retdec_t_unit = TranslationUnit.from_ast_file(retdec_ast)
+        retdec_tree_dict = create_ast_tree(retdec_t_unit, orig_symbols)
+    else:
+        retdec_tree_dict = {}
 
     results = {}
 
     for sym in orig_symbols:
-        if sym not in r2_tree_dict or sym not in retdec_tree_dict:
-            continue
         results[sym] = {"r2-ghidra": {}, "retdec": {}}
 
-        # node_quantity_compare
-        signal.alarm(TIMEOUT)
-        try:
-            r2_s = node_quantity_compare(orig_tree_dict[sym], r2_tree_dict[sym])
-        except TimeOutException as ex:
-            log.warning(f"timeout: {TIMEOUT} nqc @ r2-{filename}-{opt_level}")
-            r2_s = -1
-        signal.alarm(0)
+        if not do_r2 or sym not in r2_tree_dict:
+            r2_s = -2
+            r2_dist = -2
+        else:
+            # node_quantity_compare
+            signal.alarm(TIMEOUT)
+            try:
+                r2_s = node_quantity_compare(orig_tree_dict[sym], r2_tree_dict[sym])
+            except TimeOutException as ex:
+                log.warning(f"timeout: {TIMEOUT} nqc @ r2-{filename}-{opt_level}")
+                r2_s = -1
+            signal.alarm(0)
+
+            # Tree edit distance
+            signal.alarm(TIMEOUT)
+            try:
+                r2_dist = tree_edit_distance(orig_tree_dict[sym], r2_tree_dict[sym])
+            except TimeOutException as ex:
+                log.warning(f"timeout: {TIMEOUT} ted @ r2-{filename}-{opt_level}")
+                r2_dist = -1
+            signal.alarm(0)
         results[sym]["r2-ghidra"]["nqc"] = r2_s
-
-        signal.alarm(TIMEOUT)
-        try:
-            retdec_s = node_quantity_compare(orig_tree_dict[sym], retdec_tree_dict[sym])
-        except TimeOutException as ex:
-            log.warning(f"timeout: {TIMEOUT} nqc @ retdec-{filename}-{opt_level}")
-            retdec_s = -1
-        signal.alarm(0)
-        results[sym]["retdec"]["nqc"] = retdec_s
-
-        log.debug('nqc:    {:30s}  {:.4f}, {:.4f}'.format(sym, r2_s, retdec_s))
-
-        # Tree edit distance
-        signal.alarm(TIMEOUT)
-        try:
-            r2_dist = tree_edit_distance(orig_tree_dict[sym], r2_tree_dict[sym])
-        except TimeOutException as ex:
-            log.warning(f"timeout: {TIMEOUT} ted @ r2-{filename}-{opt_level}")
-            r2_dist = -1
-        signal.alarm(0)
         results[sym]["r2-ghidra"]["ted"] = r2_dist
 
-        signal.alarm(TIMEOUT)
-        try:
-            retdec_dist = tree_edit_distance(orig_tree_dict[sym], retdec_tree_dict[sym])
-        except TimeOutException as ex:
-            log.warning(f"timeout: {TIMEOUT} ted @ retdec-{filename}-{opt_level}")
-            retdec_dist = -1
-        signal.alarm(0)
+        if not do_ret or sym not in retdec_tree_dict:
+            retdec_s = -2
+            retdec_dist = -2
+        else:
+            # node_quantity_compare
+            signal.alarm(TIMEOUT)
+            try:
+                retdec_s = node_quantity_compare(orig_tree_dict[sym], retdec_tree_dict[sym])
+            except TimeOutException as ex:
+                log.warning(f"timeout: {TIMEOUT} nqc @ retdec-{filename}-{opt_level}")
+                retdec_s = -1
+            signal.alarm(0)
+
+            # Tree edit distance
+            signal.alarm(TIMEOUT)
+            try:
+                retdec_dist = tree_edit_distance(orig_tree_dict[sym], retdec_tree_dict[sym])
+            except TimeOutException as ex:
+                log.warning(f"timeout: {TIMEOUT} ted @ retdec-{filename}-{opt_level}")
+                retdec_dist = -1
+            signal.alarm(0)
+        results[sym]["retdec"]["nqc"] = retdec_s
         results[sym]["retdec"]["ted"] = retdec_dist
 
+        log.debug('nqc:    {:30s}  {:.4f}, {:.4f}'.format(sym, r2_s, retdec_s))
         log.debug(f'ted:    {sym:30s}  {r2_dist:.4f}, {retdec_dist:.4f}')
 
         # # LargestForest
