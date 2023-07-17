@@ -42,15 +42,15 @@ for d in "${DIRS[@]}"; do
 		if [[ $cfile == "em_output_O2/d_retdec_new/gramschmidt.c" ]]; then continue; fi
 		if [[ $cfile == "em_output_O2/d_retdec_new/mpeg2.c" ]]; then continue; fi
 		
-		#clang -c $cfile $LD_FLAGS -o /dev/null -Wno- -g -Wno-error=int-conversion -fno-stack-protector
-		#status=$?
-		#if [[ $status != "0" ]]; then
-		#	echo "+++" 
-		#	echo "++ Failed to compile $cfile"
-		#	echo "+++" 
-		#	all_pass=0
-		#	exit 1
-		#fi
+		clang -c $cfile $LD_FLAGS -o /dev/null -Wno- -g -Wno-error=int-conversion -fno-stack-protector 2> /dev/null
+		status=$?
+		if [[ $status != "0" ]]; then
+			echo "+++" 
+			echo "++ Failed to compile $cfile"
+			echo "+++" 
+			all_pass=0
+			exit 1
+		fi
 		./single_premake.py $cfile "${LD_FLAGS} -Wno- -g -Wno-error=int-conversion -fno-stack-protector"
 	done
 done

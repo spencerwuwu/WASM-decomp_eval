@@ -18,8 +18,8 @@ for wasm in WASM_DIRS:
                 continue
 
             out_f = out_dir + c_file.replace(".c", ".ast")
-            if os.path.exists(out_f):
-                continue
+            #if os.path.exists(out_f):
+            #    continue
 
             t_unit = TranslationUnit.from_source(src_dir+c_file, ["-Idecompiler_lib/"])
             t_unit.save(out_f)
