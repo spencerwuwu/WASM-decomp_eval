@@ -1,0 +1,38 @@
+
+{
+  "nussinov.c": {
+    "Lines of code": {
+      "kernel_nussinov": 145,
+      "submain": 97
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_nussinov": 84.1,
+      "submain": 32.0
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_nussinov": 11,
+      "submain": 8
+    },
+    "Maximum nesting depth": {
+      "kernel_nussinov": 7,
+      "submain": 4
+    },
+    "# goto": {
+      "kernel_nussinov": 0,
+      "submain": 0
+    },
+    "# cast": {
+      "kernel_nussinov": 75,
+      "submain": 7
+    },
+    "# var": {
+      "kernel_nussinov": 44,
+      "submain": 19
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_nussinov": 0,
+      "submain": 0
+    }
+  }
+}
