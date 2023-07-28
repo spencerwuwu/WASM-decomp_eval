@@ -1,5 +1,27 @@
 # Metrics
 
+#### New raw data
+
+DecFuzzer: `results/new/dec_*.json` (`seed_all` is source file)
+
+PBC and CHS: `results/new/em_output_*.json` (`src` is source file)
+
+#### Data Process Scripts
+
+DecFuzzer: `plot.py`
+
+PBC and CHS: `plot_bench.py` (hardcoded function mapping info so the file is a little bit big)
+
+The script contains some simple comments and should be self-explained. 
+
+Generally, each script will generate a CSV file containing statistics (the file will be overwritten each time the script is executed). 
+
+Each script also includes a simple plot generation code snippet at the end of it. 
+
+----
+----
+# Previous Contents
+
 ## Prerequisites
 
 ### Python Dependencies
