@@ -23,8 +23,8 @@ def read_symbol_map(symbol_map_f):
 
 def get_loc(data, filename, function):
     keyword = "Maximum nesting depth"
-    keyword = "Lines of code"
     keyword = "McCabe cyclomatic complexity"
+    keyword = "Lines of code"
     if filename not in data:
         return -5
     if function not in data[filename][keyword]:
@@ -59,7 +59,6 @@ def main():
         opt = data["opt"]
         filename = data["filename"]
         functions = list(data["results"].keys())
-        func_cnt += len(functions)
 
         base_dir = f'new_compiled_benchmarks/em_output_O{opt}/'
         w2c2_symbol_f = base_dir + f'd_w2c2_symbols/{filename}.map'
@@ -68,10 +67,10 @@ def main():
         wasm2c_symbol_map = read_symbol_map(wasm2c_symbol_f)
 
 
-        locs = {}
-        for decom in DECOMPILERS:
-            locs[decom] = {}
-            for func in functions:
+        union_functions = []
+        for func in functions:
+            discard = False
+            for decom in DECOMPILERS:
                 if decom == "wasm2c":
                     symbol = wasm2c_symbol_map[func]
                 elif decom == "w2c2":
@@ -82,13 +81,18 @@ def main():
                     if "abs" in symbol and decom == "retdec":
                         symbol = symbol.replace("abs", "_abs")
                 loc = get_loc(cur_data[decom][opt], filename+".c", symbol)
-                locs[decom][func] = loc
+                if loc < 0:
+                    discard = True
+                    break
+            if not discard:
+                union_functions.append(func)
 
+        func_cnt += len(union_functions)
 
         new_entries.append({
                            "opt": opt,
                            "filename": filename,
-                            "functions": locs,
+                           "functions": union_functions,
         })
 
     with open("readability_entries.json", "w") as fd:

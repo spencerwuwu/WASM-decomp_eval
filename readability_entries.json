@@ -1,0 +1,1157 @@
+[
+    {
+        "opt": 0,
+        "filename": "syr2k",
+        "functions": [
+            "kernel_syr2k"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "adpcm",
+        "functions": [
+            "abs",
+            "encode",
+            "filtez",
+            "filtep",
+            "quantl",
+            "logscl",
+            "scalel",
+            "upzero",
+            "uppol2",
+            "uppol1",
+            "logsch",
+            "decode"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "ludcmp",
+        "functions": [
+            "kernel_ludcmp"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "symm",
+        "functions": [
+            "kernel_symm"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "gemver",
+        "functions": [
+            "kernel_gemver"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "jacobi-1d",
+        "functions": [
+            "kernel_jacobi_1d"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "doitgen",
+        "functions": [
+            "kernel_doitgen"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "mpeg2",
+        "functions": [
+            "read",
+            "Fill_Buffer",
+            "Show_Bits",
+            "Get_Bits1",
+            "Get_Bits",
+            "Flush_Buffer",
+            "Get_motion_code",
+            "Get_dmvector",
+            "motion_vectors",
+            "motion_vector"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "bicg",
+        "functions": [
+            "kernel_bicg"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "PL_2mm",
+        "functions": [
+            "kernel_2mm"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "jacobi-2d",
+        "functions": [
+            "kernel_jacobi_2d"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "seidel-2d",
+        "functions": [
+            "kernel_seidel_2d"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "cholesky",
+        "functions": [
+            "kernel_cholesky"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "dfdiv",
+        "functions": [
+            "shift64RightJamming",
+            "add128",
+            "sub128",
+            "mul64To128",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "normalizeFloat64Subnormal",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "float64_div",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "heat-3d",
+        "functions": [
+            "kernel_heat_3d"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "sha_driver",
+        "functions": [
+            "local_memset"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "gramschmidt",
+        "functions": [
+            "kernel_gramschmidt"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "atax",
+        "functions": [
+            "kernel_atax"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "mvt",
+        "functions": [
+            "kernel_mvt"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "dfmul",
+        "functions": [
+            "shift64RightJamming",
+            "mul64To128",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "normalizeFloat64Subnormal",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "float64_mul",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "trisolv",
+        "functions": [
+            "kernel_trisolv"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "floyd-warshall",
+        "functions": [
+            "kernel_floyd_warshall"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "durbin",
+        "functions": [
+            "kernel_durbin"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "gesummv",
+        "functions": [
+            "kernel_gesummv"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "nussinov",
+        "functions": [
+            "kernel_nussinov"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "PL_3mm",
+        "functions": [
+            "kernel_3mm"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "aes",
+        "functions": [
+            "encrypt",
+            "KeySchedule",
+            "AddRoundKey",
+            "ByteSub_ShiftRow",
+            "MixColumn_AddRoundKey",
+            "SubByte",
+            "decrypt",
+            "InversShiftRow_ByteSub",
+            "AddRoundKey_InversMixColumn",
+            "aes_main"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "gemm",
+        "functions": [
+            "kernel_gemm"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "covariance",
+        "functions": [
+            "kernel_covariance"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "syrk",
+        "functions": [
+            "kernel_syrk"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "deriche",
+        "functions": [
+            "kernel_deriche"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "lu",
+        "functions": [
+            "kernel_lu"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "dfsin",
+        "functions": [
+            "shift64RightJamming",
+            "shift64ExtraRightJamming",
+            "add128",
+            "sub128",
+            "mul64To128",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "normalizeFloat64Subnormal",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "normalizeRoundAndPackFloat64",
+            "int32_to_float64",
+            "addFloat64Sigs",
+            "subFloat64Sigs",
+            "float64_add",
+            "float64_mul",
+            "float64_div",
+            "float64_le",
+            "float64_ge",
+            "float64_neg",
+            "local_sin",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "trmm",
+        "functions": [
+            "kernel_trmm"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "bf",
+        "functions": [
+            "local_memcpy",
+            "BF_set_key",
+            "BF_encrypt",
+            "BF_cfb64_encrypt"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "fdtd-2d",
+        "functions": [
+            "kernel_fdtd_2d"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "gsm",
+        "functions": [
+            "gsm_add",
+            "gsm_mult",
+            "gsm_mult_r",
+            "gsm_norm",
+            "gsm_div",
+            "Autocorrelation",
+            "Reflection_coefficients",
+            "Transformation_to_Log_Area_Ratios",
+            "Quantization_and_coding",
+            "Gsm_LPC_Analysis"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "correlation",
+        "functions": [
+            "kernel_correlation"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "adi",
+        "functions": [
+            "kernel_adi"
+        ]
+    },
+    {
+        "opt": 0,
+        "filename": "dfadd",
+        "functions": [
+            "shift64RightJamming",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "normalizeRoundAndPackFloat64",
+            "addFloat64Sigs",
+            "subFloat64Sigs",
+            "float64_add",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "syr2k",
+        "functions": [
+            "kernel_syr2k"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "adpcm",
+        "functions": [
+            "abs",
+            "encode",
+            "filtez",
+            "filtep",
+            "quantl",
+            "logscl",
+            "scalel",
+            "upzero",
+            "uppol2",
+            "uppol1",
+            "logsch",
+            "decode"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "ludcmp",
+        "functions": [
+            "kernel_ludcmp"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "symm",
+        "functions": [
+            "kernel_symm"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "gemver",
+        "functions": [
+            "kernel_gemver"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "jacobi-1d",
+        "functions": [
+            "kernel_jacobi_1d"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "doitgen",
+        "functions": [
+            "kernel_doitgen"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "mpeg2",
+        "functions": [
+            "read",
+            "Fill_Buffer",
+            "Show_Bits",
+            "Get_Bits1",
+            "Get_Bits",
+            "Flush_Buffer",
+            "Get_motion_code",
+            "Get_dmvector",
+            "motion_vectors",
+            "motion_vector"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "bicg",
+        "functions": [
+            "kernel_bicg"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "PL_2mm",
+        "functions": [
+            "kernel_2mm"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "jacobi-2d",
+        "functions": [
+            "kernel_jacobi_2d"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "seidel-2d",
+        "functions": [
+            "kernel_seidel_2d"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "cholesky",
+        "functions": [
+            "kernel_cholesky"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "dfdiv",
+        "functions": [
+            "shift64RightJamming",
+            "add128",
+            "sub128",
+            "mul64To128",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "normalizeFloat64Subnormal",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "float64_div",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "heat-3d",
+        "functions": [
+            "kernel_heat_3d"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "sha_driver",
+        "functions": [
+            "local_memset"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "gramschmidt",
+        "functions": [
+            "kernel_gramschmidt"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "atax",
+        "functions": [
+            "kernel_atax"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "mvt",
+        "functions": [
+            "kernel_mvt"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "dfmul",
+        "functions": [
+            "shift64RightJamming",
+            "mul64To128",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "normalizeFloat64Subnormal",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "float64_mul",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "trisolv",
+        "functions": [
+            "kernel_trisolv"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "floyd-warshall",
+        "functions": [
+            "kernel_floyd_warshall"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "durbin",
+        "functions": [
+            "kernel_durbin"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "gesummv",
+        "functions": [
+            "kernel_gesummv"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "nussinov",
+        "functions": [
+            "kernel_nussinov"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "PL_3mm",
+        "functions": [
+            "kernel_3mm"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "aes",
+        "functions": [
+            "encrypt",
+            "KeySchedule",
+            "ByteSub_ShiftRow",
+            "MixColumn_AddRoundKey",
+            "AddRoundKey",
+            "decrypt",
+            "InversShiftRow_ByteSub",
+            "AddRoundKey_InversMixColumn",
+            "SubByte",
+            "aes_main"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "gemm",
+        "functions": [
+            "kernel_gemm"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "covariance",
+        "functions": [
+            "kernel_covariance"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "syrk",
+        "functions": [
+            "kernel_syrk"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "deriche",
+        "functions": [
+            "kernel_deriche"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "lu",
+        "functions": [
+            "kernel_lu"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "dfsin",
+        "functions": [
+            "shift64RightJamming",
+            "shift64ExtraRightJamming",
+            "add128",
+            "sub128",
+            "mul64To128",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "normalizeFloat64Subnormal",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "normalizeRoundAndPackFloat64",
+            "int32_to_float64",
+            "addFloat64Sigs",
+            "subFloat64Sigs",
+            "float64_add",
+            "float64_mul",
+            "float64_div",
+            "float64_le",
+            "float64_ge",
+            "float64_neg",
+            "local_sin",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "trmm",
+        "functions": [
+            "kernel_trmm"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "bf",
+        "functions": [
+            "local_memcpy",
+            "BF_set_key",
+            "BF_encrypt",
+            "BF_cfb64_encrypt"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "fdtd-2d",
+        "functions": [
+            "kernel_fdtd_2d"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "gsm",
+        "functions": [
+            "gsm_add",
+            "gsm_mult",
+            "gsm_mult_r",
+            "gsm_norm",
+            "gsm_div",
+            "Autocorrelation",
+            "Reflection_coefficients",
+            "Transformation_to_Log_Area_Ratios",
+            "Quantization_and_coding",
+            "Gsm_LPC_Analysis"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "correlation",
+        "functions": [
+            "kernel_correlation"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "adi",
+        "functions": [
+            "kernel_adi"
+        ]
+    },
+    {
+        "opt": 1,
+        "filename": "dfadd",
+        "functions": [
+            "shift64RightJamming",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "normalizeRoundAndPackFloat64",
+            "addFloat64Sigs",
+            "subFloat64Sigs",
+            "float64_add",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "syr2k",
+        "functions": [
+            "kernel_syr2k"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "adpcm",
+        "functions": [
+            "abs",
+            "encode",
+            "upzero",
+            "filtez",
+            "filtep",
+            "quantl",
+            "logscl",
+            "scalel",
+            "uppol2",
+            "uppol1",
+            "logsch",
+            "decode"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "ludcmp",
+        "functions": [
+            "kernel_ludcmp"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "symm",
+        "functions": [
+            "kernel_symm"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "gemver",
+        "functions": [
+            "kernel_gemver"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "jacobi-1d",
+        "functions": [
+            "kernel_jacobi_1d"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "doitgen",
+        "functions": [
+            "kernel_doitgen"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "mpeg2",
+        "functions": [
+            "read",
+            "Fill_Buffer",
+            "Show_Bits",
+            "Get_Bits1",
+            "Get_Bits",
+            "Flush_Buffer",
+            "Get_motion_code",
+            "Get_dmvector",
+            "motion_vectors",
+            "motion_vector"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "bicg",
+        "functions": [
+            "kernel_bicg"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "PL_2mm",
+        "functions": [
+            "kernel_2mm"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "jacobi-2d",
+        "functions": [
+            "kernel_jacobi_2d"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "seidel-2d",
+        "functions": [
+            "kernel_seidel_2d"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "cholesky",
+        "functions": [
+            "kernel_cholesky"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "dfdiv",
+        "functions": [
+            "shift64RightJamming",
+            "add128",
+            "sub128",
+            "mul64To128",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "normalizeFloat64Subnormal",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "float64_div",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "heat-3d",
+        "functions": [
+            "kernel_heat_3d"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "sha_driver",
+        "functions": [
+            "local_memset"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "gramschmidt",
+        "functions": [
+            "kernel_gramschmidt"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "atax",
+        "functions": [
+            "kernel_atax"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "mvt",
+        "functions": [
+            "kernel_mvt"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "dfmul",
+        "functions": [
+            "shift64RightJamming",
+            "mul64To128",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "normalizeFloat64Subnormal",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "float64_mul",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "trisolv",
+        "functions": [
+            "kernel_trisolv"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "floyd-warshall",
+        "functions": [
+            "kernel_floyd_warshall"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "durbin",
+        "functions": [
+            "kernel_durbin"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "gesummv",
+        "functions": [
+            "kernel_gesummv"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "nussinov",
+        "functions": [
+            "kernel_nussinov"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "PL_3mm",
+        "functions": [
+            "kernel_3mm"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "aes",
+        "functions": [
+            "encrypt",
+            "KeySchedule",
+            "ByteSub_ShiftRow",
+            "MixColumn_AddRoundKey",
+            "AddRoundKey",
+            "decrypt",
+            "InversShiftRow_ByteSub",
+            "AddRoundKey_InversMixColumn",
+            "SubByte",
+            "aes_main"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "gemm",
+        "functions": [
+            "kernel_gemm"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "covariance",
+        "functions": [
+            "kernel_covariance"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "syrk",
+        "functions": [
+            "kernel_syrk"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "deriche",
+        "functions": [
+            "kernel_deriche"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "lu",
+        "functions": [
+            "kernel_lu"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "dfsin",
+        "functions": [
+            "shift64RightJamming",
+            "shift64ExtraRightJamming",
+            "add128",
+            "sub128",
+            "mul64To128",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "normalizeFloat64Subnormal",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "normalizeRoundAndPackFloat64",
+            "int32_to_float64",
+            "addFloat64Sigs",
+            "subFloat64Sigs",
+            "float64_add",
+            "float64_mul",
+            "float64_div",
+            "float64_le",
+            "float64_ge",
+            "float64_neg",
+            "local_sin",
+            "ullong_to_double"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "trmm",
+        "functions": [
+            "kernel_trmm"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "bf",
+        "functions": [
+            "local_memcpy",
+            "BF_set_key",
+            "BF_encrypt",
+            "BF_cfb64_encrypt"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "fdtd-2d",
+        "functions": [
+            "kernel_fdtd_2d"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "gsm",
+        "functions": [
+            "gsm_add",
+            "gsm_mult",
+            "gsm_mult_r",
+            "gsm_norm",
+            "gsm_div",
+            "Autocorrelation",
+            "Reflection_coefficients",
+            "Transformation_to_Log_Area_Ratios",
+            "Quantization_and_coding",
+            "Gsm_LPC_Analysis"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "correlation",
+        "functions": [
+            "kernel_correlation"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "adi",
+        "functions": [
+            "kernel_adi"
+        ]
+    },
+    {
+        "opt": 2,
+        "filename": "dfadd",
+        "functions": [
+            "shift64RightJamming",
+            "float_raise",
+            "float64_is_nan",
+            "float64_is_signaling_nan",
+            "extractFloat64Frac",
+            "extractFloat64Exp",
+            "extractFloat64Sign",
+            "packFloat64",
+            "roundAndPackFloat64",
+            "normalizeRoundAndPackFloat64",
+            "addFloat64Sigs",
+            "subFloat64Sigs",
+            "float64_add",
+            "ullong_to_double"
+        ]
+    }
+]
