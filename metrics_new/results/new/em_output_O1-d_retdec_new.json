@@ -1,0 +1,1923 @@
+
+{
+  "PL_2mm.c": {
+    "Lines of code": {
+      "kernel_2mm": 208
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_2mm": 92.1
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_2mm": 28
+    },
+    "Maximum nesting depth": {
+      "kernel_2mm": 5
+    },
+    "# goto": {
+      "kernel_2mm": 0
+    },
+    "# cast": {
+      "kernel_2mm": 0
+    },
+    "# var": {
+      "kernel_2mm": 22
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_2mm": 0
+    }
+  },
+  "PL_3mm.c": {
+    "Lines of code": {
+      "kernel_3mm": 399
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_3mm": 94.3
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_3mm": 43
+    },
+    "Maximum nesting depth": {
+      "kernel_3mm": 6
+    },
+    "# goto": {
+      "kernel_3mm": 0
+    },
+    "# cast": {
+      "kernel_3mm": 0
+    },
+    "# var": {
+      "kernel_3mm": 48
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_3mm": 0
+    }
+  },
+  "adi.c": {
+    "Lines of code": {
+      "kernel_adi": 288
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_adi": 52.3
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_adi": 18
+    },
+    "Maximum nesting depth": {
+      "kernel_adi": 6
+    },
+    "# goto": {
+      "kernel_adi": 20
+    },
+    "# cast": {
+      "kernel_adi": 0
+    },
+    "# var": {
+      "kernel_adi": 127
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_adi": 0
+    }
+  },
+  "adpcm.c": {
+    "Lines of code": {
+      "_abs": 3,
+      "encode": 251,
+      "filtez": 19,
+      "filtep": 3,
+      "quantl": 20,
+      "logscl": 7,
+      "scalel": 4,
+      "upzero": 28,
+      "uppol2": 11,
+      "uppol1": 14,
+      "logsch": 6,
+      "decode": 232
+    },
+    "Halstead complexity difficulty measure": {
+      "_abs": 7.2,
+      "encode": 42.8,
+      "filtez": 19.9,
+      "filtep": 11.7,
+      "quantl": 21.2,
+      "logscl": 18.4,
+      "scalel": 10.1,
+      "upzero": 34.1,
+      "uppol2": 20.0,
+      "uppol1": 25.8,
+      "logsch": 18.3,
+      "decode": 44.9
+    },
+    "McCabe cyclomatic complexity": {
+      "_abs": 1,
+      "encode": 12,
+      "filtez": 2,
+      "filtep": 1,
+      "quantl": 4,
+      "logscl": 1,
+      "scalel": 1,
+      "upzero": 4,
+      "uppol2": 1,
+      "uppol1": 1,
+      "logsch": 1,
+      "decode": 8
+    },
+    "Maximum nesting depth": {
+      "_abs": 0,
+      "encode": 2,
+      "filtez": 1,
+      "filtep": 0,
+      "quantl": 2,
+      "logscl": 0,
+      "scalel": 0,
+      "upzero": 2,
+      "uppol2": 0,
+      "uppol1": 0,
+      "logsch": 0,
+      "decode": 1
+    },
+    "# goto": {
+      "_abs": 0,
+      "encode": 0,
+      "filtez": 0,
+      "filtep": 0,
+      "quantl": 0,
+      "logscl": 0,
+      "scalel": 0,
+      "upzero": 0,
+      "uppol2": 0,
+      "uppol1": 0,
+      "logsch": 0,
+      "decode": 0
+    },
+    "# cast": {
+      "_abs": 0,
+      "encode": 0,
+      "filtez": 0,
+      "filtep": 0,
+      "quantl": 0,
+      "logscl": 0,
+      "scalel": 0,
+      "upzero": 0,
+      "uppol2": 0,
+      "uppol1": 0,
+      "logsch": 0,
+      "decode": 0
+    },
+    "# var": {
+      "_abs": 0,
+      "encode": 142,
+      "filtez": 8,
+      "filtep": 0,
+      "quantl": 5,
+      "logscl": 4,
+      "scalel": 1,
+      "upzero": 9,
+      "uppol2": 8,
+      "uppol1": 11,
+      "logsch": 3,
+      "decode": 133
+    },
+    "# dead code": {
+      "program": "Timeout",
+      "_abs": 0,
+      "encode": "Timeout",
+      "filtez": 0,
+      "filtep": 0,
+      "quantl": 0,
+      "logscl": 0,
+      "scalel": 0,
+      "upzero": 0,
+      "uppol2": 0,
+      "uppol1": 0,
+      "logsch": 0,
+      "decode": "Timeout"
+    }
+  },
+  "aes.c": {
+    "Lines of code": {
+      "encrypt": 273,
+      "KeySchedule": 167,
+      "ByteSub_ShiftRow": 268,
+      "MixColumn_AddRoundKey": 105,
+      "AddRoundKey": 73,
+      "decrypt": 85,
+      "InversShiftRow_ByteSub": 270,
+      "AddRoundKey_InversMixColumn": 210,
+      "SubByte": 6,
+      "aes_main": 17
+    },
+    "Halstead complexity difficulty measure": {
+      "encrypt": 45.8,
+      "KeySchedule": 64.5,
+      "ByteSub_ShiftRow": 36.3,
+      "MixColumn_AddRoundKey": 51.9,
+      "AddRoundKey": 29.1,
+      "decrypt": 24.9,
+      "InversShiftRow_ByteSub": 36.3,
+      "AddRoundKey_InversMixColumn": 90.7,
+      "SubByte": 11.8,
+      "aes_main": 16.5
+    },
+    "McCabe cyclomatic complexity": {
+      "encrypt": 32,
+      "KeySchedule": 23,
+      "ByteSub_ShiftRow": 4,
+      "MixColumn_AddRoundKey": 4,
+      "AddRoundKey": 9,
+      "decrypt": 13,
+      "InversShiftRow_ByteSub": 4,
+      "AddRoundKey_InversMixColumn": 7,
+      "SubByte": 1,
+      "aes_main": 1
+    },
+    "Maximum nesting depth": {
+      "encrypt": 4,
+      "KeySchedule": 5,
+      "ByteSub_ShiftRow": 3,
+      "MixColumn_AddRoundKey": 1,
+      "AddRoundKey": 4,
+      "decrypt": 4,
+      "InversShiftRow_ByteSub": 3,
+      "AddRoundKey_InversMixColumn": 2,
+      "SubByte": 0,
+      "aes_main": 0
+    },
+    "# goto": {
+      "encrypt": 30,
+      "KeySchedule": 5,
+      "ByteSub_ShiftRow": 0,
+      "MixColumn_AddRoundKey": 0,
+      "AddRoundKey": 8,
+      "decrypt": 9,
+      "InversShiftRow_ByteSub": 0,
+      "AddRoundKey_InversMixColumn": 0,
+      "SubByte": 0,
+      "aes_main": 0
+    },
+    "# cast": {
+      "encrypt": 0,
+      "KeySchedule": 2,
+      "ByteSub_ShiftRow": 0,
+      "MixColumn_AddRoundKey": 0,
+      "AddRoundKey": 0,
+      "decrypt": 0,
+      "InversShiftRow_ByteSub": 0,
+      "AddRoundKey_InversMixColumn": 0,
+      "SubByte": 0,
+      "aes_main": 0
+    },
+    "# var": {
+      "encrypt": 43,
+      "KeySchedule": 24,
+      "ByteSub_ShiftRow": 176,
+      "MixColumn_AddRoundKey": 38,
+      "AddRoundKey": 10,
+      "decrypt": 3,
+      "InversShiftRow_ByteSub": 178,
+      "AddRoundKey_InversMixColumn": 50,
+      "SubByte": 3,
+      "aes_main": 4
+    },
+    "# dead code": {
+      "program": 0,
+      "encrypt": 0,
+      "KeySchedule": 0,
+      "ByteSub_ShiftRow": 0,
+      "MixColumn_AddRoundKey": 0,
+      "AddRoundKey": 0,
+      "decrypt": 0,
+      "InversShiftRow_ByteSub": 0,
+      "AddRoundKey_InversMixColumn": 0,
+      "SubByte": 0,
+      "aes_main": 0
+    }
+  },
+  "atax.c": {
+    "Lines of code": {
+      "kernel_atax": 60
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_atax": 28.6
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_atax": 9
+    },
+    "Maximum nesting depth": {
+      "kernel_atax": 4
+    },
+    "# goto": {
+      "kernel_atax": 5
+    },
+    "# cast": {
+      "kernel_atax": 0
+    },
+    "# var": {
+      "kernel_atax": 17
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_atax": 0
+    }
+  },
+  "bf.c": {
+    "Lines of code": {
+      "local_memcpy": 21,
+      "BF_set_key": 67,
+      "BF_encrypt": 202,
+      "BF_cfb64_encrypt": 99
+    },
+    "Halstead complexity difficulty measure": {
+      "local_memcpy": 28.8,
+      "BF_set_key": 35.6,
+      "BF_encrypt": 31.8,
+      "BF_cfb64_encrypt": 47.6
+    },
+    "McCabe cyclomatic complexity": {
+      "local_memcpy": 3,
+      "BF_set_key": 4,
+      "BF_encrypt": 2,
+      "BF_cfb64_encrypt": 10
+    },
+    "Maximum nesting depth": {
+      "local_memcpy": 1,
+      "BF_set_key": 1,
+      "BF_encrypt": 1,
+      "BF_cfb64_encrypt": 3
+    },
+    "# goto": {
+      "local_memcpy": 0,
+      "BF_set_key": 0,
+      "BF_encrypt": 0,
+      "BF_cfb64_encrypt": 0
+    },
+    "# cast": {
+      "local_memcpy": 0,
+      "BF_set_key": 8,
+      "BF_encrypt": 0,
+      "BF_cfb64_encrypt": 12
+    },
+    "# var": {
+      "local_memcpy": 5,
+      "BF_set_key": 27,
+      "BF_encrypt": 191,
+      "BF_cfb64_encrypt": 24
+    },
+    "# dead code": {
+      "program": 2,
+      "local_memcpy": 0,
+      "BF_set_key": 0,
+      "BF_encrypt": 0,
+      "BF_cfb64_encrypt": 2
+    }
+  },
+  "bicg.c": {
+    "Lines of code": {
+      "kernel_bicg": 78
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_bicg": 54.0
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_bicg": 8
+    },
+    "Maximum nesting depth": {
+      "kernel_bicg": 3
+    },
+    "# goto": {
+      "kernel_bicg": 0
+    },
+    "# cast": {
+      "kernel_bicg": 0
+    },
+    "# var": {
+      "kernel_bicg": 14
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_bicg": 0
+    }
+  },
+  "cholesky.c": {
+    "Lines of code": {
+      "kernel_cholesky": 294
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_cholesky": 90.5
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_cholesky": 19
+    },
+    "Maximum nesting depth": {
+      "kernel_cholesky": 5
+    },
+    "# goto": {
+      "kernel_cholesky": 0
+    },
+    "# cast": {
+      "kernel_cholesky": 0
+    },
+    "# var": {
+      "kernel_cholesky": 38
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_cholesky": 0
+    }
+  },
+  "correlation.c": {
+    "Lines of code": {
+      "kernel_correlation": 511
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_correlation": 71.2
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_correlation": 38
+    },
+    "Maximum nesting depth": {
+      "kernel_correlation": 5
+    },
+    "# goto": {
+      "kernel_correlation": 0
+    },
+    "# cast": {
+      "kernel_correlation": 0
+    },
+    "# var": {
+      "kernel_correlation": 93
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_correlation": 0
+    }
+  },
+  "covariance.c": {
+    "Lines of code": {
+      "kernel_covariance": 174
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_covariance": 61.7
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_covariance": 21
+    },
+    "Maximum nesting depth": {
+      "kernel_covariance": 4
+    },
+    "# goto": {
+      "kernel_covariance": 0
+    },
+    "# cast": {
+      "kernel_covariance": 0
+    },
+    "# var": {
+      "kernel_covariance": 30
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_covariance": 0
+    }
+  },
+  "deriche.c": {
+    "Lines of code": {
+      "kernel_deriche": 650
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_deriche": 70.0
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_deriche": 35
+    },
+    "Maximum nesting depth": {
+      "kernel_deriche": 4
+    },
+    "# goto": {
+      "kernel_deriche": 0
+    },
+    "# cast": {
+      "kernel_deriche": 0
+    },
+    "# var": {
+      "kernel_deriche": 172
+    },
+    "# dead code": {
+      "program": "Timeout",
+      "kernel_deriche": "Timeout"
+    }
+  },
+  "dfadd.c": {
+    "Lines of code": {
+      "shift64RightJamming": 16,
+      "float_raise": 6,
+      "float64_is_nan": 3,
+      "float64_is_signaling_nan": 3,
+      "extractFloat64Frac": 3,
+      "extractFloat64Exp": 3,
+      "extractFloat64Sign": 3,
+      "packFloat64": 3,
+      "roundAndPackFloat64": 45,
+      "normalizeRoundAndPackFloat64": 10,
+      "addFloat64Sigs": 90,
+      "subFloat64Sigs": 107,
+      "float64_add": 7,
+      "ullong_to_double": 4
+    },
+    "Halstead complexity difficulty measure": {
+      "shift64RightJamming": 22.8,
+      "float_raise": 10.6,
+      "float64_is_nan": 5.6,
+      "float64_is_signaling_nan": 6.7,
+      "extractFloat64Frac": 5.6,
+      "extractFloat64Exp": 4.6,
+      "extractFloat64Sign": 4.1,
+      "packFloat64": 8.8,
+      "roundAndPackFloat64": 29.5,
+      "normalizeRoundAndPackFloat64": 20.0,
+      "addFloat64Sigs": 39.7,
+      "subFloat64Sigs": 36.4,
+      "float64_add": 10.6,
+      "ullong_to_double": 5.0
+    },
+    "McCabe cyclomatic complexity": {
+      "shift64RightJamming": 3,
+      "float_raise": 1,
+      "float64_is_nan": 1,
+      "float64_is_signaling_nan": 1,
+      "extractFloat64Frac": 1,
+      "extractFloat64Exp": 1,
+      "extractFloat64Sign": 1,
+      "packFloat64": 1,
+      "roundAndPackFloat64": 10,
+      "normalizeRoundAndPackFloat64": 1,
+      "addFloat64Sigs": 16,
+      "subFloat64Sigs": 16,
+      "float64_add": 2,
+      "ullong_to_double": 1
+    },
+    "Maximum nesting depth": {
+      "shift64RightJamming": 1,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 3,
+      "normalizeRoundAndPackFloat64": 0,
+      "addFloat64Sigs": 5,
+      "subFloat64Sigs": 5,
+      "float64_add": 1,
+      "ullong_to_double": 0
+    },
+    "# goto": {
+      "shift64RightJamming": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 0,
+      "normalizeRoundAndPackFloat64": 0,
+      "addFloat64Sigs": 5,
+      "subFloat64Sigs": 9,
+      "float64_add": 0,
+      "ullong_to_double": 0
+    },
+    "# cast": {
+      "shift64RightJamming": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 5,
+      "normalizeRoundAndPackFloat64": 0,
+      "addFloat64Sigs": 1,
+      "subFloat64Sigs": 2,
+      "float64_add": 0,
+      "ullong_to_double": 0
+    },
+    "# var": {
+      "shift64RightJamming": 4,
+      "float_raise": 2,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 6,
+      "normalizeRoundAndPackFloat64": 7,
+      "addFloat64Sigs": 18,
+      "subFloat64Sigs": 27,
+      "float64_add": 1,
+      "ullong_to_double": 1
+    },
+    "# dead code": {
+      "program": 0,
+      "shift64RightJamming": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 0,
+      "normalizeRoundAndPackFloat64": 0,
+      "addFloat64Sigs": 0,
+      "subFloat64Sigs": 0,
+      "float64_add": 0,
+      "ullong_to_double": 0
+    }
+  },
+  "dfdiv.c": {
+    "Lines of code": {
+      "shift64RightJamming": 16,
+      "add128": 7,
+      "sub128": 6,
+      "mul64To128": 11,
+      "float_raise": 6,
+      "float64_is_nan": 3,
+      "float64_is_signaling_nan": 3,
+      "extractFloat64Frac": 3,
+      "extractFloat64Exp": 3,
+      "extractFloat64Sign": 3,
+      "normalizeFloat64Subnormal": 13,
+      "packFloat64": 3,
+      "roundAndPackFloat64": 45,
+      "float64_div": 167,
+      "ullong_to_double": 4
+    },
+    "Halstead complexity difficulty measure": {
+      "shift64RightJamming": 22.8,
+      "add128": 16.5,
+      "sub128": 17.7,
+      "mul64To128": 19.2,
+      "float_raise": 10.6,
+      "float64_is_nan": 5.6,
+      "float64_is_signaling_nan": 6.7,
+      "extractFloat64Frac": 5.6,
+      "extractFloat64Exp": 4.6,
+      "extractFloat64Sign": 4.1,
+      "normalizeFloat64Subnormal": 19.3,
+      "packFloat64": 8.8,
+      "roundAndPackFloat64": 29.5,
+      "float64_div": 44.9,
+      "ullong_to_double": 5.0
+    },
+    "McCabe cyclomatic complexity": {
+      "shift64RightJamming": 3,
+      "add128": 1,
+      "sub128": 1,
+      "mul64To128": 1,
+      "float_raise": 1,
+      "float64_is_nan": 1,
+      "float64_is_signaling_nan": 1,
+      "extractFloat64Frac": 1,
+      "extractFloat64Exp": 1,
+      "extractFloat64Sign": 1,
+      "normalizeFloat64Subnormal": 1,
+      "packFloat64": 1,
+      "roundAndPackFloat64": 10,
+      "float64_div": 22,
+      "ullong_to_double": 1
+    },
+    "Maximum nesting depth": {
+      "shift64RightJamming": 1,
+      "add128": 0,
+      "sub128": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 3,
+      "float64_div": 4,
+      "ullong_to_double": 0
+    },
+    "# goto": {
+      "shift64RightJamming": 0,
+      "add128": 0,
+      "sub128": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 0,
+      "float64_div": 4,
+      "ullong_to_double": 0
+    },
+    "# cast": {
+      "shift64RightJamming": 0,
+      "add128": 0,
+      "sub128": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 5,
+      "float64_div": 2,
+      "ullong_to_double": 0
+    },
+    "# var": {
+      "shift64RightJamming": 4,
+      "add128": 2,
+      "sub128": 1,
+      "mul64To128": 6,
+      "float_raise": 2,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 8,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 6,
+      "float64_div": 70,
+      "ullong_to_double": 1
+    },
+    "# dead code": {
+      "program": 0,
+      "shift64RightJamming": 0,
+      "add128": 0,
+      "sub128": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 0,
+      "float64_div": 0,
+      "ullong_to_double": 0
+    }
+  },
+  "dfmul.c": {
+    "Lines of code": {
+      "shift64RightJamming": 16,
+      "mul64To128": 11,
+      "float_raise": 6,
+      "float64_is_nan": 3,
+      "float64_is_signaling_nan": 3,
+      "extractFloat64Frac": 3,
+      "extractFloat64Exp": 3,
+      "extractFloat64Sign": 3,
+      "normalizeFloat64Subnormal": 13,
+      "packFloat64": 3,
+      "roundAndPackFloat64": 45,
+      "float64_mul": 85,
+      "ullong_to_double": 4
+    },
+    "Halstead complexity difficulty measure": {
+      "shift64RightJamming": 22.8,
+      "mul64To128": 19.2,
+      "float_raise": 10.6,
+      "float64_is_nan": 5.6,
+      "float64_is_signaling_nan": 6.7,
+      "extractFloat64Frac": 5.6,
+      "extractFloat64Exp": 4.9,
+      "extractFloat64Sign": 4.1,
+      "normalizeFloat64Subnormal": 19.3,
+      "packFloat64": 8.8,
+      "roundAndPackFloat64": 30.7,
+      "float64_mul": 36.0,
+      "ullong_to_double": 5.0
+    },
+    "McCabe cyclomatic complexity": {
+      "shift64RightJamming": 3,
+      "mul64To128": 1,
+      "float_raise": 1,
+      "float64_is_nan": 1,
+      "float64_is_signaling_nan": 1,
+      "extractFloat64Frac": 1,
+      "extractFloat64Exp": 1,
+      "extractFloat64Sign": 1,
+      "normalizeFloat64Subnormal": 1,
+      "packFloat64": 1,
+      "roundAndPackFloat64": 10,
+      "float64_mul": 14,
+      "ullong_to_double": 1
+    },
+    "Maximum nesting depth": {
+      "shift64RightJamming": 1,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 3,
+      "float64_mul": 4,
+      "ullong_to_double": 0
+    },
+    "# goto": {
+      "shift64RightJamming": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 0,
+      "float64_mul": 0,
+      "ullong_to_double": 0
+    },
+    "# cast": {
+      "shift64RightJamming": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 5,
+      "float64_mul": 3,
+      "ullong_to_double": 0
+    },
+    "# var": {
+      "shift64RightJamming": 4,
+      "mul64To128": 6,
+      "float_raise": 2,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 8,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 6,
+      "float64_mul": 38,
+      "ullong_to_double": 1
+    },
+    "# dead code": {
+      "program": 0,
+      "shift64RightJamming": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 0,
+      "float64_mul": 0,
+      "ullong_to_double": 0
+    }
+  },
+  "dfsin.c": {
+    "Lines of code": {
+      "shift64RightJamming": 16,
+      "shift64ExtraRightJamming": 21,
+      "add128": 7,
+      "sub128": 6,
+      "mul64To128": 11,
+      "float_raise": 6,
+      "float64_is_nan": 3,
+      "float64_is_signaling_nan": 3,
+      "extractFloat64Frac": 3,
+      "extractFloat64Exp": 3,
+      "extractFloat64Sign": 3,
+      "normalizeFloat64Subnormal": 13,
+      "packFloat64": 3,
+      "roundAndPackFloat64": 45,
+      "normalizeRoundAndPackFloat64": 10,
+      "int32_to_float64": 13,
+      "addFloat64Sigs": 90,
+      "subFloat64Sigs": 107,
+      "float64_add": 7,
+      "float64_mul": 84,
+      "float64_div": 167,
+      "float64_le": 26,
+      "float64_ge": 26,
+      "float64_neg": 3,
+      "local_sin": 47,
+      "ullong_to_double": 4
+    },
+    "Halstead complexity difficulty measure": {
+      "shift64RightJamming": 22.8,
+      "shift64ExtraRightJamming": 28.0,
+      "add128": 16.5,
+      "sub128": 17.7,
+      "mul64To128": 19.2,
+      "float_raise": 10.6,
+      "float64_is_nan": 5.6,
+      "float64_is_signaling_nan": 6.7,
+      "extractFloat64Frac": 5.6,
+      "extractFloat64Exp": 4.6,
+      "extractFloat64Sign": 4.1,
+      "normalizeFloat64Subnormal": 19.3,
+      "packFloat64": 8.8,
+      "roundAndPackFloat64": 29.5,
+      "normalizeRoundAndPackFloat64": 20.0,
+      "int32_to_float64": 20.4,
+      "addFloat64Sigs": 39.7,
+      "subFloat64Sigs": 36.4,
+      "float64_add": 10.6,
+      "float64_mul": 35.3,
+      "float64_div": 44.9,
+      "float64_le": 26.7,
+      "float64_ge": 26.7,
+      "float64_neg": 5.3,
+      "local_sin": 38.6,
+      "ullong_to_double": 5.0
+    },
+    "McCabe cyclomatic complexity": {
+      "shift64RightJamming": 3,
+      "shift64ExtraRightJamming": 4,
+      "add128": 1,
+      "sub128": 1,
+      "mul64To128": 1,
+      "float_raise": 1,
+      "float64_is_nan": 1,
+      "float64_is_signaling_nan": 1,
+      "extractFloat64Frac": 1,
+      "extractFloat64Exp": 1,
+      "extractFloat64Sign": 1,
+      "normalizeFloat64Subnormal": 1,
+      "packFloat64": 1,
+      "roundAndPackFloat64": 10,
+      "normalizeRoundAndPackFloat64": 1,
+      "int32_to_float64": 2,
+      "addFloat64Sigs": 16,
+      "subFloat64Sigs": 16,
+      "float64_add": 2,
+      "float64_mul": 14,
+      "float64_div": 22,
+      "float64_le": 5,
+      "float64_ge": 5,
+      "float64_neg": 1,
+      "local_sin": 5,
+      "ullong_to_double": 1
+    },
+    "Maximum nesting depth": {
+      "shift64RightJamming": 1,
+      "shift64ExtraRightJamming": 1,
+      "add128": 0,
+      "sub128": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 3,
+      "normalizeRoundAndPackFloat64": 0,
+      "int32_to_float64": 1,
+      "addFloat64Sigs": 5,
+      "subFloat64Sigs": 5,
+      "float64_add": 1,
+      "float64_mul": 4,
+      "float64_div": 4,
+      "float64_le": 2,
+      "float64_ge": 2,
+      "float64_neg": 0,
+      "local_sin": 2,
+      "ullong_to_double": 0
+    },
+    "# goto": {
+      "shift64RightJamming": 0,
+      "shift64ExtraRightJamming": 0,
+      "add128": 0,
+      "sub128": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 0,
+      "normalizeRoundAndPackFloat64": 0,
+      "int32_to_float64": 0,
+      "addFloat64Sigs": 5,
+      "subFloat64Sigs": 9,
+      "float64_add": 0,
+      "float64_mul": 0,
+      "float64_div": 4,
+      "float64_le": 0,
+      "float64_ge": 0,
+      "float64_neg": 0,
+      "local_sin": 0,
+      "ullong_to_double": 0
+    },
+    "# cast": {
+      "shift64RightJamming": 0,
+      "shift64ExtraRightJamming": 0,
+      "add128": 0,
+      "sub128": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 5,
+      "normalizeRoundAndPackFloat64": 0,
+      "int32_to_float64": 0,
+      "addFloat64Sigs": 1,
+      "subFloat64Sigs": 2,
+      "float64_add": 0,
+      "float64_mul": 3,
+      "float64_div": 2,
+      "float64_le": 2,
+      "float64_ge": 2,
+      "float64_neg": 0,
+      "local_sin": 1,
+      "ullong_to_double": 0
+    },
+    "# var": {
+      "shift64RightJamming": 4,
+      "shift64ExtraRightJamming": 2,
+      "add128": 2,
+      "sub128": 1,
+      "mul64To128": 6,
+      "float_raise": 2,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 8,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 6,
+      "normalizeRoundAndPackFloat64": 7,
+      "int32_to_float64": 7,
+      "addFloat64Sigs": 18,
+      "subFloat64Sigs": 27,
+      "float64_add": 1,
+      "float64_mul": 37,
+      "float64_div": 70,
+      "float64_le": 4,
+      "float64_ge": 4,
+      "float64_neg": 0,
+      "local_sin": 16,
+      "ullong_to_double": 1
+    },
+    "# dead code": {
+      "program": 0,
+      "shift64RightJamming": 0,
+      "shift64ExtraRightJamming": 0,
+      "add128": 0,
+      "sub128": 0,
+      "mul64To128": 0,
+      "float_raise": 0,
+      "float64_is_nan": 0,
+      "float64_is_signaling_nan": 0,
+      "extractFloat64Frac": 0,
+      "extractFloat64Exp": 0,
+      "extractFloat64Sign": 0,
+      "normalizeFloat64Subnormal": 0,
+      "packFloat64": 0,
+      "roundAndPackFloat64": 0,
+      "normalizeRoundAndPackFloat64": 0,
+      "int32_to_float64": 0,
+      "addFloat64Sigs": 0,
+      "subFloat64Sigs": 0,
+      "float64_add": 0,
+      "float64_mul": 0,
+      "float64_div": 0,
+      "float64_le": 0,
+      "float64_ge": 0,
+      "float64_neg": 0,
+      "local_sin": 0,
+      "ullong_to_double": 0
+    }
+  },
+  "doitgen.c": {
+    "Lines of code": {
+      "kernel_doitgen": 93
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_doitgen": 34.2
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_doitgen": 12
+    },
+    "Maximum nesting depth": {
+      "kernel_doitgen": 6
+    },
+    "# goto": {
+      "kernel_doitgen": 6
+    },
+    "# cast": {
+      "kernel_doitgen": 0
+    },
+    "# var": {
+      "kernel_doitgen": 29
+    },
+    "# dead code": {
+      "program": 1,
+      "kernel_doitgen": 1
+    }
+  },
+  "durbin.c": {
+    "Lines of code": {
+      "kernel_durbin": 102
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_durbin": 48.1
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_durbin": 7
+    },
+    "Maximum nesting depth": {
+      "kernel_durbin": 2
+    },
+    "# goto": {
+      "kernel_durbin": 0
+    },
+    "# cast": {
+      "kernel_durbin": 0
+    },
+    "# var": {
+      "kernel_durbin": 27
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_durbin": 0
+    }
+  },
+  "fdtd-2d.c": {
+    "Lines of code": {
+      "kernel_fdtd_2d": 456
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_fdtd_2d": 127.1
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_fdtd_2d": 43
+    },
+    "Maximum nesting depth": {
+      "kernel_fdtd_2d": 6
+    },
+    "# goto": {
+      "kernel_fdtd_2d": 0
+    },
+    "# cast": {
+      "kernel_fdtd_2d": 0
+    },
+    "# var": {
+      "kernel_fdtd_2d": 51
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_fdtd_2d": 0
+    }
+  },
+  "floyd-warshall.c": {
+    "Lines of code": {
+      "kernel_floyd_warshall": 95
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_floyd_warshall": 90.9
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_floyd_warshall": 9
+    },
+    "Maximum nesting depth": {
+      "kernel_floyd_warshall": 3
+    },
+    "# goto": {
+      "kernel_floyd_warshall": 0
+    },
+    "# cast": {
+      "kernel_floyd_warshall": 0
+    },
+    "# var": {
+      "kernel_floyd_warshall": 11
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_floyd_warshall": 0
+    }
+  },
+  "gemm.c": {
+    "Lines of code": {
+      "kernel_gemm": 137
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_gemm": 79.5
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_gemm": 19
+    },
+    "Maximum nesting depth": {
+      "kernel_gemm": 5
+    },
+    "# goto": {
+      "kernel_gemm": 0
+    },
+    "# cast": {
+      "kernel_gemm": 0
+    },
+    "# var": {
+      "kernel_gemm": 17
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_gemm": 0
+    }
+  },
+  "gemver.c": {
+    "Lines of code": {
+      "kernel_gemver": 141
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_gemver": 61.7
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_gemver": 12
+    },
+    "Maximum nesting depth": {
+      "kernel_gemver": 2
+    },
+    "# goto": {
+      "kernel_gemver": 0
+    },
+    "# cast": {
+      "kernel_gemver": 0
+    },
+    "# var": {
+      "kernel_gemver": 29
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_gemver": 0
+    }
+  },
+  "gesummv.c": {
+    "Lines of code": {
+      "kernel_gesummv": 70
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_gesummv": 48.1
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_gesummv": 5
+    },
+    "Maximum nesting depth": {
+      "kernel_gesummv": 2
+    },
+    "# goto": {
+      "kernel_gesummv": 0
+    },
+    "# cast": {
+      "kernel_gesummv": 0
+    },
+    "# var": {
+      "kernel_gesummv": 15
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_gesummv": 0
+    }
+  },
+  "gramschmidt.c": {
+    "Lines of code": {
+      "kernel_gramschmidt": 168
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_gramschmidt": 33.8
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_gramschmidt": 16
+    },
+    "Maximum nesting depth": {
+      "kernel_gramschmidt": 5
+    },
+    "# goto": {
+      "kernel_gramschmidt": 12
+    },
+    "# cast": {
+      "kernel_gramschmidt": 0
+    },
+    "# var": {
+      "kernel_gramschmidt": 63
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_gramschmidt": 0
+    }
+  },
+  "gsm.c": {
+    "Lines of code": {
+      "gsm_add": 7,
+      "gsm_mult": 4,
+      "gsm_mult_r": 10,
+      "gsm_norm": 23,
+      "gsm_div": 21,
+      "Autocorrelation": 222,
+      "Reflection_coefficients": 9,
+      "Transformation_to_Log_Area_Ratios": 47,
+      "Quantization_and_coding": 85,
+      "Gsm_LPC_Analysis": 52
+    },
+    "Halstead complexity difficulty measure": {
+      "gsm_add": 14.7,
+      "gsm_mult": 13.5,
+      "gsm_mult_r": 18.3,
+      "gsm_norm": 19.8,
+      "gsm_div": 34.6,
+      "Autocorrelation": 60.2,
+      "Reflection_coefficients": 10.6,
+      "Transformation_to_Log_Area_Ratios": 37.2,
+      "Quantization_and_coding": 25.9,
+      "Gsm_LPC_Analysis": 34.1
+    },
+    "McCabe cyclomatic complexity": {
+      "gsm_add": 1,
+      "gsm_mult": 1,
+      "gsm_mult_r": 3,
+      "gsm_norm": 4,
+      "gsm_div": 3,
+      "Autocorrelation": 9,
+      "Reflection_coefficients": 2,
+      "Transformation_to_Log_Area_Ratios": 6,
+      "Quantization_and_coding": 1,
+      "Gsm_LPC_Analysis": 6
+    },
+    "Maximum nesting depth": {
+      "gsm_add": 0,
+      "gsm_mult": 0,
+      "gsm_mult_r": 1,
+      "gsm_norm": 2,
+      "gsm_div": 1,
+      "Autocorrelation": 3,
+      "Reflection_coefficients": 1,
+      "Transformation_to_Log_Area_Ratios": 3,
+      "Quantization_and_coding": 0,
+      "Gsm_LPC_Analysis": 3
+    },
+    "# goto": {
+      "gsm_add": 0,
+      "gsm_mult": 0,
+      "gsm_mult_r": 0,
+      "gsm_norm": 0,
+      "gsm_div": 0,
+      "Autocorrelation": 0,
+      "Reflection_coefficients": 0,
+      "Transformation_to_Log_Area_Ratios": 0,
+      "Quantization_and_coding": 0,
+      "Gsm_LPC_Analysis": 0
+    },
+    "# cast": {
+      "gsm_add": 0,
+      "gsm_mult": 0,
+      "gsm_mult_r": 0,
+      "gsm_norm": 3,
+      "gsm_div": 0,
+      "Autocorrelation": 1,
+      "Reflection_coefficients": 0,
+      "Transformation_to_Log_Area_Ratios": 0,
+      "Quantization_and_coding": 0,
+      "Gsm_LPC_Analysis": 0
+    },
+    "# var": {
+      "gsm_add": 4,
+      "gsm_mult": 1,
+      "gsm_mult_r": 1,
+      "gsm_norm": 7,
+      "gsm_div": 6,
+      "Autocorrelation": 100,
+      "Reflection_coefficients": 3,
+      "Transformation_to_Log_Area_Ratios": 11,
+      "Quantization_and_coding": 75,
+      "Gsm_LPC_Analysis": 13
+    },
+    "# dead code": {
+      "program": 0,
+      "gsm_add": 0,
+      "gsm_mult": 0,
+      "gsm_mult_r": 0,
+      "gsm_norm": 0,
+      "gsm_div": 0,
+      "Autocorrelation": 0,
+      "Reflection_coefficients": 0,
+      "Transformation_to_Log_Area_Ratios": 0,
+      "Quantization_and_coding": 0,
+      "Gsm_LPC_Analysis": 0
+    }
+  },
+  "heat-3d.c": {
+    "Lines of code": {
+      "kernel_heat_3d": 164
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_heat_3d": 46.6
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_heat_3d": 12
+    },
+    "Maximum nesting depth": {
+      "kernel_heat_3d": 5
+    },
+    "# goto": {
+      "kernel_heat_3d": 10
+    },
+    "# cast": {
+      "kernel_heat_3d": 0
+    },
+    "# var": {
+      "kernel_heat_3d": 63
+    },
+    "# dead code": {
+      "program": 1,
+      "kernel_heat_3d": 1
+    }
+  },
+  "jacobi-1d.c": {
+    "Lines of code": {
+      "kernel_jacobi_1d": 52
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_jacobi_1d": 28.0
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_jacobi_1d": 8
+    },
+    "Maximum nesting depth": {
+      "kernel_jacobi_1d": 4
+    },
+    "# goto": {
+      "kernel_jacobi_1d": 5
+    },
+    "# cast": {
+      "kernel_jacobi_1d": 0
+    },
+    "# var": {
+      "kernel_jacobi_1d": 18
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_jacobi_1d": 0
+    }
+  },
+  "jacobi-2d.c": {
+    "Lines of code": {
+      "kernel_jacobi_2d": 87
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_jacobi_2d": 34.1
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_jacobi_2d": 10
+    },
+    "Maximum nesting depth": {
+      "kernel_jacobi_2d": 4
+    },
+    "# goto": {
+      "kernel_jacobi_2d": 8
+    },
+    "# cast": {
+      "kernel_jacobi_2d": 0
+    },
+    "# var": {
+      "kernel_jacobi_2d": 36
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_jacobi_2d": 0
+    }
+  },
+  "lu.c": {
+    "Lines of code": {
+      "kernel_lu": 222
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_lu": 108.5
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_lu": 25
+    },
+    "Maximum nesting depth": {
+      "kernel_lu": 5
+    },
+    "# goto": {
+      "kernel_lu": 0
+    },
+    "# cast": {
+      "kernel_lu": 0
+    },
+    "# var": {
+      "kernel_lu": 24
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_lu": 0
+    }
+  },
+  "ludcmp.c": {
+    "Lines of code": {
+      "kernel_ludcmp": 347
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_ludcmp": 93.4
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_ludcmp": 35
+    },
+    "Maximum nesting depth": {
+      "kernel_ludcmp": 5
+    },
+    "# goto": {
+      "kernel_ludcmp": 0
+    },
+    "# cast": {
+      "kernel_ludcmp": 0
+    },
+    "# var": {
+      "kernel_ludcmp": 51
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_ludcmp": 0
+    }
+  },
+  "mpeg2.c": {
+    "Lines of code": {
+      "read": 21,
+      "Fill_Buffer": 7,
+      "Show_Bits": 4,
+      "Get_Bits1": 4,
+      "Get_Bits": 26,
+      "Flush_Buffer": 89,
+      "Get_motion_code": 107,
+      "Get_dmvector": 113,
+      "motion_vectors": 249,
+      "motion_vector": 377
+    },
+    "Halstead complexity difficulty measure": {
+      "read": 26.4,
+      "Fill_Buffer": 9.7,
+      "Show_Bits": 8.0,
+      "Get_Bits1": 7.0,
+      "Get_Bits": 20.1,
+      "Flush_Buffer": 36.0,
+      "Get_motion_code": 39.5,
+      "Get_dmvector": 37.1,
+      "motion_vectors": 56.1,
+      "motion_vector": 59.5
+    },
+    "McCabe cyclomatic complexity": {
+      "read": 3,
+      "Fill_Buffer": 1,
+      "Show_Bits": 1,
+      "Get_Bits1": 1,
+      "Get_Bits": 4,
+      "Flush_Buffer": 11,
+      "Get_motion_code": 12,
+      "Get_dmvector": 14,
+      "motion_vectors": 27,
+      "motion_vector": 39
+    },
+    "Maximum nesting depth": {
+      "read": 1,
+      "Fill_Buffer": 0,
+      "Show_Bits": 0,
+      "Get_Bits1": 0,
+      "Get_Bits": 1,
+      "Flush_Buffer": 3,
+      "Get_motion_code": 3,
+      "Get_dmvector": 3,
+      "motion_vectors": 7,
+      "motion_vector": 6
+    },
+    "# goto": {
+      "read": 0,
+      "Fill_Buffer": 0,
+      "Show_Bits": 0,
+      "Get_Bits1": 0,
+      "Get_Bits": 0,
+      "Flush_Buffer": 0,
+      "Get_motion_code": 1,
+      "Get_dmvector": 0,
+      "motion_vectors": 0,
+      "motion_vector": 13
+    },
+    "# cast": {
+      "read": 4,
+      "Fill_Buffer": 0,
+      "Show_Bits": 0,
+      "Get_Bits1": 0,
+      "Get_Bits": 0,
+      "Flush_Buffer": 2,
+      "Get_motion_code": 4,
+      "Get_dmvector": 4,
+      "motion_vectors": 8,
+      "motion_vector": 8
+    },
+    "# var": {
+      "read": 5,
+      "Fill_Buffer": 2,
+      "Show_Bits": 1,
+      "Get_Bits1": 1,
+      "Get_Bits": 10,
+      "Flush_Buffer": 25,
+      "Get_motion_code": 32,
+      "Get_dmvector": 37,
+      "motion_vectors": 78,
+      "motion_vector": 124
+    },
+    "# dead code": {
+      "program": 0,
+      "read": 0,
+      "Fill_Buffer": 0,
+      "Show_Bits": 0,
+      "Get_Bits1": 0,
+      "Get_Bits": 0,
+      "Flush_Buffer": 0,
+      "Get_motion_code": 0,
+      "Get_dmvector": 0,
+      "motion_vectors": 0,
+      "motion_vector": 0
+    }
+  },
+  "mvt.c": {
+    "Lines of code": {
+      "kernel_mvt": 78
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_mvt": 54.8
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_mvt": 8
+    },
+    "Maximum nesting depth": {
+      "kernel_mvt": 2
+    },
+    "# goto": {
+      "kernel_mvt": 0
+    },
+    "# cast": {
+      "kernel_mvt": 0
+    },
+    "# var": {
+      "kernel_mvt": 14
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_mvt": 0
+    }
+  },
+  "nussinov.c": {
+    "Lines of code": {
+      "kernel_nussinov": 109
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_nussinov": 37.9
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_nussinov": 12
+    },
+    "Maximum nesting depth": {
+      "kernel_nussinov": 5
+    },
+    "# goto": {
+      "kernel_nussinov": 7
+    },
+    "# cast": {
+      "kernel_nussinov": 2
+    },
+    "# var": {
+      "kernel_nussinov": 43
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_nussinov": 0
+    }
+  },
+  "seidel-2d.c": {
+    "Lines of code": {
+      "kernel_seidel_2d": 162
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_seidel_2d": 105.7
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_seidel_2d": 11
+    },
+    "Maximum nesting depth": {
+      "kernel_seidel_2d": 4
+    },
+    "# goto": {
+      "kernel_seidel_2d": 0
+    },
+    "# cast": {
+      "kernel_seidel_2d": 0
+    },
+    "# var": {
+      "kernel_seidel_2d": 19
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_seidel_2d": 0
+    }
+  },
+  "sha_driver.c": {
+    "Lines of code": {
+      "local_memset": 19
+    },
+    "Halstead complexity difficulty measure": {
+      "local_memset": 26.8
+    },
+    "McCabe cyclomatic complexity": {
+      "local_memset": 3
+    },
+    "Maximum nesting depth": {
+      "local_memset": 1
+    },
+    "# goto": {
+      "local_memset": 0
+    },
+    "# cast": {
+      "local_memset": 0
+    },
+    "# var": {
+      "local_memset": 5
+    },
+    "# dead code": {
+      "program": 0,
+      "local_memset": 0
+    }
+  },
+  "symm.c": {
+    "Lines of code": {
+      "kernel_symm": 214
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_symm": 103.1
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_symm": 15
+    },
+    "Maximum nesting depth": {
+      "kernel_symm": 5
+    },
+    "# goto": {
+      "kernel_symm": 0
+    },
+    "# cast": {
+      "kernel_symm": 0
+    },
+    "# var": {
+      "kernel_symm": 29
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_symm": 0
+    }
+  },
+  "syr2k.c": {
+    "Lines of code": {
+      "kernel_syr2k": 147
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_syr2k": 86.0
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_syr2k": 13
+    },
+    "Maximum nesting depth": {
+      "kernel_syr2k": 4
+    },
+    "# goto": {
+      "kernel_syr2k": 0
+    },
+    "# cast": {
+      "kernel_syr2k": 0
+    },
+    "# var": {
+      "kernel_syr2k": 20
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_syr2k": 0
+    }
+  },
+  "syrk.c": {
+    "Lines of code": {
+      "kernel_syrk": 115
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_syrk": 70.8
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_syrk": 13
+    },
+    "Maximum nesting depth": {
+      "kernel_syrk": 4
+    },
+    "# goto": {
+      "kernel_syrk": 0
+    },
+    "# cast": {
+      "kernel_syrk": 0
+    },
+    "# var": {
+      "kernel_syrk": 16
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_syrk": 0
+    }
+  },
+  "trisolv.c": {
+    "Lines of code": {
+      "kernel_trisolv": 80
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_trisolv": 46.8
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_trisolv": 7
+    },
+    "Maximum nesting depth": {
+      "kernel_trisolv": 3
+    },
+    "# goto": {
+      "kernel_trisolv": 0
+    },
+    "# cast": {
+      "kernel_trisolv": 0
+    },
+    "# var": {
+      "kernel_trisolv": 15
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_trisolv": 0
+    }
+  },
+  "trmm.c": {
+    "Lines of code": {
+      "kernel_trmm": 111
+    },
+    "Halstead complexity difficulty measure": {
+      "kernel_trmm": 64.2
+    },
+    "McCabe cyclomatic complexity": {
+      "kernel_trmm": 15
+    },
+    "Maximum nesting depth": {
+      "kernel_trmm": 5
+    },
+    "# goto": {
+      "kernel_trmm": 0
+    },
+    "# cast": {
+      "kernel_trmm": 0
+    },
+    "# var": {
+      "kernel_trmm": 15
+    },
+    "# dead code": {
+      "program": 0,
+      "kernel_trmm": 0
+    }
+  }
+}
