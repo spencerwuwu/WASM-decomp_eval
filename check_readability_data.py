@@ -38,27 +38,15 @@ OPT_LEVELS = [0, 1, 2]
 
 def main():
     func_cnt = 0
-    # First, load symbols of WASM decompilers with ast_results.json
-    with open("ast_results.json", "r") as fd:
-        wasm_ast_results = json.load(fd)
+    # First, load common functions from readability_entries.json
+    with open("readability_entries.json", "r") as fd:
+        entries = json.load(fd)
 
-
-    cur_data = {}
-    for decompiler in DECOMPILERS:
-        cur_data[decompiler] = {}
-        for opt in OPT_LEVELS:
-            if decompiler == "wasm2c" or decompiler == "w2c2":
-                f = f"metrics/results/new/em_output_O{opt}-d_{decompiler}.json"
-            else:
-                f = f"metrics/results/new/em_output_O{opt}-d_{decompiler}_new.json"
-            with open(f, "r") as fd:
-                cur_data[decompiler][opt] = json.load(fd)
-    
-    new_entries = []
-    for data in wasm_ast_results:
-        opt = data["opt"]
-        filename = data["filename"]
-        functions = list(data["results"].keys())
+    all_results = []
+    for entry in entries:
+        opt = entry["opt"]
+        filename = entry["filename"]
+        functions = entry["functions"]
 
         base_dir = f'new_compiled_benchmarks/em_output_O{opt}/'
         w2c2_symbol_f = base_dir + f'd_w2c2_symbols/{filename}.map'
@@ -66,10 +54,7 @@ def main():
         w2c2_symbol_map = read_symbol_map(w2c2_symbol_f)
         wasm2c_symbol_map = read_symbol_map(wasm2c_symbol_f)
 
-
-        union_functions = []
         for func in functions:
-            discard = False
             for decom in DECOMPILERS:
                 if decom == "wasm2c":
                     symbol = wasm2c_symbol_map[func]
