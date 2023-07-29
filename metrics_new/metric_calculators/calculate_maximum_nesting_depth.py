@@ -70,9 +70,10 @@ class DepthVisitor:
         f = open('temp.c', mode= 'w')
         for i in raw1:
             if re.match(r'for(\s)*\(.*;.*;.*\)', ''.join(i.split())):
-                f.write('for ()\n')
+                new_i = re.sub(r'for(\s)*\(.*;.*;.*\)', 'for(;;)', ''.join(i.split()))
+                f.write(new_i)
             elif 'else' == ''.join(i.split()) or 'else{' == ''.join(i.split()):
-                f.write('if ()\n')
+                f.write('if (1)\n')
             else:
                 f.write(i)
         f.close()

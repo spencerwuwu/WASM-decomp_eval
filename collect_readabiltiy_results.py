@@ -58,6 +58,11 @@ def main():
                 f = f"metrics/results/new/em_output_O{opt}-d_{decompiler}_new.json"
             with open(f, "r") as fd:
                 cur_data[decompiler][opt] = json.load(fd)
+    extra_data = {"wasm2c": {}}
+    for opt in OPT_LEVELS:
+        f = f"metrics/results/new/O{opt}_wasm2c_mnd.json"
+        with open(f, "r") as fd:
+            extra_data["wasm2c"][opt] = json.load(fd)
 
     all_results = []
     for entry in entries:
@@ -87,7 +92,10 @@ def main():
                 # Special cases
                 if "abs" in symbol and decom == "retdec":
                     symbol = symbol.replace("abs", "_abs")
-                results[func][decom] = get_values(cur_data[decom][opt], filename+".c", symbol)
+                stored_data = get_values(cur_data[decom][opt], filename+".c", symbol)
+                if decom == "wasm2c":
+                    stored_data["Maximum nesting depth"] = extra_data[decom][opt][filename+".c"]["Maximum nesting depth"][symbol]
+                results[func][decom] = stored_data
         all_results.append({
             "opt": opt,
             "filename": filename,
