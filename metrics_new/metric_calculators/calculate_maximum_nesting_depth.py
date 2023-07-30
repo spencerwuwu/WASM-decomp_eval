@@ -81,7 +81,8 @@ class DepthVisitor:
         index = Index.create()
         try:
             file = index.parse(
-                'temp.c',
+                file_name
+                #'temp.c',
             )
             os.remove('temp.c')
             # map function name: compound statement (ignore function declarations)

@@ -37,8 +37,10 @@ def main():
             dir_ = Path(args.directory).expanduser().absolute()
         for file_ in os.listdir(dir_):
             file_path = dir_ / file_
-            if file_path.suffix == ".c":
-                source_code_paths.append(file_path)
+            # To analyze original file, some functions are hidden inside macros
+            source_code_paths.append(file_path)
+            #if file_path.suffix == ".c":
+            #    source_code_paths.append(file_path)
 
     source_code_paths.sort()
     metrics = dict()
