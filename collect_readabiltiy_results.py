@@ -39,6 +39,13 @@ def get_values(data, filename, function):
     return keywords
 
 
+def get_new_dead_results(new_dead_data, opt, filename, func, decom):
+    for entry in new_dead_data:
+        if opt == entry["opt"] and filename == entry["filename"]:
+            return int(list(entry["results"][func][decom].values())[0])
+    return -1
+
+
 
 DECOMPILERS = ["w2c2", "wasm2c", "ghidra", "retdec"]
 OPT_LEVELS = [0, 1, 2]
@@ -63,6 +70,10 @@ def main():
         f = f"metrics/results/new/O{opt}_wasm2c_mnd.json"
         with open(f, "r") as fd:
             extra_data["wasm2c"][opt] = json.load(fd)
+
+    f = "metrics/results/new/new_all_dead.json"
+    with open(f, "r") as fd:
+        new_dead_data = json.load(fd)
 
     all_results = []
     for entry in entries:
@@ -95,6 +106,7 @@ def main():
                 stored_data = get_values(cur_data[decom][opt], filename+".c", symbol)
                 if decom == "wasm2c":
                     stored_data["Maximum nesting depth"] = extra_data[decom][opt][filename+".c"]["Maximum nesting depth"][symbol]
+                stored_data["# dead code"] = get_new_dead_results(new_dead_data, opt, filename, func, decom)
                 results[func][decom] = stored_data
         all_results.append({
             "opt": opt,

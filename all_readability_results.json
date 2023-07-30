@@ -112,7 +112,7 @@
                     "# goto": 4,
                     "# cast": 0,
                     "# var": 302,
-                    "# dead code": "Timeout"
+                    "# dead code": 2
                 },
                 "ghidra": {
                     "Lines of code": 37,
@@ -2112,7 +2112,7 @@
                     "# goto": 15,
                     "# cast": 0,
                     "# var": 462,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 1623,
@@ -2122,7 +2122,7 @@
                     "# goto": 8,
                     "# cast": 0,
                     "# var": 462,
-                    "# dead code": "Timeout"
+                    "# dead code": 7
                 },
                 "ghidra": {
                     "Lines of code": 87,
@@ -3096,7 +3096,7 @@
                     "# goto": 23,
                     "# cast": 0,
                     "# var": 470,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 1628,
@@ -3126,7 +3126,7 @@
                     "# goto": 0,
                     "# cast": 6,
                     "# var": 50,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 }
             }
         }
@@ -3318,7 +3318,7 @@
                     "# goto": 9,
                     "# cast": 0,
                     "# var": 716,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 2939,
@@ -3328,7 +3328,7 @@
                     "# goto": 9,
                     "# cast": 0,
                     "# var": 716,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "ghidra": {
                     "Lines of code": 184,
@@ -3360,7 +3360,7 @@
                     "# goto": 17,
                     "# cast": 0,
                     "# var": 678,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 2325,
@@ -3370,7 +3370,7 @@
                     "# goto": 7,
                     "# cast": 0,
                     "# var": 678,
-                    "# dead code": "Timeout"
+                    "# dead code": 2
                 },
                 "ghidra": {
                     "Lines of code": 102,
@@ -3486,7 +3486,7 @@
                     "# goto": 9,
                     "# cast": 0,
                     "# var": 716,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 2939,
@@ -3496,7 +3496,7 @@
                     "# goto": 9,
                     "# cast": 0,
                     "# var": 716,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "ghidra": {
                     "Lines of code": 195,
@@ -3528,7 +3528,7 @@
                     "# goto": 21,
                     "# cast": 0,
                     "# var": 588,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 2113,
@@ -3538,7 +3538,7 @@
                     "# goto": 5,
                     "# cast": 0,
                     "# var": 588,
-                    "# dead code": "Timeout"
+                    "# dead code": 4
                 },
                 "ghidra": {
                     "Lines of code": 106,
@@ -3762,7 +3762,7 @@
                     "# goto": 25,
                     "# cast": 0,
                     "# var": 500,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 1921,
@@ -3772,7 +3772,7 @@
                     "# goto": 13,
                     "# cast": 0,
                     "# var": 500,
-                    "# dead code": "Timeout"
+                    "# dead code": 12
                 },
                 "ghidra": {
                     "Lines of code": 109,
@@ -3792,7 +3792,7 @@
                     "# goto": 0,
                     "# cast": 0,
                     "# var": 180,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 }
             }
         }
@@ -5088,7 +5088,7 @@
                     "# goto": 3,
                     "# cast": 0,
                     "# var": 1732,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 5937,
@@ -5098,7 +5098,7 @@
                     "# goto": 2,
                     "# cast": 0,
                     "# var": 1732,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "ghidra": {
                     "Lines of code": 178,
@@ -5140,7 +5140,7 @@
                     "# goto": 4,
                     "# cast": 0,
                     "# var": 366,
-                    "# dead code": "Timeout"
+                    "# dead code": 2
                 },
                 "ghidra": {
                     "Lines of code": 101,
@@ -5208,7 +5208,7 @@
                     "# goto": 0,
                     "# cast": 0,
                     "# var": 47,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 }
             }
         }
@@ -5436,7 +5436,7 @@
                     "# goto": 19,
                     "# cast": 0,
                     "# var": 890,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 3284,
@@ -5446,7 +5446,7 @@
                     "# goto": 8,
                     "# cast": 0,
                     "# var": 890,
-                    "# dead code": "Timeout"
+                    "# dead code": 6
                 },
                 "ghidra": {
                     "Lines of code": 111,
@@ -5562,7 +5562,7 @@
                     "# goto": 33,
                     "# cast": 0,
                     "# var": 567,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 2051,
@@ -5572,7 +5572,7 @@
                     "# goto": 17,
                     "# cast": 0,
                     "# var": 567,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "ghidra": {
                     "Lines of code": 140,
@@ -5662,7 +5662,7 @@
                     "# goto": 11,
                     "# cast": 0,
                     "# var": 359,
-                    "# dead code": "Timeout"
+                    "# dead code": 9
                 },
                 "ghidra": {
                     "Lines of code": 70,
@@ -5700,7 +5700,7 @@
                     "# goto": 15,
                     "# cast": 0,
                     "# var": 534,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 },
                 "wasm2c": {
                     "Lines of code": 1935,
@@ -5710,7 +5710,7 @@
                     "# goto": 8,
                     "# cast": 0,
                     "# var": 534,
-                    "# dead code": "Timeout"
+                    "# dead code": 7
                 },
                 "ghidra": {
                     "Lines of code": 81,
@@ -6462,7 +6462,7 @@
                     "# goto": 0,
                     "# cast": 0,
                     "# var": 142,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 }
             },
             "filtez": {
@@ -6882,7 +6882,7 @@
                     "# goto": 0,
                     "# cast": 0,
                     "# var": 133,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 }
             }
         }
@@ -10122,7 +10122,7 @@
                     "# goto": 0,
                     "# cast": 0,
                     "# var": 172,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 }
             }
         }
@@ -15834,7 +15834,7 @@
                     "# goto": 0,
                     "# cast": 0,
                     "# var": 106,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 }
             }
         }
@@ -18342,7 +18342,7 @@
                     "# goto": 0,
                     "# cast": 0,
                     "# var": 136,
-                    "# dead code": "Timeout"
+                    "# dead code": 0
                 }
             }
         }
