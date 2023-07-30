@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 *.ast
+.DS_Store
 
 .ipynb_checkpoints/
 
