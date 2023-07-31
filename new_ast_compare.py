@@ -32,6 +32,7 @@ def parseFunctionNamesAndBody(filepath):
     try:
         file = index.parse(
             filepath,
+            args=["-Inew_compiled_benchmarks/decompiler_lib/"]
         )
 
         function_pairs = {}
@@ -57,6 +58,7 @@ def parseFunctionNamesAndBody(filepath):
 
 def get_ncq_ted(orig_tree, function_body, timeout_msg=""):
     new_tree = dfs_build_tree(function_body)
+    #dfs_print_tree(new_tree)
     ncq = node_quantity_compare(orig_tree, new_tree)
     ted = tree_edit_distance(orig_tree, new_tree)
     return ncq, ted
