@@ -8,6 +8,7 @@ OPTIMIZE_LEVELS = ["0", "1", "2"]
 
 W2C2 = "/home/weicheng/Documents/CS699_WASM/w2c2/build/w2c2/w2c2"
 WASM2C = "/home/weicheng/Documents/CS699_WASM/wabt/build/wasm2c"
+WASMDECOMPILE = "/home/weicheng/Wasm/wabt/bin/wasm-decompile"
 
 BLACKLIST = [
         #"em_output_O1/wasm/gsm.wasm",
@@ -57,12 +58,18 @@ def _decompile_wasm2c(wasm, c_f, out_f, out_dir):
     fd.close()
 
 
+def _decompile_wasmdecompile(wasm, out_f):
+    log.info("Handling wasm-decompile %s" % wasm)
+    run_cmd("%s %s -o %s" % (WASMDECOMPILE, wasm, out_f))
+
+
 
 
 def decompile_wasm(base_dir):
     wasm_dir   = base_dir + "wasm/"
     w2c2_dir   = base_dir + "d_w2c2/"
     wasm2c_dir = base_dir + "d_wasm2c/"
+    wasmdecompile_dir = base_dir + "d_wasm-decompile/"
 
     if not os.path.exists(wasm_dir):
         log.error("Missing %s" % wasm_dir)
@@ -72,6 +79,8 @@ def decompile_wasm(base_dir):
         os.makedirs(wasm2c_dir)
     if not os.path.exists(w2c2_dir):
         os.makedirs(w2c2_dir)
+    if not os.path.exists(wasmdecompile_dir):
+        os.makedirs(wasmdecompile_dir)
 
     for f in os.listdir(wasm_dir):
         if not f.endswith(".wasm"):
@@ -84,11 +93,14 @@ def decompile_wasm(base_dir):
         c_file = wasm.replace(".wasm", ".c")
         w2c2_f = w2c2_dir + c_file
         wasm2c_f = wasm2c_dir + c_file
+        wasmdecompile_f = wasmdecompile_dir + c_file
 
         if not os.path.exists(w2c2_f):
             _decompile_w2c2(wasm_f, w2c2_f)
         if not os.path.exists(wasm2c_f):
             _decompile_wasm2c(wasm_f, c_file, wasm2c_f, wasm2c_dir)
+        if not os.path.exists(wasmdecompile_f):
+            _decompile_wasmdecompile(wasm_f, wasmdecompile_f)
         
 
 def try_decompile():
