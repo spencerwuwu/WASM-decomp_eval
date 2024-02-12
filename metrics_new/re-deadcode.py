@@ -43,7 +43,7 @@ def run_metric_program(command):
     return results
 
 
-DECOMPILERS = ["w2c2", "wasm2c", "ghidra", "retdec"]
+DECOMPILERS = ["w2c2", "wasm2c", "ghidra", "retdec", "wasm-decompile"]
 
 with open("../readability_entries.json", "r") as f:
     entries = json.load(f)

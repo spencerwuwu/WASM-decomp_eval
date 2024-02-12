@@ -47,7 +47,7 @@ def get_new_dead_results(new_dead_data, opt, filename, func, decom):
 
 
 
-DECOMPILERS = ["w2c2", "wasm2c", "ghidra", "retdec"]
+DECOMPILERS = ["w2c2", "wasm2c", "ghidra", "retdec", "wasm-decompile"]
 OPT_LEVELS = [0, 1, 2]
 
 def main():
@@ -59,7 +59,7 @@ def main():
     for decompiler in DECOMPILERS:
         cur_data[decompiler] = {}
         for opt in OPT_LEVELS:
-            if decompiler == "wasm2c" or decompiler == "w2c2":
+            if decompiler in ["wasm2c", "w2c2", "wasm-decompile"]:
                 f = f"metrics/results/new/em_output_O{opt}-d_{decompiler}.json"
             else:
                 f = f"metrics/results/new/em_output_O{opt}-d_{decompiler}_new.json"
