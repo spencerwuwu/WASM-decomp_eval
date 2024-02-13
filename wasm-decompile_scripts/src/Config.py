@@ -11,6 +11,8 @@ RetDec_absolute_path = '/home/weicheng/Documents/CS699_WASM/RetDec/bin/retdec-de
 JEB3_absolute_path = '/home/fuzz/Documents/jeb-pro-3.0-beta.8/jeb_linux.sh'  #
 WasmDecompile_absolute_path = "/home/weicheng/Wasm/wabt/bin/wasm-decompile"
 csmith_absolute_path = '/home/weicheng/Wasm/csmith-2.3.0/src'  #
+poly_absolute_path = "/home/weicheng/Wasm/cs699_webassembly/emscripten_compile/polybench-c-4.2.1-beta/utilities/"
+
 
 from enum import Enum
 class Result(Enum):

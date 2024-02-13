@@ -1,8 +1,45 @@
 
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+//#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
-extern int64_t stack_pointer;
-extern int64_t memory_base;
-extern int64_t table_base;
+#include <polybench.h>
+//#include "wasm-decompile_base.h"
+#define eqz(x) ((x) == 0)
+#define ubyte uint8_t
+#define byte int8_t
+#define byte_ptr int8_t*
+#define ubyte_ptr uint8_t*
+int64_t f64_convert_i64_s(float);
+int32_t f64_convert_i32_s(float);
+uint64_t i64_extend_i32_u(int);
+int64_t i64_extend_i32_s(int);
+int32_t f32_convert_i32_s(float);
+uint32_t f32_convert_i32_u(float);
+int64_t f32_convert_i64_s(float);
+uint64_t f32_convert_i64_u(float);
+int i32_wrap_i64(int64_t);
+int select__if(int,int,int);
+
+    int _printf(int a, int b);
+int gettimeofday(int a, int b);
+void wasm_call_ctors();
+void wasm_apply_data_relocs();
+void local_memcpy(int a, int b, int c);
+void BF_set_key(int a, int b);
+void BF_encrypt(int a, int b);
+void BF_cfb64_encrypt(int a, int b, int c, int d, int e, int f);
+int blowfish_main();
+double rtclock();
+
+
+int64_t stack[100000];
+int64_t *stack_pointer = stack + 100000;
+int64_t *memory_base;
+int64_t *table_base;
 extern int64_t bf_init_P;
 extern int64_t key_P;
 extern int64_t bf_init_S;
@@ -21,9 +58,9 @@ int64_t startTimer_1 = 18800;
 int64_t endTimer_1 = 18808;
 
 
+;
 
-
-
+;
 
 void wasm_call_ctors() {
 }
@@ -66,7 +103,7 @@ int64_t x = f[3];
 int64_t y = 4;
 int64_t z = x + y;
 f[3] = z;
-//continue L_b;
+;//continue L_b;
 }
 //unreachable;
 B_a:;
@@ -76,7 +113,6 @@ void BF_set_key(int a, int b) {
 int64_t* c = stack_pointer;
 int64_t d = 48;
 int64_t * e = c - d;
-stack_pointer = e;
 e[11] = a;
 e[10] = b;
 int64_t f = bf_init_P;
@@ -223,7 +259,7 @@ int64_t gd = e[9];
 int64_t hd = 1;
 int64_t id = gd + hd;
 e[9] = id;
-//continue L_c;
+;//continue L_c;
 }
 //unreachable;
 B_b:;
@@ -267,7 +303,7 @@ int64_t le = e[9];
 int64_t me = 2;
 int64_t ne = le + me;
 e[9] = ne;
-//continue L_i;
+;//continue L_i;
 }
 //unreachable;
 B_h:;
@@ -309,13 +345,12 @@ int64_t pf = e[9];
 int64_t qf = 2;
 int64_t rf = pf + qf;
 e[9] = rf;
-//continue L_k;
+;//continue L_k;
 }
 //unreachable;
 B_j:;
 int64_t sf = 48;
 int64_t* tf = e + sf;
-stack_pointer = tf;
 }
 
 void BF_encrypt(int a, int b) {
@@ -454,7 +489,7 @@ e[5] = rd;
 int64_t * sd = e[3];
 int64_t td = sd[3];
 int64_t ud = e[4];
-int64_t* vd = ud ^ td;
+int64_t vd = ud ^ td;
 e[4] = vd;
 int64_t wd = e[2];
 int64_t xd = e[5];
@@ -486,7 +521,7 @@ int64_t we = ue & ve;
 int64_t xe = 512;
 int64_t ye = we + xe;
 int64_t ze = 2;
-int64_t* af = ye << ze;
+int64_t af = ye << ze;
 int64_t * bf = re + af;
 int64_t cf = bf[0];
 int64_t df = qe ^ cf;
@@ -2135,7 +2170,6 @@ void BF_cfb64_encrypt(int a, int b, int c, int d, int e, int f) {
 int64_t* g = stack_pointer;
 int64_t h = 64;
 int64_t* i = g - h;
-stack_pointer = i;
 i[15] = a;
 i[14] = b;
 i[13] = c;
@@ -2295,7 +2329,7 @@ int64_t td = 255;
 int64_t ud = sd & td;
 int64_t * vd = (int64_t)i[2];
 int64_t wd = 1;
-int64_t* xd = vd + wd;
+int64_t xd = vd + wd;
 i[2] = xd;
 vd[0] = ud;
 int64_t yd = (int64_t)i[4];
@@ -2332,10 +2366,10 @@ i[2] = we;
 ue[0] = te;
 int64_t xe = (int64_t)i[7];
 int64_t ye = 255;
-int64_t* ze = xe & ye;
+int64_t ze = xe & ye;
 int64_t * af = (int64_t)i[2];
 int64_t bf = 1;
-int64_t* cf = af + bf;
+int64_t cf = af + bf;
 i[2] = cf;
 af[0] = ze;
 int64_t df = (int64_t)i[12];
@@ -2359,7 +2393,7 @@ i[7] = qf;
 int64_t rf = (ubyte)i[7];
 int64_t * sf = (int64_t)i[14];
 int64_t tf = 1;
-int64_t* uf = sf + tf;
+int64_t uf = sf + tf;
 i[14] = uf;
 sf[0] = rf;
 int64_t vf = (ubyte)i[7];
@@ -2373,7 +2407,7 @@ int64_t bg = zf + ag;
 int64_t cg = 7;
 int64_t dg = bg & cg;
 i[6] = dg;
-//continue L_d;
+;//continue L_d;
 }
 //unreachable;
 B_c:;
@@ -2603,7 +2637,7 @@ int64_t sm = qm + rm;
 int64_t tm = 7;
 int64_t um = sm & tm;
 i[6] = um;
-//continue L_g;
+;//continue L_g;
 }
 //unreachable;
 B_f:;
@@ -2627,14 +2661,12 @@ int64_t * dn = (int64_t)i[11];
 dn[0] = cn;
 int64_t en = 64;
 int64_t* fn = i + en;
-stack_pointer = fn;
 }
 
 int blowfish_main() {
 int64_t* a = stack_pointer;
 int64_t b = 144;
 int64_t * c = a - b;
-stack_pointer = c;
 int64_t d = 0;
 c[9] = d;
 int64_t e = 0;
@@ -2674,7 +2706,7 @@ int64_t ca = c[8];
 int64_t da = 1;
 int64_t ea = ca + da;
 c[8] = ea;
-//continue L_b;
+;//continue L_b;
 }
 //unreachable;
 B_a:;
@@ -2732,7 +2764,7 @@ int64_t* sb = c + rb;
 int64_t* tb = sb;
 int64_t * ub = tb + ob;
 ub[0] = nb;
-//continue L_e;
+;//continue L_e;
 B_g:;
 }
 int64_t vb = 96;
@@ -2759,7 +2791,7 @@ int64_t mc = kc;
 int64_t nc = lc;
 int64_t oc = mc < nc;
 int64_t pc = 1;
-int64_t* qc = oc & pc;
+int64_t qc = oc & pc;
 if (eqz(qc)) goto B_h;
 int64_t rc = c[7];
 int64_t sc = 48;
@@ -2787,58 +2819,27 @@ int64_t ld = c[7];
 int64_t md = 1;
 int64_t nd = ld + md;
 c[7] = nd;
-//continue L_i;
+;//continue L_i;
 }
 //unreachable;
 B_h:;
 int64_t od = 0;
 c[8] = od;
-//continue L_d;
+;//continue L_d;
 }
 //unreachable;
 B_c:;
 int64_t pd = c[3];
 int64_t qd = 144;
 int64_t* rd = c + qd;
-stack_pointer = rd;
 return pd;
 }
 
-int submain() {
-int64_t* a = stack_pointer;
-int64_t b = 16;
-int64_t* c = a - b;
-stack_pointer = c;
-int64_t d = 0;
-c[3] = d;
-double e = rtclock();
-int64_t * f = startTimer;
-f[0] = e;
-int64_t g = blowfish_main();
-c[3] = g;
-double h = rtclock();
-int64_t * i = endTimer;
-i[0] = h;
-double j = i[0];
-double k = f[0];
-double l = j - k;
-c[0] = l;
-int64_t m = 14611;
-int64_t n = memory_base;
-int64_t o = n + m;
-printf(o, c);
-int64_t p = (int64_t)c[3];
-int64_t q = 16;
-int64_t* r = c + q;
-stack_pointer = r;
-return p;
-}
 
 double rtclock() {
 int64_t* a = stack_pointer;
 int64_t b = 32;
 int64_t* c = a - b;
-stack_pointer = c;
 int64_t d = 16;
 int64_t* e = c + d;
 int64_t* f = e;
@@ -2850,19 +2851,17 @@ if (eqz(i)) goto B_a;
 int64_t j = (int64_t)c[3];
 c[0] = j;
 int64_t k = 14576;
-int64_t l = memory_base;
-int64_t m = l + k;
-printf(m, c);
+int64_t* l = memory_base;
+int64_t* m = l + k; _printf(m, c);
 B_a:;
 long n = (long)c[2];
 double o = f64_convert_i64_s(n);
 int64_t p = (int64_t)c[6];
 double q = f64_convert_i32_s(p);
 double r = 0.000001;
-double* s = q * r;
-double* t = s + o;
+double s = q * r;
+double t = s + o;
 int64_t u = 32;
 int64_t* v = c + u;
-stack_pointer = v;
 return t;
 }

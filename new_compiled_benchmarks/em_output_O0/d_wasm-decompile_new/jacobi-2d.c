@@ -1,21 +1,53 @@
 
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+//#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
-extern int64_t stack_pointer;
-extern int64_t memory_base;
-extern int64_t table_base;
-extern int64_t stderr;
+#include <polybench.h>
+//#include "wasm-decompile_base.h"
+#define eqz(x) ((x) == 0)
+#define ubyte uint8_t
+#define byte int8_t
+#define byte_ptr int8_t*
+#define ubyte_ptr uint8_t*
+int64_t f64_convert_i64_s(float);
+int32_t f64_convert_i32_s(float);
+uint64_t i64_extend_i32_u(int);
+int64_t i64_extend_i32_s(int);
+int32_t f32_convert_i32_s(float);
+uint32_t f32_convert_i32_u(float);
+int64_t f32_convert_i64_s(float);
+uint64_t f32_convert_i64_u(float);
+int i32_wrap_i64(int64_t);
+int select__if(int,int,int);
 
-data ()rodata(offset memory_base) =
-"begin ()dump %s\00A\00%0.2lf \00\0aend ()dump %s\0a\00==BEGIN DUMP_ARR"
-"AYS==\0a\00==END DUMP_ARRAYS==\0a\00";
+    int _strcmp(int a, int b);
+void _free(int a);
+int _fprintf(int a, int b, int c);
+int legalimport_polybench_alloc_data(int a, int b, int c);
+void wasm_call_ctors();
+void wasm_apply_data_relocs();
+void kernel_jacobi_2d(int a, int b, int c, int d);
+int legalfunc_polybench_alloc_data(long a, int b);
 
 
+int64_t stack[100000];
+int64_t *stack_pointer = stack + 100000;
+int64_t *memory_base;
+int64_t *table_base;
+;
 
 
+;
 
+;
 
+;
 
-
+;
 
 void wasm_call_ctors() {
 }
@@ -146,7 +178,7 @@ int64_t ed = g[1];
 int64_t fd = 1;
 int64_t gd = ed + fd;
 g[1] = gd;
-//continue L_f;
+;//continue L_f;
 }
 //unreachable;
 B_e:;
@@ -154,7 +186,7 @@ int64_t hd = g[2];
 int64_t id = 1;
 int64_t jd = hd + id;
 g[2] = jd;
-//continue L_d;
+;//continue L_d;
 }
 //unreachable;
 B_c:;
@@ -262,7 +294,7 @@ int64_t zg = g[1];
 int64_t ah = 1;
 int64_t bh = zg + ah;
 g[1] = bh;
-//continue L_j;
+;//continue L_j;
 }
 //unreachable;
 B_i:;
@@ -270,7 +302,7 @@ int64_t ch = g[2];
 int64_t dh = 1;
 int64_t eh = ch + dh;
 g[2] = eh;
-//continue L_h;
+;//continue L_h;
 }
 //unreachable;
 B_g:;
@@ -278,280 +310,17 @@ int64_t fh = g[3];
 int64_t gh = 1;
 int64_t hh = fh + gh;
 g[3] = hh;
-//continue L_b;
+;//continue L_b;
 }
 //unreachable;
 B_a:;
 }
 
-int submain(int a, int b) {
-int64_t* c = stack_pointer;
-int64_t d = 32;
-int64_t * e = c - d;
-stack_pointer = e;
-e[7] = a;
-e[6] = b;
-int64_t f = 1300;
-e[5] = f;
-int64_t g = 500;
-e[4] = g;
-long h = 1690000L;
-int64_t i = 8;
-int64_t j = legalfunc_polybench_alloc_data(h, i);
-e[3] = j;
-long k = 1690000L;
-int64_t l = 8;
-int64_t m = legalfunc_polybench_alloc_data(k, l);
-e[2] = m;
-int64_t n = e[5];
-int64_t o = e[3];
-int64_t p = e[2];
-init_array(n, o, p);
-int64_t q = e[4];
-int64_t r = e[5];
-int64_t s = e[3];
-int64_t t = e[2];
-kernel_jacobi_2d(q, r, s, t);
-int64_t u = e[7];
-int64_t v = 42;
-int64_t w = u;
-int64_t x = v;
-int64_t y = w > x;
-int64_t z = 1;
-int64_t aa = y & z;
-if (eqz(aa)) goto B_a;
-int64_t * ba = e[6];
-int64_t ca = ba[0];
-int64_t da = 87;
-int64_t ea = memory_base;
-int64_t fa = ea + da;
-int64_t ga = strcmp(ca, fa);
-if (ga) goto B_a;
-int64_t ha = e[5];
-int64_t ia = e[3];
-print_array(ha, ia);
-B_a:;
-int64_t ja = e[3];
-free(ja);
-int64_t ka = e[2];
-free(ka);
-int64_t la = 0;
-int64_t ma = 32;
-int64_t* na = e + ma;
-stack_pointer = na;
-return la;
-}
 
-void init_array(int a, int b, int c) {
-int64_t* d = stack_pointer;
-int64_t e = 32;
-int64_t * f = d - e;
-f[7] = a;
-f[6] = b;
-f[5] = c;
-int64_t g = 0;
-f[4] = g;
-while (1) {
-int64_t h = f[4];
-int64_t i = f[7];
-int64_t j = h;
-int64_t k = i;
-int64_t l = j < k;
-int64_t m = 1;
-int64_t n = l & m;
-if (eqz(n)) goto B_a;
-int64_t o = 0;
-f[3] = o;
-while (1) {
-int64_t p = f[3];
-int64_t q = f[7];
-int64_t r = p;
-int64_t s = q;
-int64_t t = r < s;
-int64_t u = 1;
-int64_t v = t & u;
-if (eqz(v)) goto B_c;
-int64_t w = f[4];
-double x = f64_convert_i32_s(w);
-int64_t y = f[3];
-int64_t z = 2;
-int64_t aa = y + z;
-double ba = f64_convert_i32_s(aa);
-double ca = x * ba;
-double da = 2.0;
-double ea = ca + da;
-int64_t fa = f[7];
-double ga = f64_convert_i32_s(fa);
-double ha = ea / ga;
-int64_t ia = f[6];
-int64_t ja = f[4];
-int64_t ka = 10400;
-int64_t la = ja * ka;
-int64_t ma = ia + la;
-int64_t na = f[3];
-int64_t oa = 3;
-int64_t* pa = na << oa;
-int64_t * qa = ma + pa;
-qa[0] = ha;
-int64_t ra = f[4];
-double sa = f64_convert_i32_s(ra);
-int64_t ta = f[3];
-int64_t ua = 3;
-int64_t va = ta + ua;
-double wa = f64_convert_i32_s(va);
-double xa = sa * wa;
-double ya = 3.0;
-double za = xa + ya;
-int64_t ab = f[7];
-double bb = f64_convert_i32_s(ab);
-double cb = za / bb;
-int64_t db = f[5];
-int64_t eb = f[4];
-int64_t fb = 10400;
-int64_t gb = eb * fb;
-int64_t hb = db + gb;
-int64_t ib = f[3];
-int64_t jb = 3;
-int64_t kb = ib << jb;
-int64_t * lb = hb + kb;
-lb[0] = cb;
-int64_t mb = f[3];
-int64_t nb = 1;
-int64_t ob = mb + nb;
-f[3] = ob;
-//continue L_d;
-}
-//unreachable;
-B_c:;
-int64_t pb = f[4];
-int64_t qb = 1;
-int64_t rb = pb + qb;
-f[4] = rb;
-//continue L_b;
-}
-//unreachable;
-B_a:;
-}
 
-void print_array(int a, int b) {
-int64_t* c = stack_pointer;
-int64_t d = 64;
-int64_t* e = c - d;
-stack_pointer = e;
-e[15] = a;
-e[14] = b;
-int64_t * f = stderr;
-int64_t g = f[0];
-int64_t h = 42;
-int64_t i = memory_base;
-int64_t j = i + h;
-int64_t k = 0;
-fprintf(g, j, k);
-int64_t l = f[0];
-int64_t m = 15;
-int64_t n = memory_base;
-int64_t o = n + m;
-e[8] = o;
-int64_t p = 0;
-int64_t q = n + p;
-int64_t r = 32;
-int64_t* s = e + r;
-fprintf(l, q, s);
-int64_t t = 0;
-e[13] = t;
-while (1) {
-int64_t u = (int64_t)e[13];
-int64_t v = (int64_t)e[15];
-int64_t w = u;
-int64_t x = v;
-int64_t y = w < x;
-int64_t z = 1;
-int64_t aa = y & z;
-if (eqz(aa)) goto B_a;
-int64_t ba = 0;
-e[12] = ba;
-while (1) {
-int64_t ca = (int64_t)e[12];
-int64_t da = (int64_t)e[15];
-int64_t ea = ca;
-int64_t fa = da;
-int64_t ga = ea < fa;
-int64_t ha = 1;
-int64_t ia = ga & ha;
-if (eqz(ia)) goto B_c;
-int64_t ja = (int64_t)e[13];
-int64_t ka = (int64_t)e[15];
-int64_t la = ja * ka;
-int64_t ma = (int64_t)e[12];
-int64_t na = la + ma;
-int64_t oa = 20;
-int64_t* pa = na % oa;
-if (pa) goto B_e;
-int64_t * qa = stderr;
-int64_t ra = qa[0];
-int64_t sa = 86;
-int64_t ta = memory_base;
-int64_t ua = ta + sa;
-int64_t va = 0;
-fprintf(ra, ua, va);
-B_e:;
-int64_t * wa = stderr;
-int64_t xa = wa[0];
-int64_t ya = (int64_t)e[14];
-int64_t za = (int64_t)e[13];
-int64_t ab = 10400;
-int64_t bb = za * ab;
-int64_t cb = ya + bb;
-int64_t db = (int64_t)e[12];
-int64_t eb = 3;
-int64_t fb = db << eb;
-int64_t * gb = cb + fb;
-double hb = gb[0];
-e[0] = hb;
-int64_t ib = 17;
-int64_t jb = memory_base;
-int64_t kb = jb + ib;
-fprintf(xa, kb, e);
-int64_t lb = (int64_t)e[12];
-int64_t mb = 1;
-int64_t nb = lb + mb;
-e[12] = nb;
-//continue L_d;
-}
-//unreachable;
-B_c:;
-int64_t ob = (int64_t)e[13];
-int64_t pb = 1;
-int64_t qb = ob + pb;
-e[13] = qb;
-//continue L_b;
-}
-//unreachable;
-B_a:;
-int64_t * rb = stderr;
-int64_t sb = rb[0];
-int64_t tb = 15;
-int64_t ub = memory_base;
-int64_t vb = ub + tb;
-e[4] = vb;
-int64_t wb = 25;
-int64_t xb = ub + wb;
-int64_t yb = 16;
-int64_t* zb = e + yb;
-fprintf(sb, xb, zb);
-int64_t ac = rb[0];
-int64_t bc = 65;
-int64_t cc = memory_base;
-int64_t dc = cc + bc;
-int64_t ec = 0;
-fprintf(ac, dc, ec);
-int64_t fc = 64;
-int64_t* gc = e + fc;
-stack_pointer = gc;
-}
 
 int legalfunc_polybench_alloc_data(long a, int b) {
 return legalimport_polybench_alloc_data(i32_wrap_i64(a),
 i32_wrap_i64(a >> 32L),
-b)
+b);
 }

@@ -483,7 +483,7 @@ class WasmDecompileModifier:
         new_txt = ""
         keep_saving = True
         for line in txt.splitlines():
-            if "data data(offset: memory_base" in line:
+            if re.match(r"data \w*data\(offset: memory_base", line):
                 keep_saving = False
             if not keep_saving:
                 if line.endswith(";"):
@@ -557,8 +557,10 @@ class WasmDecompileModifier:
     def modify_variable_and_colons(txt=''):
         new_struct_idx = 0
         new_structs = {}
+        new_functions = []
+        struct_vars = []
 
-        def _handle_statement(line, assign_pointer=False, is_lhs=False):
+        def _handle_statement(line, assign_pointer=False, is_lhs=False, pointers_names=[]):
             tokens = line.split()
             new_tokens = []
             var_flag = False
@@ -582,10 +584,17 @@ class WasmDecompileModifier:
                         new_tokens.append(f"double {token}")
                 else:
                     if ":" in token:
-                        if token.count(":") > 1:
+                        if token.count(":") > 1 or "(" in token:
                             new_tokens.append(re.sub(r":[a-zA-Z0-9_]+", "", token))
                             continue
                         name, ctype = token.split(":")
+                        if "[" in name and not name.split("[")[0] in pointers_names:
+                            # HACK
+                            core = name.split('[')[0]
+                            if core.isdigit():
+                                new_tokens.append(re.sub(r":[a-zA-Z0-9_]+", "", token))
+                                continue
+                            name = f"(&{core})[" + name.split("[", 1)[1]
                         if ctype == "int":
                             ctype = "int64_t"
                         if is_lhs:
@@ -596,23 +605,51 @@ class WasmDecompileModifier:
                         new_tokens.append(token)
             return " ".join(new_tokens)
 
-        def _handle_declare(txt, pointer_names):
-            def _is_pointer(pointer_names, rhs):
+        def _handle_declare(txt, pointers_names, struct_vars):
+            def _is_pointer(pointers_names, rhs):
+                #for ch in ["<", ">", "=", "&", "|", "^", "!", "~", "*", "/", "%"]:
+                #    if ch in rhs:
+                #        return False
                 for token in rhs.split():
-                    if token in pointer_names:
+                    if token in pointers_names:
+                        return True
+                    if token in struct_vars:
+                        return True
+                return False
+            def _is_struct(struct_vars, rhs):
+                for token in rhs.split():
+                    if token in struct_vars:
                         return True
                 return False
             if " = " in txt:
                 lhs, rhs = txt.split(" = ", 1)
-                assign_pointer = _is_pointer(pointer_names, rhs)
-                new_lhs = _handle_statement(lhs, assign_pointer=assign_pointer)
+                assign_pointer = _is_pointer(pointers_names, rhs)
+                new_lhs = _handle_statement(lhs, assign_pointer=assign_pointer, pointers_names=pointers_names)
                 if assign_pointer:
                     new_ptr = new_lhs.split()[-1].strip()
-                    pointer_names.append(new_ptr)
-                new_rhs = _handle_statement(rhs)
+                    pointers_names.append(new_ptr)
+                new_rhs = _handle_statement(rhs, pointers_names=pointers_names)
+                if assign_pointer and _is_struct(struct_vars, rhs):
+                    return f"{new_lhs} = &{new_rhs}"
                 return f"{new_lhs} = {new_rhs}"
             else:
-                return _handle_statement(txt)
+                if "var stack_pointer:int" in txt:
+                    return "int64_t stack[100000];\nint64_t *stack_pointer = stack + 100000"
+                if "var memory_base:int" in txt:
+                    return "int64_t *memory_base"
+                if "var table_base:int" in txt:
+                    return "int64_t *table_base"
+                if "var stderr" in txt:
+                    return ""
+                return _handle_statement(txt, pointers_names=pointers_names)
+
+
+        def _handle_struct_declare(txt, new_struct_idx, struct_vars):
+            txt = txt.replace("var ", "")
+            new_ele, new_struct_idx = _handle_function_arg(txt, new_struct_idx)
+            struct_vars.append(new_ele.split()[1])
+            return new_ele, new_struct_idx
+
 
         def _split_args(arguments):
             args = []
@@ -661,19 +698,27 @@ class WasmDecompileModifier:
             for arg in _split_args(arguments):
                 new_arg, new_struct_idx = _handle_function_arg(arg, new_struct_idx)
                 rewrite_args.append(new_arg)
-            if re.match(r"function\s+[a-zA-Z0-9_]+\(.*\)\s+{", txt):
+            #if re.match(r"function\s+[a-zA-Z0-9_]+\(.*\)\s+{", txt):
+            if "):" not in txt:
                 start = txt.split("(")[0]
                 content = start.replace("function ", "void ")
-                return f"{content}({', '.join(rewrite_args)}) {{", new_struct_idx
+                return f"{content}({', '.join(rewrite_args)})", new_struct_idx
             else:
                 start = txt.split("(")[0]
                 func_type = txt.split(")")[1].split()[0].split(":")[1]
                 content = start.replace("function ", f"{func_type} ")
-                return f"{content}({', '.join(rewrite_args)}) {{", new_struct_idx
+                return f"{content}({', '.join(rewrite_args)})", new_struct_idx
 
         new_lines = []
-        pointers_names = ["stack_pointer"]
+        pointers_names = ["stack_pointer", "memory_base", "table_base"]
+        do_skip = False
         for line in txt.splitlines():
+            if do_skip:
+                if line != "}":
+                    continue
+                else:
+                    do_skip = False
+                    continue
             line = line.strip()
             if line.endswith(":"):
                 new_lines.append(line)
@@ -685,25 +730,49 @@ class WasmDecompileModifier:
 
                 new_line = ""
                 if "function" in line:
+                    # Reset pointer names
+                    pointers_names = ["stack_pointer", "memory_base", "table_base"]
+                    struct_vars = []
+                    if "function submain" in line:
+                        do_skip = True
+                        continue
+                    if "function init_array" in line:
+                        do_skip = True
+                        continue
+                    if "function print_array" in line:
+                        do_skip = True
+                        continue
                     new_line, new_struct_idx = _handle_function_line(line, new_struct_idx)
+                    new_functions.append(new_line + ";\n")
+                    if not line.endswith("{"):
+                        new_line = ""
+                    else:
+                        new_line += " {"
                 elif "var " in line:
-                    new_line = _handle_declare(line, pointers_names)
+                    if "{" in line:
+                        new_line, new_struct_idx = _handle_struct_declare(line.split("=")[0], new_struct_idx, struct_vars)
+                        #print(line)
+                    else:
+                        new_line = _handle_declare(line, pointers_names, struct_vars)
                 else:
                     if " = " in line:
+                        # HACK
+                        if "stack_pointer = " in line:
+                            continue
                         lhs, rhs = line.split(" = ", 1)
-                        new_lhs = _handle_statement(lhs, is_lhs=True)
+                        new_lhs = _handle_statement(lhs, is_lhs=True, pointers_names=pointers_names)
                         new_rhs = _handle_statement(rhs)
                         new_line = f"{new_lhs} = {new_rhs}"
                     #elif "extern " in line:
                     #    state = _handle_function_arg(line.split("extern ")[1])
                     #    new_line = f"extern {state}"
                     else:
-                        new_line = _handle_statement(line)
+                        new_line = _handle_statement(line, pointers_names=pointers_names)
                 if has_end:
                     new_line += ";"
                 new_lines.append(new_line)
 
-        return "\n".join(new_lines), new_structs
+        return "\n".join(new_lines), new_structs, new_functions
             
     @staticmethod
     def setup_stack(txt=""):
@@ -813,16 +882,33 @@ def WasmDecompile_modifier_before(txt):
     return txt
 
 def WasmDecompile_modifier_all(txt):
+    merge = False
+    new_txt = ""
+    for line in txt.split("\n"):
+        if merge:
+            if ";" in line:
+                merge = False
+        if "{" in line and line.endswith(" = "):
+            merge = True
+        new_txt += line
+        if line.strip() == "return":
+            continue
+        if not merge:
+            new_txt += "\n"
+    txt = new_txt
+
+    lib_names = ["printf", "memcpy", "free", "strcmp", "fprintf"]
     txt = txt.replace("import memory env_memory;", "")
-    txt = re.sub(r"^import\s+function.*;", "", txt, flags=re.MULTILINE)
+    #txt = re.sub(r"^import\s+function.*;", "", txt, flags=re.MULTILINE)
+    txt = txt.replace("import function", "function")
     txt = txt.replace("global ", "var ")
     txt = txt.replace("import ", "extern ")
     txt = txt.replace("export ", "")
     txt = WasmDecompileModifier.remove_data(txt)
 
-    txt, new_structs = WasmDecompileModifier.modify_variable_and_colons(txt)
+    txt, new_structs, new_functions = WasmDecompileModifier.modify_variable_and_colons(txt)
     txt = re.sub(r"loop\s\w+\s\{$", "while (1) {", txt, flags=re.MULTILINE)
-    txt = txt.replace("continue ", "//continue ");
+    txt = txt.replace("continue ", ";//continue ");
     txt = re.sub(r"label\s(\w+:)", r"\1;", txt, flags=re.MULTILINE)
     txt = txt.replace("unreachable;", "//unreachable;")
     txt = re.sub(r"do(\W)", r"_do\1", txt, flags=re.MULTILINE)
@@ -831,7 +917,9 @@ def WasmDecompile_modifier_all(txt):
     txt = WasmDecompileModifier.remove_br_table(txt)
     # check all semicolon wrapped
     txt = re.sub(r"(.*)\w$", r"\1;", txt, flags=re.MULTILINE)
-    txt = WasmDecompileModifier.export_new_structs(new_structs) + txt
+    txt = WasmDecompileModifier.export_new_structs(new_structs) + "".join(new_functions) +  txt
+    for lib_name in lib_names:
+        txt = re.sub(rf"\s{lib_name}\(", f" _{lib_name}(", txt)
     return txt
     txt = WasmDecompileModifier.setup_stack(txt)
     return txt

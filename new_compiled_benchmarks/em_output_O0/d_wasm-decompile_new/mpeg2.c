@@ -1,8 +1,52 @@
 
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+//#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
-extern int64_t stack_pointer;
-extern int64_t memory_base;
-extern int64_t table_base;
+#include <polybench.h>
+//#include "wasm-decompile_base.h"
+#define eqz(x) ((x) == 0)
+#define ubyte uint8_t
+#define byte int8_t
+#define byte_ptr int8_t*
+#define ubyte_ptr uint8_t*
+int64_t f64_convert_i64_s(float);
+int32_t f64_convert_i32_s(float);
+uint64_t i64_extend_i32_u(int);
+int64_t i64_extend_i32_s(int);
+int32_t f32_convert_i32_s(float);
+uint32_t f32_convert_i32_u(float);
+int64_t f32_convert_i64_s(float);
+uint64_t f32_convert_i64_u(float);
+int i32_wrap_i64(int64_t);
+int select__if(int,int,int);
+
+    int _printf(int a, int b);
+int gettimeofday(int a, int b);
+void wasm_call_ctors();
+void wasm_apply_data_relocs();
+int read(int a, int b, int c);
+void Fill_Buffer();
+int Show_Bits(int a);
+int Get_Bits1();
+int Get_Bits(int a);
+void Flush_Buffer(int a);
+int Get_motion_code();
+int Get_dmvector();
+void motion_vectors(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j);
+void motion_vector(int a, int b, int c, int d, int e, int f, int g);
+void decode_motion_vector(int a, int b, int c, int d, int e);
+void Initialize_Buffer();
+double rtclock();
+
+
+int64_t stack[100000];
+int64_t *stack_pointer = stack + 100000;
+int64_t *memory_base;
+int64_t *table_base;
 extern int64_t ld_Rdbfr;
 extern int64_t inRdbfr;
 extern int64_t ld_Rdptr;
@@ -40,9 +84,9 @@ int64_t endTimer_1 = 6392;
 int64_t out_ld_Rdptr = 2048;
 
 
+;
 
-
-
+;
 
 void wasm_call_ctors() {
 }
@@ -87,7 +131,7 @@ int64_t y = f[3];
 int64_t z = 1;
 int64_t aa = y + z;
 f[3] = aa;
-//continue L_b;
+;//continue L_b;
 }
 //unreachable;
 B_a:;
@@ -99,7 +143,6 @@ void Fill_Buffer() {
 int64_t* a = stack_pointer;
 int64_t b = 16;
 int64_t * c = a - b;
-stack_pointer = c;
 int64_t d = ld_Rdbfr;
 c[2] = d;
 int64_t e = inRdbfr;
@@ -149,7 +192,7 @@ int64_t ja = ld_Rdbfr;
 int64_t * ka = ja + ga;
 int64_t la = 0;
 ka[0] = la;
-//continue L_e;
+;//continue L_e;
 }
 //unreachable;
 B_d:;
@@ -186,14 +229,13 @@ c[3] = gb;
 int64_t * hb = wa + fb;
 int64_t ib = 183;
 hb[0] = ib;
-//continue L_g;
+;//continue L_g;
 }
 //unreachable;
 B_f:;
 B_b:;
 int64_t jb = 16;
 int64_t* kb = c + jb;
-stack_pointer = kb;
 }
 
 int Show_Bits(int a) {
@@ -208,7 +250,7 @@ int64_t h = 32;
 int64_t i = h - g;
 int64_t j = 31;
 int64_t k = i & j;
-int64_t* l = f >> k;
+int64_t l = f >> k;
 return l;
 }
 
@@ -222,7 +264,6 @@ int Get_Bits(int a) {
 int64_t* b = stack_pointer;
 int64_t c = 16;
 int64_t * d = b - c;
-stack_pointer = d;
 d[3] = a;
 int64_t e = d[3];
 int64_t f = Show_Bits(e);
@@ -232,7 +273,6 @@ Flush_Buffer(g);
 int64_t h = d[2];
 int64_t i = 16;
 int64_t* j = d + i;
-stack_pointer = j;
 return h;
 }
 
@@ -240,7 +280,6 @@ void Flush_Buffer(int a) {
 int64_t* b = stack_pointer;
 int64_t c = 16;
 int64_t * d = b - c;
-stack_pointer = d;
 d[3] = a;
 int64_t e = d[3];
 int64_t * f = ld_Bfr;
@@ -296,7 +335,7 @@ int64_t ta = ra;
 int64_t ua = sa <= ta;
 int64_t va = 1;
 int64_t wa = ua & va;
-if (wa) //continue L_d;
+if (wa) ;//continue L_d;
 }
 goto B_b;
 B_c:;
@@ -320,11 +359,11 @@ fb[0] = ib;
 int64_t jb = gb[0];
 int64_t kb = d[2];
 int64_t lb = 24;
-int64_t* mb = lb - kb;
-int64_t* nb = jb << mb;
+int64_t mb = lb - kb;
+int64_t nb = jb << mb;
 int64_t * ob = ld_Bfr;
 int64_t pb = ob[0];
-int64_t* qb = pb | nb;
+int64_t qb = pb | nb;
 ob[0] = qb;
 int64_t rb = d[2];
 int64_t sb = 8;
@@ -337,7 +376,7 @@ int64_t xb = vb;
 int64_t yb = wb <= xb;
 int64_t zb = 1;
 int64_t ac = yb & zb;
-if (ac) //continue L_e;
+if (ac) ;//continue L_e;
 }
 B_b:;
 int64_t bc = d[2];
@@ -346,7 +385,6 @@ cc[0] = bc;
 B_a:;
 int64_t dc = 16;
 int64_t* ec = d + dc;
-stack_pointer = ec;
 }
 
 int Get_motion_code() {
@@ -356,7 +394,6 @@ int64_t rd;
 int64_t* a = stack_pointer;
 int64_t b = 16;
 int64_t * c = a - b;
-stack_pointer = c;
 int64_t d = Get_Bits1();
 if (eqz(d)) goto B_b;
 int64_t e = 0;
@@ -369,9 +406,9 @@ c[2] = g;
 int64_t h = 64;
 int64_t i = g;
 int64_t j = h;
-int64_t* k = i >= j;
+int64_t k = i >= j;
 int64_t l = 1;
-int64_t* m = k & l;
+int64_t m = k & l;
 if (eqz(m)) goto B_c;
 int64_t n = c[2];
 int64_t o = 6;
@@ -437,14 +474,14 @@ int64_t jb = MVtab1;
 int64_t * kb = jb + ib;
 int64_t lb = kb[1];
 int64_t mb = 24;
-int64_t* nb = lb << mb;
-int64_t* ob = nb >> mb;
+int64_t nb = lb << mb;
+int64_t ob = nb >> mb;
 Flush_Buffer(ob);
 int64_t pb = Get_Bits1();
 if (eqz(pb)) goto B_h;
 int64_t qb = c[2];
 int64_t rb = 1;
-int64_t* sb = qb << rb;
+int64_t sb = qb << rb;
 int64_t tb = MVtab1;
 int64_t * ub = tb + sb;
 int64_t vb = ub[0];
@@ -529,7 +566,6 @@ B_a:;
 int64_t ce = c[3];
 int64_t de = 16;
 int64_t* ee = c + de;
-stack_pointer = ee;
 return ce;
 }
 
@@ -537,7 +573,6 @@ int Get_dmvector() {
 int64_t* a = stack_pointer;
 int64_t b = 16;
 int64_t * c = a - b;
-stack_pointer = c;
 int64_t d = 1;
 int64_t e = Get_Bits(d);
 if (eqz(e)) goto B_b;
@@ -555,7 +590,6 @@ B_a:;
 int64_t l = c[3];
 int64_t m = 16;
 int64_t* n = c + m;
-stack_pointer = n;
 return l;
 }
 
@@ -563,7 +597,6 @@ void motion_vectors(int a, int b, int c, int d, int e, int f, int g, int h, int 
 int64_t* k = stack_pointer;
 int64_t l = 48;
 int64_t * m = k - l;
-stack_pointer = m;
 m[11] = a;
 m[10] = b;
 m[9] = c;
@@ -576,11 +609,11 @@ m[3] = i;
 m[2] = j;
 int64_t n = m[7];
 int64_t o = 1;
-int64_t* p = n;
+int64_t p = n;
 int64_t q = o;
-int64_t* r = p == q;
+int64_t r = p == q;
 int64_t s = 1;
-int64_t* t = r & s;
+int64_t t = r & s;
 if (eqz(t)) goto B_b;
 int64_t u = m[6];
 if (u) goto B_c;
@@ -632,15 +665,15 @@ hb[0] = ab;
 int64_t ib = m[11];
 int64_t jb = m[8];
 int64_t kb = 3;
-int64_t* lb = jb << kb;
+int64_t lb = jb << kb;
 int64_t * mb = ib + lb;
 int64_t nb = mb[1];
 int64_t ob = m[11];
 int64_t pb = 16;
-int64_t* qb = ob + pb;
+int64_t qb = ob + pb;
 int64_t rb = m[8];
 int64_t sb = 3;
-int64_t* tb = rb << sb;
+int64_t tb = rb << sb;
 int64_t * ub = qb + tb;
 ub[1] = nb;
 goto B_a;
@@ -656,8 +689,8 @@ bc[0] = wb;
 int64_t cc = m[11];
 int64_t dc = m[8];
 int64_t ec = 3;
-int64_t* fc = dc << ec;
-int64_t* gc = cc + fc;
+int64_t fc = dc << ec;
+int64_t gc = cc + fc;
 int64_t hc = m[10];
 int64_t ic = m[5];
 int64_t jc = m[4];
@@ -692,7 +725,6 @@ motion_vector(cd, dd, ed, fd, gd, hd, id);
 B_a:;
 int64_t jd = 48;
 int64_t* kd = m + jd;
-stack_pointer = kd;
 }
 
 void motion_vector(int a, int b, int c, int d, int e, int f, int g) {
@@ -701,7 +733,6 @@ int64_t fa;
 int64_t* h = stack_pointer;
 int64_t i = 48;
 int64_t * j = h - i;
-stack_pointer = j;
 j[11] = a;
 j[10] = b;
 j[9] = c;
@@ -723,7 +754,7 @@ B_b:;
 int64_t q = 0;
 p = q;
 B_a:;
-int64_t* r = p;
+int64_t r = p;
 j[3] = r;
 int64_t s = j[11];
 int64_t t = j[9];
@@ -785,7 +816,6 @@ bb[1] = ab;
 B_h:;
 int64_t cb = 48;
 int64_t* db = j + cb;
-stack_pointer = db;
 }
 
 void decode_motion_vector(int a, int b, int c, int d, int e) {
@@ -801,18 +831,18 @@ h[4] = d;
 h[3] = e;
 int64_t i = h[6];
 int64_t j = 32;
-int64_t* k = i % j;
+int64_t k = i % j;
 h[6] = k;
 int64_t l = h[6];
 int64_t m = 16;
-int64_t* n = m << l;
+int64_t n = m << l;
 h[2] = n;
 int64_t o = h[3];
 if (eqz(o)) goto B_b;
 int64_t * p = h[7];
 int64_t q = p[0];
 int64_t r = 1;
-int64_t* s = q >> r;
+int64_t s = q >> r;
 t = s;
 goto B_a;
 B_b:;
@@ -820,7 +850,7 @@ int64_t * u = h[7];
 int64_t v = u[0];
 t = v;
 B_a:;
-int64_t* w = t;
+int64_t w = t;
 h[1] = w;
 int64_t x = h[5];
 int64_t y = 0;
@@ -863,23 +893,23 @@ int64_t bb = h[5];
 int64_t cb = 0;
 int64_t db = bb;
 int64_t eb = cb;
-int64_t* fb = db < eb;
+int64_t fb = db < eb;
 int64_t gb = 1;
-int64_t* hb = fb & gb;
+int64_t hb = fb & gb;
 if (eqz(hb)) goto B_f;
 int64_t ib = h[5];
 int64_t jb = 0;
 int64_t kb = jb - ib;
 int64_t lb = 1;
-int64_t* mb = kb - lb;
+int64_t mb = kb - lb;
 int64_t nb = h[6];
-int64_t* ob = mb << nb;
+int64_t ob = mb << nb;
 int64_t pb = h[4];
-int64_t* qb = ob + pb;
+int64_t qb = ob + pb;
 int64_t rb = 1;
-int64_t* sb = qb + rb;
+int64_t sb = qb + rb;
 int64_t tb = h[1];
-int64_t* ub = tb - sb;
+int64_t ub = tb - sb;
 h[1] = ub;
 int64_t vb = h[1];
 int64_t wb = h[2];
@@ -893,9 +923,9 @@ int64_t dc = bc & cc;
 if (eqz(dc)) goto B_g;
 int64_t ec = h[2];
 int64_t fc = h[2];
-int64_t* gc = ec + fc;
+int64_t gc = ec + fc;
 int64_t hc = h[1];
-int64_t* ic = hc + gc;
+int64_t ic = hc + gc;
 h[1] = ic;
 B_g:;
 B_f:;
@@ -922,7 +952,7 @@ int64_t b = 0;
 a[0] = b;
 int64_t c = ld_Rdbfr;
 int64_t d = 2048;
-int64_t* e = c + d;
+int64_t e = c + d;
 int64_t * f = ld_Rdptr;
 f[0] = e;
 int64_t g = f[0];
@@ -935,311 +965,11 @@ int64_t k = 0;
 Flush_Buffer(k);
 }
 
-int submain() {
-int64_t* a = stack_pointer;
-int64_t b = 128;
-int64_t* c = a - b;
-stack_pointer = c;
-double d = rtclock();
-int64_t * e = startTimer;
-e[0] = d;
-int64_t f = 0;
-c[28] = f;
-int64_t * g = evalue;
-g[0] = f;
-int64_t * h = System_Stream_Flag;
-h[0] = f;
-int64_t i = 0;
-c[11] = i;
-int64_t j = 1;
-c[10] = j;
-int64_t k = 0;
-c[9] = k;
-int64_t l = 200;
-c[8] = l;
-int64_t m = 200;
-c[7] = m;
-int64_t n = 0;
-c[6] = n;
-int64_t o = 1;
-c[5] = o;
-int64_t p = 0;
-c[31] = p;
-while (1) {
-int64_t q = (int64_t)c[31];
-int64_t r = 2;
-int64_t s = q;
-int64_t* t = r;
-int64_t* u = s < t;
-int64_t v = 1;
-int64_t* w = u & v;
-if (eqz(w)) goto B_a;
-int64_t x = (int64_t)c[31];
-int64_t y = 72;
-int64_t* z = c + y;
-int64_t* aa = z;
-int64_t ba = 2;
-int64_t ca = x << ba;
-int64_t * da = aa + ca;
-int64_t ea = 0;
-da[0] = ea;
-int64_t fa = 0;
-c[30] = fa;
-while (1) {
-int64_t ga = (int64_t)c[30];
-int64_t ha = 2;
-int64_t ia = ga;
-int64_t ja = ha;
-int64_t ka = ia < ja;
-int64_t la = 1;
-int64_t ma = ka & la;
-if (eqz(ma)) goto B_c;
-int64_t na = (int64_t)c[31];
-int64_t oa = 3;
-int64_t pa = na << oa;
-int64_t qa = inmvfs;
-int64_t ra = qa + pa;
-int64_t sa = (int64_t)c[30];
-int64_t ta = 2;
-int64_t ua = sa << ta;
-int64_t * va = ra + ua;
-int64_t wa = va[0];
-int64_t xa = (int64_t)c[31];
-int64_t ya = 48;
-int64_t* za = c + ya;
-int64_t* ab = za;
-int64_t bb = 3;
-int64_t cb = xa << bb;
-int64_t* db = ab + cb;
-int64_t eb = (int64_t)c[30];
-int64_t fb = 2;
-int64_t* gb = eb << fb;
-int64_t * hb = db + gb;
-hb[0] = wa;
-int64_t ib = 0;
-c[29] = ib;
-while (1) {
-int64_t jb = (int64_t)c[29];
-int64_t kb = 2;
-int64_t lb = jb;
-int64_t* mb = kb;
-int64_t* nb = lb < mb;
-int64_t ob = 1;
-int64_t* pb = nb & ob;
-if (eqz(pb)) goto B_e;
-int64_t qb = (int64_t)c[31];
-int64_t rb = 4;
-int64_t* sb = qb << rb;
-int64_t tb = inPMV;
-int64_t* ub = tb + sb;
-int64_t vb = (int64_t)c[30];
-int64_t wb = 3;
-int64_t xb = vb << wb;
-int64_t* yb = ub + xb;
-int64_t zb = (int64_t)c[29];
-int64_t ac = 2;
-int64_t bc = zb << ac;
-int64_t * cc = yb + bc;
-int64_t dc = cc[0];
-int64_t ec = (int64_t)c[31];
-int64_t fc = 80;
-int64_t* gc = c + fc;
-int64_t* hc = gc;
-int64_t ic = 4;
-int64_t* jc = ec << ic;
-int64_t* kc = hc + jc;
-int64_t lc = (int64_t)c[30];
-int64_t mc = 3;
-int64_t nc = lc << mc;
-int64_t* oc = kc + nc;
-int64_t pc = (int64_t)c[29];
-int64_t qc = 2;
-int64_t rc = pc << qc;
-int64_t * sc = oc + rc;
-sc[0] = dc;
-int64_t tc = (int64_t)c[29];
-int64_t uc = 1;
-int64_t vc = tc + uc;
-c[29] = vc;
-//continue L_f;
-}
-//unreachable;
-B_e:;
-int64_t wc = (int64_t)c[30];
-int64_t xc = 1;
-int64_t yc = wc + xc;
-c[30] = yc;
-//continue L_d;
-}
-//unreachable;
-B_c:;
-int64_t zc = (int64_t)c[31];
-int64_t ad = 1;
-int64_t bd = zc + ad;
-c[31] = bd;
-//continue L_b;
-}
-//unreachable;
-B_a:;
-Initialize_Buffer();
-int64_t cd = 80;
-int64_t* dd = c + cd;
-int64_t* ed = dd;
-int64_t fd = 72;
-int64_t* gd = c + fd;
-int64_t* hd = gd;
-int64_t id = 48;
-int64_t* jd = c + id;
-int64_t* kd = jd;
-int64_t ld = (int64_t)c[11];
-int64_t md = (int64_t)c[10];
-int64_t nd = (int64_t)c[9];
-int64_t od = (int64_t)c[8];
-int64_t pd = (int64_t)c[7];
-int64_t qd = (int64_t)c[6];
-int64_t rd = (int64_t)c[5];
-motion_vectors(ed, hd, kd, ld, md, nd, od, pd, qd, rd);
-int64_t sd = 0;
-c[31] = sd;
-while (1) {
-int64_t td = (int64_t)c[31];
-int64_t ud = 2;
-int64_t vd = td;
-int64_t wd = ud;
-int64_t xd = vd < wd;
-int64_t yd = 1;
-int64_t zd = xd & yd;
-if (eqz(zd)) goto B_g;
-int64_t ae = 0;
-c[30] = ae;
-while (1) {
-int64_t be = (int64_t)c[30];
-int64_t ce = 2;
-int64_t de = be;
-int64_t ee = ce;
-int64_t* fe = de < ee;
-int64_t ge = 1;
-int64_t* he = fe & ge;
-if (eqz(he)) goto B_i;
-int64_t ie = (int64_t)c[31];
-int64_t je = 3;
-int64_t ke = ie << je;
-int64_t le = 48;
-int64_t* me = c + le;
-int64_t* ne = me + ke;
-int64_t oe = (int64_t)c[30];
-int64_t pe = 2;
-int64_t qe = oe << pe;
-int64_t * re = ne + qe;
-int64_t se = re[0];
-int64_t te = outmvfs;
-int64_t ue = te + ke;
-int64_t ve = (int64_t)c[30];
-int64_t we = 2;
-int64_t xe = ve << we;
-int64_t * ye = ue + xe;
-int64_t ze = ye[0];
-int64_t af = se;
-int64_t bf = ze;
-int64_t cf = af != bf;
-int64_t df = 1;
-int64_t ef = cf & df;
-int64_t ff = (int64_t)c[28];
-int64_t gf = ff + ef;
-c[28] = gf;
-int64_t hf = 0;
-c[29] = hf;
-while (1) {
-int64_t _if = (int64_t)c[29];
-int64_t jf = 2;
-int64_t kf = _if;
-int64_t lf = jf;
-int64_t mf = kf < lf;
-int64_t nf = 1;
-int64_t of = mf & nf;
-if (eqz(of)) goto B_k;
-int64_t pf = (int64_t)c[31];
-int64_t qf = 4;
-int64_t rf = pf << qf;
-int64_t sf = 80;
-int64_t* tf = c + sf;
-int64_t* uf = tf + rf;
-int64_t vf = (int64_t)c[30];
-int64_t wf = 3;
-int64_t xf = vf << wf;
-int64_t* yf = uf + xf;
-int64_t zf = (int64_t)c[29];
-int64_t ag = 2;
-int64_t bg = zf << ag;
-int64_t * cg = yf + bg;
-int64_t dg = cg[0];
-int64_t eg = outPMV;
-int64_t fg = eg + rf;
-int64_t gg = (int64_t)c[30];
-int64_t hg = 3;
-int64_t ig = gg << hg;
-int64_t jg = fg + ig;
-int64_t kg = (int64_t)c[29];
-int64_t lg = 2;
-int64_t mg = kg << lg;
-int64_t * ng = jg + mg;
-int64_t og = ng[0];
-int64_t pg = dg;
-int64_t qg = og;
-int64_t rg = pg != qg;
-int64_t sg = 1;
-int64_t tg = rg & sg;
-int64_t ug = (int64_t)c[28];
-int64_t vg = ug + tg;
-c[28] = vg;
-int64_t wg = (int64_t)c[29];
-int64_t xg = 1;
-int64_t yg = wg + xg;
-c[29] = yg;
-//continue L_l;
-}
-//unreachable;
-B_k:;
-int64_t zg = (int64_t)c[30];
-int64_t ah = 1;
-int64_t bh = zg + ah;
-c[30] = bh;
-//continue L_j;
-}
-//unreachable;
-B_i:;
-int64_t ch = (int64_t)c[31];
-int64_t dh = 1;
-int64_t eh = ch + dh;
-c[31] = eh;
-//continue L_h;
-}
-//unreachable;
-B_g:;
-double fh = rtclock();
-int64_t * gh = endTimer;
-gh[0] = fh;
-double hh = gh[0];
-int64_t * ih = startTimer;
-double jh = ih[0];
-double kh = hh - jh;
-c[0] = kh;
-int64_t lh = 4283;
-int64_t mh = memory_base;
-int64_t nh = mh + lh;
-printf(nh, c);
-int64_t oh = (int64_t)c[28];
-int64_t ph = 128;
-int64_t* qh = c + ph;
-stack_pointer = qh;
-return oh;
-}
 
 double rtclock() {
 int64_t* a = stack_pointer;
 int64_t b = 32;
 int64_t* c = a - b;
-stack_pointer = c;
 int64_t d = 16;
 int64_t* e = c + d;
 int64_t* f = e;
@@ -1251,19 +981,17 @@ if (eqz(i)) goto B_a;
 int64_t j = (int64_t)c[3];
 c[0] = j;
 int64_t k = 4248;
-int64_t l = memory_base;
-int64_t* m = l + k;
-printf(m, c);
+int64_t* l = memory_base;
+int64_t* m = l + k; _printf(m, c);
 B_a:;
 long n = (long)c[2];
 double o = f64_convert_i64_s(n);
 int64_t p = (int64_t)c[6];
 double q = f64_convert_i32_s(p);
 double r = 0.000001;
-double* s = q * r;
-double* t = s + o;
+double s = q * r;
+double t = s + o;
 int64_t u = 32;
 int64_t* v = c + u;
-stack_pointer = v;
 return t;
 }

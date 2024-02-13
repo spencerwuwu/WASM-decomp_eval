@@ -1,8 +1,91 @@
 
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+//#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
-extern int64_t stack_pointer;
-extern int64_t memory_base;
-extern int64_t table_base;
+#include <polybench.h>
+//#include "wasm-decompile_base.h"
+#define eqz(x) ((x) == 0)
+#define ubyte uint8_t
+#define byte int8_t
+#define byte_ptr int8_t*
+#define ubyte_ptr uint8_t*
+int64_t f64_convert_i64_s(float);
+int32_t f64_convert_i32_s(float);
+uint64_t i64_extend_i32_u(int);
+int64_t i64_extend_i32_s(int);
+int32_t f32_convert_i32_s(float);
+uint32_t f32_convert_i32_u(float);
+int64_t f32_convert_i64_s(float);
+uint64_t f32_convert_i64_u(float);
+int i32_wrap_i64(int64_t);
+int select__if(int,int,int);
+
+    typedef struct struct_1 {
+    long a;
+    int b;
+    int c;
+} struct_1;
+typedef struct struct_2 {
+    int a;
+    int b;
+    int c;
+    int d;
+    long e;
+    long f;
+} struct_2;
+typedef struct struct_3 {
+    int a;
+    int b;
+    long c;
+    long d;
+    long e;
+} struct_3;
+int _printf(int a, int b);
+int gettimeofday(int a, int b);
+void setTempRet0(int a);
+void wasm_call_ctors();
+void wasm_apply_data_relocs();
+void shift64RightJamming(long a, int b, int c);
+void float_raise(int a);
+int float64_is_nan(long a);
+int float64_is_signaling_nan(long a);
+long extractFloat64Frac(long a);
+int extractFloat64Exp(long a);
+int extractFloat64Sign(long a);
+long packFloat64(int a, int b, long c);
+long roundAndPackFloat64(int a, int b, long c);
+long normalizeRoundAndPackFloat64(int a, int b, long c);
+int countLeadingZeros64(long a);
+int countLeadingZeros32(int a);
+long addFloat64Sigs(long a, long b, int c);
+long propagateFloat64NaN(long a, long b);
+long subFloat64Sigs(long a, long b, int c);
+long float64_add(long a, long b);
+double ullong_to_double(long a);
+double rtclock();
+void legalstub_shift64RightJamming(int a, int b, int c, int d);
+int legalstub_float64_is_nan(int a, int b);
+int legalstub_float64_is_signaling_nan(int a, int b);
+int legalstub_extractFloat64Frac(int a, int b);
+int legalstub_extractFloat64Exp(int a, int b);
+int legalstub_extractFloat64Sign(int a, int b);
+int legalstub_packFloat64(int a, int b, int c, int d);
+int legalstub_roundAndPackFloat64(int a, int b, int c, int d);
+int legalstub_normalizeRoundAndPackFloat64(int a, int b, int c, int d);
+int legalstub_addFloat64Sigs(int a, int b, int c, int d, int e);
+int legalstub_subFloat64Sigs(int a, int b, int c, int d, int e);
+int legalstub_float64_add(int a, int b, int c, int d);
+double legalstub_ullong_to_double(int a, int b);
+
+
+int64_t stack[100000];
+int64_t *stack_pointer = stack + 100000;
+int64_t *memory_base;
+int64_t *table_base;
 extern int64_t float_exception_flags;
 extern int64_t float_rounding_mode;
 extern int64_t startTimer;
@@ -19,11 +102,11 @@ int64_t z_output_1 = 736;
 int64_t endTimer_1 = 2192;
 
 
+;
 
+;
 
-
-
-
+;
 
 void wasm_call_ctors() {
 }
@@ -114,13 +197,13 @@ int64_t * d = b - c;
 d[1] = a;
 long e = d[1];
 long f = 1L;
-long* g = e << f;
+long g = e << f;
 long h = -9007199254740992L;
 long i = h;
-long* j = g;
-int64_t* k = i < j;
+long j = g;
+int64_t k = i < j;
 int64_t l = 1;
-int64_t* m = k & l;
+int64_t m = k & l;
 return m;
 }
 
@@ -131,16 +214,16 @@ int64_t * d = b - c;
 d[1] = a;
 long e = d[1];
 long f = 51L;
-long* g = e >> f;
+long g = e >> f;
 long h = 4095L;
-long* i = g & h;
+long i = g & h;
 long j = 4094L;
-long* k = i;
-long* l = j;
-int64_t* m = k == l;
+long k = i;
+long l = j;
+int64_t m = k == l;
 int64_t n = 0;
 int64_t o = 1;
-int64_t* p = m & o;
+int64_t p = m & o;
 int64_t q = n;
 if (eqz(p)) goto B_a;
 long r = d[1];
@@ -165,7 +248,7 @@ int64_t * d = b - c;
 d[1] = a;
 long e = d[1];
 long f = 4503599627370495L;
-long* g = e & f;
+long g = e & f;
 return g;
 }
 
@@ -176,9 +259,9 @@ int64_t * d = b - c;
 d[1] = a;
 long e = d[1];
 long f = 52L;
-long* g = e >> f;
+long g = e >> f;
 long h = 2047L;
-long* i = g & h;
+long i = g & h;
 int64_t j = i32_wrap_i64(i);
 return j;
 }
@@ -190,7 +273,7 @@ int64_t * d = b - c;
 d[1] = a;
 long e = d[1];
 long f = 63L;
-long* g = e >> f;
+long g = e >> f;
 int64_t h = i32_wrap_i64(g);
 return h;
 }
@@ -198,23 +281,23 @@ return h;
 long packFloat64(int a, int b, long c) {
 int64_t* d = stack_pointer;
 int64_t e = 16;
-{* f (long,)a (int,)b (int64_t)c } = d - e;
+struct_1 f;
 f.c = a;
 f.b = b;
 f.a = c;
 int64_t g = f.c;
-int64_t* h = g;
+int64_t h = g;
 long i = i64_extend_i32_s(h);
 long j = 63L;
-long* k = i << j;
+long k = i << j;
 int64_t l = f.b;
-int64_t* m = l;
+int64_t m = l;
 long n = i64_extend_i32_s(m);
 long o = 52L;
 long p = n << o;
-long* q = k + p;
+long q = k + p;
 long r = f.a;
-long* s = q + r;
+long s = q + r;
 return s;
 }
 
@@ -222,7 +305,6 @@ long roundAndPackFloat64(int a, int b, long c) {
 int64_t* d = stack_pointer;
 int64_t e = 48;
 int64_t* f = d - e;
-stack_pointer = f;
 f[9] = a;
 f[8] = b;
 f[3] = c;
@@ -231,11 +313,11 @@ int64_t h = g[0];
 f[5] = h;
 int64_t i = (int64_t)f[5];
 int64_t j = 0;
-int64_t* k = i;
-int64_t* l = j;
-int64_t* m = k == l;
+int64_t k = i;
+int64_t l = j;
+int64_t m = k == l;
 int64_t n = 1;
-int64_t* o = m & n;
+int64_t o = m & n;
 f[4] = o;
 int64_t p = 512;
 f[2] = p;
@@ -244,10 +326,10 @@ if (q) goto B_a;
 int64_t r = (int64_t)f[5];
 int64_t s = 1;
 int64_t t = r;
-int64_t* u = s;
-int64_t* v = t == u;
+int64_t u = s;
+int64_t v = t == u;
 int64_t w = 1;
-int64_t* x = v & w;
+int64_t x = v & w;
 if (eqz(x)) goto B_c;
 int64_t y = 0;
 f[2] = y;
@@ -435,7 +517,6 @@ B_h:;
 long ef = (long)f[5];
 int64_t ff = 48;
 int64_t* gf = f + ff;
-stack_pointer = gf;
 return ef;
 }
 
@@ -443,28 +524,26 @@ long normalizeRoundAndPackFloat64(int a, int b, long c) {
 int64_t* d = stack_pointer;
 int64_t e = 32;
 int64_t* f = d - e;
-stack_pointer = f;
 f[7] = a;
 f[6] = b;
 f[2] = c;
 long g = (long)f[2];
 int64_t h = countLeadingZeros64(g);
 int64_t i = 1;
-int64_t* j = h - i;
+int64_t j = h - i;
 f[3] = j;
 int64_t k = (int64_t)f[7];
 int64_t l = (int64_t)f[6];
 int64_t m = (int64_t)f[3];
-int64_t* n = l - m;
+int64_t n = l - m;
 long o = (long)f[2];
 int64_t p = (int64_t)f[3];
-int64_t* q = p;
+int64_t q = p;
 long r = i64_extend_i32_u(q);
-long* s = o << r;
+long s = o << r;
 long t = roundAndPackFloat64(k, n, s);
 int64_t u = 32;
 int64_t* v = f + u;
-stack_pointer = v;
 return t;
 }
 
@@ -472,39 +551,37 @@ int countLeadingZeros64(long a) {
 int64_t* b = stack_pointer;
 int64_t c = 16;
 int64_t* d = b - c;
-stack_pointer = d;
 d[1] = a;
 int64_t e = 0;
 d[1] = e;
 long f = (long)d[1];
 long g = 4294967296L;
-long* h = f;
-long* i = g;
-int64_t* j = h < i;
+long h = f;
+long i = g;
+int64_t j = h < i;
 int64_t k = 1;
-int64_t* l = j & k;
+int64_t l = j & k;
 if (eqz(l)) goto B_b;
 int64_t m = (int64_t)d[1];
 int64_t n = 32;
-int64_t* o = m + n;
+int64_t o = m + n;
 d[1] = o;
 goto B_a;
 B_b:;
 long p = (long)d[1];
 long q = 32L;
-long* r = p >> q;
+long r = p >> q;
 d[1] = r;
 B_a:;
 long s = (long)d[1];
 int64_t t = i32_wrap_i64(s);
 int64_t u = countLeadingZeros32(t);
 int64_t v = (int64_t)d[1];
-int64_t* w = v + u;
+int64_t w = v + u;
 d[1] = w;
 int64_t x = (int64_t)d[1];
 int64_t y = 16;
 int64_t* z = d + y;
-stack_pointer = z;
 return x;
 }
 
@@ -517,32 +594,32 @@ int64_t e = 0;
 d[2] = e;
 int64_t f = d[3];
 int64_t g = 65536;
-int64_t* h = f;
-int64_t* i = g;
-int64_t* j = h < i;
+int64_t h = f;
+int64_t i = g;
+int64_t j = h < i;
 int64_t k = 1;
-int64_t* l = j & k;
+int64_t l = j & k;
 if (eqz(l)) goto B_a;
 int64_t m = d[2];
 int64_t n = 16;
-int64_t* o = m + n;
+int64_t o = m + n;
 d[2] = o;
 int64_t p = d[3];
 int64_t q = 16;
-int64_t* r = p << q;
+int64_t r = p << q;
 d[3] = r;
 B_a:;
 int64_t s = d[3];
 int64_t t = 16777216;
-int64_t* u = s;
+int64_t u = s;
 int64_t v = t;
-int64_t* w = u < v;
+int64_t w = u < v;
 int64_t x = 1;
-int64_t* y = w & x;
+int64_t y = w & x;
 if (eqz(y)) goto B_b;
 int64_t z = d[2];
 int64_t aa = 8;
-int64_t* ba = z + aa;
+int64_t ba = z + aa;
 d[2] = ba;
 int64_t ca = d[3];
 int64_t da = 8;
@@ -551,8 +628,8 @@ d[3] = ea;
 B_b:;
 int64_t fa = d[3];
 int64_t ga = 1152;
-int64_t ha = memory_base;
-int64_t ia = ha + ga;
+int64_t* ha = memory_base;
+int64_t* ia = ha + ga;
 int64_t ja = 22;
 int64_t ka = fa >> ja;
 int64_t la = 1020;
@@ -570,7 +647,6 @@ long addFloat64Sigs(long a, long b, int c) {
 int64_t* d = stack_pointer;
 int64_t e = 80;
 int64_t* f = d - e;
-stack_pointer = f;
 f[8] = a;
 f[7] = b;
 f[13] = c;
@@ -588,23 +664,23 @@ int64_t n = extractFloat64Exp(m);
 f[11] = n;
 int64_t o = (int64_t)f[12];
 int64_t p = (int64_t)f[11];
-int64_t* q = o - p;
+int64_t q = o - p;
 f[3] = q;
 long r = (long)f[4];
 long s = 9L;
-long* t = r << s;
+long t = r << s;
 f[4] = t;
 long u = (long)f[3];
 long v = 9L;
-long* w = u << v;
+long w = u << v;
 f[3] = w;
 int64_t x = (int64_t)f[3];
 int64_t y = 0;
-int64_t* z = y;
-int64_t* aa = x;
-int64_t* ba = z < aa;
+int64_t z = y;
+int64_t aa = x;
+int64_t ba = z < aa;
 int64_t ca = 1;
-int64_t* da = ba & ca;
+int64_t da = ba & ca;
 if (eqz(da)) goto B_d;
 int64_t ea = (int64_t)f[12];
 int64_t fa = 2047;
@@ -723,7 +799,7 @@ int64_t cd = ad;
 int64_t dd = bd;
 int64_t ed = cd == dd;
 int64_t fd = 1;
-int64_t* gd = ed & fd;
+int64_t gd = ed & fd;
 if (eqz(gd)) goto B_o;
 long hd = (long)f[4];
 long id = (long)f[3];
@@ -810,7 +886,6 @@ B_a:;
 long lf = (long)f[9];
 int64_t mf = 80;
 int64_t* nf = f + mf;
-stack_pointer = nf;
 return lf;
 }
 
@@ -820,8 +895,7 @@ long ca;
 long z;
 int64_t* c = stack_pointer;
 int64_t d = 32;
-{* e (int,)a (int,)b (int,)c (int,)d (long,)e (long)f } = c - d;
-stack_pointer = e;
+struct_2 e;
 e.f = a;
 e.e = b;
 long f = e.f;
@@ -838,15 +912,15 @@ int64_t m = float64_is_signaling_nan(l);
 e.a = m;
 long n = e.f;
 long o = 2251799813685248L;
-long* p = n | o;
+long p = n | o;
 e.f = p;
 long q = e.e;
 long r = 2251799813685248L;
-long* s = q | r;
+long s = q | r;
 e.e = s;
 int64_t t = e.c;
 int64_t u = e.a;
-int64_t* v = t | u;
+int64_t v = t | u;
 if (eqz(v)) goto B_a;
 int64_t w = 16;
 float_raise(w);
@@ -878,10 +952,9 @@ B_d:;
 long ia = ca;
 z = ia;
 B_b:;
-long* ja = z;
+long ja = z;
 int64_t ka = 32;
-int64_t la = e + ka;
-stack_pointer = la;
+int64_t* la = &e + ka;
 return ja;
 }
 
@@ -889,7 +962,6 @@ long subFloat64Sigs(long a, long b, int c) {
 int64_t* d = stack_pointer;
 int64_t e = 80;
 int64_t* f = d - e;
-stack_pointer = f;
 f[8] = a;
 f[7] = b;
 f[13] = c;
@@ -907,23 +979,23 @@ int64_t n = extractFloat64Exp(m);
 f[11] = n;
 int64_t o = (int64_t)f[12];
 int64_t p = (int64_t)f[11];
-int64_t* q = o - p;
+int64_t q = o - p;
 f[3] = q;
 long r = (long)f[4];
 long s = 10L;
-long* t = r << s;
+long t = r << s;
 f[4] = t;
 long u = (long)f[3];
 long v = 10L;
-long* w = u << v;
+long w = u << v;
 f[3] = w;
 int64_t x = (int64_t)f[3];
 int64_t y = 0;
-int64_t* z = y;
-int64_t* aa = x;
-int64_t* ba = z < aa;
+int64_t z = y;
+int64_t aa = x;
+int64_t ba = z < aa;
 int64_t ca = 1;
-int64_t* da = ba & ca;
+int64_t da = ba & ca;
 if (eqz(da)) goto B_e;
 goto B_d;
 B_e:;
@@ -933,7 +1005,7 @@ int64_t ga = ea;
 int64_t ha = fa;
 int64_t ia = ga < ha;
 int64_t ja = 1;
-int64_t* ka = ia & ja;
+int64_t ka = ia & ja;
 if (eqz(ka)) goto B_h;
 goto B_g;
 B_h:;
@@ -1043,7 +1115,7 @@ int64_t fd = (int64_t)f[12];
 if (fd) goto B_q;
 int64_t gd = (int64_t)f[3];
 int64_t hd = 1;
-int64_t* id = gd + hd;
+int64_t id = gd + hd;
 f[3] = id;
 goto B_p;
 B_q:;
@@ -1147,15 +1219,13 @@ B_a:;
 long vf = (long)f[9];
 int64_t wf = 80;
 int64_t* xf = f + wf;
-stack_pointer = xf;
 return vf;
 }
 
 long float64_add(long a, long b) {
 int64_t* c = stack_pointer;
 int64_t d = 32;
-{* e (int,)a (int,)b (long,)c (long,)d (long)e } = c - d;
-stack_pointer = e;
+struct_3 e;
 e.d = a;
 e.c = b;
 long f = e.d;
@@ -1166,11 +1236,11 @@ int64_t i = extractFloat64Sign(h);
 e.a = i;
 int64_t j = e.b;
 int64_t k = e.a;
-int64_t* l = j;
-int64_t* m = k;
-int64_t* n = l == m;
+int64_t l = j;
+int64_t m = k;
+int64_t n = l == m;
 int64_t o = 1;
-int64_t* p = n & o;
+int64_t p = n & o;
 if (eqz(p)) goto B_b;
 long q = e.d;
 long r = e.c;
@@ -1187,8 +1257,7 @@ e.e = x;
 B_a:;
 long y = e.e;
 int64_t z = 32;
-int64_t* aa = e + z;
-stack_pointer = aa;
+int64_t* aa = &e + z;
 return y;
 }
 
@@ -1203,90 +1272,11 @@ double f = (double)d[1];
 return f;
 }
 
-int submain() {
-int64_t* a = stack_pointer;
-int64_t b = 48;
-int64_t* c = a - b;
-stack_pointer = c;
-int64_t d = 0;
-c[11] = d;
-double e = rtclock();
-int64_t * f = startTimer;
-f[0] = e;
-int64_t g = 0;
-c[10] = g;
-while (1) {
-int64_t h = (int64_t)c[10];
-int64_t i = 46;
-int64_t* j = h;
-int64_t* k = i;
-int64_t* l = j < k;
-int64_t m = 1;
-int64_t* n = l & m;
-if (eqz(n)) goto B_a;
-int64_t o = (int64_t)c[10];
-int64_t p = 3;
-int64_t* q = o << p;
-int64_t r = a_input;
-int64_t * s = r + q;
-long t = s[0];
-c[4] = t;
-int64_t u = (int64_t)c[10];
-int64_t* v = u << p;
-int64_t w = b_input;
-int64_t * x = w + v;
-long y = x[0];
-c[3] = y;
-long z = (long)c[4];
-long aa = (long)c[3];
-long ba = float64_add(z, aa);
-c[2] = ba;
-long ca = (long)c[2];
-int64_t da = (int64_t)c[10];
-int64_t* ea = da << p;
-int64_t fa = z_output;
-int64_t * ga = fa + ea;
-long ha = ga[0];
-long ia = ca;
-long ja = ha;
-int64_t* ka = ia != ja;
-int64_t la = 1;
-int64_t* ma = ka & la;
-int64_t na = (int64_t)c[11];
-int64_t* oa = na + ma;
-c[11] = oa;
-int64_t pa = (int64_t)c[10];
-int64_t qa = 1;
-int64_t ra = pa + qa;
-c[10] = ra;
-//continue L_b;
-}
-//unreachable;
-B_a:;
-double sa = rtclock();
-int64_t * ta = endTimer;
-ta[0] = sa;
-double ua = ta[0];
-int64_t * va = startTimer;
-double wa = va[0];
-double xa = ua - wa;
-c[0] = xa;
-int64_t ya = 1139;
-int64_t za = memory_base;
-int64_t ab = za + ya;
-printf(ab, c);
-int64_t bb = (int64_t)c[11];
-int64_t cb = 48;
-int64_t* db = c + cb;
-stack_pointer = db;
-return bb;
-}
 
 double rtclock() {
 int64_t* a = stack_pointer;
 int64_t b = 32;
 int64_t* c = a - b;
-stack_pointer = c;
 int64_t d = 16;
 int64_t* e = c + d;
 int64_t* f = e;
@@ -1298,37 +1288,34 @@ if (eqz(i)) goto B_a;
 int64_t j = (int64_t)c[3];
 c[0] = j;
 int64_t k = 1104;
-int64_t l = memory_base;
-int64_t* m = l + k;
-printf(m, c);
+int64_t* l = memory_base;
+int64_t* m = l + k; _printf(m, c);
 B_a:;
 long n = (long)c[2];
 double o = f64_convert_i64_s(n);
 int64_t p = (int64_t)c[6];
 double q = f64_convert_i32_s(p);
 double r = 0.000001;
-double* s = q * r;
-double* t = s + o;
+double s = q * r;
+double t = s + o;
 int64_t u = 32;
 int64_t* v = c + u;
-stack_pointer = v;
 return t;
 }
 
 void legalstub_shift64RightJamming(int a, int b, int c, int d) {
 shift64RightJamming(i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L,
 c,
-d)
+d);
 }
 
 int legalstub_float64_is_nan(int a, int b) {
-retur;
-float64_is_nan(i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L)
+return float64_is_nan(i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L);
 }
 
 int legalstub_float64_is_signaling_nan(int a, int b) {
 return float64_is_signaling_nan(
-i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L)
+i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L);
 }
 
 int legalstub_extractFloat64Frac(int a, int b) {
@@ -1339,13 +1326,11 @@ return i32_wrap_i64(c);
 }
 
 int legalstub_extractFloat64Exp(int a, int b) {
-retur;
-extractFloat64Exp(i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L)
+return extractFloat64Exp(i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L);
 }
 
 int legalstub_extractFloat64Sign(int a, int b) {
-retur;
-extractFloat64Sign(i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L)
+return extractFloat64Sign(i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L);
 }
 
 int legalstub_packFloat64(int a, int b, int c, int d) {
@@ -1400,6 +1385,5 @@ return i32_wrap_i64(e);
 }
 
 double legalstub_ullong_to_double(int a, int b) {
-retur;
-ullong_to_double(i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L)
+return ullong_to_double(i64_extend_i32_u(a) | i64_extend_i32_u(b) << 32L);
 }

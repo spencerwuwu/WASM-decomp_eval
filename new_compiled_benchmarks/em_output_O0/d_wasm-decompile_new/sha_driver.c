@@ -1,8 +1,68 @@
 
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+//#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
-extern int64_t stack_pointer;
-extern int64_t memory_base;
-extern int64_t table_base;
+#include <polybench.h>
+//#include "wasm-decompile_base.h"
+#define eqz(x) ((x) == 0)
+#define ubyte uint8_t
+#define byte int8_t
+#define byte_ptr int8_t*
+#define ubyte_ptr uint8_t*
+int64_t f64_convert_i64_s(float);
+int32_t f64_convert_i32_s(float);
+uint64_t i64_extend_i32_u(int);
+int64_t i64_extend_i32_s(int);
+int32_t f32_convert_i32_s(float);
+uint32_t f32_convert_i32_u(float);
+int64_t f32_convert_i64_s(float);
+uint64_t f32_convert_i64_u(float);
+int i32_wrap_i64(int64_t);
+int select__if(int,int,int);
+
+    typedef struct struct_1 {
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+} struct_1;
+typedef struct struct_2 {
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+} struct_2;
+typedef struct struct_3 {
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+} struct_3;
+int _printf(int a, int b);
+int gettimeofday(int a, int b);
+void wasm_call_ctors();
+void wasm_apply_data_relocs();
+void local_memset(int a, int b, int c, int d);
+void local_memcpy(int a, int b, int c);
+void sha_transform();
+void sha_init();
+void sha_update(int a, int b);
+void sha_final();
+void sha_stream();
+double rtclock();
+
+
+int64_t stack[100000];
+int64_t *stack_pointer = stack + 100000;
+int64_t *memory_base;
+int64_t *table_base;
 extern int64_t sha_info_data;
 extern int64_t sha_info_digest;
 extern int64_t sha_info_count_lo;
@@ -23,9 +83,9 @@ int64_t outData_1 = 16400;
 int64_t endTimer_1 = 16568;
 
 
+;
 
-
-
+;
 
 void wasm_call_ctors() {
 }
@@ -65,7 +125,7 @@ int64_t v = g[2];
 int64_t w = 4;
 int64_t x = v + w;
 g[2] = x;
-//continue L_b;
+;//continue L_b;
 }
 //unreachable;
 B_a:;
@@ -87,7 +147,7 @@ int64_t ja = 4;
 int64_t ka = ia + ja;
 g[2] = ka;
 ia[0] = ha;
-//continue L_d;
+;//continue L_d;
 }
 //unreachable;
 B_c:;
@@ -102,7 +162,7 @@ f[6] = b;
 f[5] = c;
 int64_t g = f[5];
 int64_t h = 4;
-int64_t* i = g / h;
+int64_t i = g / h;
 f[1] = i;
 int64_t j = f[7];
 f[4] = j;
@@ -183,7 +243,7 @@ int64_t rb = f[4];
 int64_t sb = 4;
 int64_t tb = rb + sb;
 f[4] = tb;
-//continue L_b;
+;//continue L_b;
 }
 //unreachable;
 B_a:;
@@ -193,17 +253,16 @@ void sha_transform() {
 int64_t* a = stack_pointer;
 int64_t b = 352;
 int64_t * c = a - b;
-stack_pointer = c;
 int64_t d = 0;
 c[87] = d;
 while (1) {
 int64_t e = c[87];
 int64_t f = 16;
-int64_t* g = e;
-int64_t* h = f;
-int64_t* i = g < h;
+int64_t g = e;
+int64_t h = f;
+int64_t i = g < h;
 int64_t j = 1;
-int64_t* k = i & j;
+int64_t k = i & j;
 if (eqz(k)) goto B_a;
 int64_t l = c[87];
 int64_t m = 2;
@@ -221,7 +280,7 @@ int64_t w = c[87];
 int64_t x = 1;
 int64_t y = w + x;
 c[87] = y;
-//continue L_b;
+;//continue L_b;
 }
 //unreachable;
 B_a:;
@@ -281,11 +340,11 @@ int64_t vb = c[87];
 int64_t wb = 1;
 int64_t xb = vb + wb;
 c[87] = xb;
-//continue L_d;
+;//continue L_d;
 }
 //unreachable;
 B_c:;
-{ yb (int,)a (int,)b (int,)c (int,)d (int64_t)e } = sha_info_digest;
+struct_1 yb;
 int64_t zb = yb.a;
 c[85] = zb;
 int64_t ac = yb.b;
@@ -356,7 +415,7 @@ int64_t zd = c[87];
 int64_t ae = 1;
 int64_t be = zd + ae;
 c[87] = be;
-//continue L_f;
+;//continue L_f;
 }
 //unreachable;
 B_e:;
@@ -416,7 +475,7 @@ int64_t tf = c[87];
 int64_t uf = 1;
 int64_t vf = tf + uf;
 c[87] = vf;
-//continue L_h;
+;//continue L_h;
 }
 //unreachable;
 B_g:;
@@ -482,7 +541,7 @@ int64_t th = c[87];
 int64_t uh = 1;
 int64_t vh = th + uh;
 c[87] = vh;
-//continue L_j;
+;//continue L_j;
 }
 //unreachable;
 B_i:;
@@ -542,12 +601,12 @@ int64_t nj = c[87];
 int64_t oj = 1;
 int64_t pj = nj + oj;
 c[87] = pj;
-//continue L_l;
+;//continue L_l;
 }
 //unreachable;
 B_k:;
 int64_t qj = c[85];
-{ rj (int,)a (int,)b (int,)c (int,)d (int64_t)e } = sha_info_digest;
+struct_2 rj;
 int64_t sj = rj.a;
 int64_t tj = sj + qj;
 rj.a = tj;
@@ -569,11 +628,10 @@ int64_t fk = ek + dk;
 rj.e = fk;
 int64_t gk = 352;
 int64_t* hk = c + gk;
-stack_pointer = hk;
 }
 
 void sha_init() {
-{ a (int,)a (int,)b (int,)c (int,)d (int64_t)e } = sha_info_digest;
+struct_3 a;
 int64_t b = 1732584193;
 a.a = b;
 int64_t c = -271733879;
@@ -595,33 +653,32 @@ void sha_update(int a, int b) {
 int64_t* c = stack_pointer;
 int64_t d = 16;
 int64_t * e = c - d;
-stack_pointer = e;
 e[3] = a;
 e[2] = b;
 int64_t * f = sha_info_count_lo;
 int64_t g = f[0];
 int64_t h = e[2];
 int64_t i = 3;
-int64_t* j = h << i;
-int64_t* k = g + j;
-int64_t* l = k;
-int64_t* m = g;
-int64_t* n = l < m;
+int64_t j = h << i;
+int64_t k = g + j;
+int64_t l = k;
+int64_t m = g;
+int64_t n = l < m;
 int64_t o = 1;
-int64_t* p = n & o;
+int64_t p = n & o;
 if (eqz(p)) goto B_a;
 int64_t * q = sha_info_count_hi;
 int64_t r = q[0];
 int64_t s = 1;
-int64_t* t = r + s;
+int64_t t = r + s;
 q[0] = t;
 B_a:;
 int64_t u = e[2];
 int64_t v = 3;
-int64_t* w = u << v;
+int64_t w = u << v;
 int64_t * x = sha_info_count_lo;
 int64_t y = x[0];
-int64_t* z = y + w;
+int64_t z = y + w;
 x[0] = z;
 int64_t aa = e[2];
 int64_t ba = 29;
@@ -637,7 +694,7 @@ int64_t ia = ga;
 int64_t ja = ha;
 int64_t ka = ia >= ja;
 int64_t la = 1;
-int64_t* ma = ka & la;
+int64_t ma = ka & la;
 if (eqz(ma)) goto B_b;
 int64_t na = e[3];
 int64_t oa = sha_info_data;
@@ -652,7 +709,7 @@ int64_t ta = e[2];
 int64_t ua = 64;
 int64_t va = ta - ua;
 e[2] = va;
-//continue L_c;
+;//continue L_c;
 }
 //unreachable;
 B_b:;
@@ -662,14 +719,12 @@ int64_t ya = sha_info_data;
 local_memcpy(ya, wa, xa);
 int64_t za = 16;
 int64_t* ab = e + za;
-stack_pointer = ab;
 }
 
 void sha_final() {
 int64_t* a = stack_pointer;
 int64_t b = 16;
 int64_t * c = a - b;
-stack_pointer = c;
 int64_t * d = sha_info_count_lo;
 int64_t e = d[0];
 c[2] = e;
@@ -678,16 +733,16 @@ int64_t g = f[0];
 c[1] = g;
 int64_t h = c[2];
 int64_t i = 3;
-int64_t* j = h >> i;
+int64_t j = h >> i;
 int64_t k = 63;
-int64_t* l = j & k;
+int64_t l = j & k;
 c[3] = l;
 int64_t m = c[3];
 int64_t n = 1;
-int64_t* o = m + n;
+int64_t o = m + n;
 c[3] = o;
 int64_t p = 2;
-int64_t* q = m << p;
+int64_t q = m << p;
 int64_t r = sha_info_data;
 int64_t * s = r + q;
 int64_t t = 128;
@@ -695,10 +750,10 @@ s[0] = t;
 int64_t u = c[3];
 int64_t v = 56;
 int64_t w = u;
-int64_t* x = v;
-int64_t* y = w > x;
+int64_t x = v;
+int64_t y = w > x;
 int64_t z = 1;
-int64_t* aa = y & z;
+int64_t aa = y & z;
 if (eqz(aa)) goto B_b;
 int64_t ba = c[3];
 int64_t ca = 64;
@@ -716,7 +771,7 @@ goto B_a;
 B_b:;
 int64_t ka = c[3];
 int64_t la = 56;
-int64_t* ma = la - ka;
+int64_t ma = la - ka;
 int64_t na = c[3];
 int64_t oa = sha_info_data;
 int64_t pa = 0;
@@ -730,127 +785,58 @@ ra[15] = sa;
 sha_transform();
 int64_t ta = 16;
 int64_t* ua = c + ta;
-stack_pointer = ua;
 }
 
 void sha_stream() {
 int64_t* a = stack_pointer;
 int64_t b = 16;
 int64_t * c = a - b;
-stack_pointer = c;
 sha_init();
 int64_t d = 0;
 c[2] = d;
 while (1) {
 int64_t e = c[2];
 int64_t f = 2;
-int64_t* g = e;
-int64_t* h = f;
-int64_t* i = g < h;
+int64_t g = e;
+int64_t h = f;
+int64_t i = g < h;
 int64_t j = 1;
-int64_t* k = i & j;
+int64_t k = i & j;
 if (eqz(k)) goto B_a;
 int64_t l = c[2];
 int64_t m = 2;
-int64_t* n = l << m;
+int64_t n = l << m;
 int64_t o = in_i;
 int64_t * p = o + n;
 int64_t q = p[0];
 c[3] = q;
 int64_t r = c[2];
 int64_t s = 13;
-int64_t* t = r << s;
+int64_t t = r << s;
 int64_t u = indata;
-int64_t* v = u + t;
+int64_t v = u + t;
 c[1] = v;
 int64_t w = c[1];
 int64_t x = c[3];
 sha_update(w, x);
 int64_t y = c[2];
 int64_t z = 1;
-int64_t* aa = y + z;
+int64_t aa = y + z;
 c[2] = aa;
-//continue L_b;
+;//continue L_b;
 }
 //unreachable;
 B_a:;
 sha_final();
 int64_t ba = 16;
 int64_t* ca = c + ba;
-stack_pointer = ca;
 }
 
-int submain() {
-int64_t* a = stack_pointer;
-int64_t b = 16;
-{* c (double,)a (int,)b (int64_t)c } = a - b;
-stack_pointer = c;
-int64_t d = 0;
-c.b = d;
-double e = rtclock();
-int64_t * f = startTimer;
-f[0] = e;
-sha_stream();
-int64_t g = 0;
-c.c = g;
-while (1) {
-int64_t h = c.c;
-int64_t i = 5;
-int64_t* j = h;
-int64_t* k = i;
-int64_t* l = j < k;
-int64_t m = 1;
-int64_t* n = l & m;
-if (eqz(n)) goto B_a;
-int64_t o = c.c;
-int64_t p = 2;
-int64_t* q = o << p;
-int64_t r = sha_info_digest;
-int64_t * s = r + q;
-int64_t t = s[0];
-int64_t u = outData;
-int64_t * v = u + q;
-int64_t w = v[0];
-int64_t* x = t;
-int64_t* y = w;
-int64_t* z = x != y;
-int64_t aa = 1;
-int64_t* ba = z & aa;
-int64_t ca = c.b;
-int64_t* da = ca + ba;
-c.b = da;
-int64_t ea = c.c;
-int64_t fa = 1;
-int64_t ga = ea + fa;
-c.c = ga;
-//continue L_b;
-}
-//unreachable;
-B_a:;
-double ha = rtclock();
-int64_t * ia = endTimer;
-ia[0] = ha;
-double ja = ia[0];
-int64_t * ka = startTimer;
-double la = ka[0];
-double ma = ja - la;
-c.a = ma;
-int64_t na = 16455;
-int64_t oa = memory_base;
-int64_t* pa = oa + na;
-printf(pa, c);
-int64_t qa = c.b;
-int64_t ra = 16;
-int64_t* sa = c + ra;
-stack_pointer = sa;
-return qa;
-}
 
 double rtclock() {
 int64_t* a = stack_pointer;
 int64_t b = 32;
 int64_t* c = a - b;
-stack_pointer = c;
 int64_t d = 16;
 int64_t* e = c + d;
 int64_t* f = e;
@@ -862,19 +848,17 @@ if (eqz(i)) goto B_a;
 int64_t j = (int64_t)c[3];
 c[0] = j;
 int64_t k = 16420;
-int64_t l = memory_base;
-int64_t* m = l + k;
-printf(m, c);
+int64_t* l = memory_base;
+int64_t* m = l + k; _printf(m, c);
 B_a:;
 long n = (long)c[2];
 double o = f64_convert_i64_s(n);
 int64_t p = (int64_t)c[6];
 double q = f64_convert_i32_s(p);
 double r = 0.000001;
-double* s = q * r;
-double* t = s + o;
+double s = q * r;
+double t = s + o;
 int64_t u = 32;
 int64_t* v = c + u;
-stack_pointer = v;
 return t;
 }

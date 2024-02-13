@@ -9,6 +9,7 @@ Config.set_decompiler("wasm-decompile")
 BASE = "/home/weicheng/Wasm/cs699_webassembly/new_compiled_benchmarks/"
 
 SKIPS = [
+    #[1, "mpeg2"],
 ]
 
 
@@ -35,25 +36,72 @@ def decompile_wasm(proj, base_dir):
     with open(out_file, "r") as fd:
         text = fd.read()
     text = modifier.WasmDecompile_modifier_all(text)
-#    new_code = """
-##include <stdbool.h>
-##include <stdint.h>
-##include <stdio.h>
-#//#include <stdlib.h>
-##include <string.h>
-#
-##include <polybench.h>
-##include "wasm-decompile_base.h"
-#    """
-#    text = new_code + text
+    new_code = """
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+//#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+#include <polybench.h>
+//#include "wasm-decompile_base.h"
+#define eqz(x) ((x) == 0)
+#define ubyte uint8_t
+#define byte int8_t
+#define byte_ptr int8_t*
+#define ubyte_ptr uint8_t*
+int64_t f64_convert_i64_s(float);
+int32_t f64_convert_i32_s(float);
+uint64_t i64_extend_i32_u(int);
+int64_t i64_extend_i32_s(int);
+int32_t f32_convert_i32_s(float);
+uint32_t f32_convert_i32_u(float);
+int64_t f32_convert_i64_s(float);
+uint64_t f32_convert_i64_u(float);
+int i32_wrap_i64(int64_t);
+int select__if(int,int,int);
+
+    """
+    text = new_code + text
 
     #with open(f"workdir/{proj}_new.c", "w") as fd:
-    with open(f"{base_dir}/d_wasm-decompile_new/{proj}.c", "w") as fd:
+    target_f = f"{base_dir}/d_wasm-decompile_new/{proj}.c"
+    with open(target_f, "w") as fd:
         fd.write(text)
+
+    status, output = generator.compile_single_file(target_f, f" -g -c -I{Config.poly_absolute_path} -o /dev/null")
+    if status != 0:
+        if "error: expected \';\' after" not in output:
+            print(output)
+            exit(0)
+        semicolon_pos = []
+        for line in output.split("\n"):
+            if "error: expected \';\' after" in line:
+                loc = int(line.split(":")[1])
+                semicolon_pos.append(loc)
+        with open(target_f, "r") as fd:
+            content = fd.read().split("\n")
+        idx = 0
+        with open(target_f, "w") as fd:
+            while idx < len(content):
+                fd.write(content[idx])
+                idx += 1
+                if idx in semicolon_pos:
+                    fd.write(";")
+                fd.write("\n")
+    else:
+        return
+    status, output = generator.compile_single_file(target_f, f" -g -c -I{Config.poly_absolute_path} -o /dev/null")
+    if status != 0:
+        print(output)
+        exit(0)
+
 
 
 def main():
-    for opt_level in [0, 1, 2]:
+    #for opt_level in [0, 1, 2]:
+    for opt_level in [ 1, 2]:
         print("Opt level: ", opt_level)
         base_dir = f"{BASE}/em_output_O{opt_level}"
         binary_path = f"{base_dir}/wasm"
