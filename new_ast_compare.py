@@ -65,8 +65,10 @@ def get_ncq_ted(orig_tree, function_body, timeout_msg=""):
 
 
 
-DECOMPILERS = ["w2c2", "wasm2c", "ghidra", "retdec"]
-OPT_LEVELS = [0, 1, 2]
+#DECOMPILERS = ["w2c2", "wasm2c", "ghidra", "retdec"]
+DECOMPILERS = ["w2c2", "wasm2c", "ghidra", "retdec", "wasm-decompile"]
+#OPT_LEVELS = [0, 1, 2]
+OPT_LEVELS = [0]
 
 def main():
     # First, load common functions from readability_entries.json
