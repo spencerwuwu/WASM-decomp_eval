@@ -591,7 +591,7 @@ class WasmDecompileModifier:
                         if "[" in name and not name.split("[")[0] in pointers_names:
                             # HACK
                             core = name.split('[')[0]
-                            if core.isdigit():
+                            if re.match(r"[\W0-9]*", core):
                                 new_tokens.append(re.sub(r":[a-zA-Z0-9_]+", "", token))
                                 continue
                             name = f"(&{core})[" + name.split("[", 1)[1]
