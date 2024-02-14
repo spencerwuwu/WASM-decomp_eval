@@ -29,3 +29,8 @@ typedef signed long long int sbits64;
 
 #define LIT64( a ) a##LL
 #define countLeadingZeros32_countLeadingZerosHigh 0
+
+float sqrt(float);
+#define SQRT(x) sqrt(x)
+float expf(float);
+float exp2f(float);

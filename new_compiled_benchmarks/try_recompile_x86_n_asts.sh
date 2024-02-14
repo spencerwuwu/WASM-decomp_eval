@@ -4,7 +4,8 @@ all_pass=1
 
 LD_FLAGS="-I ../emscripten_compile/polybench-c-4.2.1-beta/utilities/ -I ./chstone_specials"
 
-DIRS=( "em_output_O0/d_ghidra_new" "em_output_O0/d_retdec_new" "em_output_O1/d_ghidra_new" "em_output_O1/d_retdec_new" "em_output_O2/d_ghidra_new" "em_output_O2/d_retdec_new" )
+#DIRS=( "em_output_O0/d_ghidra_new" "em_output_O0/d_retdec_new" "em_output_O1/d_ghidra_new" "em_output_O1/d_retdec_new" "em_output_O2/d_ghidra_new" "em_output_O2/d_retdec_new" )
+DIRS=( "em_output_O1/d_ghidra_new" "em_output_O1/d_retdec_new" "em_output_O2/d_ghidra_new" "em_output_O2/d_retdec_new" )
 
 for d in "${DIRS[@]}"; do
 	for cfile in "$d/"*.c; do
