@@ -1,0 +1,3 @@
+[submodule "WASM-DecFuzzer"]
+	path = WASM-DecFuzzer
+	url = https://github.com/spencerwuwu/WASM-DecFuzzer.git

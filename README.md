@@ -1,5 +1,7 @@
 # WASM-decomp_eval
 
+Recursively clone the repo to get [WASM-DecFuzzer](https://github.com/spencerwuwu/WASM-DecFuzzer.git) as well.
+
 ## Requirements
 Lastest version of emcc and w2c2, wabt.   
 Otherwise, things may not work.
