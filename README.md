@@ -1,16 +1,4 @@
-# CS699_DeWasm
-
-## AST similarity progress
-### Workflow
-- Parse symbol file 
-    - (filter functions to match onces)
-- Parse pre-generated ast files to Nodes
-    - (slightly filter out functions to build node)
-- Map symbol to corresponding function in asts
-    - Orig file: Current approach does not include all functions seen in symbol file (TODO)
-    - w2c2/wasm: Map name -> Check if only one function call in these function -> map these functions to original symbol (Currently at w2c2)
-
-- Compare tree smilarities.
+# WASM-decomp_eval
 
 ## Requirements
 Lastest version of emcc and w2c2, wabt.   
@@ -30,10 +18,3 @@ If you want to add extra Emscripten flags, modify `em_flags`.
 - In the `small-tools` folder, copy `run-wasm-compatible-SimpleHTTPServer.py` and `test.html` to the folder containing Wasm and their JS loaders. 
 Execute the python file, then you should be able to run Wasm by visiting `localhost:8000/test.html` in the browser. 
 Remember to modify `test.html` to change the program you want to execute.
-
-## Install clang python binding
-```
-$ sudo apt-get install libclang-dev
-$ pip3 install libclang
-# (Maybe not) Then edit cindex.py to the correct libclang version under /lib/x86_64-linux-gnu/
-```
