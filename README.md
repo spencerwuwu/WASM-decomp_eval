@@ -1,5 +1,9 @@
 # WASM-decomp_eval
 
+SecureComm'24 Artifact for `Is This the Same Code? A Comprehensive Study of Decompilation Techniques for WebAssembly Binaries`.
+
+Instructions and updates will be publicly availabel at [WASM-decomp_eval](https://github.com/spencerwuwu/WASM-decomp_eval).
+
 Recursively clone the repo to get [WASM-DecFuzzer](https://github.com/spencerwuwu/WASM-DecFuzzer.git) as well.
 
 ## Requirements
